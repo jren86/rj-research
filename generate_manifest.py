@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Scan reports/ directory and generate manifest.json"""
+"""Scan reports/ directory and generate manifest.json + update index.html placeholder"""
 import json
 import os
 import re
 from collections import defaultdict
 
 REPORTS_DIR = os.path.join(os.path.dirname(__file__), "reports")
+SITE_DIR = os.path.dirname(__file__)
 
 # Category definitions: (id, name, description, filename_patterns)
 CATEGORIES = [
@@ -24,13 +25,11 @@ CATEGORIES = [
 ]
 
 def extract_date(filename):
-    """Extract YYYY-MM-DD from filename like 早间日报_2026-06-03.html"""
     match = re.search(r'(\d{4}-\d{2}-\d{2})', filename)
     return match.group(1) if match else None
 
 def main():
     manifest = {"categories": []}
-
     for cat_id, cat_name, cat_desc, patterns in CATEGORIES:
         files = {}
         for fname in sorted(os.listdir(REPORTS_DIR)):
@@ -40,49 +39,37 @@ def main():
                 if fname.startswith(pat) or pat in fname:
                     date = extract_date(fname)
                     if date:
-                        relative_path = f"reports/{fname}"
-                        files[date] = relative_path
+                        files[date] = f"reports/{fname}"
                     break
-
         if files:
-            # Sort by date descending
             sorted_files = dict(sorted(files.items(), reverse=True))
             manifest["categories"].append({
-                "id": cat_id,
-                "name": cat_name,
-                "description": cat_desc,
+                "id": cat_id, "name": cat_name, "description": cat_desc,
                 "reportCount": len(sorted_files),
                 "latestDate": list(sorted_files.keys())[0],
                 "files": sorted_files
             })
 
-    out_path = os.path.join(os.path.dirname(__file__), "manifest.json")
-    with open(out_path, "w", encoding="utf-8") as f:
+    # Write manifest.json
+    manifest_path = os.path.join(SITE_DIR, "manifest.json")
+    with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    print(f"Manifest generated: {out_path}")
-    
-    # Also embed manifest into index.html
-    site_dir = os.path.dirname(__file__)
-    index_path = os.path.join(site_dir, "index.html")
+    print(f"manifest.json: {len(manifest['categories'])} categories")
+
+    # Write inline manifest into index.html
+    index_path = os.path.join(SITE_DIR, "index.html")
     if os.path.exists(index_path):
         with open(index_path, "r", encoding="utf-8") as f:
             html = f.read()
         manifest_json = json.dumps(manifest, ensure_ascii=False)
-        old = 'window.__MANIFEST = '
-        start = html.find(old)
-        if start >= 0:
-            end = html.find(';</script>', start)
-            if end >= 0:
-                # Preserve everything after the JSON up to </script> (e.g., window.renderHub();)
-                suffix = html[html.find('}]};', start):end] if '}]};' in html[start:end] else '}]};'
-                html = html[:start] + old + manifest_json + '; ' + suffix[4:] if suffix.startswith('}]}; ') else '}]};' + html[end:]
-                # Simpler: just set manifest and call renderHub
-                html = html[:start] + old + manifest_json + '; window.renderHub();' + html[end:]
-                with open(index_path, "w", encoding="utf-8") as f:
-                    f.write(html)
-                print(f"Manifest embedded into: {index_path}")
-    
-    print(f"Categories: {len(manifest['categories'])}")
+        new_html = html.replace("@@MANIFEST@@", manifest_json)
+        if new_html != html:
+            with open(index_path, "w", encoding="utf-8") as f:
+                f.write(new_html)
+            print(f"index.html: manifest embedded")
+        else:
+            print("index.html: @@MANIFEST@@ placeholder not found - skipped")
+
     for cat in manifest["categories"]:
         print(f"  {cat['name']}: {cat['reportCount']} reports (latest: {cat['latestDate']})")
 
