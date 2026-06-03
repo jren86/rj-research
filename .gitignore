@@ -11,3 +11,10 @@ __pycache__/
 # Don't commit the script itself via gitignore
 # upload_reports.py
 # generate_manifest.py
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
