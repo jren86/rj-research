@@ -73,7 +73,11 @@ def main():
         if start >= 0:
             end = html.find(';</script>', start)
             if end >= 0:
-                html = html[:start] + old + manifest_json + html[end:]
+                # Preserve everything after the JSON up to </script> (e.g., window.renderHub();)
+                suffix = html[html.find('}]};', start):end] if '}]};' in html[start:end] else '}]};'
+                html = html[:start] + old + manifest_json + '; ' + suffix[4:] if suffix.startswith('}]}; ') else '}]};' + html[end:]
+                # Simpler: just set manifest and call renderHub
+                html = html[:start] + old + manifest_json + '; window.renderHub();' + html[end:]
                 with open(index_path, "w", encoding="utf-8") as f:
                     f.write(html)
                 print(f"Manifest embedded into: {index_path}")
