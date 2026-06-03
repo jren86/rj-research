@@ -27,6 +27,25 @@ def extract_date(filename):
     match = re.search(r'(\d{4}-\d{2}-\d{2})', filename)
     return match.group(1) if match else None
 
+def clean_title(filename):
+    """Extract a clean display title from filename like 精智达FT测试机技术分析_2026-06-02.html"""
+    name = filename.replace('.html', '')
+    # Remove date suffix
+    name = re.sub(r'_\d{4}-\d{2}-\d{2}$', '', name)
+    name = re.sub(r'_\d{4}-\d{2}-\d{2}', '', name)
+    # Custom short names
+    short = {
+        "精智达FT测试机技术分析": "精智达 · FT测试机技术分析",
+        "钠离子电池行业研究": "钠离子电池行业深度投资机遇",
+        "石药集团分析": "石药集团深度分析",
+        "泡泡玛特分析": "泡泡玛特深度分析",
+        "华通线缆深度分析": "华通线缆深度分析",
+        "夏季电力主题": "夏季电力主题分析",
+        "WorkBuddy深度研究": "WorkBuddy深度研究",
+        "catl-dashboard": "宁德时代 CATL Dashboard",
+    }
+    return short.get(name, name)
+
 def main():
     manifest = {"categories": []}
     for cat_id, cat_name, cat_desc, patterns in CATEGORIES:
@@ -38,10 +57,23 @@ def main():
                 if fname.startswith(pat) or pat in fname:
                     date = extract_date(fname)
                     if date:
-                        files[date] = f"reports/{fname}"
+                        # For deep research, use title · date as the key
+                        if cat_id == "deep_research":
+                            title = clean_title(fname)
+                            key = f"{title} · {date}"
+                        else:
+                            key = date
+                        files[key] = f"reports/{fname}"
                     break
         if files:
-            sorted_files = dict(sorted(files.items(), reverse=True))
+            # Sort by date extracted from key
+            def sort_key(item):
+                k = item[0]
+                m = re.search(r'(\d{4}-\d{2}-\d{2})', k)
+                return m.group(1) if m else k
+            sorted_items = sorted(files.items(), key=sort_key, reverse=True)
+            latest_key = sorted_items[0][0]
+            sorted_files = {k: v for k, v in sorted_items}
             manifest["categories"].append({
                 "id": cat_id, "name": cat_name, "description": cat_desc,
                 "reportCount": len(sorted_files),
@@ -60,14 +92,18 @@ def main():
     if os.path.exists(index_path):
         with open(index_path, "r", encoding="utf-8") as f:
             html = f.read()
-        manifest_json = json.dumps(manifest, ensure_ascii=False)
-        new_html = html.replace("@@MANIFEST@@", manifest_json)
-        if new_html != html:
+        manifest_json = json.dumps(manifest, ensure_ascii=False, indent=2)
+        marker_start = 'window.__MANIFEST = '
+        marker_end = 'window.renderHub();'
+        s = html.find(marker_start)
+        e = html.find(marker_end, s)
+        if s >= 0 and e > s:
+            html = html[:s] + marker_start + manifest_json + '\n' + html[e:]
             with open(index_path, "w", encoding="utf-8") as f:
-                f.write(new_html)
+                f.write(html)
             print(f"index.html: manifest embedded")
         else:
-            print("index.html: @@MANIFEST@@ placeholder not found - skipped")
+            print(f"index.html: markers not found (s={s} e={e})")
 
     for cat in manifest["categories"]:
         print(f"  {cat['name']}: {cat['reportCount']} reports (latest: {cat['latestDate']})")
