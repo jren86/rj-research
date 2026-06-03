@@ -19,9 +19,10 @@
       "id": "evening",
       "name": "晚间投研日报",
       "description": "每日晚间市场复盘与总结",
-      "reportCount": 7,
-      "latestDate": "2026-06-02",
+      "reportCount": 8,
+      "latestDate": "2026-06-03",
       "files": {
+        "2026-06-03": "reports/晚间日报_2026-06-03.html",
         "2026-06-02": "reports/晚间日报_2026-06-02.html",
         "2026-06-01": "reports/晚间日报_2026-06-01.html",
         "2026-05-31": "reports/晚间日报_2026-05-31.html",
@@ -29,17 +30,6 @@
         "2026-05-29": "reports/晚间日报_2026-05-29.html",
         "2026-05-28": "reports/晚间日报_2026-05-28.html",
         "2026-05-27": "reports/晚间日报_2026-05-27.html"
-      }
-    },
-    {
-      "id": "daily",
-      "name": "投研日报",
-      "description": "投研日报汇总",
-      "reportCount": 2,
-      "latestDate": "2026-05-29",
-      "files": {
-        "2026-05-29": "reports/投研日报_2026-05-29.html",
-        "2026-05-28": "reports/投研日报_2026-05-28.html"
       }
     },
     {
