@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Don't commit the script itself via gitignore
+# upload_reports.py
+# generate_manifest.py

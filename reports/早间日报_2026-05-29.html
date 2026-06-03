@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>早间投研日报 · 2026-05-29</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-secondary: #8b949e;
+    --red: #f85149;
+    --green: #3fb950;
+    --up: #f85149;
+    --down: #3fb950;
+    --gold: #d29922;
+    --blue: #58a6ff;
+    --purple: #bc8cff;
+    --cyan: #39d2c0;
+    --orange: #f0883e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    padding: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 20px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: 16px;
+    color: var(--blue);
+    margin: 20px 0 10px;
+    padding-left: 8px;
+    border-left: 3px solid var(--blue);
+  }
+  h3 {
+    font-size: 14px;
+    color: var(--gold);
+    margin: 14px 0 8px;
+  }
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  th {
+    background: #21262d;
+    color: var(--text-secondary);
+    padding: 6px 8px;
+    text-align: left;
+    font-weight: 500;
+  }
+  td {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  .up { color: var(--up); font-weight: 600; }
+  .down { color: var(--down); font-weight: 600; }
+  .tag {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    margin-right: 4px;
+  }
+  .tag-up { background: #3a1a1a; color: var(--up); }
+  .tag-down { background: #1a2e1a; color: var(--down); }
+  .tag-new { background: #1a2a3a; color: var(--blue); }
+  .tag-important { background: #2a1a0a; color: var(--gold); }
+  .stock-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+    margin: 10px 0;
+  }
+  .stock-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .stock-code {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-left: 6px;
+  }
+  .stock-section {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    padding-left: 8px;
+    border-left: 2px solid var(--border);
+  }
+  .stock-section strong {
+    color: var(--text);
+  }
+  .no-info {
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 13px;
+    padding: 8px 0;
+  }
+  .highlight-box {
+    background: #1a1a2e;
+    border-left: 3px solid var(--purple);
+    padding: 10px 12px;
+    margin: 12px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+  }
+  .risk-box {
+    background: #2a1a1a;
+    border-left: 3px solid var(--red);
+    padding: 10px 12px;
+    margin: 12px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+  }
+  .focus-box {
+    background: #1a2a1a;
+    border: 1px solid var(--green);
+    border-radius: 6px;
+    padding: 12px;
+    margin: 14px 0;
+  }
+  .focus-box h3 { color: var(--green); margin: 0 0 8px 0; font-size: 14px; }
+  .focus-box ol { padding-left: 18px; }
+  .focus-box li { margin: 4px 0; font-size: 13px; }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 18px 0;
+  }
+  .source {
+    color: var(--text-secondary);
+    font-size: 11px;
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .badge-red { background: #3a1a1a; color: var(--up); }
+  .badge-green { background: #1a2e1a; color: var(--down); }
+  .badge-blue { background: #1a1a2e; color: var(--blue); }
+  .badge-gold { background: #2a1a0a; color: var(--gold); }
+  .badge-purple { background: #2a1a2e; color: var(--purple); }
+  ul { padding-left: 18px; margin: 6px 0; }
+  li { margin: 3px 0; font-size: 13px; }
+  strong { color: var(--text); }
+  .emoji { font-style: normal; }
+</style>
+</head>
+<body>
+
+<h1>📊 早间投研日报</h1>
+<div class="subtitle">2026-05-29 · 聚焦隔夜增量信息 · 只呈现有价值的新变化</div>
+
+<!-- ==================== 一、宏观 ==================== -->
+<h2>一、宏观回顾及前瞻</h2>
+
+<h3>🌏 隔夜重要动态（5月28日）</h3>
+<table>
+  <tr><th>维度</th><th>内容</th></tr>
+  <tr><td>央行逆回购</td><td>5月28日开展 <strong>1013亿元</strong> 7天逆回购，利率1.40%持平；当日到期1000亿元，净投放 <span class="up">+13亿元</span></td></tr>
+  <tr><td>Shibor</td><td>隔夜 <strong>1.3170%</strong>（持平）；7天 <strong>1.3620%</strong>（↓0.90BP）；14天小幅下行——短端资金面整体宽松</td></tr>
+  <tr><td>MLF</td><td>5月25日央行开展 <strong>6000亿元</strong> 1年期MLF操作，到期5000亿元，净投放 <span class="up">+1000亿元</span>，为4月以来首次放量续作，释放中期流动性宽松信号</td></tr>
+  <tr><td>海外市场</td><td>美伊停火预期升温带动原油下跌；美联储官员分歧持续，FOMC会议纪要显示部分官员关注通胀反弹风险；欧央行按兵不动</td></tr>
+  <tr><td>地缘政治</td><td>中东局势仍是最大变量，能源通胀预期升温，压制全球科技成长股估值</td></tr>
+</table>
+
+<h3>🔭 今日前瞻（5月29日）</h3>
+<div class="highlight-box">
+  <strong>国内：</strong>今日有逆回购到期，关注央行续作情况；无重大宏观数据发布<br>
+  <strong>海外：</strong>美国核心PCE物价指数（4月）今晚发布，为美联储6月议息前最关键通胀数据；欧元区5月CPI初值同步关注<br>
+  <strong>政策窗口：</strong>中国LPR下一次调整窗口为6月20日，本月已下调，短期再度调整概率低
+</div>
+
+<!-- ==================== 二、市场 ==================== -->
+<h2>二、市场数据回顾及前瞻</h2>
+
+<h3>🇺🇸 美股隔夜（5月28日收盘）</h3>
+<table>
+  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
+  <tr><td>道琼斯</td><td>50,657</td><td class="up">+0.05%</td></tr>
+  <tr><td>标普500</td><td>7,524.95</td><td class="up">+0.58%</td></tr>
+  <tr><td>纳斯达克</td><td>26,920.53</td><td class="up">+0.91%</td></tr>
+  <tr><td>纳斯达克中国金龙</td><td>—</td><td class="down">-0.48%</td></tr>
+  <tr><td>VIX恐慌指数</td><td>15.73</td><td class="down">-3.44%</td></tr>
+</table>
+<div class="highlight-box">
+  📌 甲骨文涨6.67%（云AI合同超预期），AMD涨4.55%，礼来涨4.05%；中概股整体承压。
+</div>
+
+<h3>🇭🇰 港股昨日（5月28日收盘）</h3>
+<table>
+  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
+  <tr><td>恒生指数</td><td>25,006.16</td><td class="down">-1.27%</td></tr>
+  <tr><td>恒生科技</td><td>4,888.58</td><td class="down">-0.39%</td></tr>
+  <tr><td>国企指数</td><td>—</td><td class="down">-1.17%</td></tr>
+</table>
+<div class="highlight-box">
+  📌 科网股普跌：美团-W跌超5%，阿里/腾讯/哔哩哔哩/百度跌超2%；<strong>华虹半导体涨超11%、中芯国际涨超3%</strong>（芯片局部活跃）。创新药板块集体承压，信达生物跌4.05%。
+</div>
+
+<h3>🇨🇳 A股昨日（5月28日收盘）</h3>
+<table>
+  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr>
+  <tr><td>上证指数</td><td>4,098.64</td><td class="up">+0.12%</td><td>全市场成交额约2.99万亿，缩量2726亿</td></tr>
+  <tr><td>深证成指</td><td>15,861.89</td><td class="up">+0.80%</td><td>—</td></tr>
+  <tr><td>创业板指</td><td>4,125.07</td><td class="up">+1.96%</td><td>领涨</td></tr>
+  <tr><td>北证50</td><td>—</td><td class="up">+2.55%</td><td>领涨</td></tr>
+</table>
+<div class="highlight-box">
+  <strong>市场结构：</strong>上涨3018家 / 下跌2365家，涨跌比约1.28:1。「主板弱、中小创强」分化格局延续。<br>
+  <strong>北向资金：</strong>5月28日成交3835.01亿元，占两市总成交额12.92%；净买入 <span class="up">+28.18亿元</span>，贵州茅台获净买入4.43亿元居首。
+</div>
+
+<h3>📊 行业轮动（5月28日）</h3>
+<table>
+  <tr><th>方向</th><th>板块</th></tr>
+  <tr><td><span class="tag tag-up">领涨</span></td><td>煤炭开采、电力、AI算力（PCB/存储芯片/先进封装）、北证50题材</td></tr>
+  <tr><td><span class="tag tag-down">领跌</span></td><td>半导体设备、贵金属、白酒、港股创新药</td></tr>
+</table>
+<div class="risk-box">
+  ⚠️ <strong>风险提示：</strong>港股跨境监管升级传闻导致高杠杆灰色资金撤离，科技板块场外流动性溢价压缩；半导体板块前期涨幅较大，获利盘较重。
+</div>
+
+<h3>🎯 今日市场方向</h3>
+<ul>
+  <li>美股纳指创新高提振AI算力情绪；但港股创新药抛压未解，信达生物与辉瑞合作靴子落地后关注获利了结压力</li>
+  <li><strong>关注方向：</strong>AI算力硬件（PCB/先进封装/存储）、半导体设备国产替代主题；警惕创新药板块短期回调持续</li>
+</ul>
+
+<!-- ==================== 三、持仓个股 ==================== -->
+<h2>三、持仓个股隔夜增量信息</h2>
+
+<!-- 长川科技 -->
+<div class="stock-card">
+  <div class="stock-name">🔧 长川科技 <span class="stock-code">300604</span></div>
+  <div class="no-info">隔夜无重要增量信息</div>
+  <div class="stock-section">
+    <strong>背景参考：</strong>5月28日参加深交所"百川汇流·并购重组焕新机"业绩说明会；群益证券给予买进评级目标价230元，对应2026年约70倍PE。
+  </div>
+</div>
+
+<!-- 精智达 -->
+<div class="stock-card">
+  <div class="stock-name">🔧 精智达 <span class="stock-code">688627</span></div>
+  <div class="no-info">隔夜无重要增量信息</div>
+  <div class="stock-section">
+    <strong>背景参考：</strong>2026年3月披露限制性股票激励计划草案；2025年报营收11.28亿元同比+40.46%，归母净利润6542万元同比-18.39%。
+  </div>
+</div>
+
+<!-- 宁德时代 -->
+<div class="stock-card">
+  <div class="stock-name">🔋 宁德时代 <span class="stock-code">300750</span> <span class="badge badge-blue">增量</span></div>
+
+  <div class="stock-section">
+    <strong>① 绿色科创债发行</strong>（5月27日公告）<br>
+    披露2026年度第三期绿色科技创新债券发行文件；发行金额 <strong>50亿元</strong>，期限3+2年；募集资金拟全部用于锂离子电池生产项目日常运营（原材料购置、设备维护、承兑汇票偿付）。
+  </div>
+
+  <div class="stock-section">
+    <strong>② 排产超预期</strong>（产业动态）<br>
+    5月排产首次突破 <strong>100GWh</strong> 创历史新高，储能电芯产能利用率接近满载；计划2026年底再新增500GWh产能（较2025年增长65%）；4月发布全球首款储能专用钠离子电池，循环寿命超15000次。
+  </div>
+
+  <div class="stock-section">
+    <strong>③ 机构一致预期</strong>（截至5月28日）<br>
+    31家机构预测2026年净利润 <strong>950.82亿元</strong>，同比+31.69%；预测EPS 20.77元。
+  </div>
+</div>
+
+<!-- 工业富联 -->
+<div class="stock-card">
+  <div class="stock-name">🖥️ 工业富联 <span class="stock-code">601138</span></div>
+  <div class="no-info">隔夜无重要增量信息</div>
+  <div class="stock-section">
+    <strong>背景参考：</strong>2026年一季报AI服务器与交换机业务双轮驱动，2026年AI高速增长可期；北美算力需求持续旺盛。
+  </div>
+</div>
+
+<!-- 容百科技 -->
+<div class="stock-card">
+  <div class="stock-name">🔋 容百科技 <span class="stock-code">688005</span></div>
+  <div class="no-info">隔夜无重要增量信息</div>
+  <div class="stock-section">
+    <strong>背景参考：</strong>机构预测2026年净利润5.21亿元，同比+378.17%，高增长预期；5月27日公告做市商申请终止特定科创板股票做市交易业务。
+  </div>
+</div>
+
+<!-- 京东方A -->
+<div class="stock-card">
+  <div class="stock-name">📺 京东方A <span class="stock-code">000725</span> <span class="badge badge-blue">增量</span></div>
+
+  <div class="stock-section">
+    <strong>① 首次回购B股</strong>（5月28日公告 · <span class="badge badge-gold">重要</span>）<br>
+    通过回购专用证券账户以集中竞价方式实施 <strong>首次回购</strong>；回购B股数量 <strong>723.18万股</strong>，占B股比例约1.04%，占总股本约0.02%；最高成交价4.49港元/股，最低4.23港元/股；支付总金额 <strong>3195.62万港元</strong>（不含交易费用）。<br>
+    <span style="color:var(--cyan);font-size:12px;">📌 信号意义：首次回购B股，彰显管理层对价值的信心，且B股折价明显，回购性价比高。</span>
+  </div>
+
+  <div class="stock-section">
+    <strong>② 玻璃基封装载板进展</strong>（5月26日机构调研）<br>
+    2024年投资9.93亿元建设玻璃基封装载板试验线；目前已给部分国内客户送样，部分客户已通过概念认证，进入技术测试阶段；尚未实现批量生产，该业务尚未实现量产营收。
+  </div>
+</div>
+
+<!-- 芯碁微装 -->
+<div class="stock-card">
+  <div class="stock-name">🔧 芯碁微装 <span class="stock-code">688630</span></div>
+  <div class="no-info">隔夜无重要增量信息</div>
+  <div class="stock-section">
+    <strong>背景参考：</strong>上海证券2026年5月13日研报给予"买入"评级——PCB与先进封装需求旺盛，2025年PCB业务收入增长38.13%；钻孔设备已进入多家头部客户量产验证阶段。
+  </div>
+</div>
+
+<!-- 信达生物 -->
+<div class="stock-card" style="border-color:var(--gold);">
+  <div class="stock-name">💊 信达生物 <span class="stock-code">01801.HK</span> <span class="badge badge-gold">🔥 重大催化剂</span></div>
+
+  <div class="stock-section">
+    <strong>① 与辉瑞达成全球战略合作</strong>（5月29日早间公告 · <span class="badge badge-gold">重大增量</span>）<br>
+    信达生物连同附属公司与 <strong>辉瑞（Pfizer）</strong> 就 <strong>12个</strong> 具有突破性潜力的肿瘤早期及源头创新研发项目签署全球战略许可及合作协议。<br>
+    ✅ 协议涵盖：许可、共同开发及共同商业化<br>
+    ✅ 合作资产：多款具有新型差异化载荷的 <strong>抗体偶联药物（ADC）</strong> 项目<br>
+    ✅ <strong>首付款：6.5亿美元</strong><br>
+    ✅ <strong>潜在里程碑付款最高可达98.5亿美元</strong><br>
+    ✅ <strong>交易总金额最高可达105亿美元</strong><br>
+    ✅ 获批产品销售额可收取 <strong>两位数比例</strong> 的特许权使用费
+  </div>
+  <div class="highlight-box" style="margin-top:8px;">
+    📌 <strong>解读：</strong>这是信达生物成立以来最大单笔对外授权合作，标志着其肿瘤管线（尤其是ADC平台）获得全球TOP级MNC认可。12个早期项目打包授权模式少见，反映辉瑞对中国创新药早期资产的强烈兴趣和FOMO心态。短期股价可能因"利好出尽"有获利了结压力，但中长期空间被大幅打开。
+  </div>
+
+  <div class="stock-section">
+    <strong>② 南向资金动向</strong>（5月28日）<br>
+    南向资金减持200.2万股，近5个交易日累计净减持408.47万股，近20个交易日累计净减持1871.21万股；南向资金仍持有5.16亿股，占已发行普通股29.7%。
+  </div>
+
+  <div class="stock-section">
+    <strong>③ 创新药板块承压</strong>（5月28日）<br>
+    港股创新药板块集体走低，信达生物跌4.05%至75.75港元；主因：中东冲突引发能源通胀预期，全球主要央行加息预期升温，压制长久期生物科技估值。
+  </div>
+</div>
+
+<!-- ==================== 四、知识库 ==================== -->
+<h2>四、知识库增量内容</h2>
+<div class="highlight-box">
+  ⚠️ 本日暂未检索到 IMA 知识库及知识星球新增内容（数据源连接受限）。建议手动检查以下知识库：
+  <ul style="margin-top:6px;">
+    <li>AI 读研报</li>
+    <li>爱分享财经资讯</li>
+    <li>股票交易高手大模型</li>
+    <li>Jay 的知识库</li>
+    <li>水木调研纪要 2.0</li>
+    <li>调研纪要更新</li>
+  </ul>
+</div>
+
+<!-- ==================== 今日重点关注 ==================== -->
+<h2>📌 今日重点关注</h2>
+<div class="focus-box">
+  <h3>今日需重点跟踪的催化事件</h3>
+  <ol>
+    <li><strong>信达生物 × 辉瑞105亿美元合作</strong> — 今日最重磅催化，关注开盘股价反应及成交量</li>
+    <li><strong>京东方A首次回购B股</strong> — 管理层信心信号，B股折价套利逻辑值得关注</li>
+    <li><strong>宁德时代50亿绿色科创债</strong> — 扩产资金到位，储能+钠电池双线推进</li>
+    <li><strong>今晚美国核心PCE</strong> — 若超预期，可能压制全球科技成长股估值</li>
+    <li><strong>A股AI算力板块</strong> — 美股纳指新高叠加国内算力需求持续，关注PCB/先进封装/存储链条</li>
+  </ol>
+</div>
+
+<div class="source">
+  报告生成时间：2026-05-29 08:00 (GMT+8)<br>
+  数据来源：东方财富、新浪财经、格隆汇、雪球、金十数据、财联社、同花顺
+</div>
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RJ Research Hub</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --bg-card: #161b22;
+  --bg-hover: #1c2333;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --red: #f85149;
+  --green: #3fb950;
+  --amber: #d2991d;
+  --header-bg: #010409;
+  --radius: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+/* Header */
+.header {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+.header .subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.header .badge {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+/* Section / Accordion */
+.section {
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+.section-header:hover {
+  background: var(--bg-hover);
+}
+.section-header .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.section-header .icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.section-header .info {
+  min-width: 0;
+}
+.section-header .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section-header .desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section-header .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.section-header .count {
+  font-size: 11px;
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.section-header .arrow {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+}
+.section.open .section-header .arrow {
+  transform: rotate(90deg);
+}
+/* Section Body */
+.section-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.section.open .section-body {
+  max-height: none;
+}
+.section-content {
+  padding: 0 16px 16px;
+  border-top: 1px solid var(--border);
+}
+/* Controls bar */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+.controls label {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.controls select {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  min-width: 150px;
+}
+.controls select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.controls .btn {
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.controls .btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+}
+.controls .date-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.controls .date-nav button {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
+.controls .date-nav button:hover {
+  border-color: var(--accent);
+}
+/* Report viewer */
+.report-viewer {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  min-height: 400px;
+}
+.report-viewer iframe {
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  border: none;
+  display: block;
+}
+/* No report placeholder */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--text-muted);
+  font-size: 13px;
+  flex-direction: column;
+  gap: 8px;
+}
+.placeholder .icon {
+  font-size: 36px;
+  opacity: 0.5;
+}
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 11px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+}
+/* Loading spinner */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+/* Mobile */
+@media (max-width: 600px) {
+  .header { padding: 12px 14px; }
+  .header h1 { font-size: 16px; }
+  .container { padding: 10px; }
+  .section-header { padding: 12px; }
+  .section-header .name { font-size: 13px; }
+  .controls { gap: 6px; }
+  .controls select { min-width: 130px; }
+  .report-viewer iframe { height: 60vh; min-height: 400px; }
+}
+@media (max-width: 400px) {
+  .section-header .desc { display: none; }
+  .section-header .count { font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>RJ Research Hub</h1>
+    <div class="subtitle">研究报告 · 自动更新 · 多设备访问</div>
+  </div>
+  <span class="badge" id="updateTime">加载中...</span>
+</div>
+
+<div class="container" id="app">
+  <div class="placeholder">
+    <span class="spinner"></span>
+    <span>正在加载报告列表...</span>
+  </div>
+</div>
+
+<div class="footer">
+  RJ Research Hub · 内容由 Cleo 自动生成并部署 · 通过 Cloudflare Pages 托管
+</div>
+
+<script>
+(function() {
+  const app = document.getElementById('app');
+  const updateBadge = document.getElementById('updateTime');
+  let manifest = null;
+
+  // Category icons (Unicode symbols fallback)
+  const CAT_ICONS = {
+    morning: '\u{1F305}',
+    evening: '\u{1F303}',
+    daily: '\u{1F4CA}',
+    national_team: '\u{1F1E8}\u{1F1F3}',
+    ai_bubble: '\u{1F4AD}',
+    ai_news: '\u{1F916}',
+    deep_research: '\u{1F50D}',
+    ai_tracking: '\u{1F465}'
+  };
+
+  async function loadManifest() {
+    try {
+      const resp = await fetch('manifest.json');
+      manifest = await resp.json();
+      updateBadge.textContent = manifest.categories.length + ' 个分类 · ' +
+        manifest.categories.reduce((s, c) => s + c.reportCount, 0) + ' 份报告';
+      renderApp();
+    } catch (e) {
+      app.innerHTML = '<div class="placeholder"><span class="icon">\u26A0</span><span>加载报告列表失败，请稍后刷新</span></div>';
+    }
+  }
+
+  function renderApp() {
+    app.innerHTML = '';
+    manifest.categories.forEach((cat, idx) => {
+      const section = document.createElement('div');
+      section.className = 'section';
+      section.dataset.catId = cat.id;
+
+      const header = document.createElement('div');
+      header.className = 'section-header';
+      header.innerHTML =
+        '<div class="left">' +
+          '<span class="icon">' + (CAT_ICONS[cat.id] || '\u{1F4C4}') + '</span>' +
+          '<div class="info">' +
+            '<div class="name">' + escapeHTML(cat.name) + '</div>' +
+            '<div class="desc">' + escapeHTML(cat.description) + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="right">' +
+          '<span class="count">' + cat.reportCount + ' 份</span>' +
+          '<span class="arrow">\u25B6</span>' +
+        '</div>';
+
+      const body = document.createElement('div');
+      body.className = 'section-body';
+      body.innerHTML = '<div class="section-content"></div>';
+
+      header.addEventListener('click', function() {
+        const isOpen = section.classList.contains('open');
+        section.classList.toggle('open');
+        if (!isOpen && !section.dataset.loaded) {
+          loadSectionContent(section, cat);
+          section.dataset.loaded = '1';
+        }
+      });
+
+      section.appendChild(header);
+      section.appendChild(body);
+      app.appendChild(section);
+
+      // Auto-open first section on load
+      if (idx === 0) {
+        setTimeout(function() {
+          section.classList.add('open');
+          loadSectionContent(section, cat);
+          section.dataset.loaded = '1';
+        }, 100);
+      }
+    });
+  }
+
+  function loadSectionContent(section, cat) {
+    const content = section.querySelector('.section-content');
+    const dates = Object.keys(cat.files).sort().reverse();
+
+    if (dates.length === 0) {
+      content.innerHTML = '<div class="placeholder"><span class="icon">\u{1F4ED}</span><span>暂无报告</span></div>';
+      return;
+    }
+
+    const latestDate = dates[0];
+    let html = '<div class="controls">';
+    html += '<label>选择日期：</label>';
+    html += '<select id="sel_' + cat.id + '" onchange="switchReport(\'' + cat.id + '\', this.value)">';
+    dates.forEach(function(d) {
+      html += '<option value="' + d + '"' + (d === latestDate ? ' selected' : '') + '>' + d + '</option>';
+    });
+    html += '</select>';
+
+    // Prev/next date buttons
+    html += '<div class="date-nav">';
+    html += '<button onclick="navigateDate(\'' + cat.id + '\', -1)">\u25C0</button>';
+    html += '<button onclick="navigateDate(\'' + cat.id + '\', 1)">\u25B6</button>';
+    html += '</div>';
+
+    html += '<a class="btn" href="' + cat.files[latestDate] + '" target="_blank">新窗口打开 \u2197</a>';
+    html += '</div>';
+    html += '<div class="report-viewer" id="viewer_' + cat.id + '">';
+    html += '<iframe src="' + cat.files[latestDate] + '" title="' + escapeHTML(cat.name) + ' - ' + latestDate + '" loading="lazy"></iframe>';
+    html += '</div>';
+
+    content.innerHTML = html;
+  }
+
+  window.switchReport = function(catId, date) {
+    const cat = manifest.categories.find(function(c) { return c.id === catId; });
+    if (!cat || !cat.files[date]) return;
+    const viewer = document.getElementById('viewer_' + catId);
+    if (viewer) {
+      viewer.innerHTML = '<iframe src="' + cat.files[date] + '" title="' + escapeHTML(cat.name) + ' - ' + date + '"></iframe>';
+    }
+    // Update "open in new tab" link
+    const link = viewer ? viewer.parentElement.querySelector('a.btn') : null;
+    if (link) link.href = cat.files[date];
+
+    // Update select
+    const sel = document.getElementById('sel_' + catId);
+    if (sel) sel.value = date;
+  };
+
+  window.navigateDate = function(catId, direction) {
+    const sel = document.getElementById('sel_' + catId);
+    if (!sel) return;
+    const idx = sel.selectedIndex + direction;
+    if (idx >= 0 && idx < sel.options.length) {
+      sel.selectedIndex = idx;
+      switchReport(catId, sel.value);
+    }
+  };
+
+  function escapeHTML(str) {
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // Init
+  loadManifest();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 晚间投研日报 · 2026-05-31</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.7;
+    padding: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  h1 { font-size: 20px; color: #e6edf3; margin: 12px 0 4px; border-bottom: 1px solid #21262d; padding-bottom: 8px; }
+  h2 { font-size: 16px; color: #58a6ff; margin: 16px 0 8px; border-left: 3px solid #58a6ff; padding-left: 8px; }
+  h3 { font-size: 14px; color: #79c0ff; margin: 12px 0 6px; }
+  .meta { color: #7d8590; font-size: 12px; margin-bottom: 16px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12.5px; }
+  th { background: #161b22; color: #58a6ff; padding: 6px 8px; text-align: center; border: 1px solid #21262d; font-weight: 600; }
+  td { padding: 6px 8px; border: 1px solid #21262d; text-align: center; }
+  tr:nth-child(even) { background: #161b22; }
+  tr:hover { background: #1c2333; }
+  .up { color: #ef4444; font-weight: 600; }
+  .down { color: #22c55e; font-weight: 600; }
+  .flat { color: #7d8590; }
+  .section { background: #161b22; border-radius: 8px; padding: 12px; margin: 12px 0; border: 1px solid #21262d; }
+  .card { background: #1c2333; border-radius: 6px; padding: 10px; margin: 8px 0; border-left: 3px solid #58a6ff; }
+  .card.warn { border-left-color: #f59e0b; }
+  .card.danger { border-left-color: #ef4444; }
+  .card.success { border-left-color: #22c55e; }
+  ul { padding-left: 18px; margin: 6px 0; }
+  li { margin: 4px 0; }
+  .tag { display: inline-block; background: #1a2332; color: #58a6ff; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin: 2px; border: 1px solid #1e3a5f; }
+  .tag.red { background: #2d1214; color: #ef4444; border-color: #5c1a1d; }
+  .tag.green { background: #0f2910; color: #22c55e; border-color: #1a3d1f; }
+  .tag.yellow { background: #2a1f0a; color: #f59e0b; border-color: #4a3510; }
+  .highlight { color: #f0a500; font-weight: 600; }
+  .divider { border: none; border-top: 1px solid #21262d; margin: 16px 0; }
+  .footer { color: #7d8590; font-size: 11px; text-align: center; margin-top: 20px; padding-top: 12px; border-top: 1px solid #21262d; }
+  .source { color: #58a6ff; font-size: 11px; }
+  .big-num { font-size: 18px; font-weight: 700; }
+  .risk-box { background: #2d1214; border: 1px solid #5c1a1d; border-radius: 6px; padding: 10px; margin: 8px 0; }
+  .risk-box h4 { color: #ef4444; margin-bottom: 6px; }
+  .risk-box ul { color: #fca5a5; }
+  .cat { color: #7d8590; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<h1>📊 晚间投研日报</h1>
+<p class="meta">📅 2026年5月31日（周日）｜覆盖交易日期：2026-05-29（周五收盘）+ 周末增量<br>📊 聚焦48小时内增量信息</p>
+
+<!-- ==================== 一、宏观 ==================== -->
+<h2>一、宏观回顾及前瞻</h2>
+
+<div class="section">
+<h3>1.1 银行间资金面</h3>
+<p class="cat">上周（5/26-5/29）央行持续小额逆回购投放，资金面整体宽松。</p>
+<table>
+<tr><th>日期</th><th>逆回购投放</th><th>净投放</th><th>DR001</th><th>DR007</th><th>SHIBOR隔夜</th></tr>
+<tr><td>5/26（周一）</td><td>2,490亿</td><td class="up">+2,490亿</td><td>1.32%</td><td>1.37%</td><td>1.32%</td></tr>
+<tr><td>5/27（周二）</td><td>1,776亿</td><td class="up">+1,776亿</td><td>1.32%</td><td>1.36%</td><td>1.32%</td></tr>
+<tr><td>5/28（周三）</td><td>1,013亿</td><td class="up">+1,013亿</td><td>1.32%</td><td>1.35%</td><td>1.32%</td></tr>
+<tr><td>5/29（周四）</td><td>1,230亿</td><td class="up">+1,230亿</td><td>1.33%</td><td>1.38%</td><td>1.32%</td></tr>
+</table>
+<p>📌 <strong>7天逆回购利率：</strong>1.40%（连续27个月不变）｜<strong>14天逆回购利率：</strong>1.65%</p>
+<p>📌 <strong>流动性判断：</strong>R007持续低于OMO利率（倒挂），DR001持续低于1.25%。财通证券指出资金利率可能已见底，后续关注跨月+政府债缴款对流动性的边际收紧。</p>
+<table>
+<tr><th>国债收益率</th><th>5/29收盘</th><th>周环比</th></tr>
+<tr><td>1年期</td><td>1.158%</td><td class="down">-10.1bp</td></tr>
+<tr><td>10年期</td><td>1.709%</td><td class="down">-10.3bp</td></tr>
+<tr><td>30年期</td><td>2.205%</td><td class="down">-4.5bp</td></tr>
+</table>
+<p class="cat">债市持续走牛，10年期国债收益率跌破1.71%，反映市场对经济修复力度的谨慎预期及宽松预期强化。</p>
+</div>
+
+<div class="section">
+<h3>1.2 本周末重要宏观/政策新闻</h3>
+<table>
+<tr><th>时间</th><th>事件</th><th>影响</th></tr>
+<tr><td>5/31</td><td>中办、国办印发《关于更高水平更高质量做好节能降碳工作的意见》</td><td>利好新能源/新型储能/绿色算力；数字基础设施纳入重点领域</td></tr>
+<tr><td>5/30</td><td>国务院印发《城市更新"十五五"规划》，改造城镇危旧房50万套、老旧小区11.5万个，总市场规模10-15万亿元</td><td>建材/工程机械/管网受益</td></tr>
+<tr><td>5/30</td><td>MiniMax启动A股上市辅导（与中信证券签署协议）</td><td>AI产业链再添新标的</td></tr>
+<tr><td>5/29</td><td>美股三大股指再创新高，标普500收报7580点</td><td>全球risk-on情绪延续</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h3>1.3 下周宏观前瞻</h3>
+<table>
+<tr><th>时间</th><th>数据/事件</th><th>市场预期</th></tr>
+<tr><td>6/1 09:45</td><td>中国5月财新制造业PMI</td><td>前值50.3，预期50.1</td></tr>
+<tr><td>6/1</td><td>精智达（688627）第三次临时股东大会</td><td>审议定增方案修订</td></tr>
+<tr><td>本周</td><td>A股开启6月首个交易周，关注风格切换信号</td><td>—</td></tr>
+</table>
+</div>
+
+<!-- ==================== 二、市场 ==================== -->
+<h2>二、市场数据回顾及前瞻</h2>
+
+<div class="section">
+<h3>2.1 A股（5月29日收盘 · 5月收官日）</h3>
+<table>
+<tr><th>指数</th><th>收盘价</th><th>当日涨跌</th><th>5月涨跌</th></tr>
+<tr><td>上证指数</td><td>4,068.57</td><td class="down">-0.73%</td><td class="down">-1.06%</td></tr>
+<tr><td>深证成指</td><td>15,575.13</td><td class="down">-1.81%</td><td class="up">+3.10%</td></tr>
+<tr><td>创业板指</td><td>4,037.95</td><td class="down">-2.11%</td><td class="up">+9.81%</td></tr>
+<tr><td>科创50</td><td>1,751.32</td><td>—</td><td class="up">+11.47%</td></tr>
+</table>
+<div class="card">
+  <strong>📊 5月市场特征：</strong>
+  <ul>
+    <li>科技股一枝独秀：半导体+19%、消费电子+20%、AI+11%，科创50和创业板指均创历史新高</li>
+    <li>5月28日创业板指（4125）历史上首次收盘超越上证指数（4098）</li>
+    <li>两融余额达2.93万亿元，逼近3万亿历史大关</li>
+    <li>传统板块全线下跌：金融、消费、地产、医药等创出新低</li>
+    <li>上证指数5月摸高4258（11年新高）后回落，月线由阳转阴</li>
+  </ul>
+</div>
+</div>
+
+<div class="section">
+<h3>2.2 港股（5月29日收盘）</h3>
+<table>
+<tr><th>指数</th><th>收盘价</th><th>当日涨跌</th><th>年初至今</th></tr>
+<tr><td>恒生指数</td><td>25,182.39</td><td class="up">+0.70%</td><td class="down">-1.75%</td></tr>
+<tr><td>恒生科技</td><td>4,884.23</td><td class="down">-0.09%</td><td class="down">-11.45%</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h3>2.3 美股（5月29日收盘 · 再创新高）</h3>
+<table>
+<tr><th>指数</th><th>收盘价</th><th>当日涨跌</th><th>年初至今</th></tr>
+<tr><td>标普500</td><td>7,580.06</td><td class="up">+0.22%</td><td class="up">+10.73%</td></tr>
+<tr><td>纳斯达克</td><td>26,972.62</td><td class="up">+0.20%</td><td class="up">+16.05%</td></tr>
+<tr><td>道琼斯</td><td>51,032.46</td><td class="up">+0.72%</td><td class="up">+6.18%</td></tr>
+</table>
+<p class="cat">戴尔财报超预期（AI服务器暴增757%、积压订单513亿美元），盘后暴涨38%，带动AI产业链全面重估。</p>
+</div>
+
+<div class="section">
+<h3>2.4 行业轮动（5月29日）</h3>
+<p><strong>领涨板块（申万行业）：</strong></p>
+<table>
+<tr><th>行业</th><th>涨跌幅</th><th>领涨股</th></tr>
+<tr><td>白酒Ⅱ</td><td class="up">+3.74%</td><td>酒鬼酒（涨停）</td></tr>
+<tr><td>非白酒</td><td class="up">+2.79%</td><td>百润股份</td></tr>
+<tr><td>白色家电</td><td class="up">+2.76%</td><td>海尔智家</td></tr>
+<tr><td>电力</td><td class="up">+2.69%</td><td>珈伟新能/华能国际</td></tr>
+<tr><td>煤炭开采</td><td class="up">+2.50%</td><td>新集能源</td></tr>
+</table>
+<p class="cat">热点概念：电力改革+2.73% · 免税店概念+2.94% · 证金持股主力净流入55亿元</p>
+<p><strong>资金流向：</strong>防御性板块（电力/白酒/银行）吸金明显，前期强势的半导体/AI板块高位震荡调整。京东方A当日龙虎榜北向净买入1.59亿元（日跌幅偏离值达7%）。</p>
+</div>
+
+<div class="section">
+<h3>2.5 下周交易前瞻</h3>
+<ul>
+  <li>市场处于科技股高位震荡+传统板块补涨的切换窗口</li>
+  <li>5月科技股独舞后，6月关注风格是否切换至价值/周期板块</li>
+  <li>中办国办节能降碳政策将催化新能源、储能、绿色算力板块</li>
+  <li>关注周二（6/2）5月财新服务业PMI</li>
+</ul>
+</div>
+
+<!-- ==================== 三、持仓个股 ==================== -->
+<h2>三、持仓个股当日增量信息</h2>
+<p class="cat">⚠️ 不含股价、涨跌幅、成交额、换手率、市盈率、市净率等基础交易数据。聚焦公告/研报/调研/产业动态/催化剂。</p>
+
+<!-- 信达生物 -->
+<div class="section">
+<h3>🔬 信达生物（01801.HK）</h3>
+<div class="card success">
+  <span class="tag red">🔥 重大合作</span>
+  <p><strong>5月29日：</strong>信达生物与<strong>辉瑞</strong>签署<strong>105亿美元</strong>全球战略合作协议，涵盖12个肿瘤早期源头创新项目（8个信达管线+4个辉瑞提议全新项目）。</p>
+</div>
+<table>
+<tr><th>财务条款</th><th>合作模式</th><th>催化剂</th></tr>
+<tr><td>首付款 <span class="highlight">6.5亿美元</span><br>潜在里程碑最高 <span class="highlight">98.5亿美元</span><br>获批项目可获双位数销售分成</td><td>4个关键项目：全球共同开发+美欧共同商业化（Co-Co），共享利润<br>4个项目：大中华区外独家许可，辉瑞承担主要开发成本<br>4个项目：全球独家许可，辉瑞承担全球开发成本</td><td>辉瑞预计Q3完成交易<br>核心管线数据读出<br>后续共同商业化落地</td></tr>
+</table>
+<p class="source">📎 来源：信达生物港交所公告、经济观察报、上海证券报（2026-05-29）</p>
+</div>
+
+<!-- 长川科技 -->
+<div class="section">
+<h3>🔬 长川科技（300604）</h3>
+<div class="card">
+  <span class="tag green">研报·买入</span>
+  <p><strong>广发证券：</strong>25年业绩超预期（归母13.31亿+190%），助力国产算力，维持"买入"。</p>
+</div>
+<div class="card">
+  <span class="tag green">研报·深度</span>
+  <p><strong>长江证券深度报告：</strong>AI驱动测试设备量价齐升，平台型龙头加速成长。D9000 SoC测试机先发优势，存储测试机充分受益扩产周期，给予2026年50倍PE，合理价值186.13元/股。</p>
+</div>
+<div class="card">
+  <span class="tag">产业动态</span>
+  <p><strong>DeepSeek-V4</strong>预览版发布，公司有望受益。受限于高端算力，Pro服务吞吐有限，预计下半年<strong>昇腾950超节点</strong>批量上市后Pro价格大幅下降，公司作为国内测试机龙头将充分受益。</p>
+</div>
+<p class="cat">📎 5/11长川科技涨停+20%创历史新高（218.41元），年内涨幅115.59%，市值增加约742亿元。</p>
+<p class="source">📎 来源：腾讯自选股研报、长江商报（2026-05-12）</p>
+</div>
+
+<!-- 精智达 -->
+<div class="section">
+<h3>🔬 精智达（688627）</h3>
+<div class="card warn">
+  <span class="tag yellow">📋 定增修订</span>
+  <p><strong>5月29日公告：</strong>定增方案修订，募资上限从原<strong>29.019亿元下调至28.5658亿元</strong>（减少约4532万元）。调整涉及"半导体存储测试设备研发及产业化智造项目"中产业化智造子项目。本次发行方案尚需上交所审核及证监会同意注册。</p>
+</div>
+<div class="card">
+  <span class="tag">📅 股东大会</span>
+  <p><strong>6月1日（周一）</strong>召开第三次临时股东大会，审议定增方案修订。</p>
+</div>
+<div class="card">
+  <span class="tag green">研报·增持</span>
+  <p><strong>兴业证券首次覆盖：</strong>存储测试设备布局完善，未来成长可期。预计2026-2028年归母净利2.82/4.43/6.83亿元，给予"增持"评级。</p>
+</div>
+<p class="source">📎 来源：南方财经、内部研报（2026-05-29/2026-04-10）</p>
+</div>
+
+<!-- 宁德时代 -->
+<div class="section">
+<h3>🔬 宁德时代（300750）</h3>
+<div class="card">
+  <span class="tag">🌐 演讲/产业动态</span>
+  <p><strong>5月27日：</strong>宁德时代创始人兼董事长<strong>曾毓群</strong>在2026金砖国家新工业革命伙伴关系论坛发表主题演讲："零碳科技是金砖国家换道超车的新机遇。AI是这次革命的大脑，新能源是心脏。"</p>
+</div>
+<div class="card">
+  <span class="tag">🌐 产业布局</span>
+  <p>入股<strong>世纪互联</strong>（数据中心场景）+ 41亿战略投资<strong>中恒电气</strong>（HVDC），构建"风光储绿电直连-HVDC"全链条能源解决方案能力。世纪互联在全国30+城市运营50+数据中心，为宁德时代综合能源解决方案提供优质落地场景。</p>
+</div>
+<div class="card">
+  <span class="tag green">研报·买入</span>
+  <p><strong>机构一致观点：</strong>Q1营收1291亿+52%，净利润207亿+49%，出货超200GWh，储能占比升至25%。维持"买入"评级，目标价512元（2026年25.7倍PE）。</p>
+</div>
+<p class="source">📎 来源：腾讯自选股、上海证券报、内部研报（2026-05-27/2026-04-15）</p>
+</div>
+
+<!-- 工业富联 -->
+<div class="section">
+<h3>🔬 工业富联（601138）</h3>
+<div class="card success">
+  <span class="tag red">🔥 产业链催化</span>
+  <p><strong>5月29日：</strong>戴尔发布2027财年第一财季财报：<strong>AI服务器收入暴增757%至161亿美元</strong>，单季AI订单总额高达244亿美元，<strong>积压订单513亿美元</strong>远超市场预期。财报发布后戴尔盘后暴涨近40%。</p>
+</div>
+<div class="card">
+  <span class="tag">调研纪要（5/15）</span>
+  <p><strong>下一代平台未延期：</strong>正按既定计划推进生产整备与组装改样。供应链参与深度较上一代进一步提升，覆盖交换机、计算托盘及中板等关键领域。</p>
+  <p><strong>AI服务器：</strong>当前主力产品出货顺畅，为上半年增长奠定坚实基础。订单已锁定至<strong>2027年</strong>。</p>
+  <p><strong>CPO全光交换机：</strong>样机开始出货，今年预计出货上万台。800G及以上高速交换机Q1出货量同比增长<strong>1.6倍</strong>。</p>
+</div>
+<div class="card">
+  <span class="tag green">研报·推荐</span>
+  <p><strong>华创证券：</strong>AI需求驱动业绩高增，云计算及交换机业务双轮驱动。预计2026-2028年归母净利647/953/1359亿元，维持"推荐"评级。</p>
+</div>
+<p class="source">📎 来源：上证报、证券之星、内部研报（2026-05-29/2026-05-19）</p>
+</div>
+
+<!-- 容百科技 -->
+<div class="section">
+<h3>🔬 容百科技（688005）</h3>
+<div class="card">
+  <span class="tag">产业动态·钠电</span>
+  <p><strong>钠电：</strong>已斩获多家下游明确需求，预计<strong>下半年启动产能建设</strong>，地方落地事宜接近收尾，规划数十万吨级生产基地。技术及产品性能行业领先。</p>
+</div>
+<div class="card">
+  <span class="tag">产业动态·LMFP</span>
+  <p><strong>磷酸锰铁锂（LMFP）：</strong>2025年业务增长明显，产品已在BEV、PHEV、商用车纯用、电动工具、3C数码等领域实现量产突破，多家EV客户<strong>纯用方案验证进展超预期</strong>，2026年有望实现LMFP纯用方案上车和小批量供应。</p>
+</div>
+<div class="card">
+  <span class="tag">产业动态·固态</span>
+  <p><strong>固态：</strong>持续布局硫化物路线，推进硫化锂中试线建设；全固态超高镍、富锂锰基正极已实现<strong>吨级供货</strong>，海内外客户测试顺利。</p>
+</div>
+<p class="source">📎 来源：内部研报、南方财经（2026-05-25/2026-04-30）</p>
+</div>
+
+<!-- 京东方A -->
+<div class="section">
+<h3>🔬 京东方A（000725）</h3>
+<div class="card">
+  <span class="tag">关联动态</span>
+  <p><strong>5月29日：</strong>天眼查显示，长沙艺云数智科技有限公司成立，由东方艺云科技集团全资持股，后者由<strong>京东方A、上海国科京东方</strong>等共同持股。</p>
+</div>
+<div class="card">
+  <span class="tag green">研报·买入</span>
+  <p><strong>华鑫证券首次覆盖：</strong>业绩稳中有升，LCD、OLED"双主流"技术格局深化。面板价格高位企稳，与<strong>康宁签署备忘录</strong>，围绕玻璃基封装载板、可折叠玻璃、钙钛矿玻璃基板、光互连重点合作。预测2026-2028年EPS 0.20/0.32/0.40元，给予"买入"评级。</p>
+</div>
+<div class="card warn">
+  <span class="tag yellow">⚠️ 风险提示</span>
+  <p>公司与康宁合作备忘录不涉及重大资产重组，公司<strong>反复提示2-3年内对业绩无重大影响</strong>。5月29日京东方A入选龙虎榜（日跌幅偏离值达7%），北向资金净买入1.59亿元。</p>
+</div>
+<p class="source">📎 来源：南方财经、公司研报（2026-05-29/2026-05-17）</p>
+</div>
+
+<!-- 芯碁微装 -->
+<div class="section">
+<h3>🔬 芯碁微装（688630）</h3>
+<div class="card">
+  <span class="tag">订单确认</span>
+  <p><strong>5月25日互动平台回复：</strong>近期来自国内外头部PCB客户的<strong>订单饱满</strong>，尤其在高端载板、HDI及高多层板领域需求强劲。作为直写光刻设备核心供应商，充分受益此轮技术迭代与扩产周期。</p>
+</div>
+<div class="card">
+  <span class="tag green">研报·买入</span>
+  <p><strong>东吴证券：</strong>Q1营收5.15亿+112%，归母净利润1.08亿+109%，PCB+先进封装双轮驱动。WLP直写光刻设备已获头部客户量产订单，在手订单突破<strong>1亿元</strong>。上调2026-2027年盈利预测，维持"买入"评级。</p>
+</div>
+<div class="card">
+  <span class="tag">📈 交易动态</span>
+  <p>5月28日龙虎榜（日涨幅超15%），北向资金净买入<strong>527.74万元</strong>。5月29日融资余额9.88亿元，融资买入额3.97亿元。</p>
+</div>
+<p class="source">📎 来源：格隆汇、腾讯自选股研报（2026-05-25/2026-05-19）</p>
+</div>
+
+<!-- ==================== 四、知识库 ==================== -->
+<h2>四、知识库增量内容</h2>
+
+<div class="section">
+<h3>4.1 IMA 知识库</h3>
+<div class="card warn">
+  <p>⚠️ <strong>IMA 连接器当前未连接（disconnected）</strong>，无法查询知识库增量内容。本次以公开信息检索及 NeoData 内部研报作为补充。</p>
+</div>
+</div>
+
+<div class="section">
+<h3>4.2 知识星球（ZSXQ）</h3>
+<div class="card warn">
+  <p>⚠️ <strong>ZSXQ 受限星球</strong>（行业研究&调研纪要、🍊橙子调研、调研社等）需要成员权限，自动化场景下跳过。公开可搜索星球（水木调研纪要-2.0、调研纪要更新）未返回过去24h新发内容。</p>
+</div>
+</div>
+
+<!-- ==================== 五、综合评估 ==================== -->
+<h2>五、综合评估</h2>
+
+<div class="section">
+<h3>5.1 今日最大增量</h3>
+<table>
+<tr><th>优先级</th><th>事件</th><th>影响标的</th></tr>
+<tr><td><span class="tag red">🔥🔥🔥</span></td><td>信达生物×辉瑞105亿美元全球战略合作协议</td><td>信达生物</td></tr>
+<tr><td><span class="tag red">🔥🔥🔥</span></td><td>戴尔AI服务器暴增757%，积压订单513亿美元，盘后+38%</td><td>工业富联</td></tr>
+<tr><td><span class="tag red">🔥🔥</span></td><td>中办国办节能降碳意见，圈定五大重点领域（含数字基础设施）</td><td>宁德时代/新能源/电力</td></tr>
+<tr><td><span class="tag red">🔥🔥</span></td><td>城市更新"十五五"规划10-15万亿市场</td><td>建材/工程机械</td></tr>
+<tr><td><span class="tag">🔥</span></td><td>5月收官：创业板首超上证后回调，科技独舞vs传统补跌</td><td>全市场</td></tr>
+<tr><td><span class="tag">🔥</span></td><td>精智达定增修订+6/1股东大会</td><td>精智达</td></tr>
+</table>
+</div>
+
+<div class="risk-box">
+<h4>⚠️ 风险关注</h4>
+<ul>
+  <li><strong>两融余额逼近3万亿</strong>，杠杆风险积累，一旦回调"踩踏"不可避免</li>
+  <li><strong>科技股5月单边上涨后</strong>，6月筹码松动+风格切换概率上升</li>
+  <li><strong>京东方A日跌幅偏离值达7%</strong>，传统龙头压力未解</li>
+  <li><strong>降准降息后资金利率已处于极低水平</strong>，进一步下行空间有限，R007与OMO倒挂或只是短暂现象</li>
+  <li><strong>美联储降息时点仍不确定</strong>，美伊冲突等地缘风险需持续关注</li>
+</ul>
+</div>
+
+<hr class="divider">
+<p class="footer">
+  📊 报告生成时间：2026年5月31日 18:00 CST<br>
+  📎 数据来源：NeoData Financial Search、央行官网、公开财经媒体<br>
+  ⚠️ 本报告基于公开信息整理，<strong>不构成投资建议</strong>
+</p>
+
+</body>
+</html>
