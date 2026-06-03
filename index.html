@@ -3,245 +3,533 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RJ Research Hub</title>
+<title>RJ Research</title>
 <style>
 :root {
-  --bg: #0d1117;
-  --bg-card: #161b22;
-  --bg-hover: #1c2333;
-  --border: #30363d;
-  --text: #c9d1d9;
-  --text-muted: #8b949e;
-  --accent: #58a6ff;
-  --header-bg: #010409;
-  --radius: 8px;
+  --bg: #0a0b0d;
+  --surface: #111318;
+  --surface-hover: #1a1d24;
+  --border: #1e2128;
+  --border-active: #3a3d44;
+  --text: #d4d6db;
+  --text-secondary: #7a7d85;
+  --text-muted: #4e5159;
+  --accent: #c8a95a;
+  --accent-dim: #8a7136;
+  --red: #d9534f;
+  --green: #5cb85c;
+  --radius: 6px;
+  --font-serif: "Georgia", "Times New Roman", "STSong", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
 }
-.header {
-  background: var(--header-bg);
+
+/* ── Nav ── */
+.nav {
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
-  padding: 16px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 0 24px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a0b0d;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-text .brand {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+
+.logo-text .sub {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-right {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 40px 24px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 28px 0 0;
+}
+
+/* ── Tabs ── */
+.tabs-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs-wrap::-webkit-scrollbar { height: 0; }
+
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  min-width: max-content;
+}
+
+.tab {
+  padding: 14px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: var(--font-sans);
+}
+
+.tab:hover {
+  color: var(--text-secondary);
+  border-bottom-color: var(--border-active);
+}
+
+.tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.tab .count {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.tab.active .count {
+  color: var(--accent-dim);
+}
+
+/* ── Content ── */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Controls */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.toolbar-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.date-select {
+  padding: 8px 12px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  min-width: 150px;
+  font-family: var(--font-sans);
+  letter-spacing: 0.5px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%237a7d85' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.date-select:focus {
+  outline: none;
+  border-color: var(--accent-dim);
+}
+
+.btn {
+  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  transition: all 0.15s;
+}
+
+.btn:hover {
+  border-color: var(--accent-dim);
+  color: var(--text);
+}
+
+.btn-nav {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* Report frame */
+.report-frame {
+  border: 1px solid var(--border);
+  background: #fff;
+  min-height: 500px;
+}
+
+.report-frame iframe {
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  border: none;
+  display: block;
+}
+
+/* Empty state */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  color: var(--text-muted);
+  gap: 12px;
+}
+
+.empty .icon {
+  font-size: 32px;
+  opacity: 0.4;
+}
+
+.empty p {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 24px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   gap: 8px;
 }
-.header h1 { font-size: 18px; font-weight: 600; color: var(--text); }
-.header .subtitle { font-size: 12px; color: var(--text-muted); }
-.header .badge {
-  font-size: 11px; padding: 4px 10px; border-radius: 12px;
-  background: var(--bg-card); border: 1px solid var(--border); color: var(--text-muted);
+
+.footer-left {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
-.container { max-width: 900px; margin: 0 auto; padding: 16px; }
 
-/* Section */
-.section { margin-bottom: 12px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--bg-card); }
-.section-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px; cursor: pointer; user-select: none; transition: background 0.15s;
+.footer-right {
+  font-size: 10px;
+  color: var(--text-muted);
 }
-.section-header:hover { background: var(--bg-hover); }
-.section-header .left { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.section-header .icon { font-size: 20px; flex-shrink: 0; }
-.section-header .info { min-width: 0; }
-.section-header .name { font-size: 14px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.section-header .desc { font-size: 11px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.section-header .right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.section-header .count { font-size: 11px; background: var(--bg); padding: 2px 8px; border-radius: 10px; color: var(--text-muted); white-space: nowrap; }
-.section-header .arrow { font-size: 12px; color: var(--text-muted); transition: transform 0.2s; }
-.section.open .section-header .arrow { transform: rotate(90deg); }
 
-.section-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-.section.open .section-body { max-height: none; }
-.section-content { padding: 0 16px 16px; border-top: 1px solid var(--border); }
-
-.controls { display: flex; align-items: center; gap: 10px; padding: 12px 0; flex-wrap: wrap; }
-.controls label { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
-.controls select { padding: 6px 10px; font-size: 13px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; min-width: 150px; }
-.controls select:focus { outline: none; border-color: var(--accent); }
-.controls .btn { padding: 6px 14px; font-size: 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; text-decoration: none; white-space: nowrap; }
-.controls .btn:hover { background: var(--bg-hover); border-color: var(--accent); }
-.controls .date-nav { display: flex; align-items: center; gap: 4px; }
-.controls .date-nav button { padding: 4px 8px; font-size: 12px; border-radius: 4px; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; }
-.controls .date-nav button:hover { border-color: var(--accent); }
-
-.report-viewer { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff; min-height: 400px; }
-.report-viewer iframe { width: 100%; height: 80vh; min-height: 500px; border: none; display: block; }
-
-.placeholder { display: flex; align-items: center; justify-content: center; min-height: 160px; color: var(--text-muted); font-size: 13px; flex-direction: column; gap: 8px; }
-.placeholder .icon { font-size: 36px; opacity: 0.5; }
-.footer { text-align: center; padding: 24px; font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 20px; }
-
-@media (max-width: 600px) {
-  .header { padding: 12px 14px; }
-  .header h1 { font-size: 16px; }
-  .container { padding: 10px; }
-  .section-header { padding: 12px; }
-  .section-header .name { font-size: 13px; }
-  .controls { gap: 6px; }
-  .controls select { min-width: 130px; }
-  .report-viewer iframe { height: 60vh; min-height: 400px; }
+/* Loading */
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px 0;
 }
-@media (max-width: 400px) {
-  .section-header .desc { display: none; }
+
+.skeleton-line {
+  height: 14px;
+  background: var(--surface);
+  border-radius: 3px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-line:nth-child(2) { width: 70%; animation-delay: 0.1s; }
+.skeleton-line:nth-child(3) { width: 85%; animation-delay: 0.2s; }
+.skeleton-line:nth-child(4) { width: 50%; animation-delay: 0.3s; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav { padding: 0 16px; height: 48px; }
+  .hero { padding: 28px 16px 16px; }
+  .hero h1 { font-size: 22px; }
+  .tabs-wrap { padding: 0 16px; }
+  .tab { padding: 12px 14px; font-size: 11px; }
+  .content { padding: 16px; }
+  .toolbar { gap: 8px; }
+  .report-frame iframe { height: 60vh; min-height: 400px; }
+  .footer { padding: 20px 16px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 19px; }
+  .tab { padding: 10px 12px; font-size: 10px; }
 }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div>
-    <h1>RJ Research Hub</h1>
-    <div class="subtitle">研究报告 · 自动更新 · 多设备访问</div>
+<nav class="nav">
+  <a class="logo" href="/">
+    <div class="logo-mark">RJ</div>
+    <div class="logo-text">
+      <span class="brand">RJ Research</span>
+      <span class="sub">Investment Intelligence</span>
+    </div>
+  </a>
+  <div class="nav-right" id="navStats"></div>
+</nav>
+
+<section class="hero">
+  <h1>投研报告存档</h1>
+  <p>每日市场洞察、行业深度分析与个股研究报告。由 Cleo 自动生成，实时更新。</p>
+  <div class="divider"></div>
+</section>
+
+<div class="tabs-wrap" id="tabsWrap">
+  <div class="tabs" id="tabs"></div>
+</div>
+
+<div class="content" id="mainContent">
+  <div class="skeleton">
+    <div class="skeleton-line"></div>
+    <div class="skeleton-line"></div>
+    <div class="skeleton-line"></div>
+    <div class="skeleton-line"></div>
   </div>
-  <span class="badge" id="updateTime"></span>
-  <span class="badge" style="margin-left:4px">v2026.06.03</span>
 </div>
 
-<div class="container" id="app"></div>
-
-<div class="footer">
-  RJ Research Hub · 由 Cleo 自动生成 · Cloudflare 托管
-</div>
+<footer class="footer">
+  <div class="footer-left">RJ Research &copy; 2026</div>
+  <div class="footer-right">Powered by Cleo &middot; Cloudflare Pages</div>
+</footer>
 
 <script>
 (function() {
   var CAT_ICONS = {
-    morning: '\u{1F305}', evening: '\u{1F303}', daily: '\u{1F4CA}',
-    national_team: '\u{1F1E8}\u{1F1F3}', ai_bubble: '\u{1F4AD}',
-    ai_news: '\u{1F916}', deep_research: '\u{1F50D}', ai_tracking: '\u{1F465}'
+    morning: '&#x2600;',
+    evening: '&#x1F319;',
+    national_team: '&#x1F1E8;&#x1F1F3;',
+    ai_bubble: '&#x25CB;',
+    ai_news: '&#x25C6;',
+    deep_research: '&#x25A3;',
+    ai_tracking: '&#x25A1;'
   };
 
-  var app = document.getElementById('app');
-  var updateBadge = document.getElementById('updateTime');
+  var CAT_NAMES_SHORT = {
+    morning: '早间日报',
+    evening: '晚间日报',
+    national_team: '国家队',
+    ai_bubble: 'AI 泡沫',
+    ai_news: 'AI 新闻',
+    deep_research: '深度研究',
+    ai_tracking: '人物追踪'
+  };
 
-  function escapeHTML(str) {
-    var div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
+  var tabsEl = document.getElementById('tabs');
+  var mainContent = document.getElementById('mainContent');
+  var navStats = document.getElementById('navStats');
+  var activeCat = null;
+  var activeDate = null;
+
+  function escapeHTML(s) {
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
   }
 
-  function switchReport(catId, date) {
-    var cat = window.__MANIFEST.categories.find(function(c) { return c.id === catId; });
+  function setActiveTab(catId) {
+    activeCat = catId;
+    var allTabs = tabsEl.querySelectorAll('.tab');
+    allTabs.forEach(function(t) {
+      t.classList.toggle('active', t.dataset.catId === catId);
+    });
+  }
+
+  function switchDate(date) {
+    if (!activeCat) return;
+    var cat = window.__MANIFEST.categories.find(function(c) { return c.id === activeCat; });
     if (!cat || !cat.files[date]) return;
-    var viewer = document.getElementById('viewer_' + catId);
-    if (viewer) {
-      viewer.innerHTML = '<iframe src="' + cat.files[date] + '" title="' + escapeHTML(cat.name) + ' - ' + date + '"></iframe>';
+    activeDate = date;
+    var frame = document.getElementById('reportFrame');
+    if (frame) {
+      frame.innerHTML = '<iframe src="' + cat.files[date] + '" title="Report - ' + date + '"></iframe>';
     }
-    var link = document.querySelector('#section_' + catId + ' .btn');
-    if (link) link.href = cat.files[date];
-    var sel = document.getElementById('sel_' + catId);
+    var sel = document.getElementById('dateSelect');
     if (sel) sel.value = date;
+    var link = document.getElementById('openLink');
+    if (link) link.href = cat.files[date];
   }
 
-  window.switchReport = switchReport;
-
-  window.navigateDate = function(catId, dir) {
-    var sel = document.getElementById('sel_' + catId);
+  function navigateDate(dir) {
+    if (!activeCat) return;
+    var sel = document.getElementById('dateSelect');
     if (!sel) return;
     var idx = sel.selectedIndex + dir;
     if (idx >= 0 && idx < sel.options.length) {
       sel.selectedIndex = idx;
-      switchReport(catId, sel.value);
+      switchDate(sel.value);
     }
-  };
+  }
 
-  function loadSection(section, cat) {
-    var content = section.querySelector('.section-content');
+  window.switchDate = switchDate;
+  window.navigateDate = navigateDate;
+
+  function renderCategory(cat) {
+    activeCat = cat.id;
+    setActiveTab(cat.id);
+
     var dates = Object.keys(cat.files).sort().reverse();
-
     if (dates.length === 0) {
-      content.innerHTML = '<div class="placeholder"><span class="icon">\u{1F4ED}</span><span>暂无报告</span></div>';
+      mainContent.innerHTML =
+        '<div class="empty"><span class="icon">&#x25A1;</span><p>暂无报告</p></div>';
       return;
     }
 
-    var latestDate = dates[0];
-    var html = '<div class="controls">' +
-      '<label>选择日期：</label>' +
-      '<select id="sel_' + cat.id + '" onchange="switchReport(\'' + cat.id + '\', this.value)">';
+    activeDate = dates[0];
+
+    var html = '<div class="toolbar">';
+    html += '<span class="toolbar-label">日期</span>';
+    html += '<select class="date-select" id="dateSelect" onchange="switchDate(this.value)">';
     dates.forEach(function(d) {
-      html += '<option value="' + d + '"' + (d === latestDate ? ' selected' : '') + '>' + d + '</option>';
+      html += '<option value="' + d + '"' + (d === activeDate ? ' selected' : '') + '>' + d + '</option>';
     });
-    html += '</select>' +
-      '<div class="date-nav">' +
-        '<button onclick="navigateDate(\'' + cat.id + '\', -1)">\u25C0</button>' +
-        '<button onclick="navigateDate(\'' + cat.id + '\', 1)">\u25B6</button>' +
-      '</div>' +
-      '<a class="btn" href="' + cat.files[latestDate] + '" target="_blank">新窗口打开 \u2197</a>' +
-      '</div>' +
-      '<div class="report-viewer" id="viewer_' + cat.id + '">' +
-        '<iframe src="' + cat.files[latestDate] + '" title="' + escapeHTML(cat.name) + ' - ' + latestDate + '" loading="lazy"></iframe>' +
-      '</div>';
-    content.innerHTML = html;
+    html += '</select>';
+    html += '<button class="btn btn-nav" onclick="navigateDate(-1)">&#x25C0;</button>';
+    html += '<button class="btn btn-nav" onclick="navigateDate(1)">&#x25B6;</button>';
+    html += '<span style="flex:1"></span>';
+    html += '<a class="btn" id="openLink" href="' + cat.files[activeDate] + '" target="_blank">在新窗口打开 &#x2197;</a>';
+    html += '</div>';
+    html += '<div class="report-frame" id="reportFrame">';
+    html += '<iframe src="' + cat.files[activeDate] + '" title="' + escapeHTML(cat.name) + ' - ' + activeDate + '"></iframe>';
+    html += '</div>';
+
+    mainContent.innerHTML = html;
   }
+
+  function renderTabs(manifest) {
+    var html = '';
+    manifest.categories.forEach(function(cat, idx) {
+      var short = CAT_NAMES_SHORT[cat.id] || cat.name;
+      var icon = CAT_ICONS[cat.id] || '';
+      html += '<button class="tab' + (idx === 0 ? ' active' : '') + '" data-cat-id="' + cat.id + '" onclick="window.__loadCat(\'' + cat.id + '\')">';
+      html += '<span>' + icon + '</span>';
+      html += short;
+      html += ' <span class="count">' + cat.reportCount + '</span>';
+      html += '</button>';
+    });
+    tabsEl.innerHTML = html;
+  }
+
+  window.__loadCat = function(catId) {
+    var cat = window.__MANIFEST.categories.find(function(c) { return c.id === catId; });
+    if (cat) renderCategory(cat);
+  };
 
   function render() {
     var m = window.__MANIFEST;
-    if (!m) {
-      app.innerHTML = '<div class="placeholder"><span class="icon">\u26A0</span><span>数据加载失败，请刷新页面</span></div>';
+    if (!m || !m.categories || m.categories.length === 0) {
+      mainContent.innerHTML = '<div class="empty"><span class="icon">&#x26A0;</span><p>暂无报告数据</p></div>';
       return;
     }
 
-    updateBadge.textContent = m.categories.length + ' 个分类 · ' +
-      m.categories.reduce(function(s, c) { return s + c.reportCount; }, 0) + ' 份报告';
+    var totalReports = m.categories.reduce(function(s, c) { return s + c.reportCount; }, 0);
+    navStats.textContent = m.categories.length + ' Sections · ' + totalReports + ' Reports';
 
-    app.innerHTML = '';
-    m.categories.forEach(function(cat, idx) {
-      var section = document.createElement('div');
-      section.className = 'section';
-      section.id = 'section_' + cat.id;
-
-      var header = document.createElement('div');
-      header.className = 'section-header';
-      header.innerHTML =
-        '<div class="left">' +
-          '<span class="icon">' + (CAT_ICONS[cat.id] || '\u{1F4C4}') + '</span>' +
-          '<div class="info">' +
-            '<div class="name">' + escapeHTML(cat.name) + '</div>' +
-            '<div class="desc">' + escapeHTML(cat.description) + '</div>' +
-          '</div>' +
-        '</div>' +
-        '<div class="right">' +
-          '<span class="count">' + cat.reportCount + ' 份</span>' +
-          '<span class="arrow">\u25B6</span>' +
-        '</div>';
-
-      var body = document.createElement('div');
-      body.className = 'section-body';
-      body.innerHTML = '<div class="section-content"></div>';
-
-      header.addEventListener('click', function() {
-        var isOpen = section.classList.contains('open');
-        section.classList.toggle('open');
-        if (!isOpen && !section.dataset.loaded) {
-          loadSection(section, cat);
-          section.dataset.loaded = '1';
-        }
-      });
-
-      section.appendChild(header);
-      section.appendChild(body);
-      app.appendChild(section);
-
-      if (idx === 0) {
-        setTimeout(function() {
-          section.classList.add('open');
-          loadSection(section, cat);
-          section.dataset.loaded = '1';
-        }, 100);
-      }
-    });
+    renderTabs(m);
+    renderCategory(m.categories[0]);
   }
 
   window.renderHub = render;
@@ -249,9 +537,9 @@ body {
 </script>
 
 <script>
-window.__MANIFEST = {"categories": [{"id": "morning", "name": "早间投研日报", "description": "每日早间隔夜增量信息汇总", "reportCount": 6, "latestDate": "2026-06-03", "files": {"2026-06-03": "reports/早间日报_2026-06-03.html", "2026-06-02": "reports/早间日报_2026-06-02.html", "2026-06-01": "reports/早间日报_2026-06-01.html", "2026-05-30": "reports/早间日报_2026-05-30.html", "2026-05-29": "reports/早间日报_2026-05-29.html", "2026-05-28": "reports/早间日报_2026-05-28.html"}}, {"id": "evening", "name": "晚间投研日报", "description": "每日晚间市场复盘与总结", "reportCount": 7, "latestDate": "2026-06-02", "files": {"2026-06-02": "reports/晚间日报_2026-06-02.html", "2026-06-01": "reports/晚间日报_2026-06-01.html", "2026-05-31": "reports/晚间日报_2026-05-31.html", "2026-05-30": "reports/晚间日报_2026-05-30.html", "2026-05-29": "reports/晚间日报_2026-05-29.html", "2026-05-28": "reports/晚间日报_2026-05-28.html", "2026-05-27": "reports/晚间日报_2026-05-27.html"}}, {"id": "daily", "name": "投研日报", "description": "投研日报汇总", "reportCount": 2, "latestDate": "2026-05-29", "files": {"2026-05-29": "reports/投研日报_2026-05-29.html", "2026-05-28": "reports/投研日报_2026-05-28.html"}}, {"id": "national_team", "name": "国家队增减持追踪", "description": "国家队增减持每日动向", "reportCount": 1, "latestDate": "2026-06-01", "files": {"2026-06-01": "reports/每日国家队增减持动向_2026-06-01.html"}}, {"id": "ai_bubble", "name": "海外AI泡沫评估", "description": "美股AI泡沫监测与分析", "reportCount": 1, "latestDate": "2026-05-31", "files": {"2026-05-31": "reports/海外AI泡沫评估_2026-05-31.html"}}, {"id": "ai_news", "name": "每日AI新闻", "description": "AI行业每日新闻汇总", "reportCount": 4, "latestDate": "2026-06-03", "files": {"2026-06-03": "reports/每日AI新闻_2026-06-03.html", "2026-06-02": "reports/每日AI新闻_2026-06-02.html", "2026-06-01": "reports/每日AI新闻_2026-06-01.html", "2026-05-31": "reports/每日AI新闻_2026-05-31.html"}}, {"id": "deep_research", "name": "深度研究报告", "description": "行业与个股深度分析", "reportCount": 5, "latestDate": "2026-06-02", "files": {"2026-06-02": "reports/精智达FT测试机技术分析_2026-06-02.html", "2026-06-01": "reports/WorkBuddy深度研究_2026-06-01.html", "2026-05-31": "reports/钠离子电池行业研究_2026-05-31.html", "2026-05-30": "reports/夏季电力主题_2026-05-30.html", "2026-05-29": "reports/石药集团分析_2026-05-29.html"}}]};
+window.__MANIFEST = {"categories": [{"id": "morning", "name": "早间投研日报", "description": "每日早间隔夜增量信息汇总", "reportCount": 6, "latestDate": "2026-06-03", "files": {"2026-06-03": "reports/早间日报_2026-06-03.html", "2026-06-02": "reports/早间日报_2026-06-02.html", "2026-06-01": "reports/早间日报_2026-06-01.html", "2026-05-30": "reports/早间日报_2026-05-30.html", "2026-05-29": "reports/早间日报_2026-05-29.html", "2026-05-28": "reports/早间日报_2026-05-28.html"}}, {"id": "evening", "name": "晚间投研日报", "description": "每日晚间市场复盘与总结", "reportCount": 7, "latestDate": "2026-06-02", "files": {"2026-06-02": "reports/晚间日报_2026-06-02.html", "2026-06-01": "reports/晚间日报_2026-06-01.html", "2026-05-31": "reports/晚间日报_2026-05-31.html", "2026-05-30": "reports/晚间日报_2026-05-30.html", "2026-05-29": "reports/晚间日报_2026-05-29.html", "2026-05-28": "reports/晚间日报_2026-05-28.html", "2026-05-27": "reports/晚间日报_2026-05-27.html"}}, {"id": "national_team", "name": "国家队增减持追踪", "description": "国家队增减持每日动向", "reportCount": 1, "latestDate": "2026-06-01", "files": {"2026-06-01": "reports/每日国家队增减持动向_2026-06-01.html"}}, {"id": "ai_bubble", "name": "海外AI泡沫评估", "description": "美股AI泡沫监测与分析", "reportCount": 1, "latestDate": "2026-05-31", "files": {"2026-05-31": "reports/海外AI泡沫评估_2026-05-31.html"}}, {"id": "ai_news", "name": "每日AI新闻", "description": "AI行业每日新闻汇总", "reportCount": 4, "latestDate": "2026-06-03", "files": {"2026-06-03": "reports/每日AI新闻_2026-06-03.html", "2026-06-02": "reports/每日AI新闻_2026-06-02.html", "2026-06-01": "reports/每日AI新闻_2026-06-01.html", "2026-05-31": "reports/每日AI新闻_2026-05-31.html"}}, {"id": "deep_research", "name": "深度研究报告", "description": "行业与个股深度分析", "reportCount": 5, "latestDate": "2026-06-02", "files": {"2026-06-02": "reports/精智达FT测试机技术分析_2026-06-02.html", "2026-06-01": "reports/WorkBuddy深度研究_2026-06-01.html", "2026-05-31": "reports/钠离子电池行业研究_2026-05-31.html", "2026-05-30": "reports/夏季电力主题_2026-05-30.html", "2026-05-29": "reports/石药集团分析_2026-05-29.html"}}]};
 window.renderHub();
 </script>
+
 </body>
 </html>
- 
