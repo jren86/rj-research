@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RJ 持仓结构分析看板 · 2026-06-04</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #1c2128;
+    --border: #30363d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent2: #a371f7;
+    --green: #3fb950;
+    --red: #f85149;
+    --orange: #d29922;
+    --yellow: #e3b341;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 16px;
+  }
+  .header {
+    text-align: center;
+    padding: 24px 0 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .header h1 { font-size: 24px; font-weight: 700; letter-spacing: 1px; }
+  .header .subtitle { color: var(--text-secondary); font-size: 13px; margin-top: 6px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .kpi-item {
+    text-align: center;
+    padding: 14px 8px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+  }
+  .kpi-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .kpi-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .kpi-value.red { color: var(--red); }
+  .kpi-value.green { color: var(--green); }
+  .chart-container {
+    position: relative;
+    height: 220px;
+  }
+  .chart-container.tall { height: 260px; }
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    padding: 5px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+  }
+  .tag.hl { background: rgba(88,166,255,0.15); border-color: var(--accent); color: var(--accent); }
+  .tag.hl2 { background: rgba(163,113,247,0.15); border-color: var(--accent2); color: var(--accent2); }
+  .tag.hl3 { background: rgba(63,185,80,0.15); border-color: var(--green); color: var(--green); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    text-align: left;
+    padding: 10px 8px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+  .pct-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+  .pct-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-sh { background: rgba(88,166,255,0.15); color: var(--accent); }
+  .badge-sz { background: rgba(63,185,80,0.15); color: var(--green); }
+  .badge-hk { background: rgba(211,153,34,0.15); color: var(--orange); }
+  .up { color: var(--red); font-weight: 600; }
+  .down { color: var(--green); font-weight: 600; }
+  .analysis-box {
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 8px;
+  }
+  .analysis-box h4 {
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .analysis-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .analysis-box li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+  .analysis-box li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  .full-width { grid-column: 1 / -1; }
+  @media (min-width: 768px) {
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 RJ 持仓结构分析看板</h1>
+  <div class="subtitle">数据截止 2026-06-04 收盘 · 共 8 只持仓标的</div>
+</div>
+
+<!-- KPI 总览 -->
+<div class="grid">
+  <div class="card">
+    <div class="card-title">📈 持仓总览</div>
+    <div class="kpi-grid">
+      <div class="kpi-item">
+        <div class="kpi-value">8</div>
+        <div class="kpi-label">持仓标的</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">7+1</div>
+        <div class="kpi-label">A股 · 港股</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value green">5</div>
+        <div class="kpi-label">今日上涨</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value red">3</div>
+        <div class="kpi-label">今日下跌</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">💰 市值分层占比</div>
+    <div class="chart-container">
+      <canvas id="mcapChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🌏 上市地区分布</div>
+    <div class="chart-container">
+      <canvas id="marketChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- 行业分布 + 题材标签 -->
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-title">🏭 行业分布（按仓位）</div>
+    <div class="chart-container tall">
+      <canvas id="sectorChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏷️ 核心题材标签</div>
+    <div class="tag-cloud" style="margin-bottom:16px;">
+      <span class="tag hl">🔋 锂电池</span>
+      <span class="tag hl">🔋 钠电池</span>
+      <span class="tag hl2">🧠 AI服务器</span>
+      <span class="tag hl2">🍎 苹果链</span>
+      <span class="tag hl3">🔬 半导体设备</span>
+      <span class="tag hl3">🧪 测试设备</span>
+      <span class="tag hl">📺 面板显示</span>
+      <span class="tag hl">🔬 钙钛矿</span>
+      <span class="tag hl2">💊 创新药</span>
+      <span class="tag hl2">🎯 ADC</span>
+      <span class="tag hl3">🏭 国产替代</span>
+      <span class="tag hl3">🔌 光刻设备</span>
+      <span class="tag hl">☁️ 云计算</span>
+      <span class="tag hl2">📱 消费电子</span>
+      <span class="tag hl3">🔋 正极材料</span>
+    </div>
+    <div class="analysis-box">
+      <h4>题材集中度分析</h4>
+      <ul>
+        <li><strong>半导体产业链</strong> 覆盖测试+检测+光刻，仓位占比约 37.4%</li>
+        <li><strong>新能源电池</strong> 锂电池+钠电池+正极材料，仓位占比约 29.5%</li>
+        <li><strong>AI算力基建</strong> AI服务器+云计算，仓位占比约 16.4%</li>
+        <li><strong>创新药</strong> 信达生物ADC单票，仓位占比 11.4%</li>
+        <li><strong>显示面板</strong> 京东方A单票，仓位占比 5.3%</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 今日涨跌分布 -->
+<div class="grid">
+  <div class="card full-width">
+    <div class="card-title">📊 今日个股涨跌分布</div>
+    <div class="chart-container">
+      <canvas id="dailyChangeChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- 个股明细表 -->
+<div class="grid">
+  <div class="card full-width">
+    <div class="card-title">📋 持仓个股明细</div>
+    <table>
+      <thead>
+        <tr>
+          <th>标的</th>
+          <th>代码</th>
+          <th>市场</th>
+          <th>仓位</th>
+          <th>行业</th>
+          <th>总市值</th>
+          <th>市值分层</th>
+          <th>今日涨跌</th>
+          <th>年初至今</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>宁德时代</strong></td>
+          <td>300750</td>
+          <td><span class="badge badge-sz">深市</span></td>
+          <td>
+            19.90%
+            <div class="pct-bar"><div class="pct-fill" style="width:99.5%"></div></div>
+          </td>
+          <td>电力设备·电池</td>
+          <td>18,886亿</td>
+          <td>超大市值</td>
+          <td class="down">-4.27%</td>
+          <td class="up">+13.28%</td>
+        </tr>
+        <tr>
+          <td><strong>长川科技</strong></td>
+          <td>300604</td>
+          <td><span class="badge badge-sz">深市</span></td>
+          <td>
+            17.20%
+            <div class="pct-bar"><div class="pct-fill" style="width:86%"></div></div>
+          </td>
+          <td>电子·半导体</td>
+          <td>1,417亿</td>
+          <td>中市值</td>
+          <td class="up">+4.30%</td>
+          <td class="up">+120.68%</td>
+        </tr>
+        <tr>
+          <td><strong>工业富联</strong></td>
+          <td>601138</td>
+          <td><span class="badge badge-sh">沪市</span></td>
+          <td>
+            16.40%
+            <div class="pct-bar"><div class="pct-fill" style="width:82%"></div></div>
+          </td>
+          <td>电子·消费电子</td>
+          <td>15,588亿</td>
+          <td>超大市值</td>
+          <td class="down">-3.08%</td>
+          <td class="up">+27.27%</td>
+        </tr>
+        <tr>
+          <td><strong>精智达</strong></td>
+          <td>688627</td>
+          <td><span class="badge badge-sh">科创板</span></td>
+          <td>
+            14.80%
+            <div class="pct-bar"><div class="pct-fill" style="width:74%"></div></div>
+          </td>
+          <td>机械设备·通用设备</td>
+          <td>365亿</td>
+          <td>中小市值</td>
+          <td class="up">+9.14%</td>
+          <td class="up">+73.54%</td>
+        </tr>
+        <tr>
+          <td><strong>信达生物</strong></td>
+          <td>01801</td>
+          <td><span class="badge badge-hk">港股</span></td>
+          <td>
+            11.40%
+            <div class="pct-bar"><div class="pct-fill" style="width:57%"></div></div>
+          </td>
+          <td>医药生物·药品</td>
+          <td>1,328亿港元</td>
+          <td>大市值</td>
+          <td class="down">-0.59%</td>
+          <td class="up">+0.20%</td>
+        </tr>
+        <tr>
+          <td><strong>容百科技</strong></td>
+          <td>688005</td>
+          <td><span class="badge badge-sh">科创板</span></td>
+          <td>
+            9.60%
+            <div class="pct-bar"><div class="pct-fill" style="width:48%"></div></div>
+          </td>
+          <td>电力设备·电池</td>
+          <td>231亿</td>
+          <td>中小市值</td>
+          <td class="up">+3.32%</td>
+          <td class="down">-8.59%</td>
+        </tr>
+        <tr>
+          <td><strong>芯碁微装</strong></td>
+          <td>688630</td>
+          <td><span class="badge badge-sh">科创板</span></td>
+          <td>
+            5.40%
+            <div class="pct-bar"><div class="pct-fill" style="width:27%"></div></div>
+          </td>
+          <td>机械设备·专用设备</td>
+          <td>538亿</td>
+          <td>中市值</td>
+          <td class="up">+11.32%</td>
+          <td class="up">+204.86%</td>
+        </tr>
+        <tr>
+          <td><strong>京东方A</strong></td>
+          <td>000725</td>
+          <td><span class="badge badge-sz">深市</span></td>
+          <td>
+            5.30%
+            <div class="pct-bar"><div class="pct-fill" style="width:26.5%"></div></div>
+          </td>
+          <td>电子·光学光电子</td>
+          <td>2,278亿</td>
+          <td>大市值</td>
+          <td class="up">+10.02%</td>
+          <td class="up">+46.08%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 结构分析总结 -->
+<div class="grid">
+  <div class="card full-width">
+    <div class="card-title">🎯 持仓结构诊断</div>
+    <div class="analysis-box">
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div>
+          <h4>⚠️ 集中度风险</h4>
+          <ul>
+            <li>TOP3 集中度 <strong>53.5%</strong>（宁德+长川+富联），集中度偏高</li>
+            <li>TOP5 集中度 <strong>68.3%</strong>，建议关注单一标的风险暴露</li>
+            <li>半导体+新能源两条主线占比合计 <strong>66.9%</strong></li>
+          </ul>
+        </div>
+        <div>
+          <h4>📐 市值结构</h4>
+          <ul>
+            <li>超大市值（>1万亿）占比 <strong>36.3%</strong>：宁德+富联</li>
+            <li>大市值（1000亿-1万亿）占比 <strong>16.7%</strong>：京东方+信达</li>
+            <li>中小市值（<1000亿）占比 <strong>47.0%</strong>：长川+精智达+容百+芯碁</li>
+            <li>成长风格明显，中小市值弹性标占近半仓</li>
+          </ul>
+        </div>
+        <div>
+          <h4>🔄 行业配置</h4>
+          <ul>
+            <li><strong>电子/半导体</strong> 43.4% — 最大权重板块</li>
+            <li><strong>电力设备/电池</strong> 29.5% — 第二大板块</li>
+            <li><strong>机械设备</strong> 20.2% — 半导体设备为主</li>
+            <li><strong>医药生物</strong> 11.4% — 创新药单票</li>
+            <li>几乎无金融/消费/周期股配置</li>
+          </ul>
+        </div>
+        <div>
+          <h4>💡 优化建议</h4>
+          <ul>
+            <li>半导体设备仓位过重（37.4%），注意板块回调风险</li>
+            <li>港股仅信达生物1只，可考虑增加港股/美股分散</li>
+            <li>缺乏消费/金融等防御性板块对冲</li>
+            <li>容百科技年初至今-8.59%，关注业绩拐点信号</li>
+            <li>芯碁微装年初至今+204.86%，高涨幅注意止盈</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center; color: var(--text-secondary); font-size: 12px; padding: 20px 0;">
+  via WB · RJ Research Hub · 数据源自 NeoData Financial Search
+</div>
+
+<script>
+// Chart.js 全局配置
+Chart.defaults.color = '#8b949e';
+Chart.defaults.borderColor = '#30363d';
+Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif';
+
+// 行业分布环形图
+new Chart(document.getElementById('sectorChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['电子·半导体', '电力设备·电池', '机械设备', '医药生物'],
+    datasets: [{
+      data: [43.4, 29.5, 20.2, 11.4],
+      backgroundColor: ['#58a6ff', '#3fb950', '#a371f7', '#d29922'],
+      borderWidth: 0,
+      hoverOffset: 8
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '60%',
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true } }
+    }
+  }
+});
+
+// 市值分层饼图
+new Chart(document.getElementById('mcapChart'), {
+  type: 'pie',
+  data: {
+    labels: ['超大市值(>1万亿)', '大市值(1-5千亿)', '中市值(5百-1千亿)', '中小市值(<5百亿)'],
+    datasets: [{
+      data: [36.3, 16.7, 22.6, 24.4],
+      backgroundColor: ['#f85149', '#d29922', '#58a6ff', '#a371f7'],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 12, usePointStyle: true, font: { size: 11 } } }
+    }
+  }
+});
+
+// 上市地区分布
+new Chart(document.getElementById('marketChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['沪市主板', '深市创业板', '科创板', '港股'],
+    datasets: [{
+      data: [21.7, 42.5, 29.8, 11.4],
+      backgroundColor: ['#58a6ff', '#3fb950', '#a371f7', '#d29922'],
+      borderWidth: 0,
+      hoverOffset: 8
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '55%',
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true } }
+    }
+  }
+});
+
+// 今日涨跌条形图
+new Chart(document.getElementById('dailyChangeChart'), {
+  type: 'bar',
+  data: {
+    labels: ['芯碁微装', '京东方A', '精智达', '长川科技', '容百科技', '信达生物', '工业富联', '宁德时代'],
+    datasets: [{
+      label: '今日涨跌幅 %',
+      data: [11.32, 10.02, 9.14, 4.30, 3.32, -0.59, -3.08, -4.27],
+      backgroundColor: (ctx) => {
+        const v = ctx.raw;
+        return v >= 0 ? '#f85149' : '#3fb950';
+      },
+      borderRadius: 4,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    indexAxis: 'y',
+    plugins: {
+      legend: { display: false }
+    },
+    scales: {
+      x: {
+        grid: { color: '#21262d' },
+        ticks: { callback: v => v + '%' }
+      },
+      y: {
+        grid: { display: false }
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
