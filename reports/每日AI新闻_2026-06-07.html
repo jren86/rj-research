@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻 · 2026-06-07</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --bg-card-hover: #1c2333;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-secondary: #8b949e;
+    --text-heading: #f0f6fc;
+    --accent: #58a6ff;
+    --red: #f85149;
+    --green: #3fb950;
+    --orange: #d2991d;
+    --purple: #a371f7;
+    --tag-bg: #1a1f2e;
+    --divider: #21262d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding: 32px 0 24px;
+    border-bottom: 1px solid var(--divider);
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .header .meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  .header .meta span {
+    margin: 0 12px;
+  }
+  .section {
+    margin-bottom: 32px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    color: var(--text-heading);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon {
+    font-size: 1.3rem;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: background 0.2s;
+  }
+  .card:hover {
+    background: var(--bg-card-hover);
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .card .summary {
+    color: var(--text);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+  }
+  .card ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  .card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+  .card .impact {
+    font-size: 0.88rem;
+    color: var(--orange);
+    padding: 6px 10px;
+    background: rgba(210, 153, 29, 0.08);
+    border-radius: 6px;
+    border-left: 3px solid var(--orange);
+    margin-bottom: 10px;
+  }
+  .card .source {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    background: var(--tag-bg);
+    color: var(--accent);
+    margin-right: 4px;
+  }
+  .tag-red { color: var(--red); }
+  .tag-green { color: var(--green); }
+  .tag-orange { color: var(--orange); }
+  .takeaways {
+    background: linear-gradient(135deg, #1a1f2e 0%, #161b22 100%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 32px;
+  }
+  .takeaways h2 {
+    font-size: 1.15rem;
+    color: var(--text-heading);
+    margin-bottom: 16px;
+  }
+  .takeaways ol {
+    padding-left: 20px;
+    color: var(--text-secondary);
+  }
+  .takeaways ol li {
+    margin-bottom: 12px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .takeaways ol li strong {
+    color: var(--text);
+  }
+  .footer {
+    text-align: center;
+    padding: 24px 0 16px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--divider);
+    margin-top: 28px;
+  }
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .header h1 { font-size: 1.35rem; }
+    .card { padding: 14px; }
+    .card h3 { font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📰 每日 AI 全球新闻推送</h1>
+  <div class="meta">
+    <span>📅 2026年6月7日（周日）</span>
+    <span>📊 覆盖 6/6 - 6/7</span>
+    <span>🔗 20+ 条新闻</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon">🔥</span>重大发布与产品动态</div>
+
+  <div class="card">
+    <h3>1. 苹果 WWDC 2026 前瞻：Gemini 驱动 Siri，库克最后一次主题演讲</h3>
+    <div class="summary">苹果 WWDC 2026 将于 6 月 8 日开幕，这是蒂姆·库克卸任 CEO 前最后一次主题演讲。Siri 迎来 15 年来最大变革。</div>
+    <ul>
+      <li>Siri 底层切换至谷歌定制 1.2 万亿参数 Gemini 模型，苹果年支付约 $10 亿授权费</li>
+      <li>全新扩展系统：用户可在 ChatGPT / Gemini / Claude 之间自由选择 AI 驱动模型</li>
+      <li>iOS 27 / macOS 27 同步发布，新增 AI 驱动相册编辑工具</li>
+    </ul>
+    <div class="impact">💡 苹果 AI 战略从「自研优先」转向「最佳模型集成」，谷歌成最大赢家，OpenAI 失去 iPhone 独家渠道。</div>
+    <div class="source">📅 TechCabal / TechTimes / 36氪 / 腾讯新闻</div>
+  </div>
+
+  <div class="card">
+    <h3>2. 微软 MAI 系列 7 款自研模型全面铺开</h3>
+    <div class="summary">微软 Build 2026 发布 7 款自研 MAI 模型，标志从 OpenAI 分销商转向自研技术路线。旗舰 MAI-Thinking-1 完全从零训练。</div>
+    <ul>
+      <li>MAI-Thinking-1 在 SWE-Bench Pro 优于 Claude Haiku 4.5，token 消耗仅 40%</li>
+      <li>Frontier Tuning 技术：企业可在合规边界内基于 AI 代理轨迹强化学习训练</li>
+      <li>MAI Code One 已集成 GitHub Copilot 和 VS Code，Work IQ API 6/16 上线</li>
+    </ul>
+    <div class="impact">💡 微软从「OpenAI 包装商」转型为「自研模型厂商」，AI 基础设施层竞争格局进一步碎片化。</div>
+    <div class="source">📅 AI Tools Recap / 微软 Build 2026</div>
+  </div>
+
+  <div class="card">
+    <h3>3. xAI 三连发：Grok for Government + Grok Build + Web 连接器</h3>
+    <div class="summary">本周是 xAI 自成立以来最重大的产品推进周，同时发布政府合同、编码智能体和 Web 连接器三大产品线。</div>
+    <ul>
+      <li><span class="tag tag-red">政府</span>Grok for Government：$0.42/机构拿下联邦 18 个月合同，史上最长 AI 政府合同</li>
+      <li><span class="tag tag-green">编码</span>Grok Build：终端编码智能体，支持 ACP 协议，直接对标 Claude Code / Cursor</li>
+      <li><span class="tag">连接</span>Web 连接器：接入 SharePoint / Outlook / Google Workspace / MCP 生态</li>
+    </ul>
+    <div class="impact">💡 xAI 从模型实验室进化为企业级 AI 全栈服务商，政府+开发者+消费者三渠道覆盖。</div>
+    <div class="source">📅 Tom's Hardware / xAI 官方</div>
+  </div>
+
+  <div class="card">
+    <h3>4. Claude Sonnet 4.8 泄露坐实，预计 6 月底发布</h3>
+    <div class="summary">Anthropic npm 源代码映射泄露 sonnet-4-8 / opus-4-7 / mythos，前两者已验证，Sonnet 4.8 成为唯一未官宣模型。</div>
+    <ul>
+      <li>预计继承 Opus 4.7 视觉升级 + Opus 4.8 动态工作流 + 35% token 效率提升</li>
+      <li>售价维持 $3/$15 每百万 token，将大幅提升 Max 5x / Pro 计划用户体验</li>
+      <li>Anthropic 计划 10 月 IPO，6 月 H 轮披露 470 亿美元 ARR</li>
+    </ul>
+    <div class="impact">💡 Sonnet 4.8 是 Anthropic IPO 前最重要产品升级，将显著缩小中端与旗舰模型距离。</div>
+    <div class="source">📅 AI Tools Recap / npm 源码分析</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon">💰</span>产业与投资</div>
+
+  <div class="card">
+    <h3>5. 特朗普与桑德斯罕见共识：支持政府持有 AI 企业股权</h3>
+    <div class="summary">特朗普 6 月 6 日表态可能直接持有 AI 巨头股权，与桑德斯「50% 公共所有权」立场趋同。桑德斯提出《美国 AI 主权财富基金法案》。</div>
+    <ul>
+      <li>对 OpenAI / Anthropic / xAI 征收一次性 50% 股权税（不含谷歌/Meta），放入联邦主权基金</li>
+      <li>公众将获得 AI 企业董事会投票权和股息分配权</li>
+      <li>奥特曼回应：不支持 50% 门槛，但愿意合作推动公众参股</li>
+    </ul>
+    <div class="impact">💡 跨党派 AI 国有化讨论正重塑美国 AI 产业政策，直接影响 OpenAI / Anthropic IPO 定价。</div>
+    <div class="source">📅 Fortune / Gizmodo / Washington Times</div>
+  </div>
+
+  <div class="card">
+    <h3>6. OpenAI IPO 加速：高盛/摩根士丹利敲定招股书</h3>
+    <div class="summary">OpenAI 最早 2026 年 9 月上市，一级市场估值 $7300-8500 亿。将与 Anthropic 10 月 IPO 争夺资本。</div>
+    <ul>
+      <li>年化收入从 2023 年 $20 亿 → 2025 年底超 $200 亿，ChatGPT 周活约 9 亿</li>
+      <li>核心风险：2023-2029 预计累计亏损 $140 亿，2026 Q1 运营利润率 -122%</li>
+      <li>IPO 逻辑依赖 AI 智能体大规模实现企业 SaaS 级别回报，尚未验证</li>
+    </ul>
+    <div class="impact">💡 OpenAI + Anthropic + SpaceX 三大 IPO 将在 2026 下半年展开华尔街史上最大资金争夺战。</div>
+    <div class="source">📅 CNBC / WSJ / FT</div>
+  </div>
+
+  <div class="card">
+    <h3>7. SpaceX IPO 路演完成，6/11 定价、6/12 上市</h3>
+    <div class="summary">目标估值 $1.75 万亿以上，融资 $750 亿，将成为史上最大 IPO。30% 流通股分配给零售投资者。</div>
+    <ul>
+      <li>2025 合并营收 $187 亿（含 xAI），星链 $114 亿，运营利润 $44 亿</li>
+      <li>xAI 部门消耗 $140 亿现金仅实现 $32 亿收入，净现金流出 $108 亿</li>
+    </ul>
+    <div class="source">📅 CNBC / Financial Times</div>
+  </div>
+
+  <div class="card">
+    <h3>8. Alphabet 股价连跌四周，Gemini 竞争力存疑</h3>
+    <div class="summary">谷歌母公司股价连续四周下跌。苹果 WWDC 签下 $10 亿/年 Gemini 协议，但市场担忧这反而暴露谷歌自有 AI 产品竞争力不足。</div>
+    <ul>
+      <li>谷歌 2025 年承诺约 $750 亿 AI 基础设施投入，2026 年继续增加</li>
+      <li>Apollo / 黑石 $360 亿信贷为 Anthropic 购买谷歌 TPU，竞争对手正大规模使用谷歌基础设施</li>
+    </ul>
+    <div class="source">📅 多家财经媒体</div>
+  </div>
+
+  <div class="card">
+    <h3>9. Nscale 估值 $146 亿 + Runway 估值 $53 亿</h3>
+    <div class="summary">挪威 AI 基础设施公司 Nscale 完成新一轮融资，桑德伯格和克莱格加入董事会。视频 AI 公司 Runway 估值升至 $53 亿。</div>
+    <div class="source">📅 xix.ai</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon">🔬</span>研究与前沿</div>
+
+  <div class="card">
+    <h3>10. OpenAI GPT-Rosalind 重大更新：生命科学 AI 更智能</h3>
+    <div class="summary">6 月 4 日发布更新版 GPT-Rosalind，结合 GPT-5.5 智能体能力，GeneBench 测试少用 31% token，准确率提升至 21.6%。</div>
+    <ul>
+      <li>新增证据检索和生物信息工作流插件</li>
+      <li>同步推出 Rosalind 生物防御计划，向大流行病防控研究者开放</li>
+    </ul>
+    <div class="impact">💡 OpenAI 与 Anthropic（Project Glasswing）形成「AI + 关键基础设施」双赛道布局。</div>
+    <div class="source">📅 OpenAI 官方研究</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon">🛠️</span>工具与应用</div>
+
+  <div class="card">
+    <h3>11. OpenAI Codex 覆盖全岗位 + 模型上线 AWS</h3>
+    <div class="summary">Codex 从开发者扩展至产品经理、律师、分析师、运营团队。同期 GPT-5.5 和 Codex 登陆 AWS，与 Claude 同台竞技。</div>
+    <ul>
+      <li>新增 Sites（AI 生成网页应用）和 Annotations（嵌入工作流审核评论）</li>
+      <li>AWS 成为 AI 实验室和企业预算间的关键中间方，模型商品化加速</li>
+    </ul>
+    <div class="impact">💡 目标市场比 AI 辅助软件开发大 10 倍。价值正向云编排层转移。</div>
+    <div class="source">📅 OpenAI / CNBC</div>
+  </div>
+
+  <div class="card">
+    <h3>12. Gmail 个性化 AI 收件箱 + ChatGPT 锁定模式</h3>
+    <div class="summary">Gmail 新增 AI 收件箱管理和搜索概览。ChatGPT 推出锁定模式限制联网功能，面向企业安全需求。</div>
+    <div class="source">📅 xix.ai / OpenAI</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon">🌍</span>政策与伦理</div>
+
+  <div class="card">
+    <h3>13. ETSI 新 AI 安全标准 + Anthropic「刹车」警告</h3>
+    <div class="summary">欧洲电信标准协会发布新 AI 安全标准。Anthropic 警告其 AI 可能很快具备无监督自我改进能力，呼吁开发「刹车」机制。</div>
+    <ul>
+      <li>现有安全框架为「训练间隔数月更新」设计，而可自我更新的模型风险完全不同</li>
+      <li>Anthropic 和 OpenAI 同期推动监管 + 万亿 IPO，舆论存在争议</li>
+    </ul>
+    <div class="source">📅 Anthropic / ETSI</div>
+  </div>
+</div>
+
+<div class="takeaways">
+  <h2>🎯 核心要点</h2>
+  <ol>
+    <li><strong>WWDC 2026 重塑 AI 移动生态</strong>：苹果全面开放模型选择（Gemini 默认），谷歌成最大赢家，OpenAI 失去 iPhone 独占渠道。</li>
+    <li><strong>xAI 完成「全栈」转型</strong>：Grok for Government + Grok Build + Web 连接器三线齐发，从模型实验室进化为企业级全栈 AI 服务商。</li>
+    <li><strong>美国 AI 跨党派共识</strong>：特朗普与桑德斯罕见趋同，支持政府持有 AI 企业股权，桑德斯提出 50% 股权税法案。</li>
+    <li><strong>三大 AI IPO 争夺战</strong>：SpaceX（6/12，$1.75T）+ OpenAI（9 月）+ Anthropic（10 月）将展开华尔街史上最大 IPO 资金争夺。</li>
+    <li><strong>AI 模型商品化加速</strong>：OpenAI 上线 AWS 与 Claude 同台，云服务商议价权大增，价值向编排层转移。</li>
+    <li><strong>AI 基础设施多元竞争</strong>：微软自研芯片+模型、英伟达 RTX Spark 进军 PC CPU，AMD/英特尔/高通全面应战。</li>
+  </ol>
+</div>
+
+<div class="footer">
+  生成时间：2026-06-07 07:25 CST · 下次更新：2026-06-08<br>
+  数据来源：WebSearch + WebFetch · via WB
+</div>
+
+</body>
+</html>
