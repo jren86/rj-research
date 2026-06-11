@@ -25,9 +25,10 @@
       "id": "evening",
       "name": "晚间投研日报",
       "description": "每日晚间市场复盘与总结",
-      "reportCount": 13,
-      "latestDate": "2026-06-10",
+      "reportCount": 14,
+      "latestDate": "2026-06-11",
       "files": {
+        "2026-06-11": "reports/晚间日报_2026-06-11.html",
         "2026-06-10": "reports/晚间日报_2026-06-10.html",
         "2026-06-09": "reports/晚间日报_2026-06-09.html",
         "2026-06-06": "reports/晚间日报_2026-06-06.html",

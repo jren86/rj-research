@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晚间投研日报 | 2026-06-11</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d29;
+    --border: #2a2d3a;
+    --text: #e0e0e0;
+    --muted: #8b8fa3;
+    --red: #ef4444;
+    --green: #22c55e;
+    --accent: #6366f1;
+    --accent-light: #818cf8;
+    --fire: #f97316;
+    --warning: #eab308;
+    --danger: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding: 24px 0 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .header .date {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent-light);
+    margin: 24px 0 12px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin: 16px 0 8px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    background: rgba(99,102,241,0.15);
+    color: var(--accent-light);
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 7px 10px;
+    border-bottom: 1px solid rgba(42,45,58,0.6);
+  }
+  tr:last-child td { border-bottom: none; }
+  .up { color: var(--red); font-weight: 600; }
+  .down { color: var(--green); font-weight: 600; }
+  .tag-fire { background: rgba(249,115,22,0.15); color: var(--fire); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .tag-green { background: rgba(34,197,94,0.15); color: var(--green); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .tag-yellow { background: rgba(234,179,8,0.15); color: var(--warning); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .tag-red { background: rgba(239,68,68,0.15); color: var(--danger); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .tag-gray { background: rgba(139,143,163,0.15); color: var(--muted); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .highlight-box {
+    background: rgba(249,115,22,0.08);
+    border-left: 3px solid var(--fire);
+    padding: 12px 14px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 12px;
+  }
+  .highlight-box p { font-size: 13px; margin: 4px 0; }
+  .stat-row {
+    display: flex;
+    gap: 12px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+  .stat-item .label { font-size: 11px; color: var(--muted); }
+  .stat-item .value { font-size: 18px; font-weight: 700; margin-top: 2px; }
+  .bullet { margin: 4px 0 4px 18px; font-size: 13px; color: var(--text); }
+  .bullet::before { content: "•"; color: var(--accent); margin-left: -14px; position: absolute; }
+  .source { font-size: 11px; color: var(--muted); text-align: center; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border); }
+  @media (max-width: 480px) {
+    body { padding: 10px; }
+    .stat-item { min-width: 90px; }
+    .stat-item .value { font-size: 15px; }
+    table { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>晚间投研日报</h1>
+  <div class="date">2026-06-11 周四</div>
+</div>
+
+<!-- 市场概览 -->
+<h2>一、市场概览</h2>
+
+<h3>A股主要指数</h3>
+<div class="card">
+  <table>
+    <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
+    <tr><td>上证指数</td><td>3,987.01</td><td class="down">-0.16%</td></tr>
+    <tr><td>深证成指</td><td>14,851.98</td><td class="down">-0.68%</td></tr>
+    <tr><td>创业板指</td><td>3,811.25</td><td class="down">-1.13%</td></tr>
+    <tr><td>科创综指</td><td>—</td><td class="up">+1.0%</td></tr>
+  </table>
+  <div style="margin-top:10px; font-size:13px; color:var(--muted);">
+    成交额 25,749 亿（缩量 692 亿）| 下跌 4,069 只 / 上涨 1,370 只
+  </div>
+</div>
+
+<h3>港股主要指数</h3>
+<div class="card">
+  <table>
+    <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
+    <tr><td>恒生指数</td><td>24,249.29</td><td class="down">-0.65%</td></tr>
+    <tr><td>恒生国企指数</td><td>8,217.08</td><td class="down">-1.22%</td></tr>
+    <tr><td>恒生科技指数</td><td>4,655.74</td><td class="down">-1.46%</td></tr>
+  </table>
+</div>
+
+<!-- 核心宏观 -->
+<h2>二、核心宏观</h2>
+
+<div class="highlight-box">
+  <p><span class="tag-fire">🔥🔥🔥</span> <strong>美国5月CPI同比+4.2%，创2023年以来新高</strong></p>
+  <p style="margin-left:8px; font-size:13px;">核心CPI环比+0.2%/同比+2.9%，能源（汽油/燃油）是主要推手</p>
+  <p style="margin-left:8px; font-size:13px;">中信/中金均预计美联储全年维持利率不变，但市场加息25bp概率升温</p>
+</div>
+
+<div class="highlight-box">
+  <p><span class="tag-fire">🔥🔥</span> <strong>美伊冲突再升级</strong></p>
+  <p style="margin-left:8px; font-size:13px;">特朗普威胁打击伊朗发电厂和桥梁；WTI≈92美元/桶，布伦特≈93美元/桶</p>
+</div>
+
+<div class="highlight-box">
+  <p><span class="tag-fire">🔥🔥</span> <strong>黄金正式进入四年来首个熊市</strong></p>
+  <p style="margin-left:8px; font-size:13px;">跌破4,100美元，较3月高点跌超20%，8月合约收于4,133.30美元（-3.6%），连续四日下跌</p>
+</div>
+
+<!-- 板块异动 -->
+<h2>三、板块异动</h2>
+
+<div class="card">
+  <h3 style="color:var(--red); margin-bottom:8px;">领涨方向</h3>
+  <table>
+    <tr><th>板块</th><th>代表个股</th><th>催化</th></tr>
+    <tr><td>光刻机/半导体设备</td><td class="up">炬光科技+20%涨停<br>江丰电子+20%涨停<br>兴福电子+15%</td><td>炬光1300万美元技术许可（CPO光互联）+三星先进封装工厂</td></tr>
+    <tr><td>存储芯片</td><td class="up">13家涨停<br>康强电子两连板</td><td>三星光州封装工厂+SK海力士产能翻番</td></tr>
+    <tr><td>先进封装</td><td class="up">盛美上海+9%创新高</td><td>三星扩产催化</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3 style="color:var(--green); margin-bottom:8px;">领跌方向</h3>
+  <p style="font-size:13px;">影视、电机、IT、游戏、软件、旅游、机器人、算力硬件（CPO/光模块承压）</p>
+</div>
+
+<!-- 持仓个股 -->
+<h2>四、持仓个股增量</h2>
+
+<div class="card">
+  <table>
+    <tr><th>标的</th><th>今日态势</th><th>核心增量</th><th>判断</th></tr>
+    <tr>
+      <td><strong>芯碁微装</strong><br>688630.SH</td>
+      <td class="down">-4.98%<br>大盘拖累</td>
+      <td>H股聆讯6/4通过<br>董事会6/9批准H股全球发售<br>中金独家保荐</td>
+      <td><span class="tag-green">🟢 进程加速</span></td>
+    </tr>
+    <tr>
+      <td><strong>宁德时代</strong><br>300750.SZ</td>
+      <td class="down">主力流出8亿+</td>
+      <td>首次领投核聚变企业<br>贝塔聚变数亿元种子轮<br>专注可控核聚变商业化</td>
+      <td><span class="tag-yellow">🟡 短期承压</span><br><span style="font-size:11px;">战略布局</span></td>
+    </tr>
+    <tr>
+      <td><strong>工业富联</strong><br>601138.SH</td>
+      <td class="down">主力流出12亿+</td>
+      <td>无新增量<br>CPO争议持续发酵</td>
+      <td><span class="tag-yellow">🟡 观望</span></td>
+    </tr>
+    <tr>
+      <td><strong>京东方A</strong><br>000725.SZ</td>
+      <td class="down">3日主力流出33亿</td>
+      <td>无新增量<br>玻璃基板2-3年无业绩</td>
+      <td><span class="tag-red">🔴 热度降温</span></td>
+    </tr>
+    <tr>
+      <td><strong>信达生物</strong><br>01801.HK</td>
+      <td>医药板块逆势</td>
+      <td>评级89.66%强力推荐<br>目标价中位87.84港元<br>无新增量</td>
+      <td><span class="tag-green">🟢 持有</span></td>
+    </tr>
+    <tr>
+      <td><strong>长川/精智达/容百</strong></td>
+      <td>无重大变动</td>
+      <td>近24h无重大新增量</td>
+      <td><span class="tag-gray">⚪ 观望</span></td>
+    </tr>
+  </table>
+</div>
+
+<!-- 产业动态 -->
+<h2>五、产业动态</h2>
+
+<div class="card">
+  <h3>🔥 三星考虑在光州新建先进封装工厂</h3>
+  <p style="font-size:13px; margin-top:6px;">投资计划有望6/29总统会谈期间公布，参会者包括三星会长李在镕、SK集团会长崔泰源。强化AI芯片封装产能，与SK海力士产能扩张形成韩国半导体双引擎。</p>
+</div>
+
+<div class="card">
+  <h3>🔥 炬光科技 × AH公司：CPO光互联技术许可</h3>
+  <p style="font-size:13px; margin-top:6px;">子公司瑞士炬光签署1,300万美元一次性许可费+后续特许权使用费。许可技术：微棱镜透镜阵列和垂直光学耦合器→CPO光互联核心组件。客户代号AH为全球领先半导体代工企业。</p>
+</div>
+
+<div class="card">
+  <h3>存储芯片涨停潮</h3>
+  <p style="font-size:13px; margin-top:6px;">三星先进封装工厂+SK海力士2034年产能翻番双催化，13家涨停。雅克科技、康强电子连板。</p>
+</div>
+
+<!-- 海外市场 -->
+<h2>六、海外市场</h2>
+<div class="card">
+  <table>
+    <tr><th>资产</th><th>表现</th></tr>
+    <tr><td>美股</td><td>CPI数据后道指/纳指承压，加息预期施压科技股</td></tr>
+    <tr><td>原油</td><td>WTI 92美元 / 布伦特 93美元，美伊冲突支撑</td></tr>
+    <tr><td>黄金</td><td class="down">4,133 美元/盎司，进入技术性熊市（-20%+）</td></tr>
+    <tr><td>美元指数</td><td class="up">走强，加息预期支撑</td></tr>
+  </table>
+</div>
+
+<div class="source">
+  报告生成时间：2026-06-11 20:10 | 数据来源：WebSearch、东方财富、雪球、财联社
+</div>
+
+</body>
+</html>
