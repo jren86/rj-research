@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日 AI 全球新闻推送 | 2026-06-15</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --bg-card: #161b22;
+            --bg-hover: #1c2333;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --text-heading: #f0f6fc;
+            --red: #f85149;
+            --green: #3fb950;
+            --blue: #58a6ff;
+            --orange: #d2991d;
+            --purple: #bc8cff;
+            --cyan: #39d2c0;
+            --accent-fire: #f78166;
+            --accent-research: #79c0ff;
+            --accent-industry: #d2a8ff;
+            --accent-tools: #7ee787;
+            --accent-policy: #f2cc60;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            padding: 30px 0 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .header h1 {
+            font-size: 1.5em;
+            color: var(--text-heading);
+            margin-bottom: 6px;
+        }
+        .header .meta {
+            color: var(--text-muted);
+            font-size: 0.85em;
+        }
+        .section {
+            margin-bottom: 24px;
+        }
+        .section-title {
+            font-size: 1.15em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-title.fire { color: var(--accent-fire); }
+        .section-title.research { color: var(--accent-research); }
+        .section-title.industry { color: var(--accent-industry); }
+        .section-title.tools { color: var(--accent-tools); }
+        .section-title.policy { color: var(--accent-policy); }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        .card:hover { background: var(--bg-hover); }
+        .card h3 {
+            font-size: 1.02em;
+            color: var(--text-heading);
+            margin-bottom: 8px;
+        }
+        .card .summary {
+            color: var(--text-muted);
+            font-size: 0.92em;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 8px;
+        }
+        .card ul li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 4px;
+            font-size: 0.92em;
+            line-height: 1.6;
+        }
+        .card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--blue);
+        }
+        .card .impact {
+            color: var(--orange);
+            font-size: 0.88em;
+            margin-bottom: 6px;
+            padding: 6px 8px;
+            background: rgba(210,153,29,0.08);
+            border-left: 2px solid var(--orange);
+            border-radius: 0 4px 4px 0;
+        }
+        .card .source {
+            color: var(--text-muted);
+            font-size: 0.78em;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(88,166,255,0.08), rgba(121,192,255,0.05));
+            border: 1px solid rgba(88,166,255,0.2);
+            border-radius: 10px;
+            padding: 16px;
+            margin: 24px 0;
+        }
+        .highlight-box h3 {
+            color: var(--blue);
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        .highlight-box ol {
+            padding-left: 20px;
+            font-size: 0.9em;
+            line-height: 1.9;
+        }
+        .highlight-box ol li {
+            margin-bottom: 4px;
+        }
+        .highlight-box ol li strong {
+            color: var(--text-heading);
+        }
+        .footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.78em;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 24px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 1px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-right: 4px;
+        }
+        .tag-new { background: rgba(63,185,80,0.15); color: var(--green); }
+        .tag-hot { background: rgba(248,81,73,0.15); color: var(--red); }
+        .tag-update { background: rgba(88,166,255,0.15); color: var(--blue); }
+        @media (max-width: 600px) {
+            body { padding: 12px; }
+            .header h1 { font-size: 1.25em; }
+            .card { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>每日 AI 全球新闻推送</h1>
+    <div class="meta">
+        2026年6月15日（周一） | 覆盖 6月13-14日增量信息 | 12篇文章/报道
+    </div>
+</div>
+
+<!-- 重大发布 -->
+<div class="section">
+    <div class="section-title fire">重大发布</div>
+
+    <div class="card">
+        <h3><span class="tag tag-hot">重磅</span> 美团 LongCat 团队 ACL 2026 七箭齐发：从数字人到定理证明全覆盖</h3>
+        <div class="summary">6篇ACL论文 + 5个开源模型/基准，中国互联网企业迄今最大规模AI基础研究集中亮相</div>
+        <ul>
+            <li><strong>6篇ACL 2026论文</strong>：大模型评估、推理优化、数学推理、强化学习、生成式推荐</li>
+            <li><strong>LongCat-Video-Avatar 1.5</strong>：SOTA商用数字人模型，唇形同步+长视频稳定性突破</li>
+            <li><strong>LongCat-AudioDiT</strong>：零样本TTS语音克隆，直接在波形隐空间合成，消除多阶段误差</li>
+            <li><strong>LongCat-Next</strong>：原生多模态模型（视觉+语音），面向具身智能</li>
+            <li><strong>LongCat-Flash-Prover</strong>：数学定理证明，从「数值猜测」转向严谨逻辑论证</li>
+            <li><strong>LARYBench</strong>：具身AI动作表示评估基准，被比作动作领域「ImageNet」</li>
+            <li><strong>General 365</strong>：严格推理基准，Gemini 3 Pro仅62.8%，多数模型未及格</li>
+        </ul>
+        <div class="impact">影响：美团从业务驱动向技术原创转型的标志时刻，覆盖NLP到具身智能全栈。</div>
+        <div class="source">AIToolly / Hacker News | 2026-06-14</div>
+    </div>
+
+    <div class="card">
+        <h3><span class="tag tag-new">开源</span> 华为 HDC 2026 闭幕：盘古 2.0 开源 + 鸿蒙 7 走向 Agent 架构</h3>
+        <div class="summary">国产大模型开源史上最大参数模型（505B）+ 系统级Agent操作系统</div>
+        <ul>
+            <li><strong>盘古2.0</strong>：最高505B参数，面向全行业开源，国产开源模型参数规模之最</li>
+            <li><strong>HarmonyOS 7</strong>：全面向Agent架构演进，系统级AI助手成核心交互入口</li>
+        </ul>
+        <div class="impact">影响：华为以「最大国产开源模型+Agent OS」双轨定位，不同于纯模型厂商。</div>
+        <div class="source">CSDN / AIToolly | 2026-06-14</div>
+    </div>
+
+    <div class="card">
+        <h3><span class="tag tag-new">开源</span> 智谱 AI 发布 GLM-5.2：完全开源，1M 可用上下文窗口</h3>
+        <div class="summary">主打「激进开放」理念，长周期任务性能行业领先，对标Kimi K2.7-Code</div>
+        <ul>
+            <li>1M可用上下文窗口（实际可用，非理论值）</li>
+            <li>智谱国内coding模型核心引擎，API下周公开上线</li>
+            <li>国产开源代码模型形成 Kimi vs GLM vs Qwen 三强格局</li>
+        </ul>
+        <div class="source">Hacker News / AIToolly | 2026-06-13</div>
+    </div>
+</div>
+
+<!-- 研究突破 -->
+<div class="section">
+    <div class="section-title research">研究突破</div>
+
+    <div class="card">
+        <h3>Google Gemini-SQL2：文本转SQL大幅领先现有模型</h3>
+        <div class="summary">专为数据库自然语言查询优化，覆盖复杂JOIN、嵌套子查询等现实场景</div>
+        <div class="impact">影响：Text-to-SQL是企业AI落地关键能力，可能加速Google在数据仓库/BI领域的AI渗透。</div>
+        <div class="source">LM Market Cap | 2026-06-14</div>
+    </div>
+
+    <div class="card">
+        <h3>微软 SkillOpt：仅通过Markdown训练文件就提升GPT-5.5能力</h3>
+        <div class="summary">无需修改模型权重，挑战「能力提升必须靠大规模预训练」的传统认知</div>
+        <div class="impact">影响：为prompt engineering和instruction tuning开辟低成本增强新路径。</div>
+        <div class="source">LM Market Cap | 2026-06-14</div>
+    </div>
+</div>
+
+<!-- 产业与投资 -->
+<div class="section">
+    <div class="section-title industry">产业与投资</div>
+
+    <div class="card">
+        <h3><span class="tag tag-hot">风暴</span> Anthropic 模型封禁持续发酵：亚马逊 CEO 被曝是幕后推手</h3>
+        <div class="summary">《华尔街日报》/The Verge披露：亚马逊安全团队+CEO贾西直接游说白宫</div>
+        <ul>
+            <li>亚马逊既是Anthropic最大投资者（$80亿+）也是核心云合作伙伴</li>
+            <li>Anthropic罕见发长文公开驳斥政府结论</li>
+        </ul>
+        <div class="impact">影响：重塑「谁有权力决定AI模型能否发布」的核心命题——政府+大企业游说的混合体。</div>
+        <div class="source">The Verge / TechCrunch AI | 2026-06-13</div>
+    </div>
+
+    <div class="card">
+        <h3><span class="tag tag-hot">融资</span> 贝索斯 Prometheus 完成 $120 亿融资，估值 $410 亿</h3>
+        <div class="summary">刷新2026年AI初创单轮融资纪录，贝索斯在「超级AI IPO周期」中双线布局</div>
+        <div class="source">CSDN | 2026-06-14</div>
+    </div>
+
+    <div class="card">
+        <h3>中国AI独角兽「价值重构」：月之暗面寻求$300亿估值</h3>
+        <div class="summary">Kimi寻求$20亿新融资，6月12日刚发布K2.7-Code，性价比碾压美国对手</div>
+        <div class="impact">影响：中国AI估值$30B-$50B vs 美国$850B-$1.77T，差距大但增速和性价比优势显著。</div>
+        <div class="source">ZAKER / 公开报道 | 2026-06-13</div>
+    </div>
+
+    <div class="card">
+        <h3>Meta 裁员 10%，扎克伯格称 AI 转型「脱轨」</h3>
+        <div class="summary">继2023年「效率之年」后新一轮大规模调整，内部AI使用设置限制</div>
+        <div class="impact">影响：Llama落后+广告被侵蚀+元宇宙未变现，三重压力下Meta收缩AI战线。</div>
+        <div class="source">CSDN | 2026-06-14</div>
+    </div>
+
+    <div class="card">
+        <h3><span class="tag tag-hot">警示</span> KPMG 因 AI 幻觉严重撤回官方报告</h3>
+        <div class="summary">全球顶级专业服务机构首次因AI幻觉问题公开撤回官方报告</div>
+        <div class="impact">影响：AI在企业级场景可靠性问题推到台前，法律/医疗/金融高风险场景敲响警钟。</div>
+        <div class="source">TechCrunch AI | 2026-06-13</div>
+    </div>
+</div>
+
+<!-- 工具与应用 -->
+<div class="section">
+    <div class="section-title tools">工具与应用</div>
+
+    <div class="card">
+        <h3><span class="tag tag-update">产品</span> OpenAI ChatGPT 6月更新密集：模型简化 + 图表 + Gmail打通</h3>
+        <div class="summary">从「对话工具」进化为「AI工作台」，构建完整办公闭环</div>
+        <ul>
+            <li><strong>模型选择器简化</strong>：4档（Instant/Medium/High/Extra High），无需在20+变量中纠结</li>
+            <li><strong>交互式图表</strong>：柱状图、折线图、饼图、散点图</li>
+            <li><strong>全屏写作模式</strong>：长文档编辑，可保存至Library</li>
+            <li><strong>Gmail/Outlook打通</strong>：对话中直接起草发送邮件</li>
+        </ul>
+        <div class="source">OpenAI Release Notes | 2026-06-10</div>
+    </div>
+
+    <div class="card">
+        <h3><span class="tag tag-update">产品</span> OpenAI Codex 26.609：Windows Computer Use + CDP开发者模式</h3>
+        <ul>
+            <li><strong>Windows Computer Use</strong>：AI直接操作Windows界面（企业版）</li>
+            <li><strong>CDP开发者模式</strong>：性能分析、网络调试、控制台输出</li>
+            <li><strong>/init命令</strong>：自动生成AGENTS.md脚手架</li>
+            <li><strong>浏览器速度2倍提升</strong></li>
+        </ul>
+        <div class="source">OpenAI Release Notes | 2026-06-11</div>
+    </div>
+
+    <div class="card">
+        <h3>AI编程智能体新工具链：Superpowers + agent-skills 同登 GitHub Trending</h3>
+        <ul>
+            <li><strong>Superpowers</strong>：模块化可组合技能框架，标准化AI与代码库交互</li>
+            <li><strong>agent-skills</strong>（Addy Osmani）：工作流+质量门禁+最佳实践嵌入智能体</li>
+        </ul>
+        <div class="impact">影响：AI Coding工具竞争从「代码补全」到「工程方法论」的下一个跨越。</div>
+        <div class="source">GitHub Trending / AIToolly | 2026-06-14</div>
+    </div>
+
+    <div class="card">
+        <h3>OpenMed：开源本地优先医疗AI项目登陆GitHub</h3>
+        <div class="summary">医疗数据本地处理，优先保障隐私，已登GitHub Trending</div>
+        <div class="source">GitHub Trending | 2026-06-14</div>
+    </div>
+</div>
+
+<!-- 政策与伦理 -->
+<div class="section">
+    <div class="section-title policy">政策与伦理</div>
+
+    <div class="card">
+        <h3>中国AI内容标识办法全面落地：AI短视频须开头3秒标注</h3>
+        <div class="summary">国内首个AI生成内容统一标识规范，6月14日起全网统一执行</div>
+        <div class="source">CSDN | 2026-06-14</div>
+    </div>
+
+    <div class="card">
+        <h3>美国多州总检察长对OpenAI展开调查</h3>
+        <div class="summary">调查覆盖广告政策、敏感健康数据处理，州级监管再升级</div>
+        <div class="source">TechCrunch AI | 2026-06-13</div>
+    </div>
+
+    <div class="card">
+        <h3><span class="tag tag-hot">警示</span> 英国警察涉嫌用AI伪造多案证据被调查</h3>
+        <div class="summary">刑事案件中「制造证据」，凸显执法场景AI滥用风险和监管缺失</div>
+        <div class="source">Sky News / Hacker News | 2026-06-13</div>
+    </div>
+</div>
+
+<!-- 要点速览 -->
+<div class="highlight-box">
+    <h3>要点速览</h3>
+    <ol>
+        <li><strong>美团 LongCat 七箭齐发</strong>：6篇ACL论文+5个开源模型/基准，从数字人到定理证明全覆盖，中国互联网企业迄今最大规模AI基础研究集中亮相</li>
+        <li><strong>国产开源双星</strong>：华为盘古2.0（505B）全面开源 + 智谱GLM-5.2（1M上下文）完全开源，国产开源模型参数规模和能力再上台阶</li>
+        <li><strong>Anthropic模型封禁余波</strong>：亚马逊CEO被曝是幕后推手，云厂商在AI安全治理中的超常规影响力引发争议</li>
+        <li><strong>OpenAI产品密集迭代</strong>：ChatGPT模型简化+交互式图表+Gmail打通+Codex Windows Computer Use+CDP开发者模式，构建「AI工作台」闭环</li>
+        <li><strong>AI可靠性危机</strong>：KPMG因AI幻觉撤回报告+英国警察用AI伪造证据，企业级和公共安全场景AI部署敲响双重警钟</li>
+    </ol>
+</div>
+
+<div class="footer">
+    生成时间：2026-06-15 07:30 CST | 数据来源：WebSearch + WebFetch | 下次更新：下一个工作日
+</div>
+</body>
+</html>
