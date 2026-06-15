@@ -21,6 +21,7 @@ CATEGORIES = [
         "WorkBuddy深度研究_", "catl-dashboard"
     ]),
     ("ai_tracking", "AI人物与公司追踪", "腾讯AI/姚顺雨/WorkBuddy动态", ["AI人物与公司追踪_"]),
+    ("market_panorama", "市场全景", "A股港股市场全景分析", ["市场全景_"]),
 ]
 
 def extract_date(filename):

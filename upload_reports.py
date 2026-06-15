@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Auto-upload script for RJ Research Hub.
+Auto-upload script for My Research Central.
 Run after each report generation to:
 1. Copy new HTML reports from reports/ to site/reports/
 2. Regenerate manifest.json
@@ -28,7 +28,7 @@ def run(cmd, cwd=SITE_DIR):
 def main():
     today = datetime.now().strftime("%Y-%m-%d")
     
-    print(f"=== RJ Research Hub Upload === {today} ===")
+    print(f"=== My Research Central Upload === {today} ===")
     
     # Step 1: Sync reports
     print("\n[1/4] Syncing reports...")
@@ -54,7 +54,7 @@ def main():
     # Step 3: Git add & commit
     msg = sys.argv[1] if len(sys.argv) > 1 else f"Auto-update: {today}"
     print(f"\n[3/4] Git commit: {msg}")
-    run("git add reports/ manifest.json")
+    run("git add reports/ manifest.json index.html")
     run(f'git commit -m "{msg}"')
     print("  Done")
     
