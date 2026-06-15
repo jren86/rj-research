@@ -3,26 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RJ Research Hub</title>
+<title>My Research Central · 投研报告库</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,400;14..32,500&family=Nunito:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0a0b0d;
-  --surface: #111318;
-  --surface-hover: #1a1d24;
-  --border: #1e2128;
-  --border-active: #3a3d44;
-  --text: #d4d6db;
-  --text-secondary: #7a7d85;
-  --text-muted: #4e5159;
-  --accent: #c8a95a;
-  --accent-dim: #8a7136;
-  --red: #d9534f;
-  --green: #5cb85c;
+  --bg: #FCFCF9;
+  --surface: #F4F3EF;
+  --surface-hover: #EDECE7;
+  --border: #E2E1DC;
+  --border-active: #C4C3BD;
+  --text: #2A2A28;
+  --text-secondary: #787772;
+  --text-muted: #A5A49F;
+  --accent: #7B8B82;
+  --accent-hover: #69786F;
+  --accent-light: #EBEFEC;
+  --accent-text: #5C6B61;
+  --red: #D16B5C;
+  --green: #5A8F76;
   --radius: 6px;
-  --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
+  --radius-lg: 10px;
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-rounded: "Nunito", "Cabin", "Varela Round", -apple-system, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,10 +42,10 @@ body {
 
 /* ── Nav ── */
 .nav {
-  background: var(--surface);
+  background: #FFFFFF;
   border-bottom: 1px solid var(--border);
-  padding: 0 24px;
-  height: 56px;
+  padding: 0 28px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,22 +57,12 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
 }
 
-.logo-mark {
-  width: 32px;
-  height: 32px;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0a0b0d;
-  font-family: var(--font-serif);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -1px;
+.logo-mark svg {
+  display: block;
 }
 
 .logo-text {
@@ -78,18 +72,19 @@ body {
 }
 
 .logo-text .brand {
-  font-family: var(--font-serif);
-  font-size: 15px;
-  font-weight: 400;
+  font-family: var(--font-rounded);
+  font-size: 16px;
+  font-weight: 700;
   color: var(--text);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
 }
 
 .logo-text .sub {
-  font-size: 9px;
+  font-size: 9.5px;
   color: var(--text-muted);
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-top: 1px;
 }
 
 .nav-right {
@@ -100,38 +95,38 @@ body {
 
 /* ── Hero ── */
 .hero {
-  padding: 40px 24px 24px;
+  padding: 44px 28px 0;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .hero h1 {
   font-family: var(--font-serif);
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 400;
   color: var(--text);
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
 }
 
 .hero p {
   font-size: 13px;
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 520px;
   line-height: 1.7;
 }
 
 .divider {
   height: 1px;
   background: var(--border);
-  margin: 28px 0 0;
+  margin: 24px 0 0;
 }
 
 /* ── Tabs ── */
 .tabs-wrap {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -146,24 +141,21 @@ body {
 }
 
 .tab {
-  padding: 14px 20px;
-  font-size: 13px;
+  padding: 14px 24px 12px;
+  font-size: 14.5px;
   font-weight: 500;
   color: var(--text-muted);
   cursor: pointer;
   border-bottom: 2px solid transparent;
   white-space: nowrap;
-  transition: all 0.2s;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  transition: color 0.2s, border-color 0.2s;
+  letter-spacing: 0.2px;
   background: none;
   border-top: none;
   border-left: none;
   border-right: none;
   font-family: var(--font-sans);
+  position: relative;
 }
 
 .tab:hover {
@@ -172,7 +164,7 @@ body {
 }
 
 .tab.active {
-  color: var(--accent);
+  color: var(--accent-text);
   border-bottom-color: var(--accent);
 }
 
@@ -180,24 +172,25 @@ body {
   font-size: 10px;
   color: var(--text-muted);
   font-weight: 400;
+  margin-left: 4px;
 }
 
 .tab.active .count {
-  color: var(--accent-dim);
+  color: var(--accent);
 }
 
 /* ── Content ── */
 .content {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 24px 28px;
 }
 
-/* Controls */
+/* Toolbar */
 .toolbar {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
@@ -205,71 +198,94 @@ body {
 .toolbar-label {
   font-size: 11px;
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
 }
 
 .date-select {
-  padding: 8px 12px;
+  padding: 7px 32px 7px 12px;
   font-size: 12px;
   border: 1px solid var(--border);
-  background: var(--surface);
+  border-radius: var(--radius);
+  background: #FFFFFF;
   color: var(--text);
   cursor: pointer;
-  min-width: 150px;
+  min-width: 155px;
   font-family: var(--font-sans);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   -webkit-appearance: none;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%237a7d85' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23787772' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 32px;
+  background-position: right 10px center;
+  transition: border-color 0.15s;
 }
 
 .date-select:focus {
   outline: none;
-  border-color: var(--accent-dim);
+  border-color: var(--accent);
 }
 
 .btn {
-  padding: 8px 16px;
+  padding: 7px 14px;
   font-size: 11px;
   font-weight: 500;
   border: 1px solid var(--border);
-  background: var(--surface);
+  border-radius: var(--radius);
+  background: #FFFFFF;
   color: var(--text-secondary);
   cursor: pointer;
   text-decoration: none;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  letter-spacing: 0.3px;
   font-family: var(--font-sans);
-  transition: all 0.15s;
+  transition: border-color 0.15s, color 0.15s;
 }
 
 .btn:hover {
-  border-color: var(--accent-dim);
-  color: var(--text);
+  border-color: var(--accent);
+  color: var(--accent-text);
 }
 
 .btn-nav {
-  padding: 8px 12px;
-  font-size: 14px;
+  padding: 7px 10px;
+  font-size: 13px;
+  line-height: 1;
 }
 
-/* Report frame */
-.report-frame {
+/* Report container - full content */
+.report-container {
   border: 1px solid var(--border);
-  background: #fff;
-  min-height: 500px;
+  border-radius: var(--radius-lg);
+  background: #FFFFFF;
+  min-height: 400px;
+  overflow: hidden;
 }
 
-.report-frame iframe {
-  width: 100%;
-  height: 80vh;
-  min-height: 500px;
-  border: none;
-  display: block;
+.report-container > .loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  color: var(--text-muted);
+  gap: 16px;
+}
+
+.report-container > .loading .spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.report-container > .loading p {
+  font-size: 12px;
+  letter-spacing: 0.5px;
 }
 
 /* Empty state */
@@ -284,8 +300,7 @@ body {
 }
 
 .empty .icon {
-  font-size: 32px;
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
 .empty p {
@@ -296,9 +311,9 @@ body {
 /* Footer */
 .footer {
   border-top: 1px solid var(--border);
-  padding: 28px 24px;
+  padding: 28px 28px;
   max-width: 1100px;
-  margin: 40px auto 0;
+  margin: 48px auto 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -307,57 +322,37 @@ body {
 }
 
 .footer-left {
-  font-size: 10px;
+  font-size: 10.5px;
   color: var(--text-muted);
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
 .footer-right {
-  font-size: 10px;
+  font-size: 10.5px;
   color: var(--text-muted);
-}
-
-/* Loading */
-.skeleton {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 40px 0;
-}
-
-.skeleton-line {
-  height: 14px;
-  background: var(--surface);
-  border-radius: 3px;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-.skeleton-line:nth-child(2) { width: 70%; animation-delay: 0.1s; }
-.skeleton-line:nth-child(3) { width: 85%; animation-delay: 0.2s; }
-.skeleton-line:nth-child(4) { width: 50%; animation-delay: 0.3s; }
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .nav { padding: 0 16px; height: 48px; }
-  .hero { padding: 28px 16px 16px; }
+  .nav { padding: 0 16px; height: 52px; }
+  .hero { padding: 32px 16px 0; }
   .hero h1 { font-size: 22px; }
   .tabs-wrap { padding: 0 16px; }
-  .tab { padding: 12px 14px; font-size: 12px; }
+  .tab { padding: 12px 16px 10px; font-size: 13px; }
   .content { padding: 16px; }
   .toolbar { gap: 8px; }
-  .report-frame iframe { height: 60vh; min-height: 400px; }
+  .report-container { min-height: 300px; }
   .footer { padding: 20px 16px; }
 }
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 19px; }
-  .tab { padding: 10px 12px; font-size: 11px; }
+  .tab { padding: 10px 14px 8px; font-size: 12px; }
+}
+
+/* Report container - shadow DOM isolation */
+.report-container .report-body {
+  padding: 16px 20px;
 }
 </style>
 </head>
@@ -365,17 +360,23 @@ body {
 
 <nav class="nav">
   <a class="logo" href="/">
-    <div class="logo-mark">RJ</div>
+    <div class="logo-mark">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <rect width="30" height="30" rx="7" fill="#7B8B82"/>
+        <text x="15" y="20.5" text-anchor="middle" fill="#FCFCF9" font-family="Playfair Display, Georgia, serif" font-size="17" font-weight="600">R</text>
+      </svg>
+    </div>
     <div class="logo-text">
-      <span class="brand">RJ Research Hub</span>
-      <span class="sub">Investment Intelligence</span>
+      <span class="brand">My Research Central</span>
+      <span class="sub">Research &amp; Intelligence</span>
     </div>
   </a>
   <div class="nav-right" id="navStats"></div>
 </nav>
 
 <section class="hero">
-  <h1>深度投研资讯</h1>
+  <h1>研究报告库</h1>
+  <p>分类浏览与查阅 Cleo 生成的全部投研报告</p>
   <div class="divider"></div>
 </section>
 
@@ -384,30 +385,20 @@ body {
 </div>
 
 <div class="content" id="mainContent">
-  <div class="skeleton">
-    <div class="skeleton-line"></div>
-    <div class="skeleton-line"></div>
-    <div class="skeleton-line"></div>
-    <div class="skeleton-line"></div>
+  <div class="loading" id="initialLoading">
+    <div class="spinner"></div>
+    <p>正在加载报告库…</p>
   </div>
 </div>
 
 <footer class="footer">
-  <div class="footer-left">RJ Research Hub &copy; 2026</div>
+  <div class="footer-left">My Research Central &copy; 2026</div>
   <div class="footer-right">Powered by Cleo &middot; Cloudflare Pages</div>
 </footer>
 
 <script>
 (function() {
-  var CAT_ICONS = {
-    morning: '&#x2600;',
-    evening: '&#x1F319;',
-    national_team: '&#x1F1E8;&#x1F1F3;',
-    ai_bubble: '&#x25CB;',
-    ai_news: '&#x25C6;',
-    deep_research: '&#x25A3;',
-    ai_tracking: '&#x25A1;'
-  };
+  'use strict';
 
   var CAT_NAMES_SHORT = {
     morning: '早间日报',
@@ -416,14 +407,15 @@ body {
     ai_bubble: 'AI 泡沫',
     ai_news: 'AI 新闻',
     deep_research: '深度研究',
-    ai_tracking: '人物追踪'
+    ai_tracking: '人物追踪',
+    market_panorama: '市场全景'
   };
 
   var tabsEl = document.getElementById('tabs');
   var mainContent = document.getElementById('mainContent');
   var navStats = document.getElementById('navStats');
   var activeCat = null;
-  var activeDate = null;
+  var activeKey = null;
 
   function escapeHTML(s) {
     var d = document.createElement('div');
@@ -439,74 +431,148 @@ body {
     });
   }
 
-  function switchDate(date) {
-    if (!activeCat) return;
-    var cat = window.__MANIFEST.categories.find(function(c) { return c.id === activeCat; });
-    if (!cat || !cat.files[date]) return;
-    activeDate = date;
-    var frame = document.getElementById('reportFrame');
-    if (frame) {
-      frame.innerHTML = '<iframe src="' + cat.files[date] + '" title="Report - ' + date + '"></iframe>';
-    }
-    var sel = document.getElementById('dateSelect');
-    if (sel) sel.value = date;
+  function showLoading() {
+    mainContent.innerHTML =
+      '<div class="toolbar"></div>' +
+      '<div class="report-container"><div class="loading"><div class="spinner"></div><p>正在加载报告…</p></div></div>';
+  }
+
+  function showToolbar(cat, keys) {
+    if (keys.length === 0) return '<div class="toolbar"></div>';
+
+    activeKey = keys[0];
+
+    var html = '<div class="toolbar">';
+    html += '<span class="toolbar-label">选择</span>';
+    html += '<select class="date-select" id="reportSelect">';
+    keys.forEach(function(k) {
+      html += '<option value="' + escapeHTML(k) + '"' + (k === activeKey ? ' selected' : '') + '>' + escapeHTML(k) + '</option>';
+    });
+    html += '</select>';
+    html += '<button class="btn btn-nav" id="navPrev" title="上一条">&#x25C0;</button>';
+    html += '<button class="btn btn-nav" id="navNext" title="下一条">&#x25B6;</button>';
+    html += '<span style="flex:1"></span>';
+    html += '<a class="btn" id="openLink" href="' + escapeHTML(cat.files[activeKey]) + '" target="_blank">新窗口打开 ↗</a>';
+    html += '</div>';
+
+    return html;
+  }
+
+  function renderReportContent(cat, key) {
+    activeKey = key;
+    var sel = document.getElementById('reportSelect');
+    if (sel) sel.value = key;
+
     var link = document.getElementById('openLink');
-    if (link) link.href = cat.files[date];
-  }
+    if (link) link.href = cat.files[key];
 
-  function navigateDate(dir) {
-    if (!activeCat) return;
-    var sel = document.getElementById('dateSelect');
-    if (!sel) return;
-    var idx = sel.selectedIndex + dir;
-    if (idx >= 0 && idx < sel.options.length) {
-      sel.selectedIndex = idx;
-      switchDate(sel.value);
-    }
-  }
+    var container = document.getElementById('reportContainer');
+    if (!container) return;
 
-  window.switchDate = switchDate;
-  window.navigateDate = navigateDate;
+    // Show loading
+    container.innerHTML =
+      '<div class="loading"><div class="spinner"></div><p>正在加载报告…</p></div>';
+
+    fetch(cat.files[key])
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.text();
+      })
+      .then(function(html) {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, 'text/html');
+
+        // Build content: styles first, then body HTML
+        var content = '';
+        var styles = doc.querySelectorAll('style');
+        styles.forEach(function(s) {
+          content += s.outerHTML;
+        });
+
+        // Extract body content
+        var bodyContent = doc.body.innerHTML;
+
+        // Wrap in a shadow-host div
+        container.innerHTML = '';
+
+        // Use a scoped div - inject report CSS + body content
+        // To avoid style bleeding, we prefix all the report CSS rules
+        // Actually, let's use a Shadow DOM for clean isolation
+        var shadow = container.attachShadow({mode: 'open'});
+
+        var frag = document.createDocumentFragment();
+
+        // Clone style nodes into shadow
+        styles.forEach(function(s) {
+          frag.appendChild(s.cloneNode(true));
+        });
+
+        // Parse body HTML nodes and append
+        var temp = document.createElement('div');
+        temp.innerHTML = bodyContent;
+        while (temp.firstChild) {
+          frag.appendChild(temp.firstChild);
+        }
+
+        shadow.appendChild(frag);
+      })
+      .catch(function(err) {
+        container.innerHTML =
+          '<div class="empty"><span class="icon" style="font-size:28px">&#x26A0;</span><p>加载失败：' + escapeHTML(err.message) + '</p></div>';
+      });
+  }
 
   function renderCategory(cat) {
+    if (!cat || !cat.files) return;
+
     activeCat = cat.id;
     setActiveTab(cat.id);
 
-    var dates = Object.keys(cat.files).sort().reverse();
-    if (dates.length === 0) {
+    var keys = Object.keys(cat.files);
+    if (keys.length === 0) {
       mainContent.innerHTML =
-        '<div class="empty"><span class="icon">&#x25A1;</span><p>暂无报告</p></div>';
+        '<div class="toolbar"></div>' +
+        '<div class="report-container"><div class="empty"><span class="icon" style="font-size:28px">&#x25A1;</span><p>暂无报告</p></div></div>';
       return;
     }
 
-    activeDate = dates[0];
+    activeKey = keys[0];
 
-    var html = '<div class="toolbar">';
-    html += '<span class="toolbar-label">日期</span>';
-    html += '<select class="date-select" id="dateSelect" onchange="switchDate(this.value)">';
-    dates.forEach(function(d) {
-      html += '<option value="' + d + '"' + (d === activeDate ? ' selected' : '') + '>' + d + '</option>';
-    });
-    html += '</select>';
-    html += '<button class="btn btn-nav" onclick="navigateDate(-1)">&#x25C0;</button>';
-    html += '<button class="btn btn-nav" onclick="navigateDate(1)">&#x25B6;</button>';
-    html += '<span style="flex:1"></span>';
-    html += '<a class="btn" id="openLink" href="' + cat.files[activeDate] + '" target="_blank">在新窗口打开 &#x2197;</a>';
-    html += '</div>';
-    html += '<div class="report-frame" id="reportFrame">';
-    html += '<iframe src="' + cat.files[activeDate] + '" title="' + escapeHTML(cat.name) + ' - ' + activeDate + '"></iframe>';
-    html += '</div>';
-
+    var html = showToolbar(cat, keys);
+    html += '<div class="report-container" id="reportContainer"></div>';
     mainContent.innerHTML = html;
+
+    // Bind events
+    var sel = document.getElementById('reportSelect');
+    sel.addEventListener('change', function() {
+      renderReportContent(cat, this.value);
+    });
+
+    document.getElementById('navPrev').addEventListener('click', function() {
+      var idx = sel.selectedIndex;
+      if (idx > 0) {
+        sel.selectedIndex = idx - 1;
+        renderReportContent(cat, sel.value);
+      }
+    });
+
+    document.getElementById('navNext').addEventListener('click', function() {
+      var idx = sel.selectedIndex;
+      if (idx < sel.options.length - 1) {
+        sel.selectedIndex = idx + 1;
+        renderReportContent(cat, sel.value);
+      }
+    });
+
+    // Load first report
+    renderReportContent(cat, activeKey);
   }
 
   function renderTabs(manifest) {
     var html = '';
     manifest.categories.forEach(function(cat, idx) {
       var short = CAT_NAMES_SHORT[cat.id] || cat.name;
-      var icon = CAT_ICONS[cat.id] || '';
       html += '<button class="tab' + (idx === 0 ? ' active' : '') + '" data-cat-id="' + cat.id + '" onclick="window.__loadCat(\'' + cat.id + '\')">';
-      html += '<span>' + icon + '</span>';
       html += short;
       html += ' <span class="count">' + cat.reportCount + '</span>';
       html += '</button>';
@@ -522,12 +588,13 @@ body {
   function render() {
     var m = window.__MANIFEST;
     if (!m || !m.categories || m.categories.length === 0) {
-      mainContent.innerHTML = '<div class="empty"><span class="icon">&#x26A0;</span><p>暂无报告数据</p></div>';
+      mainContent.innerHTML =
+        '<div class="report-container"><div class="empty"><span class="icon" style="font-size:28px">&#x26A0;</span><p>暂无报告数据</p></div></div>';
       return;
     }
 
     var totalReports = m.categories.reduce(function(s, c) { return s + c.reportCount; }, 0);
-    navStats.textContent = m.categories.length + ' Sections · ' + totalReports + ' Reports';
+    navStats.textContent = m.categories.length + ' 分类 · ' + totalReports + ' 份报告';
 
     renderTabs(m);
     renderCategory(m.categories[0]);
