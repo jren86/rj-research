@@ -109,11 +109,21 @@ body {
   margin-bottom: 6px;
 }
 
-.hero p {
-  font-size: 13px;
+.hero .quote {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
   color: var(--text-secondary);
-  max-width: 520px;
-  line-height: 1.7;
+  max-width: 560px;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.hero .quote-author {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
 }
 
 .divider {
@@ -399,7 +409,8 @@ body {
 
 <section class="hero">
   <h1>研究报告库</h1>
-  <p>分类浏览与查阅 Cleo 生成的全部投研报告</p>
+  <p class="quote">Be fearful when others are greedy, and greedy when others are fearful.</p>
+  <p class="quote-author">— Warren Buffett</p>
   <div class="divider"></div>
 </section>
 
