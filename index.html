@@ -8,20 +8,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,400;14..32,500&family=Nunito:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #FCFCF9;
-  --surface: #F4F3EF;
-  --surface-hover: #EDECE7;
-  --border: #E2E1DC;
-  --border-active: #C4C3BD;
-  --text: #2A2A28;
-  --text-secondary: #787772;
-  --text-muted: #A5A49F;
-  --accent: #7B8B82;
-  --accent-hover: #69786F;
-  --accent-light: #EBEFEC;
-  --accent-text: #5C6B61;
-  --red: #D16B5C;
-  --green: #5A8F76;
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-hover: #1c2128;
+  --border: #21262d;
+  --border-active: #30363d;
+  --text: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #484f58;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --accent-light: rgba(88,166,255,0.1);
+  --accent-text: #58a6ff;
+  --red: #f85149;
+  --green: #3fb950;
   --radius: 6px;
   --radius-lg: 10px;
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -42,7 +42,7 @@ body {
 
 /* ── Nav ── */
 .nav {
-  background: #FFFFFF;
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
   padding: 0 28px;
   height: 60px;
@@ -206,7 +206,7 @@ body {
   font-size: 12px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: #FFFFFF;
+  background: var(--surface);
   color: var(--text);
   cursor: pointer;
   min-width: 155px;
@@ -214,7 +214,7 @@ body {
   letter-spacing: 0.3px;
   -webkit-appearance: none;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23787772' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%238b949e' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
   transition: border-color 0.15s;
@@ -231,7 +231,7 @@ body {
   font-weight: 500;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: #FFFFFF;
+  background: var(--surface);
   color: var(--text-secondary);
   cursor: pointer;
   text-decoration: none;
@@ -255,9 +255,8 @@ body {
 .report-container {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: #FFFFFF;
+  background: transparent;
   min-height: 400px;
-  overflow: hidden;
 }
 
 .report-container > .loading {
@@ -297,6 +296,28 @@ body {
   padding: 80px 0;
   color: var(--text-muted);
   gap: 12px;
+}
+
+/* Scoped report table overflow fix */
+[id^="rpt-"] .rank-table {
+  table-layout: fixed;
+  width: 100%;
+}
+[id^="rpt-"] .rank-table td,
+[id^="rpt-"] .rank-table th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+[id^="rpt-"] .rank-table td:first-child {
+  width: 28px;
+}
+[id^="rpt-"] .rank-table td:nth-child(3) {
+  width: 85px;
+}
+[id^="rpt-"] .rank-table td:last-child {
+  width: 80px;
+  text-align: right;
 }
 
 .empty .icon {
@@ -362,7 +383,7 @@ body {
   <a class="logo" href="/">
     <div class="logo-mark">
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-        <rect width="30" height="30" rx="7" fill="#7B8B82"/>
+        <rect width="30" height="30" rx="7" fill="#58a6ff"/>
         <text x="15" y="20.5" text-anchor="middle" fill="#FCFCF9" font-family="Playfair Display, Georgia, serif" font-size="17" font-weight="600">R</text>
       </svg>
     </div>
