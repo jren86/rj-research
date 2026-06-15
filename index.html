@@ -127,17 +127,14 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 28px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
-
-.tabs-wrap::-webkit-scrollbar { height: 0; }
 
 .tabs {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0;
   border-bottom: 1px solid var(--border);
-  min-width: max-content;
 }
 
 .tab {
@@ -318,6 +315,11 @@ body {
 [id^="rpt-"] .rank-table td:last-child {
   width: 80px;
   text-align: right;
+}
+
+/* Full-width scoped report content */
+[id^="rpt-"] .container {
+  max-width: 100%;
 }
 
 .empty .icon {
