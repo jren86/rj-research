@@ -479,17 +479,37 @@ body {
   }
 
   function executeScripts(container) {
-    // Re-create script elements so the browser executes them
-    var scripts = container.querySelectorAll('script');
-    scripts.forEach(function(oldScript) {
-      if (oldScript.getAttribute('data-executed')) return;
+    // Re-create script elements so the browser executes them.
+    // Handle external scripts sequentially (wait for load) to preserve dependency order.
+    var scripts = Array.from(container.querySelectorAll('script'));
+
+    function execNext(idx) {
+      if (idx >= scripts.length) return;
+      var oldScript = scripts[idx];
+      if (oldScript.getAttribute('data-executed')) {
+        execNext(idx + 1);
+        return;
+      }
+
       var newScript = document.createElement('script');
       newScript.textContent = oldScript.textContent;
       if (oldScript.src) newScript.src = oldScript.src;
       if (oldScript.type) newScript.type = oldScript.type;
       newScript.setAttribute('data-executed', '1');
+
+      // For external scripts, wait for load before next
+      if (oldScript.src) {
+        newScript.onload = function() { execNext(idx + 1); };
+        newScript.onerror = function() { execNext(idx + 1); };
+      }
+
       oldScript.parentNode.replaceChild(newScript, oldScript);
-    });
+
+      // Inline scripts execute synchronously; proceed immediately
+      if (!oldScript.src) execNext(idx + 1);
+    }
+
+    execNext(0);
   }
 
   function renderReportContent(cat, key) {
