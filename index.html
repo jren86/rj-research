@@ -350,7 +350,7 @@ body {
   .tab { padding: 10px 14px 8px; font-size: 12px; }
 }
 
-/* Report container - shadow DOM isolation */
+/* Report container */
 .report-container .report-body {
   padding: 16px 20px;
 }
@@ -458,6 +458,40 @@ body {
     return html;
   }
 
+  function scopeCSS(css, prefix) {
+    // Prefix all CSS selectors with the container prefix to prevent style bleeding
+    return css.replace(/([^{}]+)\s*\{/g, function(match, selectors) {
+      var sel = selectors.trim();
+      if (sel.startsWith('@')) return match;
+      var scoped = sel.split(',').map(function(s) {
+        s = s.trim();
+        if (s === ':root' || s === 'body') return prefix;
+        s = s.replace(/\bhtml\b/g, prefix);
+        s = s.replace(/\bbody\b/g, prefix);
+        // Only prefix element/class/id/pseudo selectors - not already-prefixed
+        if (/^[a-zA-Z*.#:]/.test(s)) {
+          return prefix + ' ' + s;
+        }
+        return s;
+      }).join(', ');
+      return scoped + ' {';
+    });
+  }
+
+  function executeScripts(container) {
+    // Re-create script elements so the browser executes them
+    var scripts = container.querySelectorAll('script');
+    scripts.forEach(function(oldScript) {
+      if (oldScript.getAttribute('data-executed')) return;
+      var newScript = document.createElement('script');
+      newScript.textContent = oldScript.textContent;
+      if (oldScript.src) newScript.src = oldScript.src;
+      if (oldScript.type) newScript.type = oldScript.type;
+      newScript.setAttribute('data-executed', '1');
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  }
+
   function renderReportContent(cat, key) {
     activeKey = key;
     var sel = document.getElementById('reportSelect');
@@ -468,6 +502,16 @@ body {
 
     var container = document.getElementById('reportContainer');
     if (!container) return;
+
+    // If container has a shadow root from a previous render,
+    // replace the element entirely to start fresh
+    if (container.shadowRoot) {
+      var newContainer = document.createElement('div');
+      newContainer.id = 'reportContainer';
+      newContainer.className = container.className;
+      container.parentNode.replaceChild(newContainer, container);
+      container = newContainer;
+    }
 
     // Show loading
     container.innerHTML =
@@ -481,40 +525,41 @@ body {
       .then(function(html) {
         var parser = new DOMParser();
         var doc = parser.parseFromString(html, 'text/html');
-
-        // Build content: styles first, then body HTML
-        var content = '';
         var styles = doc.querySelectorAll('style');
-        styles.forEach(function(s) {
-          content += s.outerHTML;
-        });
-
-        // Extract body content
+        var scripts = doc.querySelectorAll('script');
         var bodyContent = doc.body.innerHTML;
 
-        // Wrap in a shadow-host div
+        // Use div + CSS scoping for all reports
+        // (uniform approach avoids Shadow DOM switching issues)
         container.innerHTML = '';
+        var reportId = 'rpt-' + Math.random().toString(36).slice(2, 8);
+        var wrapper = document.createElement('div');
+        wrapper.id = reportId;
 
-        // Use a scoped div - inject report CSS + body content
-        // To avoid style bleeding, we prefix all the report CSS rules
-        // Actually, let's use a Shadow DOM for clean isolation
-        var shadow = container.attachShadow({mode: 'open'});
-
-        var frag = document.createDocumentFragment();
-
-        // Clone style nodes into shadow
+        // Inject scoped CSS
         styles.forEach(function(s) {
-          frag.appendChild(s.cloneNode(true));
+          if (!s.textContent.trim()) return;
+          var scoped = scopeCSS(s.textContent, '#' + reportId);
+          var style = document.createElement('style');
+          style.textContent = scoped;
+          wrapper.appendChild(style);
         });
 
-        // Parse body HTML nodes and append
+        // Inject body content
         var temp = document.createElement('div');
         temp.innerHTML = bodyContent;
         while (temp.firstChild) {
-          frag.appendChild(temp.firstChild);
+          wrapper.appendChild(temp.firstChild);
         }
 
-        shadow.appendChild(frag);
+        container.appendChild(wrapper);
+
+        // Execute scripts after content is in the DOM
+        if (scripts.length > 0) {
+          setTimeout(function() {
+            executeScripts(wrapper);
+          }, 50);
+        }
       })
       .catch(function(err) {
         container.innerHTML =
