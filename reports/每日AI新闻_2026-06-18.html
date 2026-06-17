@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI全球新闻 · 2026-06-18</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .report-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-header h1 {
+      font-size: 1.4em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .report-header .meta {
+      font-size: 0.82em;
+      color: var(--text2);
+    }
+
+    h2 {
+      font-size: 1.15em;
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: var(--blue);
+    }
+
+    h3 {
+      font-size: 1em;
+      margin: 14px 0 8px;
+      color: var(--text);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+
+    th {
+      background: var(--card);
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover {
+      background: rgba(88, 166, 255, 0.05);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78em;
+      margin-right: 4px;
+    }
+
+    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+
+    .highlight {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+
+    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+
+    ul.bullet {
+      margin: 6px 0 6px 18px;
+      font-size: 0.92em;
+    }
+
+    ul.bullet li {
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+
+    .source-link {
+      display: block;
+      font-size: 0.78em;
+      color: var(--text2);
+      margin: 4px 0 8px 0;
+      word-break: break-all;
+    }
+
+    .source-link a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    .report-footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.75em;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.05em; }
+      table { font-size: 0.8em; }
+    }
+
+    p { margin: 6px 0; }
+    blockquote {
+      margin: 8px 0;
+      padding: 8px 12px;
+      border-left: 3px solid var(--purple);
+      background: rgba(188, 140, 255, 0.06);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.92em;
+      color: var(--text);
+    }
+    strong { color: var(--text); font-weight: 600; }
+    em { color: var(--yellow); font-style: normal; }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日 AI 全球新闻 · 2026-06-18</h1>
+  <div class="meta">2026-06-18 · via WB · My Research Central</div>
+</div>
+
+<!-- ==================== 头条新闻 ==================== -->
+
+<h2>一、头条新闻</h2>
+
+<div class="card">
+  <h3>🔴 G7峰会历史性时刻：三大AI CEO与G7领导人同台，AI治理进入大国协调阶段</h3>
+  <p>G7埃维安峰会（6/15-17）迎来52年来第二次私营部门正式参会——OpenAI的Sam Altman、Anthropic的Dario Amodei、Google DeepMind的Demis Hassabis与G7领导人共进工作午餐，讨论前沿AI风险、基础设施与主权问题。Mistral、Cohere、Synthesia、Black Forest Labs等欧洲AI企业负责人也出席。</p>
+  <p><strong>核心成果</strong>：预计达成一揽子<strong>自愿承诺</strong>（青少年安全、前沿网络与生物风险），将成为全球事实基准。</p>
+  <p><strong>背景驱动</strong>：Anthropic Mythos 5发布标志"拐点"——强大的网络能力直接促使特朗普政府考虑监管；随后美国对Fable 5/Mythos 5实施出口管制，改变了G7动态。</p>
+  <blockquote>💡 <strong>关键洞察</strong>：AI公司CEO获得与国家元首同台的地位，标志着科技权力向地缘政治核心层迁移。"为了让AI承诺可信，国家元首现在需要少数私营部门高管的合作甚至背书"——CFR Jessica Brandt</blockquote>
+  <div class="source-link">🔗 <a href="https://www.cnbc.com/2026/06/17/g7-trump-ai-tech-leaders-openai-anthropic-google.html">来源：CNBC</a></div>
+  <div class="source-link">🔗 <a href="https://www.g7.utoronto.ca/evaluations/2026evian/kirton-ai-governance.html">来源：G7 Research Group</a></div>
+  <div class="source-link">🔗 <a href="https://www.consilium.europa.eu/en/press/press-releases/2026/06/17/g7-leaders-joint-statements-evian-france-16-17-june-2026/">来源：欧盟理事会</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 SpaceX 600亿美元收购Cursor——全球AI编程赛道最大并购</h3>
+  <p>SpaceX签署最终合并协议，以约<strong>600亿美元</strong>全股票方式收购AI编程工具Cursor母公司Anysphere，预计2026年Q3完成。继6/12完成史上最大IPO（募资$860亿，估值$1.7万亿→$2.7万亿）后的首个重大战略动作。</p>
+  <p><strong>战略逻辑</strong>：SpaceX IPO路演展示的$28万亿TAM中，AI相关约$26万亿（基础设施$2.4万亿 + 企业应用$22.7万亿）。此前Cursor在2025年完成Series C $9亿+后续$23亿融资，估值$29亿。</p>
+  <p><strong>背景</strong>：xAI合并后因深度伪造和Grok反犹输出等争议受挫，全部11位联合创始人已于3月底前离职。</p>
+  <div class="source-link">🔗 <a href="https://theaiinsider.tech/2026/06/16/spacex-acquires-ai-coding-startup-cursor-for-60b-as-post-ipo-valuation-surges-past-2-7t/">来源：The AI Insider</a></div>
+  <div class="source-link">🔗 <a href="https://www.cbsnews.com/news/spacex-cursor-60-billion-ai-acquisition/">来源：CBS News</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 微信支付发布"AI专属卡"——Agent消费时代正式开启</h3>
+  <p>微信支付正式发布面向Agent消费的"AI专属卡"，腾讯AI办公助手WorkBuddy首发接入。用户充值后可让AI完成从团购推荐到下单支付的全流程，每次支付需用户扫码确认，资金完全独立于微信钱包。</p>
+  <p><strong>实测体验</strong>（智东西6/17报道）：</p>
+  <ul class="bullet">
+    <li>成功购买兰州拉面团购券、星巴克双杯星冰乐（39.9元，比美团APP更便宜）、KFC翅桶（便宜1元多）</li>
+    <li>父亲节规划：从建议到餐厅团购下单全流程跑通</li>
+    <li>退款需在美团APP手动操作，AI暂不支持自行退款</li>
+    <li>目前仅支持WorkBuddy客户端 + 美团团购服务</li>
+  </ul>
+  <blockquote>💡 <strong>关键洞察</strong>：腾讯对安全性极度审慎——AI专属卡与微信支付原有环境完全独立，不提供与微信钱包/银行卡的核心资金接口。标志着AI Agent商业化支付基础设施正式落地。</blockquote>
+  <div class="source-link">🔗 <a href="https://www.aitntnews.com/newDetail.html?newId=26285">来源：AITNT</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 OpenAI一季度消耗现金37亿美元，2025全年亏损385亿美元</h3>
+  <p>审计文件显示OpenAI 2026年Q1现金消耗<strong>37亿美元</strong>（超同期57亿美元收入的一半），现金消耗与收入均同比增长两倍。截至Q1末持有超730亿美元现金及有价证券。</p>
+  <p><strong>2025全年</strong>：营收130.7亿美元（同比增长超3倍），全年亏损<strong>385亿美元</strong>，研发支出191.8亿美元。公司正推进IPO进程。</p>
+  <div class="highlight highlight-red">
+    ⚠️ <strong>风险提示</strong>：巨额亏损与高速增长并存，IPO估值定价将面临"成长性 vs 盈利能力"的严峻博弈。
+  </div>
+  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_0606a31e24b53452">来源：财联社</a></div>
+  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_9036a31e52d89552">来源：DoNews</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 2026世界人工智能大会（WAIC）倒计时30天——3000+展品、1100+企业</h3>
+  <p>2026 WAIC暨人工智能全球治理高级别会议将于<strong>7月17-20日</strong>在上海举行，主题"智能伙伴，共创未来"。展览面积超10万平方米，设世博展览馆、徐汇西岸、浦东张江三大片区，1100+企业参展，3000+展品亮相，<strong>超300款AI产品全球首发</strong>。</p>
+  <p>140+主题论坛、1400+国际嘉宾，为历届之最。同期中国正筹建"世界人工智能合作组织"。</p>
+  <div class="source-link">🔗 <a href="http://sh.people.com.cn/BIG5/n2/2026/0617/c134768-41613724.html">来源：人民网上海</a></div>
+  <div class="source-link">🔗 <a href="https://baijiahao.baidu.com/s?id=1868249699892731938&wfr=spider&for=pc">来源：界面新闻</a></div>
+</div>
+
+<!-- ==================== 行业动态 ==================== -->
+
+<h2>二、行业动态</h2>
+
+<div class="card">
+  <h3>🔵 全球AI大模型总调用量连续八周增长，达44.6万亿Token</h3>
+  <p>OpenRouter最新数据显示上周全球AI大模型总调用量<strong>44.6万亿Token</strong>，环比增长23.5%，连续八周上涨。中国模型持续占据调用量前列。</p>
+  <div class="source-link">🔗 <a href="https://finance.eastmoney.com/a/202606163772948523.html">来源：东方财富</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 中国"算力网"启动万亿级投资周期</h3>
+  <p>算力网首次写入政府工作报告，被列为国家级新基建工程"六张网"之一。央企智能算力规模持续翻倍，为大模型训练提供底座支撑。算电协同绿电直连成为关键载体。</p>
+  <div class="source-link">🔗 <a href="http://k.sina.com.cn/article_5953189932_162d6782c06704g9v8.html">来源：新浪财经</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 2026人工智能眼镜生态大会深圳开幕——AI眼镜向高价值场景跃迁</h3>
+  <p>6/17深圳举办AI眼镜生态大会，超300个国际采购团和8万家全国眼镜门店参与。乐奇光波导AI眼镜、科大讯飞40克AI眼镜、内置支付宝"看一下支付"的Rokid眼镜集中亮相。AI眼镜正从翻译/拍摄向支付/企业应用拓展，二级市场智能眼镜概念股走强。</p>
+  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_0076a320fa936552">来源：新华网</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 中国移动"新通话"升级——AI功能融合原生通话场景</h3>
+  <p>中国移动本月起对传统通话重大升级：通话字幕、可视菜单、1080P高清视频通话、AI防诈、降噪通话等功能陆续上线，用户无需额外付费即可在原生拨号界面调用AI功能。</p>
+  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260616A08Y2000">来源：腾讯新闻</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 2026年AI重塑网络攻防格局</h3>
+  <p>AI、自动化与互联系统融合重塑网络安全格局。威胁行为者利用AI工具门槛大幅降低——从需要深厚技术专长变为仅需掌握AI工具使用方法。网络犯罪已演变为大规模协同作战体系，仅需极少人工干预即可实施定向攻击。</p>
+  <div class="source-link">🔗 <a href="http://k.sina.com.cn/article_7857201856_1d45362c001906zag4.html">来源：新浪科技</a></div>
+</div>
+
+<!-- ==================== 产品与公司新闻 ==================== -->
+
+<h2>三、产品与公司新闻</h2>
+
+<div class="card">
+  <h3>📄 Google Home Speaker——Gemini驱动智能家居音箱重生</h3>
+  <p>Google发布首款专为Gemini打造的智能音箱Google Home Speaker，售价<strong>$99.99</strong>。支持自然语言多步骤请求（如"关掉所有灯除了床头灯"或"调暗厨房灯光、播放放松音乐并设20分钟计时器"），可中途纠正指令，配10种新语音双向对话。Gemini Live高级功能需$10/月订阅（免费试用6个月）。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/17/google-bets-on-gemini-to-reinvent-the-smart-home-speaker/">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <h3>📄 Cohere发布North Mini Code——30B MoE开源编程模型</h3>
+  <p>Cohere发布面向开发者的首个模型North Mini Code：<strong>30B总参数/3B激活参数</strong>的MoE架构，支持256K上下文与64K输出，<span class="tag tag-green">Apache 2.0</span>开源。专为智能体编码设计，支持代码生成、智能体软件工程和终端任务。可通过Cohere Chat V2 API、Hugging Face和Model Vault部署。</p>
+  <div class="source-link">🔗 <a href="https://www.cohere.com/">来源：Cohere 官网</a></div>
+  <div class="source-link">🔗 <a href="https://baike.baidu.com/item/North%20Mini%20Code/67944783">来源：百度百科</a></div>
+</div>
+
+<div class="card">
+  <h3>📄 智谱GLM-5.2在编程马拉松中逼近闭源领导者</h3>
+  <p>The Decoder报道，智谱AI的GLM-5.2（6/16开源，MIT协议，1M上下文）在编程马拉松中表现逼近闭源领导者。标志着国产开源模型在代码能力维度上的持续突破。</p>
+  <div class="source-link">🔗 <a href="https://the-decoder.com/zhipu-ais-glm-5-2-closes-in-on-closed-source-leaders-in-coding-marathons/">来源：The Decoder</a></div>
+</div>
+
+<div class="card">
+  <h3>📄 Kimi K2.7 Code——比Claude便宜6倍，还能自评作业</h3>
+  <p>月之暗面的Kimi K2.7 Code（6/12发布，1.1T MoE）被报道为比Claude便宜<strong>6倍</strong>的编程模型，且具备<strong>自我评分</strong>（self-grading）能力，可对自身输出进行质量评估。</p>
+  <div class="source-link">🔗 <a href="https://pub.towardsai.net/chinas-coding-model-kimi-k2-7-code-is-6x-cheaper-than-claude-it-also-grades-its-own-homework-d7fd52c2532e">来源：Towards AI</a></div>
+</div>
+
+<div class="card">
+  <h3>📄 Allbirds再度更名为Smartbird，全面押注AI算力基础设施</h3>
+  <p>鞋履品牌Allbirds继4月更名为NewBird AI后再度更名为Smartbird，同时任命新CEO。业务从鞋类制造全面转向AI算力基础设施，股价应声暴涨。反映传统企业"AI转型"叙事在资本市场的持续热度。</p>
+  <div class="source-link">🔗 <a href="http://finance.sina.com.cn/stock/usstock/c/2026-06-18/doc-inictxki3609099.shtml">来源：新浪财经</a></div>
+</div>
+
+<div class="card">
+  <h3>📄 OpenAI联手Visa——ChatGPT AI代理支付正式落地</h3>
+  <p>OpenAI与Visa扩大合作，Visa支付网络接入ChatGPT，AI代理可在用户授权后直接完成在线购物和支付。覆盖所有支持Visa付款的商户，支持消费额度、审批门槛等用户预设权限。Codex编程Agent也将可使用认证支付凭证自动购买推理算力、第三方API等资源。</p>
+  <div class="source-link">🔗 <a href="https://xueqiu.com/2744910577/394243341">来源：雪球</a></div>
+  <div class="source-link">🔗 <a href="https://cloud.tencent.com/developer/news/4077117">来源：腾讯云</a></div>
+</div>
+
+<!-- ==================== 研究前沿 ==================== -->
+
+<h2>四、研究前沿</h2>
+
+<div class="card">
+  <h3>💡 OpenAI研究人员开发AI模型故障预测方法</h3>
+  <p>OpenAI研究团队正在开发在模型发布前<strong>预测AI模型失败频率</strong>的方法，旨在建立"模型可靠性预测"框架，从被动应对转向主动预判AI系统的失效模式。</p>
+  <div class="source-link">🔗 <a href="https://the-decoder.com/openai-researchers-want-to-predict-how-often-ai-models-will-fail-before-launch/">来源：The Decoder</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 DeepSeek如何用极小内存处理100万Token</h3>
+  <p>Towards AI深度解析DeepSeek处理百万Token上下文的内存优化技术——通过创新的注意力机制和内存管理策略，大幅降低长上下文推理的内存消耗，使百万级Token处理在常规硬件上成为可能。</p>
+  <div class="source-link">🔗 <a href="https://pub.towardsai.net/how-deepseek-handles-1-million-tokens-with-a-fraction-of-the-memory-b35f3256a3aa">来源：Towards AI</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 Odyssey AI实验室融资3.1亿美元，估值14.5亿美元</h3>
+  <p>AI实验室Odyssey完成3.1亿美元B轮融资（Natural Capital领投，亚马逊/AMD Ventures/GV/EQT/IQT跟投），投后估值<strong>14.5亿美元</strong>。致力于构建能学习预测并与外界互动的系统，在规模化、交互性、多模态和物理精度方面取得突破。</p>
+  <div class="source-link">🔗 <a href="http://finance.sina.com.cn/stock/usstock/c/2026-06-18/doc-inictxkm5804243.shtml">来源：新浪财经</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 亚马逊预测商用量子计算机5-7年内问世</h3>
+  <p>亚马逊AI负责人彼得·德桑蒂斯透露，首款具备商用价值的小规模量子计算机将在<strong>5-7年内</strong>问世。亚马逊新业务部门聚焦AI大模型、自研芯片和量子计算三大领域。</p>
+  <div class="source-link">🔗 <a href="http://finance.sina.com.cn/stock/usstock/c/2026-06-18/doc-inictxki3602223.shtml">来源：新浪财经</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 MolmoMotion——语言引导的3D动作预测</h3>
+  <p>Allen AI（AI2）发布MolMoMotion模型，支持语言引导的3D动作预测，可用于动画生成、机器人控制和具身智能场景，已在Hugging Face开源。</p>
+  <div class="source-link">🔗 <a href="https://huggingface.co/blog/allenai/molmomotion">来源：Hugging Face</a></div>
+</div>
+
+<!-- ==================== 政策与监管 ==================== -->
+
+<h2>五、政策与监管</h2>
+
+<div class="card">
+  <h3>⚠️ G7发布《更安全数字空间宣言》——保护未成年人在线安全</h3>
+  <p>G7埃维安峰会发布领导人关于为未成年人创造更安全数字空间的联合声明，AI辅助的社交媒体危害和儿童在线保护成为核心议题。这也是AI公司CEO在午餐会上讨论的重点之一。</p>
+  <div class="source-link">🔗 <a href="https://www.consilium.europa.eu/media/32fnosbz/leader-s-call-on-a-safer-digital-space-for-minors.pdf">来源：欧盟理事会</a></div>
+</div>
+
+<div class="card">
+  <h3>⚠️ G7发布《关键矿物供应链安全宣言》</h3>
+  <p>G7领导人联合声明确保关键矿物供应链安全——这对AI芯片制造所需的稀土等材料具有直接战略意义。</p>
+  <div class="source-link">🔗 <a href="https://www.consilium.europa.eu/media/nfqf1rca/g7-leaders-declaration-on-securing-supply-chains-for-critical-minerals.pdf">来源：欧盟理事会</a></div>
+</div>
+
+<div class="card">
+  <h3>⚠️ 特朗普对AI表态："我们必须非常谨慎"</h3>
+  <p>特朗普在G7峰会期间表示："我们必须对人工智能非常谨慎。人工智能既是好事，也可能是坏事。"此前他签署行政令禁止向G7其他成员及盟友出口美国最新AI模型和技术。</p>
+  <div class="source-link">🔗 <a href="http://k.sina.com.cn/article_5953466437_162dab0450670arosw.html">来源：新浪</a></div>
+</div>
+
+<div class="card">
+  <h3>⚠️ 中国筹建"世界人工智能合作组织"</h3>
+  <p>国新办宣布中国正加紧筹建"世界人工智能合作组织"，推动AI向善发展。与WAIC 2026同步推进，将作为中国参与全球AI治理的重要平台。</p>
+  <div class="source-link">🔗 <a href="https://blog.csdn.net/haohaizi_liu/article/details/162063946">来源：CSDN AI科技热点日报</a></div>
+</div>
+
+<div class="card">
+  <h3>⚠️ DeepSeek完成510亿元首轮融资——创始人控制权设计引关注</h3>
+  <p>DeepSeek完成成立以来首轮外部融资<strong>510亿元人民币</strong>（超70亿美元），投后估值突破500亿美元。创始人梁文锋个人出资200亿元领投，腾讯、宁德时代、网易、京东、IDG资本等跟投。特殊架构设计（有限合伙+无投票权+五年锁定）确保创始人控制权。</p>
+  <div class="source-link">🔗 <a href="http://www.pedaily.cn/">来源：投资界</a></div>
+</div>
+
+<!-- ==================== 模型发布追踪 ==================== -->
+
+<h2>六、模型发布追踪 📊</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>模型</th>
+      <th>机构</th>
+      <th>发布日期</th>
+      <th>关键特性</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>North Mini Code</strong> (free)</td>
+      <td>Cohere</td>
+      <td>6/17</td>
+      <td>30B MoE/3B active, 256K ctx, <span class="tag tag-green">Apache 2.0</span></td>
+    </tr>
+    <tr>
+      <td><strong>GLM 5.2</strong></td>
+      <td>智谱AI</td>
+      <td>6/16</td>
+      <td>MIT开源, 1M上下文, 编程逼近闭源</td>
+    </tr>
+    <tr>
+      <td><strong>Kimi K2.7 Code</strong></td>
+      <td>月之暗面</td>
+      <td>6/12</td>
+      <td>1.1T MoE, 比Claude便宜6倍, 自评能力</td>
+    </tr>
+    <tr>
+      <td><strong>Claude Fable 5</strong></td>
+      <td>Anthropic</td>
+      <td>6/9</td>
+      <td><span class="tag tag-red">网络安全模型（已被出口管制）</span></td>
+    </tr>
+    <tr>
+      <td><strong>Nemotron 3 Ultra</strong></td>
+      <td>NVIDIA</td>
+      <td>6/4</td>
+      <td><span class="tag tag-green">免费开源</span></td>
+    </tr>
+    <tr>
+      <td><strong>Qwen3.7 Plus</strong></td>
+      <td>阿里</td>
+      <td>6/3</td>
+      <td>千问系列最新</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="divider"></div>
+
+<div class="report-footer">
+  数据来源：CNBC / TechCrunch / The Decoder / Towards AI / 新浪财经 / 智东西 / 投资界 / 财联社 / G7 Research Group / 欧盟理事会 / Hugging Face / OpenRouter<br>
+  报告生成时间：2026-06-18 07:25 CST<br>
+  My Research Central · via WB
+</div>
+
+</body>
+</html>
