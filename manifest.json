@@ -63,9 +63,10 @@
       "id": "national_team",
       "name": "国家队增减持追踪",
       "description": "国家队增减持每日动向",
-      "reportCount": 6,
-      "latestDate": "2026-06-17",
+      "reportCount": 7,
+      "latestDate": "2026-06-19",
       "files": {
+        "2026-06-19": "reports/每日国家队增减持动向_2026-06-19.html",
         "2026-06-17": "reports/每日国家队增减持动向_2026-06-17.html",
         "2026-06-15": "reports/每日国家队增减持动向_2026-06-15.html",
         "2026-06-10": "reports/每日国家队增减持动向_2026-06-10.html",
