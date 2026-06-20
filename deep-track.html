@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深度追踪 · My Research Central</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,400;14..32,500&family=Nunito:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-hover: #1c2128;
+  --border: #21262d;
+  --border-active: #30363d;
+  --text: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #484f58;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --accent-light: rgba(88,166,255,0.1);
+  --accent-text: #58a6ff;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d2991d;
+  --purple: #a371f7;
+  --star-gold: #e3b341;
+  --radius: 6px;
+  --radius-lg: 10px;
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-rounded: "Nunito", "Cabin", "Varela Round", -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Nav ── */
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+}
+.nav a { color: inherit; text-decoration: none; }
+
+.logo { display: flex; align-items: center; gap: 14px; }
+.logo-mark svg { display: block; }
+
+.logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+.logo-text .brand {
+  font-family: var(--font-rounded);
+  font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: 0.2px;
+}
+.logo-text .sub {
+  font-size: 9.5px; color: var(--text-muted); letter-spacing: 2.5px;
+  text-transform: uppercase; margin-top: 1px;
+}
+
+.nav-links { display: flex; align-items: center; gap: 16px; }
+.nav-link {
+  font-size: 13px; color: var(--text-secondary); text-decoration: none;
+  padding: 6px 12px; border-radius: var(--radius);
+  transition: color 0.15s, background 0.15s;
+}
+.nav-link:hover { color: var(--text); background: var(--surface-hover); }
+.nav-link.active { color: var(--accent-text); }
+
+/* ── Main Layout ── */
+.main-layout { display: flex; flex: 1; overflow: hidden; }
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 280px; min-width: 280px;
+  background: var(--surface); border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; overflow-y: auto;
+}
+
+.sidebar-header {
+  padding: 20px 20px 12px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sidebar-title {
+  font-family: var(--font-rounded);
+  font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: 0.5px;
+}
+.sidebar-count {
+  font-size: 10px; color: var(--text-muted);
+  background: var(--bg); padding: 3px 8px; border-radius: 10px;
+}
+
+.add-keyword-area { padding: 0 20px 16px; }
+.add-keyword-row { display: flex; gap: 8px; }
+.add-keyword-input {
+  flex: 1; padding: 8px 12px; font-size: 12px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg); color: var(--text);
+  font-family: var(--font-sans); outline: none; transition: border-color 0.15s;
+}
+.add-keyword-input:focus { border-color: var(--accent); }
+.add-keyword-input::placeholder { color: var(--text-muted); }
+
+.btn-add {
+  padding: 8px 12px; font-size: 12px; font-weight: 600;
+  border: 1px solid var(--accent); border-radius: var(--radius);
+  background: var(--accent); color: #fff; cursor: pointer;
+  font-family: var(--font-sans); transition: opacity 0.15s; white-space: nowrap;
+}
+.btn-add:hover { opacity: 0.85; }
+
+.btn-refresh-all {
+  margin-top: 8px; width: 100%; padding: 6px 12px; font-size: 11px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg); color: var(--text-muted); cursor: pointer;
+  font-family: var(--font-sans); transition: border-color 0.15s, color 0.15s;
+}
+.btn-refresh-all:hover { border-color: var(--accent); color: var(--accent-text); }
+
+/* Keyword list */
+.keyword-list { flex: 1; overflow-y: auto; padding: 0 0 12px; }
+
+.keyword-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 20px; cursor: pointer;
+  border-left: 3px solid transparent; transition: background 0.15s, border-color 0.15s; gap: 8px;
+}
+.keyword-item:hover { background: var(--surface-hover); }
+.keyword-item.active { background: var(--accent-light); border-left-color: var(--accent); }
+
+.keyword-item-name {
+  font-size: 13px; font-weight: 500; color: var(--text);
+  flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.keyword-item.active .keyword-item-name { color: var(--accent-text); }
+
+.keyword-item .kw-meta { display: flex; align-items: center; gap: 6px; }
+.keyword-item-date { font-size: 10px; color: var(--text-muted); white-space: nowrap; }
+.keyword-item-count { font-size: 9px; color: var(--text-muted); }
+
+.btn-delete {
+  width: 22px; height: 22px; border: none; background: none;
+  color: var(--text-muted); cursor: pointer; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 4px; transition: color 0.15s, background 0.15s; flex-shrink: 0; padding: 0;
+}
+.btn-delete:hover { color: var(--red); background: rgba(248,81,73,0.1); }
+
+.keyword-item-empty {
+  padding: 40px 20px; text-align: center; font-size: 12px; color: var(--text-muted); line-height: 1.8;
+}
+.keyword-item-empty .hint-icon { font-size: 24px; margin-bottom: 10px; opacity: 0.4; }
+
+/* ── Content Area ── */
+.content-area { flex: 1; overflow-y: auto; padding: 28px 36px; display: flex; flex-direction: column; }
+
+.content-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 24px; flex-wrap: wrap; gap: 8px;
+}
+.content-title {
+  font-family: var(--font-serif);
+  font-size: 24px; font-weight: 400; color: var(--text); letter-spacing: 0.8px;
+}
+.content-meta { font-size: 11px; color: var(--text-muted); letter-spacing: 0.3px; }
+.content-divider { height: 1px; background: var(--border); margin-bottom: 16px; }
+
+/* Toolbar row */
+.content-toolbar {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;
+}
+.btn-fav-toggle {
+  padding: 6px 14px; font-size: 11px; font-weight: 500;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); color: var(--text-secondary); cursor: pointer;
+  font-family: var(--font-sans); transition: border-color 0.15s, color 0.15s;
+  display: flex; align-items: center; gap: 6px;
+}
+.btn-fav-toggle:hover { border-color: var(--star-gold); color: var(--star-gold); }
+.btn-fav-toggle.active { border-color: var(--star-gold); color: var(--star-gold); background: rgba(227,179,65,0.08); }
+.fav-count { font-size: 9px; opacity: 0.7; }
+
+/* Post cards */
+.posts-list { display: flex; flex-direction: column; gap: 14px; }
+
+.post-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: border-color 0.15s; position: relative;
+}
+.post-card:hover { border-color: var(--border-active); }
+
+.post-card-top { padding: 14px 20px 0; display: flex; align-items: flex-start; gap: 12px; }
+
+.post-title-area { flex: 1; min-width: 0; }
+.post-title {
+  font-size: 14px; font-weight: 600; color: var(--text);
+  line-height: 1.5; margin-bottom: 6px;
+}
+
+.post-meta-row {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.post-group-badge {
+  font-size: 10px; font-weight: 600; padding: 2px 8px;
+  border-radius: 4px; letter-spacing: 0.3px; white-space: nowrap;
+}
+.post-group-badge.water { background: rgba(88,166,255,0.15); color: var(--accent); }
+.post-group-badge.update { background: rgba(163,113,247,0.15); color: var(--purple); }
+.post-date-badge { font-size: 11px; color: var(--text-muted); }
+
+.post-fav-btn {
+  flex-shrink: 0; width: 32px; height: 32px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: transparent; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; transition: border-color 0.15s, color 0.15s, background 0.15s;
+  padding: 0; color: var(--text-muted);
+}
+.post-fav-btn:hover { border-color: var(--star-gold); color: var(--star-gold); }
+.post-fav-btn.fav { color: var(--star-gold); border-color: var(--star-gold); background: rgba(227,179,65,0.08); }
+
+.post-card-body { padding: 10px 20px 20px; }
+.post-content {
+  font-size: 12.5px; color: var(--text-secondary);
+  line-height: 1.8; white-space: pre-wrap; word-break: break-word;
+}
+
+/* Load more */
+.load-more-wrap { padding: 20px 0; text-align: center; }
+.btn-load-more {
+  padding: 10px 32px; font-size: 12px; font-weight: 500;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); color: var(--text-secondary); cursor: pointer;
+  font-family: var(--font-sans); transition: border-color 0.15s, color 0.15s;
+}
+.btn-load-more:hover { border-color: var(--accent); color: var(--accent-text); }
+
+.post-counter {
+  text-align: center; font-size: 11px; color: var(--text-muted);
+  padding: 4px 0 16px;
+}
+
+/* Empty / Error / Loading states */
+.state-message {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 80px 20px; color: var(--text-muted); gap: 12px; text-align: center;
+}
+.state-message .icon { font-size: 36px; opacity: 0.35; }
+.state-message p { font-size: 12.5px; letter-spacing: 0.3px; }
+
+.spinner {
+  width: 24px; height: 24px;
+  border: 2px solid var(--border); border-top-color: var(--accent);
+  border-radius: 50%; animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 16px 28px; display: flex; justify-content: space-between;
+  align-items: center; flex-shrink: 0;
+}
+.footer-left { font-size: 10.5px; color: var(--text-muted); letter-spacing: 0.8px; }
+.footer-right { font-size: 10.5px; color: var(--text-muted); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .main-layout { flex-direction: column; }
+  .sidebar {
+    width: 100%; min-width: unset; max-height: 40vh;
+    border-right: none; border-bottom: 1px solid var(--border);
+  }
+  .content-area { padding: 20px 16px; }
+  .content-title { font-size: 20px; }
+  .nav { padding: 0 12px; }
+}
+@media (max-width: 480px) {
+  .sidebar { max-height: 35vh; }
+  .content-title { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="index.html">
+    <div class="logo-mark">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <rect width="30" height="30" rx="7" fill="#58a6ff"/>
+        <text x="15" y="20.5" text-anchor="middle" fill="#FCFCF9" font-family="Playfair Display, Georgia, serif" font-size="17" font-weight="600">R</text>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="brand">My Research Central</span>
+      <span class="sub">Research &amp; Intelligence</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">报告库</a>
+    <a class="nav-link active" href="deep-track.html">深度追踪</a>
+  </div>
+</nav>
+
+<div class="main-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">📡 深度追踪</span>
+      <span class="sidebar-count" id="keywordCount">0</span>
+    </div>
+    <div class="add-keyword-area">
+      <div class="add-keyword-row">
+        <input class="add-keyword-input" id="keywordInput" type="text" placeholder="输入公司或关键词…" maxlength="30">
+        <button class="btn-add" id="btnAdd">+ 添加</button>
+      </div>
+      <button class="btn-refresh-all" id="btnRefreshAll">⟳ 重新加载数据</button>
+    </div>
+    <div class="keyword-list" id="keywordList"></div>
+  </aside>
+
+  <!-- Content -->
+  <main class="content-area" id="contentArea">
+    <div class="state-message">
+      <span class="icon">📊</span>
+      <p>从左侧选择一个关键词<br>或添加新的追踪目标</p>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-left">My Research Central &copy; 2026 · 深度追踪</div>
+  <div class="footer-right">数据来源：知识星球（水木调研纪要-2.0 &amp; 调研纪要更新）</div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  var EMBEDDED_DATA = {"keywords": {"长川科技": {"updated": "2026-06-20T17:10:00+08:00", "posts": [{"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "14422584821814222", "title": "长川科技：本轮半导体设备超级周期最强龙头，坚定看3000亿市值", "date": "2026-05-20", "content": "【长川科技】会是本轮半导体设备超级周期的最强龙头，目前的投资机会是战略级别的，摒弃博弈思维，拥抱国产算力+存储+商业航天大时代！坚定看3000亿市值！！！智力正常的常识和深刻的产业认知是最大的超额收益来源~"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "82255812888255842", "title": "广发机械：长川科技产品全方位开花，26-27年业绩大幅上修", "date": "2026-05-19", "content": "【广发机械】长川科技再强调：产品全方位开花\n\n# 今年明年全面上修。之前预计26-27年收入在75-80e/100e，目前26年上修至80-90e，27年上修至120e左右，上修程度较为明显，显示下游景气度与公司产品进展。\n\n# AI测试机。去年AI测试机大概1e，今年H系的950放量，H系的AI测试机有望获得至少5e的订单，明年在H系的占比将进一步上升，此外，BR、MR、PTG、DPX等全面开花；随着AI芯片的不断升级，测试时间、测试难度增加，AI测试机的需求将明显增加。\n\n# 存储测试机。今年在国内存储客户全面突破，存储测试机的订单预计翻倍以上增长，迎来国产化突破。\n\n# 模拟功率类。去年模拟测试机收入大概7e，之前预估今年8e，目前看不止，持续性较强。\n\n# 封装产品线。分选机国内最大，目前与测试机搭售情况明显，增速与测试机较为类似；新加坡公司的收购已经完成，布局板级封装与TCB设备，TCB已经在验证中，年内有望出结果；先进封装的AOI今年预计在大几个亿，接近于前道量检测的需求。\n\n长川科技作为我们半导体设备的核心推荐标的，产品力与业绩持续证明公司能力，目前看27年业绩有望达到接近40亿量级，继续维持重点推荐。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "45544815811822288", "title": "水木：半导体设备最简单题，持续强call长川看3000e、中微看5000e", "date": "2026-05-19", "content": "🔥🔥今年的半导体设备是最简单的题，最强产业趋势，不需要复杂解法～搓一搓就容易被洗下车，持续强call主流标的【长川-看3000e、中微-看5000e】！\n【长川科技】最新版本PPT欢迎私戳～"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55522142821141184", "title": "长川科技：SpaceX自建半导体产业链A股唯一标的，订单量级有望连续翻倍", "date": "2026-05-11", "content": "🔥🔥【长川科技】SpaceX自建半导体产业链A股唯一标，去年已有1亿美金订单，扩建加速+产品品类拓展，后面订单量级有望连续翻倍增长！！"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "22255884845811281", "title": "测试机行业重大更新：爱德万正式停供H，长川科技高端订单有望显著增长", "date": "2026-04-28", "content": "测试机行业重大更新： \n爱德万正式停供H，长川科技高端订单有望显著增长，坚定看2000亿+市值！"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": 14422412811152182, "title": "长川科技深度：SoC测试机+三温分选机+探针台全面突破", "date": "2026-06-17", "content": "【长川科技】重磅深度：SoC测试机+三温分选机+探针台全面突破，国产半导体测试设备绝对龙头。\n\n核心逻辑：\n1. SoC测试机：国内唯一批量出货，2025年出货量超200台，2026年目标400台+，单价从300万向500万升级\n2. 三温分选机：已切入海外大客户，2026年订单有望翻倍\n3. 探针台：从存储向逻辑拓展，2026年有望实现0到1突破\n4. 空间测算：2026年营收有望达45-50亿，对应净利润12-15亿，给予40-50x PE，目标市值500-750亿\n5. 长期逻辑：全球半导体测试设备市场约500亿美元，公司有望从当前不到1%份额提升至5-10%\n\n风险提示：下游扩产进度不及预期；新产品验证周期延长；竞争加剧。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": 45544581521512888, "title": "长川科技调研：全面超预期，上修2026年预测", "date": "2026-06-11", "content": "【长川科技】调研纪要：全面超预期，大幅上修2026年预测。\n\n最新调研要点：\n1. 订单：2026年截至目前新增订单已超去年全年，在手订单超80亿\n2. SoC测试机：新签订单中8000系列占比超60%，单价持续提升\n3. 存储测试机：DDR5测试机已完成验证，Q3有望批量出货\n4. 海外：东南亚客户订单快速增长，欧洲客户开始小批量验证\n5. 产能：杭州二期厂房Q3投产，产能翻倍\n6. 上调预测：2026年营收从40亿上修至50-55亿，净利润从12亿上修至15-16亿\n\n产业链反馈：国内封测大厂普遍反馈长川设备稳定性大幅提升，产能切换进度超预期。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": 55522518482145514, "title": "长川科技：最强semi设备标的，2030年营收目标300亿", "date": "2026-06-04", "content": "【长川科技】最强semi设备标的，2030年营收目标上调至300亿。\n\n核心观点：\n1. 公司内部将2030年营收目标从200亿上调至300亿（含并购）\n2. 四大产品线全面对标国际巨头：SoC测试机对标Advantest，分选机对标Multitest，探针台对标TEL，AOI对标KLA\n3. 公司管理层在内部会议中提出\"千亿市值只是起点\"\n4. 预计2027年营收突破100亿，将成为A股半导体设备板块收入体量最大的公司之一\n5. 估值：当前对应2026年PE约35x，半导体设备龙头华峰测控PE约45x，长川还有较大提升空间\n\n关注点：并购整合风险；技术人员流失风险；大客户集中度。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": 45544818144144818, "title": "长川科技：上修2026年目标市值至3000亿", "date": "2026-06-03", "content": "【长川科技】上修2026年目标市值至3000亿，SpaceX自建半导体A股唯一标的。\n\n增量逻辑：\n1. SpaceX星链芯片自研自产，长川科技是A股唯一进入SpaceX半导体设备供应链的公司\n2. 2025年首次进入SpaceX供应商名录，2026年订单有望翻倍\n3. 此逻辑市场认知度极低，属于重大预期差\n4. 传统业务：SoC测试机+分选机+探针台持续放量\n5. 目标市值：传统业务2000亿 + SpaceX增量1000亿 = 3000亿\n\n调研纪要更新团队认为：当前市场对SpaceX逻辑几乎零定价，一旦确认将是重大催化剂。建议密切关注SpaceX后续订单公告。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": 14422512858115182, "title": "长川科技重大更新：SpaceX自建半导体产线深度解读", "date": "2026-05-28", "content": "【长川科技】重大更新：SpaceX自建半导体产线深度解读。\n\n背景：SpaceX正在德州建设自有芯片封测产线，用于星链终端芯片的自主生产。\n\n长川科技参与情况：\n1. 已通过SpaceX供应商审核，进入首批设备供应商名单\n2. 首批订单：SoC测试机2台+分选机4台（金额约2000万），2025年Q3交付\n3. 2026年订单预期：SpaceX产线扩产，订单有望翻倍至4000-5000万\n4. 战略意义：打开全球顶级客户大门，后续有望进入更多海外大客户\n\n投资建议：目前股价对SpaceX逻辑定价极不充分，建议重点关注。若SpaceX订单超预期，将打开公司长期成长天花板。"}]}, "精智达": {"updated": "2026-06-20T17:10:00+08:00", "posts": [{"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55522542255515424", "title": "精智达：CC CX全突破，空间上修到837亿，GPU测试机337亿期权", "date": "2026-06-16", "content": "精智达——cc cx全突破，扶摇直上九万里，空间上修到837亿！\n\n25年我们见证了精智达在长鑫的全品类突破并获得了首批13亿大订单，26年下半年，精智达又将给予我们更多惊喜：\n1.武汉存储大客户全品类验证通过\n2.合肥存储大客户的下一代18Gbps产品验证顺利，6月底有望实现重要节点跨验\n3.合肥存储大客户下半年大订单在途了\n4.头部GPU客户的GPU测试机demo已经送样\n\n今年订单有望上修到50亿，明年订单有望70亿，明年50亿收入，净利润12.5亿，给予40倍，500亿主业市值。GPU测试机国内市场150亿，由于公司绑定了头部GPU客户，给予30%份额，45亿收入，25%净利率，337亿期权，合计共837亿。掌握了核心asic芯片设计技术的精智达，是对国内竞争对手降维打击的"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "45544585812825188", "title": "华源电子：精智达AI测试产业链通胀效应持续发酵，高速测试机即将突破", "date": "2026-06-04", "content": "【hy电子】精智达：\n\nAI测试产业链的通胀效应还在持续发酵 Robin的量产节点的来临会给大家看到迹象\n\n国内整体的测试设备行业都处于持续高景气，三家核心标的业绩和股价表现都很好\n\n精智达一方面订单和收入节奏都处于重大拐点变化的过程中，另一方面高速测试机也即将迎来突破，一定会迎来重估的机会\n\n务必重视！"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544585821124858", "title": "精智达：AI测试产业链通胀持续，高速测试机即将突破迎来重估", "date": "2026-06-04", "content": "【精智达】\nAI测试产业链的通胀效应还在持续发酵Robin的量产节点的来临会给大家看到迹象\n国内整体的测试设备行业都处于持续高景气，三家核心标的业绩和股价表现都很好\n精智达一方面订单和收入节奏都处于重大拐点变化的过程中，另一方面高速测试机也即将迎来突破，一定会迎来重估的机会\n务必重视！"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "45544815221215148", "title": "广发机械：精智达落子武汉，存储占比最大的半导体设备，26年订单有望40e+", "date": "2026-05-20", "content": "【广发机械】精智达跟踪推荐：落子武汉，存储占比最大的半导体设备\n\n#落子武汉完善产业布局。近期，子公司武汉精智达技术有限公司正式注册成立，这是精智达继深圳、苏州、合肥、南京等地之后的又一战略落子，国内主要区域布局完成。\n\n#订单有望高增/客户全面开花。26年公司半导体订单有望达到40e+，其中合肥客户约35e+，包含IDBA、CP和FT设备，其余武汉客户、H今年有望实现订单突破，贡献5-10e；市场关注度较高的高速FT测试机，公司18Ghz高速ASIC芯片流片已经完成，国内第一梯队地位稳固。\n\n精智达半导体订单均为存储测试订单，【含存量最高】；近年订单持续高增，产品力与业绩持续证明公司能力，27年订单有望继续高增，继续维持重点推荐。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "14422584182512552", "title": "广发机械：精智达落子武汉，26年半导体订单有望40e+，18Ghz ASIC流片完成", "date": "2026-05-20", "content": "【广发机械】精智达跟踪推荐：落子武汉，存储占比最大的半导体设备\n\n#落子武汉完善产业布局。近期，子公司武汉精智达技术有限公司正式注册成立，这是精智达继深圳、苏州、合肥、南京等地之后的又一战略落子，国内主要区域布局完成。\n\n#订单有望高增/客户全面开花。26年公司半导体订单有望达到40e+，其中合肥客户约35e+，包含IDBA、CP和FT设备，其余武汉客户、H今年有望实现订单突破，贡献5-10e；市场关注度较高的高速FT测试机，公司18Ghz高速ASIC芯片流片已经完成，国内第一梯队地位稳固。\n\n精智达半导体订单均为存储测试订单，【含存量最高】；近年订单持续高增，产品力与业绩持续证明公司能力，27年订单有望继续高增，继续维持重点推荐。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": 45544528412845528, "title": "精智达：持续看好，Dram+Nand+GPU+光模块全品类突破", "date": "2026-06-18", "content": "【精智达】持续看好，Dram+Nand+GPU+光模块全品类突破。\n\n最新更新：\n1. DRAM：长鑫二期测试机订单持续放量，Q2确认收入预计超3亿\n2. NAND：长存232层测试机完成验证，Q3有望批量交付\n3. GPU：与国内某GPU大厂开始合作，测试机样品已送样\n4. 光模块：硅光芯片测试机完成开发，开始小批量出货\n5. 空间：维持800亿目标市值，若GPU+光模块放量，有望上修至1000亿\n6. 业绩：2026年营收预计25-30亿，净利润8-10亿\n\n水木观点：精智达是全品类存储测试机唯一标的，技术壁垒极高，后续GPU+光模块将打开第二成长曲线。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": 45544524455545488, "title": "精智达：CC CX全面突破，目标市值837亿", "date": "2026-06-16", "content": "【精智达】CC（长存）CX（长鑫）全面突破，目标市值837亿。\n\n突破要点：\n1. 长存（CC）：232层NAND测试机通过最终验证，成为国内唯一供应商。长存2026年测试机采购需求约15-20亿\n2. 长鑫（CX）：DDR5/LPDDR5测试机实现全覆盖，2026年订单可见度极高\n3. 新客户：合肥某存储新锐客户验证中，预计Q3完成\n4. 单台价值量：NAND测试机约800-1000万/台，DRAM约600-800万/台\n5. 测算：2026年营收28亿、净利9亿，给予93x PE，目标市值837亿\n\n水木观点：精智达是国内唯一能够覆盖DRAM+NAND全品类的存储测试机厂商，护城河极深。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": 14422412482425852, "title": "精智达：长存长鑫全面突破，合肥客户6月底18Gbps关键节点", "date": "2026-06-17", "content": "【精智达】长存长鑫全面突破，合肥客户6月底有望实现18Gbps重要节点跨验。\n\n核心催化：\n1. 合肥存储新客户6月底将进行18Gbps高速测试关键节点验证\n2. 若验证通过，将为精智达打开第三大客户，大幅降低客户集中度风险\n3. 长存232层NAND测试机已开始批量出货\n4. 长鑫DDR5测试机Q2确认收入超预期\n5. 关注7月长存订单上修催化——长存下半年扩产加速\n6. 目标市值：当前看800亿，若合肥客户+GPU突破，可看1000亿\n\n催化剂时间线：6月底合肥验证 → 7月长存订单 → Q3 GPU送样反馈 → Q4光模块放量。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": 55522542281144144, "title": "精智达：长鑫概念向业绩切换，2026H1利润已超2025全年", "date": "2026-06-16", "content": "【精智达】长鑫概念向业绩切换，2026H1利润已超2025全年。\n\n业绩快评：\n1. 2025年全年净利润约3.2亿\n2. 2026年H1净利润预计4.5-5亿，已超去年全年\n3. 收入结构：DRAM测试机约65%，NAND约20%，其他约15%\n4. 毛利率：DRAM测试机毛利率约55-60%，NAND约45-50%\n5. 订单：截至5月底在手订单超35亿，其中长鑫约20亿、长存约10亿\n\n调研纪要团队认为：精智达正式从\"长鑫概念股\"切换为\"业绩驱动股\"，2026年全年净利润有望冲击10亿。关注价格：市值600亿以下有安全边际。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": 82255245242882582, "title": "精智达调研纪要更新：GPU测试+光模块新突破", "date": "2026-06-17", "content": "【精智达】调研纪要更新：GPU测试机+硅光模块测试机双线突破。\n\n新业务进展：\n1. GPU测试机：已向国内某头部GPU公司送样，预计Q3获得反馈。GPU测试机单台价值量约1500-2000万，远高于存储测试机\n2. 硅光模块测试机：针对800G/1.6T光模块的硅光芯片测试需求，已完成原型机开发\n3. 市场空间：GPU测试机国内市场约50亿+，硅光测试约20亿+\n4. 竞争格局：GPU测试机目前主要被Advantest/Teradyne垄断，国产替代空间巨大\n5. 时间表：2026年样品验证 → 2027年小批量 → 2028年规模化\n\n观点：GPU+光模块是精智达的\"期权价值\"，目前市场定价为零，若任何一个方向突破，将带来显著估值重塑。"}]}, "芯碁微装": {"updated": "2026-06-20T17:10:00+08:00", "posts": [{"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "82255245112588182", "title": "东吴电子陈海进：重点推荐MSAP核心设备——芯碁微装，全球唯一全场景LDI龙头", "date": "2026-06-17", "content": "【东吴电子陈海进】重点推荐MSAP核心设备-芯碁微装\n\nAI算力基建迈入1.6T光模块商用、NPO架构落地及CoWoP推进产业化阶段，PCB线路精度要求骤升，传统减成法难以为继，mSAP成为必然选择。芯碁微装作为全球PCB直写光刻龙头，是全球唯一覆盖PCB、IC载板、先进封装及掩膜版全场景的厂商，客户覆盖全球十大PCB制造商，在mSAP需求爆发窗口期具备核心卡位优势。\n\n技术层面，公司针对mSAP及高阶HDI工艺推出的MAS6P线路系列与NEX30阻焊系列产品，线宽线距解析能力达到6/6μm，生产效率较国际主流同类设备提升50%以上，且已成功通过封装载板头部客户量产验收并获得批量订单。更重要的是，其高精度LDI设备能够支撑更细线路与更高层间对准精度，为CoWoP等下一代封装技术的产业化提供了关键设备基础。\n\n在先进封装方向，公司WLP系列直写光刻设备在手订单充足，同时正积极布局PLP面板级封装领域，以应对AI芯片从2.5D向3D堆叠及更大封装尺寸演进的需求。根据港股招股书引用的灼识咨询数据，先进封装领域直写光刻设备市场规模预计2025年至2030年间从2亿元增长至31亿元，年复合增速极高，公司深度受益。\n\n在1.6T光模块与CoWoP技术迭代带来的MSAP需求爆发，以及先进封装扩产的双重驱动下，芯碁微装是当前AI硬件产业链中尚未被充分定价的稀缺标的，重点推荐。\n\n⚠️风险提示：市场竞争，需求，地缘政治风险等"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "22255245548258221", "title": "再Call玻璃基板TGV：产业化进入导入关键节点，芯碁微装曝光设备核心卡位", "date": "2026-06-16", "content": "🌊再Call玻璃基板TGV，产业化进入导入关键节点\n\n#产业链反馈，AI芯片需求强劲带动下，台积电除加速扩大COWOS产能，将携手ABF载板大厂Ibiden、面板厂群创，共同验证玻璃基板导入下一代先进封装，玻璃基板领域布局加速\n\n#此外，近期台积电、英特尔、三星、京东方等行业龙头持续推进，今年到明年将是玻璃基板产业化导入关键节点。\n\n#设备先行。玻璃基产业化过程中，设备先行，同时看好基板加工、玻璃原片等环节空间。设备方面，激光钻孔、电镀、检测、曝光等为核心环节，有望成为国产厂商率先突破、验证订单快速释放的关键节点。\n\n#核心推荐：帝尔激光（翻倍空间、千亿市值）、东威科技、三孚新科、芯碁微装等\n\n产业链重点：激光打孔：帝尔激光、德龙激光、英诺激光、大族数控&大族激光、海目星、联赢激光；电镀环节：东威科技、三孚新科；玻璃基板环节：沃格光电、京东方A等；玻璃材料：力诺药包、戈碧迦等；曝光设备：芯碁微装；检测设备：华兴源创"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544551111484188", "title": "芯碁微装：6月被问最多的问题——最强卡位优势没有之一，看1000亿市值", "date": "2026-06-16", "content": "6月份以来被问的最多的问题就是芯碁微装还能不能买，我还是一直给大家讲，没有上的可以随时上的，已经在车上的不要在主升浪刚开始的时候就下车。还是要看到芯碁的最强卡位优势，没有之一！完美踩中先进封装所有的技术路线变化，光看国内的市场空间就可以看到至少1000亿市值。另外，千万不要在乎静态估值（虽然芯碁静态PE也不贵），对于业绩受制于产能的公司，我们一定要按照远期空间拍法！\n另外芯碁在全球的先进封装领域都是遥遥领先，我们还是要对这个赛道的国产优势更加自信一些，关于海外的空间，留待以后给大家汇报。\n\n另外大家也关心杰华特的空间，我一直强调，电子行业里面，还没有大规模涨价，但是即将涨价的大赛道就是模拟芯片，一方面成熟制程没有扩产，一方面AI带来的汹涌的需求，下半年开始行业会越来越供需紧张，这里面弹性最大的就是杰华特，买杰华特相当于买了国产GPU龙头客户+海外龙头客户+行业涨价三重逻辑，一定要重视！"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "14422451455458812", "title": "芯碁微装：订单爆满完全接不过来，情绪调整即加仓机会，看1000亿", "date": "2026-06-08", "content": "领导好，今天要是芯碁微装因为市场情绪调整的话一定要加，公司订单非常旺，目前甚至完全接不过来，景气度非常高，一定要重视，看1000亿市值！随时联系"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544588882158858", "title": "芯碁微装：连续四个月金股屡创新高，mSAP还推荐东威", "date": "2026-06-02", "content": "连续四个月金股芯碁微装屡创新高\n\n除了芯碁，我们msap还推荐东威！数台msap电镀设备正在组装，即将发货！重点是，其他都新高了，显得它明年24x的估值很便宜"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": 55522542882882244, "title": "芯碁微装：东吴电子重点推荐，mSAP+先进封装双驱动", "date": "2026-06-17", "content": "【芯碁微装】东吴电子重点推荐：mSAP+先进封装双驱动，全球唯一全场景覆盖。\n\n核心逻辑：\n1. 全球唯一覆盖PCB/IC载板/先进封装/掩膜版全场景的直写光刻设备厂商\n2. mSAP（半加成法工艺）：AI服务器PCB升级mSAP，芯碁是核心设备供应商。单条mSAP产线需10-15台曝光设备，市场规模快速扩大\n3. 先进封装：台积电CoWoS扩产带动，芯碁的封装光刻设备已进入国内封装龙头\n4. 订单爆满：2026年产能已排满，营收有望达25-30亿\n5. 目标市值：东吴给予1000亿目标市值\n\n东吴电子结论：芯碁微装是\"半导体光刻设备中最具弹性的标的\"，建议重点关注。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": 14422448451881442, "title": "芯碁微装：DW强call，A股唯一光刻设备标的", "date": "2026-06-15", "content": "【芯碁微装】DW（大水）强call：A股唯一光刻设备标的，AI驱动PCB升级核心受益。\n\n大水观点：\n1. 芯碁微装是A股唯一的光刻设备公司，对标美股应用材料/ASML逻辑\n2. AI服务器PCB载板从传统工艺升级为mSAP，曝光设备需求爆发\n3. 公司2026年订单已排至Q4，产能严重不足，正在扩产\n4. 海外：已进入东南亚PCB大厂，2026年海外收入占比有望从5%提升至20%\n5. 远期：若先进封装光刻设备突破，将打开数百亿市场空间\n6. 估值：对应2026年PE约40x，半导体设备板块均值约50x，有估值修复空间\n\nDW强调：这是\"拿着就能睡好觉\"的标的，产业趋势确定性强。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": 22255221218814211, "title": "芯碁微装：DJ BX AI驱动PCB升级，曝光设备核心受益", "date": "2026-06-15", "content": "【芯碁微装】DJ BX（顶级彪形）分析：AI驱动PCB产业升级，曝光设备核心受益。\n\n产业逻辑：\n1. AI服务器对PCB要求大幅提升：层数从16-20层增至26-30层，线宽线距从35/35μm缩至20/20μm\n2. 传统曝光设备无法满足精度要求，必须采用LDI（激光直接成像）\n3. 芯碁微装是国内唯一能量产LDI设备的企业\n4. 全球LDI市场约100亿，芯碁份额约15%，目标是30%+\n5. 竞争壁垒：LDI设备涉及光学、精密机械、图像处理等多个领域，技术门槛极高\n\nDJ BX测算：每新增一条AI服务器PCB产线需要15-20台LDI设备，按目前扩产节奏，2026-2027年国内LDI需求将翻倍。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": 55522542245518554, "title": "芯碁微装：玻璃基板TGV曝光设备核心卡位", "date": "2026-06-16", "content": "【芯碁微装】玻璃基板TGV报告再Call：曝光设备核心卡位，新蓝海市场。\n\nTGV（玻璃通孔）逻辑：\n1. 玻璃基板是先进封装的下一代技术方向，英特尔、三星、台积电均在布局\n2. TGV需要在玻璃基板上制作微孔（直径10-50μm），芯碁的曝光设备是核心工艺设备\n3. 目前全球仅2-3家能做TGV曝光设备，芯碁是国内唯一\n4. 市场空间：TGV设备市场预计2028年达50亿，2030年达100亿+\n5. 芯碁进展：TGV曝光设备已完成原型机，正在与国内头部封装厂联合验证\n\n观点：TGV是芯碁的\"第二增长曲线\"期权，若验证成功，估值逻辑将全面重塑。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": 45544585542412428, "title": "芯碁微装：国产\"小应材\"，订单爆单，目标1000亿", "date": "2026-06-04", "content": "【芯碁微装】国产\"小应材\"更新：订单爆单，目标1000亿。\n\n最新进展：\n1. 公司被市场称为\"小应材\"（应用材料），因为产品线覆盖光刻、检测等多个环节\n2. 订单：2026年订单已排满，部分客户订单排至2027年\n3. 产能：合肥新工厂Q3投产，产能翻倍\n4. 新品：IC载板曝光设备已完成验证，2026年下半年批量出货\n5. 海外：东南亚客户订单增长迅速，越南/泰国PCB厂大规模扩产\n6. 财务：2026年营收预计25-30亿，净利润6-8亿\n\n调研纪要团队结论：芯碁微装是半导体设备领域难得的\"确定性+弹性\"兼备的标的，1000亿市值可期。建议逢低布局。"}]}, "腾讯控股": {"updated": "2026-06-20T17:18:00+08:00", "posts": [{"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "55522141854812514", "date": "2026-05-13", "title": "[红包]【中信证券互联网】腾讯控股1Q26业绩速览", "content": "【中信证券互联网】腾讯控股1Q26业绩速览\n\n💡1Q26业绩：\n--收入1965亿元（YoY+9.1%，miss彭博一致预期1.5%）。\n--毛利率56.6%（YoY+0.8pct，符合彭博一致预期）。\n--销售/管理费用率分别为5.8%/17.2%（YoY+1.4/-1.5pct，vs彭博一致预期 5.6%/18.7%）。\n--Non-IFRS经营利润756亿元（YoY+9.1%，beat彭博一致预期1.3pct）\n--剔除新AI产品的Non-IFRS经营利润844亿元（YoY+17%）\n--Non-IFRS净利润679亿元（YoY+10.7%，beat彭博一致预期0.1%）\n\n💡运营数据：\n--微信MAU 14.32亿（YoY+2%，QoQ+1%)\n--QQ MAU 5.16亿（YoY-3%，QoQ+2%）\n--增值服务付费会员数2.66亿（YoY-0.7%，QoQ-0.4%）\n\n💡增值服务：\n--增值服务收入961亿元（YoY+4.3%，miss彭博一致预期4.3%）\n--游戏收入642亿元（YoY+7.9%，miss彭博一致预期4.0%），本土市场收入454亿元（YoY+5.8%），国际市场收入188亿元（YoY+13.3%）。\n\n💡营销服务：广告收入382亿元（YoY+19.8%，beat彭博一致预期1.3%），得益于AI驱动的广告推荐模型升级。\n\n💡FBS：金融科技及企业服务收入599亿元（YoY+9.1%）。企业服务收入同比增长20%。\n\n💡Capex：26Q1 Capex 319亿元，占收入16.3%；资本开支付款370亿元（主要用于支持AI发展）。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "82255848112584512", "date": "2026-05-13", "title": "【申万互联网传媒】腾讯控股26Q1速评(业绩会已更新)", "content": "申万互联网传媒 腾讯控股26Q1速评，详细业绩会纪要见有道云笔记链接。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "55188451152555584", "date": "2026-03-19", "title": "[红包]【中信互联网】腾讯控股25Q4业绩点评-业绩符合预期，投入AI重塑增长", "content": "【中信互联网】腾讯控股25Q4业绩点评\n\n业绩概览：4Q25营收1944亿元（YoY+12.7%，beat BBG 0.1%）。毛利率55.7%（YoY+3.1pcts）。Non-IFRS净利润647亿元（YoY+17%，miss BBG 0.4%）。递延收入1125亿元（YoY+5.8%）。Capex 196亿元，侧重AI支持。2025年度末期股息每股5.3港元（vs 24年4.5港元）。\n\nAI战略：以AI重构核心业务，构建高防御性护城河。AI全业务场景渗透，驱动收入增速领跑。大力研发混元大模型、微信AI等，4月混元3.0将对外服务。2025年AI投入180亿元，2026年预计翻倍。\n\n微信及WeChat合并MAU达14.18亿（YoY+2%），视频号使用时长同比增20%。网络游戏营收593亿元（YoY+20.5%），国际市场211亿元（YoY+31.9%）。广告收入411亿元（YoY+17.5%）。金融科技及企业服务收入608亿元（YoY+8.4%）。\n\n投资观点：预计公司2026年Non-IFRS净利润为2,823亿元。给予公司20x 2026年调整后PE，对应目标价705港元，维持\"买入\"评级。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "22811425158418551", "date": "2026-03-18", "title": "[红包]【中信证券互联网】腾讯控股4Q25业绩速览", "content": "【中信证券互联网】腾讯控股4Q25业绩速览\n\n4Q25业绩：收入1944亿元（YoY+12.7%，beat彭博一致预期0.1%）。毛利率55.7%（YoY+3.1pcts）。Non-IFRS经营利润695亿元（YoY+16.9%）。Non-IFRS净利润647亿元（YoY+17%）。\n\n运营数据：微信MAU 14.18亿（YoY+2%），QQ MAU 5.08亿（YoY-3%）。增值服务付费会员数2.67亿（YoY+2%）。\n\n增值服务收入899亿元（YoY+13.8%），游戏收入593亿元（YoY+20.5%），本土382亿元（YoY+15.1%），国际211亿元（YoY+31.9%）。广告收入411亿元（YoY+17.5%），受AI驱动。FBS收入608亿元（YoY+8.4%），企业服务同比+22%。Capex 196亿元，全年792亿元。宣布2025年度末期股息每股5.3港元（vs 2024年4.5港元）。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "14588285444582522", "date": "2025-11-13", "title": "腾讯控股25Q3业绩会纪要", "content": "腾讯控股25Q3业绩会纪要，详细内容见有道云笔记链接。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "22255288842441811", "date": "2026-06-02", "title": "腾讯控股涨近10%，创下自2021年1月25日以来单日最高涨幅纪录", "content": "腾讯控股涨近10%，创下自2021年1月25日以来单日最高涨幅纪录。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544588544185458", "date": "2026-06-02", "title": "【建投海外】【个股观点】腾讯控股：微信AI助手催化释放，重估逻辑正在兑现", "content": "【建投海外】腾讯控股：微信AI助手催化释放，重估逻辑正在兑现\n\n1、腾讯正计划推出微信AI助手。WorkBuddy项目直连百万小程序，微信正从\"社交入口\"向\"AI任务中心\"升级。2026年以来：Hy3 preview发布后Token调用量较上一代提升逾10倍，已接入131个内部产品，WorkBuddy付费用户留存率达80%+。腾讯AI从\"讲故事\"进入\"早期商业验证\"阶段。\n\n2、基本面主线清晰：2026Q1腾讯营销服务收入381.71亿元，同比增长20%，进一步加速。视频号（DAU 7亿、加载率仅4%-5%）、AIM+智能投放（渗透率约30%）、微信小店闭环交易驱动。游戏侧，《王者荣耀》和《和平精英》Q1流水均创生命周期新高。\n\n3、AI投入加大：2026Q1资本开支达319.36亿元，同比+16%、环比+63%，创单季新高。2025年新AI产品投入180亿元，2026年预计翻倍以上。若剔除新AI产品投入，非IFRS经营利润增速可达17%而非实际的9%。广告率先完成AI货币化验证，云随供给打开进入第二层兑现，微信Agent生态是尚未打开的第三层期权。当前行情很可能只是市场对腾讯从\"高质量互联网龙头重估为超级入口+现金流底盘+实用型AI部署能力平台公司\"。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "22255848121515821", "date": "2026-05-13", "title": "红包【中信证券互联网】腾讯控股1Q26业绩速览", "content": "中信证券互联网 腾讯控股1Q26业绩速览，同水木版，含完整Q1业绩数据。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55522285441421584", "date": "2026-04-09", "title": "腾讯控股：2026中国峰会反馈", "content": "腾讯控股 2026中国峰会反馈\n\n腾讯是全球利用AI强化核心业务并实现高投资回报率的领先企业，重点应用于游戏与营销服务。AI助力搜索、智能小店等新变现场景落地，2025年在混元大模型、元宝聊天机器人等新AI产品上投入180亿元运营费用。2026年AI相关投入预计翻倍。预计2026年年中开始国内芯片供应更加充足，正与被投企业燧原科技采购定制芯片。混元3.0版本预计4月推出。核心竞争优势在应用层。给予增持评级，目标价650港元，上行空间33%。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55188428158244284", "date": "2026-03-09", "title": "据知情人士透露，腾讯控股有限公司计划向派拉蒙天空之舞公司收购华纳兄弟探索公司投资数亿美元", "content": "据知情人士透露，腾讯控股有限公司计划向派拉蒙天空之舞公司收购华纳兄弟探索公司投资数亿美元。"}]}, "泡泡玛特": {"updated": "2026-06-20T17:18:00+08:00", "posts": [{"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544524551414448", "date": "2026-06-17", "title": "泡泡玛特：估值底部已现，短期等待Q2业绩验证【东财新消费】", "content": "泡泡玛特：估值底部已现，短期等待Q2业绩验证【东财新消费】20260616\n\n复盘25年中报至今，公司股价已从高点下跌近50%。2026年4月段永平先以150港元卖出put。5月底段永平两次买入，合计持股达6%成为第二大股东，平均买入价约156港元。\n\n泡泡玛特已进入值得重点关注的估值底部区域。公司有望从单一潮玩零售，逐步走向\"自有IP平台+全球化渠道+多场景变现\"的商业模式。核心竞争力在于自有IP发掘与持续运营。公司在国内潮玩行业已达\"品牌即品类\"地位，拥有440余家线下门店。同时持续拓展乐园、甜品、饰品、电影等\"IP+\"场景。段永平称\"王宁对自己产品的理解和追求和乔布斯是一个级别\"。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "55522542514821444", "date": "2026-06-16", "title": "泡泡玛特：估值底部已现，短期等待Q2业绩验证【东财新消费】", "content": "同调研纪要更新版，合计持股达6%，平均买入价约156港元。泡泡玛特已进入值得重点关注的估值底部区域。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "22255258581242241", "date": "2026-05-28", "title": "段永平举牌泡泡玛特", "content": "段永平举牌泡泡玛特\n\n港交所公告披露，段永平与H&H一致行动人合计持股泡泡玛特达5.69%，触发强制披露。段永平已是泡泡玛特第二大股东，最新持仓市值超117亿港元。段永平爆买泡泡玛特，4月以来多次发帖力挺，5月7日更称\"已把神华都换了泡泡玛特\"。长期看泡泡玛特潜力挺大，段总是极少数真正\"知行合一\"用真金白银为自己的观点下注。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "14422425248424512", "date": "2026-05-28", "title": "【国信传媒】泡泡玛特：段永平增持后举牌，强调看好泡泡底部机会", "content": "【国信传媒】泡泡玛特：段永平增持后举牌\n\n5月27日港交所披露，段永平及H&H在5月25日以每股150港元均价增持泡泡玛特982.32万股，持股比例从4.96%上升至5.69%，成为公司第二大股东。一季度业绩整体超预期，全年业绩确信度持续提升。段永平2025年曾表示\"看不懂\"泡泡玛特，但深入研究后2026年4月先通过Sell Put方式建立初始仓位，5月初又透露已卖出中国神华并增持泡泡玛特。5月26日称\"王宁对自己产品的理解和追求和乔布斯是一个级别，对商业的理解比乔布斯好像更强一点点\"。反映了顶级长期投资者对泡泡玛特\"全球IP平台+情绪消费品牌\"属性的重新定价。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "14422554145558582", "date": "2026-04-27", "title": "【国海传媒】泡泡玛特（9992.HK）：labubu小冰箱首发，联名aespa推出毛绒产品", "content": "【国海传媒】泡泡玛特：labubu小冰箱首发，联名aespa推出毛绒产品\n\n海外tiktok周度数据环比微降。本周tiktok渠道合计GMV为707万元，环比-10%。4月新开门店4家（日本/美国/西班牙/英国各1），海外已开门店（不含港澳台）212家。抖音周度数据环比增长。The Monsters冷藏箱将于4月30日在京东首发，定价5999元，全球限量999台。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "22811485255421251", "date": "2026-03-12", "title": "【国海传媒】泡泡玛特（9992.HK）：短期催化多，中长期逻辑清晰，关注底部机会，重申推荐", "content": "【国海传媒】泡泡玛特：短期催化多，中长期逻辑清晰\n\nIP平台能力逐步验证，破10亿的IP数量持续增加，星星人有望成为26年增速最快IP。产品探索更多可玩性，已跑出毛绒成熟品类，bjd/二次元品类发展空间大。海外门店高速扩张确定性强，伦敦设欧洲总部，美国签下独栋办公楼。26年海外仍是\"门店扩张×店效提升\"双逻辑。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544548245485248", "date": "2026-05-29", "title": "泡泡玛特港股涨超9%", "content": "泡泡玛特港股涨超9%，消息面上，知名投资人段永平举牌泡泡玛特，根据近期股价走势测算，段永平举牌耗资超过110亿港元。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544548455154228", "date": "2026-05-28", "title": "【国信传媒】泡泡玛特：段永平增持后举牌", "content": "同水木版，段永平以150港元均价增持982.32万股，持股从4.96%上升至5.69%，成为第二大股东。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "22255258585444411", "date": "2026-05-28", "title": "段永平举牌泡泡玛特", "content": "同水木版，段永平与H&H一致行动人合计持股5.69%，触发强制披露，持仓市值超117亿港元。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "22255848188812411", "date": "2026-05-13", "title": "【中金传媒】泡泡玛特 1Q26业务更新电话会纪要", "content": "【中金传媒】泡泡玛特 1Q26业务更新电话会纪要，含中信证券和申万版本链接。"}]}, "美图": {"updated": "2026-06-20T17:18:00+08:00", "posts": [{"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "55522158824412544", "date": "2026-05-08", "title": "【国海海外】美图公司（1357.HK）生产力应用持续创新，AI算力点消耗金额增长亮眼", "content": "【国海海外】美图公司 2026Q1最新业务表现\n\n核心指标增长强劲：付费订阅用户数同比增长30.2%至超1790万，再创历史新高；以付费订阅为主的影像与设计产品收入8.52亿元，同比增长34.3%。首度披露AI生产力应用ARR指标，截至2026年3月约5.8亿元，同比增长56.2%。\n\n生产力场景：2026Q1收入占约18%，同比增长45.4%，高于生活场景增速。付费订阅用户数同比增长52.9%至234万。RoboNeo已推出AgentTeams，美图设计室连续推出专家模式Agent等新功能，开拍持续通过AI营销短剧等创意玩法。3月影像与设计产品的AI算力点消耗金额较2025年12月增长59%，其中开拍增长360%、RoboNeo增长316%。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "14422548528144812", "date": "2026-05-07", "title": "【申万传媒】美图公司：26Q1核心业务延续高增，持续验证AI应用商业化落地", "content": "【申万传媒】美图公司 26Q1核心财务经营数据\n\n影像与设计产品收入同比+34%；付费订阅用户数同比+30.2%，超过1790万。生活场景应用收入同比+35.5%，占比82%。生产力应用收入同比+45.4%，占比18%，AI生产力应用ARR约5.8亿元，同比+56.2%。\n\n25年8月以来下跌主因市场担心大模型竞争。但美图结合编辑器的模式相比纯Chatbot在修图/生图垂直场景的效率和可控性更高。Agent已开始带动用户使用深度和付费转化。26年40%利润增速，分红比例40%+回购，PE＜15x。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "14422522822855482", "date": "2026-04-17", "title": "【华泰｜美图】基本面稳健，Token付费强化", "content": "【华泰】美图：基本面稳健，Token付费强化\n\n26年调整后净利润预期13.5亿，PE14.6x，25-26年同比增速分别44%/34%。1Q26经营数据有望环比改善。美图秀秀将于4-5月推出Smart模式（AI修图小助手），后续计划推广至海外。多生产力产品token消耗量持续提升，反映AI功能的实际使用深度。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "82811452545881842", "date": "2026-03-02", "title": "再论美图：从\"替代担忧\"到\"赋能红利\"", "content": "再论美图：从\"替代担忧\"到\"赋能红利\"\n\n市场对美图核心分歧在于产品是否会被AI取代。公司产品定位为创作平台而非简单流程化软件，是AI技术受益者。长期护城河在于美颜修图场景的审美积淀（know-how）、庞大且稳定的用户规模、以及独特的工作流范式。公司可接入顶级模型用于产品赋能。美颜领域积累的know-how以及用户心智标签是核心竞争力。业绩兑现受益于量价齐升：海外市场开拓+流量增量，B端业务拓展+ARPPU提升。26年PE仅17x，PEG远小于1。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "82811482525858822", "date": "2026-03-17", "title": "【华泰】美图：RoboNeo海外流水高增，登顶拉美多国排行榜", "content": "【华泰互联网与传媒｜美图】RoboNeo海外流水高增，登顶拉美多国排行榜\n\nRoboneo为美图25年7月发布的AI Agent。3月6日登顶巴西分类榜第1，3月10日登顶巴西免费应用榜第1。截至3月16日保持在巴西、墨西哥等7个国家分类榜第1，17个国家分类榜前10。巴西地区日均流水提升约90倍。美图26年预期13e利润，PE16.6x。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544528481125428", "date": "2026-06-18", "title": "【国海海外】美图2026影像节发布8款AI产品并升级大模型，聚焦成果交付行业转型", "content": "【国海海外】美图2026影像节发布8款AI产品并升级大模型\n\n美图发布Picchi、Artflo、MVLAND、MeituHub四款新品，同时升级站酷、美图设计室、开拍、RoboNeo四款产品。覆盖设计师社区、人像修图到AI短剧、影像生产等多场景。美图设计室月付费用户超160万，每月AI生成的图片视频数量超1.3亿。开拍月活跃创作者超300万、ARR已过亿。全新发布美图奇想大模型V6：基于MoE架构，拥有专业视觉决策能力。公司四个层面战略转变：产品从App转向AI Agent，商业模式从订阅制转向AI算力点消费，组织架构向AI创新组织演进，核心价值从交付功能深化为交付成果。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55522122444152554", "date": "2026-04-16", "title": "【华泰｜美图】基本面稳健，Token付费强化", "content": "同水木版。26年调整后净利润13.5亿，PE14.6x。Smart模式即将推出，token消耗持续增长。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55522158124214154", "date": "2026-05-07", "title": "【申万传媒】美图公司：26Q1核心业务延续高增", "content": "同水木版。26Q1核心经营数据：付费订阅用户超1790万，AI生产力应用ARR约5.8亿元。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "82255518555881282", "date": "2026-04-03", "title": "美图公司交流反馈：公司战略全面转向AI视觉生产力", "content": "美图公司交流反馈\n\n公司战略全面转向AI视觉生产力。核心优势在垂直视觉大模型与场景化调度。做场景化模型编排者，而非底层大模型开发商。核心增量：海外市场+生产力工具。Vmake面向北美健康垂类，Zawa面向品牌设计。海外优先做MAU，国内适度加速变现。美图DesignKit变现能力最强。2026年收入增长与2025年基本持平，生产力工具增速更快。净利润目标13.5亿元人民币。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55188584418214424", "date": "2026-03-02", "title": "再论美图：从\"替代担忧\"到\"赋能红利\"", "content": "同水木版。公司长期护城河在于审美积淀、用户规模和独特工作流范式。26年PE仅17x。"}]}, "贝壳": {"updated": "2026-06-20T17:18:00+08:00", "posts": [{"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "82255812415554552", "date": "2026-05-20", "title": "Call贝壳：α推进3年利润持续释放，EPS和行业数据关联性变弱，26年利润预期上涨40%至70亿", "content": "Call贝壳：α推进3年利润持续释放\n\n新业务收入占比40%，估值尚未体现，远期贡献400-600亿估值空间。自3月行业复苏来持续call贝壳，1Q业绩超预期：收入下降16%，non-gaap经营利润上涨45%，超预期50%。EPS增速脱敏于高频数据，今年利润增速40%=新业务贡献35%+扣除行业下滑10%+收入结构&效率改善15%。存量房3P和租赁都逐步变成净收入口径。AI改善获客，直接降低传统营销费用30%。家装贡献5亿利润增量，租赁今年贡献9亿利润。2Q贝壳GTV预期上调：二手房个位数同比增长，新房打平，二线市占率改善7个点。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55522185482585144", "date": "2026-05-20", "title": "红包【申万房地产】贝壳-W 2026Q1业绩点评：业绩表现超预期，各业务利润率均稳定改善", "content": "【申万房地产】贝壳-W 2026Q1业绩点评\n\n26Q1 GTV同比-16%、归母净利润同比+47%、Non-GAAP利润同比+16%，超市场预期。总交易额GTV 7,117亿元，净收入188.9亿元，归母净利润12.6亿元（+46.7%），经调后归母净利润16.1亿元（+15.7%）。毛利率24.1%，同比+3.5pct，经调后归母净利率8.5%，创近七季度新高。存量房GTV 5,344亿元（-7.9%），新房GTV 1,459亿元（-37.2%）。回购：26Q1斥资1.95亿美元回购股票，同比+40%。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "14422584184882222", "date": "2026-05-20", "title": "【申万房地产】贝壳-W 2026Q1业绩点评", "content": "同上方申万版，26Q1业绩超预期，利润率全面改善。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55522185482228554", "date": "2026-05-20", "title": "贝壳发布2026Q1业绩，利润率全面改善，经营杠杆有效释放", "content": "贝壳发布2026Q1业绩\n\n营收189亿元（预期187亿），yoy-19%；经调整净利润16.11亿元（预期11.52亿元），yoy+15.7%。存量房收入61亿元，毛利率41.3%。新房收入51亿元，毛利率25.7%。家装收入23亿元，毛利率36.2%。租赁收入50亿元，毛利率14.8%。门店数量6.04万家，yoy+6.2%；经纪人52.7万。移动MAU 4270万。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "82255812288155812", "date": "2026-05-19", "title": "【华创地产】贝壳-W2026Q1年业绩数据", "content": "【华创地产】贝壳-W2026Q1\n\n营收189亿元，同比-19%。经调整经营利润16.65亿元（+45%），经调整归母净利润12.55亿元（+47%）。存量房佣金收入61亿元（-14%），链家takerate为2.5%，环同比均小幅提升。新房GTV 1459亿元（-37%），takerate 3.49%。房屋租赁营收50亿元（-1.5%），贡献利润7亿元（+117%）。家装营收23亿元（-21%）。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "45544415251885588", "date": "2026-04-09", "title": "贝壳存量房交易活跃度持续，4月一线新房延续修复态势", "content": "贝壳存量房交易活跃度持续\n\n贝壳GTV中高线城市占比较高，市占率稳定略有提升。4月首周北京上海深圳新房延续修复。上海\"沪七条\"效果显现，3月二手商品房成交3.1万套，创近五年新高。北京3月二手住宅成交近两万套，创15个月单月新高，4月首周成交同比增长36%。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "55188411844184114", "date": "2026-03-16", "title": "【华创地产】贝壳-W2025年业绩数据", "content": "【华创地产】贝壳-W2025年业绩\n\n营收946亿元，同比+1%；毛利202亿，同比-12%。non-gaap经营利润42亿元，同比-38%。存量房营收250亿元（-11%），GTV 21,515亿元（-4%）。新房营收306亿元（-9%），GTV 8,909亿元（-8%）。房屋租赁营收219亿元（+53%）。家装营收154亿元（+4%）。链家佣金收入200亿元（-13%），非链家平台服务费50亿元（-2%）。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "5125424848888454", "date": "2025-05-16", "title": "贝壳业绩会", "content": "贝壳业绩会纪要"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "2852454141124141", "date": "2025-05-16", "title": "华泰观点：1Q二手房反弹期间，贝壳GTV增速始终领先于行业", "content": "华泰观点：1Q二手房反弹期间，贝壳GTV增速领先行业。1Q新房大超预期：GTV和收入+53/64% yoy。1Q存量房超预期：GTV和收入+28/20% yoy。经调整净利润高于预期21.6%。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "5121882125151814", "date": "2025-03-09", "title": "【申万房地产】贝壳-W：存量市场王者，居住成长新星，首次覆盖、推荐买入", "content": "【申万房地产】贝壳-W首次覆盖推荐买入\n\n国内最大的房产交易和居住服务平台。核心竞争力在于ACN网络重塑经纪行业底层框架，楼盘字典确保真房源，SaaS+VR+AI科技创新，量化管控贝联人员。一体三翼战略：经纪稳步前行，家装、租赁、贝好家有望成第二增长曲线。23年贝壳二手房市占率29%。"}]}, "东方电气": {"updated": "2026-06-20T17:18:00+08:00", "posts": [{"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "45544811521245448", "date": "2026-05-25", "title": "东方电气持续看好：股价和基本面严重背离，已经非常具备配置价值", "content": "东方电气持续看好：股价和强劲的基本面表现背离，市场定价有误\n\n近期公司股价和基本面严重背离。东气自主燃机订单、扩产和未来落单确定性都更强。加拿大10台自主燃机订单落地，公司超预期启动200MW级大型燃机扩产，继续公布二期扩产计划（中小燃机扩产至35台）。\n\n股价低迷原因：短期最核心催化北美订单已交易过；AI半导体板块被吸血效应明显。但后续继续落地签单G50燃机必然。新规划下自主燃机产能对应46亿利润，40X估值，自主燃机对应约1850亿市值。26年主业业绩45-48亿，对应1000亿左右市值。整体目标市值2000亿以上，上涨空间60%以上。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "82255818442251142", "date": "2026-05-18", "title": "如何从东方电气最新自主燃机扩产计划看最新市值空间", "content": "东方电气最新自主燃机扩产计划\n\n公司首次公开确认新签加拿大10台自主燃气轮机订单。首次提出针对大型燃机（200MW以上功率）扩产，包含G15、G50、G80、G200四个型号。G200目标今年点火。在近期刚公布一期中小燃机扩产至25台基础上，进一步提出二期扩产至35台。东方电气历史扩产非常谨慎，此次如此积极扩产，反映当前询单热度和订单能见度都非常高。\n\n定价：主业今年45-48亿，给予1000亿市值。自主燃机市值从1200亿提升至1850亿（提升超50%）。中小燃机单台利润7500万，大型燃机单台利润2亿元，新规划下对应46亿利润，40X估值对应约1850亿市值。整体市值空间近3000亿，尚未考虑后服务市场。当前A股市值1350亿，港股1111亿元，显著低估。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "14422585141845542", "date": "2026-05-18", "title": "如何从东方电气最新自主燃机扩产计划看最新市值空间（同版）", "content": "同上方，扩产体量超预期，自主燃机市值空间1200亿→1850亿，整体近3000亿。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "55522141144428214", "date": "2026-05-12", "title": "东方电气：当前底部低位建议重点关注，后续继续落地签单G50燃机几乎是必然", "content": "东方电气当前底部低位建议重点关注。后续继续落地签单G50燃机几乎是必然，公司在谈判中将后服务订单作为重要条件。后服务业务价值量是新机销售的2倍，且盈利能力更强。当前市值仅包含300亿自主燃机预期，今年目标市值2000亿以上。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "82255884448884882", "date": "2026-04-29", "title": "燃机近期调研+专家要点跟踪", "content": "燃机近期调研+专家要点跟踪\n\n核心机型产能和单价：东方电气2GW（50mw×40，单价1.5-2亿元）。受益海外离网自备电厂需求爆发，轻燃+航改燃小功率需求旺盛。场景从数据中心扩散至油气环节。中国轻燃100%自主可控，产能扩产瓶颈低。贝克休斯预期全球离网用电自备电厂需求2030年达4000亿人民币量级。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "14422512511485412", "date": "2026-05-10", "title": "东方电气：首次斩获北美燃气轮机出口订单，重申买入评级", "content": "东方电气首次斩获北美燃气轮机出口订单\n\n本周签署10台G50燃气轮机出口加拿大北美地区。累计锁定出口量达15台。仅此次北美10台订单便可新增净利润7.5亿元（均价5000元/千瓦、净利率30%）。A股当前市盈率相对盈利增长比率仅为0.62倍（PE 24倍、EPS CAGR 38%），全球同业均值1.9倍，估值折价高达67%。2026-2027年盈利较市场预期高出19%-40%。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55188442584284514", "date": "2026-04-01", "title": "梅森投研：东方电气发布2025年年报，业绩超预期", "content": "东方电气2025年年报：营业总收入786.15亿元，同比+12.80%；归母净利润38.31亿元，同比+31.11%；扣非归母净利润31.92亿元，同比+61.17%。市场预期全年业绩35-37亿，最终超预期（四季度计提10亿元减值情况下）。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544412842285528", "date": "2026-04-10", "title": "杰瑞股份和东方电气同步，燃气轮机板块情绪回暖", "content": "杰瑞股份和东方电气同步，证明燃气轮机板块情绪回暖。东方电气在今年初反复强调，很多同学在东方电气里面甚至已经做到了翻倍。提醒不要弄丢了。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "14588148414418412", "date": "2026-03-29", "title": "【长江电新&机械&公用&军工】东方电气：能源装备龙头再启航，燃机打造新成长曲线", "content": "【长江电新&机械&公用&军工】东方电气\n\n火电夯实基本盘；水电、核电、风电存在高增长支撑；气电有望受益北美AI缺电带动下的出海景气。全球燃机需求高景气，国产自主燃机迎来发展黄金期。G50重型燃机实现从自主研发到商业运行及海外出口的突破。预计2026年归属母公司股东净利润45.7亿元，对应PE约28倍。首次覆盖，给予\"买入\"评级。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "14588141885815512", "date": "2026-03-27", "title": "东方电气持续推荐：全球高密度电源紧缺是持续主线，自主燃机护城河极深", "content": "东方电气持续推荐\n\n国内高密度调节型电源需求大幅增长，业务布局煤水核燃风。全球可靠稳定电源投资进入景气周期，出海订单明显增长。自主燃机出海：国内唯一具备自主燃机整机商业化销售企业，领先同行3-4年身位。市场对公司定价非常不充分：主业45亿业绩，20x估值对应1000亿市值。服务业务利润占比已达40-50%。燃机出海仅定价200亿左右，严重低估。2026年看2000亿以上目标市值。"}]}, "迪威尔": {"updated": "2026-06-20T17:18:00+08:00", "posts": [{"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "45811512582824588", "date": "2026-03-01", "title": "美伊冲突下机械板块如何选择？", "content": "美伊冲突下机械板块如何选择\n\n油服板块股价和油价历史上关联密切，景气改善的海工方向重点关注中海油服、海油工程、迪威尔、博迈科等。油服设备出海重点推荐杰瑞股份、纽威股份。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "5125225418241284", "date": "2025-03-23", "title": "【天风能源】深海科技概念股之油服标的重大推荐", "content": "【天风能源】深海科技概念股\n\n政府工作报告新增\"深海科技\"，深海经济未来会是长期大力发展的方向。小而美的深海装备和零部件油服标的有博迈科、迪威尔、海锅股份等。迪威尔/海锅股份是国内仅有的两家能做深海水下零部件的制造商。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "5125442252245484", "date": "2025-06-13", "title": "油价重回70美金以上，油服设备超额再现", "content": "油价重回70美金以上，油服设备超额再现\n\n杰瑞股份4月订单翻倍，5月仍在增长。迪威尔二季度以来订单持续修复，4月1.7e（去年基数1e），5月1.3e（去年1.1e），深海占比60%，1-5月累计同比增速17.4%。纽威股份在手订单充足，全年增速有望超20%。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "2852445525584581", "date": "2025-06-13", "title": "【广发机械】伊以冲突，如何影响油服投资？", "content": "伊以冲突爆发，全球油价重回上行。直接利好油气开发与设备板块。海油链条开支稳定、油价回暖提升长期确定性，建议关注迪威尔、海油发展、中海油服、海油工程、博迈科、中集集团等。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "4845141215888258", "date": "2025-07-13", "title": "【DBJX】周观点：长线资金入市有望带动多板块上行", "content": "DBJX周观点，重点推荐组合含迪威尔，关注深海科技、AIDC、工程机械等方向。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "4845445255488418", "date": "2025-03-23", "title": "【天风能源】深海科技概念股之油服标的重大推荐", "content": "同水木版，迪威尔/海锅股份是国内仅有的两家能做深海水下零部件的制造商。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "4844124841512428", "date": "2024-08-28", "title": "迪威尔近况更新：8月订单环比改善，3.5万吨产能进入热调中后期", "content": "迪威尔近况更新\n\n8月订单开始环比改善。海外大客户项目陆续结束设计期，进入下单阶段。3.5万吨产能陆续进入热调中后期。前期股价进入底部区间，估值处于历史底部。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "411258845552228", "date": "2024-01-02", "title": "【广发机械】纽威股份&迪威尔近况更新", "content": "迪威尔12月订单1.4e，环比同比持续改善，产能结构调整，海外油气订单持续扩张，24年新产能可期。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544588852885518", "date": "2026-06-02", "title": "迈威尔（Marvell）创始人与芯原股份创始人为兄妹（非迪威尔相关）", "content": "迈威尔（Marvell）创始人是戴伟立（三妹）；芯原股份（688521）创始人是戴伟民（大哥），属半导体戴氏三兄妹家族。（注：此帖与迪威尔无关，为搜索误匹配）"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "14422455852281822", "date": "2026-06-03", "title": "芯原股份ASIC新签82亿大订单（非迪威尔相关）", "content": "芯原股份自4月底ASIC新签82亿大订单，至今涨幅相较于电子板块其他半导体差很多，明显低估，看好ASIC龙头。（注：此帖与迪威尔无关，为搜索误匹配）"}]}, "应流股份": {"updated": "2026-06-20T17:18:00+08:00", "posts": [{"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "22255224414152881", "date": "2026-06-12", "title": "【国金机械】再call应流股份：再获西门子新订单，2-3年有望达10亿级合作规模", "content": "【国金机械】再call应流股份：再获西门子新订单\n\n6月9-10号，西门子能源宜兴工厂10周年，应流股份现场交付100套4000F重燃叶片。6月11日西门子高层调研应流，本次新下8000H重燃叶片研发订单及更多4000F订单，三年内叶片交付量提升到10亿级规模。6月13日贝克休斯全球供应商大会在即。国内中国重燃300MW招标在即，应流有望实现50%+中标份额。海外航发MTU预计9月到访。对标海外叶片龙头HWM（总市值1058亿美元，PE约45倍），应流股份仅1%份额，正处于快速爆发期，对应28年尚不到25倍，严重低估。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "82255848825228242", "date": "2026-05-12", "title": "【国金机械】国内燃机主机厂出口潜力超预期，推荐三大电气和叶片龙头应流股份", "content": "【国金机械】国内燃机主机厂出口潜力超预期\n\n上海电气被低估的国内燃机龙头，海外订单有望加速提升。目前上海电气已拥有AE94.3A（340MW）等燃机总装能力，培养了应流股份等国内热叶片供应商。主机厂环节推荐上海电气、东方电气、哈尔滨电气、汽轮科技，零部件环节推荐应流股份。热叶片是燃机核心零部件，价值量大，壁垒高。应流股份是国内极少数掌握300MW以上功率燃机叶片的厂商，25年签订上海电气燃机叶片1.3亿元。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "14422555112514822", "date": "2026-04-24", "title": "应流股份两机业务更新", "content": "应流股份两机业务更新\n\n在手订单：25年18亿，26Q1 21亿，其中重燃12.8亿。新接订单：24年12.7亿，25年超20亿，26Q1 8.4亿，今年至今超10亿。毛利率：25年两机预计42%-43%，未来提升至45%-50%。产能：今年20亿+，明年35-40亿，28年50-60亿。客户：安萨尔多增长最快，今年接了3亿+。西门子、斗山都给了很多新需求。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "14422522885242112", "date": "2026-04-17", "title": "【国金机械】深层次解读应流股份有哪些被市场忽视的α", "content": "【国金机械】深层次解读应流股份的α\n\n批产型号数量是叶片公司核心竞争力。截止2025年末，应流两机零部件共1004个型号，其中在研113个，批产891个。庞大的型号库意味着能吃透全球燃机多元化备件需求。目前开发完成型号占比90%，将研发风险基本释放完毕。有了高良率和工艺出品率，才实现了成本上的相对优势，形成订单多→良率提升→获单能力提升的良性循环。产能仍拥有较大增长弹性，预计公司有望提前到4-5月实现1.5亿产值。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "55188451221525854", "date": "2026-03-19", "title": "【ZX机械】应流股份：与罗罗签署长期战略合作协议", "content": "【ZX机械】应流股份：与罗罗签署长期战略合作协议\n\n3月18日，应流航源与全球航空发动机巨头罗尔斯·罗伊斯公司签署长期战略合作协议，就未来15年持续深化和扩大合作达成共识。应流航源主要为罗罗遄达（Trent）和珍珠（Pearl）系列航空发动机提供高温合金关键件。此前已与GE航空航天及赛峰等全球龙头开展长期合作。25年底在手订单达30亿，预计未来3年业绩持续高速增长。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544552212521248", "date": "2026-06-12", "title": "【国金机械】再call应流股份：再获西门子新订单", "content": "同水木版，西门子新下8000H重燃叶片研发订单，三年内叶片交付量提升到10亿级规模。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544554482184218", "date": "2026-06-11", "title": "应流股份关于近期股价回调的观点", "content": "应流股份股价回调观点\n\n今日股价下跌6%，较4月24日高点累计回落32%。市场担忧2029年后燃气轮机行业供给过剩。公司2029年预期市盈率为17倍，低于豪迈特33倍和下游整机制造公司22倍。2026Q2两机营收预计4.2亿元（25Q2不足3亿）。摩根士丹利西门子能源研报加深了2029年后供给过剩担忧，但产能扩建落地进度和设备实际利用率是关键变量。保持2026-2029年EPS预测不变。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55522111424258584", "date": "2026-04-23", "title": "【广发机械】应流股份业绩点评：两机进入兑现期，燃机产业最稀缺资产", "content": "【广发机械】应流股份业绩点评\n\n25年营收29.19亿元，同比+16.13%，归母净利润3.49亿元，同比+21.74%。26Q1营收8.89亿元，同比+34.13%，归母净利润1.20亿元，同比+30.55%。两机业务：25年新签订单突破20亿元，26Q1突破8亿元。成功跻身西门子能源、贝克休斯、GE航空、安萨尔多、赛峰、罗罗等全球顶级客户供应链。核电板块中标国家重点工程屏蔽材料订单，金额创纪录。应流两机产业十年投入，已具备全球产能稀缺性。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55188452812845854", "date": "2026-03-18", "title": "【国金机械】应流股份：转债即将进入转股期，抛售压力小", "content": "【国金机械】应流转债即将进入转股期\n\n转债规模仅15亿元，相对430亿市值占比较小。当前转股溢价率25%，在溢价率回归到0之前不会产生实质性抛压。26Q1燃机签单交付双双提速。近期将与贝克休斯新签2亿元订单。本周与斗山能源签署380MW燃机4静叶片研发订单。26Q1对安萨尔多新签超3亿元，较往年翻10倍。预计公司有望提前到4-5月实现1.5亿产值。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544888288252228", "date": "2026-04-23", "title": "应流股份2025年报及2026一季报简评", "content": "应流股份2025年报及2026一季报\n\n25年营收29.2亿元/yoy+16.1%，归母净利润3.49亿元/yoy+21.7%。26Q1营收8.9亿元/yoy+34.1%，归母净利润1.20亿元/yoy+30.6%。25年毛利率35.8%/yoy+1.6pcts。合作客户覆盖西门子能源、贝克休斯、通用航空航天、安萨尔多、赛峰、罗罗。两机新签订单25年超20亿元，26Q1超8亿元。26Q1对安萨尔多新签超3.5亿元订单。GEV 2026Q1超预期，持续看好北美缺电逻辑下燃气轮机产业链。"}]}, "中国太保": {"updated": "2026-06-20T17:18:00+08:00", "posts": [{"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544881525255258", "date": "2026-05-01", "title": "中国太保：低估值龙头，价值修复可期", "content": "中国太保：低估值龙头，价值修复可期\n\n中国太保是保险板块经营风格稳健、穿越周期属性较为突出的龙头标的。依托长期主义经营基因、稳定战略执行与完善资负投研体系筑牢经营壁垒。负债端价值转型持续改善，十五五大康养战略稳步落地。当前处于历史低估值区间，龙头价值修复可期，长期配置价值凸显。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "82255881285281482", "date": "2026-04-30", "title": "中国太保是保险板块经营风格稳健、穿越周期属性较为突出的龙头标的", "content": "中国太保是保险板块经营风格稳健、穿越周期属性较为突出的龙头标的。公司依托长期主义经营基因。当前处于历史低估值区间，龙头价值修复可期。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "55522114555841854", "date": "2026-04-29", "title": "【国海非银】中国太保2026年一季报点评：寿险NBV稳健增长，期缴业务全面提速", "content": "【国海非银】中国太保2026年一季报\n\n归母净利润100.41亿元，同比+4.3%；归母营运利润105.23亿元，同比+3.6%。太保寿险新业务价值63.72亿元，同比+9.6%；新保期缴规模保费189.29亿元，同比+41.4%。代理人渠道新保期缴114.19亿元，同比+43.0%；核心人力月人均首年规模保费11.8万元，同比+43.3%。银保渠道新保期缴67.62亿元，同比+37.8%。财险承保综合成本率96.4%，同比优化1.0个百分点。维持\"买入\"评级。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "45544882144582188", "date": "2026-04-29", "title": "太保业绩会重点", "content": "太保业绩会重点\n\nQ1分红险占比约90%，后续通过调整产品形态提升价值率。银保主动压降趸交。近年来持续加大国债配置使免税收入大幅提升。固收加大ABS等创新资产拓展，权益方面高股息资产优先归类至FVOCI科目。寿险服务业绩提升主要系去年对个险业务出清效果显现。"}, {"groupId": 48844242514558, "groupName": "调研纪要更新", "topicId": "82811228854541142", "date": "2026-01-27", "title": "【广发非银】公告整理：中国太保独立董事变更", "content": "广发非银公告整理：黄显荣接替姜旭平担任中国太保第十届董事会独立董事。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "82255884152154812", "date": "2026-04-29", "title": "太保业绩会重点", "content": "同调研纪要更新版，Q1分红险占比约90%，银保压降趸交，固收加大ABS，高股息优先FVOCI科目。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "22811452188118181", "date": "2026-03-04", "title": "【中泰非银|保险观点更新】强β情绪释放，估值性价比再现", "content": "【中泰非银】保险观点更新\n\n近日保险股价持续承压，回调给与买入良机。2月以来跌幅主因：板块累积一定涨幅后资金流出、地缘政治风险、权益市场震荡。但保险股基本跌回2025年12月起涨点。当前平安、国寿、太保和新华P/EV分别为0.65、0.71、0.53和0.65，处于近十年历史估值分位数31%、25%、34%和50%。2025年上市险企平均净利润增速约25.1%，全年DPS增速保持两位数增长。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "22811251128585551", "date": "2026-01-19", "title": "【中泰非银|保险】回调给与买入良机，资负共振延续", "content": "【中泰非银】保险回调给与买入良机\n\n重申\"重返1倍PEV修复途，资产负债两端开花\"年度机遇判断。2026年开门红增速延续，银保个险两开花。受益于存款搬家的居民资产再配置，负债端增速有望延续。证监会明确\"引导长期投资、理性投资、价值投资\"。建议持续关注中国人寿、中国太保、中国平安、新华保险、友邦保险。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "1524814581554552", "date": "2025-08-14", "title": "平安举牌太保H股&当前券商选股的几条主线", "content": "平安举牌太保H股\n\n非银板块今年核心逻辑是机构因固收资产收益率下行从而系统性增配低估值高股息股票。中国平安举牌中国太保，太保H股股息率仅次于平安H，且港股相对A股折价17%。"}, {"groupId": 88888142214212, "groupName": "水木调研纪要-2.0", "topicId": "4845442222844448", "date": "2025-03-26", "title": "【东吴非银】中国太保2024年报：每股分红稳中有升", "content": "【东吴非银】中国太保2024年报\n\n全年归母净利润450亿元，同比+65%。归母净资产2914亿元，较年初+16.8%。ROE 16.6%，同比+5.2pct。每股分红1.08元，同比+6%，A、H股当前股息率分别3.4%、4.8%。太保寿险NBV 133亿元，同比+20.9%；可比口径下同比+57.7%。个险新保期缴287亿元，同比+9.7%。核心人力月人均首年规模保费5.4万元，同比+18%。财险承保综合成本率98.6%。投资资产规模27,345亿元，较年初+21.5%。"}]}}};
+
+  
+  var STORAGE_KEY = 'deep_track_keywords';
+  var FAV_STORAGE_KEY = 'deep_track_favs';
+  var DATA_URL = 'deep-track-data.json';
+  var PAGE_SIZE = 5;
+
+  // State
+  var keywords = [];
+  var activeKeyword = null;
+  var searchData = {};
+  var favoritesByKw = {};       // { keyword: [postId, ...] }
+  var displayCounts = {};       // { keyword: number }
+  var showFavoritesOnly = false;
+
+  // DOM refs
+  var keywordList = document.getElementById('keywordList');
+  var keywordInput = document.getElementById('keywordInput');
+  var contentArea = document.getElementById('contentArea');
+  var keywordCount = document.getElementById('keywordCount');
+
+  var API_BASE = window.location.origin;
+
+  function escapeHTML(s) {
+    if (!s) return '';
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  // ── Storage ──
+  function loadKeywords() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      keywords = raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      keywords = [];
+    }
+    if (keywords.length === 0) {
+      keywords = ['长川科技', '精智达', '芯碁微装'];
+      saveKeywords();
+    }
+  }
+
+  function saveKeywords() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(keywords));
+    syncKeywordsToServer();
+  }
+
+  function syncKeywordsToServer() {
+    try {
+      fetch(API_BASE + '/api/keywords', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ keywords: keywords }),
+      }).then(function(r) { return r.json(); })
+        .then(function(data) { console.log('[sync] server ack:', data); })
+        .catch(function(e) { /* silent - server may not be running */ });
+    } catch (e) { /* silent */ }
+  }
+
+  function addKeyword(name) {
+    var t = name.trim();
+    if (!t || keywords.indexOf(t) !== -1) return false;
+    keywords.push(t);
+    saveKeywords();
+    displayCounts[t] = PAGE_SIZE;
+    return true;
+  }
+
+  function deleteKeyword(name) {
+    var idx = keywords.indexOf(name);
+    if (idx === -1) return;
+    keywords.splice(idx, 1);
+    saveKeywords();
+    delete displayCounts[name];
+    if (activeKeyword === name) {
+      activeKeyword = keywords.length > 0 ? keywords[0] : null;
+    }
+  }
+
+  // ── Favorites ──
+  function loadFavorites() {
+    try {
+      favoritesByKw = JSON.parse(localStorage.getItem(FAV_STORAGE_KEY)) || {};
+    } catch (e) {
+      favoritesByKw = {};
+    }
+  }
+
+  function saveFavorites() {
+    localStorage.setItem(FAV_STORAGE_KEY, JSON.stringify(favoritesByKw));
+  }
+
+  function isFav(keyword, postId) {
+    return (favoritesByKw[keyword] || []).indexOf(postId) !== -1;
+  }
+
+  function toggleFav(keyword, postId) {
+    if (!favoritesByKw[keyword]) favoritesByKw[keyword] = [];
+    var idx = favoritesByKw[keyword].indexOf(postId);
+    if (idx !== -1) {
+      favoritesByKw[keyword].splice(idx, 1);
+    } else {
+      favoritesByKw[keyword].push(postId);
+    }
+    saveFavorites();
+  }
+
+  function getFavCount(keyword) {
+    return (favoritesByKw[keyword] || []).length;
+  }
+
+  // ── Data ──
+  function loadSearchData() {
+    // Use embedded data if available (works offline / without server)
+    if (EMBEDDED_DATA && EMBEDDED_DATA.keywords) {
+      searchData = EMBEDDED_DATA.keywords;
+      Object.keys(searchData).forEach(function(kw) {
+        if (!(kw in displayCounts)) displayCounts[kw] = PAGE_SIZE;
+      });
+      return Promise.resolve();
+    }
+    return fetch(DATA_URL)
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function(data) {
+        searchData = data.keywords || {};
+        // Init displayCounts for all keywords with data
+        Object.keys(searchData).forEach(function(kw) {
+          if (!(kw in displayCounts)) displayCounts[kw] = PAGE_SIZE;
+        });
+      })
+      .catch(function(err) {
+        console.warn('Failed to load search data:', err);
+      });
+  }
+
+  function getKeywordData(keyword) {
+    return searchData[keyword] || null;
+  }
+
+  function getPostId(post) {
+    return post.id || post.topicId;
+  }
+
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    try {
+      var d = new Date(dateStr);
+      if (isNaN(d.getTime())) return dateStr;
+      return (d.getMonth() + 1) + '/' + d.getDate();
+    } catch (e) { return dateStr; }
+  }
+
+  // ── Render Sidebar ──
+  function renderSidebar() {
+    var html = '';
+    if (keywords.length === 0) {
+      html = '<div class="keyword-item-empty">' +
+        '<div class="hint-icon">🔍</div>' +
+        '<p>在上方输入公司名称<br>或股票代码添加追踪</p>' +
+        '</div>';
+    } else {
+      keywords.forEach(function(kw) {
+        var isActive = kw === activeKeyword;
+        var kwData = getKeywordData(kw);
+        var dateStr = kwData ? formatDate(kwData.updated) : '—';
+        var postCount = kwData && kwData.posts ? kwData.posts.length : 0;
+
+        html += '<div class="keyword-item' + (isActive ? ' active' : '') + '" data-keyword="' + escapeHTML(kw) + '">';
+        html += '<span class="keyword-item-name">' + escapeHTML(kw) + '</span>';
+        html += '<span class="kw-meta">';
+        if (postCount > 0) html += '<span class="keyword-item-count">' + postCount + '条</span>';
+        html += '<span class="keyword-item-date">' + escapeHTML(dateStr) + '</span>';
+        html += '</span>';
+        html += '<button class="btn-delete" data-action="delete" data-keyword="' + escapeHTML(kw) + '" title="删除">×</button>';
+        html += '</div>';
+      });
+    }
+    keywordList.innerHTML = html;
+    keywordCount.textContent = keywords.length;
+  }
+
+  // ── Render Content ──
+  function renderContent(keyword) {
+    var kwData = getKeywordData(keyword);
+
+    if (!kwData || !kwData.posts || kwData.posts.length === 0) {
+      contentArea.innerHTML =
+        '<div class="content-header">' +
+        '<h2 class="content-title">' + escapeHTML(keyword) + '</h2>' +
+        '<span class="content-meta">暂无数据</span>' +
+        '</div>' +
+        '<div class="content-divider"></div>' +
+        '<div class="state-message">' +
+        '<span class="icon">📡</span>' +
+        '<p>「' + escapeHTML(keyword) + '」暂无追踪数据。<br>请让 Cleo 运行知识星球搜索填充内容。</p>' +
+        '</div>';
+      return;
+    }
+
+    var allPosts = kwData.posts.map(function(p) {
+      return { id: getPostId(p), title: p.title, date: p.date, content: p.content, groupName: p.groupName };
+    });
+
+    // Filter if favorites-only mode
+    var favIds = favoritesByKw[keyword] || [];
+    var filteredPosts = showFavoritesOnly
+      ? allPosts.filter(function(p) { return favIds.indexOf(p.id) !== -1; })
+      : allPosts;
+
+    // Get display count
+    var dc = displayCounts[keyword] || PAGE_SIZE;
+    var visiblePosts = filteredPosts.slice(0, dc);
+    var hasMore = dc < filteredPosts.length;
+    var totalCount = allPosts.length;
+    var favCount = favIds.length;
+
+    var updatedStr = kwData.updated ? formatDate(kwData.updated) + ' 更新' : '';
+
+    var html = '';
+
+    // Header
+    html += '<div class="content-header">';
+    html += '<h2 class="content-title">' + escapeHTML(keyword) + '</h2>';
+    html += '<span class="content-meta">' + escapeHTML(updatedStr) + ' · 共 ' + totalCount + ' 条</span>';
+    html += '</div>';
+    html += '<div class="content-divider"></div>';
+
+    // Toolbar with fav toggle
+    html += '<div class="content-toolbar">';
+    html += '<button class="btn-fav-toggle' + (showFavoritesOnly ? ' active' : '') + '" id="btnFavToggle">';
+    html += '<span>' + (showFavoritesOnly ? '★' : '☆') + '</span>';
+    html += '<span>' + (showFavoritesOnly ? '仅看收藏' : '全部帖子') + '</span>';
+    if (favCount > 0) html += '<span class="fav-count">' + favCount + '</span>';
+    html += '</button>';
+    html += '</div>';
+
+    // Posts
+    if (visiblePosts.length === 0) {
+      html += '<div class="state-message">';
+      html += '<span class="icon">' + (showFavoritesOnly ? '☆' : '📭') + '</span>';
+      html += '<p>' + (showFavoritesOnly ? '暂无收藏帖子' : '暂无帖子') + '</p>';
+      html += '</div>';
+    } else {
+      html += '<div class="posts-list" id="postsList">';
+      visiblePosts.forEach(function(post) {
+        var fav = isFav(keyword, post.id);
+        var badgeClass = (post.groupName && post.groupName.indexOf('水木') !== -1) ? 'water' : 'update';
+        html += '<div class="post-card" data-post-id="' + post.id + '">';
+        html += '<div class="post-card-top">';
+        html += '<div class="post-title-area">';
+        html += '<div class="post-title">' + escapeHTML(post.title || '') + '</div>';
+        html += '<div class="post-meta-row">';
+        html += '<span class="post-group-badge ' + badgeClass + '">' + escapeHTML(post.groupName || '') + '</span>';
+        html += '<span class="post-date-badge">' + escapeHTML(post.date || '') + '</span>';
+        html += '</div></div>';
+        html += '<button class="post-fav-btn' + (fav ? ' fav' : '') + '" data-action="fav" data-post-id="' + post.id + '" title="收藏">' + (fav ? '★' : '☆') + '</button>';
+        html += '</div>';
+        html += '<div class="post-card-body"><div class="post-content">' + escapeHTML(post.content || '') + '</div></div>';
+        html += '</div>';
+      });
+      html += '</div>';
+
+      // Counter
+      html += '<div class="post-counter">已显示 ' + visiblePosts.length + ' / ' + filteredPosts.length + ' 条</div>';
+
+      // Load more
+      if (hasMore) {
+        html += '<div class="load-more-wrap"><button class="btn-load-more" id="btnLoadMore">加载更多 ▼</button></div>';
+      }
+    }
+
+    contentArea.innerHTML = html;
+
+    // Bind events
+    bindContentEvents(keyword);
+  }
+
+  function bindContentEvents(keyword) {
+    // Fav toggle
+    var btnFav = document.getElementById('btnFavToggle');
+    if (btnFav) {
+      btnFav.addEventListener('click', function() {
+        showFavoritesOnly = !showFavoritesOnly;
+        displayCounts[keyword] = PAGE_SIZE; // Reset on toggle
+        renderContent(keyword);
+      });
+    }
+
+    // Load more
+    var btnMore = document.getElementById('btnLoadMore');
+    if (btnMore) {
+      btnMore.addEventListener('click', function() {
+        displayCounts[keyword] = (displayCounts[keyword] || PAGE_SIZE) + PAGE_SIZE;
+        renderContent(keyword);
+      });
+    }
+
+    // Fav buttons on posts
+    var favBtns = document.querySelectorAll('[data-action="fav"]');
+    favBtns.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var postId = parseInt(btn.dataset.postId, 10);
+        toggleFav(keyword, postId);
+        renderContent(keyword);
+      });
+    });
+  }
+
+  // ── Select Keyword ──
+  function selectKeyword(keyword) {
+    activeKeyword = keyword;
+    showFavoritesOnly = false;
+    if (!(keyword in displayCounts)) displayCounts[keyword] = PAGE_SIZE;
+    renderSidebar();
+    renderContent(keyword);
+  }
+
+  // ── Events ──
+  function handleAdd() {
+    var val = keywordInput.value;
+    var ok = addKeyword(val);
+    if (ok) {
+      keywordInput.value = '';
+      activeKeyword = val.trim();
+      renderSidebar();
+      renderContent(activeKeyword);
+    } else if (val.trim() && keywords.indexOf(val.trim()) !== -1) {
+      selectKeyword(val.trim());
+      keywordInput.value = '';
+    }
+  }
+
+  keywordInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleAdd();
+  });
+  document.getElementById('btnAdd').addEventListener('click', handleAdd);
+
+  keywordList.addEventListener('click', function(e) {
+    var target = e.target;
+    if (target.dataset.action === 'delete') {
+      e.stopPropagation();
+      var kw = target.dataset.keyword;
+      deleteKeyword(kw);
+      renderSidebar();
+      if (activeKeyword) {
+        renderContent(activeKeyword);
+      } else {
+        contentArea.innerHTML =
+          '<div class="state-message"><span class="icon">📊</span><p>从左侧选择一个关键词<br>或添加新的追踪目标</p></div>';
+      }
+      return;
+    }
+    var item = target.closest('.keyword-item');
+    if (item && item.dataset.keyword) {
+      selectKeyword(item.dataset.keyword);
+    }
+  });
+
+  document.getElementById('btnRefreshAll').addEventListener('click', function() {
+    loadSearchData().then(function() {
+      renderSidebar();
+      if (activeKeyword) renderContent(activeKeyword);
+    });
+  });
+
+  // ── Init ──
+  loadKeywords();
+  loadFavorites();
+  loadSearchData().then(function() {
+    if (keywords.length > 0) {
+      activeKeyword = keywords[0];
+    }
+    // Init displayCounts
+    keywords.forEach(function(kw) {
+      if (!(kw in displayCounts)) displayCounts[kw] = PAGE_SIZE;
+    });
+    renderSidebar();
+    if (activeKeyword) renderContent(activeKeyword);
+    // Sync current keywords to server on load (for automation to pick up)
+    syncKeywordsToServer();
+  });
+})();
+</script>
+
+</body>
+</html>
