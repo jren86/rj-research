@@ -393,6 +393,18 @@ body {
     } catch (e) {
       keywords = [];
     }
+    // Merge keywords from EMBEDDED_DATA (server-pushed keyword data)
+    if (EMBEDDED_DATA && EMBEDDED_DATA.keywords) {
+      var dataKw = Object.keys(EMBEDDED_DATA.keywords);
+      var changed = false;
+      dataKw.forEach(function(kw) {
+        if (keywords.indexOf(kw) === -1) {
+          keywords.push(kw);
+          changed = true;
+        }
+      });
+      if (changed) saveKeywords();
+    }
     if (keywords.length === 0) {
       keywords = ['长川科技', '精智达', '芯碁微装'];
       saveKeywords();
