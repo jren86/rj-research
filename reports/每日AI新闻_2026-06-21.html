@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-06-21</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>🔴 每日AI新闻 · 2026-06-21</h1>
+  <div class="meta">Saturday, June 21, 2026 · 全球AI动态追踪 · My Research Central</div>
+</div>
+
+<!-- ===== TOP STORIES ===== -->
+<h2>🔴 Top Stories</h2>
+
+<div class="card highlight-red">
+  <h3>1. 诺奖得主 John Jumper 离开 DeepMind 加盟 Anthropic</h3>
+  <p>2024年诺贝尔化学奖得主、AlphaFold核心缔造者John Jumper宣布离开效力近9年的Google DeepMind，短暂休整后加入Anthropic。Jumper在X平台公开了这一消息，感谢DeepMind团队及Demis Hassabis在他博士毕业仅6个月时就让他领导AlphaFold项目。这是继Noam Shazeer加盟OpenAI之后，又一位顶级AI科学家从Google跳槽至竞争对手——AI巨头的人才争夺进入白热化阶段。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/">来源：TechCrunch</a></div>
+</div>
+
+<div class="card highlight-red">
+  <h3>2. Fable 5 确认登顶 DeepSWE 编码基准，但仍在第8天停摆</h3>
+  <p>Datacurve确认Fable 5在DeepSWE基准上排名<span class="red">#1</span>，达到<span class="red">70% PASS@1</span>，领先GPT-5.5三个百分点。然而该模型已停摆8天，企业被迫降级至性能更低的替代方案。特朗普在G7峰会首次表态称谈判"进展顺利"，但政府高级官员同日告诉Fox Business Anthropic<span class="orange">"鲁莽行事"</span>——两种信号矛盾，恢复时间更加不确定。今天是6月9-14日订阅者<span class="orange">退款截止日</span>；6月22日免费窗口仅剩2天。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-20-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="card highlight-red">
+  <h3>3. 中国八部门联合发文推进「AI+消费」落地</h3>
+  <p>商务部等八部门印发《关于加快"人工智能+消费"发展的实施意见》，出台<span class="red">17条</span>配套举措。文件提出扩大AI手机、AI PC、智能汽车、人形机器人等智能硬件消费，推进AI养老、文旅、零售、物流场景普及，计划落地一批AI体验集聚区，推动智能产品走进普通家庭。这是迄今最全面的AI消费端政策文件。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="card highlight-red">
+  <h3>4. Signal总裁Whittaker警告：AI聊天机器人「不是你的朋友」</h3>
+  <p>Signal总裁Meredith Whittaker在接受Bloomberg采访时，针对ChatGPT和Claude等聊天机器人的隐私影响发出严厉警示：<span class="orange">"这些不是你的朋友，不是有意识的存在，不是有感知的对话者。"</span>她强调聊天机器人正在制造拟人化陷阱，用户情感投射带来严重的隐私泄露风险——所有对话数据被公司收集，且缺乏透明监管。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/20/signals-meredith-whittaker-wants-you-to-remember-that-ai-chatbots-are-not-your-friends/">来源：TechCrunch</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== INDUSTRY UPDATES ===== -->
+<h2>🔵 行业动态</h2>
+
+<div class="card">
+  <h3>Google 将 Gemini 2.5 Flash 设为全产品默认模型</h3>
+  <p>Google宣布Gemini 2.5 Flash取代Gemini 2.5 Pro成为所有消费者Gemini产品的默认模型。Flash模型定价$0.30/M输入token、包含可选思考模式、1M token上下文窗口——成为史上最强默认模型。时机微妙：Fable 5停摆之际，Google正将最具竞争力的日常模型推向<span class="blue">20亿+用户</span>。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-20-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="card">
+  <h3>ARD智能体行业标准发布，OpenAI/Anthropic缺席</h3>
+  <p>谷歌、微软、Salesforce等企业联合推出ARD（Agent Runtime Definition）智能体行业标准，搭建办公软件统一AI交互体系。值得注意的是<span class="orange">OpenAI和Anthropic均未参与标准制定</span>，行业商业化标准赛道形成分化竞争格局。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="card">
+  <h3>Meta签署1.6吉瓦长期算力采购协议</h3>
+  <p>Meta与算力企业Crusoe签订<span class="blue">1.6吉瓦</span>长期算力采购协议，加码海外数据中心建设，保障多模态模型训练算力供给。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="card">
+  <h3>📊 算力全行业涨价：训练类涨18%-32%</h3>
+  <p>受AI智能体大规模部署带动，算力需求激增，国内云厂商与第三方算力租赁平台同步涨价。训练类算力涨幅<span class="red">18%-32%</span>，推理算力上调<span class="orange">5%-30%</span>，高端HBM服务器集群租赁价格最高上涨<span class="red">50%</span>。高端AI芯片订单交付周期拉长，算力供给缺口短期难以缓解。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="card">
+  <h3>钉钉架构重组：设立独立核心平台事业部</h3>
+  <p>钉钉完成架构重组，设立独立核心平台事业部，整合AI开发团队，聚焦企业智能体、自动化办公工具研发。标志着钉钉从协同办公向AI智能体平台战略转型。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== PRODUCT / COMPANY NEWS ===== -->
+<h2>📦 产品/公司新闻</h2>
+
+<div class="card">
+  <h3>阿里ATH推出实时世界模型 HappyOyster 1.0</h3>
+  <p>阿里ATH团队发布HappyOyster 1.0（快乐生蚝），主打<span class="blue">"可实时构建和交互的开放式世界模型"</span>。设Adventure与Directing两大模式：前者支持用户在AI实时生成画面里操控角色完成加速、跳跃、攻击等动作；后者支持用图片锁定角色外观并实时引导剧情。1.0版本新增自动匹配场景可玩交互设定——画面出现马车即解锁骑马、画面有汽车即触发鸣笛与车灯。</p>
+  <div class="source-link">🔗 <a href="https://www.qbitai.com/2026/06/436864.html">来源：量子位</a></div>
+</div>
+
+<div class="card">
+  <h3>银河通用发布人形机器人「小脑」模型 AstraBrain-WBC 0.5</h3>
+  <p>银河通用机器人发布AstraBrain-WBC 0.5，号称"全球首个人形机器人通用小脑"。模型参数<span class="blue">8040万</span>，基于约<span class="blue">20亿帧</span>人类动作数据训练，动作空间覆盖较AMASS提升4-5倍。首次在人形机器人运控领域验证类似GPT的Scaling Law；在29自由度机器人上实现全身协同、毫秒级响应与跌倒恢复。</p>
+  <div class="source-link">🔗 <a href="https://www.qbitai.com/2026/06/436813.html">来源：量子位</a></div>
+</div>
+
+<div class="card">
+  <h3>DeepSeek正式上线识图多模态功能 + 人才保护条款</h3>
+  <p>DeepSeek网页端与App同步开放图片识别、图文问答能力。公司同步向本轮所有投资方提出约束条款，<span class="orange">要求资本不得挖取内部核心研发人员</span>——这是国内AI公司首次将人才保护写入融资条款。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="card">
+  <h3>智谱GLM-5.2正式开源，登顶国内开源编程榜单</h3>
+  <p>智谱AI GLM-5.2正式开源，代码生成、纠错能力刷新国内开源模型成绩，适配中小企业软件开发、自动化办公场景。百万Token上下文支持，MIT协议。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="card">
+  <h3>阿里筹备独立千问输入法App</h3>
+  <p>阿里筹备独立千问输入法App，内置大模型实时改写、翻译、摘要功能，近期将上线公测。这是国产大模型首次以输入法形态面向C端用户落地。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="card">
+  <h3>ZuzuZoos陪伴机器人完成数千万元Pre-A轮融资</h3>
+  <p>AI陪伴潮玩品牌ZuzuZoos完成数千万元Pre-A轮融资，锦秋领投、上海复容跟投。团队来自摩根士丹利、大疆、泡泡玛特、迪士尼、智谱。首发三款IP均带3-4自由度动作、超过100种独立声音。</p>
+  <div class="source-link">🔗 <a href="https://www.36kr.com/p/3859926114161665">来源：36kr</a></div>
+</div>
+
+<div class="card">
+  <h3>亚马逊取消Sam Altman传记电影项目</h3>
+  <p>亚马逊米高梅工作室原计划制作的Sam Altman传记电影被搁置，直接原因是亚马逊云科技近期与OpenAI敲定多年期云算力合作。双方进入"准合作方"阶段后，继续推进一部聚焦Altman个人的批判性传记片已与合作关系冲突。</p>
+  <div class="source-link">🔗 <a href="https://www.the-independent.com/arts-entertainment/films/news/sam-altman-biopic-amazon-openai-deal-b2999321.html">来源：The Independent</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== RESEARCH BREAKTHROUGHS ===== -->
+<h2>🔬 研究突破</h2>
+
+<div class="card highlight-blue">
+  <h3>OpenAI + Molecule.one：GPT-5.4自主改进药物合成反应</h3>
+  <p>GPT-5.4接入化学AI agent Maria后，自主生成方案、设计并执行实验、分析数据、提出下一步动作，最终改进Chan-Lam偶联反应——伯磺酰胺与硼酸偶联平均产率从<span class="green">16.6%→25.2%</span>，产率超30%的反应占比从<span class="green">15.6%→37.5%</span>。两轮实验共跑10080个反应，耗时约2.5个月。流程仍为"近乎自主"而非完全自主。</p>
+  <div class="source-link">🔗 <a href="https://www.qbitai.com/2026/06/436842.html">来源：量子位</a></div>
+</div>
+
+<div class="card highlight-blue">
+  <h3>Fable 5登顶DeepSWE编码基准（70% PASS@1）</h3>
+  <p>独立基准Datacurve确认Fable 5在DeepSWE上达到<span class="red">70% PASS@1</span>，领先GPT-5.5（67%）三个百分点。DeepSWE聚焦真实软件工程任务——修复bug、编写可用代码、在真实仓库中完成功能级任务。Fable 5是目前编码能力最强的模型，但停摆8天无法使用。Opus 4.8（回退模型）在SWE-Bench Pro上约69.2%，显著低于Fable 5的DeepSWE表现。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-20-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="card highlight-green">
+  <h3>AstraBrain-WBC 0.5首次验证人形机器人运控Scaling Law</h3>
+  <p>银河通用的AstraBrain-WBC 0.5首次在人形机器人运控领域验证类似GPT的Scaling Law：数据规模（20亿帧）、模型规模（8040万参数）、训练体系同步扩展时，运动能力持续提升并展现零样本泛化。在29自由度机器人上实现全身协同、毫秒级响应与跌倒恢复——这标志着具身智能从"手工调参"进入<span class="green">"规模化涌现"</span>阶段。</p>
+  <div class="source-link">🔗 <a href="https://www.qbitai.com/2026/06/436813.html">来源：量子位</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== POLICY & REGULATION ===== -->
+<h2>⚖️ 政策与监管</h2>
+
+<div class="card highlight-red">
+  <h3>中国：八部门17条推进AI+消费</h3>
+  <p>商务部等八部门印发《关于加快"人工智能+消费"发展的实施意见》，17条举措覆盖AI手机/PC/智能汽车/人形机器人消费扩容、AI养老/文旅/零售/物流场景普及、AI体验集聚区落地、智能产品家庭入户等。这是迄今最全面的AI消费端政策文件。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="card">
+  <h3>中国：工信部就L3/L4自动驾驶强制性国标征求意见</h3>
+  <p>工信部就L3、L4级自动驾驶强制性国标公开征求意见，标准将于<span class="orange">2027年7月</span>正式实施。交通运输部已梳理出860余项交通数智化落地场景。滴滴自动驾驶亮相伦敦行业大会，展示自研L4级Robotaxi落地方案。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="card">
+  <h3>挪威对小学阶段AI使用施加近乎全面限制</h3>
+  <p>挪威成为最新对校园AI应用划出红线的国家，规定小学阶段<span class="orange">近乎全面限制</span>使用AI工具，仅在教师严控、特定教学目标下可作为例外；中学阶段保留一定弹性。政策目标是把"判断力与基础认知的形成"留在师生之间。</p>
+  <div class="source-link">🔗 <a href="https://www.reuters.com/technology/norway-imposes-near-ban-ai-elementary-school-2026-06-19/">来源：Reuters</a></div>
+</div>
+
+<div class="card">
+  <h3>Fable 5禁令第8天：政府信号矛盾</h3>
+  <p>特朗普在G7峰会首次表态称谈判"进展顺利"，但政府高级官员同日告诉Fox Business Anthropic<span class="orange">"鲁莽行事"</span>——指其未在发布前修复越狱问题。两种信号矛盾意味着：特朗普说的是谈判走向（正在推进），官员说的是政府底层态度（Anthropic自找的）。信任修复比合规修复更困难。Polymarket累计交易$1,036,895，Manifold预测6月底前完全恢复概率50%。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-20-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="card">
+  <h3>DeepSeek融资条款写入人才保护机制</h3>
+  <p>DeepSeek向本轮所有投资方提出约束条款，要求资本不得挖取内部核心研发人员——这是国内AI公司首次将人才保护写入融资条款。标志着AI行业人才争夺已白热化到需要法律约束的程度。</p>
+  <div class="source-link">🔗 <a href="https://iaipie.com/2026-%e5%b9%b4-6-%e6%9c%88-20-%e6%97%a5-ai-%e8%a1%8c%e4%b8%9a%E8%B5%44%E8%AE%AF%E9%80%9f%E8%A7%88/">来源：无矩AI</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== KEY INSIGHTS ===== -->
+<h2>💡 关键洞察</h2>
+
+<div class="card highlight-orange">
+  <ul class="bullet">
+    <li><span class="orange">人才争夺进入法律对抗阶段</span>：Noam Shazeer→OpenAI、John Jumper→Anthropic，顶级科学家流动加速；DeepSeek首次在融资条款中写入人才保护——AI人才战争已从"薪酬竞争"升级到"法律约束"</li>
+    <li><span class="red">Fable 5停摆的经济代价量化</span>：DeepSWE确认Fable 5编码能力领先GPT-5.5三个百分点，企业降级替代方案面临可量化的性能损失——AI模型出口管制的商业成本首次有了精确基准数据</li>
+    <li><span class="blue">中国AI消费端政策首度系统化</span>：八部门17条覆盖从硬件到场景到体验区到家庭入户的全链路，标志着AI政策重心从"研发侧补贴"转向"消费侧拉动"</li>
+    <li><span class="orange">算力涨价信号：AI推理成本拐点</span>：训练涨18%-32%、推理涨5%-30%、高端HBM涨50%——智能体大规模部署正在将算力短缺从"训练瓶颈"扩展到"推理瓶颈"</li>
+  </ul>
+</div>
+
+<div class="report-footer">
+  数据来源：AIToolsRecap / TechCrunch / 量子位 / 36kr / Reuters / The Independent / 无矩AI / llm-stats.com · My Research Central · via WB
+</div>
+
+</body>
+</html>
