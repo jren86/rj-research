@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日国家队增减持动向 · 2026-06-15</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日国家队增减持动向</h1>
+  <div class="meta">2026-06-15（周一）· 市场强劲反弹，份额持续回升</div>
+</div>
+
+<!-- ==================== 1 ==================== -->
+<h2>【1. 今日一句话结论】</h2>
+
+<p><span class="tag tag-blue">核心判断</span> 今日未发现国家队明确的增持或减持公告信号。市场在周末利好（美伊协议·霍尔木兹海峡重开）催化下强劲反弹——上证指数收报4,096.47点，涨1.61%逼近4,100关口；深成指涨3.79%，创业板指暴涨5.30%，科创50涨5.12%。两市成交3.05万亿，较上周五缩量约1,800亿，但仍在3万亿以上。全市场超3,900只个股上涨，164只涨停。</p>
+
+<p><span class="tag tag-orange">关键信号</span> 银行板块逆势下跌1.60%，成为仅有的几个回调板块之一，上证50指数仅微涨0.90%。资金从防御性板块（银行）向成长板块（科技+有色）切换的格局明显。</p>
+
+<p><span class="tag tag-blue">份额信号</span> 宽基ETF份额继续回升：510050份额日增2.98%（延续回升趋势），512100份额日增4.30%（中小盘ETF受追捧），510300份额温和增长0.75%。但成交量未现异常放大（量比均≈1），未发现疑似国家队托底买入行为。</p>
+
+<div class="divider"></div>
+
+<!-- ==================== 2 ==================== -->
+<h2>【2. 已确认增减持事件</h2>
+
+<table>
+  <thead>
+    <tr><th>日期</th><th>主体</th><th>标的</th><th>行为</th><th>金额/数量/比例</th><th>信号强度</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>5月至今</td><td>中央汇金</td><td>沪深300ETF（4只）</td><td class="green">减持</td><td>超七成，9,792亿→约2,938亿元</td><td><span class="tag tag-red">强确认</span></td></tr>
+    <tr><td>5月至今</td><td>中央汇金</td><td>上证50/中证1000ETF</td><td class="green">减持</td><td>超九成，1,510亿→约150亿以下</td><td><span class="tag tag-red">强确认</span></td></tr>
+    <tr><td>5月至今</td><td>中央汇金</td><td>11只宽基ETF合计</td><td class="green">减持</td><td>1.54万亿→约3,252亿元</td><td><span class="tag tag-red">强确认</span></td></tr>
+    <tr><td>5.6-6.4</td><td>大基金</td><td>沪硅产业(688126)</td><td class="green">减持完成</td><td>26.26亿元（9,915万股）</td><td><span class="tag tag-red">强确认</span></td></tr>
+    <tr><td>5.26生效</td><td>大基金</td><td>中芯国际(H股)</td><td class="green">减持</td><td>持股降至7.99%</td><td><span class="tag tag-red">强确认</span></td></tr>
+    <tr><td>2026Q1</td><td>证金公司</td><td>部分股份行/区域行</td><td class="green">减持/清仓</td><td>减持较为明显</td><td><span class="tag tag-red">强确认</span></td></tr>
+  </tbody>
+</table>
+
+<p><strong>今日新增：</strong> 未发现新的国家队直接增减持公告。</p>
+
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260612090212b62e6cf3">来源：中信证券研报·智通财经</a></div>
+
+<div class="divider"></div>
+
+<!-- ==================== 3 ==================== -->
+<h2>【3. ETF与宽基资金信号</h2>
+
+<h3>3.1 主要宽基ETF今日表现</h3>
+
+<table>
+  <thead>
+    <tr><th>ETF名称</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>成交额(亿)</th><th>换手率</th><th>量比</th><th>份额变化</th><th>状态</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>沪深300ETF华泰柏瑞</td><td>510300.SH</td><td>4.919</td><td class="red">+2.10%</td><td>79.28</td><td>5.67%</td><td>2.75</td><td class="red">+0.75%</td><td>份额温和增长</td></tr>
+    <tr><td>上证50ETF华夏</td><td>510050.SH</td><td>3.024</td><td class="red">+1.41%</td><td>46.96</td><td>19.06%</td><td>2.07</td><td class="red">+2.98%</td><td>份额继续回升</td></tr>
+    <tr><td>沪深300ETF易方达</td><td>510310.SH</td><td>4.763</td><td class="red">+2.08%</td><td>50.20</td><td>4.78%</td><td>5.40</td><td>+0.06%</td><td>份额基本持平</td></tr>
+    <tr><td>中证1000ETF南方</td><td>512100.SH</td><td>3.439</td><td class="red">+3.93%</td><td>30.97</td><td>25.98%</td><td>0.98</td><td class="red">+4.30%</td><td>中小盘ETF受追捧</td></tr>
+    <tr><td>创业板ETF易方达</td><td>159915.SZ</td><td>4.045</td><td class="red">+5.17%</td><td>57.83</td><td>13.73%</td><td>0.99</td><td class="red">+0.94%</td><td>份额温和增长</td></tr>
+    <tr><td><strong>两市总成交</strong></td><td>—</td><td>—</td><td>—</td><td><strong>30,509亿</strong></td><td>—</td><td>—</td><td>缩量约1,800亿</td><td>仍在3万亿以上</td></tr>
+  </tbody>
+</table>
+
+<div class="source-link">🔗 <a href="https://gu.qq.com">来源：腾讯自选股行情数据（westock-data）</a></div>
+
+<h3>3.2 份额变化趋势对比</h3>
+
+<table>
+  <thead>
+    <tr><th>ETF</th><th>6月10日份额变化</th><th>6月15日份额变化</th><th>方向</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>510300（沪深300ETF）</td><td class="red">+2.03%</td><td class="red">+0.75%</td><td>➡️ 持续净申购</td></tr>
+    <tr><td>510050（上证50ETF）</td><td class="red">+5.59%</td><td class="red">+2.98%</td><td>➡️ 持续净申购</td></tr>
+    <tr><td>510310（沪深300ETF易方达）</td><td class="red">+1.36%</td><td>+0.06%</td><td>➡️ 趋稳</td></tr>
+    <tr><td>512100（中证1000ETF南方）</td><td class="red">+20.46%</td><td class="red">+4.30%</td><td>➡️ 持续净申购</td></tr>
+    <tr><td>159915（创业板ETF易方达）</td><td class="red">+1.47%</td><td class="red">+0.94%</td><td>➡️ 持续净申购</td></tr>
+  </tbody>
+</table>
+
+<h3>3.3 今日关键判断</h3>
+
+<table>
+  <thead>
+    <tr><th>信号</th><th>数据</th><th>判断</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>510300成交79.28亿，量比2.75</td><td>成交放量，量比>1</td><td>反弹放量属正常，非国家队异常托底</td></tr>
+    <tr><td>510050成交46.96亿，量比2.07</td><td>成交放量</td><td>换手率19.06%偏高，但属正常反弹交易</td></tr>
+    <tr><td>两市成交3.05万亿，缩量约1,800亿</td><td>量能维持3万亿+</td><td>情绪回暖但增量有限</td></tr>
+    <tr><td><strong>ETF份额持续全线增长</strong></td><td>510050+2.98%/512100+4.30%</td><td>➡️ 连续两个交易日净申购，趋势确认</td></tr>
+    <tr><td>银行板块逆势下跌-1.60%</td><td>资金从防御转向成长</td><td>国家队传统重仓方向资金流出</td></tr>
+    <tr><td>市场超3,900只上涨，164只涨停</td><td>普涨格局</td><td>市场自发反弹，与国家队行为无关</td></tr>
+    <tr><td>上证50仅+0.90%，弱于全市场</td><td>权重股涨幅落后</td><td>国家队未通过拉升权重托市</td></tr>
+  </tbody>
+</table>
+
+<div class="card">
+  <p><strong>结论：</strong> 今日反弹由地缘政治利好（霍尔木兹海峡重开）驱动，属市场自发行为。宽基ETF份额连续两个交易日净申购，但成交未现异常放量。连续份额回升更可能是反弹行情吸引的申购资金，而非国家队主动买入。银行板块逆势下跌1.60%，国家队传统配置方向未获得额外支撑。</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ==================== 4 ==================== -->
+<h2>【4. 股东持仓变化</h2>
+
+<h3>4.1 严格口径：中央汇金/证金</h3>
+
+<table>
+  <thead>
+    <tr><th>标的</th><th>变化</th><th>主体</th><th>报告期</th><th>备注</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>兴业银行</td><td class="green">清仓退出</td><td>中证金</td><td>2026Q1</td><td>此前持有6.22亿股，全部退出</td></tr>
+    <tr><td>国有大型银行</td><td>继续持有（未减持）</td><td>中央汇金/汇金资管</td><td>2026Q1</td><td>持股市值3.42万亿元</td></tr>
+    <tr><td>农业银行</td><td>继续持有</td><td>社保基金</td><td>2026Q1</td><td>持有235.21亿股</td></tr>
+  </tbody>
+</table>
+
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260612090212b62e6cf3">来源：中信证券研报·智通财经</a></div>
+
+<h3>4.2 大基金动态</h3>
+
+<table>
+  <thead>
+    <tr><th>标的</th><th>变化</th><th>时间</th><th>金额</th><th>当前持股</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>沪硅产业(688126)</td><td class="green">减持完成</td><td>5.6-6.4</td><td>26.26亿元</td><td>12.49%</td></tr>
+    <tr><td>中芯国际(H股)</td><td class="green">减持</td><td>5.26生效</td><td>—</td><td>7.99%</td></tr>
+  </tbody>
+</table>
+<p><strong>今日新增：</strong> 未发现大基金新增减持公告。</p>
+
+<h3>4.3 扩展口径：社保基金/养老基金</h3>
+<p style="font-size:0.85em; color: var(--text2);">（以下为2026Q1存续持仓，存在约2个月披露滞后）</p>
+
+<table>
+  <thead>
+    <tr><th>标的</th><th>变化</th><th>主体</th><th>赛道</th><th>报告期</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>深南电路</td><td class="red">新进</td><td>社保113组合+养老八零二</td><td>半导体/PCB</td><td>2026Q1</td></tr>
+    <tr><td>沪电股份</td><td class="red">新进</td><td>社保2101组合</td><td>半导体/PCB</td><td>2026Q1</td></tr>
+    <tr><td>恩华药业</td><td class="red">大幅增持</td><td>社保基金</td><td>医药</td><td>2026Q1</td></tr>
+    <tr><td>保利发展</td><td class="red">新进</td><td>社保413组合</td><td>地产</td><td>2026Q1</td></tr>
+    <tr><td>招金黄金</td><td class="red">新进</td><td>社保406组合</td><td>贵金属</td><td>2026Q1</td></tr>
+  </tbody>
+</table>
+
+<div class="source-link">🔗 <a href="https://mnews.tianyancha.com/ll_0t5gwqb01s.html">来源：天眼查·国家队2026Q1持仓统计</a></div>
+
+<div class="divider"></div>
+
+<!-- ==================== 5 ==================== -->
+<h2>【5. 疑似托底/调仓信号</h2>
+
+<table>
+  <thead>
+    <tr><th>信号</th><th>证据</th><th>可信度</th><th>归属判断</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>510300份额日增0.75%（+2.16亿份）</td><td>总份额28,730,287,700</td><td><span class="tag tag-orange">中等</span></td><td>增量有限，不属国家队行为</td></tr>
+    <tr><td>510050份额日增2.98%（+2.30亿份）</td><td>总份额7,738,866,800</td><td><span class="tag tag-orange">中等</span></td><td>延续6月10日回升趋势</td></tr>
+    <tr><td>512100份额日增4.30%（+1.42亿份）</td><td>小盘ETF反弹中受追捧</td><td><span class="tag tag-orange">中等</span></td><td>反弹行情申购资金驱动</td></tr>
+    <tr><td>宽基ETF成交量正常</td><td>量比510300:2.75, 510050:2.07</td><td><span class="tag tag-blue">高</span></td><td>反弹放量属正常交易行为</td></tr>
+    <tr><td>银行板块-1.60%，上证50仅+0.90%</td><td>权重蓝筹涨幅落后大市</td><td><span class="tag tag-blue">高</span></td><td>国家队传统方向无额外支撑</td></tr>
+    <tr><td>央行净投放2065亿</td><td>4250亿7天逆回购+6000亿买断式逆回购</td><td><span class="tag tag-blue">高</span></td><td>货币环境适度宽松，非针对性股市支持</td></tr>
+  </tbody>
+</table>
+
+<div class="card">
+  <p><strong>综合判断：</strong> 今日反弹为地缘政治利好驱动的市场自发行为，<strong>未观察到国家队明确的托底买入或卖出行为</strong>。ETF份额连续回升已是本报告周期的重要变化信号，但成交量和成交额均在正常范围，应继续观察持续性。</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ==================== 6 ==================== -->
+<h2>【6. 指向的市场风格和板块</h2>
+
+<table>
+  <thead>
+    <tr><th>方向</th><th>状态</th><th>判断依据</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>稳指数</td><td><span class="tag tag-blue">上证逼近4,100</span></td><td>上证+1.61%，创业板+5.30%火爆</td></tr>
+    <tr><td>托宽基</td><td><span class="tag tag-blue">份额连续净申购</span></td><td>510050+2.98%/512100+4.30%/510300+0.75%</td></tr>
+    <tr><td>稳金融</td><td><span class="tag tag-green">银行逆势-1.60%</span></td><td>资金从防御转向成长，银行成仅有的回调板块之一</td></tr>
+    <tr><td>科技成长</td><td><span class="tag tag-blue">全面爆发</span></td><td>电子/通信/PCB/光模块/有色领涨</td></tr>
+    <tr><td>高股息/蓝筹</td><td><span class="tag tag-green">跑输大盘</span></td><td>上证50仅+0.90%，远低于创业板+5.30%</td></tr>
+    <tr><td>普涨格局</td><td><span class="tag tag-blue">3,900+上涨</span></td><td>164只涨停，赚钱效应显著恢复</td></tr>
+  </tbody>
+</table>
+
+<p><strong>最相关的观察对象：</strong></p>
+<ul class="bullet">
+  <li><strong>指数：</strong> 上证50（+0.90%，跑输大盘但ETF份额持续回升）、创业板指（+5.30%领涨）</li>
+  <li><strong>ETF：</strong> 510050（份额日增2.98%延续回升）、512100（份额日增4.30%受追捧）</li>
+  <li><strong>行业：</strong> 电子/通信/光模块引领反弹，银行-1.60%逆势下跌</li>
+  <li><strong>事件：</strong> 霍尔木兹海峡重开（美伊协议）+ 央行6月15日开展6000亿买断式逆回购+4250亿7天逆回购</li>
+</ul>
+
+<div class="divider"></div>
+
+<!-- ==================== 7 ==================== -->
+<h2>【7. 风险与反证</h2>
+
+<ol class="bullet">
+  <li><strong>ETF份额回升不等于国家队买入。</strong> 连续2个交易日的份额增长更可能是反弹行情驱动的申购资金流入，而非国家队系统性增持。</li>
+  <li><strong>银行逆势下跌值得警惕。</strong> 银行板块-1.60%，在普涨行情中明显落后。国家队传统配置方向没有获得额外资金支撑。</li>
+  <li><strong>成交量缩量至3.05万亿。</strong> 较6月3日3.15万亿已缩量约1,000亿。若后续反弹不能放量，持续性存疑。</li>
+  <li><strong>反弹驱动力是地缘政治事件而非基本面改善。</strong> 美伊协议利好已消化两个交易日，后续若无更多催化剂，反弹可能面临调整压力。</li>
+  <li><strong>大基金减持路径暂无新增公告。</strong> 沪硅产业减持已完成，中芯国际H股跌破8%后暂未观察到新动作，但减持窗口并未关闭。</li>
+  <li><strong>央行"收水"节奏需关注。</strong> 6个月期买断式逆回购虽等额续作，但3个月期已连续4个月缩量。若流动性进一步收紧，可能影响市场反弹节奏。</li>
+</ol>
+
+<div class="divider"></div>
+
+<!-- ==================== 8 ==================== -->
+<h2>【8. 明日观察清单</h2>
+
+<ol class="bullet">
+  <li><strong>510050/510300份额能否持续净申购</strong> — 连续2个交易日份额回升，若明日继续增长，则6月10日的份额拐点基本确立。</li>
+  <li><strong>银行板块能否企稳</strong> — 今日银行-1.60%在普涨中格外突出，若继续下跌则资金切换趋势加强。</li>
+  <li><strong>两市成交能否维持3万亿+</strong> — 反弹若持续需要成交量配合，快速缩量则反弹空间有限。</li>
+  <li><strong>美伊协议后续进展</strong> — 霍尔木兹海峡重开已落地，关注更多细节及对全球能源市场的影响。</li>
+  <li><strong>大基金是否新增减持公告</strong> — 沪硅产业减持完成后，关注是否有新的减持标的披露。</li>
+  <li><strong>央行公开市场操作方向</strong> — 关注7天逆回购规模调整及市场利率走势。</li>
+</ol>
+
+<div class="divider"></div>
+
+<!-- ==================== 9 ==================== -->
+<h2>【9. 数据来源与限制</h2>
+
+<table>
+  <thead>
+    <tr><th>来源</th><th>使用内容</th><th>时效性</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>NeoData Financial Search</td><td>指数行情、A股板块行情</td><td>当日实时</td></tr>
+    <tr><td>腾讯自选股（westock-data）</td><td>ETF行情/份额/量比/换手率</td><td>当日实时</td></tr>
+    <tr><td>公开新闻搜索</td><td>央行操作、市场要闻、研报观点</td><td>最新公告</td></tr>
+  </tbody>
+</table>
+
+<h3>限制说明</h3>
+<ol class="bullet">
+  <li>ETF份额数据来自westock-data日份额变动，无法区分国家队行为 vs 其他机构/散户申购</li>
+  <li>汇金减持估算来自国信证券研报，数据为5月底的估算值；当前份额连续回升与减持方向背离</li>
+  <li>今日未发现已确认的国家队增持公告或新的减持公告</li>
+  <li>社保Q1持仓数据截至于2026年3月31日，存在约2个月披露滞后</li>
+  <li>所有关于"国家队行为方向"的判断均为基于公开数据的推断</li>
+</ol>
+
+<div class="report-footer">
+  数据来源：NeoData Financial Search / 腾讯自选股 · My Research Central · via WB
+</div>
+
+</body>
+</html>

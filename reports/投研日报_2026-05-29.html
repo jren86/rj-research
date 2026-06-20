@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投研日报 2026.05.29</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card-bg: #1a1d28;
+  --border: #2a2d3a;
+  --text: #e1e4ed;
+  --text-secondary: #8b8fa3;
+  --red: #dc2626;
+  --red-bg: rgba(220,38,38,0.1);
+  --green: #16a34a;
+  --green-bg: rgba(22,163,74,0.1);
+  --blue: #3b82f6;
+  --gold: #f59e0b;
+  --purple: #8b5cf6;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", sans-serif;
+  line-height: 1.7;
+  padding: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  padding: 32px 0 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+.header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+.header .date { color: var(--text-secondary); font-size: 13px; margin-bottom: 12px; }
+.header .tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.header .tags span {
+  background: var(--border);
+  color: var(--text-secondary);
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.section-header {
+  display: flex; align-items: center; gap: 8px;
+  margin: 36px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+.section-header h2 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.block { margin-bottom: 20px; }
+.block:last-child { margin-bottom: 0; }
+h3 { font-size: 15px; font-weight: 600; margin-bottom: 10px; color: var(--text); }
+p { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; }
+.highlight {
+  background: var(--red-bg);
+  border-left: 3px solid var(--red);
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+}
+.highlight.blue { background: rgba(59,130,246,0.1); border-left-color: var(--blue); }
+.highlight.gold { background: rgba(245,158,11,0.1); border-left-color: var(--gold); }
+.highlight.green { background: rgba(22,163,74,0.1); border-left-color: var(--green); }
+.highlight strong { color: var(--text); font-weight: 600; }
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0;
+  font-size: 13px;
+}
+thead th {
+  background: var(--bg); color: var(--text-secondary); font-weight: 500;
+  padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border);
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+tbody td {
+  padding: 8px 12px; border-bottom: 1px solid var(--border); color: var(--text);
+}
+tbody tr:last-child td { border-bottom: none; }
+.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "SF Mono", monospace; font-size: 13px; }
+.up { color: var(--red); }
+.down { color: var(--green); }
+.divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+.metrics {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px; margin: 16px 0;
+}
+.metric {
+  background: var(--bg); border-radius: 8px; padding: 14px;
+  text-align: center;
+}
+.metric .label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+.metric .value { font-size: 22px; font-weight: 700; margin: 4px 0; }
+.metric .sub { font-size: 12px; color: var(--text-secondary); }
+.info-box {
+  background: rgba(139,143,163,0.08);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+}
+.info-box strong { color: var(--text); }
+ul { margin: 8px 0 8px 20px; font-size: 14px; color: var(--text-secondary); }
+ul li { margin-bottom: 4px; }
+.footer {
+  text-align: center; padding: 32px 0 16px;
+  color: var(--text-secondary); font-size: 12px;
+  border-top: 1px solid var(--border); margin-top: 36px;
+}
+.risk-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; margin: 14px 0;
+}
+.risk-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+}
+.risk-item .label { font-size: 11px; color: var(--text-secondary); letter-spacing: 0.5px; }
+.risk-item .val { font-size: 14px; color: var(--text); margin-top: 4px; font-weight: 500; }
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-right: 4px;
+}
+.badge.red { background: var(--red-bg); color: var(--red); }
+.badge.blue { background: rgba(59,130,246,0.15); color: var(--blue); }
+.badge.green { background: var(--green-bg); color: var(--green); }
+.badge.gold { background: rgba(245,158,11,0.15); color: var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>投研日报</h1>
+  <div class="date">2026年5月29日 星期五 · 数据截至 09:22 AM · 由 Cleo 🐾 编译</div>
+  <div class="tags">
+    <span>市场概览</span>
+    <span>半导体</span>
+    <span>AI 算力</span>
+    <span>光模块</span>
+    <span>国产替代</span>
+    <span>知识星球</span>
+  </div>
+</div>
+
+<!-- ========== PART 1: 今日市场概览 ========== -->
+<div class="section-header">
+  <h2>一、今日市场概览</h2>
+</div>
+
+<div class="card">
+  <!-- 指数行情 -->
+  <div class="metrics">
+    <div class="metric">
+      <div class="label">上证指数</div>
+      <div class="value" style="color:var(--red)">4,098.07</div>
+      <div class="sub">PE 18.11x · 昨收 -0.01% · YTD +3.26%</div>
+    </div>
+    <div class="metric">
+      <div class="label">创业板指</div>
+      <div class="value" style="color:var(--red)">4,125.07</div>
+      <div class="sub">PE 73.29x · 5日 +4.74% · YTD +28.78%</div>
+    </div>
+    <div class="metric">
+      <div class="label">科创50</div>
+      <div class="value" style="color:var(--red)">1,844.10</div>
+      <div class="sub">PE 176x · 5日 +2.98% · YTD +37.19%</div>
+    </div>
+    <div class="metric">
+      <div class="label">半导体板块</div>
+      <div class="value" style="color:var(--red)">11,073.13</div>
+      <div class="sub">PE 123.49x · 5日 +4.09% · YTD +59.32%</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h3>昨日复盘：缩量上涨，创业板指超越上证</h3>
+  <p>5月28日 A股三大指数收涨。<strong>创业板指涨1.96%至4,125.07点，正式超越上证指数（4,098.64）</strong>。沪深京成交额29,876亿（较前日缩量2,727亿），超3000只个股上涨，逾120只涨停。</p>
+  
+  <div class="highlight blue">
+    <strong>风格特征：</strong>高位成长股分化 → 低位价值股护盘 → 超跌科技板块修复。资金从白酒、贵金属、券商流出，向<strong>AI算力、半导体、通信设备</strong>集中。半导体（存储/设备）受长鑫科技IPO过会催化领涨；AI算力、通信设备同步走强。
+  </div>
+
+  <div class="highlight gold">
+    <strong>关键信号：</strong>缩量上涨 ≠ 调整结束。沪指4050-4200区间震荡格局未变，本轮调整可能持续2-4周。高位科技股获利盘仍多，需警惕反抽后的二次回踩。
+  </div>
+</div>
+
+<!-- ========== PART 2: 核心主线分析 ========== -->
+<div class="section-header">
+  <h2>二、核心主线：AI算力 + 半导体双轮驱动</h2>
+</div>
+
+<div class="card">
+  <div class="block">
+    <h3>🔴 主线一：光模块/CPO — 全球AI基建需求验证</h3>
+    <div class="highlight">
+      <strong>催化剂：</strong>美股光通信巨头迈威尔科技（Marvell）业绩超预期 + 大幅上调光互连业务增长预期 → 直接引爆A股光模块概念。
+    </div>
+    <table>
+      <thead><tr><th>标的</th><th>昨日表现</th><th>逻辑</th></tr></thead>
+      <tbody>
+        <tr><td>联特科技</td><td class="up">20cm 涨停</td><td>光模块细分龙头</td></tr>
+        <tr><td>燕东微</td><td class="up">20cm 涨停</td><td>光芯片/光器件</td></tr>
+        <tr><td>中际旭创</td><td class="up">+7%+</td><td>光模块市值龙头（1198元）</td></tr>
+        <tr><td>鸿远电子</td><td class="up">涨停</td><td>被动元件+光通信</td></tr>
+        <tr><td>合锻智能</td><td class="up">涨停</td><td>算力设备</td></tr>
+        <tr><td>云南锗业</td><td class="up">涨停</td><td>锗衬底/光通信材料</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--text-secondary)">光模块是AI算力基建中<strong>最先受益、业绩确定性最强</strong>的环节，不是纯题材炒作。后续可跟踪：800G出货量数据、Lightcounting指引上调信号。</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="block">
+    <h3>🔴 主线二：半导体 — 政策+IPO+扩产三重催化</h3>
+    
+    <p><span class="badge red">催化1</span><strong>长鑫科技IPO过会</strong>（5月27日）— 存储/设备板块直接受益，科创50半导体权重股（沪硅产业 +2.91%、盛美上海 +2.62%、天岳先进 +2.72%）显著走强。</p>
+    
+    <p><span class="badge red">催化2</span><strong>横琴集成电路政策全新升级</strong>（5月29日生效）— 四大类扶持：企业发展 + 人才引进 + 平台建设 + 粤澳协同创新，覆盖芯片设计、测试检测环节，强化"澳"元素。</p>
+
+    <p><span class="badge red">催化3</span><strong>日本JIC拟出售光刻胶龙头JSR</strong>（5月28日路透）— 富士胶片、三菱化学已表达收购意向。JSR全球光刻胶龙头，上一财年营收4007亿日元、净利润607亿日元。若交易达成，将重塑全球光刻胶供应链格局。</p>
+
+    <p><span class="badge gold">催化4</span><strong>PKC启动高纯氯气扩产50%</strong>— 韩国化学公司PKC将产能从1400→2100吨/年，配套三星NAND扩产。NAND已突破200层向300层演进，蚀刻气体需求激增。</p>
+
+    <p><span class="badge blue">催化5</span><strong>国产手机618降价潮</strong>（华为/小米/OPPO/vivo最高降3500元）— 平台补贴+品牌让利+国补三重叠加，有望刺激消费电子需求回暖，利好半导体下游（SoC/存储/面板驱动IC）。</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="block">
+    <h3>📊 半导体板块关键数据</h3>
+    <div class="metrics">
+      <div class="metric">
+        <div class="label">板块指数</div>
+        <div class="value" style="color:var(--red)">11,073</div>
+        <div class="sub">20日涨幅 +31.12%</div>
+      </div>
+      <div class="metric">
+        <div class="label">YTD 涨幅</div>
+        <div class="value" style="color:var(--red)">+59.32%</div>
+        <div class="sub">年度涨幅最大板块之一</div>
+      </div>
+      <div class="metric">
+        <div class="label">PE (TTM)</div>
+        <div class="value" style="color:var(--gold)">123.49x</div>
+        <div class="sub">PB 9.83x · 高估值区间</div>
+      </div>
+      <div class="metric">
+        <div class="label">总市值</div>
+        <div class="value" style="color:var(--text)">12.3万亿</div>
+        <div class="sub">流通市值 8.6万亿</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PART 3: 知识星球精选 ========== -->
+<div class="section-header">
+  <h2>三、知识星球精选</h2>
+</div>
+
+<div class="card">
+  <div class="block">
+    <h3>🔴 功率半导体 — SW：绝对低位，二次涨价在即 <span style="font-size:12px;color:var(--text-secondary);font-weight:400;">— 水木调研纪要 · 5月27日</span></h3>
+    <div class="highlight">
+      <strong>核心判断：</strong>功率半导体在半导体板块中处于绝对低位。Q1 2026 功率大厂 MOS 产品几乎全部调涨，需求展望乐观，预计年中开启二次涨价。市场关注度低不等于产业趋势不明确，建议立即积极布局。核心推荐<b>芯联集成</b>（MEMS-OCS + SiC + 功率涨价三重催化，看1200亿）。
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="block">
+    <h3>🟡 智立方 — 天风电子：存储双雄扩产，精密运动平台卡位 <span style="font-size:12px;color:var(--text-secondary);font-weight:400;">— 水木调研纪要 · 5月20日</span></h3>
+    <p>纳米级精密运动系统是光刻机、量检测、先进封装等高端设备的底层核心基座。已切入中科飞测供应链，多款产品批量导入一线客户。四大业务协同：光芯片设备 + 精密运动平台 + 半导体封测 + 消费电子，远期市值看350亿。</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="block">
+    <h3>🟡 美利信 — 浙商大制造：重庆半导体工厂投产 <span style="font-size:12px;color:var(--text-secondary);font-weight:400;">— 水木调研纪要 · 5月7日</span></h3>
+    <p>铝合金精密压铸全球龙头。半导体设备零部件（真空腔体、机械臂、减震器、中小精密件）向模组/系统延伸。重庆工厂全面达产 → 年产值超10亿，定增半导体投资额从5亿上调至7亿。</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="block">
+    <h3>💡 策略视角 — 星球杂谈</h3>
+    <table>
+      <thead><tr><th>来源</th><th>核心观点</th><th>时间</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>私募量化数据</td>
+          <td>量化多头 YTD +2.24% vs 主观多头 -2.15%，量化框架更适应当前结构性行情</td>
+          <td>4/9</td>
+        </tr>
+        <tr>
+          <td>开源策略</td>
+          <td>本轮盈利底不早于 Q3 到来，中期仍需谨慎验证</td>
+          <td>5/10</td>
+        </tr>
+        <tr>
+          <td>国联策略</td>
+          <td>牛市情绪温度计：估值、成交额、换手率跟踪框架</td>
+          <td>3/3</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="info-box">
+      <strong>覆盖说明：</strong>本次来自水木调研纪要-2.0（3篇精要）+ 调研纪要更新（1篇）。受限星球（行业研究&调研纪要、🍊橙子调研、调研社、美股信息）暂不支持API搜索。
+    </div>
+  </div>
+</div>
+
+<!-- ========== PART 4: 宏观与国际市场 ========== -->
+<div class="section-header">
+  <h2>四、宏观与国际市场</h2>
+</div>
+
+<div class="card">
+  <div class="block">
+    <h3>🇺🇸 美股：三大指数再创新高</h3>
+    <div class="metrics">
+      <div class="metric">
+        <div class="label">标普500</div>
+        <div class="value" style="color:var(--red)">7,563.63</div>
+        <div class="sub">+0.58% · 六连涨</div>
+      </div>
+      <div class="metric">
+        <div class="label">纳斯达克</div>
+        <div class="value" style="color:var(--red)">26,917.47</div>
+        <div class="sub">+0.91% · 三日连创新高</div>
+      </div>
+      <div class="metric">
+        <div class="label">道琼斯</div>
+        <div class="value" style="color:var(--red)">50,668.97</div>
+        <div class="sub">+0.05% · 再创历史新高</div>
+      </div>
+      <div class="metric">
+        <div class="label">半导体指数</div>
+        <div class="value" style="color:var(--red)">+1.0%</div>
+        <div class="sub">继续走强</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="block">
+    <h3>🌍 宏观驱动与风险事件</h3>
+    <ul>
+      <li><strong>美伊停火传闻：</strong>Aksios报道美伊谈判代表已就"谅解备忘录"达成一致，待特朗普批准。伊朗方面否认。真假难辨，但已引发原油V形反转（WTI 88.90美元/桶，从87反弹至90）。</li>
+      <li><strong>美国宏观数据偏软：</strong>4月PCE通胀环比低于预期 + Q1 GDP年化下修至1.6% + 新屋销售下滑 → 降息预期升温，美元走弱，10年美债4.45%。</li>
+      <li><strong>黄金突破新高：</strong>现货黄金突破4,510美元/盎司（日涨1.22%），持续反映降息预期+地缘避险。</li>
+      <li><strong>欧盟IMERA法案生效：</strong>5月29日起实施《内部市场紧急与韧性法案》，强化欧委会对关键供应链（含半导体）的监测与协调能力。</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="block">
+    <h3>📌 国内政策动态</h3>
+    <ul>
+      <li><strong>横琴集成电路政策升级（5/29生效）：</strong>四大扶持措施——企业发展/人才引进/平台建设/粤澳协同，覆盖芯片设计、测试检测，强化澳门元素。</li>
+      <li><strong>A股进入2025年度分红密集实施期：</strong>扩大资本市场开放、便利境外投资者投资A股等政策持续推进。</li>
+      <li><strong>内幕交易/操纵市场民事赔偿司法解释：</strong>出台为期不远，将进一步规范市场。</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========== PART 5: 重点关注标的 ========== -->
+<div class="section-header">
+  <h2>五、重点关注标的</h2>
+</div>
+
+<div class="card">
+  <table>
+    <thead><tr><th>标的</th><th>代码</th><th>昨日表现</th><th>核心逻辑</th><th>关注点</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>长川科技</td><td>300604</td><td class="up">+1.81%</td>
+        <td>测试设备龙头，AI驱动测试量价齐升，2026E EPS 3.55(+69%)</td>
+        <td>Q2订单数据</td>
+      </tr>
+      <tr>
+        <td>天孚通信</td><td>300394</td><td class="up">+3.90%</td>
+        <td>光模块核心配套，全球AI基建持续拉动</td>
+        <td>800G/1.6T出货节奏</td>
+      </tr>
+      <tr>
+        <td>国盾量子</td><td>688027</td><td class="up">+2.50%</td>
+        <td>量子计算+通信双主线，科创50权重股</td>
+        <td>政策催化</td>
+      </tr>
+      <tr>
+        <td>海光信息</td><td>688041</td><td class="up">+1.16%</td>
+        <td>国产CPU/DCU龙头，AI算力自主可控核心</td>
+        <td>Q2营收增速</td>
+      </tr>
+      <tr>
+        <td>盛美上海</td><td>688082</td><td class="up">+2.62%</td>
+        <td>半导体清洗设备龙头，存储扩产受益</td>
+        <td>长鑫/长存订单</td>
+      </tr>
+      <tr>
+        <td>芯联集成</td><td>—</td><td>—</td>
+        <td>MEMS-OCS + SiC + 功率涨价三重催化，星球强烈推荐</td>
+        <td>看1200亿市值</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ========== PART 6: 风险提示 ========== -->
+<div class="section-header">
+  <h2>六、风险提示与近期关注</h2>
+</div>
+
+<div class="card">
+  <div class="highlight">
+    <strong>⚠️ 核心风险：</strong>半导体板块 PE 123.49x 处于极高历史区间。YTD +59.32% 的涨幅背后隐含了极高的业绩预期——一旦Q2业绩不及预期，估值回调压力极大。
+  </div>
+
+  <div class="risk-grid">
+    <div class="risk-item">
+      <div class="label">🔴 高位估值风险</div>
+      <div class="val">半导体 PE 123.49x，上证 PE 历史 99.34% 分位</div>
+    </div>
+    <div class="risk-item">
+      <div class="label">🔴 缩量反弹信号</div>
+      <div class="val">5/28成交额缩量2727亿，反弹持续性存疑</div>
+    </div>
+    <div class="risk-item">
+      <div class="label">🟡 美伊谈判不确定性</div>
+      <div class="val">停火消息真假难辨，原油波动加大</div>
+    </div>
+    <div class="risk-item">
+      <div class="label">🟡 全球供应链重塑</div>
+      <div class="val">JSR出售+PKC扩产，光刻胶/特种气体格局变动</div>
+    </div>
+  </div>
+
+  <div class="info-box" style="margin-top:16px;">
+    <strong>📊 数据来源：</strong>NeoData金融搜索（实时行情+行业数据+资讯）、知识星球 — 水木调研纪要-2.0 + 调研纪要更新、WebSearch（东方财富/新浪财经/财联社/搜狐财经/腾讯自选股）<br>
+    <strong>⚠️ 免责声明：</strong>本报告仅供内部研究参考，不构成投资建议。所有观点基于公开信息整理，投资决策请自行判断。
+  </div>
+</div>
+
+<div class="footer">
+  Cleo 🐾 · 投研日报 · 2026.05.29<br>
+  数据截至 09:22 AM · 市场有风险，投资需谨慎
+</div>
+
+</body>
+</html>

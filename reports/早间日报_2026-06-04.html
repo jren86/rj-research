@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>早间投研日报 · 2026-06-04</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-2: #1c2333;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --accent: #d4a84b;
+  --accent-dim: #8e7230;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 16px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.header .date {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.header .badge {
+  display: inline-block;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* ── Section ── */
+.section {
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title .emoji {
+  font-size: 16px;
+}
+
+.section-title .count {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.card-title .tag {
+  flex-shrink: 0;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.tag-hot { background: rgba(248,81,73,.15); color: var(--red); }
+.tag-warm { background: rgba(210,153,34,.15); color: var(--orange); }
+.tag-mid { background: rgba(88,166,255,.15); color: var(--blue); }
+
+.card-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.card-body {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.card-body p { margin-bottom: 4px; }
+.card-body ul { padding-left: 16px; margin-bottom: 4px; }
+.card-body li { margin-bottom: 2px; }
+.card-body strong { color: var(--text); }
+
+/* ── Market Table ── */
+.market-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.market-table th {
+  background: var(--surface-2);
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.market-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.market-table tr:last-child td { border-bottom: none; }
+
+.up { color: var(--red); font-weight: 600; }
+.down { color: var(--green); font-weight: 600; }
+
+/* ── Event Tags ── */
+.event-level { display: inline-block; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px; }
+.event-red { background: rgba(248,81,73,.2); color: var(--red); }
+.event-orange { background: rgba(210,153,34,.2); color: var(--orange); }
+.event-yellow { background: rgba(88,166,255,.2); color: var(--blue); }
+
+/* ── Dividend / Date ── */
+.date-badge {
+  display: inline-block;
+  background: rgba(88,166,255,.12);
+  color: var(--blue);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+/* ── Cal Table ── */
+.cal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.cal-table th {
+  background: var(--surface-2);
+  padding: 6px 8px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.cal-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Footer ── */
+.footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* ── Dividers ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .container { padding: 0 12px 32px; }
+  .header { padding: 20px 12px 16px; }
+  .section-title { font-size: 14px; padding: 8px 12px; }
+  .card { padding: 12px; }
+  .card-body { font-size: 12.5px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 早间投研日报</h1>
+  <div class="date">2026年6月4日（周四）· 隔夜增量信息</div>
+  <div class="badge">端午休市 6/19 - 6/21</div>
+</div>
+
+<div class="container">
+
+  <!-- ════════════ 催化剂日历 ════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <span class="emoji">📅</span> 催化剂日历
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table class="cal-table">
+        <tr><th>日期</th><th>事件</th><th>影响</th></tr>
+        <tr><td>6/2-6/5</td><td>COMPUTEX 2026 台北国际电脑展</td><td style="color:var(--orange);">AI硬件持续催化</td></tr>
+        <tr><td>6/3-6/5</td><td>SNEC 2026 上海光伏展</td><td>光伏/储能板块</td></tr>
+        <tr><td>6/4</td><td>长川科技(300604)除权除息</td><td style="color:var(--text-muted);">10派1.00元</td></tr>
+        <tr><td>6/12-15</td><td><strong>A股核心指数调样生效</strong></td><td style="color:var(--orange);">千亿被动资金再平衡</td></tr>
+        <tr><td>6/16-17</td><td><strong>美联储 FOMC 利率决议</strong></td><td style="color:var(--red);">全球流动性关键节点</td></tr>
+        <tr><td>6/18</td><td>国际汽车及供应链博览会</td><td>汽车/新能源催化</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ════════════ 宏观与地缘 ════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <span class="emoji">🌍</span> 宏观与地缘
+      <span class="count">3 条</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-hot">🔴 重要</span>
+        美股终结九连涨 · 美伊交火
+      </div>
+      <div class="card-meta">6月3日（周三）· 中东局势</div>
+      <div class="card-body">
+        <p>美伊在霍尔木兹海峡再度交火，中东局势急剧升温。美股三大指数全线收跌：</p>
+        <p>道指 <span class="down">-1.21%</span>（-620点）报50687 · 标普 <span class="down">-0.74%</span>报7553 · 纳指 <span class="down">-0.89%</span>报26854</p>
+        <p><strong>半导体ETF逆势 +4.01%</strong>，芯片股强势。特朗普称谈判"进展非常顺利"，美伊协议可能本周末达成。</p>
+        <p>布伦特原油收于 ~95 美元/桶，油价冲高回落。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-warm">🟠 关注</span>
+        特朗普电话怒斥以色列总理
+      </div>
+      <div class="card-meta">美媒爆料</div>
+      <div class="card-body">
+        特朗普在电话中向内塔尼亚胡爆粗，警告以色列轰炸黎巴嫩贝鲁特将使其更孤立。美以关系紧张加剧中东不确定性。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-warm">🟠 关注</span>
+        俄军发动今年最强空袭
+      </div>
+      <div class="card-meta">俄乌冲突</div>
+      <div class="card-body">
+        俄军出动656架无人机+73枚巡航/高超音速导弹，覆盖基辅、哈尔科夫等核心城市。
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ 市场表现 ════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <span class="emoji">📈</span> 市场表现
+      <span class="count">6/3 回顾 + 6/4 早盘</span>
+    </div>
+
+    <!-- A股 6/3 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-warm">🟠 冲高回落</span>
+        A股 · 6月3日（周三）
+      </div>
+      <div class="card-body">
+        <table class="market-table">
+          <tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr>
+          <tr><td>上证指数</td><td>4083.97</td><td class="up">+0.22%</td><td>午前一度上4100</td></tr>
+          <tr><td>深证成指</td><td>15704.71</td><td class="up">+0.73%</td><td></td></tr>
+          <tr><td>创业板指</td><td>4122.99</td><td class="up">+1.65%</td><td>盘中突破4200创新高</td></tr>
+          <tr><td>科创50</td><td>—</td><td class="up">盘中+4.78%</td><td>芯片/光通信领涨</td></tr>
+        </table>
+        <p>两市成交 <strong>3.15万亿</strong>（放量3403亿），超3700只个股待涨，午后获利回吐明显。</p>
+        <p>🔥 <strong>领涨板块</strong>：CPO/光通信（涨停潮）、半导体/算力硬件、工业金属、存储器</p>
+        <p>❄️ <strong>领跌</strong>：AI应用/短剧游戏、电商概念</p>
+      </div>
+    </div>
+
+    <!-- A股 6/4 早盘 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-hot">⚡ 实时</span>
+        A股 · 6月4日（周四）早盘
+      </div>
+      <div class="card-body">
+        <table class="market-table">
+          <tr><th>指数</th><th>最新</th><th>涨跌幅</th></tr>
+          <tr><td>上证指数</td><td>4066.56</td><td class="down">-0.43%</span></td></tr>
+          <tr><td>深证成指</td><td>15632.79</td><td class="down">-0.46%</td></tr>
+          <tr><td>创业板指</td><td>4077.75</td><td class="down">-1.10%</td></tr>
+          <tr><td>科创综指</td><td>—</td><td class="up">独红</td></tr>
+        </table>
+        <p><strong>超4300只个股下跌</strong>，成交缩量。芯片产业链保持强势。</p>
+        <p><strong style="color:var(--red);">京东方A涨停！</strong> 玻璃基板概念爆发，英特尔+3DGS投资33亿美元在印度建半导体基板厂。</p>
+      </div>
+    </div>
+
+    <!-- 港股 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-warm">🟠 回调</span>
+        港股 · 6月3日
+      </div>
+      <div class="card-body">
+        <table class="market-table">
+          <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
+          <tr><td>恒生指数</td><td>25633.21</td><td class="down">-1.56%</td></tr>
+          <tr><td>恒生科技</td><td>5056.97</td><td class="down">-2.74%</td></tr>
+          <tr><td>恒生国企</td><td>8596.59</td><td class="down">-1.90%</td></tr>
+        </table>
+        <p>科网股全线回调，AI应用股低迷。光通信逆市走强（长飞光纤+10.65%），中芯国际获净买入9.51亿港元。</p>
+      </div>
+    </div>
+
+    <!-- 美股 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-hot">🔴 大跌</span>
+        美股 · 6月3日（周三）
+      </div>
+      <div class="card-body">
+        <table class="market-table">
+          <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
+          <tr><td>道琼斯</td><td>50687.07</td><td class="down">-1.21%</td></tr>
+          <tr><td>标普500</td><td>7553.68</td><td class="down">-0.74%</td></tr>
+          <tr><td>纳斯达克</td><td>26853.98</td><td class="down">-0.89%</td></tr>
+        </table>
+        <p>美伊交火终结九连涨。半导体ETF <strong style="color:var(--red);">逆势+4.01%</strong>，中概金龙指数 <span class="up">+1.87%</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ 持仓增量 ════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <span class="emoji">💼</span> 持仓标的增量信息
+      <span class="count">A股 7 只 · 港股 1 只</span>
+    </div>
+
+    <!-- 京东方A -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-hot">🔥 涨停</span>
+        京东方A（000725.SZ）
+      </div>
+      <div class="card-meta">6/4 早盘涨停 · 玻璃基板概念</div>
+      <div class="card-body">
+        <p><strong>催化</strong>：英特尔 + 3D Glass Solutions 投资33亿美元在印度建半导体基板厂，玻璃基板概念全面爆发</p>
+        <p>此前已形成三重催化共振：</p>
+        <ul>
+          <li>康宁合作（玻璃基封装载板 + 可折叠玻璃 + 钙钛矿玻璃基板）</li>
+          <li>钙钛矿全场景光伏产品亮相2026 SNEC光伏展</li>
+          <li>63亿回购计划（获工商银行50亿贷款支持）</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 工业富联 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-hot">🔥 历史新高</span>
+        工业富联（601138.SH）
+      </div>
+      <div class="card-meta">6/3 盘中创历史新高 84.95元</div>
+      <div class="card-body">
+        <p>盘中最高84.7元，市值突破1.68万亿超越贵州茅台！收盘报81.05元（+1.3%），市值1.61万亿。</p>
+        <p><strong>⚠️ 关键信号</strong>：72万散户推动股价新高，但机构批量减仓。需关注筹码结构可持续性。</p>
+        <p>2026年全球AI服务器出货量预计同比+28%。</p>
+      </div>
+    </div>
+
+    <!-- 宁德时代 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-warm">🟠 催化</span>
+        宁德时代（300750.SZ）
+      </div>
+      <div class="card-meta">钠电池量产确认</div>
+      <div class="card-body">
+        <p>吴凯（首席科学家）5/30官宣：今年将实现钠电池规模量产</p>
+        <p>福鼎基地六期投资50亿新建40GWh钠电池产线（已启动），山东济宁基地已投产规划总产能160GWh</p>
+        <p>东吴证券研判2026年为钠电池规模化元年。</p>
+      </div>
+    </div>
+
+    <!-- 长川科技 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-mid">🟡 分红</span>
+        长川科技（300604.SZ）
+      </div>
+      <div class="card-body">
+        <p><span class="date-badge">6/3 股权登记日</span> → <span class="date-badge">6/4 除权除息日</span> 10派1.00元</p>
+      </div>
+    </div>
+
+    <!-- 精智达 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-mid">🟡 激励</span>
+        精智达（688627.SH）
+      </div>
+      <div class="card-body">
+        <p>6/4 公告：向2026年限制性股票激励计划激励对象授予预留部分限制性股票（第一批次）</p>
+        <p>6/2 创投基金设立决议已通过（出资5400万），6/3 涨4.83%</p>
+      </div>
+    </div>
+
+    <!-- 芯碁微装 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-mid">🟡 强势</span>
+        芯碁微装（688630.SH）
+      </div>
+      <div class="card-body">
+        <p>6/3 涨6.05%，连续多日走强。科创板工业机械指数前十大权重股。</p>
+      </div>
+    </div>
+
+    <!-- 容百科技 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-mid">🟡 关注</span>
+        容百科技（688005.SH）
+      </div>
+      <div class="card-body">
+        <p>钠电池+磷酸铁锂扩产逻辑持续。伯恩斯坦报告：全球储能市场剧变，钠电池将颠覆磷酸铁锂市场。</p>
+        <p>6/2 跌3.47%，主力净流出1116万。</p>
+      </div>
+    </div>
+
+    <!-- 港股 信达生物 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="tag tag-hot">🔥 持续催化</span>
+        信达生物（01801.HK）
+      </div>
+      <div class="card-body">
+        <p>×辉瑞105亿美元合作持续成为市场焦点</p>
+        <p>中信建投维持 <strong>"买入"</strong> 评级，目标价115港元（2026年合理市值1900亿港元）</p>
+        <p>水木调研纪要6/1：国泰海通医药6月组合维持信达增持</p>
+        <p>⚠️ 6/3 港股科技股整体回调背景下承压</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ 知识星球 ════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <span class="emoji">📚</span> 知识星球关键内容
+      <span class="count">zsxq</span>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <p><strong>水木调研纪要-2.0</strong></p>
+        <ul>
+          <li><strong>6/1</strong> 国泰海通医药底部强CAll：6月组合维持<strong style="color:var(--accent);">信达生物</strong>增持！BD+销售双驱动，2026E创新药收入增速30-50%</li>
+          <li><strong>5/29</strong> 信达生物×辉瑞105亿美元合作深度解读：6.5亿美元首付款+最高98.5亿里程碑+双位数销售分成，Co-Co共享美国/欧洲利润</li>
+          <li>中信医药：信达生物2026年合理市值1900亿港元（目标价115港元），看好200亿销售收入</li>
+          <li>2026Q1创新药对外授权34项、首付款33.8亿美金均创历史新高</li>
+        </ul>
+        <div class="divider"></div>
+        <p><strong>调研纪要更新</strong></p>
+        <ul>
+          <li>宁德时代钠电池产业链研究持续更新</li>
+          <li>创新药出海ASCO数据密集窗口（6月）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ 关注清单 ════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <span class="emoji">👀</span> 关注清单更新
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <table class="market-table">
+          <tr><th>标的</th><th>近期动态</th></tr>
+          <tr><td>中芯国际(688981)</td><td>6/2 港股通净买入9.51亿港元，国产替代逻辑强化</td></tr>
+          <tr><td>腾讯控股(00700)</td><td>微信AI Agent继续发酵，6/2单日涨10.46%后6/3回调</td></tr>
+          <tr><td>风华高科(000636)</td><td>MLCC涨价持续，6/2板块涨幅超9%，高端MLCC 6月落地调价10-15%</td></tr>
+          <tr><td>宏达电子</td><td>军工MLCC+钽电容涨价受益，MLCC成第二增长支柱</td></tr>
+          <tr><td>歌尔股份</td><td>虚拟现实板块有联动效应</td></tr>
+          <tr><td>科创机械ETF(588850)</td><td>6/3 +3.80%，精智达/芯碁微装领涨</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ 今日关键观察 ════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <span class="emoji">💡</span> 今日关键观察
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <ol style="padding-left:16px;">
+          <li><strong>美股回调传导</strong>：标普/纳指终结九连涨，道指-1.21%。但半导体ETF逆势+4%，A股芯片链料仍有支撑</li>
+          <li><strong>京东方A涨停持续性</strong>：玻璃基板概念能否扩散至面板/封装产业链</li>
+          <li><strong>指数调样窗口临近</strong>（6/12-15）：关注被动资金调仓方向，千亿资金再平衡</li>
+          <li><strong>COMPUTEX最后两天</strong>：6/4-6/5可能有更多AI硬件发布催化</li>
+          <li><strong>美伊谈判周末窗口</strong>：特朗普称可能本周末达成协议，油价波动需警惕</li>
+          <li><strong>MLCC涨价6月落地</strong>：高端MLCC调价10-15%，关注被动元件量价齐升持续性</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ Footer ════════════ -->
+  <div class="footer">
+    <p>本报告仅包含隔夜增量信息，不构成投资建议</p>
+    <p>数据源：WebSearch · 知识星球(zsxq) · 财联社 · 东方财富 · 新浪财经</p>
+    <p style="margin-top:4px;">via WB</p>
+  </div>
+
+</div>
+</body>
+</html>

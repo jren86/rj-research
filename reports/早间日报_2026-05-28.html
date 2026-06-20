@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>早间投研日报 — 2026-05-28</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --bg-card-hover: #1c2333;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --text-bright: #f0f6fc;
+    --red: #f85149;
+    --green: #3fb950;
+    --blue: #58a6ff;
+    --purple: #bc8cff;
+    --orange: #d2991d;
+    --accent: #58a6ff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 16px 60px;
+  }
+  .header {
+    text-align: center;
+    padding: 32px 0 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .header h1 { font-size: 22px; color: var(--text-bright); margin-bottom: 6px; }
+  .header .meta { font-size: 13px; color: var(--text-muted); }
+  .header .meta span { margin: 0 8px; }
+
+  .section { margin-bottom: 32px; }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-bright);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { font-size: 20px; }
+
+  .subsection { margin-bottom: 20px; }
+  .subsection h3 {
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .card-header .stock-code { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+  .card-header .stock-name { font-size: 16px; font-weight: 700; color: var(--text-bright); }
+  .card-header .stock-sector { font-size: 12px; background: var(--bg); padding: 2px 8px; border-radius: 4px; margin-left: auto; }
+
+  .item { padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .item:last-child { border-bottom: none; }
+  .item .label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .item .label .tag {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: rgba(88, 166, 255, 0.15);
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .item .label .tag.new { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+  .item .label .tag.warn { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+  .item .content { font-size: 14px; color: var(--text); line-height: 1.6; }
+  .item .source { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+  .no-data { color: var(--text-muted); font-size: 14px; font-style: italic; padding: 10px 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  th {
+    text-align: left;
+    padding: 8px 12px;
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--border);
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .up { color: var(--red); }
+  .down { color: var(--green); }
+  .highlight { background: rgba(88, 166, 255, 0.08); }
+
+  .zsxq-card {
+    border-left: 3px solid #bc8cff;
+    background: rgba(188, 140, 255, 0.05);
+  }
+  .zsxq-card .source { color: #bc8cff; }
+
+  .footer {
+    text-align: center;
+    padding: 24px 0;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  .data-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+  }
+  .data-chip {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .data-chip .val { font-weight: 700; font-size: 14px; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+
+  .macro-highlight {
+    background: rgba(210, 153, 29, 0.08);
+    border: 1px solid rgba(210, 153, 29, 0.3);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .macro-highlight strong { color: var(--orange); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>早间投研日报</h1>
+  <div class="meta">
+    <span>2026-05-28 周四</span>
+    <span>·</span>
+    <span>隔夜增量版</span>
+  </div>
+</div>
+
+<!-- ══════════ 一、宏观 ══════════ -->
+<div class="section">
+  <div class="section-title"><span class="icon">🏛️</span>一、宏观回顾及前瞻</div>
+
+  <div class="subsection">
+    <h3>1.1 央行公开市场操作（近 5 日）</h3>
+    <table>
+      <tr><th>日期</th><th>操作</th><th>操作量（亿）</th><th>到期（亿）</th><th>净投放（亿）</th><th>利率</th></tr>
+      <tr class="highlight"><td>5/27</td><td>7 天逆回购</td><td>1,776</td><td>5</td><td class="up">+1,771</td><td>1.40%</td></tr>
+      <tr><td>5/26</td><td>7 天逆回购</td><td>2,490</td><td>5</td><td class="up">+2,485</td><td>1.40%</td></tr>
+      <tr><td>5/25</td><td>7 天逆回购</td><td>2,580</td><td>—</td><td class="up">+2,580</td><td>1.40%</td></tr>
+      <tr><td>5/22</td><td>7 天逆回购</td><td>1,530</td><td>—</td><td class="up">+1,530</td><td>1.40%</td></tr>
+      <tr><td>5/21</td><td>7 天逆回购</td><td>1,000</td><td>—</td><td class="up">+1,000</td><td>1.40%</td></tr>
+    </table>
+    <div class="macro-highlight">
+      <strong>近 5 个交易日累计净投放超 9,300 亿。</strong>央行连续放量呵护月末流动性。5/20-22 分别投放 500/1000/1530 亿，5/25-27 进一步加码至 2580/2490/1776 亿，力度逐日增加。但资金面未因投放而完全同步转松——月末税期走款 + 跨月需求是主要扰动因素。
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>1.2 银行间资金利率（5/26-27）</h3>
+    <table>
+      <tr><th>指标</th><th>5/25</th><th>5/26</th><th>变动</th></tr>
+      <tr><td>DR001</td><td>1.33%</td><td>—</td><td>—</td></tr>
+      <tr><td>DR007</td><td>1.39%</td><td>—</td><td>—</td></tr>
+      <tr><td>Shibor 隔夜</td><td>—</td><td class="down">1.319%</td><td>-0.8bp</td></tr>
+      <tr><td>Shibor 7 天</td><td>—</td><td class="down">1.377%</td><td>-2.4bp</td></tr>
+      <tr><td>Shibor 14 天</td><td>—</td><td class="down">1.402%</td><td>-0.5bp</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>1.3 今日前瞻</h3>
+    <ul style="margin-left: 16px; font-size: 14px; color: var(--text);">
+      <li>关注 5/28 逆回购续作规模（预计继续超 1500 亿）</li>
+      <li>月末最后 2 个交易日——跨月资金需求可能推高 DR007 至 1.4-1.5% 区间</li>
+      <li>关注 6 月初 MLF 续作量及利率决策</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════ 二、市场 ══════════ -->
+<div class="section">
+  <div class="section-title"><span class="icon">📊</span>二、市场数据回顾及前瞻</div>
+
+  <div class="subsection">
+    <h3>2.1 A 股（5/27 收盘）</h3>
+    <table>
+      <tr><th>指数</th><th>收盘</th><th>日涨跌</th><th>5 日涨跌</th><th>YTD</th></tr>
+      <tr><td>上证指数</td><td>4,093.73</td><td class="down">-1.25%</td><td class="up">+0.11%</td><td class="up">+2.85%</td></tr>
+      <tr><td>深证成指</td><td>15,736.47</td><td class="down">-0.88%</td><td class="up">+2.22%</td><td class="up">+15.23%</td></tr>
+      <tr><td>创业板指</td><td>4,045.77</td><td class="up">+0.07%</td><td class="up">+4.52%</td><td class="up">+24.97%</td></tr>
+      <tr><td>科创 50</td><td>1,815.45</td><td class="down">-2.80%</td><td>—</td><td>—</td></tr>
+      <tr><td>沪深 300</td><td>4,908.17</td><td class="down">-0.91%</td><td class="up">+1.68%</td><td class="up">+5.04%</td></tr>
+    </table>
+    <div class="data-row">
+      <div class="data-chip">三市成交额 <span class="val" style="color:var(--text-bright)">3.26 万亿</span></div>
+      <div class="data-chip">上涨 <span class="val" style="color:var(--red)">3,600+</span></div>
+      <div class="data-chip">下跌 <span class="val" style="color:var(--green)">1,700+</span></div>
+      <div class="data-chip">北向成交 <span class="val" style="color:var(--text-bright)">4,075 亿</span>（占 12.6%）</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>2.2 板块轮动</h3>
+    <table>
+      <tr><th>方向</th><th>板块</th><th>代表标的</th><th>涨跌</th></tr>
+      <tr><td class="up">🟢 领涨</td><td>中韩半导体 ETF</td><td>513310</td><td class="up">+5.69%</td></tr>
+      <tr><td class="up">🟢 领涨</td><td>白酒 ETF</td><td>512690</td><td class="up">+2.03%</td></tr>
+      <tr><td class="up">🟢 领涨</td><td>纳指 ETF 系列</td><td>159941 / 159660</td><td class="up">+2.1-2.4%</td></tr>
+      <tr><td class="down">🔴 领跌</td><td>信创 / 机器人</td><td>—</td><td class="down">-4.1%+</td></tr>
+      <tr><td class="down">🔴 领跌</td><td>黄金股 / 有色金属</td><td>—</td><td class="down">显著回调</td></tr>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3>2.3 港股</h3>
+    <table>
+      <tr><th>指数</th><th>收盘</th><th>5 日涨跌</th><th>YTD</th></tr>
+      <tr><td>恒生指数</td><td>25,328.23</td><td class="down">-2.73%</td><td class="down">-2.65%</td></tr>
+      <tr><td>恒生科技</td><td>4,907.57</td><td class="up">+0.21%</td><td class="down">-11.46%</td></tr>
+    </table>
+    <div class="card" style="margin-top: 8px;">
+      <div class="item">
+        <div class="label"><span class="tag new">🆕 5/28 早盘</span></div>
+        <div class="content">恒生低开 <span class="down">-0.39%</span>，恒生科技 <span class="down">-0.25%</span></div>
+        <div class="source">亮点：段永平举牌泡泡玛特，持仓市值超 117 亿港元</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>2.4 美股（5/27 收盘）</h3>
+    <table>
+      <tr><th>指数</th><th>收盘</th><th>日涨跌</th><th>5 日涨跌</th><th>YTD</th></tr>
+      <tr><td>标普 500</td><td>7,520.36</td><td class="up">+0.02%</td><td class="up">+2.27%</td><td class="up">+9.86%</td></tr>
+      <tr><td>纳斯达克</td><td>26,674.73</td><td class="up">+0.07%</td><td class="up">+3.11%</td><td class="up">+14.77%</td></tr>
+      <tr><td>道琼斯</td><td>50,644.28</td><td class="up">+0.36%</td><td class="up">+2.59%</td><td class="up">+5.37%</td></tr>
+    </table>
+    <p style="margin-top: 6px; font-size: 13px; color: var(--text-muted);">窄幅震荡，成交量接近均值。无重大宏观事件驱动。</p>
+  </div>
+
+  <div class="subsection">
+    <h3>2.5 今日开盘（5/28）</h3>
+    <table>
+      <tr><th>指数</th><th>开盘</th><th>较昨收</th></tr>
+      <tr><td>上证指数</td><td>4,080.30</td><td class="down">-0.33%</td></tr>
+      <tr><td>深证成指</td><td>15,691.16</td><td class="down">-0.29%</td></tr>
+      <tr><td>创业板指</td><td>4,042.08</td><td class="down">-0.09%</td></tr>
+    </table>
+    <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">
+      A 股低开，白酒概念、有色金属跌幅居前。半导体内部分化（中芯国际 +7.78% vs 科创 50 昨日 -2.80%）。
+    </p>
+  </div>
+</div>
+
+<!-- ══════════ 三、持仓个股隔夜增量信息 ══════════ -->
+<div class="section">
+  <div class="section-title"><span class="icon">🎯</span>三、持仓个股隔夜增量信息</div>
+
+  <!-- 长川科技 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="stock-name">长川科技</span>
+      <span class="stock-code">300604</span>
+      <span class="stock-sector">🔧 半导体设备</span>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag new">🆕 zsxq 5/25</span></div>
+      <div class="content">华为发布「韬定律」，长川 H 敞口 60-70%，是华为核心测试机供应商。华为半导体生态链持续深化。</div>
+      <div class="source">水木调研纪要-2.0 · 5/25</div>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag">📰 新闻 5/12</span></div>
+      <div class="content">Q1 业绩大增，股价涨停创历史新高（长江商报报道）。2025 年收入约 53 亿 +45%，归母净利超 13 亿 +翻倍。</div>
+      <div class="source">长江商报 · 5/12</div>
+    </div>
+  </div>
+
+  <!-- 精智达 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="stock-name">精智达</span>
+      <span class="stock-code">688627</span>
+      <span class="stock-sector">🔧 存储测试设备</span>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag new">🆕 研报 5/21</span></div>
+      <div class="content">存储测试设备布局完善，未来成长可期。AI 算力芯片复杂度提升推动测试机需求增长。公司产品矩阵覆盖半导体存储器件 & 新型显示器件检测。</div>
+      <div class="source">券商研报 · 5/21</div>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag new">🆕 zsxq 5/17</span></div>
+      <div class="content">长鑫 CX 26Q1 收入 508 亿 <span class="up">+719% YoY</span>，精智达受益于高速 FT + 探针卡需求增长。</div>
+      <div class="source">水木调研纪要-2.0 · 5/17</div>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag">zsxq 5/20</span></div>
+      <div class="content">天风电子：智立方——存储双雄扩产（长鑫 CX + 长存 YMTC），设备需求持续景气。</div>
+      <div class="source">水木调研纪要-2.0 · 5/20</div>
+    </div>
+  </div>
+
+  <!-- 宁德时代 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="stock-name">宁德时代</span>
+      <span class="stock-code">300750</span>
+      <span class="stock-sector">🔋 动力电池</span>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag new">🆕 研报 5/15</span></div>
+      <div class="content">宁德非并表关联基金以约 <strong>$9.42 亿</strong>收购世纪互联 (VNET) 38.1% 股权，成为单一最大股东。补全「风光储绿电直连-HVDC」全链条能源解决方案，数据中心场景提供丰富应用场景。</div>
+      <div class="source">中金电新 / 券商研报 · 5/15</div>
+    </div>
+  </div>
+
+  <!-- 工业富联 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="stock-name">工业富联</span>
+      <span class="stock-code">601138</span>
+      <span class="stock-sector">🖥️ AI 服务器</span>
+    </div>
+    <p class="no-data">隔夜无重要增量信息</p>
+    <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">最近一期 zsxq 研报为 2026/1/27「低位核心，业绩高增」，距今较久。</p>
+  </div>
+
+  <!-- 容百科技 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="stock-name">容百科技</span>
+      <span class="stock-code">688005</span>
+      <span class="stock-sector">🔋 正极材料</span>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag new">🆕 新闻 5/25</span></div>
+      <div class="content">磷酸锰铁锂 (LMFP) 走向「纯用」——行业讨论重心从三元掺混转向纯用方案、整车验证和规模化供应。容百 2025 年磷酸锰铁锂业务增长明显，BEV/PHEV/商用车/电动工具多线推进。</div>
+      <div class="source">行业报道 · 5/25</div>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag">研报 5/19</span></div>
+      <div class="content">Q1 收入 37.81 亿 <span class="up">+27.58%</span>，归母净利 0.12 亿（扭亏），Q1 销量 ~2.5 万吨。三元稳定 + 钠电有序放量。</div>
+      <div class="source">券商研报 · 5/19</div>
+    </div>
+  </div>
+
+  <!-- 京东方 A -->
+  <div class="card">
+    <div class="card-header">
+      <span class="stock-name">京东方 A</span>
+      <span class="stock-code">000725</span>
+      <span class="stock-sector">📺 显示面板</span>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag warn">⚠️ 公告 5/27</span></div>
+      <div class="content">公司发布<strong>异常波动公告</strong>：否认与英伟达合作传闻（此前 5/21 一字涨停即因该市场预期）。澄清玻璃基封装载板等新业务目前规模有限。</div>
+      <div class="source">公司公告 · 5/27</div>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag">研报 5/7</span></div>
+      <div class="content">1Q26 收入 510 亿 +0.80% YoY，归母 17.07 亿 +5.78%。LCD 利润释放稳定，现金流改善。2025 年收入 2045.9 亿 +3.13%，归母 58.57 亿 +10.03%。</div>
+      <div class="source">券商研报 · 5/7</div>
+    </div>
+  </div>
+
+  <!-- 芯碁微装 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="stock-name">芯碁微装</span>
+      <span class="stock-code">688630</span>
+      <span class="stock-sector">🔬 直写光刻设备</span>
+    </div>
+    <p class="no-data">隔夜无重要增量信息</p>
+  </div>
+
+  <!-- 信达生物 -->
+  <div class="card">
+    <div class="card-header">
+      <span class="stock-name">信达生物</span>
+      <span class="stock-code">01801.HK</span>
+      <span class="stock-sector">💊 创新药</span>
+    </div>
+    <div class="item">
+      <div class="label"><span class="tag">zsxq 2/8-9</span></div>
+      <div class="content">与礼来制药达成全球合作第 7 单：首付 <strong>$3.5 亿</strong> + 最高 <strong>$85 亿</strong>里程碑付款。海通国际、国泰海通均发布正面研报。</div>
+      <div class="source">调研纪要更新 · 2/8-9</div>
+    </div>
+    <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">注：最新研报距今约 3.5 个月，隔夜无新公告/研报。</p>
+  </div>
+</div>
+
+<!-- ══════════ 四、知识库增量内容 ══════════ -->
+<div class="section">
+  <div class="section-title"><span class="icon">🔍</span>四、知识库增量内容</div>
+
+  <div class="subsection">
+    <h3>4.1 IMA 知识库</h3>
+    <p class="no-data">10 个知识库已连接（AI 读研报、爱分享财经资讯、股票交易高手大模型、Jay 的知识库等），本轮搜索返回 0 条匹配的 48h 增量内容。可能原因：知识库中暂无这些标的的最新更新。</p>
+  </div>
+
+  <div class="subsection">
+    <h3>4.2 知识星球（zsxq）</h3>
+
+    <div class="card zsxq-card">
+      <div class="item">
+        <div class="label"><span class="tag new">🆕 5/27 10:30</span></div>
+        <div class="content"><strong>【SW】半导体最低位！再 call 功率半导体</strong><br>
+        功率半导体板块在半导体里当前属绝对低位。1Q26 功率大厂 MOS 产品几乎全部调涨，预计年中开启二次涨价。<br>
+        核心推荐：芯联集成（MEMS-OCS + SiC + 功率涨价三重催化，看 1200 亿）</div>
+        <div class="source">水木调研纪要-2.0 · 阅读 280 · 5/27</div>
+      </div>
+    </div>
+
+    <div class="card zsxq-card">
+      <div class="item">
+        <div class="label"><span class="tag">5/20 13:57</span></div>
+        <div class="content"><strong>【天风电子】智立方：存储双雄扩产</strong><br>存储双雄（长鑫 CX + 长存 YMTC）持续扩产，智立方受益。</div>
+        <div class="source">水木调研纪要-2.0 · 5/20</div>
+      </div>
+    </div>
+
+    <div class="subsection" style="margin-top: 16px;">
+      <h3 style="font-size: 13px; color: var(--text-muted);">权限受限星球（3个）</h3>
+      <p class="no-data">🍊 橙子调研、调研纪要、调研社 — API 访问受限，仅限星球内成员在 App 内查看。建议直接打开知识星球 App 浏览。</p>
+      <p class="no-data" style="margin-top: 4px;">行业研究 & 调研纪要 — 无搜索结果返回（可能权限限制或暂无相关内容）。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 五、催发事件日历 ══════════ -->
+<div class="section">
+  <div class="section-title"><span class="icon">📅</span>五、近期催化剂日历</div>
+  <table>
+    <tr><th>标的</th><th>事件</th><th>预估时间</th><th>关注等级</th></tr>
+    <tr><td>京东方 A</td><td>异常波动公告后续监管动态</td><td>本周内</td><td>⚠️ 高</td></tr>
+    <tr><td>工业富联</td><td>Computex 2026 台北电脑展（AI 服务器线）</td><td>6 月初</td><td>中</td></tr>
+    <tr><td>容百科技</td><td>LMFP 纯用方案整车验证进展</td><td>2026H1</td><td>中</td></tr>
+    <tr><td>精智达</td><td>长鑫 CX / 长存 YMTC 新一轮设备招标</td><td>2026H1</td><td>高</td></tr>
+    <tr><td>长川科技</td><td>华为半导体设备链进展追踪</td><td>持续</td><td>高</td></tr>
+  </table>
+</div>
+
+<div class="footer">
+  早间投研日报 · 2026-05-28 · Cleo 🐾 自动生成<br>
+  数据来源：NeoData API · 知识星球 (zsxq) · 东方财富 · WebSearch<br>
+  ⚠️ 本报告仅包含隔夜增量信息，不含股价/涨跌幅等交易数据
+</div>
+
+</body>
+</html>

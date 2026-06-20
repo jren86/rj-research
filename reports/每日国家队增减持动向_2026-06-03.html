@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>每日国家队增减持动向 | 2026-06-03</title>
+<style>
+  :root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #1c2333;
+    --border: #30363d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --text-muted: #6e7681;
+    --red: #f23645;
+    --red-bg: rgba(242, 54, 69, 0.1);
+    --green: #00c853;
+    --green-bg: rgba(0, 200, 83, 0.1);
+    --blue: #58a6ff;
+    --blue-bg: rgba(88, 166, 255, 0.1);
+    --yellow: #d29922;
+    --yellow-bg: rgba(210, 153, 34, 0.1);
+    --orange: #f0883e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 16px; }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1a2332 0%, #1c2333 100%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .header .date-badge {
+    display: inline-block;
+    background: var(--blue-bg);
+    color: var(--blue);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+
+  /* Conclusion Banner */
+  .conclusion {
+    background: linear-gradient(135deg, #1e272e 0%, #1c2333 100%);
+    border: 1px solid var(--yellow);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .conclusion .label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .conclusion p {
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  .conclusion strong {
+    color: var(--yellow);
+  }
+
+  /* Section */
+  .section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--blue-bg);
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* Table */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 520px;
+  }
+  th {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+    color: var(--text-primary);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  /* Signal tags */
+  .tag-strong {
+    display: inline-block;
+    background: var(--red-bg);
+    color: var(--red);
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .tag-medium {
+    display: inline-block;
+    background: rgba(240, 136, 62, 0.15);
+    color: var(--orange);
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .tag-weak {
+    display: inline-block;
+    background: var(--yellow-bg);
+    color: var(--yellow);
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  /* Price colors */
+  .up { color: var(--red); }
+  .down { color: var(--green); }
+  .neutral { color: var(--text-secondary); }
+
+  /* Info box */
+  .info-box {
+    background: var(--bg-secondary);
+    border-left: 3px solid var(--blue);
+    padding: 10px 12px;
+    margin: 8px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .info-box strong { color: var(--text-primary); }
+  .warn-box {
+    background: var(--bg-secondary);
+    border-left: 3px solid var(--yellow);
+    padding: 10px 12px;
+    margin: 8px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .warn-box strong { color: var(--yellow); }
+
+  /* Watchlist */
+  .watch-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.3);
+  }
+  .watch-item:last-child { border-bottom: none; }
+  .watch-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--blue-bg);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .watch-text { font-size: 13px; line-height: 1.5; }
+  .watch-text strong { color: var(--text-primary); }
+
+  /* Signal row */
+  .signal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.3);
+    gap: 8px;
+  }
+  .signal-row:last-child { border-bottom: none; }
+  .signal-desc { flex: 1; font-size: 13px; }
+  .signal-desc .evidence { display: block; font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+  .signal-badge {
+    flex-shrink: 0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .signal-high { background: var(--green-bg); color: var(--green); }
+  .signal-mid { background: var(--yellow-bg); color: var(--yellow); }
+  .signal-low { background: var(--red-bg); color: var(--red); }
+
+  /* Grid */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .grid-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+  }
+  .grid-item .label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+  .grid-item .value { font-size: 16px; font-weight: 700; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px 0 30px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .sub-dir-label {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 10px;
+  }
+  .sub-dir-label:first-of-type { margin-top: 0; }
+
+  @media (max-width: 480px) {
+    .container { padding: 10px; }
+    .header { padding: 14px; }
+    .header h1 { font-size: 17px; }
+    .section { padding: 12px; }
+    table { font-size: 12px; min-width: 400px; }
+    th, td { padding: 6px 8px; }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>每日国家队增减持动向</h1>
+    <div class="subtitle">2026年6月3日（周三）· 收盘简报</div>
+    <span class="date-badge">📡 数据截至 6/3 19:25</span>
+  </div>
+
+  <!-- Conclusion -->
+  <div class="conclusion">
+    <div class="label">📌 一句话结论</div>
+    <p><strong>今日未发现国家队明确增持信号。</strong> 宽基ETF成交整体温和放量但属正常范围，未出现异常托底买盘。中央汇金减持已进入尾声——截至5月末，11只宽基合计剩余约3,252亿元（从1.54万亿下降），5月29日首次转为净流入。今日市场呈现"指数涨但多数个股跌"格局：三大指数集体收涨（创业板指盘中创历史新高4,218点），但全市场<span style="color:var(--green)">3,727只</span>下跌，仅1,713只上涨——典型的宽基指数搭台、结构极端分化。通信(+4.78%)、煤炭(+2.55%)、电子(+2.3%)领涨，主力资金净流入半导体80亿、通信设备61亿。</p>
+  </div>
+
+  <!-- Section 1: 指数快照 -->
+  <div class="section">
+    <div class="section-title"><span class="num">1</span> 今日指数快照</div>
+    <div class="grid-2">
+      <div class="grid-item">
+        <div class="label">上证指数</div>
+        <div class="value up">4,083.97 <span style="font-size:13px">+0.22%</span></div>
+      </div>
+      <div class="grid-item">
+        <div class="label">沪深300</div>
+        <div class="value up">4,938.81 <span style="font-size:13px">+0.49%</span></div>
+      </div>
+      <div class="grid-item">
+        <div class="label">科创50</div>
+        <div class="value up">1,726.18 <span style="font-size:13px">+2.11%</span></div>
+      </div>
+      <div class="grid-item">
+        <div class="label">上证50</div>
+        <div class="value neutral">2,920.92 <span style="font-size:13px">+0.02%</span></div>
+      </div>
+      <div class="grid-item">
+        <div class="label">创业板指</div>
+        <div class="value up">4,122.99 <span style="font-size:13px">+1.65%</span></div>
+      </div>
+      <div class="grid-item">
+        <div class="label">两市成交</div>
+        <div class="value neutral">3.15万亿 <span style="font-size:13px;color:var(--red)">+3,403亿</span></div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:13px;color:var(--text-secondary)">
+      <span class="up">↑</span> 通信+4.78% 煤炭+2.55% 电子+2.30% ｜
+      <span class="down">↓</span> 综合-1.82% 建材-1.69% 交运-1.64%
+      <br>
+      个股：<span class="up">1,713只上涨</span> ｜ <span class="down">3,727只下跌</span> ｜ 81只涨停 ｜ 27只跌停
+      <br>
+      <span style="color:var(--yellow)">⚠️</span> 创业板指盘中最⾼4,218.33点，刷新历史纪录，午后大幅跳水
+    </div>
+  </div>
+
+  <!-- Section 2: 已确认增减持事件 -->
+  <div class="section">
+    <div class="section-title"><span class="num">2</span> 已确认增减持事件</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>日期</th><th>主体</th><th>标的</th><th>行为</th><th>金额/比例</th><th>信号</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026年初至今</td>
+            <td>中央汇金</td>
+            <td>沪深300ETF(4只)</td>
+            <td class="down">减持</td>
+            <td>约7成+<br>9,792亿→~2,938亿</td>
+            <td><span class="tag-strong">强确认</span></td>
+          </tr>
+          <tr>
+            <td>2026年初至今</td>
+            <td>中央汇金</td>
+            <td>上证50/中证1000ETF</td>
+            <td class="down">减持</td>
+            <td>约9成+<br>1,510亿→~150亿</td>
+            <td><span class="tag-strong">强确认</span></td>
+          </tr>
+          <tr>
+            <td>2026年初至今</td>
+            <td>中央汇金</td>
+            <td>11只宽基ETF合计</td>
+            <td class="down">减持</td>
+            <td>1.54万亿→3,252亿</td>
+            <td><span class="tag-strong">强确认</span></td>
+          </tr>
+          <tr>
+            <td>2026年Q1-5月</td>
+            <td>中证金</td>
+            <td>兴业银行</td>
+            <td class="down">清仓退出</td>
+            <td>6.22亿股全部退出</td>
+            <td><span class="tag-strong">强确认</span></td>
+          </tr>
+          <tr>
+            <td>2026年Q1</td>
+            <td>社保基金</td>
+            <td>深南电路/沪电股份</td>
+            <td class="up">新进增持</td>
+            <td>半导体/PCB赛道</td>
+            <td><span class="tag-medium">中等确认</span></td>
+          </tr>
+          <tr>
+            <td>2026年Q1</td>
+            <td>社保基金</td>
+            <td>保利发展等地产</td>
+            <td class="up">增持新进</td>
+            <td>保利8,685万股等</td>
+            <td><span class="tag-medium">中等确认</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info-box"><strong>⚠️ 说明：</strong> 今日（6/3）未发现已确认的国家队直接增持/减持公告。上述事件为年初至今累积变化及最新季报数据，存在1-2个月披露滞后。</div>
+  </div>
+
+  <!-- Section 3: ETF与宽基资金 -->
+  <div class="section">
+    <div class="section-title"><span class="num">3</span> ETF与宽基资金信号</div>
+    
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>ETF</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>成交额</th><th>状态</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>沪深300ETF华泰柏瑞</td>
+            <td style="font-size:12px;color:var(--text-muted)">510300</td>
+            <td>4.965</td>
+            <td class="up">+0.59%</td>
+            <td>37.8亿</td>
+            <td style="color:var(--text-muted)">正常</td>
+          </tr>
+          <tr>
+            <td>上证50ETF华夏</td>
+            <td style="font-size:12px;color:var(--text-muted)">510050</td>
+            <td>2.996</td>
+            <td class="neutral">+0.10%</td>
+            <td>27.5亿</td>
+            <td style="color:var(--text-muted)">正常</td>
+          </tr>
+          <tr>
+            <td>易方达沪深300ETF</td>
+            <td style="font-size:12px;color:var(--text-muted)">510310</td>
+            <td>4.807</td>
+            <td class="up">+0.65%</td>
+            <td>9.9亿</td>
+            <td style="color:var(--text-muted)">正常</td>
+          </tr>
+          <tr>
+            <td>中证1000ETF南方</td>
+            <td style="font-size:12px;color:var(--text-muted)">512100</td>
+            <td>3.389</td>
+            <td class="up">+0.62%</td>
+            <td>44.7亿</td>
+            <td style="color:var(--text-muted)">中小盘活跃</td>
+          </tr>
+          <tr>
+            <td>创业板ETF易方达</td>
+            <td style="font-size:12px;color:var(--text-muted)">159915</td>
+            <td>4.145</td>
+            <td class="up">+1.82%</td>
+            <td>68.5亿</td>
+            <td style="color:var(--blue)">成交活跃</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warn-box">
+      <strong>🔴 年初至今累计：</strong> 15个宽基ETF净流出约1.4万亿元<br>
+      第一波高峰（1-2月）：8,975亿 ｜ 第二波（4-5月）：3,963亿<br>
+      <strong style="color:var(--green)">🟢 5月29日首次转为净流入</strong>（后续待观察）
+    </div>
+
+    <div class="info-box">
+      <strong>汇金持仓剩余估算（国信证券研报）：</strong><br>
+      沪深300ETF剩余 ~2,938亿元（减七成）<br>
+      上证50/中证1000ETF剩余 ~150亿元以下（减九成）<br>
+      11只宽基合计 ~3,252亿元（从1.54万亿下降）
+    </div>
+
+    <div class="info-box">
+      <strong>今日判断：</strong><br>
+      • 510300成交37.8亿 → 正常水平，无异常托底买盘<br>
+      • 510050成交27.5亿 → 正常水平<br>
+      • 成交放量3,403亿主要来自科技板块，非宽基ETF推动<br>
+      • 主力资金净流入半导体80亿/通信61亿（行业主题资金，非国家队）
+    </div>
+  </div>
+
+  <!-- Section 4: 股东持仓 -->
+  <div class="section">
+    <div class="section-title"><span class="num">4</span> 股东持仓变化</div>
+    <div class="info-box">数据来自2026年一季报披露，存在滞后，不代表今日交易行为</div>
+    
+    <div class="sub-dir-label">📊 严格口径：中央汇金/证金</div>
+    <div class="table-wrap" style="margin-bottom:12px">
+      <table>
+        <thead><tr><th>标的</th><th>变化</th><th>主体</th></tr></thead>
+        <tbody>
+          <tr><td>兴业银行</td><td class="down">清仓退出</td><td>中证金</td></tr>
+          <tr><td>国有大型银行</td><td>继续持有</td><td>中央汇金/汇金资管</td></tr>
+          <tr><td>农业银行</td><td>第一大机构持有</td><td>社保基金（235亿股）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-dir-label">📊 扩展口径：社保基金/养老基金</div>
+    <div style="font-size:12px;color:var(--text-secondary);margin-bottom:6px">社保基金一季度末共现身707家前十大股东（↑56家），增持比例大于减持</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>标的</th><th>变化</th><th>赛道</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>深南电路</td><td class="up">新进</td><td style="color:var(--blue)">半导体/PCB</td><td>业绩+73%</td></tr>
+          <tr><td>沪电股份</td><td class="up">新进</td><td style="color:var(--blue)">半导体/PCB</td><td>业绩+63%</td></tr>
+          <tr><td>保利发展</td><td class="up">新进第5大</td><td>地产</td><td>8,685万股</td></tr>
+          <tr><td>华发股份</td><td class="up">加仓</td><td>地产</td><td>1.19亿股</td></tr>
+          <tr><td>鱼跃医疗</td><td class="up">增持</td><td>医疗器械</td><td>多组合布局</td></tr>
+          <tr><td>招金黄金</td><td class="up">新进</td><td>贵金属</td><td>560万股</td></tr>
+          <tr><td>铜冠铜箔</td><td class="up">新进</td><td>铜箔</td><td>业绩+2138%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warn-box" style="margin-top:10px">
+      <strong>🏦 社保基金行业配置：</strong><br>
+      <span style="color:var(--blue)">银行打底</span>：农业银行235亿股、工商银行123亿股<br>
+      <span style="color:var(--blue)">科技增持</span>：深南电路、沪电股份（AI服务器需求驱动）<br>
+      <span style="color:var(--yellow)">地产抄底</span>：保利发展、华发股份、新城控股（全部被套，市净率0.36倍）<br>
+      <span style="color:var(--blue)">医药布局</span>：鱼跃医疗、甘李药业<br>
+      <span style="color:var(--blue)">贵金属新进</span>：招金黄金
+    </div>
+  </div>
+
+  <!-- Section 5: 疑似托底/调仓信号 -->
+  <div class="section">
+    <div class="section-title"><span class="num">5</span> 疑似托底/调仓信号</div>
+    
+    <div class="signal-row">
+      <div class="signal-desc">
+        <strong>宽基ETF成交正常放量</strong>
+        <span class="evidence">510300成交37.8亿，510050成交27.5亿，均属正常范围</span>
+      </div>
+      <span class="signal-badge signal-high">确认无异常</span>
+    </div>
+    <div class="signal-row">
+      <div class="signal-desc">
+        <strong>两市放量3,403亿</strong>
+        <span class="evidence">成交3.15万亿，连续28日超2.5万亿，放量来自科技板块</span>
+      </div>
+      <span class="signal-badge signal-high">市场自发行为</span>
+    </div>
+    <div class="signal-row">
+      <div class="signal-desc">
+        <strong>创业板指创历史新高后跳水</strong>
+        <span class="evidence">盘中最⾼4,218点（+4%），午后回落至+1.65%</span>
+      </div>
+      <span class="signal-badge signal-high">科技情绪推动</span>
+    </div>
+    <div class="signal-row">
+      <div class="signal-desc">
+        <strong>主力净流入半导体80亿/通信61亿</strong>
+        <span class="evidence">行业主题资金，非宽基ETF托底</span>
+      </div>
+      <span class="signal-badge signal-high">机构/游资行为</span>
+    </div>
+    <div class="signal-row">
+      <div class="signal-desc">
+        <strong>上证50仅+0.02%，银行股弱</strong>
+        <span class="evidence">权重股几乎平收，汇金减持间接影响</span>
+      </div>
+      <span class="signal-badge signal-high">汇金减持滞后影响</span>
+    </div>
+    <div class="signal-row">
+      <div class="signal-desc">
+        <strong>1,713涨/3,727跌的极端分化</strong>
+        <span class="evidence">指数涨但多数个股跌，资金向科技/煤炭集中</span>
+      </div>
+      <span class="signal-badge signal-mid">存量资金集中</span>
+    </div>
+    <div class="signal-row">
+      <div class="signal-desc">
+        <strong>5月29日ETF首转净流入</strong>
+        <span class="evidence">15个宽基ETF终止连续净流出</span>
+      </div>
+      <span class="signal-badge signal-mid">减持尾声后回补</span>
+    </div>
+    <div class="signal-row">
+      <div class="signal-desc">
+        <strong>煤炭板块持续走强（+2.55%）</strong>
+        <span class="evidence">郑州煤电、大有能源3连板；煤炭ETF资金持续流入</span>
+      </div>
+      <span class="signal-badge signal-mid">高股息/迎峰度夏</span>
+    </div>
+  </div>
+
+  <!-- Section 6: 风格与板块 -->
+  <div class="section">
+    <div class="section-title"><span class="num">6</span> 指向的市场风格和板块</div>
+    <table>
+      <thead><tr><th>方向</th><th>状态</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td>稳指数</td><td style="color:var(--yellow)">⚠️ 中性</td><td>三大指数收涨，但上证50仅+0.02%</td></tr>
+        <tr><td>托宽基</td><td class="down">❌</td><td>宽基ETF成交正常，无异常放量</td></tr>
+        <tr><td>稳金融地产</td><td style="color:var(--yellow)">⚠️ 偏弱</td><td>银行未随指数走强，地产承压</td></tr>
+        <tr><td>扶科技成长</td><td class="up">✅ 市场自发</td><td>半导体/通信领涨，非国家队干预</td></tr>
+        <tr><td>高股息/央国企</td><td class="up">✅ 结构性</td><td>煤炭+2.55%，逻辑延续</td></tr>
+        <tr><td>周期/价值回归</td><td class="up">✅ 延续</td><td>煤炭3连板，能源板块走强</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box" style="margin-top:8px">
+      <strong>核心观察：</strong> 上证50（最弱指数，汇金减持压力方向）｜ 510300/510050（份额企稳关键）<br>
+      行业：半导体（资金博弈焦点）、煤炭（高股息标杆）、银行（减持间接冲击）<br>
+      个股：农业银行（社保最大重仓）、深南电路（社保新进科技龙头）
+    </div>
+  </div>
+
+  <!-- Section 7: 风险与反证 -->
+  <div class="section">
+    <div class="section-title"><span class="num">7</span> 风险与反证</div>
+    <div class="warn-box">
+      <strong>① 汇金减持数据存在时滞。</strong> 当前测算来自国信证券6月1日研报，基于2025年末持仓+ETF份额推算，非官方实时数据。<br>
+      <strong>② 5月29日净流入体量未知。</strong> 无法判断是汇金停止减持、保险入场还是散户回补。<br>
+      <strong>③ 创业板指创新高后大幅跳水。</strong> 盘中暴涨4%后回落至+1.65%，高位获利盘压力巨大。<br>
+      <strong>④ 社保地产持仓全面被套。</strong> 一季度抄底保利发展（PB 0.36倍）等后被深套，属主动判断失误还是长期布局待验证。<br>
+      <strong>⑤ 一季度数据严重滞后。</strong> 距今已2个月，不等于当前持仓。<br>
+      <strong>⑥ 量能能否持续是关键。</strong> "易中天"三只CPO股单日成交超1,000亿，资金高度集中，抱团松动将引发剧烈波动。
+    </div>
+  </div>
+
+  <!-- Section 8: 明日观察清单 -->
+  <div class="section">
+    <div class="section-title"><span class="num">8</span> 明日观察清单</div>
+    <div class="watch-item">
+      <span class="watch-num">1</span>
+      <div class="watch-text"><strong>510300/510050核心宽基ETF份额变化</strong> — 是否延续企稳态势，判断汇金减持是否结束的核心指标。</div>
+    </div>
+    <div class="watch-item">
+      <span class="watch-num">2</span>
+      <div class="watch-text"><strong>创业板指能否守住今日涨幅</strong> — 创新高后大幅跳水，若明日继续走弱可能引发风格切换。</div>
+    </div>
+    <div class="watch-item">
+      <span class="watch-num">3</span>
+      <div class="watch-text"><strong>CPO板块（易中天）成交热度</strong> — 三只股单日成交超1,000亿，若缩量可能引发连锁调整。</div>
+    </div>
+    <div class="watch-item">
+      <span class="watch-num">4</span>
+      <div class="watch-text"><strong>煤炭板块持续性</strong> — 郑州煤电、大有能源3连板后能否续板。</div>
+    </div>
+    <div class="watch-item">
+      <span class="watch-num">5</span>
+      <div class="watch-text"><strong>银行板块表现及上证50走向</strong> — 上证50仅+0.02%，银行股若持续走弱说明汇金减持间接影响仍在。</div>
+    </div>
+  </div>
+
+  <!-- Section 9: 数据来源 -->
+  <div class="section">
+    <div class="section-title"><span class="num">9</span> 数据来源与限制</div>
+    <div style="font-size:13px;line-height:1.8">
+      <strong>✅ 已使用：</strong><br>
+      • Wind金融终端（ETF行情、研报、财经新闻）— 实时/当日<br>
+      • NeoData Financial Search（指数行情、板块资金、市场综述）— 实时<br>
+      • 万得财经新闻（社保基金一季度持仓、汇金减持测算）— 历史<br>
+      • 红星新闻/财经杂志/21世纪经济报道（国家队持仓全景）— 历史<br><br>
+      <strong style="color:var(--yellow)">⚠️ 限制：</strong><br>
+      • ETF份额数据在Wind行情快照中部分返回INVALID，基于公开研报估算<br>
+      • 一季度持仓截至于3月31日，滞后约2个月<br>
+      • 汇金减持估算假设90%份额减少来自汇金（国信证券口径），存在偏差<br>
+      • 今日无已确认的国家队直接增持/减持公告<br>
+      • 所有"国家队行为方向"判断均为基于公开数据的推断
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    报告生成时间：2026-06-03 19:25 GMT+8<br>
+    数据来源于万得Wind金融数据服务、NeoData Financial Search、公开新闻及公告<br>
+    via WB
+  </div>
+
+</div>
+</body>
+</html>

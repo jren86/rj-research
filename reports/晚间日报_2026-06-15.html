@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>晚间投研日报 2026-06-15</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --bg-card: #161b22;
+  --bg-card-hover: #1c2333;
+  --border: #21262d;
+  --text: #c9d1d9;
+  --text-secondary: #8b949e;
+  --text-heading: #f0f6fc;
+  --red: #ef4444;
+  --green: #22c55e;
+  --accent: #58a6ff;
+  --accent-dim: #1f6feb33;
+  --fire: #f59e0b;
+  --fire-bg: #f59e0b15;
+  --warn: #f87171;
+  --warn-bg: #f8717115;
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  padding: 24px 0 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: 0.5px;
+}
+
+.header .date {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+.section {
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-heading);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.card:hover { background: var(--bg-card-hover); }
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.card-title .fire {
+  color: var(--fire);
+}
+
+.card p, .card li {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+.card li { margin-bottom: 4px; }
+
+.meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.badge-up { background: var(--red); color: #fff; }
+.badge-fire { background: var(--fire); color: #000; }
+.badge-warn { background: var(--warn); color: #fff; }
+.badge-info { background: var(--accent-dim); color: var(--accent); }
+
+.up { color: var(--red); font-weight: 600; }
+.up-bg { background: var(--red); color: #fff; padding: 1px 6px; border-radius: 3px; font-size: 12px; font-weight: 600; }
+
+.warn { color: var(--warn); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+th {
+  background: var(--accent-dim);
+  color: var(--accent);
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+tr:last-child td { border-bottom: none; }
+
+.summary-box {
+  background: linear-gradient(135deg, var(--accent-dim), var(--fire-bg));
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin-bottom: 24px;
+}
+
+.summary-box p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+}
+
+.footer p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .header h1 { font-size: 20px; }
+  .section-title { font-size: 17px; }
+  .card { padding: 12px; }
+  .card-title { font-size: 15px; }
+  table { font-size: 12px; }
+  th, td { padding: 7px 8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>晚间投研日报</h1>
+  <div class="date">2026年6月15日（周一）</div>
+</div>
+
+<div class="summary-box">
+  <p>G7峰会今日开幕，美伊协议签署进程成核心变量；A股科技主线全面爆发，电子布/MLCC/锗镓/纳米压印等概念涨幅超9%；<span class="up">券商板块罕见大涨超2%</span>，中银证券2连板；燧原科技、粤芯半导体双双IPO过会；四部委印发AI与能源双向赋能行动方案。</p>
+</div>
+
+<!-- 宏观与政策 -->
+<div class="section">
+  <div class="section-title">宏观与政策</div>
+
+  <div class="card">
+    <div class="card-title"><span class="fire">G7峰会今日开幕（6/15-17），美伊协议悬而未决</span></div>
+    <ul>
+      <li>G7峰会于6月15日至17日在法国埃维昂（Évian）举行，AI与中东局势为核心议题，沙特/埃及/约旦/阿联酋4国受邀参会</li>
+      <li>特朗普13日宣布美伊定于14日签署协议，但伊朗方面否认14日签署，仅表示"不排除未来几天完成"</li>
+      <li>协议形式预计为<strong>谅解备忘录（MOU）</strong>：霍尔木兹海峡重开、停火延长60天、解除制裁、撤军及解冻240亿美元伊朗资产</li>
+      <li>以色列强烈反对，内塔尼亚胡14日晚召开安全内阁会议</li>
+      <li>若G7期间签署，特朗普将主导议程；若拖延，霍尔木兹通行问题将成为峰会最尖锐痛点</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">央行今日等量续作6000亿元6个月期买断式逆回购</div>
+    <ul>
+      <li>15日开展6000亿元6个月期买断式逆回购，等量续作到期量</li>
+      <li>此前3个月期买断式逆回购已连续4个月缩量，7天期逆回购在资金趋紧后恢复投放</li>
+      <li>央行"削峰填谷"特征明显，适度宽松基调不变</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">本周重要事件日历</div>
+    <table>
+      <tr><th>日期</th><th>事件</th></tr>
+      <tr><td>6/15-17</td><td>G7峰会（法国埃维昂）</td></tr>
+      <tr><td>6/17-18</td><td>美联储FOMC议息会议（沃什首秀）</td></tr>
+      <tr><td>6/18</td><td>美股四巫日</td></tr>
+      <tr><td>6/19</td><td>端午假期，A股休市</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 市场热点 -->
+<div class="section">
+  <div class="section-title">市场热点</div>
+
+  <div class="card">
+    <div class="card-title"><span class="fire">券商板块罕见爆发，中银证券2连板</span></div>
+    <ul>
+      <li>券商板块涨幅超2%，中银证券2连板，华安证券、长江证券等多股涨超5%，港股中资券商同步走高</li>
+      <li><strong>三重驱动</strong>：衍生品新规+QFII期权交易放开；Q1净利+40%、两融高位；券商出海逻辑引爆市场</li>
+      <li>机构指出券商PB仅1.2倍，近四成破净，估值修复空间大</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">科技板块全面爆发，涨停潮涌现</div>
+    <table>
+      <tr><th>概念板块</th><th style="text-align:right">涨幅</th></tr>
+      <tr><td>电子布</td><td style="text-align:right"><span class="up-bg">+9.99%</span></td></tr>
+      <tr><td>MLCC</td><td style="text-align:right"><span class="up-bg">+9.49%</span></td></tr>
+      <tr><td>锗镓概念</td><td style="text-align:right"><span class="up-bg">+9.48%</span></td></tr>
+      <tr><td>纳米压印</td><td style="text-align:right"><span class="up-bg">+9.06%</span></td></tr>
+      <tr><td>博通概念</td><td style="text-align:right"><span class="up-bg">+8.68%</span></td></tr>
+      <tr><td>激光</td><td style="text-align:right"><span class="up-bg">+8.56%</span></td></tr>
+    </table>
+    <p style="margin-top:10px;">达利凯普、国际复材、光大同创、铜冠铜箔、光库科技、太辰光、炬光科技、光智科技等大批20cm涨停。电子布/MLCC/PCB材料受益AI算力基建拉动，锗镓/纳米压印受益半导体国产化。</p>
+  </div>
+</div>
+
+<!-- 重要公告 -->
+<div class="section">
+  <div class="section-title">重要公告</div>
+
+  <div class="card">
+    <div class="card-title"><span class="fire">燧原科技科创板IPO过会（60亿募资）</span></div>
+    <ul>
+      <li>6月15日上交所审议通过，保荐机构中信证券</li>
+      <li>募资用于第五代和第六代AI芯片研发及产业化</li>
+      <li>2023-2025年营收：3.01亿→7.22亿→9.90亿元</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="fire">粤芯半导体创业板IPO过会（75亿募资）</span></div>
+    <ul>
+      <li>6月15日深交所审议通过，投向12英寸模拟特色工艺生产线（三期）</li>
+      <li>2023-2025年营收：10.44亿→16.81亿→25.82亿元，CAGR 57.30%</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="fire">百利天恒：DLL3 ADC联合用药临床获批</span></div>
+    <p>NMPA批准BL-M14D1联合PD-1/PD-L1±抗血管生成药物±化疗治疗广泛期小细胞肺癌，DLL3 ADC为全球热门靶点。</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">安克创新 & 三星电气 H股上市推进</div>
+    <ul>
+      <li>安克创新：H股上市6月11日通过港交所聆讯</li>
+      <li>三星电气：6月12日向港交所递交H股上市申请</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">其他重点公告</div>
+    <table>
+      <tr><th>公司</th><th>事件</th></tr>
+      <tr><td><span class="up">电光科技</span></td><td>拟定增募资≤14亿元，用于数据中心项目</td></tr>
+      <tr><td><span class="up">拉普拉斯</span></td><td>拟定增募资≤22亿元，光伏及半导体高端装备</td></tr>
+      <tr><td>蓝思科技</td><td>蓝思光电收购同昇光电，加速光通信/空芯光纤布局</td></tr>
+      <tr><td>胜宏科技</td><td>闲置资金现金管理额度从20亿增至200亿元</td></tr>
+      <tr><td>万科A</td><td>深铁集团提供≤11.4亿元借款</td></tr>
+      <tr><td><span class="up">亨鑫科技</span></td><td>签订47.26亿元光热项目合同</td></tr>
+      <tr><td><span class="up">申昊科技</span></td><td>签订11.67亿元重大合同</td></tr>
+      <tr><td>必得科技</td><td>实控人转让6.614%股份，作价6.64亿元</td></tr>
+      <tr><td>国金证券</td><td>已回购219万股（计划1.5-3亿元）</td></tr>
+      <tr><td>中际旭创</td><td>辟谣"汇兑波动暴雷"传闻</td></tr>
+      <tr><td class="warn">和远气体</td><td>澄清电子特气概念炒作，2-3年内无重大业绩贡献</td></tr>
+      <tr><td class="warn">阳谷华泰</td><td>原材料仓库火灾，阳谷工厂停产（占营收66%）</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">摘星脱帽</div>
+    <table>
+      <tr><th>原简称</th><th>新简称</th><th>生效日</th></tr>
+      <tr><td>*ST海源</td><td>海源复材</td><td>6/15</td></tr>
+      <tr><td>*ST威尔</td><td>威尔泰</td><td>6/15</td></tr>
+      <tr><td>*ST兰黄</td><td>兰州黄河</td><td>6/16</td></tr>
+      <tr><td>*ST原尚</td><td>原尚股份</td><td>6/16</td></tr>
+      <tr><td>*ST立航</td><td>立航科技</td><td>6/16</td></tr>
+      <tr><td>ST联创</td><td>联创股份</td><td>6/16</td></tr>
+      <tr><td>ST名家汇</td><td>名家汇</td><td>6/16</td></tr>
+    </table>
+  </div>
+
+  <div class="card" style="border-color: var(--warn);">
+    <div class="card-title" style="color: var(--warn);">⚠️ 减持预警</div>
+    <table>
+      <tr><th>公司</th><th>股东</th><th>比例</th></tr>
+      <tr><td>冠城新材</td><td>丰榕投资</td><td>≤3%</td></tr>
+      <tr><td>好上好</td><td>股东合计</td><td>≤3.05%</td></tr>
+      <tr><td>博瑞医药</td><td>股东</td><td>≤3%</td></tr>
+      <tr><td>北京文化</td><td>青岛海发</td><td>≤3%</td></tr>
+      <tr><td>中瓷电子</td><td>泉盛盈和</td><td>≤2.10%</td></tr>
+      <tr><td>美迪西</td><td>林长青</td><td>≤1.12%</td></tr>
+      <tr><td>陕西华达</td><td>陕产投</td><td>≤1%</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 研报观点 -->
+<div class="section">
+  <div class="section-title">研报观点</div>
+
+  <div class="card">
+    <div class="card-title"><span class="fire">头部券商密集发布2026年中期策略</span></div>
+    <ul>
+      <li><strong>核心共识</strong>：推动市场上行的驱动力未根本动摇，市场整体估值合理；AI处于景气扩散阶段而非泡沫化</li>
+      <li><strong>国泰海通方奕</strong>：上修全A非金融盈利增速至13.6%，经济从"要素驱动"向"创新驱动"跃迁</li>
+      <li><strong>中金公司李求索</strong>：市场较以往更具备长期稳步上行条件</li>
+    </ul>
+    <div class="meta">中信证券/国泰海通/中金/华泰/中信建投等</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">十大券商最新策略</div>
+    <table>
+      <tr><th>券商</th><th>核心观点</th></tr>
+      <tr><td>中信证券</td><td>风格再平衡已开始，聚焦有清晰业绩逻辑的方向</td></tr>
+      <tr><td>广发证券</td><td>市场情绪周期底部信号显现，中报季AI+储能+创新药</td></tr>
+      <tr><td>方正证券</td><td>年内第二个重要买点，HALO资产+非银金融+AI主线</td></tr>
+      <tr><td>中信证券(锂)</td><td>锂价下半年仍有望走强，维持25万/吨目标价</td></tr>
+      <tr><td>中信建投</td><td>券商从"β博弈"到"α挖掘"，第二增长曲线</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 产业动态 -->
+<div class="section">
+  <div class="section-title">产业动态</div>
+
+  <div class="card">
+    <div class="card-title"><span class="fire">四部委联合印发《AI与能源双向赋能行动方案》</span></div>
+    <ul>
+      <li>国家发改委/能源局/工信部/数据局联合发文，七大重点任务、二十余项举措</li>
+      <li>"统筹新能源基地与国家算力枢纽规划"——算力从被动选址推至规划前置</li>
+      <li>中国用电量突破10万亿千瓦时（美国2.5倍），将能源优势转化为AI竞争壁垒</li>
+      <li><span class="up">利好</span>：算力基建配套电力（液冷/SST/HVDC）、新能源+智算集群、储能</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="fire">SNEC展储能订单井喷，AI数据中心储能成新增长极</span></div>
+    <ul>
+      <li>亿纬锂能签约超67GWh | 楚能新能源12GWh | 海辰储能20GWh | 赣锋锂电30GWh</li>
+      <li>松下投入3500亿日元扩充AI数据中心储能电池产能</li>
+      <li>储能电池ETF单日大涨3%</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="fire">全球首条百万片级体全息光波导产线天津投产</span></div>
+    <p>中国在消费级AR核心显示技术领域实现规模化量产突破，为AR眼镜和车载AR-HUD打开关键环节。</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">半导体</div>
+    <ul>
+      <li>燧原科技/粤芯半导体双过会，AI芯片+模拟芯片制造国产化加速</li>
+      <li>全球半导体行业库存出清，供需反转，上行周期启动</li>
+      <li><strong>美国加码大模型出口管制</strong>：全面限制访问Anthropic旗舰大模型，管制从芯片延伸至AI算法顶层，利好国产替代</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">商业航天 & 机器人</div>
+    <ul>
+      <li>SpaceX上市首日涨近20%，市值突破2.1万亿美元，A股供应链价值重估</li>
+      <li>宇树科技科创板过会，人形机器人产业链确定性提升；特斯拉工厂将改造机器人产线</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">新能源车出口</div>
+    <p>1-5月铁路发送出口商品车82.4万台，<span class="up">同比+55.5%</span>；新能源汽车42.2万台，<span class="up">同比+110.3%</span></p>
+  </div>
+</div>
+
+<!-- 风险提示 -->
+<div class="section">
+  <div class="section-title" style="border-color: var(--warn); color: var(--warn);">风险提示</div>
+
+  <div class="card" style="border-color: var(--warn);">
+    <ul>
+      <li><strong>美伊协议不确定性</strong>：伊朗态度反复，协议签署时间窗口可能延迟，霍尔木兹通行若僵局冲击能源价格</li>
+      <li><strong>FOMC会议（6/17-18）</strong>：沃什首秀，鹰派信号可能引发全球资产波动</li>
+      <li><strong>端午假期效应</strong>：本周仅4个交易日，6/19休市，节前资金避险情绪升温</li>
+      <li><strong>科技高拥挤度</strong>：今日科技股全面爆发后短期追高风险加大</li>
+      <li><strong>个股风险</strong>：阳谷华泰火灾、多家大比例减持、和远气体概念炒作</li>
+      <li><strong>中美科技博弈</strong>：大模型出口管制升级，科技脱钩风险持续</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <p>数据来源：NeoData Financial Search、公开市场信息 | via WB</p>
+  <p>报告生成时间：2026年6月15日 18:00 CST</p>
+</div>
+
+</body>
+</html>
