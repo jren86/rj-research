@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI全球新闻 · 2026-06-22</title>
+  <style>
+    /* ============================================
+       Unified Report Template — My Research Central
+       All periodic reports must use these styles.
+       ============================================ */
+
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    /* ── Header ── */
+    .report-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-header h1 {
+      font-size: 1.4em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .report-header .meta {
+      font-size: 0.82em;
+      color: var(--text2);
+    }
+
+    /* ── Section headers ── */
+    h2 {
+      font-size: 1.15em;
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: var(--blue);
+    }
+
+    h3 {
+      font-size: 1em;
+      margin: 14px 0 8px;
+      color: var(--text);
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+
+    th {
+      background: var(--card);
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover {
+      background: rgba(88, 166, 255, 0.05);
+    }
+
+    /* ── Tags ── */
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78em;
+      margin-right: 4px;
+    }
+
+    .tag-red {
+      background: rgba(248, 81, 73, 0.15);
+      color: var(--red);
+    }
+
+    .tag-green {
+      background: rgba(63, 185, 80, 0.15);
+      color: var(--green);
+    }
+
+    .tag-orange {
+      background: rgba(210, 153, 34, 0.15);
+      color: var(--orange);
+    }
+
+    .tag-blue {
+      background: rgba(88, 166, 255, 0.15);
+      color: var(--blue);
+    }
+
+    .tag-purple {
+      background: rgba(188, 140, 255, 0.15);
+      color: var(--purple);
+    }
+
+    .tag-yellow {
+      background: rgba(227, 179, 65, 0.15);
+      color: var(--yellow);
+    }
+
+    /* ── Highlights ── */
+    .highlight {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+
+    .highlight-red {
+      background: rgba(248, 81, 73, 0.08);
+      border-left: 3px solid var(--red);
+    }
+
+    .highlight-orange {
+      background: rgba(210, 153, 34, 0.08);
+      border-left: 3px solid var(--orange);
+    }
+
+    .highlight-blue {
+      background: rgba(88, 166, 255, 0.08);
+      border-left: 3px solid var(--blue);
+    }
+
+    .highlight-green {
+      background: rgba(63, 185, 80, 0.08);
+      border-left: 3px solid var(--green);
+    }
+
+    /* ── Bullet lists ── */
+    ul.bullet {
+      margin: 6px 0 6px 18px;
+      font-size: 0.92em;
+    }
+
+    ul.bullet li {
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+
+    /* ── Colors ── */
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+
+    /* ── Source links ── */
+    .source-link {
+      display: block;
+      font-size: 0.78em;
+      color: var(--text2);
+      margin: 4px 0 8px 0;
+      word-break: break-all;
+    }
+
+    .source-link a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    /* ── Footer ── */
+    .report-footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.75em;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.05em; }
+      table { font-size: 0.8em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日AI全球新闻 · 2026-06-22</h1>
+  <div class="meta">覆盖时间：2026-06-21 ~ 2026-06-22 · My Research Central</div>
+</div>
+
+<!-- ============ 一、头条聚焦 ============ -->
+<h2>一、头条聚焦 (Top Stories)</h2>
+
+<h3>🔴 1. OpenAI 明日（6/23）发布 GPT-5.6：150万上下文，API 价格仅为 Claude Fable 5 的 1/3</h3>
+<p>OpenAI 计划于 6 月 23 日（北京时间今晚/明晨）发布代号 GPT-5.6 的新旗舰模型。新模型支持 <strong>150 万 token 上下文窗口</strong>，在智能体编程工作流上显著提升，API 定价仅为 Claude Fable 5 的 1/3（输入/输出约 5 美元/15 美元/百万 token 区间）。首席科学家 Jakub Pachocki 已告诉员工"显著优于 GPT-5.5"，并对标 Anthropic 6/9 推出的 Fable 5。GPT-5.6 发布正值 OpenAI 提交 IPO 秘密文件（6/8）后两周，是公司估值 $8500 亿的关键产品力背书。</p>
+<div class="source-link">🔗 <a href="https://news.qq.com/rain/a/20260616A05NRO00">来源：腾讯新闻 / 币界网（2026-06-16）</a></div>
+
+<h3>🔴 2. Fable 5 禁令第 9 天仍未恢复，6/22 付费用户免费试用窗口即将关闭</h3>
+<p>Anthropic Claude Fable 5/Mythos 5 自 6/12 被美国出口管制指令全球下线后已停摆 9 天，API 仍返回错误。<strong>关键时间窗口</strong>：</p>
+<ul class="bullet">
+  <li>6/20 退款申请截止期已过，未提交申请的订阅用户失去退款窗口</li>
+  <li>6/22（今日）Pro/Max/Team/Enterprise 付费用户的 Fable 5 免费试用窗口关闭——用户将支付全额订阅费却无法使用该模型</li>
+  <li>Polymarket 押注 Fable 5 7/2 前恢复的交易量超 $110 万</li>
+  <li>Anthropic 国际业务董事总经理 Chris Ciauri 6/18 称"未来几天内恢复"，截至 6/21 无进展</li>
+</ul>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>🔴 3. DeepSeek V4 预览版发布：1.6 万亿参数 MoE，基于华为昇腾 950 训练</h3>
+<p>DeepSeek 6/17 发布 V4 系列预览版，包含 1.6 万亿参数 MoE 模型 <strong>DeepSeek-V4-Pro</strong>。<strong>核心战略意义</strong>：该模型基于<strong>华为昇腾 950 芯片</strong>而非英伟达硬件训练，是首个公开宣布使用华为昇腾平台训练的大型前沿级中国模型，验证了昇腾平台可作为大型 MoE 模型的可行训练底座——对中美 AI 芯片管控竞争有标志性意义。美国外交关系委员会评估认为 V4 是当前最好的开源模型，但能力仍不及美国前沿闭源模型。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>🔴 4. 阿里通义开源统一科学大模型 LOGOS：1B 参数全面超越微软 NatureLM (46.7B)</h3>
+<p>2026-06-18，阿里通义联合高校开源<strong>全球首个统一科学大模型 LOGOS</strong>，仅 1B 参数即在生物/化学/材料多任务上全面超越微软 NatureLM（46.7B），<strong>参数量缩减 56 倍</strong>。核心突破为独创"统一科学语法"（Unified Scientific Grammar），将生物、化学、材料三个学科的表示形式统一为同一符号空间，可跨学科迁移推理。LOGOS 是国产模型首次在"科学发现"垂直领域对国际巨头实现反超。</p>
+<div class="source-link">🔗 <a href="https://www.aitop100.cn/infomation/details/34089.html">来源：AI Top 100（2026-06-18）</a></div>
+
+<h3>🔴 5. Liblib 母公司演语科技完成 $3 亿 B+ 轮，估值超 $20 亿，ARR 破 $3 亿</h3>
+<p>中国 AI 应用层竞争再添新标杆。Liblib 母公司<strong>演语科技（Evoken）</strong>完成近 $3 亿美元 B+ 轮融资，估值超 $20 亿美元，<strong>ARR 突破 $3 亿</strong>。本轮由 <strong>Granite Asia、腾讯、顺为资本</strong>联合领投，是 2026 年迄今中国 AI 视频生成赛道最大单笔融资。Liblib 已成为中国 AI 视频生成商业化领跑者，腾讯的领投显示大厂加码 C 端 AI 应用的决心。</p>
+<div class="source-link">🔗 <a href="https://news.aibase.com/news/29008">来源：AI Base（2026-06-18）</a></div>
+
+<!-- ============ 二、产业动态 ============ -->
+<h2>二、产业动态 (Industry Updates)</h2>
+
+<h3>🟠 1. Anthropic 首尔办公室开业，同日签下韩国史上最大单日企业合作</h3>
+<p>Anthropic 于 6/17-18 在韩国首尔正式开设亚太第三家办公室，开业当日即签下 NAVER（全工程团队部署 Claude Code）、Nexon（Claude Code 支撑游戏工程）、三星 SDS（Claude+Cowork+Code）、LG CNS（向数千员工开放）、韩华解决方案（AWS Bedrock 全球部署）等。<strong>Claude Code 周活用户 4 个月增长 6 倍</strong>，亚太大客户（年营收 $10 万+）增长 8 倍。韩国是 Claude.ai 全球使用量前 12 的国家。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>🟠 2. 美国 FERC 6/18 发布 AI 数据中心电网接入历史性指令</h3>
+<p>美国联邦能源监管委员会（FERC）根据《联邦电力法》第 206 条，向美国 6 家区域电网运营商（得州除外）发布定向"说明理由"命令，要求加快 AI 数据中心等大型负荷用户的电网接入速度，<strong>跳过通常需要数年的常规规则制定流程</strong>，可在数周内推进。背景：过去 18 个月微软新增超 4GW 算力容量，CoreWeave 目标 2026 年底达到 1.7GW，现有电网无法支撑。FERC 主席 Laura Sweet 称 AI 并网是"国家优先事项"。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>🟠 3. SpaceX 提交 $600 亿全股票收购 Cursor 申请，预计 Q3 完成</h3>
+<p>SpaceX 于 6/16 向 SEC 提交 $600 亿全股票收购 Cursor 的申请。Cursor 年化营收约 $40 亿（其中 $26 亿来自企业客户），双方基于 xAI Colossus 基础设施训练的联合 AI 编码模型已开发数月，预计将内置到 Cursor 和全新产品 <strong>Grok Build</strong> 中。交易预计 2026 年第三季度完成，待监管批准。收购 Cursor 是 Grok 夺回被 Claude Code 和 OpenAI Codex 抢占的 AI 编码市场份额的核心催化剂。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>🟠 4. 2026 年 6 月成为史上 AI 模型发布最密集的月份</h3>
+<p>30 天内行业发布的前沿模型包括：Anthropic Claude Fable 5（后被政府干预下线）、谷歌 Gemini 3.5 Flash + 预告的 Gemini 3.5 Pro、xAI Grok 4.3 / Grok V9-Medium / Grok Voice / Grok Imagine Video 1.5、OpenAI 扩展 Codex 功能（Sites、Annotations、企业插件）、微软向开发者开放 MAI-Code-1-Flash 和 MAI 模型家族、DeepSeek V4 预览版、GPT-5.6 即将发布。<strong>模型层的竞争壁垒已缩短至数周而非数月</strong>，企业硬编码单一模型供应商依赖的风险极高。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>🟠 5. WAIC 2026 倒计时 25 天：7/17-20 上海，全球首发超 300 款 AI 新品</h3>
+<p>2026 世界人工智能大会暨人工智能全球治理高级别会议将于 <strong>7 月 17-20 日</strong>在上海举行，主题为"智能时代・共塑未来"。本届大会全新升级五大生态矩阵，发布首个 AI 生态开放平台"Hi,"，官宣全新自主 AI 学术会议 <strong>WAIC UP</strong>。预计 <strong>300+ 款 AI 新品全球首发</strong>，1100+ 家企业参展，3000+ 展品。中国将借大会提出"世界 AI 合作组织"倡议，争夺全球 AI 治理话语权。</p>
+<div class="source-link">🔗 <a href="https://business.cctv.com/2026/06/18/ARTIqtjxJlq4F4cdSJH9RPBa260618.shtml">来源：CCTV 财经（2026-06-18）</a></div>
+
+<!-- ============ 三、产品与公司新闻 ============ -->
+<h2>三、产品与公司新闻 (Product / Company)</h2>
+
+<h3>🔵 1. Grok 4.3 上线亚马逊 Bedrock：100 万上下文，"幻觉率最低"前沿模型</h3>
+<p>xAI Grok 4.3 正式在亚马逊 Bedrock 上线，模型 ID <code>xai.grok-4.3</code>，定价<strong>输入 $1.25/输出 $2.50 每百万 token</strong>。支持 100 万 token 上下文、可配置推理强度（无/低/中/高），xAI 声称是当前前沿模型中<strong>幻觉率最低</strong>。企业 AWS 团队可直接调用，无需单独注册 xAI 账户。配套：6/11 Grok Build 插件市场上线（MongoDB、Vercel、Sentry 等 6 家首批）；6/15 Grok Build 代理仪表盘支持最多 8 个并行编码会话；Grok for Word 插件免费。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>🔵 2. Gemini 3.5 Pro 距谷歌 6 月上线承诺仅剩 9 天</h3>
+<p>截至 6/21，Gemini 3.5 Pro 仍处于 Vertex AI 企业客户有限预览阶段，<strong>未向公共 Gemini App、Google AI Studio 或通用 API 开放</strong>。CEO Sundar Pichai 5/19 在 Google I/O 大会承诺 6 月实现通用可用，目前仅剩 9 天时间。确认功能：<strong>200 万 token 上下文窗口</strong>（Gemini 3.5 Flash 的 2 倍）、针对复杂多步问题的"深度思考"推理模式、前沿多模态能力。泄露定价：输入 ~$15、输出 ~$60 每百万 token，是 Flash 的 10 倍。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>🔵 3. OpenAI 启动 1.5 亿美元 Partner Network，目标年底认证 30 万顾问</h3>
+<p>OpenAI 于 6/14 启动首个正式全球合作伙伴计划"<strong>OpenAI Partner Network</strong>"，投入 $1.5 亿，目标到 2026/12/31 认证 <strong>30 万顾问</strong>。重点覆盖 Codex、GPT-5.5 企业版 API、Build 大会发布的 Sites 和 Annotations 产品。战略意义：OpenAI 正处于 IPO 静默期，目标 2026 Q4 以 ~$8500 亿估值上市，30 万规模的认证合作伙伴网络是难以快速复制的生态壁垒，直接对标 Anthropic 6/3 推出的 Claude Partner Network 和谷歌云合作伙伴生态。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>🔵 4. 亚马逊放弃 Sam Altman 传记电影《Artificial》发行权</h3>
+<p>亚马逊米高梅工作室放弃卢卡·瓜达尼诺执导、已接近完成的电影《Artificial》——该片是类似《社交网络》的剧情片，讲述 OpenAI CEO 山姆·奥特曼的故事，由 Andrew Garfield 饰演奥特曼、Monica Barbaro 饰演 Mira Murati、Yura Borisov 饰演 Ilya Sutskever、Eike Barilla Holtz 饰演 Elon Musk。已完成多轮试映，观众反响良好，目前 CAA 正在向其他工作室推销。背景：亚马逊 2026/2 宣布向 OpenAI 投资 $500 亿达成多年战略合作，该片对奥特曼 2023 年被解雇又复职的情节刻画并不友好。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<!-- ============ 四、研究突破 ============ -->
+<h2>四、研究突破 (Research Breakthroughs)</h2>
+
+<h3>💡 1. arXiv 周报：FAPO 自动 Prompt 优化框架、Holo-World 视频世界模型</h3>
+<p>本周 arXiv cs.AI 重点论文（6/15-21）：</p>
+<ul class="bullet">
+  <li><strong>FAPO（Fully Autonomous Prompt Optimization）</strong>（6/21）：全自动 prompt 优化框架，可自主评估 pipeline、检查中间步骤、诊断失效原因、迭代验证优化效果，大幅提升多步 LLM 系统的优化效率</li>
+  <li><strong>Holo-World</strong>（6/21）：<strong>首个实现相机、物体、天气统一控制的视频世界模型</strong>，从单张图像出发，根据明确控制指令生成保留原场景或转换到目标天气的视频</li>
+  <li><strong>LooseControlVideo</strong>（6/21）：基于稀疏 3D 定向框的导演级视频控制框架，降低复杂多物体动态视频生成门槛</li>
+  <li><strong>Visually Grounded Thinking</strong>（6/21）：视觉语言模型推理过程同步输出对应证据的图像区域，让推理过程可验证、可解释</li>
+</ul>
+<div class="source-link">🔗 <a href="https://arxiv.deeppaper.ai/papers/weekly">来源：arXiv Deep Paper Weekly（2026-06-21）</a></div>
+
+<h3>💡 2. 基础模型评估新视角：LLM 智能体基准的"聚合分数"系统性缺陷</h3>
+<p>新论文《Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents》（6/21）指出当前 LLM 智能体基准普遍覆盖维度不足（单个基准最多仅覆盖部署后暴露的 4-5 个维度），首次完成基于 MCP 的工业级智能体基准的大规模深度测试：<strong>14 项并行实现研究</strong>覆盖多模态视觉扩展、检索策略、推理模式、基础设施优化等方向，结合 7 个已有智能体基准，论证了<strong>聚合分数排行榜的系统性缺陷</strong>。</p>
+<div class="source-link">🔗 <a href="https://arxiv.deeppaper.ai/papers/weekly">来源：arXiv Deep Paper Weekly（2026-06-21）</a></div>
+
+<h3>💡 3. ZPD-PO 知识蒸馏新范式：教师回答以提示形式注入而非梯度模仿</h3>
+<p>新优化方法 ZPD-PO（Zone of Proximal Policy Optimization）（6/18）解决知识蒸馏在小模型场景的脆弱性（学生模型被迫模仿大模型分布导致泛化性下降）以及 RL 在智能体完全无法完成任务时失效的问题，提出将<strong>教师模型的回答以提示形式注入智能体训练，而非梯度层面的模仿</strong>，兼顾知识迁移效果和训练稳定性。同期的 WAPO（Winner Advantage Policy Optimization）通过 token 级梯度动态分析，仅对正优势样本进行裁剪，提升 RLVR 训练稳定性。</p>
+<div class="source-link">🔗 <a href="https://arxiv.deeppaper.ai/papers/weekly">来源：arXiv Deep Paper Weekly（2026-06-21）</a></div>
+
+<h3>💡 4. AI Index Report 2026 发布：首次追踪复杂推理/真实任务评估可靠性</h3>
+<p>《Artificial Intelligence Index Report 2026》（6/17，斯坦福 HAI 第九届年度报告）核心要点：</p>
+<ul class="bullet">
+  <li>首次追踪 AI 在推理、安全、真实世界任务执行领域的更复杂测试，<strong>点明这类评估的可靠性正持续下降</strong></li>
+  <li>首次发布生成式 AI 的经济价值估算、劳动力市场影响证据，提出 AI 主权分析框架</li>
+  <li>首次新增独立的「AI 在科学领域应用」「AI 在医疗领域应用」章节，反映 AI 在这两个领域的渗透度持续提升</li>
+</ul>
+<div class="source-link">🔗 <a href="https://arxiv.deeppaper.ai/papers/weekly">来源：arXiv Deep Paper Weekly（2026-06-21）</a></div>
+
+<h3>💡 5. GameCraft-Bench：首个端到端游戏生成评估基准</h3>
+<p>新基准 GameCraft-Bench（6/18）填补了现有代码生成基准无法评估游戏这类多组件（脚本、场景、资产、渲染、运行时交互）联合生成任务的空白，将游戏生成任务定义为"<strong>在真实游戏引擎中生成符合自然语言描述、可玩的交互游戏</strong>"，提出三类评估维度，是首个端到端游戏生成评估基准。</p>
+<div class="source-link">🔗 <a href="https://arxiv.deeppaper.ai/papers/weekly">来源：arXiv Deep Paper Weekly（2026-06-21）</a></div>
+
+<h3>💡 6. 临床 AI 新框架 TRIAGE：辩证推理风险预测</h3>
+<p>新框架 TRIAGE（6/18）解决现有 LLM 临床预警系统将分级临床风险压缩为二分类预测、导致校准性差、可解释性不足的问题，提出<strong>基于辩证推理的风险预测框架</strong>，让 LLM 生成可验证的辩证推理过程，同时输出校准后的风险评分，更适配临床预警场景需求。</p>
+<div class="source-link">🔗 <a href="https://arxiv.deeppaper.ai/papers/weekly">来源：arXiv Deep Paper Weekly（2026-06-21）</a></div>
+
+<!-- ============ 五、政策与监管 ============ -->
+<h2>五、政策与监管 (Policy & Regulation)</h2>
+
+<h3>⚠️ 1. EU AI Act 8/2 大限倒计时 41 天：高风险 Agentic AI 框架指南发布</h3>
+<p><strong>August 2, 2026</strong>（距今 41 天）是 EU AI Act 剩余义务大规模生效的日期——透明度义务、高风险系统规则、provider 义务（招聘工具/医疗器械/信用评分等）。6 月关键更新：</p>
+<ul class="bullet">
+  <li>5/19 欧盟委员会发布高风险分类的<strong>非约束性指南草案</strong>，要求对 Agentic AI 系统的<strong>全链条整体评估</strong>而非单个组件</li>
+  <li>6/10 委员会发布 AI 生成内容<strong>标签 Code of Practice</strong>，桥接 GPAI 义务与 8 月透明度义务</li>
+  <li>成员国必须在 8/2 前设立国家 AI 监管沙盒，法国/德国/西班牙已在招募早期参与者</li>
+</ul>
+<div class="source-link">🔗 <a href="https://cubbbix.com/blog/ai-regulation-june-2026-global-update/">来源：Cubbbix Tools（2026-06-15）</a></div>
+
+<h3>⚠️ 2. 中国 7/15 起执行"AI 陪伴"专项规则：禁止向未成年人提供虚拟陪伴服务</h3>
+<p>中国对人形化 AI 交互服务的临时管理办法将于 <strong>7/15 生效</strong>（距今 23 天）。要求包括：</p>
+<ul class="bullet">
+  <li>明确披露用户与 AI 交互（而非人类）</li>
+  <li>防止成瘾性使用的功能设计</li>
+  <li><strong>明确禁止向未成年人提供虚拟陪伴服务</strong></li>
+</ul>
+<p>如运营任何 AI 陪伴、情感支持 bot 或角色扮演 AI 且用户在中国境内，这是下一个合规截止日。6/1 已生效的"AI 商业秘密"规定明确将算法、训练数据集、源代码列为商业秘密，违规最高罚款 500 万元。</p>
+<div class="source-link">🔗 <a href="https://cubbbix.com/blog/ai-regulation-june-2026-global-update/">来源：Cubbbix Tools（2026-06-15）</a></div>
+
+<h3>⚠️ 3. 美国 6 月 AI 立法"Great American AI Act"拟抢先于州法律</h3>
+<p>美国国会正在审议《<strong>Great American Artificial Intelligence Act of 2026</strong>》，提议<strong>抢先于州级 AI 监管</strong>。若通过，州合规地图将一夜改变。同时：</p>
+<ul class="bullet">
+  <li>纽约州 7 项 AI 相关法案已送州长签署，覆盖聊天机器人披露与就业算法歧视</li>
+  <li>科罗拉多州长否决 HB 1210（算法定价禁令），但 SB24-205 高风险 AI 义务继续生效</li>
+  <li>罗德岛两院通过禁止易受伤害用户使用治疗机器人的法案</li>
+</ul>
+<div class="source-link">🔗 <a href="https://cubbbix.com/blog/ai-regulation-june-2026-global-update/">来源：Cubbbix Tools（2026-06-15）</a></div>
+
+<h3>⚠️ 4. 韩国 AI Basic Act 已生效：日本 APPI 修订推进</h3>
+<p><strong>韩国 AI Basic Act</strong>（亚洲首部综合 AI 法案）自 <strong>1/22/2026</strong> 起生效——透明度披露、AI 影响评估、国家 AI 委员会已建立。日本推进《个人信息保护法》（APPI）修订，包含 AI 训练数据的同意例外条款。日本仍是"创新优先+自愿治理"模式，但 METI 指导在采购和合作伙伴关系中具有实际影响力。</p>
+<div class="source-link">🔗 <a href="https://cubbbix.com/blog/ai-regulation-june-2026-global-update/">来源：Cubbbix Tools（2026-06-15）</a></div>
+
+<h3>⚠️ 5. Black Duck 研究：97% 开发者用 AI 编码工具，仅 1/3 完整治理</h3>
+<p>2026/6 发布的 Black Duck 安全研究显示：<strong>97% 开发者使用 AI 编码工具</strong>，但仅 <strong>1/3 组织</strong>为 AI 生成代码建立了完整治理框架。工具采用率：GitHub Copilot 83%、Claude Code 63%（推出不足一年）。大量组织在未建立 AI 生成代码的审查政策、IP 框架、安全扫描流程的情况下，就将代码合并到生产系统，<strong>存在显著安全和合规隐患</strong>。该数据将影响后续 SEC 对上市公司 AI 治理的披露要求。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<h3>⚠️ 6. 路透研究所：全球 10% 成年人每周用 AI 聊天机器人获取新闻</h3>
+<p>《2026 年路透研究所数字新闻报告》显示，全球 10% 成年人每周使用 AI 聊天机器人获取新闻（去年 7%），但仅 <strong>4% 用户会定期点击跳转至原文</strong>。聊天机器人市场份额（6/18）：ChatGPT 54.7%、Gemini 27.4%、Claude 8.2%（美国 12.5%）、DeepSeek 4.1%、Grok 2.8%。AI 聊天机器人已成为大量用户的主要新闻入口，<strong>大幅减少了 publishers 的引流</strong>，被 AI 引用但无点击将成为常态。</p>
+<div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026">来源：buildfastwithai Daily（2026-06-21）</a></div>
+
+<div class="divider"></div>
+
+<h3 style="color: var(--blue);">总结</h3>
+<p><strong>6/22-6/23 关键看点</strong>：</p>
+<ul class="bullet">
+  <li>🔴 <strong>OpenAI GPT-5.6 明日发布</strong>（150 万上下文，1/3 Fable 5 价格）</li>
+  <li>🔴 <strong>Fable 5 禁令第 10 天</strong>：Anthropic 是否给出"几天内恢复"的明确信号</li>
+  <li>🔴 <strong>WAIC 2026 倒计时 25 天</strong>：中国"世界 AI 合作组织"倡议文本是否提前释出</li>
+  <li>🔴 <strong>DeepSeek V4-Pro 体验</strong>：昇腾 950 训练底座的实际能力评估</li>
+</ul>
+
+<p><strong>产业大趋势</strong>：</p>
+<ul class="bullet">
+  <li><strong>模型层壁垒已缩短至数周</strong>——企业必须建立多供应商架构</li>
+  <li><strong>AI 主权博弈进入"模型级封锁"阶段</strong>——Fable 5 禁令 + 昇腾训练 V4 是两极</li>
+  <li><strong>AI 数据中心电网问题成为国家优先事项</strong>——FERC 跳过常规流程</li>
+  <li><strong>中国 AI 应用层商业化提速</strong>——Liblib $3 亿 ARR 验证视频生成商业化</li>
+  <li><strong>科学领域 AI 突破集中爆发</strong>——LOGOS、NatureLM 反超、FAPO 自动 prompt 优化</li>
+</ul>
+
+<div class="report-footer">
+  数据来源：buildfastwithai Daily / AI Base / arXiv Deep Paper Weekly / 36kr / CCTV 财经 / 腾讯新闻 / IT 之家 / Cubbbix Tools / 财联社 · My Research Central · via WB
+</div>
+
+</body>
+</html>
