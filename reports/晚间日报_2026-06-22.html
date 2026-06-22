@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间投研日报 · 2026-06-22</title>
+  <style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📊 晚间投研日报</h1>
+  <div class="meta">2026年6月22日（星期一） · A股端午节后首日开市 · 17:55 GMT+8</div>
+</div>
+
+<!-- ========== 催化剂日历 ========== -->
+<h2>🔥 催化剂日历</h2>
+<table>
+  <tr><th>时间</th><th>事件</th><th>影响</th></tr>
+  <tr><td>6/22</td><td>光纤光缆板块大涨（长飞+10%、长飞H+32%）</td><td>AI算力+北美缺光纤驱动</td></tr>
+  <tr><td>6/22</td><td>国产算力芯片共振上行</td><td>寒武纪/海光Q2乐观预期</td></tr>
+  <tr><td>6/22</td><td>小金属板块强势，东曹氧化锆对华断供</td><td>锆材国产替代行情启动</td></tr>
+  <tr><td>6/22</td><td>智谱GLM-5.2全量开放，港股涨超40%</td><td>AI应用概念走强</td></tr>
+  <tr><td>6/22</td><td>中国宣布针对美国稀土企业制裁</td><td>稀土板块催化</td></tr>
+  <tr><td>6/22</td><td>磷酸铁锂价格一年涨150%</td><td>磷化工/锂电上游</td></tr>
+  <tr><td>6/22</td><td>证监会：引导养老金加大股权投资</td><td>大金融催化</td></tr>
+  <tr><td>6/22</td><td>英特尔CEO投资金刚石晶圆公司</td><td>培育钻石概念</td></tr>
+</table>
+
+<!-- ========== 宏观 ========== -->
+<h2>🌍 宏观</h2>
+
+<h3>中国——稀土反制措施出台</h3>
+<p>中国宣布针对美国稀土企业采取制裁措施，以回应五角大楼的稀土清单。《矿产资源法实施条例》已于6月15日正式施行，钽、锗、锡、锆等36种关键矿产被正式列入国家战略性矿产资源目录。</p>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+
+<h3>5月财政数据</h3>
+<p>长江宏观于博团队发布5月财政数据一图速览（详见附件图片）。</p>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+
+<h3>公募基金仓位变动</h3>
+<p>近一周公募基金大幅加仓：<span class="tag tag-red">电子</span><span class="tag tag-red">机械</span><span class="tag tag-red">医药</span><span class="tag tag-red">汽车</span><span class="tag tag-red">家电</span> 其中电子、汽车已连续加仓。</p>
+<p>近一周大幅减仓：通信、基础化工、电新、建材</p>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+
+<h3>海外投行观点</h3>
+<ul class="bullet">
+  <li><strong>摩根士丹利</strong>：上调全球存储WFE预期（以DRAM为主）；国巨股份"定价权落地速度与力度均超预期"</li>
+  <li><strong>摩根士丹利</strong>：闪迪AI需求驱动因素与利润率持续性提升</li>
+  <li><strong>摩根士丹利</strong>：黄金维持观望观点</li>
+  <li><strong>中航证券</strong>：中东缓和下全球通胀或回落，科技最大外部风险或解除</li>
+</ul>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·调研纪要更新（MS研报PDF）</a></div>
+
+<!-- ========== 市场概览 ========== -->
+<h2>📊 市场概览</h2>
+
+<h3>今日热点板块</h3>
+<div class="card">
+  <ol class="bullet">
+    <li><span class="tag tag-red">光纤光缆</span> 长飞涨停+10%（H股+32%）、烽火+9.6%、亨通+8%、中天+5.5%。天风通信率先提出"纯AI逻辑"，北美缺光纤已为确定情况</li>
+    <li><span class="tag tag-red">国产算力芯片</span> 寒武纪/海光共振上行，中信电子预计寒武纪Q2收入45亿/利润15亿，海光Q2收入55亿/利润10亿</li>
+    <li><span class="tag tag-red">小金属/算力金属</span> 锆材（东曹断供）、钽（年内+150%）、锗（+80%）、锡全面走强</li>
+    <li><span class="tag tag-red">AI应用</span> 智谱GLM-5.2发布带动港股涨超40%，华凯易佰一度涨停触及20%</li>
+    <li><span class="tag tag-red">培育钻石</span> 英特尔CEO投资金刚石晶圆公司</li>
+    <li><span class="tag tag-orange">磷化工</span> 磷酸铁锂价格一年涨150%</li>
+    <li><span class="tag tag-orange">大金融（券商）</span> 广发证券筹码出清逻辑</li>
+  </ol>
+</div>
+
+<h3>今日四大舆情热点</h3>
+<div class="card">
+  <ol class="bullet">
+    <li><strong>磷化工</strong>：磷酸铁、磷酸铁锂价格一路走高，较一年前涨幅达150%</li>
+    <li><strong>算力金属</strong>：日本中央硝子、关东电化、东曹、京瓷等大幅减停产，六氟化钨、氧化锆价格持续走高</li>
+    <li><strong>培育钻石</strong>：英特尔CEO投资人造金刚石晶圆公司，看好散热应用潜力</li>
+    <li><strong>大金融</strong>：证监会提出丰富投资产品、引导养老金及保险资金加大股权投资</li>
+  </ol>
+</div>
+
+<!-- ========== 策略观点 ========== -->
+<h2>💡 策略观点</h2>
+
+<div class="highlight highlight-red">
+  <h3>中银策略——小金属重估窗口已开</h3>
+  <p>今日小金属板块强势的三层驱动：政策端（36种关键矿产入战略目录）、供给端（刚果钽减产、锗出口管制、锆英砂收缩）、需求端（AI算力/先进封装/光通信/固态电池共振）。钽锭年内涨幅超150%、锗锭涨幅超80%。算力金属（铜、锡等）与新能源金属（锂、稀土等）正迎来催化与修复窗口。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：中银策略 2026.06.22 · 知识星球</a></div>
+</div>
+
+<div class="highlight highlight-blue">
+  <h3>华安证券——A股中期投资策略</h3>
+  <p>将成长第二阶段盈利行情进行到底。PDF报告已发布（2026.06.21）。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：华安证券 · 知识星球</a></div>
+</div>
+
+<div class="highlight highlight-blue">
+  <h3>中信电子——全面看好国产算力产业链</h3>
+  <p>寒武纪Q2收入预计45亿/利润15亿，海光Q2收入55亿/利润10亿。继续首推寒武纪，关注天数智芯、壁仞科技。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：中信证券电子团队</a></div>
+</div>
+
+<div class="highlight highlight-red">
+  <h3>天风通信——持续交易光纤光缆的AI时刻</h3>
+  <p>率先提出纯AI逻辑。亨通北美进展、中天MPO及国内数据中心突破。散纤价格稳健，657A1持续上涨，A2企稳回升。重视：亨通光电、中天科技、永鼎股份、长飞光纤、烽火通信、通鼎互联、杭电股份。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：天风通信团队 2026.06.22</a></div>
+</div>
+
+<div class="highlight highlight-orange">
+  <h3>华创非银——广发证券：筹码出清，大财富旗舰全面看好</h3>
+  <p>2026Q1大资金压制持仓基本出清。映射海外财富管理主升浪（摩根士丹利+29.9%、韩国未来资产+553%）。给予2027年合理1.6xPB估值、市值2500亿+、空间约60%。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：华创非银 徐康团队</a></div>
+</div>
+
+<div class="highlight highlight-green">
+  <h3>中航证券——中东缓和下全球通胀或回落</h3>
+  <p>科技最大外部风险或解除。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：中航证券 策略点评 2026.06.20</a></div>
+</div>
+
+<!-- ========== 持仓个股 ========== -->
+<h2>📋 持仓个股增量信息</h2>
+
+<h3>A股（13只）</h3>
+
+<div class="card">
+  <h4>芯碁微装（半导体设备）</h4>
+  <p>无直接增量信息。</p>
+</div>
+
+<div class="card">
+  <h4>容百科技（新能源电池材料）</h4>
+  <p>磷酸铁锂价格一年涨150%，磷化工板块热度或传导。</p>
+</div>
+
+<div class="card">
+  <h4>长川科技（半导体测试）</h4>
+  <p>国产算力产业链整体受益逻辑。</p>
+</div>
+
+<div class="card">
+  <h4>天华新能（新能源）</h4>
+  <p>同锂电上游链条，关注磷酸铁锂涨价传导。</p>
+</div>
+
+<div class="card">
+  <h4>中国平安（601318）</h4>
+  <p>证监会引导养老金及保险资金加大股权投资，利好保险资金运用。大金融板块受政策催化。</p>
+</div>
+
+<div class="card">
+  <h4>中国太保（601601）</h4>
+  <p>同大金融政策利好逻辑，养老金入市催化。</p>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">华凯易佰</span> 💥</h4>
+  <p>今日一度触及20%涨停，收涨约13%。触发：港股智谱涨超40%带动AI应用概念。底层基本面：Q1末库存降至8.8亿（去库出清），2026Q1扣非约6500万。全年归母预计3.5-4亿，PE约14-16x。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">大元泵业</span> 💥</h4>
+  <p><strong>广发机械重点推荐</strong>：获北美客户液冷相关订单。25年液冷收入1.56亿（同比+60%+），37kw电子屏蔽泵应用于二次侧CDU，与国内液冷头部企业均已对接。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">福达股份</span> 💥</h4>
+  <p><strong>申万汽车重点推荐</strong>：机器人重大变化，燃机曲轴显著预期差。全产业链布局（机床、丝杠、减速器）。北美T直接间接对接，近期有望绑定核心Tier1。当前80亿市值仅含主业预期，看200亿。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">银轮股份</span> 💥</h4>
+  <p>聚焦发电+数据中心液冷，订单逐步落地。数据中心液冷突破核心客户（北美及台系），机器人1+4+N总成供应商。预计26-28年归母12/17/22亿元，PE 34/24/19倍。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">微导纳米</span> 💥</h4>
+  <p><strong>GH先进制造持续推荐</strong>，看800亿市值。半导体大单集中下半年，26H1签单已达25全年。固态、玻璃基板、光模块新应用加速0-1。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">安琪酵母</span> 💥</h4>
+  <p><strong>财通食饮底部掘金</strong>：酵母蛋白替代强化，Q2基本面行业领先。全球乳清蛋白供给收紧，酵母蛋白满产。现有1.5万吨产能，在建5万吨，十五五规划10万吨。全年预计18-18.5亿利润，PE 16x。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">百龙创园</span> 💥</h4>
+  <p><strong>国泰海通食饮重点推荐</strong>：阿洛酮糖国内生产许可证获批。26-28年净利润预测5.0/6.6/8.4亿（+35%/+33%/+28%），当前对应26年20X PE。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<h3>港股（7只）</h3>
+
+<div class="card">
+  <h4>腾讯控股（0700.HK）</h4>
+  <p>AI应用受GLM-5.2发布提振，港股AI概念走强。大模型ARR增速下降担忧被中信计算机认为过度。</p>
+</div>
+
+<div class="card">
+  <h4>中国财险（2328.HK）</h4>
+  <p>无直接增量信息今日更新。</p>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">中天科技</span> 💥</h4>
+  <p><strong>天风通信强Call</strong>：光纤光缆板块大涨，中天+5.5%。MPO中标后光纤更紧张，6月底前低价单基本交完。Q2完美涨价周期季度。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">亨通光电</span> 💥</h4>
+  <p>今日涨+8%。北美数据中心突破，持续获海外订单。光纤涨价带来利润弹性。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">亚信科技</span> 💥</h4>
+  <p><strong>浙商计算机强推</strong>：NV和阿里合作伙伴，布局Physical AI。三大产品落地（PhysGen/PhysBrain/PhysOS）。预计26/27年归母3.32/6.60亿元，PE 15.00/7.55倍。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-red">智谱（港股/AI）</span> 💥</h4>
+  <p>GLM-5.2全量开放，今日港股涨超40%。<strong>中信计算机上调收入预测</strong>：26-28年收入至36.19/90.04/189.40亿元，目标市值7245亿港元。Token分成模式落地，算力租赁逻辑史诗级加强。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+  <h4><span class="tag tag-orange">罗莱生活</span> 💥</h4>
+  <p>股价波动但基本面正常超预期。618线上+20%+，全渠道双位数增长。预计Q2归母+22%，全年+20.3%。PE 13倍，股息率7.61%。</p>
+  <div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<!-- ========== 知识星球 ========== -->
+<h2>📚 知识星球（zsxq）精选</h2>
+
+<h3>水木调研纪要-2.0 | 今日增量</h3>
+<table>
+  <tr><th>机构/团队</th><th>标的</th><th>核心观点</th></tr>
+  <tr><td><span class="tag tag-red">中信计算机</span></td><td>智谱（GLM-5.2）</td><td>上调收入预测，目标市值7245亿港元</td></tr>
+  <tr><td><span class="tag tag-red">天风通信</span></td><td>光纤光缆</td><td>纯AI逻辑，进入完美涨价周期</td></tr>
+  <tr><td><span class="tag tag-red">中信电子</span></td><td>国产算力芯片</td><td>寒武纪Q2收入45亿/利润15亿预期</td></tr>
+  <tr><td><span class="tag tag-red">中银策略</span></td><td>小金属</td><td>三重共振，战略金属价值重估</td></tr>
+  <tr><td><span class="tag tag-orange">国泰海通食饮</span></td><td>百龙创园 ⭐</td><td>阿洛酮糖获批，26年20X PE</td></tr>
+  <tr><td><span class="tag tag-orange">申万汽车</span></td><td>福达股份 ⭐</td><td>机器人+燃机曲轴预期差，看200亿</td></tr>
+  <tr><td><span class="tag tag-orange">华创AI新材料</span></td><td>斯瑞新材</td><td>9.19亿扩产光模块芯片基座</td></tr>
+  <tr><td><span class="tag tag-orange">浙商计算机</span></td><td>亚信科技 ⭐</td><td>Physical AI三大产品落地</td></tr>
+  <tr><td><span class="tag tag-blue">广发机械</span></td><td>大元泵业</td><td>北美液冷订单，收入+60%</td></tr>
+  <tr><td><span class="tag tag-orange">财通食饮</span></td><td>安琪酵母 ⭐</td><td>酵母蛋白替代强化，PE 16x</td></tr>
+  <tr><td><span class="tag tag-blue">GH先进制造</span></td><td>微导纳米</td><td>半导体大单集中下半年，看800亿</td></tr>
+  <tr><td><span class="tag tag-orange">华创非银</span></td><td>广发证券</td><td>筹码出清，空间60%+</td></tr>
+  <tr><td><span class="tag tag-blue">—</span></td><td>华凯易佰</td><td>去库出清+智谱合作催化涨停</td></tr>
+  <tr><td><span class="tag tag-blue">—</span></td><td>普利特</td><td>LCP打破日企垄断，AI+消费双轮</td></tr>
+  <tr><td><span class="tag tag-blue">—</span></td><td>利和兴</td><td>MLCC涨价利润快速释放</td></tr>
+  <tr><td><span class="tag tag-blue">—</span></td><td>银轮股份</td><td>数据中心液冷+机器人，26年12亿</td></tr>
+  <tr><td><span class="tag tag-blue">—</span></td><td>爱迪特</td><td>氧化锆粉体受益东曹断供</td></tr>
+  <tr><td><span class="tag tag-blue">—</span></td><td>罗莱生活</td><td>618+20%，PE 13倍/股息7.61%</td></tr>
+</table>
+
+<h3>调研纪要更新 | 今日增量</h3>
+<table>
+  <tr><th>机构/团队</th><th>标的</th><th>核心观点</th></tr>
+  <tr><td><span class="tag tag-red">—</span></td><td>鸿富瀚 ⭐</td><td>进入NV Manifold供应商，看300-500亿</td></tr>
+  <tr><td><span class="tag tag-red">天风通信</span></td><td>光纤光缆</td><td>长飞涨停，持续交易AI时刻</td></tr>
+  <tr><td><span class="tag tag-red">国泰海通军工 ⭐</span></td><td>钽电容+MLCC</td><td>供需错配涨价，推荐振华/鸿远/火炬</td></tr>
+  <tr><td><span class="tag tag-orange">中信电子</span></td><td>国产算力</td><td>寒武纪/海光Q2预期乐观</td></tr>
+  <tr><td><span class="tag tag-blue">中航证券</span></td><td>策略</td><td>中东缓和，科技风险解除</td></tr>
+  <tr><td><span class="tag tag-blue">华安证券</span></td><td>A股策略</td><td>成长第二阶段盈利行情</td></tr>
+  <tr><td><span class="tag tag-blue">中银策略</span></td><td>小金属</td><td>供需逻辑持续催化</td></tr>
+  <tr><td><span class="tag tag-blue">长江宏观</span></td><td>5月财政数据</td><td>图片报告</td></tr>
+  <tr><td><span class="tag tag-blue">—</span></td><td>垣信卫星</td><td>概念股汇总</td></tr>
+  <tr><td><span class="tag tag-blue">—</span></td><td>算力租赁</td><td>美国算力租赁价格走势分析</td></tr>
+  <tr><td><span class="tag tag-purple">摩根士丹利</span></td><td>国巨/存储/闪迪</td><td>定价权超预期/上调WFE/AI需求</td></tr>
+</table>
+
+<h3>⚠️ 需手动查看的PDF附件</h3>
+<ul class="bullet">
+  <li>华源证券-盐津铺子(002847)-260622.pdf</li>
+  <li>华源证券-江天科技(920121)-260622.pdf</li>
+  <li>华安证券-2026年A股中期投资策略-260621.pdf</li>
+  <li>中航证券-策略点评：中东局势缓和-260620.pdf</li>
+  <li>MS-国巨股份：定价权落地速度与力度均超预期.pdf</li>
+  <li>MS-全球半导体设备：上调存储WFE预期.pdf</li>
+  <li>MS-闪迪公司：AI需求驱动因素与利润率持续性.pdf</li>
+  <li>大宗商品：黄金维持观望观点-Commodity Matters.pdf</li>
+</ul>
+
+<!-- ========== 关注清单 ========== -->
+<h2>👀 关注清单</h2>
+<table>
+  <tr><th>#</th><th>标的</th><th>核心逻辑</th><th>来源</th></tr>
+  <tr><td>1</td><td><strong>中天科技</strong> ⭐</td><td>光纤光缆涨价+MPO突破+北美数据中心</td><td>天风通信</td></tr>
+  <tr><td>2</td><td><strong>亨通光电</strong> ⭐</td><td>北美光纤突破+H股强表现</td><td>天风通信</td></tr>
+  <tr><td>3</td><td><strong>寒武纪</strong></td><td>Q2收入45亿/利润15亿预期</td><td>中信电子</td></tr>
+  <tr><td>4</td><td><strong>宏景科技</strong> ⭐</td><td>Token分成模式落地，目标1500亿</td><td>zsxq强推</td></tr>
+  <tr><td>5</td><td><strong>协创数据</strong> ⭐</td><td>算力租赁龙头，目标3000亿</td><td>zsxq强推</td></tr>
+  <tr><td>6</td><td><strong>鸿富瀚</strong> ⭐</td><td>进入NV Manifold供应商，看300-500亿</td><td>调研纪要更新</td></tr>
+  <tr><td>7</td><td><strong>福达股份</strong></td><td>机器人全产业链布局，看200亿</td><td>申万汽车</td></tr>
+  <tr><td>8</td><td><strong>广发证券</strong></td><td>筹码出清+财富管理旗舰，空间60%</td><td>华创非银</td></tr>
+  <tr><td>9</td><td><strong>振华科技</strong></td><td>钽电容涨价核心受益标的</td><td>国泰海通军工</td></tr>
+  <tr><td>10</td><td><strong>长飞光纤</strong></td><td>光纤光缆龙头，今日涨停</td><td>天风通信</td></tr>
+  <tr><td>11</td><td><strong>利和兴</strong></td><td>MLCC涨价利润快速释放</td><td>zsxq反路演</td></tr>
+</table>
+<p style="font-size: 0.82em; color: var(--text2);">⭐ 首次推荐或评级上调</p>
+
+<!-- ========== 数据溯源 ========== -->
+<h2>🔗 数据溯源</h2>
+<table>
+  <tr><th>数据类别</th><th>来源</th><th>可靠性</th></tr>
+  <tr><td>光纤光缆板块数据</td><td>知识星球·水木/调研纪要更新</td><td>★★★★★</td></tr>
+  <tr><td>国产算力芯片</td><td>知识星球·水木/调研纪要更新</td><td>★★★★★</td></tr>
+  <tr><td>小金属/策略观点</td><td>知识星球·水木调研纪要</td><td>★★★★★</td></tr>
+  <tr><td>持仓个股增量</td><td>知识星球·调研纪要更新+水木</td><td>★★★★★</td></tr>
+  <tr><td>海外投行报告</td><td>知识星球·调研纪要更新（MS研报）</td><td>★★★★★</td></tr>
+  <tr><td>公募基金仓位</td><td>知识星球·水木调研纪要</td><td>★★★★☆</td></tr>
+  <tr><td>宏观数据</td><td>长江宏观/中航证券</td><td>★★★★★</td></tr>
+  <tr><td>涨停复盘</td><td>知识星球·调研纪要更新</td><td>★★★★☆</td></tr>
+</table>
+
+<div class="report-footer">
+  数据来源：知识星球·水木调研纪要-2.0、调研纪要更新 · My Research Central · via WB
+</div>
+
+</body>
+</html>
