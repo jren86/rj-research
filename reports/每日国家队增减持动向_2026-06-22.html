@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日国家队增减持动向 · 2026-06-22</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📊 每日国家队增减持动向</h1>
+  <div class="meta">2026-06-22（周一） · 数据截至当日收盘</div>
+</div>
+
+<div class="highlight highlight-blue">
+  <strong>📊 市场概览</strong>：今日A股三大指数全线大涨——上证指数收报4,163.10（<span class="red">+1.78%</span>），深成指收报16,372.50（<span class="red">+2.13%</span>），沪深300收报5,059.66（<span class="red">+2.39%</span>）。宽基ETF同步走强，成交额显著放大。
+</div>
+
+<!-- ── Section 1 ── -->
+<h2>一、ETF资金流数据</h2>
+
+<h3>主要宽基ETF行情与规模（2026-06-22）</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ETF代码</th>
+      <th>简称</th>
+      <th>最新价(¥)</th>
+      <th>涨跌幅</th>
+      <th>成交额(亿)</th>
+      <th>规模(亿)</th>
+      <th>份额(万份)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>510050.SH</td>
+      <td>上证50ETF华夏</td>
+      <td>3.097</td>
+      <td><span class="red">+2.65%</span></td>
+      <td>43.22</td>
+      <td>231.76</td>
+      <td>2,302,226.68</td>
+    </tr>
+    <tr>
+      <td>510300.SH</td>
+      <td>沪深300ETF华泰柏瑞</td>
+      <td>5.091</td>
+      <td><span class="red">+2.15%</span></td>
+      <td>96.43</td>
+      <td>1,318.32</td>
+      <td>4,482,858.77</td>
+    </tr>
+    <tr>
+      <td>159915.SZ</td>
+      <td>创业板ETF易方达</td>
+      <td>4.379</td>
+      <td><span class="red">+2.58%</span></td>
+      <td>68.70</td>
+      <td>448.89</td>
+      <td>1,605,845.49</td>
+    </tr>
+    <tr>
+      <td>588000.SH</td>
+      <td>科创50ETF华夏</td>
+      <td>2.056</td>
+      <td><span class="red">+1.93%</span></td>
+      <td>73.21</td>
+      <td>629.49</td>
+      <td>5,178,866.82</td>
+    </tr>
+    <tr>
+      <td>510500.SH</td>
+      <td>中证500ETF南方</td>
+      <td>9.007</td>
+      <td><span class="red">+2.03%</span></td>
+      <td>32.79</td>
+      <td>403.87</td>
+      <td>943,656.86</td>
+    </tr>
+    <tr>
+      <td>512100.SH</td>
+      <td>中证1000ETF南方</td>
+      <td>3.580</td>
+      <td><span class="red">+1.02%</span></td>
+      <td>20.45</td>
+      <td>114.57</td>
+      <td>756,521.76</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 万得金融终端</a></div>
+
+<h3>本周ETF资金流关键观察</h3>
+
+<div class="highlight highlight-orange">
+  <strong>🟠 汇金减持趋向尾声，但上周再现净赎回</strong>
+</div>
+
+<ul class="bullet">
+  <li>据中信证券统计，中央汇金对A股主要宽基ETF的持仓规模已从2025年末的1.49万亿元降至26Q1末的约3,000亿元，减持幅度超八成。沪深300ETF减持超七成，上证50ETF和中证1000ETF减持超九成。</li>
+  <li>5月28日以来，重点上证50ETF与沪深300ETF累计净赎回仅23亿元，减持节奏显著放缓。</li>
+  <li>6月8日，股票型ETF净流入291.71亿元（宽基ETF净流入202.31亿元），为近17周以来首次净申购，被市场解读为减持告一段落信号。</li>
+  <li>但<strong>6月15-16日</strong>宽基ETF再现大幅净流出——6月16日全市场股票ETF净流出157.53亿元，其中宽基ETF净流出136.79亿元，沪深300ETF单日净流出超100亿元。有市场观察指出汇金可能继续减持。</li>
+</ul>
+
+<div class="highlight highlight-blue">
+  <strong>🔵 行业/主题ETF资金流向分化</strong>
+</div>
+
+<ul class="bullet">
+  <li>6月16日，AAA科创债ETF净流入15.69亿元居首，半导体设备ETF国泰、成长ETF易方达、有色金属ETF南方单日净流入均超4亿元。</li>
+  <li>港股通互联网ETF、证券ETF、创业板ETF同期净流出居前。</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 万得金融终端；银河证券基金研究中心数据</a></div>
+
+<!-- ── Section 2 ── -->
+<h2>二、大股东持股变动</h2>
+
+<h3>证金公司 Q1 减持银行股</h3>
+
+<div class="highlight highlight-red">
+  🔴 <strong>证金公司继续退出银行股持仓</strong>。截至26Q1末，证金公司对浦发银行、中信银行、平安银行持股数下降，且已不在光大银行、兴业银行、招商银行、北京银行、华夏银行前十大股东名单中，对应至少减持比例约14%-67%。中央汇金投资和中央汇金资管对四大行持股维持不变，体现长期持有特征。
+</div>
+
+<h3>社保基金 Q1 调仓方向</h3>
+
+<div class="highlight highlight-orange">
+  🟠 <strong>社保基金26Q1加仓机械、医药、电力设备及新能源，减仓有色金属、通信、国防军工、交通运输、银行。</strong>
+</div>
+
+<ul class="bullet">
+  <li>社保基金26Q1对主板超配比例回落，创业板、科创板配置比例回升。</li>
+  <li>重点加仓三级行业：电力电子及自动化、医疗器械、PCB、聚氨酯、证券、印染化学品。</li>
+  <li>重点减仓：铝、快递、线缆、其他军工、氮肥、锂电化学品。</li>
+  <li>与公募相比，社保在基础化工、有色金属、机械的配置强度较高，电子、食品饮料、家电较低。</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：华泰证券研报《红利配置边际放缓下的持仓迁移》（Wind）</a></div>
+
+<!-- ── Section 3 ── -->
+<h2>三、知名交易</h2>
+
+<h3>产业资本增持回购活跃（6月最新）</h3>
+
+<p>近期产业资本密集出手，形成「回购+增持」双轮驱动：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>公司</th>
+      <th>类型</th>
+      <th>金额/规模</th>
+      <th>进度</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>中国石化(600028.SH)</td>
+      <td><span class="tag tag-blue">回购注销</span></td>
+      <td>5-10亿元</td>
+      <td>6月16日公告</td>
+    </tr>
+    <tr>
+      <td>药明康德(603259.SH)</td>
+      <td><span class="tag tag-blue">回购</span></td>
+      <td>10亿元</td>
+      <td>6月9日公告，已首次实施</td>
+    </tr>
+    <tr>
+      <td>赛力斯(601127.SH)</td>
+      <td><span class="tag tag-blue">回购</span></td>
+      <td>10-20亿元</td>
+      <td>已累计回购3.2亿元</td>
+    </tr>
+    <tr>
+      <td>海螺水泥(600585.SH)</td>
+      <td><span class="tag tag-purple">增持</span></td>
+      <td>7-14亿元</td>
+      <td>控股股东，持股升至37.05%</td>
+    </tr>
+    <tr>
+      <td>海尔智家(600690.SH)</td>
+      <td><span class="tag tag-blue">回购</span></td>
+      <td>30-60亿元</td>
+      <td>已累计回购超10.45亿元</td>
+    </tr>
+    <tr>
+      <td>中核科技(000777.SZ)</td>
+      <td><span class="tag tag-purple">增持</span></td>
+      <td>2,000-4,000万元</td>
+      <td>控股股东6月4日实施</td>
+    </tr>
+    <tr>
+      <td>康德莱(603987.SH)</td>
+      <td><span class="tag tag-purple">增持</span></td>
+      <td>1%-2%股份</td>
+      <td>控股股东6月10日增持</td>
+    </tr>
+    <tr>
+      <td>国金证券(600109.SH)</td>
+      <td><span class="tag tag-blue">回购</span></td>
+      <td>1.5-3亿元</td>
+      <td>6月公告</td>
+    </tr>
+    <tr>
+      <td>爱柯迪(600933.SH)</td>
+      <td><span class="tag tag-blue">回购</span></td>
+      <td>1-2亿元</td>
+      <td>6月16日公告</td>
+    </tr>
+    <tr>
+      <td>海航科技(600751.SH)</td>
+      <td><span class="tag tag-blue">回购</span></td>
+      <td>0.9-1.8亿元</td>
+      <td>6月16日公告</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight highlight-orange">
+  🟠 <strong>医药板块增持回购潮尤为突出</strong>：2026年二季度（4/1-6/12），A股医药板块确认回购63家，港股25家；A股增持公告68条（28家公司），港股增持147次（68家公司）。药明康德（A+H合计约32.8亿元回购）、泰格医药、信立泰等龙头领衔。
+</div>
+
+<div class="highlight highlight-blue">
+  💡 <strong>行业观点</strong>：南开大学金融学教授田利辉指出，近期上市公司重要股东密集增持，本质上是产业资本对上市公司内在价值的理性认可，也反映了大股东与中小股东的利益绑定。
+</div>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 万得金融终端财经新闻</a></div>
+
+<!-- ── Section 4 ── -->
+<h2>四、汇总统计</h2>
+
+<h3>国家队持仓概览</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>主体</th>
+      <th>最新动态</th>
+      <th>趋势</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>中央汇金（母公司+资管）</td>
+      <td>ETF持仓从1.49万亿降至约3,000亿（26Q1末），减持幅度超八成。四大行个股持股不变</td>
+      <td><span class="tag tag-red">减持接近尾声</span></td>
+    </tr>
+    <tr>
+      <td>证金公司</td>
+      <td>Q1继续减持股份行和区域行（浦发、中信、平安、招行等），已退出多家前十大股东</td>
+      <td><span class="tag tag-red">减持中</span></td>
+    </tr>
+    <tr>
+      <td>社保基金</td>
+      <td>Q1加仓机械/医药/电力设备，减仓有色/通信/军工/银行</td>
+      <td><span class="tag tag-orange">结构性调仓</span></td>
+    </tr>
+    <tr>
+      <td>产业资本</td>
+      <td>6月增持回购潮延续，近一周新增回购上限超38亿元</td>
+      <td><span class="tag tag-green">活跃</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>核心判断</h3>
+
+<div class="card">
+  <ol style="margin-left: 18px; font-size: 0.92em; line-height: 1.8;">
+    <li><strong>国家队ETF减持高峰已过</strong>：26Q1汇金从1.49万亿减持至约3,000亿，剩余筹码占比已大幅下降。中信证券/国信证券等机构判断，ETF净赎回对市场的压制效应已边际趋弱。</li>
+    <li><strong>6月15-16日再现百亿净流出需关注</strong>：沪深300 ETF单日净流出超100亿元，虽可能包含非国家队资金，但汇金剩余筹码仍在。</li>
+    <li><strong>产业资本为市场提供增量支撑</strong>：以医药、石化、汽车、家电为代表的龙头公司密集回购增持，二季度累计金额可观，为市场提供了重要的估值底部信号。</li>
+    <li><strong>本周（6/22）关注</strong>：本周是6月最后完整交易周，关注月末ETF份额数据变化及国家队是否在季末有新的调仓动作。</li>
+  </ol>
+</div>
+
+<div class="divider"></div>
+
+<blockquote style="font-size: 0.85em; color: var(--text2); border-left: 3px solid var(--border); padding-left: 12px; margin: 16px 0;">
+  📄 <strong>数据说明</strong>：本报告数据来源于 Wind 万得金融终端（行情数据、基金信息、财经新闻），银河证券基金研究中心（ETF资金流）。报告仅作信息汇总参考，不构成投资建议。
+</blockquote>
+
+<div class="report-footer">
+  数据来源：Wind 万得金融终端 · My Research Central · via WB
+</div>
+
+</body>
+</html>
