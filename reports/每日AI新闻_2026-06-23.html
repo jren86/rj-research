@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-06-23</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>🔴 每日AI新闻 · 2026-06-23</h1>
+  <div class="meta">GPT-5.5-Cyber完整版 / SpaceX $63亿算力大单 / Codex 640TB致命Bug / Fable 5付费窗口开启 · My Research Central</div>
+</div>
+
+<!-- Top Stories -->
+
+<h2>🔴 Top Stories</h2>
+
+<div class="card highlight-red">
+  <h3>🔴 1. OpenAI 发布 GPT-5.5-Cyber 完整版 + Patch the Planet 开源安全计划</h3>
+  <p>OpenAI 正式扩展 Daybreak 网络安全战略，三箭齐发：</p>
+  <ul class="bullet">
+    <li><strong>GPT-5.5-Cyber 完整版</strong>：CyberGym 基准 <span class="red">85.6%</span>（超越标准 GPT-5.5 的 81.8%，超越 Mythos 5），面向可信防守方开放，降低安全拒绝率以支持漏洞扫描、恶意软件分析、红队渗透等防御任务</li>
+    <li><strong>Codex Security 插件</strong>：将漏洞扫描嵌入开发者 IDE 工作流——写代码和扫描漏洞同一平台，OpenAI 占据双端</li>
+    <li><strong>Patch the Planet</strong>：联合 Trail of Bits + HackerOne，<span class="red">30+</span> 开源项目参与（cURL/Python/Go/Sigstore 等），5天冲刺已发现数百漏洞并合并数十补丁。Linux kernel 产出 <span class="red">8个信息泄露 PoC</span> + <span class="red">24个本地提权漏洞</span></li>
+  </ul>
+  <div class="highlight highlight-blue" style="margin-top:8px;">
+    💡 战略逻辑与 Anthropic Project Glasswing 完全一致：修复真实基础设施漏洞 → 建立"不可或缺"地位 → 为未来监管行动赢得保护伞。Glasswing 在 Fable 5 封禁中幸存，Daybreak 为 OpenAI 预备同等保险。
+  </div>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-23-2026">来源：AIToolsRecap</a> · <a href="https://finance.sina.com.cn/tech/roll/2026-06-23/doc-iniekknt9717166.shtml">来源：新浪财经</a> · <a href="https://cn.investing.com/news/stock-market-news/article-93CH-3427676">来源：Investing.com</a></div>
+</div>
+
+<div class="card highlight-red">
+  <h3>🔴 2. SpaceX 签下 $63亿 Reflection AI 算力大单，Colossus 成为全球最大 AI 云</h3>
+  <p>Reflection AI（Nvidia 支持、前 DeepMind 研究员创立、估值 $250亿）与 SpaceX 签署 $6.3亿算力合同：<span class="red">月付 $1.5亿</span>（7月1日起至2029年），90天退出条款，<span class="red">GB300 芯片</span>接入 Colossus 2。SpaceX 累计承诺算力收入 <span class="red">$800亿+</span>。</p>
+
+  <table>
+    <tr><th>客户</th><th>月付</th><th>总额(至2029)</th><th>算力配置</th></tr>
+    <tr><td>Anthropic</td><td class="red">$12.5亿</td><td>~$525亿</td><td>220,000 GPU</td></tr>
+    <tr><td>Google</td><td>$9.2亿</td><td>~$386亿</td><td>110,000 GPU equivalents</td></tr>
+    <tr><td>Reflection AI</td><td>$1.5亿</td><td>~$63亿</td><td>GB300, Colossus 2</td></tr>
+    <tr><td><strong>合计</strong></td><td class="red"><strong>$23.2亿+/月</strong></td><td><strong>$974亿+</strong></td><td>+额外未披露客户</td></tr>
+  </table>
+
+  <div class="highlight highlight-orange" style="margin-top:8px;">
+    ⚠️ 关键矛盾：Grok AI 需要算力竞争，SpaceX 却在出租 Colossus——是否暗示马斯克认为 AI 模型将走向商品化，转而押注基础设施？$60亿收购 Cursor（开发工具）+ Colossus（算力平台）= 双线战略。
+  </div>
+  <div class="source-link">🔗 <a href="https://www.cnbc.com/2026/06/22/spacex-ai-colossus-data-center-reflection.html">来源：CNBC</a> · <a href="https://aitoolsrecap.com/Blog/ai-news-june-23-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 3. SPCX 股价暴跌 10%——IPO以来最差单日</h3>
+  <p>SpaceX (SPCX) 周一跌 <span class="green">10%</span>，分析师三大担忧：</p>
+  <ul class="bullet">
+    <li><span class="green">$800亿"承诺收入"</span>实际仅 $1.5亿硬承诺 + 滚动季度续约（90天退出条款）</li>
+    <li>算力服务毛利率结构性低于 AI 产品毛利率</li>
+    <li>Cursor $60亿收购（市占率下滑）尚未证明收入协同效应</li>
+  </ul>
+  <p>SPCX 当前 <span class="orange">~$170</span>，IPO发行价 $135，峰值曾达 ~$225。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-23-2026">来源：AIToolsRecap</a> · <a href="https://www.cnbc.com/2026/06/22/spacex-ai-colossus-data-center-reflection.html">来源：CNBC</a></div>
+</div>
+
+<div class="card highlight-red">
+  <h3>🔴 4. Codex CLI 致命 Bug：一年狂写 640TB，可报废 SSD</h3>
+  <p>OpenAI Codex CLI 被曝 SQLite 日志 Bug——TRACE 级别日志写入忽略 RUST_LOG 环境变量：</p>
+  <ul class="bullet">
+    <li><span class="red">21天写入 37TB</span>，年化 ~640TB——超过 1TB 消费级 SSD 全寿命保修写入量 (600 TBW)</li>
+    <li>SQLite WAL 模式引发写入放大——逻辑文件尺寸几乎不变，物理写入远超预期</li>
+    <li>问题自 4月10日 GitHub Issue #17320 即已报告，<span class="orange">10周无官方回应/补丁</span></li>
+    <li>日志超 200MB 后 Codex 中途崩溃（30-105分钟）</li>
+    <li><span class="red">⚠️ 焊接 NVMe 笔记本最为危险</span>——SSD 报废 = 整机报废</li>
+  </ul>
+  <p><strong>临时解决方案</strong>：Linux/macOS 用户可将 <code>~/.codex/logs_2.sqlite</code> symlink 到 <code>/tmp/</code>（RAM-backed tmpfs）。Windows 无等效方案。</p>
+  <div class="highlight highlight-orange" style="margin-top:8px;">
+    💡讽刺：OpenAI 当天发布"Patch the Planet"修开源漏洞，自家工具却在悄悄报废用户硬盘。
+  </div>
+  <div class="source-link">🔗 <a href="https://www.techtimes.com/articles/318876/20260622/openai-codex-cli-bug-silently-writes-640-tb-year-your-ssd-no-patch.htm">来源：TechTimes</a> · <a href="https://github.com/openai/codex/issues/28224">来源：GitHub Issue #28224</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 5. Fable 5 付费窗口正式开启——$10/$50 per MTok</h3>
+  <p>6月23日起，Claude Fable 5 不再免费包含在 Pro/Max/Team/Enterprise 订阅中：</p>
+  <ul class="bullet">
+    <li>API 价格：<span class="red">$10/百万输入 tokens</span>、<span class="red">$50/百万输出 tokens</span>——是 Opus 4.8 的 <span class="red">2倍</span></li>
+    <li>用户因 6/12-6/18 封禁实际仅获得 <span class="orange">4-5天免费使用</span></li>
+    <li>Anthropic 未宣布补偿封禁期间损失的天数</li>
+    <li>企业开始首次将 Fable 5 纳入正式 AI 预算</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://groundy.com/articles/fable-5-credit-cliff-what-the-june-23-billing-shift-means-for-teams/">来源：Groundy</a> · <a href="https://apidog.com/blog/claude-fable-5-pricing/">来源：Apidog</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Industry Updates -->
+
+<h2>🔵 Industry Updates</h2>
+
+<div class="card">
+  <h3>🔵 Anthropic 签署 12+ 数据中心租约，总容量超 1GW</h3>
+  <p>Anthropic 为 IPO 及 Fable 5/Mythos 5 算力需求做准备：</p>
+  <ul class="bullet">
+    <li>已签 <span class="blue">12个以上美国数据中心租约</span>，总容量 <span class="red">超 1吉瓦</span></li>
+    <li>现有算力：AWS Trainium + Colossus 300MW（$12.5亿/月至2029年5月）</li>
+    <li>从纯云租赁转向自持/租赁混合——改善长期经济效益，但需大量前期资本</li>
+    <li>符合 2025年11月宣布的 $500亿美国算力基础设施投资承诺</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-23-2026">来源：BuildFastWithAI</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 AI 相关债务 2026年将翻倍至 $5700亿</h3>
+  <p>摩根士丹利预测 2026年全球 AI 相关债务发行接近翻倍至 <span class="red">$5700亿</span>：</p>
+  <ul class="bullet">
+    <li>AI 债券将成为按发行量计算最大的投资级行业板块</li>
+    <li>主要融资：Apollo+黑石为 Anthropic TPU采购提供 $360亿债务 / 微软 $1900亿资本支出 / OpenAI Stargate（目标 10GW）</li>
+    <li>微软 AI 服务年化营收 <span class="blue">$370亿</span> 对应支出 <span class="red">$970亿</span>——ROI 仍待验证</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.techtimes.com/articles/318171/20260610/morgan-stanley-sees-ai-debt-nearly-doubling-570-billion-2026-bonds-now-fund-buildout.htm">来源：TechTimes</a> · <a href="https://www.zawya.com/en/capital-markets/bonds/global-ai-debt-issuance-to-top-500bln-in-2026-morgan-stanley-says-scettvcz">来源：Zawya</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 Fable 5 封禁加速开源 AI 采用</h3>
+  <p>6/12-6/18 封禁事件催化企业转向开源权重模型：</p>
+  <ul class="bullet">
+    <li>MiniMax、智谱AI（GLM-5.2）收到大量企业咨询</li>
+    <li>之前完全依赖 Fable 5 的企业开始搭建多供应商 fallback 架构</li>
+    <li>Reflection AI 等开源实验室借势推广——"近期事件突显开源对 AI 生态的重要性"</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.cnbc.com/2026/06/16/anthropics-fable-shutdown-is-a-big-moment-for-open-source-ai.html">来源：CNBC</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 Gemini 3.5 Pro GA 窗口倒计时：6/23-6/30</h3>
+  <p>Google Gemini 3.5 Pro 进入 GA 口口期：</p>
+  <ul class="bullet">
+    <li><span class="blue">200万 token 上下文</span>——当前商用前沿模型最大</li>
+    <li>Deep Think 推理模式仅限 <span class="orange">$250/月 Ultra</span> 订阅</li>
+    <li>预计定价：<span class="red">$15/百万输入 + $60/百万输出</span>（Flash 的 ~10倍）</li>
+    <li><span class="orange">⚠️ 若 6/30 未发布将是 Google 连续第二次未按时兑现 I/O 承诺</span></li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm">来源：TechTimes</a> · <a href="https://codersera.com/blog/gemini-3-5-pro-launch-guide-2026/">来源：CodersEra</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Product / Company News -->
+
+<h2>🟠 Product / Company News</h2>
+
+<div class="card">
+  <h3>🟠 SpaceX 筹备 Origin——直怼 GitHub 的 AI-Agent 代码托管平台</h3>
+  <p>Cursor 收购后 SpaceX 正筹备 <strong>Origin</strong>——面向 AI Agent 的代码托管/协作平台：</p>
+  <ul class="bullet">
+    <li>GitHub 有 <span class="blue">1亿+开发者用户</span>，Origin 目标从 Cursor <span class="blue">750万月活 + 5万企业客户</span>起步</li>
+    <li>Agent-first 架构而非 Human-first——为 AI 编程智能体而非人类开发者优化</li>
+    <li>推出时间待确认</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.ai-insight.org/reports/cursor-origin-2026">来源：AI Insight</a> · <a href="https://www.explainx.ai/blog/cursor-origin-git-hosting-github-alternative-ai-agents-2026">来源：ExplainX</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 GPT-5.6 传闻升温——6月发布窗口？</h3>
+  <p>OpenAI 首席科学家 Jakub Pachocki 告知员工 GPT-5.6 将是 GPT-5.5 的"显著改进版本"：</p>
+  <ul class="bullet">
+    <li>开发者在 Codex 后台发现内部代号 <span class="purple">iris-alpha</span> 疑为 GPT-5.6</li>
+    <li>预计 <span class="blue">150万 token 上下文</span></li>
+    <li>API 价格预计仅为 Fable 5 的 <span class="green">1/3</span></li>
+    <li>发布时间指向 <span class="orange">6月底或7月初</span></li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://news.qq.com/rain/a/20260616A05NRO00">来源：腾讯新闻</a> · <a href="https://finance.sina.com.cn/wm/2026-06-12/doc-inicavkc0426776.shtml">来源：新浪财经</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 42州总检察长联盟对 OpenAI 发出传票——IPO 静默期中的合规大考</h3>
+  <p>42州联合调查进入传票阶段，纽约州已发出法律传票：</p>
+  <ul class="bullet">
+    <li>调查范围：广告 claims、"谄媚问题"、数据处理、健康数据、未成年人/老年人保护</li>
+    <li>时间恰逢 OpenAI <span class="orange">9月 IPO 静默期</span>——对 S-1 披露内容造成压力</li>
+    <li>远重于单一州监管审查</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-23-2026">来源：BuildFastWithAI</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 亚马逊弃用 Sam Altman 传记电影——$500亿 OpenAI 投资利益冲突</h3>
+  <p>亚马逊工作室弃用接近完成的奥特曼传记电影：</p>
+  <ul class="bullet">
+    <li>SNL 前编剧 Simon Rich 撰写，对奥特曼刻画偏负面（2023年被解雇又复职事件）</li>
+    <li>亚马逊 <span class="red">$500亿 OpenAI 战略投资</span> 与发行该电影存在明显利益冲突</li>
+    <li>电影将转由其他工作室发行</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-23-2026">来源：BuildFastWithAI</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 Anthropic IPO：$9650亿估值 + 10月目标</h3>
+  <ul class="bullet">
+    <li>6/1 秘密提交 S-1，目标 <span class="blue">10月上市</span></li>
+    <li>5月年化营收 <span class="red">$470亿</span>（较2025年末 $90亿大幅增长），Q2有望首次 ~$5.59亿运营利润</li>
+    <li>Fable 5 封禁事件属重大披露——投资者需评估政策风险对营收稳定性影响</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-23-2026">来源：BuildFastWithAI</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Research Breakthroughs -->
+
+<h2>💡 Research Breakthroughs</h2>
+
+<div class="card">
+  <h3>💡 RL-Index：强化学习增强文档索引推理</h3>
+  <p>RL-Index 将复杂检索推理从查询时转移到索引阶段：</p>
+  <ul class="bullet">
+    <li>用 LLM 生成 rationale 增强文档索引，显式编码潜在查询-知识关系</li>
+    <li>GRPO + 检索相似度作为奖励信号优化 rationale 质量</li>
+    <li>提升检索质量 + QA 性能 + 降低查询延迟</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://arxivtldr.org/abs/2606.16316">来源：arXiv TLDR</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 DSG：解耦搜索与推理的 Vendor-Agnostic 架构</h3>
+  <p>Decoupled Search Grounding (DSG) 将实时搜索与 LLM 推理解耦：</p>
+  <ul class="bullet">
+    <li>Vendor-agnostic：搜索供应商可自由路由/缓存</li>
+    <li>SimpleQA 接近原生准确率，但搜索成本降 <span class="green">91%</span>，延迟降 <span class="green">68%</span></li>
+    <li>Agent 架构设计新范式——搜索不再绑定单一 LLM 供应商</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://arxivtldr.org/abs/2606.18947">来源：arXiv TLDR</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 PARSE：企业文档 Prompt Injection 防御管线</h3>
+  <p>PARSE (Provenance-Aware Retrieval Sanitization) 防御 LLM Agent 受 Prompt Injection：</p>
+  <ul class="bullet">
+    <li>发现合成基准在真实企业文档上失效——现有方法全面低估风险</li>
+    <li>分类句子 + 提取事实 + 一致性校验保留验证</li>
+    <li>比 prior methods 更有效抵御真实企业文档中的 injection</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://arxivtldr.org/abs/2606.17467">来源：arXiv TLDR</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 NRT-Bench：核电站控制室多轮红队评测</h3>
+  <p>NRT-Bench 在模拟核电站控制室中对 LLM Agent 进行多轮红队攻击：</p>
+  <ul class="bullet">
+    <li>5角色 LLM 操作团队 + 目标损害信号</li>
+    <li>自适应多轮攻击可靠造成安全失效（<span class="red">8.7%-12.1%</span> 关键功能丧失）</li>
+    <li>安全关键系统中 LLM Agent 的脆弱性量化评估</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://arxivtldr.org/abs/2606.20408">来源：arXiv TLDR</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 ContextRL：上下文感知 RL 提升多模态推理</h3>
+  <p>ContextRL 用间接 RL 目标改善 LLM 在复杂上下文中的定位：</p>
+  <ul class="bullet">
+    <li>从两个高度相似选项中奖励模型选择正确支撑上下文</li>
+    <li>长程推理 <span class="green">+2.2%</span>，多模态 VQA <span class="green">+1.8%</span></li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://arxivtldr.org/abs/2606.17053">来源：arXiv TLDR</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Policy & Regulation -->
+
+<h2>⚠️ Policy & Regulation</h2>
+
+<div class="card highlight-orange">
+  <h3>⚠️ 慕尼黑法院裁定 Google 需为 AI Overview 虚假输出承担直接责任</h3>
+  <p>慕尼黑地方法院 (26 O 869/26) 临时禁令裁定：</p>
+  <ul class="bullet">
+    <li>AI Overviews 生成<span class="red">"独立、新、实质性陈述"</span>——非单纯聚合第三方内容</li>
+    <li>Google 不能以"算法输出"为由免责，须承担与传统出版商同等责任</li>
+    <li><span class="blue">欧洲首例 AI 生成内容直接责任判例</span></li>
+    <li><span class="red">⚠️ 对欧洲运营的 AI 公司影响深远</span>：若 AI 输出以事实形式呈现，即承担出版商级责任</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.lawnews.co.uk/legal-news/munich-court-ruling-establishes-google-ai-overviews-liability/">来源：LawNews UK</a> · <a href="https://weidemann.tech/google-ai-liability-ruling-implications-for-2026/">来源：Weidemann.tech</a></div>
+</div>
+
+<div class="card">
+  <h3>⚠️ FERC 向 6家电网运营商发出说明理由令——AI 数据中心并网加速</h3>
+  <p>FERC 依据《联邦电力法》第206条，向除德州外的 6家区域电网运营商发出说明理由令：</p>
+  <ul class="bullet">
+    <li>要求为 AI 数据中心加快并网流程提出方案，同时保障电网可靠性 + 控制消费者成本</li>
+    <li>FERC 主席 Laura Swett 称<span class="red">"国家优先事项"</span></li>
+    <li>背景：微软 $1900亿 + Google $1750-1850亿 AI 资本支出，电网并网已成 AI 基础设施实际运营约束</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-23-2026">来源：BuildFastWithAI</a></div>
+</div>
+
+<div class="card">
+  <h3>⚠️ EU AI Act 高风险合规倒计时：8月2日大限</h3>
+  <p>EU AI Act 对高风险 AI 系统合规要求即将全面执行（2026年8月2日）：</p>
+  <ul class="bullet">
+    <li>企业最紧迫三件事：数据合规、透明性披露、高风险 AI 系统合规审计</li>
+    <li>对就业/信用/教育/关键基础设施影响 AI 系统的合规要求严格</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.flowpixai.com/ai-news/ai-regulation-2026-global.html">来源：FlowpixAI</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Data Points -->
+
+<h2>📊 Data Points</h2>
+
+<div class="card">
+  <table>
+    <tr><th>指标</th><th>数值</th><th>备注</th></tr>
+    <tr><td>SpaceX 承诺算力收入</td><td class="red">$974亿+</td><td>Anthropic+Google+Reflection，月付$23.2亿+</td></tr>
+    <tr><td>SPCX 股价</td><td class="orange">~$170</td><td>IPO价$135，峰值~$225，今日跌10%</td></tr>
+    <tr><td>Fable 5 API 价格</td><td class="red">$10/$50/MTok</td><td>Opus 4.8的2倍</td></tr>
+    <tr><td>Gemini 3.5 Pro 上下文</td><td class="blue">200万tokens</td><td>商用前沿模型最大</td></tr>
+    <tr><td>Codex 年化写入量</td><td class="red">640TB</td><td>超1TB SSD全寿命保修</td></tr>
+    <tr><td>Anthropic 美国数据中心</td><td class="blue">12+租约/1GW+</td><td>IPO算力储备</td></tr>
+    <tr><td>AI 全球债务预测</td><td class="red">$5700亿</td><td>摩根士丹利2026年预测</td></tr>
+    <tr><td>GPT-5.6 传闻上下文</td><td class="blue">150万tokens</td><td>内部代号iris-alpha</td></tr>
+  </table>
+</div>
+
+<div class="report-footer">
+  数据来源：AIToolsRecap · CNBC · BuildFastWithAI · TechTimes · arXiv TLDR · LawNews UK · FlowpixAI · 新浪财经 · GitHub · My Research Central · via WB
+</div>
+
+</body>
+</html>
