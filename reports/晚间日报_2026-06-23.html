@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间投研日报 · 2026-06-23</title>
+  <style>
+    /* ============================================
+       Unified Report Template — My Research Central
+       ============================================ */
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+    .report-header { margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .report-header h1 { font-size: 1.4em; color: var(--text); margin-bottom: 4px; }
+    .report-header .meta { font-size: 0.82em; color: var(--text2); }
+    h2 { font-size: 1.15em; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--blue); }
+    h3 { font-size: 1em; margin: 14px 0 8px; color: var(--text); }
+    .card { background: var(--card); border-radius: 8px; padding: 12px 14px; margin: 10px 0; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.85em; }
+    th { background: var(--card); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text2); font-weight: 600; }
+    td { padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:hover { background: rgba(88, 166, 255, 0.05); }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78em; margin-right: 4px; }
+    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+    .highlight { padding: 10px 14px; border-radius: 6px; margin: 8px 0; }
+    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+    ul.bullet { margin: 6px 0 6px 18px; font-size: 0.92em; }
+    ul.bullet li { margin: 4px 0; line-height: 1.6; }
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+    .source-link { display: block; font-size: 0.78em; color: var(--text2); margin: 4px 0 8px 0; word-break: break-all; }
+    .source-link a { color: var(--blue); text-decoration: none; }
+    .source-link a:hover { text-decoration: underline; }
+    .divider { height: 1px; background: var(--border); margin: 16px 0; }
+    .report-footer { text-align: center; color: var(--text2); font-size: 0.75em; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border); }
+    @media (max-width: 640px) { body { padding: 10px; } h1 { font-size: 1.2em; } h2 { font-size: 1.05em; } table { font-size: 0.8em; } }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>晚间投研日报 · 2026-06-23</h1>
+  <div class="meta">📅 2026年6月23日（星期二） · A股正常交易日 · 全球科技股暴跌日</div>
+</div>
+
+<!-- ===== 催化剂日历 ===== -->
+<h2>🔥 催化剂日历</h2>
+<table>
+  <tr><th>时间</th><th>事件</th><th>影响</th></tr>
+  <tr><td>6/23（今日）</td><td>全球科技股暴跌，韩国股市触发熔断</td><td>亚太市场承压，A股港股大幅调整</td></tr>
+  <tr><td>6/23（今日）</td><td>创业板指跌3.84%创年内最大跌幅</td><td>科技抱团松动，市场风格或切换</td></tr>
+  <tr><td>6/23（今日）</td><td>日股暴跌超1400点，恒科跌超3%</td><td>全球避险情绪升温</td></tr>
+  <tr><td>6/23（今日）</td><td>美联储官员放鹰：通胀过高</td><td>加息预期升温</td></tr>
+  <tr><td>6/23（今日）</td><td>金融法草案首次提请审议</td><td>金融法治建设关键一步</td></tr>
+  <tr><td>6/23（今日）</td><td>商务部等9部门发文培育壮大汽车后市场消费</td><td>汽车改装/后市场催化</td></tr>
+  <tr><td>6/23（今日）</td><td>医药板块逆势走强</td><td>资金防御性配置</td></tr>
+  <tr><td>6/23（今日）</td><td>沪市交易新规7月6日起正式实施</td><td>交易规则重大变化</td></tr>
+  <tr><td>6/23（今日）</td><td>财政部：1-5月土地出让收入同比降28.7%</td><td>土地财政持续承压</td></tr>
+  <tr><td>6/23（近日）</td><td>英飞凌7月1日起对部分产品实施价格调整</td><td>功率半导体涨价潮</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<!-- ===== 宏观 ===== -->
+<h2>🌍 宏观</h2>
+
+<h3>全球——亚太市场"黑色星期二"</h3>
+<p>今日亚太市场遭遇系统性抛售，韩国股市触发熔断机制，日经指数暴跌超1400点，A股港股全线下跌。市场认为主因：①美联储鹰派表态（官员发声通胀过高，加息预期升温）；②美伊局势不确定性；③全球科技股估值高位后的集体调整。</p>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN20260623161546951fe61b&s=b">来源：金融投资报</a></div>
+
+<h3>中国——金融法草案首次提请审议</h3>
+<p>金融法草案首次提请全国人大常委会审议，这是金融法治建设迈出的关键一步，标志着金融监管体系进入新阶段。</p>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN20260623160658a6b2ad02&s=b">来源：21财经网</a></div>
+
+<h3>中国——1-5月财政数据</h3>
+<ul class="bullet">
+  <li>网上商品零售额增长5.0%（商务部）</li>
+  <li>国有土地使用权出让收入8048亿元，同比降28.7%（财政部）</li>
+  <li>在岸人民币兑美元收盘报6.7865，跌102点</li>
+</ul>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN202606231356189784a487&s=b">来源：环球网/财联社</a></div>
+
+<h3>中国——沪市交易新规7月6日正式实施</h3>
+<p>沪市交易新规将于7月6日起正式实施，对交易机制作出重要调整。</p>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN20260623164733a45c1880&s=b">来源：财联社</a></div>
+
+<h3>海外——美伊局势跟踪</h3>
+<p>长江宏观于博团队持续跟踪美伊局势。华鑫宏观指出美伊短期缓和已落地，但中长期两国战略矛盾不可调和。</p>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+
+<h3>海外——美联储偏鹰</h3>
+<p>又一美联储官员表态通胀过高。日央行加息但指引偏鸽，美联储偏鹰，全球流动性环境趋紧。</p>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN20260623172057952000f0&s=b">来源：财联社</a></div>
+
+<div class="divider"></div>
+
+<!-- ===== 市场概览 ===== -->
+<h2>📊 市场概览</h2>
+
+<h3>A股——三大指数低开低走</h3>
+<ul class="bullet">
+  <li><span class="orange">沪指</span>跌1.37%，险守4100点</li>
+  <li><span class="orange">深成指</span>跌超3%</li>
+  <li><span class="orange">创业板指</span>跌3.84%，<span class="red">创年内最大跌幅</span></li>
+  <li>两市成交额约3.44万亿元</li>
+  <li>全市场超2700只个股上涨（大盘蓝筹跌但中小票相对抗跌）</li>
+</ul>
+
+<table>
+  <tr><th>板块</th><th>走势</th><th>说明</th></tr>
+  <tr><td><span class="tag tag-red">医药/生物医药</span></td><td><span class="red">逆势走强</span></td><td>防御性配置，资金避险流入</td></tr>
+  <tr><td><span class="tag tag-red">银行</span></td><td><span class="red">逆势走强</span></td><td>高股息+金融改革催化</td></tr>
+  <tr><td><span class="tag tag-orange">证券</span></td><td>相对抗跌</td><td>金融法草案催化</td></tr>
+  <tr><td><span class="tag tag-green">有色金属</span></td><td><span class="green">集体大跌</span></td><td>贵金属、稀土受压明显</td></tr>
+  <tr><td><span class="tag tag-green">PCB/CPO</span></td><td><span class="green">集体大跌</span></td><td>PCB降价谣言冲击（天风电新辟谣）</td></tr>
+  <tr><td><span class="tag tag-green">算力硬件</span></td><td><span class="green">齐跌</span></td><td>光模块、PCB调整</td></tr>
+  <tr><td><span class="tag tag-green">贵金属</span></td><td><span class="green">大跌</span></td><td>美联储鹰派打压</td></tr>
+</table>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN202606231620389870d59d&s=b">来源：腾讯自选股/新财闻</a></div>
+
+<h3>港股——恒指大跌，国指跌入技术性熊市</h3>
+<ul class="bullet">
+  <li><span class="orange">恒生指数</span>跌1.82%，报23,290.84点，盘中创近1年新低</li>
+  <li><span class="orange">恒生科技指数</span>跌超3%，年内跌幅超20%领跌全球科技指数</li>
+  <li><span class="red">南向资金净买入超60亿港元</span>（越跌越买）</li>
+  <li>科技、有色板块杀跌，创新药概念逆市上扬</li>
+  <li>智谱大跌超15%，MINIMAX-W跌16.46%</li>
+  <li>阿里巴巴跌破100港元创阶段新低</li>
+</ul>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN20260623163952a6b2bbcf&s=b">来源：钛媒体快报</a></div>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN202606231047519784640a&s=b">来源：腾讯自选股</a></div>
+
+<h3>中金刘刚：维持恒指中枢水平26000点</h3>
+<p>中金策略分析师刘刚发表观点，维持恒指中枢水平26000点判断，当前港股估值已具备一定吸引力。</p>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN202606231513129870b81f&s=b">来源：智通财经</a></div>
+
+<h3>今日投资舆情热点</h3>
+<ul class="bullet">
+  <li><span class="tag tag-red">液冷</span> — 数据中心液冷持续高景气</li>
+  <li><span class="tag tag-red">创新药/机械</span> — 6.23复盘笔记核心方向</li>
+  <li><span class="tag tag-orange">汽车后市场</span> — 商务部等9部门政策催化</li>
+  <li><span class="tag tag-orange">金融法</span> — 草案提请审议，金融改革预期</li>
+</ul>
+
+<div class="divider"></div>
+
+<!-- ===== 策略观点 ===== -->
+<h2>💡 策略观点</h2>
+
+<div class="card">
+<h3>华鑫宏观策略——美伊短期缓和落地，A股结构性行情可期</h3>
+<ul class="bullet">
+  <li>海外策略：日央行偏鸽+美联储偏鹰，美股从防御转向成长（关注AI硬件端）</li>
+  <li>国内策略：5月经济数据确认供给强需求弱K型分化，A股结构性行情为主</li>
+  <li>行业选择：①AI算力硬件（控制仓位，光通信/存储/PCB）；②景气改善（小金属/能源金属/锂电）；③风格平衡（证券/银行）</li>
+  <li>当前市场存在高拥挤问题，股市波动预计放大</li>
+</ul>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要｜华鑫宏观策略</a></div>
+</div>
+
+<div class="card">
+<h3>中金刘刚——维持恒指中枢水平26000点</h3>
+<ul class="bullet">
+  <li>港股调整后估值已具一定吸引力</li>
+  <li>维持恒指中枢水平26000点判断</li>
+</ul>
+<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN202606231513129870b81f&s=b">来源：智通财经</a></div>
+</div>
+
+<div class="card">
+<h3>天风电新——PCB产业链调整再call</h3>
+<ul class="bullet">
+  <li>今日PCB板块暴力调整，主因前期涨幅较高而非基本面变化</li>
+  <li>基本面依然强劲：载板价格持续抬升（BT/ABF年内+30%+），建滔涨15%后爆单</li>
+  <li>电子布缺货严重，新一轮涨价在即</li>
+  <li>继续首推：建滔系/华正/金安/宝鼎/深南/兴森</li>
+</ul>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要｜天风电新</a></div>
+</div>
+
+<div class="card">
+<h3>天风电新——电容板块调整点评</h3>
+<ul class="bullet">
+  <li>超容标配趋势进一步确认，量价双超预期</li>
+  <li>MLPC已进入涨价阶段，牛角国内企业调涨空间大</li>
+  <li>新增推荐：<span class="tag tag-red">宗申动力</span> ⭐，继续看好江海/艾华/思源/万裕</li>
+</ul>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要｜天风电新</a></div>
+</div>
+
+<div class="card">
+<h3>李蓓（半夏投资）——已降仓、回撤可控</h3>
+<ul class="bullet">
+  <li>今日回应市场质疑：重仓能源/地产/消费/建材四大方向近期均大跌</li>
+  <li>高波动产品回撤约10%，低波动回撤仅个位数</li>
+  <li>已按风险预算主动降仓，"没多少仓位用来倒霉"</li>
+</ul>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要</a></div>
+</div>
+
+<div class="card">
+<h3>开源电子——功率半导体涨价潮开启</h3>
+<ul class="bullet">
+  <li>英飞凌7月涨价，新一轮涨价潮蓄势待发</li>
+  <li>核心推荐：<span class="tag tag-red">新洁能</span> ⭐ / <span class="tag tag-red">东微半导</span> ⭐ / <span class="tag tag-red">扬杰科技</span> ⭐</li>
+</ul>
+<div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球·水木调研纪要｜开源电子</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== 持仓个股 ===== -->
+<h2>📋 持仓个股增量信息</h2>
+
+<h3>A股（13只）</h3>
+
+<div class="card">
+<h4>1. 芯碁微装（半导体设备）</h4>
+<p>今日创业板大跌，半导体设备板块相对抗跌。功率半导体涨价潮开启，关注对设备端的需求拉动。</p>
+</div>
+
+<div class="card">
+<h4>2. 容百科技（新能源电池材料）</h4>
+<p>光伏出口更新：前期江苏、山东已有申请，京山轻机/高测均有所动作，某家已发货，推测后续有望恢复正常供货。</p>
+</div>
+
+<div class="card">
+<h4>3. 长川科技（半导体测试）</h4>
+<p>功率半导体涨价潮开启（英飞凌7月涨价），新洁能/东微半导等受益，间接利好测试设备需求。</p>
+</div>
+
+<div class="card">
+<h4>4. 天华新能（新能源）</h4>
+<p>光伏出口更新利好锂电上游预期，锂电材料板块联动关注。</p>
+</div>
+
+<div class="card">
+<h4>5. 中国平安（601318）</h4>
+<p>银行板块今日逆势走强，金融法草案催化+避险配置逻辑。大金融政策利好持续。</p>
+</div>
+
+<div class="card">
+<h4>6. 中国太保（601601）</h4>
+<p>同大金融板块逻辑。华鑫宏观：风格平衡角度优先配置证券/银行。</p>
+</div>
+
+<div class="card">
+<h4>7. 华凯易佰</h4>
+<p>今日AI应用概念大幅回调（智谱跌超15%传导），但公司基本面逻辑未变——去库出清+智谱GEO合作长期催化。</p>
+</div>
+
+<div class="card">
+<h4>8. 大元泵业</h4>
+<p><span class="tag tag-red">液冷</span>为今日第一大舆情热点。冰轮环境持续更新验证液冷行业高景气。天风电新：一次侧液冷已进入长约+预付款+产能锁定新阶段。</p>
+</div>
+
+<div class="card">
+<h4>9. 福达股份</h4>
+<p>机器人板块受科技股整体拖累，但行业基本面趋势未变，关注回调后的布局窗口。</p>
+</div>
+
+<div class="card">
+<h4>10. 银轮股份</h4>
+<p>数据中心液冷+机器人双重定位。液冷方向为今日热点，天风电新液冷行业更新验证板块高景气。</p>
+</div>
+
+<div class="card">
+<h4>11. 微导纳米</h4>
+<p><span class="tag tag-blue">【ZX机械】</span>今日再度推荐。半导体大单集中下半年逻辑，功率半导体涨价潮背景下设备需求有望进一步增长。</p>
+</div>
+
+<div class="card">
+<h4>12. 安琪酵母</h4>
+<p>防御性消费板块，今日医药消费逆势走强。酵母蛋白替代逻辑持续，估值性价比仍在。</p>
+</div>
+
+<div class="card">
+<h4>13. 百龙创园</h4>
+<p>阿洛酮糖后续催化持续跟踪，20X PE关注回调后中长期配置价值。</p>
+</div>
+
+<h3>港股（7只）</h3>
+
+<div class="card">
+<h4>1. 腾讯控股（0700.HK）</h4>
+<p>恒科大挫超3%，腾讯权重承压。南向资金净买入超60亿港元，腾讯料持续获南下资金配置。</p>
+</div>
+
+<div class="card">
+<h4>2. 中国财险（2328.HK）</h4>
+<p>大金融板块整体受金融法草案提振，银行今日逆势走强，保险板块有望跟随。</p>
+</div>
+
+<div class="card">
+<h4>3. 中天科技（光纤光缆）</h4>
+<p>光通信板块随科技股整体调整，但基本面仍强劲。天风辟谣PCB降价，华鑫宏观：光通信为AI算力业绩兑现明确方向。</p>
+</div>
+
+<div class="card">
+<h4>4. 亨通光电（光纤光缆）</h4>
+<p>同光纤光缆板块逻辑，MPO+北美数据中心突破逻辑不变。</p>
+</div>
+
+<div class="card">
+<h4>5. 亚信科技</h4>
+<p>Physical AI三大产品落地逻辑持续。今日科技板块整体调整，但海外+NV合作长期逻辑未变。</p>
+</div>
+
+<div class="card">
+<h4>6. 智谱（港股/AI）</h4>
+<p><span class="tag tag-green">今日大跌超15%</span>，继昨日暴涨40%后的获利回吐。中信计算机上调目标市值7245亿港元逻辑不变，短期波动剧烈。</p>
+</div>
+
+<div class="card">
+<h4>7. 罗莱生活</h4>
+<p>防御性消费配置，今日消费板块相对抗跌。PE 13倍/股息率7.61%，高股息逻辑持续。</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== 知识星球 ===== -->
+<h2>📚 知识星球（zsxq）精选</h2>
+
+<h3>水木调研纪要-2.0 | 2026-06-23 增量内容</h3>
+<table>
+  <tr><th>机构/团队</th><th>标的</th><th>核心观点</th></tr>
+  <tr><td><span class="tag tag-red">🔴 —</span></td><td><b>三孚股份</b></td><td>DCS/TEOS/SOD三线国产突破，28年利润预估14.7亿+</td></tr>
+  <tr><td><span class="tag tag-red">🔴 天风电新</span></td><td><b>PCB产业链</b>（建滔/深南/兴森等）</td><td>调整主因前期涨幅高，基本面依然强劲</td></tr>
+  <tr><td><span class="tag tag-red">🔴 开源电子</span></td><td><b>功率半导体</b>（新洁能⭐/东微半导⭐/扬杰）</td><td>英飞凌7月涨价，新一轮涨价潮开启</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 天风电新</span></td><td><b>电容板块</b>（宗申动力⭐/江海/艾华）</td><td>超容标配确认，新增推荐宗申动力</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td><b>冰轮环境</b></td><td>数据中心液冷持续更新，120年品牌+全品类技术</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td><b>东田微</b>（Granopt三倍扩产）</td><td>通信滤光片隔离器双涨价双缺货，27年PE不足20X</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td><b>鹏鼎控股</b></td><td>调整因台股筹码博弈联动，臻鼎已入NV MGX生态</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td><b>PCB铜箔</b>（德福/铜冠/海亮）</td><td>聚焦通胀上游，27年HVLP-4供需缺口或超40%</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 华鑫宏观</span></td><td>周观点</td><td>美伊短期缓和，A股结构性行情可期</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td>光伏出口更新</td><td>某家已发货，推测后续有望恢复正常</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td>李蓓回应</td><td>已降仓+回撤可控，高波动回撤约10%</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td>美光 & Anthropic</td><td>合作细节图示（图片附件）</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 申万TMT</span></td><td>天数智芯</td><td>调研反馈更新</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 GS CHINA</span></td><td>外资交易台</td><td>A股港股市场午评（图片）</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 长江宏观</span></td><td>美伊局势</td><td>局势跟踪</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 GH先进制造</span></td><td>微导纳米</td><td>再度推荐，关注半导体大单</td></tr>
+</table>
+
+<h3>调研纪要更新 | 2026-06-23 增量内容</h3>
+<table>
+  <tr><th>机构/团队</th><th>标的</th><th>核心观点</th></tr>
+  <tr><td><span class="tag tag-red">🔴 —</span></td><td>有色行业</td><td>大跌点评——黎明前的黑暗</td></tr>
+  <tr><td><span class="tag tag-red">🔴 兴证海外</span></td><td>全球权益</td><td>市场波动点评</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td>6月23日收盘观点</td><td>收盘点评</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 三孚股份</span></td><td>—</td><td>携手长鑫长存国产突围</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 申万固收</span></td><td>银行购债</td><td>重磅报告</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td>今日投资舆情热点</td><td>液冷/创新药等</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 陈果</span></td><td>市场形势</td><td>美元流动性收紧，外资流出压力</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td>6.23复盘笔记</td><td>创新药/机器人/机械</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 —</span></td><td>冰轮环境</td><td>持续更新0623</td></tr>
+  <tr><td><span class="tag tag-orange">🟠 长江电新</span></td><td>掘金泛科技01</td><td>最新更新</td></tr>
+</table>
+
+<h3>⚠️ 需手动查看的附件/图片</h3>
+<ul class="bullet">
+  <li><span class="tag tag-orange">超硬材料产品提价</span> — ⚠️ 需手动查看详情</li>
+  <li><span class="tag tag-orange">外资交易台（GS CHINA MIDDLE）</span> — 午评图片 ⚠️</li>
+  <li><span class="tag tag-orange">美光 & Anthropic</span> — 合作细节图示 ⚠️</li>
+  <li><span class="tag tag-orange">「图片」</span> — 多篇含图片内容的帖子 ⚠️</li>
+</ul>
+
+<div class="divider"></div>
+
+<!-- ===== 关注清单 ===== -->
+<h2>👀 关注清单（11只）</h2>
+<table>
+  <tr><th>序号</th><th>标的</th><th>核心逻辑</th><th>来源</th></tr>
+  <tr><td>1</td><td><b>中天科技</b></td><td>光纤光缆涨价+MPO突破+北美数据中心</td><td>天风通信</td></tr>
+  <tr><td>2</td><td><b>亨通光电</b></td><td>北美光纤突破逻辑不变</td><td>天风通信</td></tr>
+  <tr><td>3</td><td><b>寒武纪</b></td><td>国产算力芯片龙头，中信电子看好</td><td>中信电子</td></tr>
+  <tr><td>4</td><td><b>宏景科技</b></td><td>Token分成模式落地，算力租赁逻辑</td><td>zsxq强推</td></tr>
+  <tr><td>5</td><td><b>协创数据</b></td><td>算力租赁龙头，目标市值3000亿</td><td>zsxq强推</td></tr>
+  <tr><td>6</td><td><b>鸿富瀚</b></td><td>进入NV Manifold供应商，A股第二家</td><td>调研纪要更新</td></tr>
+  <tr><td>7</td><td><b>福达股份</b></td><td>机器人全产业链布局，关注回调后布局</td><td>申万汽车</td></tr>
+  <tr><td>8</td><td><b>广发证券</b></td><td>筹码出清+财富管理旗舰，空间60%</td><td>华创非银</td></tr>
+  <tr><td>9</td><td><b>振华科技</b></td><td>钽电容涨价核心受益标的</td><td>国泰海通军工</td></tr>
+  <tr><td>10</td><td><b>长飞光纤</b></td><td>光纤光缆龙头</td><td>天风通信</td></tr>
+  <tr><td>11</td><td><b>利和兴</b></td><td>MLCC涨价利润快速释放</td><td>zsxq反路演</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<!-- ===== 数据溯源 ===== -->
+<h2>🔗 数据溯源</h2>
+<table>
+  <tr><th>数据类别</th><th>来源</th><th>可靠性</th></tr>
+  <tr><td>A股港股大盘行情</td><td>westock-data（腾讯自选股）</td><td>★★★★★</td></tr>
+  <tr><td>财经新闻/政策动态</td><td>westock-data marketnews + 财联社/新华社</td><td>★★★★★</td></tr>
+  <tr><td>策略观点</td><td>知识星球·水木调研纪要（华鑫/天风/开源）</td><td>★★★★★</td></tr>
+  <tr><td>持仓个股增量信息</td><td>知识星球·水木调研纪要+调研纪要更新</td><td>★★★★★</td></tr>
+  <tr><td>海外投行观点</td><td>知识星球（外资交易台/MS研报）</td><td>★★★★★</td></tr>
+  <tr><td>宏观数据</td><td>财联社/新华社/财政部/商务部</td><td>★★★★★</td></tr>
+  <tr><td>板块分析/行业点评</td><td>知识星球（天风电新/开源电子等）</td><td>★★★★★</td></tr>
+  <tr><td>李蓓回应</td><td>知识星球·水木调研纪要</td><td>★★★★☆</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<div class="report-footer">
+  数据来源：知识星球·水木调研纪要-2.0、调研纪要更新、westock-data · My Research Central · via WB
+</div>
+
+<div style="text-align: center; margin-top: 12px; font-size: 0.78em; color: var(--text2);">
+  <p>报告生成时间：2026-06-23 17:55 GMT+8 · A股正常交易日 · 全球科技股暴跌日</p>
+</div>
+
+</body>
+</html>
