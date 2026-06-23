@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-06-24</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>🔴 每日AI全球新闻</h1>
+  <div class="meta">2026-06-24 · Wednesday · My Research Central</div>
+</div>
+
+<!-- Top Stories -->
+<h2>🔴 Top Stories</h2>
+
+<div class="card">
+  <h3>🔴 1. 中美AI出口管制双向升级：中国将56家美企列入黑名单</h3>
+  <p>中国对美国AI出口管制采取反制措施，一天内甩出两份清单：46家美企被禁止参与中国政府采购，10家被纳入中国出口管制清单，涵盖无人机、航空航天、稀土开采等领域。此举直接回应6月8日美国国防部将188家中国实体列入1260H"中国涉军企业"清单的升级动作。中美AI出口战正式从单向转向双向。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L031THVT055641SA.html">来源：网易新闻</a></div>
+  <div class="source-link">🔗 <a href="https://www.sohu.com/a/1040044694_121123800">来源：搜狐新闻</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 2. OpenAI发布GPT-5.5-Cyber + Patch the Planet，对标Anthropic Glasswing</h3>
+  <p>OpenAI推出三款网络安全产品：完整版<span class="red">GPT-5.5-Cyber</span>（85.6% CyberGym，超过标准版81.8%）、Codex Security插件、Patch the Planet开源安全倡议。与Trail of Bits合作5天冲刺发现数百个漏洞，覆盖cURL、Python、Linux内核等30+开源项目。Linux内核上生成8个指针信息泄露PoC和24个本地提权利用。</p>
+  <p>战略逻辑与Anthropic Glasswing一致：修复关键基础设施漏洞→获取政府信任→赢得"不可关闭"地位。Codex Security将漏洞扫描嵌入开发者IDE——OpenAI同时掌控代码编写和扫描两侧平台。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-23-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 3. SpaceX签署$63亿Reflection AI算力协议，Colossus成全球最大AI云</h3>
+  <p>Reflection AI（NVIDIA支持的$25亿估值开源AI初创）将每月支付<span class="red">$1.5亿</span>，自7月1日起至2029年使用Colossus 2的GB300芯片。SpaceX累计锁定超$974亿算力服务收入。</p>
+  <table>
+    <tr><th>客户</th><th>月付</th><th>总额(至2029)</th><th>算力</th></tr>
+    <tr><td>Anthropic</td><td class="red">$1.25B</td><td>~$52.5B</td><td>220,000 GPUs</td></tr>
+    <tr><td>Google</td><td>$920M</td><td>~$38.6B</td><td>110,000 GPU等效</td></tr>
+    <tr><td>Reflection AI</td><td class="orange">$150M</td><td>~$6.3B</td><td>GB300/Colossus 2</td></tr>
+    <tr><td><strong>合计</strong></td><td><strong>$2.32B+/月</strong></td><td><strong>$97.4B+</strong></td><td>+ undisclosed</td></tr>
+  </table>
+  <p>核心矛盾：SpaceX出租算力是否意味着Grok AI已被视为"无法竞争"？Cursor $600亿收购提供另一条AI赛道。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-23-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 4. SPCX跌10%：IPO以来最差单日表现</h3>
+  <p>SPCX周一<span class="green">跌10%</span>，创6月11日纳斯达克上市以来最差单日。分析师三大担忧：</p>
+  <ul class="bullet">
+    <li>所有Colossus合同含90天退出条款→$800亿"承诺"实为$1.5亿硬承诺+滚动续约</li>
+    <li>算力毛利率结构性低于AI产品毛利率</li>
+    <li>Cursor $600亿收购尚未展示收入协同效应</li>
+  </ul>
+  <p>SPCX从峰值$225跌至约$170，仍高于$135 IPO价。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-23-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 5. Claude全球90分钟宕机：5个旗舰模型同时中断</h3>
+  <p>6月22日00:37 UTC起，Claude五款模型（Opus 4.8/4.7/4.6、Sonnet 4.6、Haiku 4.5）同时出现高错误率，影响Claude.ai、API、Code、Cowork全生态。</p>
+  <p>恢复时间线：</p>
+  <table>
+    <tr><th>时间(UTC)</th><th>事件</th></tr>
+    <tr><td>01:16</td><td>Opus 4.8恢复</td></tr>
+    <tr><td>01:33</td><td>Haiku 4.5恢复</td></tr>
+    <tr><td>01:56</td><td>Opus 4.7恢复</td></tr>
+    <tr><td>02:01</td><td>补丁部署/监控阶段</td></tr>
+    <tr><td>02:06</td><td>全面恢复</td></tr>
+  </table>
+  <p>6月已发生3次宕机，90天 uptime仍>98%，但频率引发容量规划质疑。</p>
+  <div class="source-link">🔗 <a href="https://cybersecuritynews.com/anthropic-claude-ai-outage/">来源：CybersecurityNews</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Industry Updates -->
+<h2>🔵 Industry Updates</h2>
+
+<div class="card">
+  <h3>🔴 Getty Images与OpenAI多年合作，GETY股价暴涨145%</h3>
+  <p>Getty Images与OpenAI签署多年展示协议，授权图片内容接入ChatGPT搜索结果。6月21日公告后<span class="red">GETY股价当日最高涨幅达145%</span>。视觉内容版权与AI搜索的融合进入新阶段。</p>
+  <div class="source-link">🔗 <a href="https://newsroom.gettyimages.com/en/getty-images/getty-images-announces-display-partnership-with-openai">来源：Getty Images官方</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 Fable 5付费窗口开启：$10/$50 MTok</h3>
+  <p>6月23日起Fable 5需使用credits（<span class="orange">$10/百万输入</span>、<span class="orange">$50/百万输出</span>），免费订阅窗口6月22日关闭。6月12-18停摆6天无补偿。定价为Opus 4.8两倍，开发者持续讨论何时质量值得溢价。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-23-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="card">
+  <h3>📊 NVIDIA DFlash推测解码：Blackwell推理最高提速15x</h3>
+  <p>NVIDIA发布开源block-diffusion推测解码方法<span class="blue">DFlash</span>，在Blackwell GPU上通过并行token块预测替代顺序自回归起草，推理吞吐量<span class="red">最高提升15倍</span>。对多Agent工作流低延迟需求尤为关键。</p>
+  <div class="source-link">🔗 <a href="https://developer.nvidia.com/blog/boost-inference-performance-up-to-15x-on-nvidia-blackwell-using-dflash-speculative-decoding/">来源：NVIDIA Developer Blog</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 美国暂缓将DeepSeek列入黑名单</h3>
+  <p>尽管美国商务部将<span class="orange">100+中国公司</span>标记为国家安全风险（含DeepSeek、CXMT等），特朗普政府暂缓正式列入贸易黑名单。分析认为与中美贸易谈判筹码考量有关。DeepSeek开源模型特性也使完全封锁难以实现。</p>
+  <div class="source-link">🔗 <a href="https://money.usnews.com/investing/news/articles/2026-06-16/exclusive-us-holds-off-blacklisting-chinas-deepseek-more-than-100-firms-deemed-security-risks-sources-say">来源：Reuters/US News</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Product & Company News -->
+<h2>🔵 Product & Company News</h2>
+
+<div class="card">
+  <h3>🔵 Gemini 3.5 Pro GA倒计时：6月正式发布预期</h3>
+  <p>Google I/O 2026宣布Gemini 3.5 Pro，目前仍处于Vertex有限预览，GA预期6月底。核心特征：<span class="blue">2M token上下文</span>、Deep Think推理模式、200万上下文检索。与已上线的3.5 Flash（4倍提速）互补。</p>
+  <div class="source-link">🔗 <a href="https://codersera.com/blog/gemini-3-5-pro-launch-guide-2026/">来源：CodersEra</a></div>
+</div>
+
+<div class="card">
+  <h3>📊 Baseten $1.5B融资，$130亿估值</h3>
+  <p>AI推理基础设施赛道持续沸腾。Baseten完成<span class="red">$1.5B</span>融资，估值$130亿。同期General Intuition $3亿/$2亿估值（贝索斯投资）。推理层成为AI基础设施投资新焦点。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/18/ai-inference-startup-baseten-reportedly-raising-1-5b-months-after-its-last-mega-round/">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 Salesforce收购Fin $3.6B</h3>
+  <p>Salesforce以<span class="orange">$3.6B</span>收购AI客服平台Fin，强化Agent CRM能力。AI客服赛道并购加速。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/15/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 Fika Jobs $4M种子轮融资</h3>
+  <p>AI视频面试平台Fika Jobs完成$4M融资，AI Agent面试候选人模式引发招聘行业变革讨论。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/23/fika-jobs-raises-4m-to-build-a-video-first-hiring-platform-where-ai-agents-interview-candidates/">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 Groq确认$6.5亿融资，NVIDIA $20亿非收购后重新扩张</h3>
+  <p>AI芯片初创Groq确认<span class="red">$6.5亿</span>融资，在NVIDIA $20亿"非收购"后重新扩招。推理芯片赛道竞争加剧。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/">来源：TechCrunch</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Research Breakthroughs -->
+<h2>💡 Research Breakthroughs</h2>
+
+<div class="card">
+  <h3>📊 NVIDIA Nemotron 3 Ultra：550B Hybrid Mamba-Attention架构</h3>
+  <p>NVIDIA发布Nemotron 3 Ultra（550B总参数/55B活跃参数），采用<span class="blue">Hybrid Mamba-Attention</span>架构，在1M上下文窗口下实现高效推理。训练20万亿tokens，代理推理能力突出。纯Transformer架构不再是唯一选择——混合模式成为推理效率新范式。</p>
+  <div class="source-link">🔗 <a href="http://www.singularitymoments.com/content/top-10-ai-research-breakthroughs-of-june-2026/">来源：SingularityMoments</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 AI Index Report 2026：评估方法滞后于模型能力</h3>
+  <p>第九版AI Index报告核心结论：模型能力飙升但<span class="orange">评估方法停滞</span>，数据追踪速度跟不上2026研究速度。对整个AI评估社区发出"现实检验"——我们需要更好的标准化评估框架。</p>
+  <div class="source-link">🔗 <a href="https://huggingface.co/papers/2606.15708">来源：arXiv/HuggingFace</a></div>
+</div>
+
+<div class="card">
+  <h3>📊 LLM-as-a-judge关联误差研究：准确度下降8-22分</h3>
+  <p>研究发现关联误差使LLM裁判组<span class="green">准确度下降8-22分</span>，但顶级裁判准确性与专家组持平。多模型整合可平滑偏差，但关联误差是系统性瓶颈。评估方法论需进一步优化。</p>
+  <div class="source-link">🔗 <a href="https://aidailypost.com/archives/2026/06">来源：AI Daily Post</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 Qwen-RobotWorld：具身智能视觉-语言统一</h3>
+  <p>Qwen-RobotWorld统一视觉轨迹与语言条件视频生成，桥接机器人操控与自动驾驶。从纯文本推理转向<span class="purple">物理世界建模</span>——具身智能新范式，2026年最重要的架构转向之一。</p>
+  <div class="source-link">🔗 <a href="http://www.singularitymoments.com/content/top-10-ai-research-breakthroughs-of-june-2026/">来源：SingularityMoments</a></div>
+</div>
+
+<div class="card">
+  <h3>⚠️ 数据稀缺挑战：高质量训练tokens接近枯竭</h3>
+  <p>顶级模型突破<span class="orange">20万亿tokens</span>阈值后，高质量人类生成数据供应正在枯竭。合成数据生成成为未来两季度最大研究转向。AI正式进入"后互联网数据时代"——谁先解决数据瓶颈，谁就掌握下一代模型训练主动权。</p>
+  <div class="source-link">🔗 <a href="http://www.singularitymoments.com/content/top-10-ai-research-breakthroughs-of-june-2026/">来源：SingularityMoments</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Policy & Regulation -->
+<h2>⚠️ Policy & Regulation</h2>
+
+<div class="card">
+  <h3>🔴 中美AI出口管制双向升级</h3>
+  <p>中国将<span class="red">56家美企</span>列入黑名单（46家禁止政府采购+10家出口管制），直接回应美国6月8日188家中国实体1260H清单。从无人机到稀土开采，反制覆盖面精准。中美AI技术脱钩从<span class="red">单向管制转向双向制衡</span>。</p>
+  <div class="source-link">🔗 <a href="https://www.sohu.com/a/1040044694_121123800">来源：搜狐新闻</a></div>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L031THVT055641SA.html">来源：网易新闻</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 美国暂缓DeepSeek黑名单：100+公司标记但暂不执行</h3>
+  <p>特朗普政府将<span class="orange">100+中国公司</span>标记为国安风险（含DeepSeek、CXMT），但暂缓正式列入实体清单。可能考量：贸易谈判筹码、DeepSeek开源模型难以完全封锁。</p>
+  <div class="source-link">🔗 <a href="https://money.usnews.com/investing/news/articles/2026-06-16/exclusive-us-holds-off-blacklisting-chinas-deepseek-more-than-100-firms-deemed-security-risks-sources-say">来源：Reuters</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 EU AI Act 8/2大限倒计时39天</h3>
+  <p>EU AI Act高风险AI系统合规要求将于<span class="orange">8月2日</span>全面执行。GPAI模型透明义务同步生效。5月7日欧盟达成Digital Omnibus临时协议，包含时间线调整和定向简化条款。</p>
+  <div class="source-link">🔗 <a href="https://www.globalpolicywatch.com/2026/06/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions-2/">来源：Global Policy Watch</a></div>
+</div>
+
+<div class="card">
+  <h3>⚠️ OpenAI面临42州总检察长联合调查</h3>
+  <p><span class="orange">42州AG联盟</span>联合调查OpenAI，IPO前夜合规大考。调查范围涵盖数据隐私、未成年人安全、商业实践等。</p>
+  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-23-2026">来源：AIToolsRecap</a></div>
+</div>
+
+<div class="report-footer">
+  数据来源：AIToolsRecap / TechCrunch / Reuters / NVIDIA Developer Blog / CybersecurityNews / SingularityMoments / Getty Images / AI Daily Post · My Research Central · via WB
+</div>
+
+</body>
+</html>
