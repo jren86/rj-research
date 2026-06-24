@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日国家队增减持动向 · 2026-06-24</title>
+  <style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日国家队增减持动向 · 2026-06-24</h1>
+  <div class="meta">📊 数据截止：2026-06-24 收盘 · 数据来源：Wind 万得金融终端</div>
+</div>
+
+<!-- ============================================================== -->
+<h2>一、ETF 资金流数据</h2>
+
+<h3>1.1 宽基 ETF 资金流向（YTD 累计）</h3>
+<p>截至 6 月 22 日，2026 年初以来四类宽基 ETF（沪深 300 / 上证 50 / 中证 500 / 中证 1000）<span class="red">累计净赎回超 1.3 万亿元</span>。其中沪深 300 ETF 净赎回最为集中，累计净赎回超 <span class="red">8,400 亿元</span>。非银金融在宽基 ETF 净赎回中承受较大潜在减持压力，证券和保险均处于净赎回规模前列。</p>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 数据终端</a></div>
+
+<div class="highlight highlight-blue">
+  <strong>📌 关键提示：</strong>宽基 ETF 份额收缩对应的被动减持压力，成为 2026 年以来影响市场结构的重要资金变量。按最新指数成分权重，电子、银行和非银金融位居申万一级行业净赎回规模前三。
+</div>
+
+<h3>1.2 近期 ETF 资金流动态</h3>
+<table>
+  <thead>
+    <tr>
+      <th>时间区间</th>
+      <th>宽基 ETF 净流向</th>
+      <th>核心事件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>6/8–6/12</td>
+      <td><span class="red">净流入约 112 亿元</span></td>
+      <td>沪深 300 ETF 获 54 亿元净流入，近 17 周首次净申购</td>
+    </tr>
+    <tr>
+      <td>6/15–6/18</td>
+      <td><span class="green">净流出约 560 亿元</span></td>
+      <td>沪深 300 单周净流出 421 亿元，创 1 月以来最大单周流出</td>
+    </tr>
+    <tr>
+      <td>6/16 单日</td>
+      <td><span class="green">净流出 157.53 亿元</span></td>
+      <td>沪深 300 ETF 合计净流出 100.83 亿元</td>
+    </tr>
+  </tbody>
+</table>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：流动性周报 — 2026-06-22</a></div>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：ETF资金单日净流出157亿 — 2026-06-17</a></div>
+
+<h3>1.3 行业 / 主题 ETF 资金流向</h3>
+
+<div class="card">
+  <p><strong>📈 净流入方向（6/15–6/18）：</strong></p>
+  <ul class="bullet">
+    <li><span class="tag tag-red">流入</span> 半导体材料设备 ETF：+17.44 亿元（6/18 单日）</li>
+    <li><span class="tag tag-red">流入</span> 红利 ETF：+8.37 亿元</li>
+    <li><span class="tag tag-red">流入</span> 有色 ETF 板块：+6.96 亿元</li>
+    <li><span class="tag tag-red">流入</span> 科创 50 ETF：+4.04 亿元</li>
+    <li><span class="tag tag-red">流入</span> 消费电子 ETF、电池 ETF 板块：+2.01 亿元</li>
+  </ul>
+</div>
+
+<div class="card">
+  <p><strong>📉 净流出方向（6/15–6/18）：</strong></p>
+  <ul class="bullet">
+    <li><span class="tag tag-green">流出</span> 人工智能 ETF</li>
+    <li><span class="tag tag-green">流出</span> 电网设备 ETF</li>
+    <li><span class="tag tag-green">流出</span> 机器人 ETF</li>
+  </ul>
+</div>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：负债行为跟踪 — 2026-06-22</a></div>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：ETF规模速报 — 2026-06-22</a></div>
+
+<h3>1.4 5 月场内 ETF 规模变动</h3>
+<p>5 月末上市 ETF 总规模 <strong>48,154 亿元</strong>，较 4 月末缩水约 <span class="green">2,911 亿元</span>。六大头部宽基 ETF 合计缩水 <strong>1,833 亿元</strong>，占全市场 ETF 缩水总额超六成。宽基 ETF 大规模资金撤离，资金从权益市场转向债券类产品寻求稳健收益。</p>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：公募逼近40万亿创新高 — 2026-06-22</a></div>
+
+<h3>1.5 中央汇金 ETF 持仓变化（关键时间线）</h3>
+<table>
+  <thead>
+    <tr>
+      <th>时间节点</th>
+      <th>关键数据</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>2025 年末</td><td>汇金持有 11 只宽基 ETF 合计约 <span class="red">1.49 万亿元</span></td></tr>
+    <tr><td>2026 Q1 末</td><td>估算降至约 <span class="green">3,252 亿元</span>（减少约 1.18 万亿元）</td></tr>
+    <tr><td>4/9–5/27</td><td>汇金仍持有的一揽子 ETF 累计净赎回 3,740 亿元</td></tr>
+    <tr><td>5/28 以来</td><td>重点上证 50 / 沪深 300 ETF 累计净赎回仅 <span class="red">23 亿元</span>（减持接近尾声）</td></tr>
+    <tr><td>6/8 当周</td><td>宽基 ETF 出现净申购，<strong>近 17 周首次</strong></td></tr>
+    <tr><td>6/15–6/16</td><td>汇金加大赎回力度（15 日约 97 亿，16 日约百亿）</td></tr>
+    <tr><td>6/22 数据</td><td>宽基 ETF 净赎回持续但 <span class="orange">速度放缓</span></td></tr>
+  </tbody>
+</table>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：中信证券 — 2026-06-15</a></div>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：国信银行 — 2026-06-01</a></div>
+
+<div class="highlight highlight-blue">
+  <strong>💡 核心判断：</strong>汇金减持高峰已过。此前汇金在 1 月集中减持（沪深 300 减持超七成、上证 50/中证 1000 减持超九成），但 5 月下旬以来减持速度显著放缓。市场普遍认为，汇金大规模减持对市场的冲击最猛烈阶段已经过去。
+</div>
+
+<div class="divider"></div>
+<!-- ============================================================== -->
+
+<h2>二、大股东持股变动</h2>
+
+<h3>2.1 社保基金二季度调仓（截至 6/23）</h3>
+
+<div class="card">
+  <p><span class="tag tag-orange">增持</span> <strong>社保基金增持个股：</strong></p>
+  <table>
+    <thead>
+      <tr><th>个股</th><th>行业</th><th>增持数量</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>华峰化学</td><td>基础化工</td><td>+191.23 万股</td></tr>
+      <tr><td>贝泰妮</td><td>医药生物</td><td>+80.62 万股</td></tr>
+      <tr><td>瑞迈特</td><td>医药生物</td><td>+12.54 万股</td></tr>
+      <tr><td>诺思格</td><td>医药生物</td><td>+71.37 万股</td></tr>
+      <tr><td>新宝股份</td><td>家用电器</td><td>+360.01 万股</td></tr>
+      <tr><td>裕同科技（与养老基金合计）</td><td>轻工制造</td><td>+52.64 万股</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <p><span class="tag tag-blue">新进</span> <strong>社保基金新进前十大：</strong></p>
+  <table>
+    <thead>
+      <tr><th>个股</th><th>行业</th><th>持仓数量</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>汇成股份</td><td>电子</td><td>1,365.51 万股</td></tr>
+      <tr><td>华大智造</td><td>医药生物</td><td>416.41 万股</td></tr>
+      <tr><td>龙净环保</td><td>环保</td><td>1,701.30 万股</td></tr>
+      <tr><td>佰仁医疗</td><td>医药生物</td><td>75.53 万股</td></tr>
+      <tr><td>长高电气</td><td>电力设备</td><td>681.74 万股</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <p><span class="tag tag-green">减持</span> <strong>社保基金减持个股（4 只）：</strong> 鱼跃医疗被社保基金一零二组合减持 435.30 万股</p>
+</div>
+
+<h3>2.2 养老基金二季度调仓（截至 6/23）</h3>
+<div class="card">
+  <ul class="bullet">
+    <li><span class="tag tag-orange">增持</span> <strong>可孚医疗</strong>（医药生物）：+11.13 万股</li>
+    <li><span class="tag tag-orange">增持</span> <strong>裕同科技</strong>（轻工制造）：与社保基金合计 +52.64 万股</li>
+    <li><span class="tag tag-blue">新进</span> <strong>信立泰</strong>（医药生物）：737.71 万股</li>
+    <li><span class="tag tag-blue">新进</span> <strong>普洛药业</strong>（医药生物）：2,346.10 万股</li>
+    <li><span class="tag tag-green">减持</span> 鱼跃医疗被养老基金二零零九组合减持 248.09 万股</li>
+  </ul>
+</div>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：证券日报 — 2026-06-24</a></div>
+
+<h3>2.3 证金公司持股变动（2026 Q1）</h3>
+<div class="card">
+  <ul class="bullet">
+    <li><span class="tag tag-green">退出前十大</span> 招商银行、兴业银行、华夏银行、光大银行、北京银行</li>
+    <li><span class="tag tag-green">减持</span> 浦发银行（-1.01pct）、平安银行（-0.46pct）、中信银行（-0.09pct）</li>
+    <li><span class="tag tag-red">稳定</span> 国有大行持股未变：工行(39.21%)、农行(47.75%)、建行(55.64%)、中行(61.61%)、交行(15.19%)</li>
+  </ul>
+</div>
+<div class="highlight highlight-orange">
+  <strong>🟠 关键判断：</strong>证金可减持银行股数量已降至近年低位，后续减持空间有限，国有资金减持压力接近尾声。
+</div>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：中泰银行 — 2026-06-02</a></div>
+
+<h3>2.4 重要股东交易动态</h3>
+<table>
+  <thead>
+    <tr>
+      <th>个股</th>
+      <th>类型</th>
+      <th>变动详情</th>
+      <th>金额 / 比例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>格力电器</strong> (000651)</td>
+      <td><span class="tag tag-green">减持完成</span></td>
+      <td>第一大股东珠海明骏于 6/4 大宗减持 4,279.31 万股</td>
+      <td>套现约 <strong>15.89 亿元</strong>（占比 0.764%）</td>
+    </tr>
+    <tr>
+      <td><strong>青岛银行</strong></td>
+      <td><span class="tag tag-green">减持完成</span></td>
+      <td>海尔产业发展减持 1.84% 股份</td>
+      <td>年内首例银行主要股东减持</td>
+    </tr>
+    <tr>
+      <td><strong>凯瑞德</strong> (002072)</td>
+      <td><span class="tag tag-yellow">拟减持</span></td>
+      <td>第二大股东农谷集团拟减持 ≤3%</td>
+      <td>或套现约 9,619 万元</td>
+    </tr>
+    <tr>
+      <td><strong>德赛西威</strong> (002920)</td>
+      <td><span class="tag tag-yellow">拟减持</span></td>
+      <td>惠创投拟减持 ≤1,788 万股（≤3%）</td>
+      <td>约 19.76 亿元</td>
+    </tr>
+    <tr>
+      <td><strong>汇通能源</strong> (600605)</td>
+      <td><span class="tag tag-green">减持完成</span></td>
+      <td>厦门汉云减持 200 万股</td>
+      <td>套现约 5,918.51 万元</td>
+    </tr>
+    <tr>
+      <td><strong>铁科轨道</strong> (688569)</td>
+      <td><span class="tag tag-yellow">拟减持</span></td>
+      <td>中冶天誉拟减持 ≤1%（约 211 万股）</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：格力电器公告 — 2026-06-22</a></div>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：青岛银行公告 — 2026-06-03</a></div>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：凯瑞德公告 — 2026-06-09</a></div>
+
+<div class="divider"></div>
+<!-- ============================================================== -->
+
+<h2>三、知名交易 & 机构观点</h2>
+
+<h3>3.1 中央汇金持仓策略转向</h3>
+<p>2026 年以来，中央汇金宽基 ETF 持仓策略发生根本性转向——由 2024–2025 年的"大幅增持"转为"大规模净卖出"。截至 26Q1 末，沪深 300 ETF 减持比例超七成，上证 50 / 中证 1000 ETF 减持比例超九成。但 5 月底以来减持速度显著放缓。</p>
+
+<div class="card">
+  <p><strong>🔵 中信证券观点（6/12）：</strong>ETF 净赎回对银行板块影响高峰已过，后续冲击空间相对有限。截至 5 月末，18 个涉及银行板块的重点宽基 ETF 所持银行股规模仅 498.65 亿元，较 2025 年末降幅超 70%。</p>
+</div>
+
+<div class="card">
+  <p><strong>🔵 银河证券观点（6/24）：</strong>社保基金二季度整体呈现"逆势温和加仓、结构聚焦高质量实体、高低估值均衡布局"三大特征。加仓主线高度贴合产业升级，布局硬科技博取长期收益，同时配置高股息资产对冲风险。</p>
+</div>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：中信证券 — 2026-06-12</a></div>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：证券日报 — 2026-06-24</a></div>
+
+<h3>3.2 国家队长钱配置特征（二季度）</h3>
+<div class="highlight highlight-blue">
+  <p><strong>💡 配置主线：</strong>二季度社保基金和养老基金增持方向以战略性新兴产业为主，14 只增持/新进个股中有 7 只为医药生物行业，其余分布在电子、基础化工、电力设备、家用电器等领域，多为行业细分龙头。</p>
+</div>
+<ul class="bullet">
+  <li><strong>政策导向：</strong>配置重心全面向新质生产力领域倾斜，兼顾成长空间与估值安全边际</li>
+  <li><strong>行业重点：</strong>创新药、高端器械等医药生物细分赛道，同步覆盖先进制造、半导体、算力硬件</li>
+  <li><strong>选股标准：</strong>严格筛选具备技术壁垒、持续盈利、现金流稳健的细分龙头，个股估值低于历史偏低分位</li>
+</ul>
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：证券日报 — 2026-06-24</a></div>
+
+<div class="divider"></div>
+<!-- ============================================================== -->
+
+<h2>四、汇总统计</h2>
+<table>
+  <thead>
+    <tr>
+      <th>类别</th>
+      <th>关键数据</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>宽基 ETF YTD 累计净赎回</td>
+      <td><span class="red">超 1.3 万亿元</span>（截至 6/22）</td>
+    </tr>
+    <tr>
+      <td>沪深 300 ETF YTD 净赎回</td>
+      <td><span class="red">超 8,400 亿元</span></td>
+    </tr>
+    <tr>
+      <td>汇金持有宽基 ETF 规模</td>
+      <td>约 <span class="orange">3,252 亿元</span>（26Q1 末，vs 2025 年末 1.49 万亿）</td>
+    </tr>
+    <tr>
+      <td>5 月场内 ETF 缩水</td>
+      <td><span class="green">2,911 亿元</span></td>
+    </tr>
+    <tr>
+      <td>社保基金二季度调仓</td>
+      <td>增持/新进 <span class="red">11 只</span>，减持 <span class="green">4 只</span></td>
+    </tr>
+    <tr>
+      <td>养老基金二季度调仓</td>
+      <td>增持/新进 <span class="red">4 只</span>，减持 <span class="green">4 只</span></td>
+    </tr>
+    <tr>
+      <td>证金减持银行股</td>
+      <td>退出 <span class="green">5 家</span>银行前十大（Q1）</td>
+    </tr>
+    <tr>
+      <td>重要股东减持（代表性）</td>
+      <td>格力电器 15.89 亿、德赛西威约 19.76 亿（拟）</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="divider"></div>
+
+<div class="highlight highlight-orange">
+  <p><strong>⚠️ 免责声明：</strong>本报告数据来源于万得 Wind 金融数据终端及公开信息，仅为信息整理汇总，不构成任何投资建议。投资有风险，入市需谨慎。</p>
+</div>
+
+<div class="report-footer">
+  数据来源于万得 Wind 金融数据服务 · My Research Central · via WB
+</div>
+
+</body>
+</html>
