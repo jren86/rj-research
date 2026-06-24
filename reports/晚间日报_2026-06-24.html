@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间投研日报 · 2026-06-24</title>
+  <style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+.tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+.tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+.tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+.tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+.tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+.highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+.highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+.highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* Responsive tables */
+@media (max-width: 500px) {
+  table { font-size: 0.75em; }
+  td, th { padding: 4px 5px; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📊 晚间投研日报</h1>
+  <div class="meta">2026年6月24日（星期三）· A股正常交易日 · My Research Central</div>
+</div>
+
+<!-- ── 催化剂日历 ── -->
+<h2>🔴 催化剂日历</h2>
+
+<div class="highlight-red">
+  <strong>⚠️ 全球科技股"黑色星期二"延续</strong> — 美股费城半导体指数暴跌7.9%，韩国KOSPI触发熔断，三星电子/SK海力士创近18年最大单日跌幅。日经指数重挫逾1400点。
+</div>
+
+<ol class="bullet">
+  <li><strong>美光科技三季报（今晚盘后）</strong> — 全球存储芯片最关键催化剂。东吴证券认为本轮下跌是"情绪与持仓驱动的避险出清"，美光若超预期将触发板块"双击"行情。</li>
+  <li><strong>美国养老金月底400亿美元抛售</strong> — 模型显示养老金将在6月底创历史最大规模再平衡卖出，对美股形成额外压力。</li>
+  <li><strong>BIO 2026大会（美国圣地亚哥，6/22-25）</strong> — AI医疗、细胞基因治疗等18个核心议题，带动国内创新药板块情绪回升。</li>
+  <li><strong>A股指数样本调整生效</strong> — 上证50、科创50、创业板指等已完成调整（6月12/15日），关注新入选样本的资金配置。</li>
+</ol>
+
+<div class="source-link">🔗 来源：Wind金融终端 · 财联社 · 东吴证券研报</div>
+
+<!-- ── 宏观概览 ── -->
+<h2>🔵 宏观概览</h2>
+
+<table>
+  <tr><th>指标</th><th>数值</th><th>方向</th></tr>
+  <tr><td>隔夜美股：费城半导体</td><td>-7.9%</td><td class="green">↓</td></tr>
+  <tr><td>隔夜美股：纳斯达克</td><td>-4.2%</td><td class="green">↓</td></tr>
+  <tr><td>隔夜美股：标普500</td><td>-2.1%</td><td class="green">↓</td></tr>
+  <tr><td>韩国KOSPI</td><td>熔断（-8%+）</td><td class="green">↓</td></tr>
+  <tr><td>美元指数</td><td>震荡</td><td>⏸️</td></tr>
+  <tr><td>国际金价</td><td>下跌（通胀担忧盖过美伊谈判乐观情绪）</td><td class="green">↓</td></tr>
+  <tr><td>恒生指数夜期</td><td>+0.78% → 23498点</td><td class="red">↑</td></tr>
+  <tr><td>恒生科技指数夜期</td><td>+0.98% → 4438点</td><td class="red">↑</td></tr>
+  <tr><td>腾讯ADR</td><td>+1.36%（较香港收市）</td><td class="red">↑</td></tr>
+</table>
+
+<div class="card">
+  <strong>宏观重点：</strong>
+  <ul class="bullet">
+    <li>🔴 美国养老金模型显示6月底将抛售约400亿美元美股，创历史最大再平衡卖出预估</li>
+    <li>🔵 美伊核谈判：伊朗同意无限期最高级别核检查，霍尔木兹海峡目前可自由通行</li>
+    <li>🔵 美联储降息预期：市场对9月降息概率维持约65%</li>
+  </ul>
+</div>
+
+<div class="source-link">🔗 来源：Wind金融终端 · 财联社 · Bloomberg</div>
+
+<!-- ── 市场概览 ── -->
+<h2>📊 市场概览</h2>
+
+<h3>6月23日（周二）A股收盘</h3>
+
+<table>
+  <tr><th>指数</th><th>收盘点位</th><th>涨跌幅</th></tr>
+  <tr><td>上证指数</td><td>4106.25</td><td class="green">-1.37%</td></tr>
+  <tr><td>深证成指</td><td>15854.20</td><td class="green">-3.17%</td></tr>
+  <tr><td>创业板指</td><td>4192.19</td><td class="green">-3.84%</td></tr>
+  <tr><td>科创50</td><td>1916.21</td><td class="green">-1.68%</td></tr>
+  <tr><td>北证50</td><td>1281.21</td><td class="red">+0.77%</td></tr>
+  <tr><td>万得全A</td><td>7064.45</td><td class="green">-2.07%</td></tr>
+</table>
+
+<ul class="bullet">
+  <li><strong>成交额：</strong> 3.44万亿元（较前日缩量2964亿）</li>
+  <li><strong>涨跌家数：</strong> 2764涨 / 2644跌</li>
+  <li><strong>涨停/跌停：</strong> 124家涨停 / 10家跌停</li>
+</ul>
+
+<h3>6月24日（周三）A股盘中动态</h3>
+<ul class="bullet">
+  <li><strong>早盘：</strong> 三大指数集体低开，超3100只个股飘绿，受隔夜全球暴跌情绪冲击</li>
+  <li><strong>盘中：</strong> 低开后震荡翻红，创业板最高涨0.92%，半导体板块探底回升</li>
+  <li><strong>板块轮动：</strong> 海运、石油化工、制药、生物科技、半导体上涨；基本金属、贵金属、能源设备、地产下跌</li>
+</ul>
+
+<h3>资金流向（6月23日）</h3>
+<table>
+  <tr><th>板块</th><th>主力净流入</th><th>方向</th></tr>
+  <tr><td>医药生物</td><td>+28.91亿</td><td class="red">↑ 吸金</td></tr>
+  <tr><td>银行</td><td>+26.58亿</td><td class="red">↑ 吸金</td></tr>
+  <tr><td>证券</td><td>小幅流入</td><td class="red">↑</td></tr>
+  <tr><td>半导体</td><td>大幅流出</td><td class="green">↓</td></tr>
+  <tr><td>有色金属</td><td>大幅流出</td><td class="green">↓</td></tr>
+  <tr><td>贵金属</td><td>大幅流出</td><td class="green">↓</td></tr>
+</table>
+
+<div class="highlight-orange">
+  <strong>💡 关键信号：</strong> 资金从科技成长向防御性板块（医药、银行）切换。医药板块中亨迪药业、睿智医药20cm涨停，化学制药全天领涨。
+</div>
+
+<div class="source-link">🔗 来源：Wind金融终端 · 证券之星 · 财联社</div>
+
+<!-- ── 策略观点 ── -->
+<h2>💡 策略观点</h2>
+
+<div class="card">
+  <h3>东吴传媒海外（张良卫团队）</h3>
+  <p><strong>《利空抢跑，静待美光验证"双击"》</strong></p>
+  <p>6月23日存储股价集体重挫（三星、海力士、美光、闪迪均跌超10%），但这是一次典型的"情绪与持仓驱动"的避险出清，而非基本面拐点。AI驱动存储需求高速增长，叠加供给侧寡头格局与资本开支纪律，本轮供需紧缺的持续性与价格涨幅远超市场对"传统周期"的定价。</p>
+  <p><strong>重点推荐：</strong> SK海力士、美光科技、三星电子、兆易创新 ⭐、普冉股份 ⭐</p>
+  <div class="source-link">🔗 来源：zsxq「调研纪要更新」2026-06-24 12:32</div>
+</div>
+
+<div class="card">
+  <h3>广发机械</h3>
+  <p><strong>「观点重申！AI推动半导体超级周期！最重要的是仓位！继续全面看好半导体板块」</strong></p>
+  <p>AI产业趋势很强，需求会将大部分相关的芯片环节供给拉爆，无论是先进制程还是成熟制程，全面看好半导体产业链各环节。</p>
+  <p><strong>覆盖标的：</strong> 中芯国际、华虹半导体、中微公司、北方华创、拓荆科技、寒武纪、兆易创新、圣邦股份、澜起科技、长电科技等</p>
+  <div class="source-link">🔗 来源：zsxq「水木调研纪要-2.0」2026-06-24 16:21</div>
+</div>
+
+<div class="card">
+  <h3>中原证券</h3>
+  <p><strong>《市场分析：金融医药行业领涨 A股宽幅震荡》</strong></p>
+  <p>沪指在4175点附近遭遇阻力后震荡回落，券商、银行、医药以及机器人等行业表现较好；贵金属、有色金属、稀土以及元件等行业表现较弱。短期市场呈现宽幅震荡格局。</p>
+  <div class="source-link">🔗 来源：Wind金融终端 · 中原证券研报</div>
+</div>
+
+<div class="card">
+  <h3>天府策略</h3>
+  <p><strong>《成交额关口再现，风格在切换？》</strong></p>
+  <p>3.5万亿成交额是市场关键关口。风格延续防御性权重方向，从大金融切换至医药板块。短期科技主线调整可能是情绪错杀，中报业绩超预期方向值得关注。</p>
+  <div class="source-link">🔗 来源：Wind金融终端</div>
+</div>
+
+<h3>⭐ 金股/重点推荐汇总</h3>
+<table>
+  <tr><th>标的</th><th>机构</th><th>推荐逻辑</th><th>标记</th></tr>
+  <tr><td>利柏特（605167）</td><td>广发建筑</td><td>核电模块招标+FPSO海工景气，27年归母净利约4亿</td><td class="tag tag-red">⭐ 强推</td></tr>
+  <tr><td>国瓷材料（300285）</td><td>中泰建材&化工</td><td>MLCC粉体→AI材料龙头，25年9月起翻4倍</td><td class="tag tag-yellow">⭐ 6月金股</td></tr>
+  <tr><td>兆易创新（603986）</td><td>东吴传媒海外</td><td>存储芯片AI需求爆发，供需紧缺持续</td><td class="tag tag-red">买入</td></tr>
+  <tr><td>普冉股份（688766）</td><td>东吴传媒海外</td><td>存储芯片AI需求扩散标的</td><td class="tag tag-red">买入</td></tr>
+  <tr><td>圣邦股份（300661）</td><td>广发机械</td><td>AI敞口最高的半导体之一，明显低估</td><td class="tag tag-purple">重点推荐</td></tr>
+</table>
+
+<div class="source-link">🔗 来源：zsxq（水木调研纪要-2.0 / 调研纪要更新）</div>
+
+<!-- ── 持仓个股 ── -->
+<h2>📄 持仓个股增量信息</h2>
+
+<h3>A股持仓（13只+）</h3>
+<table>
+  <tr><th>个股</th><th>最新动态</th><th>影响</th></tr>
+  <tr><td>中芯国际</td><td>广发机械重申推荐，AI推动晶圆厂产能被拉爆</td><td class="tag tag-orange">关注国产替代</td></tr>
+  <tr><td>北方华创</td><td>半导体设备ETF(159516)近5日累计净流入33亿</td><td class="tag tag-red">资金面积极</td></tr>
+  <tr><td>中微公司</td><td>半导体设备板块今日探底回升，设备ETF涨2.6%</td><td class="tag tag-red">短线企稳</td></tr>
+  <tr><td>兆易创新</td><td>东吴列为存储AI核心标的，"利空抢跑"后等美光验证</td><td class="tag tag-red">催化剂临近</td></tr>
+  <tr><td>圣邦股份</td><td>被广发机械定性为"AI敞口最高之一，明显低估"</td><td class="tag tag-red">观点重申</td></tr>
+  <tr><td>澜起科技</td><td>CPU相关受益AI算力需求，全面看好半导体</td><td class="tag tag-blue">行业利好</td></tr>
+  <tr><td>长电科技</td><td>今日涨停！先进封测需求爆发</td><td class="tag tag-red">强势信号</td></tr>
+  <tr><td>国瓷材料</td><td>中泰建材&化工重点推荐，6月金股</td><td class="tag tag-yellow">基本面改善</td></tr>
+  <tr><td>亨迪药业</td><td>今日20cm涨停，化学制药领涨</td><td class="tag tag-red">短线强势</td></tr>
+  <tr><td>睿智医药</td><td>今日20cm涨停，BIO 2026催化</td><td class="tag tag-red">事件驱动</td></tr>
+  <tr><td>新华制药</td><td>今日10cm涨停，医药板块集体爆发</td><td class="tag tag-red">板块效应</td></tr>
+  <tr><td>利柏特</td><td>广发建筑独家继续强推，核电招标在即</td><td class="tag tag-red">⭐ 翻倍空间</td></tr>
+</table>
+
+<div class="highlight-orange">
+  <strong>🟠 注意：</strong> 以上为参考信息，具体持仓需以用户实际持仓为准。
+</div>
+
+<h3>港股持仓（7只+）</h3>
+<table>
+  <tr><th>个股</th><th>最新动态</th><th>影响</th></tr>
+  <tr><td>腾讯控股</td><td>ADR较香港收市+1.36%，恒指夜期+0.78%</td><td class="tag tag-red">反弹信号</td></tr>
+  <tr><td>中芯国际（港股）</td><td>半导体板块低开高走，AI驱动晶圆厂长期需求</td><td class="tag tag-blue">行业利好</td></tr>
+  <tr><td>华虹半导体</td><td>今日半导体ETF成分股华虹宏力+9.30%</td><td class="tag tag-red">放量上涨</td></tr>
+  <tr><td>美团-W</td><td>恒科指夜期+0.98%，科网股多数上涨</td><td class="tag tag-blue">板块联动</td></tr>
+  <tr><td>小米集团-W</td><td>特斯拉人形机器人量产准备阶段，关注产业链催化</td><td class="tag tag-orange">事件催化</td></tr>
+  <tr><td>港股创新药</td><td>BIO 2026大会催化创新药情绪</td><td class="tag tag-blue">事件驱动</td></tr>
+</table>
+
+<div class="source-link">🔗 来源：Wind金融终端 · 腾讯自选股 · zsxq</div>
+
+<!-- ── 知识星球 ── -->
+<h2>🌐 知识星球（zsxq）研究纪要</h2>
+
+<p class="text2" style="font-size:0.85em">搜索范围：星号「水木调研纪要-2.0」「调研纪要更新」</p>
+
+<div class="card">
+  <h3>1.【东吴传媒海外 张良卫团队】利空抢跑，静待美光验证"双击"</h3>
+  <p>三星、海力士、美光、闪迪单日跌超10%。核心观点：情绪与持仓驱动的避险出清，而非基本面拐点。AI驱动下存储供不应求格局有望延续数年。</p>
+  <p><strong>推荐：</strong> SK海力士、美光、三星、⭐兆易创新、⭐普冉股份</p>
+  <div class="source-link">🔗 来源：zsxq「调研纪要更新」2026-06-24 12:32</div>
+</div>
+
+<div class="card">
+  <h3>2.【观点重申】AI推动半导体超级周期！最重要的是仓位！</h3>
+  <p>全面看好半导体各环节：晶圆厂（中芯国际、华虹半导体）、设备材料、存储（兆易创新、普冉股份）、模拟&功率（圣邦股份、思瑞浦）、封测（长电科技、通富微电）</p>
+  <p>核心逻辑：AI需求拉爆全产业链供给，最重要的是仓位！</p>
+  <div class="source-link">🔗 来源：zsxq「水木调研纪要-2.0」2026-06-24 16:21</div>
+</div>
+
+<div class="card">
+  <h3>3.【CT近峰视角】盘前阅读（2026-06-24）</h3>
+  <ul class="bullet">
+    <li>海外"芯片沉船事故"，费半-7.9%，美光-13%。VIX未失控</li>
+    <li>三星/海力士早盘收复昨日的1/2、1/3失地，等待今晚美光三季报</li>
+    <li>ETF流出（沪深300 -250亿）+ 融资流入约60亿</li>
+    <li>期指正指整体小幅加空</li>
+  </ul>
+  <div class="source-link">🔗 来源：zsxq「调研纪要更新」2026-06-24 11:00</div>
+</div>
+
+<div class="card">
+  <h3>4.【中泰建材&化工 孙颖团队】国瓷材料：MLCC粉体→AI材料新龙头</h3>
+  <p>自25年9月起翻4倍！持续重点推荐。5月31日推荐为6月金股。Rubin架构MLCC价值量提升明显。</p>
+  <div class="source-link">🔗 来源：zsxq「水木调研纪要-2.0」2026-06-18 13:59</div>
+</div>
+
+<div class="card">
+  <h3>5.【广发建筑】独家继续强推利柏特</h3>
+  <ul class="bullet">
+    <li>核电模块招标在即（广东太平岭、陆丰4台机组），FPSO海工景气向上</li>
+    <li>可转债强赎风险已释放（剩余仅0.26亿，7.5亿总额）</li>
+    <li>FY27归母净利约4亿，FY28约6亿，目标市值130亿（翻倍空间）</li>
+  </ul>
+  <div class="source-link">🔗 来源：zsxq「水木调研纪要-2.0」2026-06-21 19:58</div>
+</div>
+
+<div class="card">
+  <h3>6. 【广发机械】再次提醒重视半导体设备投资机遇</h3>
+  <p>AI驱动全球半导体产业处于历史级上行周期。WSTS将26年全球半导体市场规模上修至1.5万亿美元+。本轮半导体设备上行空间才刚刚打开。</p>
+  <div class="source-link">🔗 来源：zsxq「水木调研纪要-2.0」2026-06-09 20:39</div>
+</div>
+
+<!-- ── 关注清单 ── -->
+<h2>👁️ 关注清单（11只）</h2>
+
+<table>
+  <tr><th>标的</th><th>代码</th><th>关注理由</th></tr>
+  <tr><td>美光科技</td><td>MU.O</td><td class="tag tag-red">🔴 今晚三季报！全球存储核心催化剂</td></tr>
+  <tr><td>英伟达</td><td>NVDA.O</td><td>费半指数暴跌7.9%，关注6月底GTC动态</td></tr>
+  <tr><td>三星电子</td><td>005930.KS</td><td>18年最大单日跌幅后早盘反弹1/2</td></tr>
+  <tr><td>SK海力士</td><td>000660.KS</td><td>东吴认为利空抢跑，等待美光验证</td></tr>
+  <tr><td>中微公司</td><td>688012.SH</td><td>半导体设备龙头，ETF资金持续流入</td></tr>
+  <tr><td>北方华创</td><td>002371.SZ</td><td>设备ETF近5日累计净流入33亿</td></tr>
+  <tr><td>国瓷材料</td><td>300285.SZ</td><td>中泰金股，MLCC粉体→AI材料龙头</td></tr>
+  <tr><td>利柏特</td><td>605167.SH</td><td>广发建筑强推，核电招标催化在即</td></tr>
+  <tr><td>圣邦股份</td><td>300661.SZ</td><td>被定性为明显低估的AI高敞口标的</td></tr>
+  <tr><td>工业富联</td><td>601138.SH</td><td>AI算力龙头，民生电子继续强推</td></tr>
+  <tr><td>寒武纪</td><td>688256.SH</td><td>国产算力核心标的，AI超级周期受益</td></tr>
+</table>
+
+<div class="source-link">🔗 来源：Wind金融终端 · zsxq</div>
+
+<!-- ── 数据溯源 ── -->
+<h2>📋 数据溯源</h2>
+
+<table>
+  <tr><th>数据类别</th><th>数据源</th><th>备注</th></tr>
+  <tr><td>A股行情数据</td><td>Wind金融终端</td><td>6月23日收盘数据</td></tr>
+  <tr><td>盘中最新行情</td><td>Wind金融终端</td><td>6月24日盘中动态</td></tr>
+  <tr><td>全球市场数据</td><td>Wind金融终端 / Bloomberg</td><td>隔夜美股、韩股、日股</td></tr>
+  <tr><td>新闻/公告</td><td>Wind · 财联社 · 证券之星</td><td>6月24日新闻</td></tr>
+  <tr><td>研报/策略观点</td><td>Wind金融终端 · zsxq</td><td>多家券商观点</td></tr>
+  <tr><td>调研纪要</td><td>zsxq（双星球）</td><td>电话会纪要/行业跟踪</td></tr>
+  <tr><td>板块资金流向</td><td>Wind金融终端</td><td>6月23日资金监控</td></tr>
+  <tr><td>ETF资金数据</td><td>Wind金融终端</td><td>半导体设备ETF等</td></tr>
+</table>
+
+<p style="font-size:0.85em; color: var(--text2); margin-top: 12px;">
+  <em>免责声明：本报告仅为信息整理汇总，不构成投资建议。投资有风险，决策需谨慎。</em>
+</p>
+
+<div class="report-footer">
+  数据来源：Wind 万得金融终端 · 财联社 · zsxq 知识星球 · My Research Central · via WB
+</div>
+
+</body>
+</html>
