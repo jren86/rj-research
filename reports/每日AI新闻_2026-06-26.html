@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日 AI 全球新闻 · 2026-06-26</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── Content paragraphs ── */
+p {
+  margin: 6px 0;
+  line-height: 1.65;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+strong {
+  color: var(--text);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日 AI 全球新闻</h1>
+  <div class="meta">2026年6月26日 星期五 · 覆盖过去24小时</div>
+</div>
+
+<h2>🔴 头条要闻</h2>
+
+<h3>1. OpenAI 发布首款自研 AI 芯片 Jalapeño，联合 Broadcom 历时9个月</h3>
+<p>OpenAI 于6月24日正式发布其首款自研推理处理器 <strong>Jalapeño</strong>，由 Broadcom 制造。从设计到流片仅耗时9个月，创下高性能先进 ASIC 最快开发周期纪录。OpenAI 利用自身大模型加速芯片设计优化流程，联合天弘电子完成板卡与整机集成。早期测试数据显示，该芯片每瓦能效大幅超越当前市面顶尖算力产品。</p>
+<div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/">来源：TechCrunch</a> · <a href="https://www.cnbc.com/2026/06/24/openai-and-broadcom-reveal-jalapeno-first-ai-chip-in-partnership.html">CNBC</a></div>
+
+<h3>2. Cerebras 首份财报后股价暴跌，核心毛利率展望引发恐慌</h3>
+<p>AI 芯片公司 Cerebras Systems（CBRS）在上市后的首份财报中预测核心业务毛利率将收窄，引发投资者恐慌，股价从 IPO 高点下跌约 <strong class="green">47%</strong>。尽管营收同比几乎翻倍，OpenAI 和 AWS 大单推动增长，但市场对算力毛利率可持续性的担忧盖过利好。CEO Andrew Feldman 随后表示市场误解了其利润率前景。</p>
+<div class="source-link">🔗 <a href="https://www.cnbc.com/2026/06/23/cerebras-cbrs-q1-earnings-report-2026.html">来源：CNBC</a> · <a href="https://invezz.com/news/2026/06/24/cerebras-stock-sinks-as-margin-outlook-overshadows-ai-deals/">Invezz</a></div>
+
+<h3>3. 近400家美国地方报纸联合起诉 OpenAI 和微软，指控大规模版权侵权</h3>
+<p>6月24日，史上最大规模的地方报纸出版商联盟在纽约联邦法院对 OpenAI 和微软提起诉讼，指控两家科技公司在未获得授权的情况下，使用其新闻内容训练 AI 模型。该联盟涵盖近400家美国地方和区域性报纸，标志着 AI 版权战从个别出版商（如纽约时报）转向系统性集体行动。</p>
+<div class="source-link">🔗 <a href="https://www.courthousenews.com/newspapers-sue-openai-microsoft-for-mass-copyright-infringement/">来源：Courthouse News</a> · <a href="https://www.chinaz.com/ainews/29171.shtml">站长之家</a></div>
+
+<h3>4. Agility Robotics 宣布 $25亿 SPAC 合并上市，人形机器人赛道资本化提速</h3>
+<p>人形机器人初创公司 Agility Robotics 于6月24日宣布将与 Churchill Capital Corp XI 通过 SPAC 合并上市，估值 <strong>$25亿</strong>，预计筹集超过 $6.2亿 资金。该公司从俄勒冈州立大学孵化，以双足机器人 Digit 闻名。这是2026年人形机器人领域最大规模资本化事件之一，预示该赛道或迎 IPO 潮。</p>
+<div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/agility-robotics-plans-to-go-public-via-spac-in-a-2-5b-deal/">来源：TechCrunch</a> · <a href="https://www.businesswire.com/news/home/20260624555633/en/Agility-Robotics-to-Go-Public-Through-2.5-Billion-Merger-with-Churchill-Capital-Corp-XI">Business Wire</a></div>
+
+<h3>5. SpaceX 与 Reflection AI 签署 $63亿 算力大单，月付 $1.5亿</h3>
+<p>6月22日，SpaceX 与开源 AI 初创公司 Reflection AI 签署算力协议，后者将自2026年7月1日起每月支付 <strong>$1.5亿</strong>，使用 SpaceX 孟菲斯 Colossus 2 数据中心的 NVIDIA GB300 芯片集群。若协议执行至2029年，总价值约 <strong>$63亿</strong>。这是 SpaceX 在非航天业务上的最大单笔合同之一，显示其在 AI 基础设施领域的野心。</p>
+<div class="source-link">🔗 <a href="https://www.cnbc.com/2026/06/22/spacex-ai-colossus-data-center-reflection.html">来源：CNBC</a> · <a href="https://techcrunch.com/2026/06/22/spacex-inks-compute-deal-with-reflection-ai-an-open-source-ai-lab/">TechCrunch</a></div>
+
+<h2>🔵 产业动态</h2>
+
+<h3>Google DeepMind 投资 $7500万 联手 A24 开发 AI 电影制作工具</h3>
+<p>6月22日，Google DeepMind 宣布向独立电影工作室 <strong>A24</strong> 投资 <strong>$7500万</strong>，合作开发 AI 电影制作工具。DeepMind 的 Veo 视频生成模型和 Gemini 多模态模型将整合进 A24 的制作流程。这是 Google 首次直接进军好莱坞内容创作领域，标志着 AI 从辅助工具向核心制作基础设施的跃迁。</p>
+<div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/22/google-deepmind-bets-75m-on-ais-future-in-hollywood-with-a24-deal/">来源：TechCrunch</a></div>
+
+<h3>Groq 完成 $6.5亿 融资，扩张 AI 推理云业务</h3>
+<p>AI 芯片公司 Groq 于6月22日宣布完成 <strong>$6.5亿</strong> 成长融资，由 Disruptive 和 Infinitum 领投，用于加速 AI 推理云业务扩张。Groq 以 LPU（语言处理单元）架构在推理速度上挑战 NVIDIA 主导地位，此次融资正值 AI 推理市场需求爆发期。</p>
+<div class="source-link">🔗 <a href="https://groq.com/newsroom/groq-raises-usd650m-to-scale-its-ai-inference-cloud-business">来源：Groq 官方</a></div>
+
+<h3>MWC上海 2026："Token经营" 成为运营商新焦点</h3>
+<p>6月24日至26日，2026上海世界移动通信大会（MWC上海）举行，400家展商参展。除6G和移动AI外，<strong>"Token经营"</strong> 成为运营商新商业模式焦点——从传统的流量经营转向围绕 AI Token 的计费与服务体系。中兴、华为展示了相关方案，但该模式尚处早期探索阶段。</p>
+<div class="source-link">🔗 <a href="https://www.nbd.com.cn/articles/2026-06-25/4436971.html">来源：每日经济新闻</a></div>
+
+<h3>夏季达沃斯论坛：AI 规模化创新与 "中国方案" 成高频词</h3>
+<p>6月22日至24日，2026夏季达沃斯论坛在大连举行，来自90多个国家和地区的1700多名代表参会。AI 规模化创新与产业落地成为全场热议焦点，多场专题对话聚焦 AI 技术迭代与产业未来，"中国方案" 成为高频词。</p>
+<div class="source-link">🔗 <a href="https://www.chinadaily.com.cn/a/202606/22/WS6a38ee06a310986e2b46134d.html">来源：China Daily</a></div>
+
+<h2>🔵 产品与公司</h2>
+
+<h3>Figma Config 2026 发布 Code Layers，终结设计-开发交接</h3>
+<p>6月26日，Figma 在 Config 2026 大会上发布六大核心功能，最引人注目的是 <strong>Code Layers</strong>——开发者可直接在 Figma 画布上编辑代码、克隆仓库、利用 AI 代理生成新方向，并将更改同步回代码。该功能预计2026年7月开放早期测试，旨在终结长期存在的设计-开发交接痛点。同时发布的还有 Figma Motion（原生动效时间轴）、WebGPU Shaders（着色器特效）和生成式 AI 插件。</p>
+<div class="source-link">🔗 <a href="https://byteiota.com/figma-config-2026-code-layers-end-the-design-dev-handoff/">来源：Byte Iota</a> · <a href="https://explainx.ai/blog/figma-config-2026-complete-recap-motion-code-shaders-ai-2026">explainx.ai</a></div>
+
+<h3>Meta 推出 Facebook AI 创作者伴侣应用</h3>
+<p>6月24日，Meta 宣布将 Facebook 的 Creator Studio 重新打造为一款独立的 <strong>AI 创作者伴侣应用</strong>，内置 AI Creator Assistant，帮助创作者分析数据、提供增长建议、筛选重要评论。该应用目前面向部分创作者测试，旨在应对 TikTok 和 YouTube 的竞争，将更多创作流程留在 Facebook 生态内。</p>
+<div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/facebook-rolls-out-an-ai-companion-app-for-creators/">来源：TechCrunch</a></div>
+
+<h3>Anthropic 推出 Claude Tag，AI 助手常驻 Slack 学习团队知识</h3>
+<p>6月23日，Anthropic 正式发布 <strong>Claude Tag</strong> 研究预览版，将 Claude 以 AI 团队成员身份常驻于 Slack 平台。通过 <code>@Claude</code> 标记，用户可在聊天中委派任务、触发持续监控或发起异步工作流。Claude Tag 能够学习 Slack 消息历史，捕捉企业组织背景与制度性知识，成为"全天候在线的 AI 队友"。</p>
+<div class="source-link">🔗 <a href="https://news.qiniu.com/archives/1782265094237">来源：七牛云</a> · <a href="https://ai.zhiding.cn/2026/0624/3191473.shtml">至顶网</a></div>
+
+<h3>OpenAI GPT-5.6 传闻：150万上下文 + 1/3 Fable 5 价格</h3>
+<p>据多家科技媒体援引 testingcatalog 报道，OpenAI 可能在6月下旬（22-28日窗口）发布新一代旗舰模型 <strong>GPT-5.6</strong>。传闻称该模型支持 <strong>150万 tokens</strong> 上下文窗口，在编码和 Agent 工作流上有所提升，API 价格可能仅为 Claude Fable 5 的三分之一。Polymarket 预测市场对该窗口的概率一度高涨。</p>
+<div class="source-link">🔗 <a href="https://news.qq.com/rain/a/20260621A0581J00">来源：腾讯新闻</a> · <a href="https://news.qq.com/rain/a/20260616A05NRO00">腾讯新闻</a></div>
+
+<h2>💡 研究突破</h2>
+
+<h3>NVIDIA 发布 Nemotron 3 Ultra：550B 混合 Mamba-Attention 架构</h3>
+<p>NVIDIA 于6月4日发布 <strong>Nemotron 3 Ultra</strong>，采用 5500亿 总参数 / 550亿 激活参数的 MoE 混合架构，结合 <strong>Mamba-2</strong> 状态空间模型与 <strong>Attention</strong> 机制。该模型支持 100万 tokens 上下文窗口，配备可开关的 reasoning 模式，在推理吞吐量上显著优于纯 Attention 架构。技术报告已发布于 arXiv。</p>
+<div class="source-link">🔗 <a href="https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/">来源：NVIDIA Research</a> · <a href="https://arxiv.org/abs/2606.15007">arXiv</a></div>
+
+<h3>AI 并未摧毁工程岗位——SignalFire 数据显示工程师招聘最具韧性</h3>
+<p>6月24日，TechCrunch 援引 SignalFire 2026年人才报告报道：尽管 AI 编码工具普及，工程岗位在裁员潮中展现出最强韧性。SignalFire 追踪了超过8000万家公司的数据，发现工程师在新招聘中的占比反而扩大，AI 更多是赋能而非替代。Uber 在4月中旬就已花完全年 AI 预算的案例则被用作"企业 AI 支出失控"的反面教材。</p>
+<div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/ai-was-supposed-to-kill-engineering-jobs-but-new-data-suggests-theyre-the-most-resilient/">来源：TechCrunch</a></div>
+
+<h3>企业 AI 预算失控：Uber 4月花完全年额度</h3>
+<p>据 Axios 和 DatabreachToday 报道，企业 AI 支出正在失控。典型案例如 <strong>Uber 在4月中旬即花完2026全年 AI 预算</strong>。另一家未具名企业因给员工无限制使用 Claude 且不设用量上限，导致费用激增。CFO 们开始硬性设限，AI 从"无限预算"时代进入"精打细算"时代。</p>
+<div class="source-link">🔗 <a href="https://www.databreachtoday.com/ai-spending-keeps-outrunning-budgets-a-31956">来源：DataBreachToday</a></div>
+
+<h2>⚠️ 政策与监管</h2>
+
+<h3>近400家地方报纸起诉 OpenAI 和微软，AI 版权战进入集体诉讼阶段</h3>
+<p>6月24日，近400家美国地方报纸出版商联盟在纽约联邦法院起诉 OpenAI 和微软，指控大规模版权侵权。这是 AI 训练数据版权争议从个案（纽约时报诉 OpenAI）升级为系统性集体诉讼的标志性事件。若出版商胜诉，AI 公司的训练数据合规成本可能大幅上升。</p>
+<div class="source-link">🔗 <a href="https://www.courthousenews.com/newspapers-sue-openai-microsoft-for-mass-copyright-infringement/">来源：Courthouse News</a></div>
+
+<h3>出版商与 Google AI 爬虫对抗升级</h3>
+<p>6月3日，美联社、纽约时报、彭博、NBC、NPR、Fox 等六大出版商联合要求 Common Crawl 停止抓取内容用于 AI 训练。研究显示，屏蔽 AI 爬虫的出版商平均损失 <strong>7%-23%</strong> 的搜索流量，但内容保护效果有限。内容创作者与分发平台之间的结构性矛盾正在重塑二十多年来"免费内容换流量"的默契。</p>
+<div class="source-link">🔗 <a href="https://cicero.studio/en/blog/publishers-common-crawl-block-ai-crawlers-visibility-2026/">来源：Cicero Studio</a></div>
+
+<h3>欧盟 AI Act 8月2日全面生效倒计时</h3>
+<p>欧盟 AI Act 将于 <strong>2026年8月2日</strong> 全面生效，高风险 AI 系统需完成合规评估，违规罚款最高达 <strong>€3500万</strong> 或全球营收的 <strong>7%</strong>。5月7日通过的 Digital Omnibus 协议将执法分为四个阶段（2026年8月至2028年8月），但部分核心义务已迫在眉睫。企业合规窗口仅剩约 <strong>5周</strong>。</p>
+<div class="source-link">🔗 <a href="https://euaiactchecklist.com/eu-ai-act-august-2026-deadline.html">来源：EU AI Act Checklist</a></div>
+
+<h3>中国金融监管总局发布 AI 安全应用新规</h3>
+<p>6月25日，中国国家金融监管总局发布《关于银行业保险业人工智能安全开发应用的指导意见》，要求金融机构建立健全 AI 应用全生命周期管理体系，强化高风险应用准入管理，加强数据安全与个人信息保护。这是金融垂直领域首份系统性 AI 安全监管文件。</p>
+<div class="source-link">🔗 <a href="https://finance.people.com.cn/n1/2026/0625/c1004-40747361.html">来源：人民网</a></div>
+
+<h3>中国八部门发布 "AI+消费" 17条实施意见</h3>
+<p>6月18日，商务部等八部门联合发布《关于加快"人工智能+消费"发展的实施意见》，围绕 AI 手机、智能家居、人形机器人、脑机接口、居家养老、文旅教育等五方面提出17条举措。该文件标志着"AI+消费"正式上升为<strong>国家级战略行动</strong>。</p>
+<div class="source-link">🔗 <a href="https://finance.sina.com.cn/jjxw/2026-06-22/doc-iniefuxz7219764.shtml">来源：新浪财经</a></div>
+
+<div class="report-footer">
+数据来源：TechCrunch / CNBC / Courthouse News / The Register / 人民网 / 每日经济新闻 / 新浪财经 / Groq / NVIDIA Research / arXiv / SignalFire / Axios / DataBreachToday / EU AI Act Checklist / Cicero Studio / Business Wire / China Daily / explainx.ai / Byte Iota / 七牛云 / 至顶网 / 站长之家 / 腾讯新闻<br>
+My Research Central · via WB
+</div>
+
+</body>
+</html>
