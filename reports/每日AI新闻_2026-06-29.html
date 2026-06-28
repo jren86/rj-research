@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-06-29</title>
+  <style>
+    /* ============================================
+       Unified Report Template — My Research Central
+       All periodic reports must use these styles.
+       ============================================ */
+
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .report-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-header h1 {
+      font-size: 1.4em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .report-header .meta {
+      font-size: 0.82em;
+      color: var(--text2);
+    }
+
+    h2 {
+      font-size: 1.15em;
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: var(--blue);
+    }
+
+    h3 {
+      font-size: 1em;
+      margin: 14px 0 8px;
+      color: var(--text);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+
+    th {
+      background: var(--card);
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover {
+      background: rgba(88, 166, 255, 0.05);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78em;
+      margin-right: 4px;
+    }
+
+    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+
+    .highlight {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+
+    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+
+    ul.bullet {
+      margin: 6px 0 6px 18px;
+      font-size: 0.92em;
+    }
+
+    ul.bullet li {
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+
+    .source-link {
+      display: block;
+      font-size: 0.78em;
+      color: var(--text2);
+      margin: 4px 0 8px 0;
+      word-break: break-all;
+    }
+
+    .source-link a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    .report-footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.75em;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.05em; }
+      table { font-size: 0.8em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📰 每日AI新闻</h1>
+  <div class="meta">2026-06-29（周一） · 数据截至 07:30 CST · 覆盖 6/25–6/29 全球 AI 动态</div>
+</div>
+
+<!-- 🔴 头条要闻 -->
+<h2>🔴 头条要闻</h2>
+
+<div class="card">
+  <h3>① 中国 Z.ai 发布 GLM-5.2 开源模型，网络安全能力逼近 Mythos</h3>
+  <p>智谱 AI（Z.ai）发布开源权重模型 GLM-5.2，在漏洞查找和网络安全场景中声称已达到 Anthropic Mythos 水平，通用任务仍落后但差距大幅缩小。该模型为开源权重，任何人都可下载运行，美国视此为国家安全的重大威胁。</p>
+  <p>360 创始人周鸿祎在北京网络安全大会上将 Mythos 比作<span class="red">「网络核武器」</span>，呼吁中国必须研发自有 Mythos 级模型以实现"相互确保摧毁"的威慑平衡。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/958804/chinas-z-ai-glm-52-mythos-cybersecurity" target="_blank">来源：The Verge — China's Z.ai claims it can match Mythos on cybersecurity</a></div>
+</div>
+
+<div class="card">
+  <h3>② Anthropic 指控阿里巴巴发动史上最大规模 Claude 克隆攻击</h3>
+  <p>Anthropic 致信美国参议院，指控阿里巴巴在 4/22–6/5 期间使用近 <span class="red">2.5 万个欺诈账号</span>，与 Claude 进行超 <span class="red">2880 万次交互</span>，窃取智能推理、软件工程、长周期任务等核心能力。Anthropic 要求国会立法：更新反垄断法以便 AI 公司共享威胁信息、加强芯片出口管制、对违规中国实验室施以惩罚。</p>
+  <p>阿里巴巴股价应声下跌 3%，同时阿里已就"中国军工企业"标签起诉美国国防部。</p>
+  <div class="source-link">🔗 <a href="https://arstechnica.com/tech-policy/2026/06/anthropic-claims-alibaba-defied-trump-to-attack-claude-and-steal-capabilities/" target="_blank">来源：Ars Technica — Anthropic says Alibaba must be punished for largest Claude cloning attack</a></div>
+</div>
+
+<div class="card">
+  <h3>③ 特朗普政府扩大 Mythos 分发，同时要求 OpenAI GPT-5.6 分阶段发布</h3>
+  <p>特朗普政府批准 Anthropic Mythos 向 <span class="blue">100+ 美国企业和政府机构</span>开放使用。与此同时，白宫要求 OpenAI 对 GPT-5.6 实行逐客户审批的分阶段发布——OpenAI 公开表态称"此类限制不应成为常态"。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/" target="_blank">来源：TechCrunch — Trump Admin releases Mythos to 100+ US companies</a></div>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/" target="_blank">来源：TechCrunch — OpenAI limits GPT-5.6 rollout after government request</a></div>
+</div>
+
+<div class="card">
+  <h3>④ IBM 发布全球首款"亚 1 纳米"芯片技术</h3>
+  <p>IBM 发布 <span class="blue">nanostack（纳米堆叠）架构</span>，通过垂直堆叠晶体管突破物理缩放极限，属于 0.7nm（7 埃）节点。<span class="red">性能提升 50%</span> 或能效提升 70%，SRAM 缩放能力提升 40%，适配 AI 数据中心高算力需求。预计 5–10 年内商用落地。</p>
+  <div class="source-link">🔗 <a href="https://arstechnica.com/gadgets/2026/06/ibm-claims-worlds-first-sub-1-nanometer-chip-technology/" target="_blank">来源：Ars Technica — IBM claims world's first sub-1-nanometer chip technology</a></div>
+</div>
+
+<div class="card">
+  <h3>⑤ 福特因 AI 质量不达标重新雇佣 350 名资深工程师</h3>
+  <p>福特 COO 承认过度依赖 AI 自动化品质检测导致产品质量下滑，重新雇佣 350 名"灰胡子"资深工程师培训年轻员工并重编程 AI 工具。此举预计全年节省 <span class="red">10 亿美元成本</span>，福特同时夺得 JD Power 初始质量调查主流品牌榜首。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short/" target="_blank">来源：TechCrunch — Ford rehires 'gray beard' engineers after AI falls short</a></div>
+</div>
+
+<!-- 行业动态 -->
+<h2>🔵 行业动态</h2>
+
+<h3>算力与基础设施</h3>
+
+<div class="card">
+  <p><span class="blue">📊 Google 限制 Meta 使用 Gemini 算力</span>：云算力供应不足，首次公开暴露 AI 行业算力基础设施瓶颈，连头部科技公司也面临 GPU 短缺。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/958787/google-is-putting-a-cap-on-metas-gemini-usage" target="_blank">来源：The Verge</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">美光（Micron）被华尔街视为「下一个英伟达」</span>：AI 驱动的 HBM 内存需求激增，美光成为 AI 供应链关键受益者。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="orange">⚠️ 甲骨文裁员 2.1 万人以支撑 AI 投资</span>：债务驱动的 AI 数据中心建设需要大规模削减人力成本。</p>
+  <div class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments/" target="_blank">来源：Ars Technica</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">亚马逊向印度追加 $130 亿 AI 基础设施投资</span>：总承诺达 $480 亿，与微软 $175 亿、Google $150 亿三足鼎立。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/amazon-ups-india-bet-with-fresh-13b-ai-infrastructure-investment/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="orange">SoftBank CEO 质疑马斯克轨道数据中心计划</span>：对 SpaceX 轨道 AI 数据中心可行性提出疑问。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/27/softbanks-ceo-isnt-the-only-one-with-questions-about-elon-musks-orbital-data-center-hype/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="orange">AI 人才争夺战加剧</span>：Google AI 研究员持续流失至 Anthropic 等竞争对手。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<h3>模型竞争</h3>
+
+<div class="card">
+  <p><span class="blue">亚洲 AI 初创公司发布类 Mythos 模型</span>：在 Anthropic 出口禁令背景下，亚洲公司加速推出对标 Mythos 的自主模型。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">Anthropic Claude 赢得付费消费者市场</span>：Claude 在付费消费者领域加速追赶 ChatGPT，部分场景增长达 75%。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="green">Cerebras 股价暴跌</span>：CEO 称利润率展望被误解，AI 芯片市场竞争加剧。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/cerebras-stock-plunges-after-earnings-as-ceo-says-margin-outlook-was-misunderstood/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<h3>就业与人才</h3>
+
+<div class="card">
+  <p><span class="blue">AI 未能消灭编程岗位，工程师最抗 AI 替代</span>：最新数据显示工程岗位在 AI 浪潮中韧性最强。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/ai-was-supposed-to-kill-engineering-jobs-but-new-data-suggests-theyre-the-most-resilient/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="orange">企业争相阻止员工用小任务浪费 AI 预算</span>：多个公司报告员工将 AI 用于非核心任务导致 AI 预算超额。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/companies-are-scrambling-to-stop-employees-from-maxing-out-ai-budgets-with-small-tasks/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<!-- 产品与公司 -->
+<h2>📱 产品与公司</h2>
+
+<h3>芯片与硬件</h3>
+
+<div class="card">
+  <p><span class="red">🔴 OpenAI 首款自研 AI 芯片 Jalapeño 亮相</span>，同时与博通合作推出 LLM 推理专用芯片——OpenAI 正式进入 AI 芯片赛道，英伟达面临多方压力。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/955939/openai-reveals-its-first-ai-processor-jalapeno" target="_blank">来源：The Verge — OpenAI reveals Jalapeño</a></div>
+  <div class="source-link">🔗 <a href="https://arstechnica.com/gadgets/2026/06/openai-and-broadcom-announce-chip-designed-for-llm-inference-at-scale/" target="_blank">来源：Ars Technica — OpenAI and Broadcom LLM inference chip</a></div>
+</div>
+
+<h3>人事变动</h3>
+
+<div class="card">
+  <p><span class="orange">苹果 Vision Pro 负责人 Paul Meade 离职加入 OpenAI</span>：将加入由 Jony Ive 等牵头的 OpenAI 硬件团队。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/27/apple-vision-pro-exec-is-reportedly-leaving-for-openai/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="orange">OpenAI 挖走 Uber 印度总裁</span>：领导其美国以外最大市场。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/26/openai-poaches-uber-india-chief-to-lead-its-biggest-market-outside-the-u-s/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<h3>产品发布</h3>
+
+<div class="card">
+  <p><span class="blue">Anthropic 推出 Claude Tag：Slack AI 智能体</span>——企业用户可在 Slack 中 @Claude 完成代码合并、数据分析、任务执行。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/954921/anthropic-introduced-claude-tag-a-new-ai-agent-slack-integration" target="_blank">来源：The Verge</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">Google Finance 推出 AI 驱动安卓应用</span>——20 年首个官方移动端，内置 AI 功能。</p>
+  <div class="source-link">🔗 <a href="https://arstechnica.com/google/2026/06/google-finance-finally-gets-a-mobile-app-as-ai-powered-overhaul-leaves-beta/" target="_blank">来源：Ars Technica</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">Notion 关停邮件应用，转向 AI 代理管理收件箱</span>——多数用户已转为用 AI 代理处理邮件。</p>
+  <div class="source-link">🔗 <a href="https://arstechnica.com/gadgets/2026/06/notion-killing-skiff-influenced-email-app-since-most-users-use-ai-agents-instead/" target="_blank">来源：Ars Technica</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">ElevenLabs 上线 Google SynthID 水印</span>——AI 音频嵌入不可见水印，支持检测识别。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/957510/elevenlabs-rolls-out-synthid-support" target="_blank">来源：The Verge</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">Superhuman 收购 AI 检测工具 GPTZero</span>——集成至 Superhuman Go AI 助手，覆盖 100 万款应用。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/955020/superhuman-is-acquiring-gptzero-an-ai-content-detector" target="_blank">来源：The Verge</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">Facebook 推出 AI 伴侣应用给创作者</span>——面向内容创作者的 AI 助手工具。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/facebook-rolls-out-an-ai-companion-app-for-creators/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">Adobe 收购图像增强工具 Topaz Labs</span>——强化 AI 驱动的图像与视频增强能力。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/adobe-acquires-image-and-video-enhancement-tool-maker-topaz-labs/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<h3>融资</h3>
+
+<div class="card">
+  <p><span class="blue">General Intuition 估值 $23 亿</span>：Khosla/Jeff Bezos 参投，用视频游戏数据训练真实世界 AI 代理。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">Patronus AI 获 $5000 万融资</span>：构建"数字世界"对 AI 智能体进行压力测试。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="blue">Netris 获 a16z $1500 万 A 轮</span>：帮助 AI neoclouds 更快上线部署。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/netris-raises-15m-series-a-from-a16z-to-help-ai-neoclouds-go-live-faster/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<!-- 研究突破 -->
+<h2>🔬 研究突破</h2>
+
+<div class="card">
+  <p><span class="purple">Databricks 前 AI 负责人声称可将 AI 能耗降低 1000 倍</span>：Unconventional AI 公司聚焦于 AI 推理能效革命。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="purple">AI 芯片竞赛全面升级</span>：OpenAI、SpaceX 等科技巨头纷纷自研芯片，英伟达面临多方竞争压力。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/video/why-everyone-from-openai-to-spacex-is-building-their-own-chips-and-turning-up-the-heat-on-nvidia/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="purple">AI 抗癌新实践</span>：一位创业者患癌后用 AI 工具辅助治疗决策，展现 AI 在个人医疗中的新应用场景。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/27/the-fittest-founder-in-the-room-got-cancer-heres-how-he-used-ai-to-fight-back/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<!-- 政策与监管 -->
+<h2>⚖️ 政策与监管</h2>
+
+<div class="card">
+  <p><span class="red">白宫要求 Meta 提交 AI 模型接受政府安全审查，Meta 仍未同意</span>：OpenAI、Anthropic、Google、微软、xAI 均已同意，Meta 称仍在协商细节。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/tech/955856/meta-reportedly-still-hasnt-agreed-to-allow-the-us-government-to-review-its-ai-models" target="_blank">来源：The Verge</a></div>
+</div>
+
+<div class="card">
+  <p><span class="orange">近 400 家美国地方报纸起诉 OpenAI 和微软侵权</span>：指控未经许可抓取新闻内容用于模型训练。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/956543/nearly-400-local-newspapers-are-suing-openai-and-microsoft" target="_blank">来源：The Verge</a></div>
+</div>
+
+<div class="card">
+  <p><span class="orange">纽约时报修改诉状：指控微软为 OpenAI 建造侵权超级计算机</span>：在美国最高法院对索尼案判决后提出新指控。</p>
+  <div class="source-link">🔗 <a href="https://arstechnica.com/tech-policy/2026/06/microsoft-built-supercomputer-to-help-openai-infringe-copyrights-nyt-alleged/" target="_blank">来源：Ars Technica</a></div>
+</div>
+
+<div class="card">
+  <p><span class="orange">欧洲对华盛顿芯片战提出异议</span>：欧洲对美国芯片出口管制政策表达担忧。</p>
+  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/europe-is-pushing-back-on-washingtons-chip-war/" target="_blank">来源：TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <p><span class="purple">好莱坞「人类同意注册中心」上线</span>：Cate Blanchett 发起，用户可设定 AI 使用个人姓名/图像/声音的规则（允许/禁止/付费），乔治·克鲁尼、汤姆·汉克斯等表态支持。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/954846/the-cate-blanchett-led-human-consent-registry-launches-today" target="_blank">来源：The Verge</a></div>
+</div>
+
+<div class="card">
+  <p><span class="orange">Anthropic Claude 出现服务宕机</span>：美东时间上午发生，团队已定位问题并修复。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/954831/claude-is-down" target="_blank">来源：The Verge</a></div>
+</div>
+
+<!-- 中国AI动态 -->
+<h2>🇨🇳 中国 AI 动态</h2>
+
+<div class="card">
+  <ul class="bullet">
+    <li><span class="blue">四川大学成立人工智能学院</span>：聚焦大模型与智能计算、具身智能、智能交叉融合三大方向，打造西部 AI 人才培育高地。</li>
+    <li><span class="blue">中国大模型跻身全球第一梯队</span>：开源策略改写中西方 AI 竞争格局，国产模型在垂直场景加速落地。</li>
+    <li><span class="blue">AI 中医大模型成为行业热点</span>：2026 年中医药 AI 大会推动千年岐黄与人工智能深度融合。</li>
+    <li><span class="blue">中国探索开展 AI 监管国际合作</span>：国家发改委表态推动 AI 治理多边合作。</li>
+  </ul>
+</div>
+
+<!-- 关键观察 -->
+<h2>💡 本周关键观察</h2>
+
+<div class="highlight highlight-red">
+  <p><strong>1. 中美 AI 对抗全面升级至「模型窃取—反窃取」阶段</strong></p>
+  <p>Anthropic 公开指控阿里巴巴、GLM-5.2 逼近 Mythos，标志着竞争从技术追赶进入制度博弈。开源权重模型使监管更加困难。</p>
+</div>
+
+<div class="highlight highlight-blue">
+  <p><strong>2. AI 芯片去英伟达化趋势加速</strong></p>
+  <p>OpenAI 自研 Jalapeño + 博通推理芯片，IBM nanostack 亚纳米突破——自研芯片已成头部玩家标配，英伟达面临前所未有的竞争压力。</p>
+</div>
+
+<div class="highlight highlight-orange">
+  <p><strong>3. AI 产业「创造性破坏」效应显现</strong></p>
+  <p>甲骨文裁员 2.1 万换 AI 投资、福特 AI 质量翻车回聘老工程师——AI 落地过程中的阵痛正在大规模发生。</p>
+</div>
+
+<div class="highlight highlight-blue">
+  <p><strong>4. 算力短缺成为公开瓶颈</strong></p>
+  <p>Google 限制 Meta 用 Gemini 算力，暴露了行业最大公开秘密——即使是万亿市值公司也缺 GPU。</p>
+</div>
+
+<div class="highlight highlight-purple">
+  <p><strong>5. AI 治理从自愿走向强制</strong></p>
+  <p>白宫对 OpenAI 和 Meta 的审查要求、好莱坞人类同意注册中心、欧洲对芯片战的异议——全球 AI 监管框架正在加速成形。</p>
+</div>
+
+<div class="report-footer">
+  📊 数据来源：TechCrunch · Ars Technica · The Verge · 微信公众号 · My Research Central · via WB
+</div>
+
+</body>
+</html>
