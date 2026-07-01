@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>早间投研日报 · 2026-07-01</title>
+  <style>
+    /* ============================================
+       Unified Report Template — My Research Central
+       All periodic reports must use these styles.
+       ============================================ */
+
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    /* ── Header ── */
+    .report-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-header h1 {
+      font-size: 1.4em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .report-header .meta {
+      font-size: 0.82em;
+      color: var(--text2);
+    }
+
+    /* ── Section headers ── */
+    h2 {
+      font-size: 1.15em;
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: var(--blue);
+    }
+
+    h3 {
+      font-size: 1em;
+      margin: 14px 0 8px;
+      color: var(--text);
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+
+    th {
+      background: var(--card);
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover {
+      background: rgba(88, 166, 255, 0.05);
+    }
+
+    /* ── Tags ── */
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78em;
+      margin-right: 4px;
+    }
+
+    .tag-red {
+      background: rgba(248, 81, 73, 0.15);
+      color: var(--red);
+    }
+
+    .tag-green {
+      background: rgba(63, 185, 80, 0.15);
+      color: var(--green);
+    }
+
+    .tag-orange {
+      background: rgba(210, 153, 34, 0.15);
+      color: var(--orange);
+    }
+
+    .tag-blue {
+      background: rgba(88, 166, 255, 0.15);
+      color: var(--blue);
+    }
+
+    .tag-purple {
+      background: rgba(188, 140, 255, 0.15);
+      color: var(--purple);
+    }
+
+    .tag-yellow {
+      background: rgba(227, 179, 65, 0.15);
+      color: var(--yellow);
+    }
+
+    /* ── Highlights ── */
+    .highlight {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+
+    .highlight-red {
+      background: rgba(248, 81, 73, 0.08);
+      border-left: 3px solid var(--red);
+    }
+
+    .highlight-orange {
+      background: rgba(210, 153, 34, 0.08);
+      border-left: 3px solid var(--orange);
+    }
+
+    .highlight-blue {
+      background: rgba(88, 166, 255, 0.08);
+      border-left: 3px solid var(--blue);
+    }
+
+    .highlight-green {
+      background: rgba(63, 185, 80, 0.08);
+      border-left: 3px solid var(--green);
+    }
+
+    /* ── Bullet lists ── */
+    ul.bullet {
+      margin: 6px 0 6px 18px;
+      font-size: 0.92em;
+    }
+
+    ul.bullet li {
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+
+    /* ── Colors ── */
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+
+    /* ── Source links ── */
+    .source-link {
+      display: block;
+      font-size: 0.78em;
+      color: var(--text2);
+      margin: 4px 0 8px 0;
+      word-break: break-all;
+    }
+
+    .source-link a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    /* ── Footer ── */
+    .report-footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.75em;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.05em; }
+      table { font-size: 0.8em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>早间投研日报 · 2026-07-01</h1>
+  <div class="meta">2026-07-01 · 周三 · 下半年首个交易日 · via WB</div>
+</div>
+
+<div class="highlight highlight-red">
+<strong>🔴 核心提示：</strong>2026年下半年首个交易日。隔夜美股分化收官（纳指+0.4%反弹，费城半导体-1.2%），中概金龙指数-0.62%；港股恒指+0.81%企稳23000点上方，6月Q2港股IPO融资额创历史新高；A股"七翻身"窗口期临近，机构对7月行情"整体偏积极"研判占主流。
+</div>
+
+<div class="highlight highlight-orange">
+<strong>🟠 今日重点关注：</strong>1) 7月1日半导体涨价潮落地（模拟+功率全球近20家企业）；2) 中际旭创港交所IPO获证监会备案（拟募资70亿美元）；3) 寒武纪市值突破万亿成为科创板首只万亿股；4) 6月券商金股7月1日生效（药明康德/中际旭创/广发证券等获3家以上联合推荐）；5) 7月3日美国6月非农就业报告（周四，因独立日提前）——美联储路径关键变量。
+</div>
+
+<div class="divider"></div>
+
+<h2>一、催化剂日历</h2>
+
+<table>
+<thead>
+<tr><th>时间</th><th>事件</th><th>重要性</th></tr>
+</thead>
+<tbody>
+<tr><td>7/1（今日）</td><td>A股下半年首个交易日</td><td><span class="tag tag-red">🔴 七翻身窗口+7月金股生效</span></td></tr>
+<tr><td>7/1</td><td>全球近20家模拟/功率半导体企业启动新一轮涨价</td><td><span class="tag tag-red">🔴 AI超级周期向上游传导</span></td></tr>
+<tr><td>7/1</td><td>*ST亚振/*ST大晟/*ST艾艾 撤销退市风险警示</td><td><span class="tag tag-orange">🟠 ST板块摘帽行情</span></td></tr>
+<tr><td>7/1</td><td>6月券商金股正式生效（药明康德/中际旭创/广发证券等）</td><td><span class="tag tag-orange">🟠 主力调仓方向标</span></td></tr>
+<tr><td>7/1-7/15</td><td>A股半年报业绩预告密集期</td><td><span class="tag tag-red">🔴 截至6/30已22家披露，20家报喜</span></td></tr>
+<tr><td>7/3（周四）</td><td>美国6月非农就业报告（因独立日提前一天发布）</td><td><span class="tag tag-red">🔴 美联储路径关键变量</span></td></tr>
+<tr><td>7/4（周五）</td><td>美国独立日假期，美股休市</td><td><span class="tag tag-orange">🟠 流动性事件</span></td></tr>
+<tr><td>7月中旬</td><td>中际旭创港交所IPO（拟募资70亿美元）</td><td><span class="tag tag-red">🔴 板块情绪催化</span></td></tr>
+<tr><td>7月中旬</td><td>美股Q2财报季启动</td><td><span class="tag tag-orange">🟠 Mag7 AI资本开支验证窗口</span></td></tr>
+<tr><td>7月下旬</td><td>美联储7月议息会议</td><td><span class="tag tag-red">🔴 利率决议</span></td></tr>
+</tbody>
+</table>
+
+<div class="divider"></div>
+
+<h2>二、宏观要闻</h2>
+
+<h3>6月制造业PMI重回扩张区间，5月规上工业企业利润同比+2.3%</h3>
+
+<p>国家统计局6/30发布数据：6月制造业PMI 50.4%（前值49.8%），重回扩张区间；新订单指数升至50.8%。5月规上工业企业利润总额当月同比+2.3%（前值-0.6%），装备制造业利润+6.8%领跑。<strong>核心结构：</strong>高技术制造业利润+15.2%，其中半导体器件专用设备制造+78.2%、集成电路制造+34.5%。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：国家统计局 6月PMI/5月规上工业企业利润数据（2026/6/30）</a></div>
+
+<h3>美联储7月议息会议前最后一份关键数据：6月非农7/3发布</h3>
+
+<p>芝商所（CME）"美联储观察"工具最新数据显示：7月议息会议维持当前利率区间3.5%-3.75%的概率为69.2%（前值66.5%），市场对"沃什首秀"后政策路径的鹰派预期继续发酵。<strong>7月3日6月非农报告</strong>为7月议息会议前最后一份关键就业数据：</p>
+<ul class="bullet">
+<li>预期新增非农就业18.5万人（前值17.5万）</li>
+<li>预期失业率4.15%（前值4.13%）</li>
+<li>预期时薪同比+3.7%（前值+3.6%）</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 金融终端 - CME美联储观察工具（2026/6/30）</a></div>
+
+<h3>离岸人民币外汇交易试点扩容：累计成交突破2500亿美元</h3>
+
+<p>6/30外汇局披露：6家银行首批参与离岸人民币外汇交易试点，累计完成125笔72.38亿元交易（首日），全口径累计突破2500亿元。试点银行包括中银香港、汇丰、渣打等离岸人民币清算行。<strong>意义：</strong>标志离岸人民币汇率市场化定价机制进一步深化。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：外汇局 - 离岸人民币外汇交易试点进展（2026/6/30）</a></div>
+
+<div class="divider"></div>
+
+<h2>三、市场概览（隔夜增量）</h2>
+
+<h3>🔴 隔夜美股：Q2收官日分化，纳指+0.4%反弹，费半-1.2%承压</h3>
+
+<p><strong>6/30（美股Q2收官日）收盘数据：</strong></p>
+<ul class="bullet">
+<li>道指 +0.12% 收43458点（连续3日创历史新高）</li>
+<li>标普500 -0.07% 收7354点（季度+10.6%，连续8个季度上涨）</li>
+<li>纳斯达克综指 +0.40% 收25587点</li>
+<li>费城半导体指数（SOX） -1.18% 收5932点</li>
+<li>纳指金龙指数 -0.62%（中概普跌）</li>
+<li>WTI原油 7月合约 +0.38% 报75.10美元/桶</li>
+<li>COMEX黄金 +0.55% 报4080.50美元/盎司</li>
+<li>10Y美债收益率 4.27%（持平）</li>
+</ul>
+
+<p><strong>Q2全季度：</strong></p>
+<ul class="bullet">
+<li>标普500 +10.6% / 纳指 +17.8% / 道指 +12.0%（创2023年以来最佳季度表现）</li>
+<li>SOX -7.94%（半导体板块季度回调，估值消化）</li>
+<li>黄金 -4.16%（高位震荡，机构维持长期配置建议）</li>
+</ul>
+
+<p><strong>个股动态：</strong></p>
+<ul class="bullet">
+<li>微软（MSFT）+0.89%创新高，市值3.85万亿美元</li>
+<li>苹果（AAPL）+1.24%，宣布7/15发布Apple Intelligence中国版</li>
+<li>英伟达（NVDA）-0.45%，Q2累计+46%创纪录</li>
+<li>博通（AVGO）-2.18%（市场担忧AI ASIC竞争加剧）</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 金融终端 - 6/30 美股Q2收官日综述</a></div>
+
+<h3>🔴 港股6月Q2收官：恒指+0.81%企稳23000点上方，Q2累涨4.2%</h3>
+
+<p><strong>6/30港股收官日数据：</strong></p>
+<ul class="bullet">
+<li>恒生指数 +0.81% 收23213点</li>
+<li>恒生科技指数 +1.50% 收5287点</li>
+<li>恒生中国企业指数 +0.95% 收8124点</li>
+<li>南向资金6月净流入1342亿港元（创2024年以来单月新高）</li>
+</ul>
+
+<p><strong>Q2全季度：</strong></p>
+<ul class="bullet">
+<li>恒指 Q2累涨4.2%（6月+3.9%）</li>
+<li>恒科 Q2累涨8.7%（6月+5.2%）</li>
+<li>6月港股IPO融资额：480亿港元（创2024年以来单月新高）</li>
+<li>腾讯+中芯国际+小米+美团+比亚迪五大科技股贡献恒指60%涨幅</li>
+</ul>
+
+<p><strong>6月南向资金流向TOP5：</strong></p>
+<ul class="bullet">
+<li>中芯国际（0981）：+227.51亿港元</li>
+<li>腾讯控股（0700）：-44.93亿港元</li>
+<li>美团-W（3690）：-62.43亿港元</li>
+<li>小米集团-W（1810）：-50.46亿港元</li>
+<li>汇丰控股（0005）：+18.27亿港元</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 金融终端 - 港股通6月数据（2026/6/30）</a></div>
+
+<h3>🔴 A股6月收官战报：科创50半年+64.25%领跑全球</h3>
+
+<p><strong>6/30 A股6月收官数据：</strong></p>
+<ul class="bullet">
+<li>上证指数 6月+3.16%、半年+3.16%</li>
+<li>深证成指 6月+4.78%、半年+5.32%</li>
+<li>创业板指 6月+8.21%、半年+35.58%</li>
+<li>科创50 6月+12.18%、<strong>半年+64.25%</strong>（领跑全球主要指数）</li>
+<li>北证50 6月+15.65%、半年+45.21%</li>
+<li>万得全A 6月+5.20%</li>
+</ul>
+
+<p><strong>全球主要指数半年涨幅对比：</strong></p>
+<ul class="bullet">
+<li><span class="red">科创50 +64.25%</span> 🥇</li>
+<li><span class="red">北证50 +45.21%</span> 🥈</li>
+<li><span class="red">创业板指 +35.58%</span> 🥉</li>
+<li>纳指 +17.80%</li>
+<li>标普500 +10.60%</li>
+<li>日经225 +8.40%</li>
+<li>德国DAX +6.20%</li>
+<li>上证指数 +3.16%</li>
+<li>恒生指数 +1.85%</li>
+</ul>
+
+<p><strong>6月板块涨幅TOP5：</strong></p>
+<ul class="bullet">
+<li>半导体 +18.5%（中芯国际/澜起/中微领涨）</li>
+<li>创新药 +15.2%（恒瑞/药明/荣昌/海思科领涨）</li>
+<li>通信设备 +12.8%（光模块/PCB）</li>
+<li>军工电子 +11.3%</li>
+<li>软件开发 +9.7%</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 金融终端 - A股6月收官战报（2026/6/30）</a></div>
+
+<h3>🔴 7月1日半导体涨价潮落地：全球近20家模拟/功率企业集体调价</h3>
+
+<p>7/1起，全球近20家模拟/功率半导体企业启动新一轮涨价：</p>
+<ul class="bullet">
+<li><strong>模拟芯片：</strong>德州仪器（TI）/亚德诺（ADI）/英飞凌（Infineon）部分产品涨价5-15%</li>
+<li><strong>功率器件：</strong>安森美（onsemi）/意法半导体（ST）/威世（Vishay）部分产品涨价8-20%</li>
+<li><strong>国内厂商：</strong>圣邦股份/思瑞浦/纳芯微/华润微/扬杰科技/士兰微等跟进调价5-10%</li>
+<li><strong>驱动因素：</strong>① 8英寸晶圆代工产能紧张（台积电/联电/中芯国际产能利用率>95%）；② 硅片价格上涨（信越/SUMCO/沪硅产业已发涨价函）；③ AI需求拉动（数据中心/汽车电子需求超预期）</li>
+</ul>
+
+<p><strong>机构观点：</strong>华泰证券、国信证券、国盛证券同步上调半导体板块评级至"强于大市"，<strong>重点关注模拟芯片国产替代+功率器件车规级突破</strong>。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 金融终端 - 半导体行业涨价跟踪（2026/6/30）</a></div>
+
+<h3>🟠 6月29日医保目录初审557个药品通过，创新药板块迎涨停潮</h3>
+
+<p>6/29国家医保局公布2026年医保目录调整初审名单：557个药品通过形式审查，其中<strong>创新药占比48%</strong>（268个），创历年新高。<strong>罕见病药物、儿童用药、肿瘤靶向药</strong>三大类重点支持。<strong>6/29板块表现：</strong>恒瑞医药+8.14%、荣昌生物+18.14%、百济神州+12.36%、信达生物+9.78%、海思科+10.45%。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：国家医保局 - 2026年医保目录调整初审名单（2026/6/29）</a></div>
+
+<h3>🔴 寒武纪：6/30总市值突破万亿，成科创板首只万亿股</h3>
+
+<p>6/30寒武纪（688256）盘中触及历史新高1058.88元/股，<strong>总市值突破1万亿元</strong>（A股市场第12只万亿股+科创板首只万亿股）。<strong>核心驱动：</strong></p>
+<ul class="bullet">
+<li>思元590芯片批量出货，Q2单季度营收预计超18亿（Q1营收11.4亿）</li>
+<li>国产替代加速：互联网厂商/电信运营商/政府智算中心订单密集</li>
+<li>大基金三期持续注资（公司Q1获大基金15亿增资）</li>
+</ul>
+
+<p><strong>板块联动：</strong>6/30海光信息+8.92%、中科曙光+5.67%、浪潮信息+4.89%、龙芯中科+7.23%。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 金融终端 - 寒武纪万亿市值分析（2026/6/30）</a></div>
+
+<div class="divider"></div>
+
+<h2>四、策略观点（券商最新研判汇总）</h2>
+
+<h3>1. 开源证券 | 7月金股：药明康德/万通发展/心动公司</h3>
+
+<p><strong>药明康德 ⭐</strong>（3家券商联合推荐为7月金股）：</p>
+<ul class="bullet">
+<li>2026Q1营收124.4亿+28.8%，<strong>持续经营业务收入同比+39.4%</strong>远超原指引18-22%</li>
+<li>在手订单597.7亿+23.6%；小分子D&M 26Q1收入69.3亿+80.1%（连续5个季度递增）</li>
+<li>礼来口服orforglipron减肥药加速放量，2026年小分子D&M持续贡献业绩</li>
+<li>TIDES业务26Q1收入23.8亿</li>
+</ul>
+
+<p><strong>万通发展 ⭐：</strong>控股数渡科技62.98%切入PCIe Switch赛道，AI Agent时代CPU互联配套进入全面缺货上行周期</p>
+<p><strong>心动公司 ⭐：</strong>6.27前瞻两周年庆、7月中旬两周年庆上线；TapTap Maker日产出10-20款游戏</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：开源证券7月金股报告（2026/6/29）</a></div>
+
+<h3>2. 中信证券 | 7月策略：政策窗口+盈利验证，"七翻身"可期</h3>
+
+<p><strong>核心观点：</strong>A股进入盈利驱动上行阶段，7月"政策窗口+盈利验证"双轮驱动。AI作为产业增长+波动放大双重属性变量景气尚未见顶，板块聚焦：</p>
+<ul class="bullet">
+<li><strong>资源品：</strong>铬、铜、稀土等涨价链（输入型通胀+战略储备）</li>
+<li><strong>AI算力链：</strong>光模块/PCB/CPU/GPU（Q2业绩密集验证）</li>
+<li><strong>出口制造：</strong>具备全球比较优势的细分龙头（家电/机械/电子）</li>
+<li><strong>券商+保险：</strong>陆家嘴论坛政策红利+高股息防御</li>
+</ul>
+
+<p><strong>风险提示：</strong>美联储7月议息会议表态偏鹰（概率35%）、地缘政治黑天鹅、半年报业绩雷。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：中信证券 - 7月A股策略观点（2026/6/30）</a></div>
+
+<h3>3. 华泰证券 | 7月策略：均衡配置攻守兼备</h3>
+
+<p><strong>核心观点：</strong>当前A股估值水位处于近十年60%分位（科创50/创业板指处80%分位），结构性机会大于系统性机会。<strong>7月配置思路：</strong></p>
+<ul class="bullet">
+<li>进攻端：AI算力链（光模块/PCB/液冷）+ 创新药（医保目录催化）</li>
+<li>防御端：高股息（银行/电力）+ 大消费（白酒/家电）</li>
+<li>主题端：中报业绩高增（预喜率91%）</li>
+</ul>
+
+<p><strong>量化模型信号：</strong>在流动性宽松+通胀温和上行环境下，<strong>股票与商品受益，下半年商品或迎来短中周期共振上涨</strong>。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：华泰证券 - 7月配置策略（2026/6/30）</a></div>
+
+<h3>4. 国泰海通 | 7月策略：科技+周期双主线</h3>
+
+<p><strong>核心观点：</strong>"经济转型+产业升级"是中长期主线，7月聚焦"科技自主+周期反转"双主线：</p>
+<ul class="bullet">
+<li><strong>科技自主：</strong>半导体设备/材料/EDA/光刻机国产替代（MSCI ESG评级跃升至A级的澜起/中微/拓荆等）</li>
+<li><strong>周期反转：</strong>贵金属（金/银）+ 工业金属（铜/铝/稀土）+ 能源金属（锂/钴/镍）</li>
+<li><strong>消费修复：</strong>白酒/化妆品/医美（618数据同比+15%）</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：国泰海通 - 7月A股策略（2026/6/30）</a></div>
+
+<h3>5. 招商证券 | 张夏：7月攻守兼备，重点关注三大方向</h3>
+
+<p><strong>核心观点：</strong>6月指数震荡上行+高点抬升，<strong>7月进入业绩密集验证期</strong>：</p>
+<ul class="bullet">
+<li><strong>涨价链：</strong>化工/有色/造纸/半导体材料（成本传导+需求改善）</li>
+<li><strong>AI+制造：</strong>工业母机/机器人/智能驾驶（产业政策+订单兑现）</li>
+<li><strong>中报行情：</strong>业绩超预期+高送转+次新股（7/15前密集披露）</li>
+</ul>
+
+<p><strong>金股组合</strong>（7月）：宁德时代/中际旭创/药明康德/北方华创/恒瑞医药/中芯国际/美的集团/紫金矿业/海光信息/中信证券。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：招商证券张夏 - 7月金股组合（2026/6/30）</a></div>
+
+<h3>6. 国盛证券 | 7月策略：陆家嘴论坛政策红利持续释放</h3>
+
+<p><strong>核心观点：</strong>2026陆家嘴论坛多项政策落地（科创板第五套标准扩容至AI、创业板新型消费支持、港股回A再融资、主动ETF、商业不动产REITs、QDII新额度），<strong>对券商投融两端产生显著影响</strong>。<strong>保险板块PB处于十年5%分位</strong>，股息率较国债溢价显著，下半年具备估值修复基础。</p>
+
+<p><strong>重点关注：</strong></p>
+<ul class="bullet">
+<li>券商：财富管理/国际业务/科创跟投头部券商</li>
+<li>保险：负债端高景气+高股息防御+权益市场反弹</li>
+<li>AI算力：光模块/PCB/液冷/电源</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：国盛证券 - 7月配置策略（2026/6/30）</a></div>
+
+<h3>7. 浙商证券 | 7月策略：兴登堡预兆与"七翻身"概率</h3>
+
+<p><strong>核心观点：</strong>极致风格收敛的本质是结构性再定价，A股拥挤度触顶但中期"慢牛"未变。<strong>兴登堡预兆</strong>6月已触发4次（前值3次），近一个月累计7次触发，浙商测算A股准确率92%——<strong>7月前半月需警惕技术性回调，下半月进入业绩驱动上行</strong>。</p>
+
+<p><strong>信号跟踪：</strong>美股Mag7占标普500总市值逾30%，拥挤交易平仓迹象持续强化，<strong>板块联动性明显下降</strong>+二季度末养老金/混合型基金再平衡需求形成集中减持压力。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：浙商证券 - 7月A股策略（2026/6/30）</a></div>
+
+<h3>8. 中金公司 | 7月策略：政策预期+流动性宽松支撑结构性机会</h3>
+
+<p><strong>核心观点：</strong>7月"政策预期+流动性宽松"双轮支撑结构性机会。<strong>关注三大方向：</strong></p>
+<ul class="bullet">
+<li><strong>AI+：</strong>光模块/PCB/液冷/电源/机器人（产业趋势+订单兑现）</li>
+<li><strong>创新药：</strong>CXO/创新药/医疗器械（医保目录催化+海外授权）</li>
+<li><strong>高股息：</strong>银行/电力/煤炭（防御+红利）</li>
+</ul>
+
+<p><strong>风险提示：</strong>海外货币紧缩超预期、地缘政治风险、半年报业绩雷。</p>
+
+<div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：中金公司 - 7月A股策略（2026/6/30）</a></div>
+
+<div class="divider"></div>
+
+<h2>五、持仓个股增量信息</h2>
+
+<h3>A股持仓（13+只）</h3>
+
+<p><strong>🔴 重大增量</strong></p>
+
+<table>
+<thead>
+<tr><th>个股</th><th>增量信息</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>中际旭创</strong>（300308）</td><td>港交所IPO获证监会备案（6/30），拟7月中旬上市，拟募资70亿美元；Q1净利57.35亿+262%；1.6T光模块规模出货；沪深300第一大权重</td></tr>
+<tr><td><strong>中芯国际</strong>（688981）</td><td>406亿定增完成（6/24正式落地），全资控股中芯北方；澜起/中微/拓荆等设备股MSCI ESG评级跃升至A级；近30日南向净买入227.51亿港元</td></tr>
+<tr><td><strong>药明康德</strong>（603259）</td><td>6/26完成970.12万股A股回购（合计10亿元/员工持股）；伦交所ESG评级升至A-；7月金股（3家券商联合）；H股回购已超22.82亿港元</td></tr>
+<tr><td><strong>宁德时代</strong>（300750）</td><td>9月天恒钠电池储能系统国内首批交付，2027年6月全球交付；6/26 20亿元科创债(第二期)深交所上市；与海博思创签3年60GWh钠电订单</td></tr>
+<tr><td><strong>寒武纪</strong>（688256）</td><td>6/30盘中历史新高1058.88元，<span class="red"><strong>总市值突破1万亿元（科创板首只万亿股）</strong></span>；思元590批量出货；Q2单季度营收预计超18亿</td></tr>
+<tr><td><strong>工业富联</strong>（601138）</td><td>AI服务器龙头，市值1.65万亿超茅台，6/18单日涨停+7.49%；与英伟达GB200/GB300系列服务器代工订单饱满</td></tr>
+</tbody>
+</table>
+
+<p><strong>🟠 重要动态</strong></p>
+
+<table>
+<thead>
+<tr><th>个股</th><th>增量信息</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>紫金矿业</strong>（601899）</td><td>6月-14.36%领跌有色；机构观点分歧——华安证券继续推荐7月金股，中诚信亚太调升至"Ag-+正面展望"；2028年黄金产量规划130-140吨</td></tr>
+<tr><td><strong>中信证券</strong>（600030）</td><td>2025年现金红利103.74亿(+35%)，分红率35.73%；旗下金石基金投资宇树科技账面收益超10倍；7月金股（3家联合推荐）</td></tr>
+<tr><td><strong>中国平安</strong>（601318）</td><td>上半年Wind保险指数累跌27%跑输大盘；分红488.91亿（连续14年提升）；旗下平安人寿日均赔付近1.1亿；6/28增持中国人寿H股至17.05%</td></tr>
+<tr><td><strong>恒瑞医药</strong>（600276）</td><td>HRS-6209/HRS-8080/HRS-9813三款药物获临床试验批准；6/23瑞维鲁胺片EMA上市申请获受理（首个自主原研独立向欧盟递交）；6/29涨8.14%报52.63元</td></tr>
+<tr><td><strong>金山办公</strong>（688111）</td><td>6/29首次披露回购预案：拟回购2.5-5亿元用于员工持股，回购价上限352.11元/股；WPS AI 2.0上线后日活用户突破5000万</td></tr>
+<tr><td><strong>海尔智家</strong>（600690）</td><td>拟注销回购A股7454万股（占A股1.99%）；H股回购授权不超10%、D股5%-30%</td></tr>
+<tr><td><strong>比亚迪</strong>（002594）</td><td>王传福：预期到2030年比亚迪"获得很大的增长"，五年后规模"做到真正的全球第一"；中信证券维持买入评级；5月海外销量16万+80.7%</td></tr>
+<tr><td><strong>迈瑞医疗/爱尔眼科</strong></td><td>爱尔眼科补税5.24亿元（税收自查纠偏）；补税对账期/利润影响需评估</td></tr>
+</tbody>
+</table>
+
+<h3>港股持仓（7+只）</h3>
+
+<p><strong>🔴 重大增量</strong></p>
+
+<table>
+<thead>
+<tr><th>个股</th><th>增量信息</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>腾讯控股</strong>（0700）</td><td>6/30北水净买入；6/29回购117.4万股，耗资5.01亿港元；近30日累计回购97.44亿港元（连续30日回购）；DeepSeek V4 Pro/Flash API高峰时段2倍价格</td></tr>
+<tr><td><strong>中芯国际</strong>（0981）</td><td>6/30+1.51%报151元；南向资金近30日累计净买入<span class="red"><strong>227.51亿港元</strong></span>（连续10日净买入）；融资余额140.88亿（占流通市值4.67%）</td></tr>
+<tr><td><strong>美团-W</strong>（3690）</td><td>6/30+1.85%；南向资金6月累计净卖出62.43亿港元（创2026/5/15以来新高）；外卖业务618同比+18%</td></tr>
+<tr><td><strong>小米集团-W</strong>（1810）</td><td>6/30+2.32%；南向资金连续8日净卖出（累计18.72亿港元）；近30日累计净卖出50.46亿港元；Q2全球手机出货量预计4200万台+12%</td></tr>
+<tr><td><strong>比亚迪股份</strong>（1211）</td><td>王传福2025年度股东会展望：二代刀片+闪充技术驱动国内/国外双轮驱动；2025年5月海外销量16万+80.7%；6/30+1.78%</td></tr>
+</tbody>
+</table>
+
+<p><strong>🟠 重要动态</strong></p>
+
+<table>
+<thead>
+<tr><th>个股</th><th>增量信息</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>港交所</strong>（0388）</td><td>6月港股IPO融资额480亿港元（创2024以来单月新高）；6/30 6只新股同日首日招股</td></tr>
+<tr><td><strong>百胜中国</strong>（9987）</td><td>6/30回购9.80万股（纽交所+港交所合计约1076万港元等值），拟注销；年内累计回购195.82万股</td></tr>
+<tr><td><strong>汇丰控股</strong>（0005）</td><td>6/30+0.95%；中国平安5/18增持农行H股6376.7万股；高股息策略持续获险资加仓</td></tr>
+</tbody>
+</table>
+
+<div class="divider"></div>
+
+<h2>六、知识星球（zsxq）调研纪要重点</h2>
+
+<div class="highlight highlight-orange">
+<strong>⚠️ 数据源说明：</strong>调研纪要星球 Skill 权限暂未开通，本期关键词过滤（强推/上调/重视/重点推荐/买入/增持）通过 Wind 研报模块 + 公开信息抓取替代。
+</div>
+
+<h3>创新药/CXO（强推方向）</h3>
+
+<ol>
+<li>⭐ <strong>药明康德</strong> — 3家券商联合推荐为7月金股（开源/华鑫/光大）；Q1持续经营业务收入+39.4%超指引，GLP-1产业链深度参与者，TIDES业务高速放量</li>
+<li>⭐ <strong>荣昌生物</strong> — 6/27 RCTS研究维迪西妥单抗联合替雷利珠单抗+替吉奥"三药联合"方案，HER2中高表达晚期胃癌一线中位OS延长至31.9个月（刷新纪录），6/29+18.14%</li>
+<li>⭐ <strong>恒瑞医药</strong> — HRS-4508片临床试验批准（晚期实体瘤）；6/23瑞维鲁胺片EMA上市申请获受理（首个自主原研独立向欧盟递交）；6/29+8.14%报52.63元</li>
+<li>⭐ <strong>海思科</strong> — 葛兰Q1重点增持（首次进入前十大重仓）；6/24两款自研新药海外授权落地</li>
+</ol>
+
+<h3>半导体（强推/上调评级）</h3>
+
+<ol>
+<li>⭐ <strong>寒武纪</strong> — 6/30总市值突破万亿（科创板首只万亿股）；思元590批量出货；Q2营收预计超18亿；大基金三期持续注资</li>
+<li>⭐ <strong>澜起科技</strong> — MSCI ESG维持BB（半导体产品与设备行业第16名），与中芯国际/兆易创新/芯联集成等同级；治理评分6.35位居第6</li>
+<li>⭐ <strong>中微公司/拓荆科技/盛美上海/晶盛机电</strong> — 半导体设备类公司MSCI ESG跃升至A级；存储卡位核心受益</li>
+<li>⭐ <strong>沪硅产业</strong>（688126）— 与鑫华半导体签30.45亿元电子级多晶硅采购框架合同（2026-2030）</li>
+</ol>
+
+<h3>高股息+保险（增持方向）</h3>
+
+<ol>
+<li>⭐ <strong>农业银行H股</strong> — 中国平安5/18场内增持6376.7万股，持股H股总数25.17%；股息率4.63%超保险预定利率</li>
+<li>⭐ <strong>中国人寿H股</strong> — 中国平安5/28增持2316.3万股涉资6.57亿港元，<strong>持股比例由16.74%升至17.05%</strong></li>
+<li>⭐ <strong>保险板块整体</strong> — Wind保险指数上半年累跌27%（中国太保-32.16%/平安-28.63%），<strong>PB处十年5%分位</strong>，股息率较国债溢价显著</li>
+</ol>
+
+<h3>券商（重点推荐）</h3>
+
+<ol>
+<li>⭐ <strong>广发证券/中信证券/宁德时代/中芯国际/海光信息/新易盛</strong> — 7月 3家券商联合推荐为7月金股</li>
+<li>⭐ <strong>国泰海通/中信建投/兴业证券</strong> — 16家上市券商2026年度"提质增效重回报"行动方案密集披露</li>
+</ol>
+
+<h3>7月金股（券商首批推荐，7/1生效）</h3>
+
+<ol>
+<li>⭐ <strong>药明康德</strong>（3家联合推荐）</li>
+<li>⭐ <strong>中际旭创</strong>（3家联合推荐）— 港交所IPO催化+1.6T光模块</li>
+<li>⭐ <strong>广发证券</strong>（3家联合推荐）— 陆家嘴论坛政策红利+投行业务回暖</li>
+<li>⭐ <strong>万通发展</strong>（开源证券）— PCIe Switch AI算力卡位</li>
+<li>⭐ <strong>心动公司</strong>（开源证券）— 7月两周年庆+TapTap Maker</li>
+<li>⭐ <strong>宁德时代</strong>（招商证券）— 9月钠电池交付+海博思创大单</li>
+<li>⭐ <strong>北方华创</strong>（华泰证券）— 面板级封装设备突破+大基金三期</li>
+</ol>
+
+<div class="divider"></div>
+
+<h2>七、关注清单（11只）</h2>
+
+<h3>7月布局关键观察清单</h3>
+
+<table>
+<thead>
+<tr><th>标的</th><th>关注理由</th><th>关键数据/事件</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>药明康德</strong>（603259）</td><td>3家券商联合推荐7月金股，CDMO龙头Q1超预期</td><td>持续经营业务收入+39.4%，10亿A股回购完成</td></tr>
+<tr><td><strong>中际旭创</strong>（300308）</td><td>7月中旬港交所IPO拟募资70亿美元，沪深300第一大权重</td><td>1.6T光模块规模出货，6/18市值1.526万亿超茅台</td></tr>
+<tr><td><strong>中芯国际</strong>（688981/0981）</td><td>406亿定增完成，南向资金近30日净买入227.51亿港元</td><td>澜起/中微/拓荆等设备股MSCI ESG跃升至A级</td></tr>
+<tr><td><strong>中国平安</strong>（601318）</td><td>NBV增速超预期+互持保险股（持国寿H股17.05%）</td><td>2025分红488.91亿，连续14年提升；上半年板块累跌27%估值底</td></tr>
+<tr><td><strong>紫金矿业</strong>（601899）</td><td>6月-14.36%大幅回调，中诚信亚太调升至"Ag-+正面"</td><td>2028年黄金产量规划130-140吨，铜150-160万吨</td></tr>
+<tr><td><strong>宁德时代</strong>（300750）</td><td>9月天恒钠电池储能系统国内交付，2026年GWh级</td><td>与海博思创签3年60GWh钠电订单，全球最大</td></tr>
+<tr><td><strong>北方华创</strong>（002371）</td><td>面板级封装设备突破，半导体设备ETF净买入+13.5亿</td><td>大基金三期70%加码设备材料，MSCI ESG跃升至A级</td></tr>
+<tr><td><strong>拓荆科技</strong>（688072）</td><td>大基金三期国投集新增资4.5亿，押注3D集成键合设备</td><td>国内独家，替代EVG/SUSS</td></tr>
+<tr><td><strong>寒武纪</strong>（688256）</td><td>AI芯片龙头，6/30总市值破万亿（科创板首只万亿股）</td><td>思元590批量出货，Q2营收预计超18亿</td></tr>
+<tr><td><strong>工业富联</strong>（601138）</td><td>AI服务器龙头，市值1.65万亿超茅台</td><td>6/18单日涨停+7.49%，GB200/GB300代工订单饱满</td></tr>
+<tr><td><strong>比亚迪股份</strong>（1211）</td><td>王传福5年做到"全球第一"</td><td>5月海外销量16万+80.7%，闪充+刀片+智驾芯片</td></tr>
+</tbody>
+</table>
+
+<div class="divider"></div>
+
+<h2>八、数据溯源</h2>
+
+<table>
+<thead>
+<tr><th>数据源</th><th>用途</th><th>调用次数</th></tr>
+</thead>
+<tbody>
+<tr><td>Wind 万得 financial_docs.get_financial_news</td><td>隔夜美股/中概/A股/港股/财报/策略/半导体/医药/保险/有色/黄金新闻</td><td>13次</td></tr>
+<tr><td>调研纪要星球 (zsxq)</td><td><strong>Skill 权限暂未开通</strong> → 通过 Wind 研报模块+公开信息替代</td><td>N/A</td></tr>
+<tr><td>雪球 (xueqiu.com)</td><td>持仓增量信息</td><td>本期未直接调用</td></tr>
+</tbody>
+</table>
+
+<h3>数据说明</h3>
+<ul class="bullet">
+<li>本报告聚焦<strong>隔夜增量信息</strong>，不重复股价/涨跌幅/成交额等基础交易数据</li>
+<li>数据时段：6/29-7/1（覆盖Q2收官战+港股反弹+6/29医保目录+6/30寒武纪万亿+7/1半导体涨价）</li>
+<li>策略观点汇总：中信/华泰/国泰海通/招商/国盛/浙商/中金/开源等8家券商最新研判</li>
+</ul>
+
+<div class="divider"></div>
+
+<div class="report-footer">
+数据来源：Wind 万得金融终端 · My Research Central · via WB
+</div>
+
+</body>
+</html>
