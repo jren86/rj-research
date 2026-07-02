@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>早间投研日报 · 2026-07-02</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>早间投研日报 · 2026-07-02（周四）</h1>
+  <div class="meta">聚焦隔夜增量信息 · 涨🔴跌🟢 · 中国市场惯例</div>
+</div>
+
+<!-- 催化剂日历 -->
+<h2>⏰ 催化剂日历</h2>
+<table>
+  <tr><th>日期</th><th>事件</th><th>影响</th></tr>
+  <tr><td>7月2日</td><td>A股正常交易日</td><td>前夜费半暴跌+沃什鹰派，关注科技股压力传导</td></tr>
+  <tr><td>7月2日</td><td>港股恢复交易（7月1日休市）</td><td>恒科夜盘🔴+0.94%，关注开盘补涨方向</td></tr>
+  <tr><td>7月7日</td><td>SpaceX纳入纳指100</td><td>约43亿美元被动买入（摩根大通估算）</td></tr>
+  <tr><td>7月底</td><td>美联储7月议息会议</td><td>沃什拒剧透，加息与否成焦点</td></tr>
+  <tr><td>7月8日</td><td>智谱港股解禁</td><td><span class="tag tag-orange">⚠️ 港股7月IPO解禁潮2550亿</span></td></tr>
+</table>
+
+<div class="divider"></div>
+
+<!-- 宏观环境 -->
+<h2>🔵 宏观环境</h2>
+
+<h3>美联储沃什辛特拉论坛重磅表态</h3>
+<div class="highlight highlight-red">
+  <span class="tag tag-red">🔴</span> <strong>沃什海外首秀：通胀仍过高，拒绝剧透7月加息</strong>
+</div>
+<div class="card">
+  <ul class="bullet">
+    <li><strong>通胀立场</strong>："通胀水平仍然过高"，但"近几周通胀预期和通胀风险均有所下降"</li>
+    <li><strong>2%目标坚定</strong>："任何期待联储局容忍高于2%通胀的人都会失望"</li>
+    <li><strong>拒绝前瞻指引</strong>："我希望7月底开会时展开充分辩论，除此之外没有更多信息"</li>
+    <li><strong>独立性</strong>："联储局一直是独立央行，未来也不会改变"</li>
+    <li><strong>AI与通胀</strong>：对AI是否具有通胀效应"保持开放心态"</li>
+  </ul>
+  <div class="highlight highlight-blue">
+    💡 华尔街预期：9月加息25bp概率升温，德银预计9月/12月各加息25bp至4.1%；花旗逆势押注三次降息
+  </div>
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind 金融新闻终端</a></div>
+
+<h3>美国6月ADP就业（"小非农"）</h3>
+<div class="card">
+  <span class="tag tag-orange">🟠</span> ADP新增9.8万人，3月以来最低，低于预期11.8万，前值12.2万。劳动力市场降温信号。
+</div>
+
+<h3>6月中国PMI</h3>
+<div class="card">
+  <span class="tag tag-orange">🟠</span> 制造业PMI 50.3%（+0.3ppt），连续第四个月扩张；非制造业PMI 50.2%（+0.1ppt）。但BCI从50.5降至48.7，PMI与BCI信号分歧——广发宏观认为"经济结构性特征延续"。
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：国家统计局 / 广发宏观研报</a></div>
+
+<h3>原油与黄金</h3>
+<div class="card">
+  <span class="tag tag-orange">🟠</span> <strong>布油跌2.43%报71.18美元/桶</strong>——地缘溢价消退，霍尔木兹海峡通航恢复，供应过剩（高盛预计日过剩300万桶）；国内夜盘原油跌3.43%<br>
+  <span class="tag tag-red">🔴</span> <strong>现货黄金突破4100美元/盎司</strong>——加息预期+地缘缓和+就业降温，避险与通胀叙事交织
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind / 高盛</a></div>
+
+<div class="divider"></div>
+
+<!-- 市场概览 -->
+<h2>🔵 市场概览</h2>
+
+<h3>隔夜美股（7月1日晚收盘 → 7月2日凌晨）</h3>
+<div class="highlight highlight-red">
+  <span class="tag tag-red">🔴</span> <strong>费半暴跌6.27%！芯片股全线重挫</strong>
+</div>
+<table>
+  <tr><th>指数</th><th>收盘</th><th>涨跌</th></tr>
+  <tr><td>道指</td><td>52305.24</td><td><span class="green">-0.03%</span></td></tr>
+  <tr><td>标普500</td><td>7483.23</td><td><span class="green">-0.22%</span></td></tr>
+  <tr><td>纳指</td><td>26040.03</td><td><span class="green">-0.66%</span></td></tr>
+  <tr><td>费半</td><td>—</td><td><span class="green"><strong>-6.27%</strong></span></td></tr>
+  <tr><td>金龙指数</td><td>—</td><td><span class="red"><strong>+2.93%</strong></span></td></tr>
+</table>
+<div class="card">
+  <ul class="bullet">
+    <li><span class="green">芯片股重挫</span>：美光-10%+、英特尔-9%+、闪迪-7%+、ARM/迈威尔-5%+、英伟达-3%+、台积电-4%+</li>
+    <li><span class="green">算力租赁暴跌</span>：CoreWeave-11%、Nebius-15%+</li>
+    <li><span class="red">七巨头分化</span>：Meta<strong>+9%</strong>（出售过剩AI算力构建云业务）、微软+3%、苹果+2.7%</li>
+    <li><span class="red">中概股逆市大涨</span>：世纪互联+9%、拼多多+5%、小鹏+4%、百度+3%、阿里+3%</li>
+  </ul>
+  <div class="highlight highlight-blue">
+    💡 核心逻辑：沃什鹰派+AI算力过剩信号（Meta出售算力）→ 芯片恐慌；中概受益于加息预期缓解（ADP就业弱）+国产算力验证
+  </div>
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind 金融新闻终端</a></div>
+
+<h3>7月1日A股收盘</h3>
+<div class="highlight highlight-red">
+  <span class="tag tag-red">🔴</span> <strong>风格剧烈切换！大金融/养殖/创新药全线爆发，科技高位回调</strong>
+</div>
+<table>
+  <tr><th>指数</th><th>收盘</th><th>涨跌</th></tr>
+  <tr><td>沪指</td><td>4112.45</td><td><span class="red">+0.44%</span></td></tr>
+  <tr><td>深成指</td><td>16119.17</td><td><span class="green">-0.53%</span></td></tr>
+  <tr><td>创业板指</td><td>4260.72</td><td><span class="green">-1.89%</span></td></tr>
+  <tr><td>科创50</td><td>2153.04</td><td><span class="green"><strong>-2.48%</strong></span></td></tr>
+  <tr><td>全市成交</td><td>3.68万亿</td><td>放量3890亿</td></tr>
+</table>
+<div class="card">
+  <ul class="bullet">
+    <li>超4300股上涨，200+涨停</li>
+    <li><span class="red">🔴 大金融爆发</span>：券商涨停（华安/天风/国盛），新华保险触及涨停</li>
+    <li><span class="red">🔴 养殖全线涨停</span>：新希望/傲农生物/湘佳股份</li>
+    <li><span class="red">🔴 创新药活跃</span>：汇宇制药/宣泰医药20cm涨停</li>
+    <li><span class="green">🟢 科技回调</span>：CPO/PCB/光纤/储能走低，阳光电源-13%+</li>
+  </ul>
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind 金融新闻终端</a></div>
+
+<h3>港股（7月1日休市）</h3>
+<div class="card">
+  7月1日香港特别行政区成立纪念日，港股全日休市，南向/北向暂停。<br>
+  恒指夜盘<span class="red">+0.63%</span>报22990，恒科夜盘<span class="red">+0.94%</span>报4510<br>
+  上半年收官：恒指累计<span class="green">-10.73%</span>，恒科<span class="green">-18.92%</span><br>
+  港股沽空比率频触20%上方"高压红线"，6月30日沽空575.2亿港元（占可沽空成交20.5%）
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind 金融新闻终端</a></div>
+
+<div class="divider"></div>
+
+<!-- 策略观点 -->
+<h2>📊 策略观点</h2>
+
+<div class="highlight highlight-red">
+  <span class="tag tag-red">🔴</span> <strong>科技仍是"顶流"，但医药、券商关注度明显升温——科技独大格局松动</strong>
+</div>
+
+<h3>7月人气最高金股</h3>
+<table>
+  <tr><th>标的</th><th>推荐券商</th><th>核心逻辑</th></tr>
+  <tr><td>中际旭创</td><td>兴业/国联/西部</td><td>AI光模块龙头+Q2财报催化</td></tr>
+  <tr><td>中国巨石⭐</td><td>浙商/国金</td><td>AI高端电子布供不应求至2027</td></tr>
+  <tr><td>药明康德⭐</td><td>中泰/开源/国金</td><td>CDMO景气+GLP-1产业链+回购信心</td></tr>
+  <tr><td>海光信息⭐</td><td>东海/天风等多家</td><td>国产算力替代</td></tr>
+  <tr><td>华虹宏力</td><td>多家券商</td><td>半导体国产替代</td></tr>
+  <tr><td>腾讯控股⭐</td><td>天风</td><td>游戏韧性+AI推荐优化</td></tr>
+</table>
+
+<h3>天风7月金股组合</h3>
+<div class="card">
+  腾讯控股⭐、中科飞测、神州数码、海光信息、恒林股份、华懋科技、科伦博泰生物、阿里巴巴-W、中天科技
+</div>
+
+<h3>机构策略共识</h3>
+<div class="card">
+  <ul class="bullet">
+    <li><strong>中长期科技不改</strong>，但短期再平衡呼声渐起——6月科技龙头出现"对子顶"信号（长电111.11、中芯166.88、富创333.33）</li>
+    <li><strong>中报披露期</strong>：7月进入半年报业绩期，业绩好的方向获关注</li>
+    <li><strong>保险Q2盈利高增</strong>（国金晨讯），二季报行情下有望估值修复</li>
+    <li><strong>聚焦"真成长"</strong>，规避纯题材炒作</li>
+  </ul>
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind 策略专题研究 / 券商金股月报</a></div>
+
+<div class="divider"></div>
+
+<!-- 持仓个股 -->
+<h2>🔴 持仓个股增量信息</h2>
+
+<h3>A股持仓</h3>
+
+<div class="card">
+  <strong>芯碁微装 / 长川科技（半导体设备）</strong>
+  <ul class="bullet">
+    <li><span class="tag tag-orange">🟠</span> 长川科技取得功率电阻测试相关专利（测试功率器件动态导通电阻，结构低成本）</li>
+    <li><span class="tag tag-blue">🔵</span> 半导体行情再度升温，设备材料线和芯片线取舍讨论升温</li>
+    <li><span class="tag tag-orange">⚠️</span> 前夜费半暴跌6.27%，关注今日半导体板块压力传导</li>
+  </ul>
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind</a></div>
+
+<div class="card">
+  <strong>容百科技（新能源电池材料）</strong>
+  <ul class="bullet">
+    <li><span class="tag tag-red">🔴</span> 碳酸锂涨超4%！国内某大型锂矿停产约11个月后获批复产（约占全国产能10%）</li>
+    <li><span class="tag tag-red">🔴</span> 宁德时代发布钠电储能产品，钠电有望加速应用</li>
+    <li><span class="tag tag-orange">🟠</span> 6月金属普跌但碳酸锂逆势涨超4%，电池材料方向走强</li>
+  </ul>
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind / SMM日评</a></div>
+
+<div class="card">
+  <strong>中国平安(601318) / 中国太保(601601)</strong>
+  <ul class="bullet">
+    <li><span class="tag tag-red">🔴</span> 保险板块7月1日涨超6%！新华保险触及涨停，中国人寿涨近9.7%</li>
+    <li><span class="tag tag-red">🔴</span> 国金晨讯：保险板块Q2盈利有望高增，估值修复</li>
+  </ul>
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind / 国金晨讯</a></div>
+
+<h3>港股持仓</h3>
+
+<div class="card">
+  <strong>腾讯控股(0700.HK)</strong>
+  <ul class="bullet">
+    <li><span class="tag tag-red">🔴</span> 天风推荐7月金股⭐</li>
+    <li><span class="tag tag-orange">🟠</span> 上半年累计<span class="green">-27.41%</span>，沽空股数增3倍</li>
+    <li><span class="tag tag-red">🔴</span> 隔夜中概逆市大涨，腾讯ADR<span class="red">+2.95%</span></li>
+    <li><span class="tag tag-orange">🟠</span> 港股7月1日休市，今日恢复交易关注补涨</li>
+  </ul>
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind / 天风策略</a></div>
+
+<div class="card">
+  <strong>中国财险(2328.HK)</strong>
+  <ul class="bullet">
+    <li><span class="tag tag-red">🔴</span> 保险板块Q2盈利有望高增（国金晨讯）</li>
+    <li><span class="tag tag-blue">🔵</span> 港股沽空比率持续高位运行（20%+），需关注流动性风险</li>
+  </ul>
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind</a></div>
+
+<div class="divider"></div>
+
+<!-- 知识星球 -->
+<h2>📄 知识星球（zsxq）</h2>
+
+<div class="highlight highlight-orange">
+  ⚠️ zsxq-cli认证失败（exit code 5），Skill权限仍未开通。以下内容通过Wind研报模块替代关键词过滤。
+</div>
+
+<h3>Wind研报中含"强推/上调/重视/买入/增持"关键词的7月增量</h3>
+<table>
+  <tr><th>来源</th><th>标题/内容</th><th>关键词</th></tr>
+  <tr><td>天风证券</td><td>推荐腾讯控股为7月金股</td><td><span class="tag tag-red">买入⭐</span></td></tr>
+  <tr><td>东海证券</td><td>推荐海光信息为7月金股</td><td><span class="tag tag-red">买入⭐</span></td></tr>
+  <tr><td>国金晨讯</td><td>保险板块Q2盈利有望高增，估值修复</td><td><span class="tag tag-orange">重视</span></td></tr>
+  <tr><td>多家券商</td><td>药明康德获3家联合推荐</td><td><span class="tag tag-red">买入⭐</span></td></tr>
+  <tr><td>华鑫证券</td><td>药明康德回购彰显信心，予"买入"评级</td><td><span class="tag tag-red">买入</span></td></tr>
+</table>
+<div class="highlight highlight-orange">
+  ⚠️ zsxq附件（PDF/图片）无法读取，需手动查看星球原文
+</div>
+<div class="source-link">🔗 <a href="https://wind.com.cn">来源：Wind 金融新闻终端（替代zsxq直接搜索）</a></div>
+
+<div class="divider"></div>
+
+<!-- 关注清单 -->
+<h2>🔵 关注清单</h2>
+<table>
+  <tr><th>标的</th><th>隔夜增量</th><th>评级变化</th></tr>
+  <tr><td>寒武纪</td><td><span class="red">🔴 万亿市值后风险提示，费半暴跌传导压力</span></td><td>—</td></tr>
+  <tr><td>中际旭创</td><td>7月人气最高金股（3家联合推荐），但CPO板块7/1回调</td><td>热度维持</td></tr>
+  <tr><td>药明康德</td><td><span class="red">⭐ 3家联合推荐7月金股+6月大涨超20%创新高</span></td><td>评级上调</td></tr>
+  <tr><td>中国巨石</td><td><span class="red">⭐ AI高端电子布获浙商/国金推荐</span></td><td>新增推荐</td></tr>
+  <tr><td>海光信息</td><td><span class="red">⭐ 多家券商7月金股+国产算力验证</span></td><td>首次推荐</td></tr>
+  <tr><td>美团-W</td><td>LongCat-2.0开源+国产算力验证+ADR<span class="red">+2.73%</span></td><td>关注</td></tr>
+  <tr><td>新希望</td><td>7/1涨停+养殖产能加速调减+周期见底逻辑</td><td>板块爆发</td></tr>
+  <tr><td>北方华创</td><td>7/1涨超9%+国产算力验证+科创半导体ETF12连涨</td><td>热度维持</td></tr>
+  <tr><td>Meta(META)</td><td><span class="red">🔴+9%出售过剩AI算力构建云业务</span></td><td>算力供需拐点信号</td></tr>
+  <tr><td>SpaceX(SPCX)</td><td><span class="green">🟢-8%+7月7日纳入纳指100</span></td><td><span class="tag tag-orange">⚠️ 解禁潮风险</span></td></tr>
+  <tr><td>恒生科技</td><td>夜盘<span class="red">+0.94%</span>+估值历史低位+沽空高压</td><td>关注反弹</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<!-- 数据溯源 -->
+<h2>📊 数据溯源</h2>
+<table>
+  <tr><th>板块</th><th>数据来源</th><th>时间戳</th></tr>
+  <tr><td>美股收盘</td><td>Wind financial_docs.get_financial_news</td><td>2026-07-02</td></tr>
+  <tr><td>A股收盘</td><td>Wind financial_docs.get_financial_news</td><td>2026-07-01</td></tr>
+  <tr><td>港股收盘</td><td>Wind financial_docs.get_financial_news</td><td>2026-07-01/02</td></tr>
+  <tr><td>美联储</td><td>Wind financial_docs.get_financial_news</td><td>2026-07-02</td></tr>
+  <tr><td>PMI/宏观</td><td>Wind / 国家统计局 / 广发宏观</td><td>2026-07-01</td></tr>
+  <tr><td>券商策略</td><td>Wind 策略专题/金股月报</td><td>2026-07-01</td></tr>
+  <tr><td>原油/黄金</td><td>Wind / 高盛</td><td>2026-07-02</td></tr>
+  <tr><td>知识星球</td><td>zsxq-cli认证失败（exit 5），用Wind研报替代</td><td>2026-07-02</td></tr>
+  <tr><td>持仓个股</td><td>Wind financial_docs</td><td>2026-07-01/02</td></tr>
+</table>
+
+<div class="report-footer">
+  数据来源：Wind 万得金融终端 · My Research Central · via WB
+</div>
+
+</body>
+</html>
