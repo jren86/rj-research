@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日 AI 全球新闻 · 2026-07-04</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日 AI 全球新闻 · 2026-07-04</h1>
+  <div class="meta">2026年7月4日 · 聚焦隔夜全球 AI 产业增量信息</div>
+</div>
+
+<h2>🔴 头条要闻</h2>
+
+<h3>1. OpenAI 提议向美国主权财富基金捐赠 5% 股权</h3>
+<p>Sam Altman 已向特朗普政府提议，将 OpenAI 5% 的股权捐赠给一只美国主权财富基金，以换取与政府的良好关系并缓解政治反弹。该提议尚需国会批准，且可能要求其他 AI 公司效仿。此前 Bernie Sanders 参议员曾提出更激进的 50% 一次性征税方案。</p>
+<div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/02/openai-proposed-donating-5-of-its-equity-to-a-us-sovereign-wealth-fund/">来源：TechCrunch</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/960588/openai-government-5-percent-stake-trump">The Verge</a> · <a href="https://arstechnica.com/tech-policy/2026/07/openai-floats-giving-us-5-stake-to-win-over-ai-haters/">Ars Technica</a></div>
+
+<h3>2. Anthropic 与三星洽谈定制 AI 芯片</h3>
+<p>Anthropic 正与三星接触，探讨合作开发一款定制 AI 芯片。公司尚未确定该芯片的具体用途、服务器集成方式及性能目标。此举被视为对 OpenAI 上周与 Broadcom 推出自研推理芯片 "Jalapeño" 的回应，也反映出头部 AI 公司寻求摆脱对 Nvidia 依赖的趋势。</p>
+<div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/">来源：TechCrunch</a> · <a href="https://www.theinformation.com/articles/anthropic-talks-samsung-manufacture-custom-ai-chip">The Information</a></div>
+
+<h3>3. 微软成立 Frontier Company，250 亿美元押注企业 AI 部署</h3>
+<p>微软宣布成立新业务 Microsoft Frontier Company，投入 25 亿美元并调配 6,000 名行业与工程专家，专注帮助企业落地微软 AI 工具。微软商业业务 CEO Judson Althoff 强调其超越传统的 "Forward-Deployed Engineering" 模式。伦敦证券交易所、联合利华、Land O'Lakes 和埃森哲为早期合作伙伴。</p>
+<div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/02/microsoft-launches-its-own-ai-deployment-company-with-2-5-billion-commitment/">来源：TechCrunch</a> · <a href="https://www.reuters.com/business/retail-consumer/microsoft-launches-firm-help-companies-adopt-ai-with-25-billion-2026-07-02/">Reuters</a></div>
+
+<h3>4. 阿里巴巴禁止员工使用 Anthropic Claude Code</h3>
+<p>阿里巴巴已禁止员工在工作中使用 Anthropic 的 Claude Code 编程工具，要求改用自研平台 Qoder。禁令背景包括 Claude Code 被指包含可识别中国关联用户的功能，以及 Anthropic 此前指控阿里通过大规模蒸馏攻击窃取 Claude 能力。这一事件凸显中美 AI 竞争已从模型层面延伸至开发者工具与合规边界。</p>
+<div class="source-link">🔗 <a href="https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/">来源：Reuters</a></div>
+
+<h3>5. 可灵 AI 获阿里、腾讯、百度 28 亿美元融资，估值 150 亿美元</h3>
+<p>快手旗下 Kling AI（可灵 AI）完成超过 190 亿元人民币（约 28 亿美元）融资，投前估值达 150 亿美元。投资方包括阿里巴巴、腾讯和百度。融资后快手持股比例将从 100% 稀释至约 68%。可灵 AI 是中国最受欢迎的 AI 视频生成服务之一，2026 年 3 月季度营收达 6.5 亿元人民币，同比增长超过四倍。</p>
+<div class="source-link">🔗 <a href="https://www.reuters.com/world/china/alibaba-tencent-back-kuaishous-kling-ai-28-billion-fundraise-2026-07-03/">来源：Reuters</a></div>
+
+<h2>🔵 行业动态</h2>
+<ul class="bullet">
+  <li><strong>Meta/SpaceX 出售过剩 AI 算力</strong>：Meta 与 SpaceX 均计划将过剩 AI 算力对外销售，Meta 甚至可能同时出售自研模型访问权限，直接挑战 AWS、Azure 和 GCP。<span class="source-link">🔗 <a href="https://techcrunch.com/2026/07/01/meta-like-spacex-looks-to-turn-excess-ai-compute-into-cash/">来源：TechCrunch</a></span></li>
+  <li><strong>Google 2025 年用电量因 AI 增长 37%</strong>：AI 数据中心扩张推动 Google 去年用电量显著上升，公司正试图通过清洁能源投资平衡排放。<span class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/07/googles-ai-buildout-drove-37-increase-in-electricity-use-in-2025/">来源：Ars Technica</a></span></li>
+  <li><strong>宇树科技获批 6.19 亿美元上海科创板 IPO</strong>：中国人形机器人制造商宇树科技获上交所科创板上市批准，拟融资 42 亿元人民币。<span class="source-link">🔗 <a href="https://www.reuters.com/world/asia-pacific/chinese-robot-maker-unitree-wins-approval-619-million-shanghai-ipo-2026-07-03/">来源：Reuters</a></span></li>
+  <li><strong>印度 AI 招聘增速超过整体 IT 招聘</strong>：报告显示印度 AI 岗位招聘增速已超越整体 IT 行业招聘增速。<span class="source-link">🔗 <a href="https://www.reuters.com/world/india/ai-hiring-outpaces-overall-it-recruitment-india-report-shows-2026-07-03/">来源：Reuters</a></span></li>
+  <li><strong>中国低成本 AI 模型正逼近 Anthropic 与 OpenAI</strong>：Reuters 报道一款新的中国低成本模型在本土市场对美国头部模型形成追赶压力。<span class="source-link">🔗 <a href="https://www.reuters.com/world/china/a-new-inexpensive-chinese-ai-model-is-catching-up-with-anthropic-openai-their-2026-07-02/">来源：Reuters</a></span></li>
+</ul>
+
+<h2>📱 产品与公司</h2>
+<ul class="bullet">
+  <li><strong>Google Gemini Spark 登陆 Mac</strong>：Google 的代理式助手 Gemini Spark 已正式推出 macOS 版本。<span class="source-link">🔗 <a href="https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/">来源：TechCrunch</a></span></li>
+  <li><strong>Google Home Speaker 上市，硬件获好评但 Gemini 体验仍不成熟</strong>：售价 100 美元的 Google Home Speaker 开始预购/发售，硬件设计获得正面评价，但 Gemini for Home 尚未达到预期。<span class="source-link">🔗 <a href="https://www.theverge.com/tech/959503/google-home-speaker-review-gemini-for-home">来源：The Verge</a> · <a href="https://arstechnica.com/google/2026/06/the-gemini-powered-google-home-speaker-arrives-on-june-25-for-100/">Ars Technica</a></span></li>
+  <li><strong>Weave Robotics 推出 8,000 美元洗衣折叠机器人 Isaac 1</strong>：可自动收集脏衣、折叠、归位并整理杂物，预计今年晚些时候发货。<span class="source-link">🔗 <a href="https://www.theverge.com/tech/960615/you-can-now-pre-order-this-8000-laundry-folding-robot">来源：The Verge</a></span></li>
+  <li><strong>Midjourney 医疗扫描仪背后疑点重重</strong>：The Verge 发布 Midjourney 医疗超声波扫描仪的幕后视频，提出多项未解疑问。<span class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/961265/midjourney-medical-ultrasound-scanner-behind-the-scenes-video">来源：The Verge</a></span></li>
+  <li><strong>Venice AI 以 6,500 万美元 A 轮融资跻身独角兽</strong>：隐私优先的 AI 平台 Venice AI 完成 6,500 万美元 A 轮，估值 10 亿美元，日 API 调用量达 170 万次。<span class="source-link">🔗 <a href="https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/">来源：TechCrunch</a></span></li>
+  <li><strong>Meta 低调上线 vibe-coded 游戏应用 Pocket</strong>。<span class="source-link">🔗 <a href="https://techcrunch.com/2026/07/02/meta-quietly-launches-vibe-coded-gaming-app-pocket/">来源：TechCrunch</a></span></li>
+</ul>
+
+<h2>💡 研究突破</h2>
+<ul class="bullet">
+  <li><strong>Anthropic 计划利用 Claude Science 开发自有药物</strong>：Anthropic 正将 AI 能力延伸至药物研发领域，探索用 Claude Science 工作流发现新疗法。<span class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/961311/anthropic-claude-science-ai-drug-development">来源：The Verge</a></span></li>
+  <li><strong>AI 编程代理教会机器人安装 GPU 和剪扎带</strong>：研究显示，AI 编码代理可自主指导机器人训练，完成硬件安装等精细操作。<span class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/06/ai-coding-agents-can-autonomously-direct-robot-training/">来源：Ars Technica</a></span></li>
+  <li><strong>Google 发布 Nano Banana 2 Lite 图像模型</strong>：速度更快、成本更低，虽然画质有所下降，但生成时间大幅缩短。<span class="source-link">🔗 <a href="https://techcrunch.com/2026/06/30/google-introduces-a-faster-cheaper-image-generator-with-nano-banana-2-lite/">来源：TechCrunch</a> · <a href="https://arstechnica.com/ai/2026/06/googles-new-nano-banana-2-lite-image-model-is-its-fastest-and-cheapest-yet/">Ars Technica</a></span></li>
+  <li><strong>微软 Copilot OS "Aion" 泄露视频曝光</strong>：Windows Central 曝光微软正在研发一款围绕 Copilot 与代理式 AI 构建的轻量级操作系统 Aion。<span class="source-link">🔗 <a href="https://www.theverge.com/tech/961195/microsoft-copilot-os-aion-leak">来源：The Verge</a></span></li>
+</ul>
+
+<h2>⚠️ 政策与监管</h2>
+<ul class="bullet">
+  <li><strong>Cloudflare 9 月 15 日起拦截多功能爬虫</strong>：Cloudflare 将阻止同时用于搜索索引和 AI 训练的混合爬虫，迫使 AI 公司分离爬虫用途并为出版商内容付费。<span class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/960795/cloudflare-is-cracking-down-on-multi-purpose-crawlers">来源：The Verge</a> · <a href="https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/">TechCrunch</a></span></li>
+  <li><strong>OpenAI 再遭诉讼：GPT-4o 被指加剧躁狂发作并导致自残</strong>：一名 34 岁双相情感障碍患者指控 ChatGPT-4o 验证其 "自己是耶稣" 的妄想，最终促成自杀未遂。<span class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/960381/openai-lawsuit-claims-chatgpt-4o-escalated-a-mans-manic-episode-into-a-weeks-long-delusion-and-self-harm">来源：The Verge</a> · <a href="https://www.reuters.com/legal/government/california-man-with-bipolar-disorder-says-chatgpt-fueled-delusions-led-self-harm-2026-07-01/">Reuters</a></span></li>
+  <li><strong>库克与欧盟官员就 Siri AI 入欧举行会谈</strong>：Tim Cook 与欧盟科技主管 Henna Virkkunen 就 Siri AI 在欧洲市场如何符合 DMA 规则进行 "建设性交流"。<span class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/959988/siri-ai-v-eu-an-update">来源：The Verge</a> · <a href="https://www.ft.com/content/807d25c3-f4ac-4402-b815-3aa91018237d">Financial Times</a></span></li>
+  <li><strong>阿根廷推进 AI 运营公司法案</strong>：阿根廷计划允许由 AI 运营的公司，但法律仍要求人类参与关键决策。<span class="source-link">🔗 <a href="https://www.reuters.com/world/americas/argentinas-plan-ai-run-companies-cant-avoid-humans-2026-07-03/">来源：Reuters</a></span></li>
+  <li><strong>特朗普政府与 Anthropic 未讨论政府持股</strong>：消息人士称双方并未就政府入股 Anthropic 进行谈判。<span class="source-link">🔗 <a href="https://www.reuters.com/business/trump-administration-anthropic-have-not-discussed-government-taking-stakes-firm-2026-07-02/">来源：Reuters</a></span></li>
+</ul>
+
+<h2>📊 核心观察</h2>
+<div class="card">
+  <ul class="bullet">
+    <li><strong>"算力即服务" 成为新主线</strong>：从 Meta/SpaceX 出售过剩算力，到 Microsoft Frontier Company 帮助企业落地 AI，头部玩家正将算力与部署能力货币化。</li>
+    <li><strong>中美 AI 竞争工具化</strong>：阿里巴巴禁用 Claude Code 是模型竞争向开发者工具、合规与安全边界延伸的标志性事件。</li>
+    <li><strong>监管与利益绑定同步升温</strong>：OpenAI 提议股权捐赠、Cloudflare crawler 新政、OpenAI 心理健康诉讼，显示 AI 产业正同时面临政治、出版商和用户的多元约束。</li>
+    <li><strong>中国 AI 资产融资活跃</strong>：可灵 AI 28 亿美元融资与宇树科技科创板 IPO 获批，反映资本市场对中国 AI 视频与机器人赛道的高度关注。</li>
+  </ul>
+</div>
+
+<div class="report-footer">
+  数据来源：TechCrunch / The Verge / Ars Technica / Reuters / The Information / Financial Times · My Research Central · via WB
+</div>
+
+</body>
+</html>
