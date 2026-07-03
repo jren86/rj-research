@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间投研日报 · 2026-07-03</title>
+  <style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📊 晚间投研日报 · 2026-07-03</h1>
+  <div class="meta">聚焦当日增量信息 · 不含交易数据 · 生成时间：2026-07-03 17:55 CST</div>
+</div>
+
+<!-- ==================== 催化剂日历 ==================== -->
+<h2>📋 催化剂日历</h2>
+
+<table>
+  <tr><th>日期</th><th>事件</th><th>影响板块</th><th style="text-align:center">关注度</th></tr>
+  <tr><td>7/2</td><td>宇树科技科创板IPO注册申请获证监会通过，拟募资42亿元</td><td>人形机器人/减速器</td><td style="text-align:center"><span class="tag tag-red">🔴</span></td></tr>
+  <tr><td>7/17</td><td>2026世界人工智能大会（WAIC）上海开幕</td><td>AI/机器人</td><td style="text-align:center"><span class="tag tag-blue">🔵</span></td></tr>
+  <tr><td>7月</td><td>中报业绩预告/快报密集披露窗口期</td><td>全市场</td><td style="text-align:center"><span class="tag tag-red">🔴</span></td></tr>
+  <tr><td>Q3</td><td>长鑫存储/长江存储IPO推进</td><td>半导体/设备/材料</td><td style="text-align:center"><span class="tag tag-blue">🔵</span></td></tr>
+  <tr><td>近期</td><td>韩国三星+SK集团公布4755万亿韩元半导体AI投资计划</td><td>半导体/AI</td><td style="text-align:center"><span class="tag tag-blue">🔵</span></td></tr>
+</table>
+
+<!-- ==================== 宏观与市场环境 ==================== -->
+<h2>🌍 宏观与市场环境</h2>
+
+<h3>宏观经济</h3>
+<ul class="bullet">
+  <li><strong>国内</strong>：6月PMI 50.3重回扩张区间，经济温和复苏延续。陆家嘴论坛政策红利持续释放，政治局会议下旬定调。</li>
+  <li><strong>海外</strong>：美联储偏鹰立场维持，欧日加息引发全球流动性收紧预期，美元走强压制新兴市场估值修复空间。美光业绩超预期反映全球AI半导体高景气。</li>
+</ul>
+<div class="source-link">🔗 来源：Wind金融终端 · 宏观新闻</div>
+
+<h3>A股市场概览</h3>
+<div class="card">
+  <p>今日A股冲高回落，三大指数尾盘涨幅明显收窄，板块热点快速轮动。</p>
+  <ul class="bullet">
+    <li>全市场 <strong class="red">3,804只上涨</strong>，1,628只下跌，中位数涨幅 <strong>+1.26%</strong></li>
+    <li>两市成交额 <strong>3.18万亿元</strong>，较上一交易日缩量 <strong class="orange">2,681亿元</strong></li>
+    <li>主力资金全天净流出 <strong class="green">87.10亿元</strong></li>
+  </ul>
+</div>
+
+<h3>资金流向（Wind二级行业）</h3>
+<table>
+  <tr><th>板块</th><th style="text-align:center">涨跌幅</th><th style="text-align:right">主力净流入</th></tr>
+  <tr><td>汽车与零配件</td><td style="text-align:center"><span class="red">+4.40%</span></td><td style="text-align:right"><span class="red">+58.98亿</span></td></tr>
+  <tr><td>国防军工</td><td style="text-align:center"><span class="red">+4.20%</span></td><td style="text-align:right">—</td></tr>
+  <tr><td>机械</td><td style="text-align:center"><span class="red">+3.08%</span></td><td style="text-align:right"><span class="red">+54.20亿</span></td></tr>
+  <tr><td>电气设备</td><td style="text-align:center">—</td><td style="text-align:right"><span class="red">+29.60亿</span></td></tr>
+  <tr><td>半导体</td><td style="text-align:center"><span class="green">-1.63%</span></td><td style="text-align:right"><span class="green">-124.88亿</span></td></tr>
+  <tr><td>化工</td><td style="text-align:center"><span class="green">-1.89%</span></td><td style="text-align:right"><span class="green">-69.21亿</span></td></tr>
+</table>
+
+<h3>主线热点</h3>
+<ul class="bullet">
+  <li><span class="tag tag-red">🔴</span> <strong>人形机器人/减速器全线爆发</strong>：机器人ETF（159039）一度涨停，收涨9.55%；板块超40只个股封涨停。催化：宇树科技科创板IPO过会（"人形机器人第一股"）</li>
+  <li><span class="tag tag-red">🔴</span> <strong>贵金属板块持续强势</strong>：黄金股ETF（159321）大涨7.06%；四川黄金、西部黄金、赤峰黄金等涨停</li>
+  <li><span class="tag tag-blue">🔵</span> <strong>汽车零部件领涨两市</strong>：主力资金净流入69.40亿，21只个股涨停。机器人+汽车零部件上游重合逻辑驱动</li>
+  <li><span class="tag tag-green">🟢</span> <strong>半导体板块调整</strong>：光刻胶概念走弱，晶瑞电材-12.59%，泰和科技-10.49%，半导体设备板块迎调整</li>
+</ul>
+<div class="source-link">🔗 来源：Wind金融终端 · 行情复盘及资金流向数据</div>
+
+<!-- ==================== 策略观点 ==================== -->
+<h2>💡 策略观点</h2>
+<h3 style="color: var(--yellow);">7月券商策略汇总</h3>
+
+<div class="highlight-blue">
+  <p><strong>核心共识：科技成长仍是7月主线，但需注意再平衡</strong></p>
+  <p>综合中金、中信、华泰、天风、国盛、国联民生、中原、东海、华安等多家券商7月策略观点：</p>
+  <ul class="bullet">
+    <li><strong class="red">利多</strong>：AI大模型与半导体产业趋势明确 + 陆家嘴论坛政策红利 + 中报业绩窗口期 + 下旬政治局会议定调 → 产业、政策、业绩三重支撑</li>
+    <li><strong class="green">利空</strong>：科技板块高换手/交易拥挤存在获利回吐压力；海外美联储偏鹰/美元走强压制高估值成长股估值修复上限</li>
+    <li><strong>结论</strong>：A股维持宽幅震荡，资金持续向中报业绩可兑现的科技细分赛道集中</li>
+  </ul>
+</div>
+
+<h3>重点券商7月金股推荐</h3>
+<table>
+  <tr><th>券商</th><th>核心观点</th><th>重点推荐标的</th></tr>
+  <tr>
+    <td>中原证券</td>
+    <td>科技成长为核心主线</td>
+    <td>⭐ 兆易创新、⭐ 寒武纪、⭐ 中科曙光、鼎龙股份、英杰电气、多氟多、宁德时代、海博思创、广发证券、完美世界</td>
+  </tr>
+  <tr>
+    <td>天风证券</td>
+    <td>科技仍是顶流，可适当配置低位行业</td>
+    <td>潮宏基、恒林股份、海大集团、牧原股份</td>
+  </tr>
+  <tr>
+    <td>国联民生</td>
+    <td>高景气集中于AI硬科技，可先配低位或红利</td>
+    <td>中际旭创（最热门，11家推荐）</td>
+  </tr>
+  <tr>
+    <td>国金/浙商</td>
+    <td>AI高端电子布供不应求至2027年</td>
+    <td>中国巨石（9家推荐）</td>
+  </tr>
+  <tr>
+    <td>中泰/开源/国金</td>
+    <td>CXO景气修复</td>
+    <td>药明康德（7家推荐）</td>
+  </tr>
+  <tr>
+    <td>国元证券</td>
+    <td>机器人概念标的+低估值</td>
+    <td>双环传动</td>
+  </tr>
+  <tr>
+    <td>华安证券</td>
+    <td>储能电芯供不应求</td>
+    <td>中创新航</td>
+  </tr>
+  <tr>
+    <td>东海证券</td>
+    <td>氟化工景气持续</td>
+    <td>巨化股份</td>
+  </tr>
+</table>
+
+<div class="highlight-orange">
+  <p>⭐ <strong>标记说明</strong>：首次推荐/评级上调标的</p>
+  <p><strong>7月金股行业分布特征</strong>：AI算力产业链仍为最核心配置方向，但医药、券商关注度明显升温，科技独大格局有所松动。半导体板块覆盖面最广（华虹宏力、海光信息、中微公司、澜起科技、北方华创、中芯国际、寒武纪）。</p>
+</div>
+<div class="source-link">🔗 来源：Wind金融终端 · 券商金股月报（2026年7月）汇总自34家券商金股</div>
+
+<!-- ==================== 持仓个股 ==================== -->
+<h2>📂 持仓个股增量信息</h2>
+
+<h3>A股持仓（13+）</h3>
+
+<div class="card">
+  <h3><span class="tag tag-red">🔴</span> 牧原股份（002714.SZ）</h3>
+  <ul class="bullet">
+    <li><strong>天风证券7月金股</strong>：7月1日推荐</li>
+    <li><strong>猪周期底部持续降本</strong>：截至5月底已落地323元降本（600元目标过半），头部优秀场线成本已跌破10.5元/kg，行业成本优势持续领跑</li>
+    <li><strong>高管增持+港股回购</strong>：12位核心董事高管拟增持4-5亿元，同步推出3-5亿港元H股回购</li>
+    <li><strong>能繁母猪加速去化</strong>：5月环比下降1.32%（4月为0.89%），市场预期Q4猪价迎来整体性盈利修复</li>
+    <li><span class="tag tag-orange">⚠️ 风险</span>：短期流动性承压，现金短债比0.31；Q1归母净利润亏损12.15亿元</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3><span class="tag tag-red">🔴</span> 中科曙光（603019.SH）</h3>
+  <ul class="bullet">
+    <li><strong>中原证券7月金股</strong>：作为科技成长主线核心标的被推荐（6月30日）</li>
+    <li><strong>80亿可转债进展</strong>：已通过上交所审核，资金投向先进算力集群（35亿）、AI训推一体机（25亿）、国产化存储（20亿）</li>
+    <li><strong>估值拆解</strong>：总市值约1546亿元，持海光信息27.96%股权对应公允价值约1007亿元，剔除后自有业务约539亿元</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3><span class="tag tag-red">🔴</span> 寒武纪（688256.SH）</h3>
+  <ul class="bullet">
+    <li><strong>中原证券7月金股 ⭐ 首次推荐</strong></li>
+    <li><strong>万亿市值里程碑</strong>：6月30日成为科创板第二只万亿市值个股（继中芯国际之后）</li>
+    <li><strong>Q1业绩炸裂</strong>：营收28.85亿元（+159.56%），净利润10.13亿元（+185.04%）</li>
+    <li><strong>高盛上调目标价</strong>：目标价从2104元上调至2406元（+41.5%空间）</li>
+    <li><strong>国产AI芯片替代加速</strong>：2025年国产芯片占比从30%拉升至41%</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3><span class="tag tag-blue">🔵</span> 浪潮信息（000977.SZ）</h3>
+  <ul class="bullet">
+    <li>AI服务器出货冠军，全球市占率前二，连续4年蝉联中国液冷服务器市场第一</li>
+    <li>压制因素：高盛评级从"买入"下调至"中性"，目标价76.5元；毛利率被压缩至个位数</li>
+    <li>转型方向：开放计算架构，快速适配多品牌国产AI芯片</li>
+  </ul>
+</div>
+
+<h3>其他A股持仓</h3>
+<ul class="bullet">
+  <li><strong>复旦微电</strong>：国产FPGA龙头，受益AI算力国产替代</li>
+  <li><strong>中船特气（停牌）</strong>：六氟化钨受益量价齐升（申万化工重点推荐）</li>
+  <li><strong>拓荆科技（停牌）</strong>：半导体设备龙头，收购事项推进中</li>
+  <li><strong>华特气体</strong>：半导体特种气体供应商</li>
+  <li><strong>水晶光电/旭光电子</strong>：暂无当日新增催化</li>
+</ul>
+
+<h3>港股持仓（7+）</h3>
+<table>
+  <tr><th>标的</th><th>增量信息</th></tr>
+  <tr><td><strong>腾讯控股（00700.HK）</strong></td><td>南向资金近期呈净买入趋势；AI战略持续推进，AI浏览器等应用加速落地</td></tr>
+  <tr><td><strong>中芯国际（00981.HK）</strong></td><td>多家券商纳入7月金股；先进制程产能利用率维持高位；南向资金近7天净买入47.90亿港元</td></tr>
+  <tr><td><strong>美团-W（03690.HK）</strong></td><td>AI浏览器上线；南向资金近期净卖出压力较大</td></tr>
+  <tr><td><strong>小米集团-W（01810.HK）</strong></td><td><span class="tag tag-orange">⚠️</span> 南向资金短线加速流出（近7天净卖出12.28亿港元）</td></tr>
+</table>
+
+<!-- ==================== 知识星球 ==================== -->
+<h2>📚 知识星球（zsxq）关键信息</h2>
+
+<div class="highlight-blue">
+  <p>按规则搜索「水木调研纪要-2.0」和「调研纪要更新」中含 <strong>强推/上调/重视/重点推荐/买入/增持</strong> 关键词的报告：</p>
+</div>
+
+<table>
+  <tr><th>来源</th><th>主题</th><th>关键内容</th><th>日期</th></tr>
+  <tr>
+    <td>水木/纪要更新</td>
+    <td>万辰集团持续重点推荐</td>
+    <td>核心业务人员17亿购买5.5%股权（8折深度绑定）；26年PE 15X，实际约12X</td>
+    <td>4/23</td>
+  </tr>
+  <tr>
+    <td>水木/纪要更新</td>
+    <td>申万宏源化工·电子材料重点推荐</td>
+    <td>存储(鼎龙/雅克/安集/广钢) + 封测(华海诚科/艾森股份) + 涨价品种(中船六氟化钨/昊华科技/国瓷材料) + TAC膜(天禄科技)</td>
+    <td>5/22-6/2</td>
+  </tr>
+  <tr>
+    <td>水木/纪要更新</td>
+    <td>新强联重点推荐</td>
+    <td>股价超跌调整到11倍PE，全年排产饱满，Q2排产同环比提升</td>
+    <td>5/28</td>
+  </tr>
+  <tr>
+    <td>水木</td>
+    <td>广发建筑·洁净室强推</td>
+    <td>柏诚股份(目标230亿)+亚翔集成+圣晖集成，受益两存及先进制程扩产</td>
+    <td>6/4</td>
+  </tr>
+  <tr>
+    <td>水木/纪要更新</td>
+    <td>AIDC板块再推荐</td>
+    <td>变压器(思源电气/金盘科技) + SST(四方股份强推) + SSCB(良信股份强推)</td>
+    <td>5/14</td>
+  </tr>
+  <tr>
+    <td>水木</td>
+    <td>行动教育重点推荐</td>
+    <td>高股息(90%+分红)+低估值(17x)+增长提速，期权激励26-28年+20%</td>
+    <td>6/29</td>
+  </tr>
+  <tr>
+    <td>纪要更新</td>
+    <td>天禄科技再创新高</td>
+    <td>年初底部推荐接近四倍，雅创电子、天岳先进、晶升股份、洁美科技等</td>
+    <td>7/2</td>
+  </tr>
+</table>
+
+<div class="source-link">🔗 来源：zsxq 水木调研纪要-2.0（88888142214212） + 调研纪要更新（48844242514558）</div>
+
+<!-- ==================== 关注清单 ==================== -->
+<h2>👁️ 关注清单（11只）增量信息</h2>
+
+<table>
+  <tr><th>代码</th><th>名称</th><th>7/3增量信息</th></tr>
+  <tr><td>688256.SH</td><td>寒武纪</td><td>中原证券7月金股首次推荐 ⭐；万亿市值AI芯片龙头；高盛目标价2406元</td></tr>
+  <tr><td>603019.SH</td><td>中科曙光</td><td>中原证券7月金股；80亿可转债通过审核；持海光信息27.96%股权</td></tr>
+  <tr><td>002714.SZ</td><td>牧原股份</td><td>天风证券7月金股；高管增持4-5亿+H股回购3-5亿港元；能繁母猪加速去化</td></tr>
+  <tr><td>688017.SH</td><td>绿的谐波</td><td>人形机器人核心零部件龙头，今日盘中一度20cm涨停，二季度累涨超160%</td></tr>
+  <tr><td>300750.SZ</td><td>宁德时代</td><td>7月金股（中原证券），新能源赛道核心配置</td></tr>
+  <tr><td>000776.SZ</td><td>广发证券</td><td>7月金股（中原证券），券商板块关注度升温</td></tr>
+  <tr><td>688981.SH</td><td>中芯国际</td><td>南向资金持续加仓（近7天+47.90亿港元）；7月金股</td></tr>
+  <tr><td>300124.SZ</td><td>汇川技术</td><td>机器人核心零部件供应商</td></tr>
+  <tr><td>600519.SH</td><td>贵州茅台</td><td>（静默期，暂无增量）</td></tr>
+  <tr><td>00700.HK</td><td>腾讯控股</td><td>南向资金近期净买入，AI应用加速落地</td></tr>
+  <tr><td>03690.HK</td><td>美团-W</td><td>AI浏览器上线，南向资金流出压力较大</td></tr>
+</table>
+
+<!-- ==================== 数据溯源 ==================== -->
+<h2>📊 数据溯源</h2>
+
+<table>
+  <tr><th>数据类别</th><th>数据源</th><th>备注</th></tr>
+  <tr><td>指数行情、涨跌幅、成交额</td><td>Wind万得（index_data）</td><td>2026-07-03</td></tr>
+  <tr><td>A股资金流向、行业涨跌</td><td>Wind万得（financial_docs RAG）</td><td>2026-07-03</td></tr>
+  <tr><td>券商策略观点、金股推荐</td><td>Wind万得（financial_docs RAG）</td><td>2026年7月金股汇总</td></tr>
+  <tr><td>持仓个股新闻、公告</td><td>Wind万得（financial_docs RAG）</td><td>多只个股新闻</td></tr>
+  <tr><td>调研纪要、重点推荐</td><td>知识星球 zsxq</td><td>水木调研纪要-2.0 + 调研纪要更新</td></tr>
+  <tr><td>港股通资金流向</td><td>Wind万得（financial_docs RAG）</td><td>南向资金追踪</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<div class="report-footer">
+  数据来源：Wind万得金融终端 · zsxq知识星球 · My Research Central · via WB
+  <br>
+  本报告由AI辅助生成，仅供参考，不构成投资建议。
+</div>
+
+</body>
+</html>
