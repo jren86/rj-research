@@ -4,9 +4,10 @@
       "id": "morning",
       "name": "早间投研日报",
       "description": "每日早间隔夜增量信息汇总",
-      "reportCount": 31,
-      "latestDate": "2026-07-04",
+      "reportCount": 32,
+      "latestDate": "2026-07-05",
       "files": {
+        "2026-07-05": "reports/早间日报_2026-07-05.html",
         "2026-07-04": "reports/早间日报_2026-07-04.html",
         "2026-07-02": "reports/早间日报_2026-07-02.html",
         "2026-07-01": "reports/早间日报_2026-07-01.html",
