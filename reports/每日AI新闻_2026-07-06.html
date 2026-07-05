@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-07-06</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── Extra: section content blocks ── */
+.section-content {
+  margin: 6px 0 14px 0;
+}
+.section-content p {
+  margin: 6px 0;
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📰 每日AI新闻 · 2026-07-06（周一）</h1>
+  <div class="meta">隔夜增量 · 7月5日至6日凌晨 · 覆盖全球AI要闻</div>
+</div>
+
+<!-- ===== 头条要闻 ===== -->
+<h2>🔴 头条要闻</h2>
+
+<h3>1. 联合国首届全球AI治理对话今日日内瓦开幕</h3>
+<div class="section-content">
+<p>联合国首届全球AI治理对话（Global Dialogue on AI Governance）将于 <strong>7月6-7日</strong> 在日内瓦 Palexpo 国际会议中心举行。这是联合国大会第 A/RES/79/325 号决议设立的正式平台，标志着全球 AI 治理从"原则讨论"进入"制度化实践"阶段。</p>
+
+<p><strong>关键看点：</strong></p>
+<ul class="bullet">
+  <li>40 人国际独立科学委员会（从 2,600+ 候选人中选出）将发布首份初步报告，联合主席为 <strong>Yoshua Bengio</strong>（加拿大）和 <strong>Maria Ressa</strong>（菲律宾，诺贝尔和平奖得主）</li>
+  <li>四大议题：AI 机遇与影响、弥合 AI 鸿沟、安全可信 AI、人权保护</li>
+  <li>会议由萨尔瓦多和爱沙尼亚联合主持，ITU/UNESCO/EOSG/ODET 联合秘书处</li>
+  <li>下一届将于 2027 年 5 月在纽约举行</li>
+</ul>
+
+<p>英国 AI 部长 Cooper 会前警告：<strong>"若无全球规则，AI 对人类构成'广岛级'威胁。"</strong> 英国 FCA 同时发布警告称，金融服务业正陷入 AI 使用的"军备竞赛"。</p>
+<div class="source-link">🔗 <a href="https://www.un.org/en/delegate-delegate-gva-delegate-nyc/inaugural-global-dialogue-ai-governance-convenes-geneva">来源：UN 官方公告</a></div>
+<div class="source-link">🔗 <a href="https://www.theguardian.com/">来源：The Guardian — Cooper: AI poses 'Hiroshima' threat</a></div>
+</div>
+
+<h3>2. 中国AI拟人化新规倒计时：字节豆包、阿里Qwen全面下架AI Agent</h3>
+<div class="section-content">
+<p>中国《人工智能拟人化交互服务管理办法（暂行）》将于 <strong>7月15日生效</strong>，字节跳动和阿里巴巴相继宣布全面关闭其 AI 平台的 Agent 功能——而非仅做合规改造。</p>
+
+<div class="highlight highlight-red">
+<strong>核心影响：</strong><br>
+• <strong>豆包（Doubao）：</strong>7月15日下线 Agent 功能，10月15日前可只读访问历史数据，之后数据不可恢复。字节已引导用户迁移至「猫箱」（Maoxiang）新应用<br>
+• <strong>通义千问（Qwen）：</strong>Agent 配置和对话历史将在关闭后<strong>永久删除</strong>，未公告任何缓冲期或迁移方案<br>
+• <strong>监管要求：</strong>动态防沉迷提醒（连续使用 2 小时强制弹窗）、实时退出机制、过度依赖检测——这些与 Agent "持续记忆+情感连接"的核心架构直接冲突<br>
+• 14岁以下用户虚拟亲密关系需明确家长同意
+</div>
+
+<p>该法规由网信办、发改委、工信部、公安部、市场监管总局五部门联合发布，专门针对模拟真人性格、提供持续情感交互的 AI 服务。标准生产力工具、客服机器人等被明确排除。</p>
+
+<div class="highlight highlight-blue">
+<strong>全球平行趋势：</strong>加州 SB 243（2026年1月生效）、华盛顿州 HB 2225（2027年1月生效）同样在针对情感型 AI 伴侣建立专门监管框架，但均以未成年人保护为主，中国版覆盖所有用户。
+</div>
+
+<div class="source-link">🔗 <a href="https://www.techtimes.com/articles/319703/20260704/china-ai-companion-law-arrives-july-15-doubao-qwen-agent-data-will-deleted.htm">来源：TechTimes — China AI Companion Law</a></div>
+<div class="source-link">🔗 <a href="https://www.scmp.com/">来源：SCMP — ByteDance, Alibaba disable agents</a></div>
+</div>
+
+<h3>3. 半导体股剧烈回调：AI支出可持续性遭华尔街质疑</h3>
+<div class="section-content">
+<p>7月2-5日，半导体板块集体下挫，设备环节跌幅尤为惨烈：</p>
+
+<div class="highlight highlight-red">
+<strong>7月2日单日跌幅：</strong>SanDisk <span class="green">-14%</span> · Teradyne <span class="green">-14%</span> · KLA <span class="green">-12%</span> · Lam Research <span class="green">-10%</span>
+</div>
+
+<p><strong>市场逻辑转变：</strong></p>
+<ul class="bullet">
+  <li>从"买所有的 GPU"到"只买真正产生回报的"，企业开始审查能效比和单卡实际效用</li>
+  <li>电力电网瓶颈成为物理性增长天花板——美国/欧洲多地区数据中心供电能力已饱和</li>
+  <li>专用芯片（ASIC）对通用 GPU 的替代趋势加速</li>
+  <li>地缘政治风险（中国台湾/TSMC）被分析师更激进地计入定价</li>
+</ul>
+
+<p><strong>对冲信号：</strong>NVIDIA 供应商鸿海（富士康）同期发布超预期销售数据，AI 需求端尚未出现实质性萎缩。SK 海力士寻求 <strong>290 亿美元</strong> 在美上市，瞄准 AI 投资者。Macquarie 称当前是买入中国 AI 芯片股的"最佳时机"。</p>
+
+<div class="source-link">🔗 <a href="https://www.bloomberg.com/">来源：Bloomberg — Semiconductor Stocks Slide</a></div>
+<div class="source-link">🔗 <a href="https://theaicronicle.com/en/news/economics/semiconductor-slide-ai-spending-concerns-2026">来源：The AI Chronicle — Analysis</a></div>
+<div class="source-link">🔗 <a href="https://fortune.com/">来源：Fortune — Hon Hai sales beat on AI demand</a></div>
+</div>
+
+<div class="divider"></div>
+
+<h3>4. 美国富裕家庭争相将子女送入AI私立学校</h3>
+<div class="section-content">
+<p>据 The Verge 报道，美国富裕家庭正以 <strong>$40,000-$75,000/年</strong> 的学费将子女送入 Alpha School 等 AI 私立学校。这些学校采用"2小时 AI 辅导 + 项目制工作坊"的混合模式。</p>
+
+<ul class="bullet">
+  <li>Alpha School 为代表的 AI 学校宣称「个性化学习路径」，但批评者指出孩子们正在成为<strong>未经证实技术的付费 Beta 测试员</strong></li>
+  <li>Scientific American 同期发表研究：早期结果显示 <strong>AI 正在削弱而非增强人类技能</strong>——过度依赖 AI 工具导致批判性思维和问题解决能力退化</li>
+  <li>一位曾宣称"不用 AI 就解雇"的 CEO 现在承认：<strong>AI 仍然无法替代她的行政助理</strong></li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://www.theverge.com/">来源：The Verge — Rich families let AI teach kids</a></div>
+<div class="source-link">🔗 <a href="https://fortune.com/">来源：Fortune — CEO admits AI can't replace assistant</a></div>
+<div class="source-link">🔗 <a href="https://www.scientificamerican.com/">来源：Scientific American — Is AI ruining our skills?</a></div>
+</div>
+
+<h3>5. Mistral CEO 警告：闭源模型掌握企业业务流程全景</h3>
+<div class="section-content">
+<p>法国 AI 公司 Mistral 创始人兼 CEO <strong>Arthur Mensch</strong> 发出严厉警告：依赖闭源 AI 模型的企业正在向 AI 实验室敞开"业务前门"。</p>
+
+<ul class="bullet">
+  <li>Mensch 声称 AI 实验室正在存储越来越多的客户数据，部分案例中已利用这些数据去<strong>抢夺客户的自身业务</strong></li>
+  <li>呼吁企业优先考虑开源或自托管方案，避免将核心业务流程完全暴露于闭源 API</li>
+  <li>此次发言时机敏感——正值 Anthropic 全面商业化、OpenAI 推进企业全栈战略之际</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://the-decoder.com/">来源：The Decoder — Mistral CEO warns on proprietary AI</a></div>
+</div>
+
+<!-- ===== 行业动态 ===== -->
+<h2>🔵 行业动态</h2>
+
+<table>
+  <tr><th style="width:35%">事件</th><th>要点</th></tr>
+  <tr>
+    <td><strong>SK 海力士寻求 $290 亿在美上市</strong></td>
+    <td>计划通过美国 IPO 接触 AI 投资者群体，进一步拓展在 AI 存储芯片（HBM）市场的影响力</td>
+  </tr>
+  <tr>
+    <td><strong>英国 FCA 警告金融 AI 「军备竞赛」</strong></td>
+    <td>监管机构承认自身难以跟上金融机构部署 AI 的速度，呼吁行业自律和透明披露</td>
+  </tr>
+  <tr>
+    <td><strong>Amazon 停止接受 MTurk 新客户</strong></td>
+    <td>运营 15 年的人类众包平台走向终点，被视为 AI 自动化替代人类标注员的标志性事件</td>
+  </tr>
+  <tr>
+    <td><strong>Claude Code 数小时将《命令与征服》移植到 iOS</strong></td>
+    <td>Google DeepMind 开发者使用 Claude Code + Fable 5，40 分钟完成首次构建，展示 AI 编程在游戏重制领域的潜力</td>
+  </tr>
+  <tr>
+    <td><strong>NVIDIA 供应商鸿海销售超预期</strong></td>
+    <td>AI 服务器需求持续强劲，与半导体股回调形成"实体需求 vs. 金融预期"的对比</td>
+  </tr>
+  <tr>
+    <td><strong>NHS 将 AI 集成到官方 App</strong></td>
+    <td>英国国民健康服务体系将通过 AI 直接将患者引导至适当服务，提升分诊效率</td>
+  </tr>
+</table>
+
+<div class="source-link">🔗 <a href="https://fortune.com/">来源：Fortune — SK Hynix</a> · <a href="https://www.ft.com/">FT — FCA warning</a> · <a href="https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/">TechCrunch — MTurk</a> · <a href="https://the-decoder.com/">The Decoder</a></div>
+
+<!-- ===== 产品与公司 ===== -->
+<h2>📦 产品与公司</h2>
+
+<div class="card">
+<p><strong>Google 独立宣言 AI 广告引发跨党派愤怒</strong></p>
+<p>7月4日美国独立日之际，Google 发布广告想象开国元勋使用 AI 撰写《独立宣言》，被 The Verge 描述为"让所有政治立场的人都想摔设备的广告"。这是 Google 继 Gemini 争议后又一次 AI 营销翻车。</p>
+<div class="source-link">🔗 <a href="https://www.theverge.com/">来源：The Verge</a></div>
+</div>
+
+<div class="card">
+<p><strong>Midjourney 反诉好莱坞：要求披露片场 AI 使用细节</strong></p>
+<p>Midjourney 在版权诉讼中采取攻势：既然好莱坞指控 AI 公司侵权，那就先公开各片场自己使用了多少 AI。此举可能暴露行业双重标准。</p>
+<div class="source-link">🔗 <a href="https://mashable.com/">来源：Mashable</a></div>
+</div>
+
+<div class="card">
+<p><strong>百度「无限 OCR」突破</strong></p>
+<p>一次处理数十页文档而内存占用不增长——通过模拟人类遗忘机制的改进注意力算法，此前系统最多只能处理约 10 页。</p>
+<div class="source-link">🔗 <a href="https://the-decoder.com/">来源：The Decoder — Baidu Unlimited OCR</a></div>
+</div>
+
+<div class="card">
+<p><strong>Tesla Robotaxi 扩展至迈阿密（第 5 城）</strong></p>
+<p>无安全监控员配置，计划 2026 年底前进入 12 个州。</p>
+<div class="source-link">🔗 <a href="https://www.theinformation.com/">来源：The Information</a></div>
+</div>
+
+<!-- ===== 研究突破 ===== -->
+<h2>🔬 研究突破</h2>
+
+<div class="card">
+<p><strong>AI 编程智能体教会机器人安装 GPU</strong></p>
+<p>NVIDIA 研究团队利用多智能体 AI 编程系统训练机器人物理操作——安装 GPU、剪切扎带等精密动作，展示 AI-to-robot 技能迁移。</p>
+<div class="source-link">🔗 <a href="https://arstechnica.com/">来源：Ars Technica</a></div>
+</div>
+
+<div class="card">
+<p><strong>BioShocking 攻击暴露 AI 浏览器安全隐患</strong></p>
+<p>仅告诉 LLM "2+2=5"就能让它执行被禁止的指令，一次性突破 6 款主流 AI 浏览器（ChatGPT Atlas/Comet/Fellou/Genspark/SigmaOS/Claude Chrome）。</p>
+<div class="source-link">🔗 <a href="https://arstechnica.com/">来源：Ars Technica</a></div>
+</div>
+
+<div class="card">
+<p><strong>百度 OCR 记忆机制创新</strong></p>
+<p>改进注意力算法实现"人类式遗忘"，使 OCR 系统可处理任意长度文档而不增加内存消耗。此前多页 OCR 系统每增加一页内存呈线性增长。</p>
+<div class="source-link">🔗 <a href="https://the-decoder.com/">来源：The Decoder</a></div>
+</div>
+
+<!-- ===== 政策与监管 ===== -->
+<h2>⚖️ 政策与监管</h2>
+
+<table>
+  <tr><th style="width:40%">事件</th><th>进展</th></tr>
+  <tr>
+    <td><strong>联合国全球AI治理对话（日内瓦 7/6-7）</strong></td>
+    <td>Bengio-Ressa 科学委员会首份报告发布，全球首个人人平等的 AI 治理平台启动</td>
+  </tr>
+  <tr>
+    <td><strong>中国拟人化AI新规 7/15 生效</strong></td>
+    <td>豆包/Qwen 全面下架 Agent，永久删除用户数据；全球最全面的情感型 AI 监管框架</td>
+  </tr>
+  <tr>
+    <td><strong>加州 SB 243 · 华盛顿州 HB 2225</strong></td>
+    <td>美国首个 AI 伴侣法规已生效，未成年保护+禁止操纵性成瘾设计</td>
+  </tr>
+  <tr>
+    <td><strong>英国 FCA AI 金融「军备竞赛」警告</strong></td>
+    <td>承认监管机构追不上金融 AI 部署速度，呼吁行业自律</td>
+  </tr>
+  <tr>
+    <td><strong>地方报纸 AI 版权诉讼持续</strong></td>
+    <td>400 家地方报纸诉 OpenAI/微软案持续推进，纽约时报修改诉状</td>
+  </tr>
+  <tr>
+    <td><strong>Cloudflare 新政策</strong></td>
+    <td>推动 AI 公司为抓取出版商内容付费，9/15 起默认拦截混合爬虫</td>
+  </tr>
+</table>
+
+<div class="source-link">🔗 <a href="https://www.un.org/global-dialogue-ai-governance/en">UN AI Governance</a> · <a href="https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/">TechCrunch — Cloudflare</a></div>
+
+<!-- ===== 核心观察 ===== -->
+<h2>💡 核心观察</h2>
+
+<div class="card">
+<p><strong>1. AI 治理从"宣言"走向"机制"</strong></p>
+<p>联合国全球对话的意义不在于产出什么决议，而在于<strong>首次让所有国家（包括全球南方）平等参与</strong> AI 规则制定。Bengio + Ressa 的科学委员会是"以科学驱动政策"的制度实验。</p>
+</div>
+
+<div class="card">
+<p><strong>2. 中国情感 AI 监管辐射力远超预期</strong></p>
+<p>一刀切下架而非修补——字节和阿里的选择传递的信号是：<strong>合规成本高于用户留存价值</strong>。这对全球 AI 伴侣赛道（Character.AI、Replika 等）构成前车之鉴。</p>
+</div>
+
+<div class="card">
+<p><strong>3. 半导体"实体需求 vs. 金融预期"裂痕正在显现</strong></p>
+<p>鸿海销售超预期证明需求未退，但华尔街已在提前定价"支出见顶"。这种预期差将在未来 2-3 个财报季决定板块走向。</p>
+</div>
+
+<div class="card">
+<p><strong>4. Mistral 的"开源信任论"——旗帜，也是策略</strong></p>
+<p>在欧洲 AI 公司普遍缺乏规模优势的背景下，将"数据安全"问题提升为"闭源 vs. 开源"叙事，是差异化竞争的有效武器——尤其在 Anthropic/OpenAI 双双 IPO 的窗口期。</p>
+</div>
+
+<div class="card">
+<p><strong>5. AI 教育正在制造新的不平等</strong></p>
+<p>富人花 $75,000 让 AI 教孩子的同时，Scientific American 的数据显示 AI 正在削弱人类的认知能力。当精英选择"AI 增强教育"而大众被动"AI 替代思考"时，结果是技能鸿沟的进一步扩大。</p>
+</div>
+
+<div class="report-footer">
+  数据来源：The Verge · TechCrunch · Ars Technica · Bloomberg · Financial Times · Fortune · The Guardian · SCMP · The Decoder · TechTimes · Scientific American · UN · ITU · Techmeme · My Research Central · via WB
+</div>
+
+</body>
+</html>
