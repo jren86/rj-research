@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日国家队增减持动向 · 2026-07-24</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .report-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-header h1 {
+      font-size: 1.4em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .report-header .meta {
+      font-size: 0.82em;
+      color: var(--text2);
+    }
+
+    h2 {
+      font-size: 1.15em;
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: var(--blue);
+    }
+
+    h3 {
+      font-size: 1em;
+      margin: 14px 0 8px;
+      color: var(--text);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+
+    th {
+      background: var(--card);
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover {
+      background: rgba(88, 166, 255, 0.05);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78em;
+      margin-right: 4px;
+    }
+
+    .tag-red {
+      background: rgba(248, 81, 73, 0.15);
+      color: var(--red);
+    }
+
+    .tag-green {
+      background: rgba(63, 185, 80, 0.15);
+      color: var(--green);
+    }
+
+    .tag-orange {
+      background: rgba(210, 153, 34, 0.15);
+      color: var(--orange);
+    }
+
+    .tag-blue {
+      background: rgba(88, 166, 255, 0.15);
+      color: var(--blue);
+    }
+
+    .tag-purple {
+      background: rgba(188, 140, 255, 0.15);
+      color: var(--purple);
+    }
+
+    .highlight {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+
+    .highlight-red {
+      background: rgba(248, 81, 73, 0.08);
+      border-left: 3px solid var(--red);
+    }
+
+    .highlight-orange {
+      background: rgba(210, 153, 34, 0.08);
+      border-left: 3px solid var(--orange);
+    }
+
+    .highlight-blue {
+      background: rgba(88, 166, 255, 0.08);
+      border-left: 3px solid var(--blue);
+    }
+
+    .highlight-green {
+      background: rgba(63, 185, 80, 0.08);
+      border-left: 3px solid var(--green);
+    }
+
+    ul.bullet {
+      margin: 6px 0 6px 18px;
+      font-size: 0.92em;
+    }
+
+    ul.bullet li {
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+
+    .source-link {
+      display: block;
+      font-size: 0.78em;
+      color: var(--text2);
+      margin: 4px 0 8px 0;
+      word-break: break-all;
+    }
+
+    .source-link a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    .report-footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.75em;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.05em; }
+      table { font-size: 0.8em; }
+    }
+
+    .insight-box {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+      background: rgba(88, 166, 255, 0.06);
+      border-left: 3px solid var(--blue);
+    }
+
+    .insight-box p {
+      font-size: 0.92em;
+      margin: 2px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日国家队增减持动向</h1>
+  <div class="meta">2026-07-24（周五） · 数据截止：2026年7月24日收盘</div>
+</div>
+
+<!-- ==== 一、市场概览 ==== -->
+<h2>一、市场概览</h2>
+<p>今日A股三大指数全线回调：</p>
+<table>
+  <tr><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>成交额</th></tr>
+  <tr><td>上证指数</td><td>3,814.20</td><td class="green">-1.61%</td><td>9,154亿</td></tr>
+  <tr><td>沪深300</td><td>4,649.19</td><td class="green">-1.67%</td><td>6,264亿</td></tr>
+  <tr><td>创业板指</td><td>3,480.87</td><td class="green">-2.65%</td><td>4,469亿</td></tr>
+  <tr><td>科创50</td><td>1,787.20</td><td class="green">-0.14%</td><td>1,205亿</td></tr>
+</table>
+<p>📊 科创50跌幅最小（-0.14%），盘中振幅4.61%显示多空博弈激烈。沪深两市合计成交约1.36万亿元。</p>
+<div class="source-link">🔗 <a href="https://copilot.tencent.com/agenttool/v1/neodata">来源：NeoData Financial Search / Wind</a></div>
+
+<!-- ==== 二、ETF资金流数据 ==== -->
+<h2>二、ETF资金流数据</h2>
+
+<h3>2.1 宽基ETF份额变动（7月中旬以来）</h3>
+<div class="insight-box">
+  <p>💡 <strong>核心趋势：汇金减持接近尾声，7月中旬起宽基ETF资金由净流出转向净流入。</strong></p>
+</div>
+<table>
+  <tr><th>ETF</th><th>近期单日最大变动</th><th>信号强度</th><th>方向</th></tr>
+  <tr><td>沪深300ETF华泰柏瑞(510300)</td><td>7/20 +27.05亿份</td><td>⭐⭐⭐</td><td>连续3日加速加仓</td></tr>
+  <tr><td>创业板ETF易方达(159915)</td><td>7/17 +18.96亿份</td><td>⭐⭐⭐</td><td>60.2倍量，成长方向最强信号</td></tr>
+  <tr><td>中证1000ETF南方(512100)</td><td>7/16 +11.60亿份</td><td>⭐⭐</td><td>45.2倍量，中小盘托底</td></tr>
+  <tr><td>上证50ETF华夏(510050)</td><td>7/16 +8.90亿份</td><td>⭐⭐</td><td>脉冲式加仓后降温</td></tr>
+  <tr><td>科创50ETF易方达(588080)</td><td>持续增持</td><td>⭐⭐</td><td>连续10+天未出现净赎回</td></tr>
+  <tr><td>金融ETF国泰(510230)</td><td>弱势</td><td>⭐</td><td>非主攻方向，7/16赎回4200万份</td></tr>
+</table>
+<div class="source-link">🔗 <a href="https://mp.weixin.qq.com/s/MsBEHYpfHLhWdeq9PVTjpg">来源：海de故事微信公众号 / Wind ETF份额数据</a></div>
+
+<h3>2.2 上半年余额统计</h3>
+<ul class="bullet">
+  <li>上半年宽基ETF规模合计下降 <strong>约1.47万亿元</strong>：沪深300 -9,236亿（-78%）、上证50 -1,582亿（-86%）、中证500 -1,222亿（-63%）、中证1000 -1,508亿（-83%）</li>
+  <li>截至6月末，估算汇金持有的沪深300ETF + 上证50ETF规模合计约 <strong>2,000亿元</strong>，减持空间有限</li>
+  <li class="green">7月中旬以来沪深300ETF资金已由持续净流出转向净流入</li>
+</ul>
+<div class="source-link">🔗 <a href="https://mp.weixin.qq.com/s/MsBEHYpfHLhWdeq9PVTjpg">来源：东兴证券研报 2026-07-24</a></div>
+
+<h3>2.3 7/17大跌日ETF逆势吸金</h3>
+<div class="card">
+  <p>7月17日A股大跌（科创50 <span class="green">-7.7%</span>），但ETF份额出现大规模扩张：</p>
+  <ul class="bullet">
+    <li>创业板ETF易方达：<span class="red">+18.96亿份</span>（60.2倍量），创10日峰值</li>
+    <li>沪深300ETF华泰柏瑞：<span class="red">+20.15亿份</span>（22.7倍量）</li>
+    <li>中证1000ETF南方：<span class="red">+10.36亿份</span>（40.4倍量）</li>
+    <li>6只可比ETF中5只为加仓方向——<strong>国家队托底重心明显偏向成长板块</strong></li>
+  </ul>
+</div>
+<div class="source-link">🔗 <a href="https://mp.weixin.qq.com/s/YvOWaze1Ppm-gLVBGgIFwA">来源：海de故事微信公众号 2026-07-18</a></div>
+
+<!-- ==== 三、大股东/国家队持仓变动 ==== -->
+<h2>三、大股东/国家队持仓变动</h2>
+
+<h3>3.1 🔴 国有资本运营平台重磅增持（7月19日公告）</h3>
+<div class="highlight highlight-red">
+  <p><strong>本周最大事件</strong>——两大国有资本运营平台7月19日晚同步发布增持公告。</p>
+</div>
+<table>
+  <tr><th>主体</th><th>增持规模</th><th>标的</th><th>后续表态</th></tr>
+  <tr><td><strong>中国国新</strong></td><td><span class="red">超500亿元</span></td><td>央企股票 + 科技类ETF</td><td>持续用好再贷款 + 自有资金继续增持</td></tr>
+  <tr><td><strong>中国诚通</strong></td><td><span class="red">近100亿元</span></td><td>央企股票 + 科技资产 + ETF</td><td>继续大额增持，全力维护市场平稳</td></tr>
+</table>
+<div class="insight-box">
+  <p>💡 中国国新和中国诚通是国资委下属唯二的纯资本运作央企，此次是2024年以来的首次大规模公告增持，代表维稳层级从窗口指导升级为政策性低成本资金实打实买入。</p>
+</div>
+<div class="source-link">🔗 <a href="https://finance.sina.cn/2026-07-19/detail-iniikpeu9971862.d.html">来源：新华社 / 东方财富研究中心 2026-07-21</a></div>
+
+<h3>3.2 2026Q2国家队持仓总览</h3>
+<ul class="bullet">
+  <li>证金/汇金/社保/国家大基金 Q2合计持有A股流通市值约 <strong>3.27万亿元</strong>，环比减持约 <strong>412亿元</strong></li>
+  <li>社保/养老基金积极调仓：柳工获社保107组合新进前十大（1,157.62万股），诺思格获社保413组合增持</li>
+</ul>
+<div class="source-link">🔗 <a href="https://www.163.com/dy/article/L2FAP58C05568W0A.html">来源：上海证券报 2026-07-22</a></div>
+
+<h3>3.3 稳市政策联动</h3>
+<ul class="bullet">
+  <li>全国社保基金已宣布主动增持国内股票并将继续增持</li>
+  <li>中国太保、阳光保险等险资增持宽基ETF和权益类资产</li>
+  <li>4月7日后不到一个月，近350家上市公司披露回购增持计划</li>
+</ul>
+<div class="source-link">🔗 <a href="https://mp.weixin.qq.com/s/xUzSt_y5tP-XJzPWte1CYQ">来源：招商证券研报 2026-07-21</a></div>
+
+<!-- ==== 四、知名交易 ==== -->
+<h2>四、知名交易</h2>
+
+<h3>4.1 🔴 回购潮持续（7/23盘后逾30家公司公告）</h3>
+<table>
+  <tr><th>公司</th><th>回购规模</th><th>用途</th><th>亮点</th></tr>
+  <tr><td>江波龙(301308)</td><td><span class="red">4亿–8亿元</span></td><td>股权激励/员工持股</td><td>控股股东提议，存储芯片龙头</td></tr>
+  <tr><td>澜起科技(688008)</td><td><span class="red">3亿–6亿元</span></td><td>维护价值及股东权益</td><td>自有资金，回购价≤332.90元</td></tr>
+  <tr><td>华安证券(600909)</td><td>1亿–2亿元</td><td>—</td><td>券商加入回购阵营</td></tr>
+  <tr><td>凯普生物(300639)</td><td>0.75亿–1.5亿元</td><td>维护价值及股东权益</td><td>含银行专项回购贷</td></tr>
+  <tr><td>浩辰软件(688657)</td><td>4,000万–8,000万元</td><td>维护价值及股东权益</td><td>—</td></tr>
+  <tr><td>兴欣新材(001358)</td><td>5,000万–1亿元</td><td>股权激励/员工持股</td><td>回购价≤32元</td></tr>
+</table>
+<div class="source-link">🔗 <a href="https://finance.sina.cn/7x24/2026-07-23/detail-iniivihw9343224.d.html">来源：中国基金报 2026-07-23</a></div>
+
+<h3>4.2 🔴 增持计划</h3>
+<table>
+  <tr><th>公司</th><th>增持方</th><th>规模</th><th>时间</th></tr>
+  <tr><td>威马农机(301533)</td><td>实控人严华、夏峰</td><td>2,000万–3,000万元</td><td>6个月内</td></tr>
+  <tr><td>洽洽食品(002557)</td><td>实控人/董事长陈先保</td><td>3,000万–6,000万元</td><td>已增持约3,000万(至7/23)</td></tr>
+  <tr><td>松井股份(688157)</td><td>副总经理等董事</td><td>80万–120万元</td><td>3个月内</td></tr>
+  <tr><td>泛亚微透(688386)</td><td>实控人/董事长张云</td><td>500万–1,000万元</td><td>6个月内</td></tr>
+  <tr><td>普源精电(688337)</td><td>董事长等4位董事</td><td>47.11万股H股</td><td>已完成</td></tr>
+</table>
+<div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260620A04R8J00">来源：证券时报 / 中国基金报 2026-07-23</a></div>
+
+<h3>4.3 逾20家公司终止减持计划</h3>
+<p>7月以来，已逾20家上市公司股东主动按下减持"暂停键"：</p>
+<ul class="bullet">
+  <li>国城矿业：股东建新集团提前终止减持</li>
+  <li>永茂泰：股东江苏磊昶、连云港宏芝提前终止</li>
+  <li>希荻微：董事郝跃国终止减持，承诺6个月内不减持</li>
+  <li>招标股份、伯特利等纷纷加入</li>
+</ul>
+<div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260620A04R8J00">来源：证券时报 2026-07-23</a></div>
+
+<h3>4.4 社保/养老基金最新调仓</h3>
+<table>
+  <tr><th>标的</th><th>操作</th><th>详情</th></tr>
+  <tr><td>柳工(000528)</td><td><span class="tag tag-blue">新进</span></td><td>社保107组合新进1,157.62万股（第六大股东）</td></tr>
+  <tr><td>诺思格(300649)</td><td><span class="tag tag-red">增持</span></td><td>社保413组合增持71.37万股至469.88万股（约2.16亿市值）</td></tr>
+  <tr><td>汇成股份(688403)</td><td><span class="tag tag-blue">新进</span></td><td>社保17022组合新进1,365.51万股（第九大股东）</td></tr>
+</table>
+<div class="source-link">🔗 <a href="https://www.163.com/dy/article/L2FAP58C05568W0A.html">来源：上海证券报 2026-07-22</a></div>
+
+<h3>4.5 国家大基金动向</h3>
+<div class="card">
+  <p>7月22日国家大基金概念板块获主力资金净流入 <strong class="red">97.24亿元</strong>：</p>
+  <ul class="bullet">
+    <li>北方华创（14.99亿）、中芯国际（14.01亿）、中微公司（10.75亿）居前三</li>
+    <li>长鑫科技招股书显示：国家大基金二期持股8.73%，7月27日科创板挂牌</li>
+  </ul>
+</div>
+<div class="source-link">🔗 <a href="http://www.jfinfo.com/news/4074056">来源：巨丰投顾 2026-07-22</a></div>
+
+<!-- ==== 五、汇总统计 ==== -->
+<h2>五、汇总统计</h2>
+<table>
+  <tr><th>指标</th><th>数据</th></tr>
+  <tr><td>今日上证指数</td><td>3,814.20（<span class="green">-1.61%</span>）</td></tr>
+  <tr><td>今日沪深300</td><td>4,649.19（<span class="green">-1.67%</span>）</td></tr>
+  <tr><td>今日两市成交额</td><td>约1.36万亿</td></tr>
+  <tr><td>Q2国家队流通市值</td><td>约3.27万亿（环比-412亿）</td></tr>
+  <tr><td>上半年宽基ETF累计净赎回</td><td>约1.47万亿</td></tr>
+  <tr><td>7月中旬以来宽基ETF资金方向</td><td><span class="red">转向净流入</span></td></tr>
+  <tr><td>本周国有资本增持公告</td><td>中国国新500亿+ 中国诚通100亿</td></tr>
+  <tr><td>7/23盘后回购增持公告</td><td>逾30家公司</td></tr>
+  <tr><td>7月深市新增回购增持计划上限</td><td>154.06亿元</td></tr>
+  <tr><td>7月以来终止减持计划</td><td>逾20家</td></tr>
+</table>
+
+<!-- ==== 六、策略观点 ==== -->
+<h2>六、策略观点</h2>
+
+<div class="insight-box">
+  <p>💡 <strong>核心判断：国家队"减持周期"接近尾声，政策底信号明确。</strong></p>
+</div>
+
+<ol class="bullet">
+  <li><strong>汇金减持空间收窄</strong>：截至6月末沪深300+上证50ETF持仓余额约2,000亿元，减持高峰已过。7月中旬起资金转向净流入，预计宽基ETF资金流出压力接近尾声。</li>
+  <li><strong>国有资本接力进场</strong>：中国国新（500亿+）和中国诚通（近百亿）的公告增持，标志着维稳资金从"汇金单核"升级为"多层级协同"格局，第二层国资运营平台正式从幕后走到台前。</li>
+  <li><strong>回购增持潮成规模</strong>：7月深市新增计划上限154.06亿，配合逾20家终止减持，形成"增持+回购+终止减持"三位一体的护盘合力。</li>
+  <li><strong>托底重心偏向成长</strong>：7/17大跌日创业板ETF（60倍量）、中证1000ETF（45倍量）的极端份额扩张，显示国家队托底方向已从单纯大盘权重扩展至科技成长板块。</li>
+</ol>
+
+<div class="highlight highlight-orange">
+  <p>⚠️ <strong>风险提示</strong>：今日（7/24）市场再度回调，上证-1.61%、创业板-2.65%，显示市场对政策信号的消化仍需时间。后续关注：</p>
+  <ul class="bullet">
+    <li>宽基ETF净流入能否持续</li>
+    <li>国有资本增持的执行披露</li>
+    <li>7月政治局会议政策定调</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<div class="report-footer">
+  数据来源：Wind万得（金融数据）、NeoData Financial Search（行情）、东兴证券/招商证券（研报）、证券时报/中国基金报/东方财富（新闻）、海de故事（ETF份额追踪） · My Research Central · via WB
+</div>
+
+</body>
+</html>
