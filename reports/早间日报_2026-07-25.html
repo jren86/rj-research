@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>早间投研日报 · 2026-07-25</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+    .report-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .report-header h1 {
+      font-size: 1.4em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .report-header .meta {
+      font-size: 0.82em;
+      color: var(--text2);
+    }
+    h2 {
+      font-size: 1.15em;
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: var(--blue);
+    }
+    h3 {
+      font-size: 1em;
+      margin: 14px 0 8px;
+      color: var(--text);
+    }
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+    th {
+      background: var(--card);
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      font-weight: 600;
+    }
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover { background: rgba(88, 166, 255, 0.05); }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78em;
+      margin-right: 4px;
+    }
+    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+    .highlight {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+    .highlight-red {
+      background: rgba(248, 81, 73, 0.08);
+      border-left: 3px solid var(--red);
+    }
+    .highlight-orange {
+      background: rgba(210, 153, 34, 0.08);
+      border-left: 3px solid var(--orange);
+    }
+    .highlight-blue {
+      background: rgba(88, 166, 255, 0.08);
+      border-left: 3px solid var(--blue);
+    }
+    ul.bullet {
+      margin: 6px 0 6px 18px;
+      font-size: 0.92em;
+    }
+    ul.bullet li {
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .source-link {
+      display: block;
+      font-size: 0.78em;
+      color: var(--text2);
+      margin: 4px 0 8px 0;
+      word-break: break-all;
+    }
+    .source-link a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .source-link a:hover { text-decoration: underline; }
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+    .report-footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.75em;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .summary-box {
+      background: rgba(88, 166, 255, 0.06);
+      border: 1px solid rgba(88, 166, 255, 0.2);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0 18px;
+      font-size: 0.9em;
+    }
+    @media (max-width: 640px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.05em; }
+      table { font-size: 0.8em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>🐾 早间投研日报</h1>
+  <div class="meta">2026年7月25日（周六 · 休市简化版） · <span class="orange">长鑫科技7/27上市 + FOMC 7/28-29</span> · via WB</div>
+</div>
+
+<div class="summary-box">
+  <strong>📌 核心摘要：</strong> 周五A股缩量调整（成交1.94万亿创年内新低），资金提前"躲长鑫"；隔夜费半暴跌4.25%存储/光通信全线溃败；证监会7/23重磅会议释放维稳信号；央行MLF连续第三个月加量续作；下周最大看点——长鑫科技科创板上市+美联储7月议息。
+</div>
+
+<!-- ═══════════ 催化剂日历 ═══════════ -->
+<h2>📅 催化剂日历</h2>
+<table>
+  <tr><th>日期</th><th>事件</th><th>重要度</th></tr>
+  <tr><td>7/27 (周日)</td><td>长鑫科技 (688825) 科创板上市，发行价8.66元</td><td><span class="tag tag-red">🔴 重大</span></td></tr>
+  <tr><td>7/28-29</td><td>FOMC 7月议息会议（美东）</td><td><span class="tag tag-red">🔴 重大</span></td></tr>
+  <tr><td>7/30 凌晨</td><td>美联储利率决议+政策声明（北京时间）</td><td><span class="tag tag-red">🔴 重大</span></td></tr>
+  <tr><td>7/30-31</td><td>CFS第十五届财经峰会（上海）</td><td><span class="tag tag-orange">🟠 关注</span></td></tr>
+  <tr><td>7/31</td><td>国内成品油调价窗口</td><td><span class="tag tag-orange">🟠 关注</span></td></tr>
+  <tr><td>本周</td><td>美伊霍尔木兹二次封锁进展、美股科技Q2财报季</td><td><span class="tag tag-orange">🟠 关注</span></td></tr>
+</table>
+
+<!-- ═══════════ 宏观 ═══════════ -->
+<h2>🌍 宏观要闻</h2>
+
+<div class="highlight highlight-red">
+  <strong>🔴 证监会7/23重磅会议：维护市场稳定，推动中长期资金入市。</strong><br>
+  会议强调"综合施策全力维护市场平稳运行，提升资本市场韧性"，加强应对全球市场波动和风险跨境传导的政策储备。同时指出新一轮科技革命加速突破，基本面积极因素不断积聚，市场整体具备较好配置价值。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=SN20260724084719a6e30340" target="_blank">来源：腾讯自选股</a></div>
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 央行7/24 MLF 5000亿，连续第三个月加量续作。</strong><br>
+  7月到期4000亿，净投放1000亿，保持银行体系流动性充裕。这是央行连续第三个月MLF加量，释放明确的流动性呵护信号。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=SN2026072408020798a0357f" target="_blank">来源：腾讯自选股</a></div>
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 中美贸易谈判新进展：探讨各自300亿美元对等降税框架。</strong><br>
+  商务部7/23表示双方经贸团队正密切沟通，中方正在征求企业/商会/地方政府意见，美方也在征求公众评论。双方将尽快商定具体产品降税安排并推动实施。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=SN20260724073543954f47b7" target="_blank">来源：腾讯自选股</a></div>
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 美伊冲突持续升级，霍尔木兹海峡二次封锁。</strong><br>
+  华泰证券研报：与3-5月首次封锁不同，当前全球能源"缓冲垫"已消耗殆尽——美国SPR降至1983年以来最低（3.11亿桶），红海与阿曼湾绕行通道遇袭，静态原油供给缺口达550-600万桶/天（占全球需求5-6%）。特朗普称美军"整装待发"，可提升打击强度。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN2026072416380098a0f7a1" target="_blank">来源：腾讯自选股/华泰证券</a></div>
+</div>
+
+<div class="highlight highlight-orange">
+  <strong>🟠 美国拟推接续新关税（对60国），框架从"临时紧急"向"制度化长期化"转变。</strong>
+  同时特朗普提及9月可能出现联邦政府"停摆"。
+</div>
+
+<div class="card">
+  <strong>🔵 其他宏观增量：</strong>
+  <ul class="bullet">
+    <li>北京鼓励发展<span class="blue">Token经济</span>：印发加快智能体引领发展若干措施，鼓励研发通用处理器和专用推理芯片，探索发放Token券/智能体服务券</li>
+    <li>韩国7月前20日出口同比<span class="red">+52.3%</span>创历史同期最高：半导体+180.6%、计算机外设+231.9%，汽车-10.6%</li>
+    <li>电池消费税政策调整落地：锂电池分两步恢复征收（先2%、后4%），固态/钠电继续免征至2028年底</li>
+    <li>上半年财政收支：一般公共预算收入+4.7%、支出+1.5%，卖地收入降幅扩大至-31.5%，6月单月同比-42.1%</li>
+    <li>可再生能源"十五五"规划：2030年可再生能源发电总装机达35亿千瓦</li>
+    <li>全民健身计划（2026-2030）：2030年体育产业总规模突破7万亿元</li>
+  </ul>
+</div>
+
+<!-- ═══════════ 市场概览 ═══════════ -->
+<h2>📊 市场概览</h2>
+
+<h3>🇺🇸 美股（7/24 周五收盘）</h3>
+<table>
+  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>本周累计</th></tr>
+  <tr><td>道指</td><td>51,947.25</td><td class="red">+0.46%</td><td class="green">-0.38%</td></tr>
+  <tr><td>标普500</td><td>7,411.98</td><td class="red">+0.05%</td><td class="green">-0.61%</td></tr>
+  <tr><td>纳指</td><td>24,975.82</td><td class="green">-0.64%</td><td class="green">-2.13%</td></tr>
+  <tr><td>费城半导体</td><td>11,818.89</td><td class="green">-4.25%</td><td class="red">+1.24%</td></tr>
+</table>
+
+<div class="highlight highlight-red">
+  <strong>🔴 费半暴跌4.25%，存储/光通信全线溃败。</strong> 闪迪-10.79%、SK海力士ADR-8%+、美光-6%+、英特尔-7.89%、ARM-8.14%。云计算服务商同步重挫：NEBIUS-15%、CoreWeave-11%。高盛交易台："全天几乎未见大量买入指令，卖压主要来自长线机构"，"资金流向偏向卖出的程度达到近期可追溯记录中最高水平之列"。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=SN2026072506185794b8636a" target="_blank">来源：中新经纬</a></div>
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 特斯拉周跌近18%，创2022年以来最大单周跌幅。</strong> SpaceX同步续创新低，本周累跌约7%。马斯克个人财富一周蒸发约1300亿美元。
+</div>
+
+<div class="card">
+  <strong>其他关键个股：</strong>
+  <ul class="bullet">
+    <li><span class="red">苹果 +3.53%</span>（逼近前高），为七巨头中唯一强势个股</li>
+    <li>英伟达 <span class="green">-0.92%</span>，据称全面上调GPU套装价格</li>
+    <li>摩根士丹利警告：AI驱动的存储行业狂欢正接近拐点，内存合同价格预计Q4见顶</li>
+    <li>中概金龙指数 <span class="green">-0.66%</span>，本周累跌2.80%。世纪互联/文远知行-7%，趣活科技+15%</li>
+  </ul>
+</div>
+
+<div class="card">
+  <strong>大宗商品：</strong>
+  <ul class="bullet">
+    <li>WTI原油周五 <span class="green">-3.12%</span> 报89.31美元，但<span class="red">周涨8.27%</span></li>
+    <li>布伦特原油周五 <span class="green">-3.88%</span> 报96.78美元，但<span class="red">周涨9.85%</span></li>
+    <li>COMEX黄金 <span class="red">+0.14%</span> 报4055.70美元，<span class="red">周涨0.92%</span></li>
+    <li>COMEX白银 <span class="red">+0.75%</span> 报58.49美元，<span class="red">周涨3.84%</span></li>
+  </ul>
+</div>
+
+<h3>🇨🇳 A股（7/24 周五收盘）</h3>
+<table>
+  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr>
+  <tr><td>上证指数</td><td>3,814.20</td><td class="green">-1.61%</td><td>—</td></tr>
+  <tr><td>深证成指</td><td>13,774.68</td><td class="green">-2.47%</td><td>—</td></tr>
+  <tr><td>创业板指</td><td>3,480.87</td><td class="green">-2.65%</td><td>—</td></tr>
+  <tr><td>科创50</td><td>1,787.20</td><td class="green">-0.14%</td><td>盘中最高+2%后回落</td></tr>
+  <tr><td>全市场成交</td><td colspan="2" style="text-align:center">1.94万亿</td><td>创4/8以来新低，缩量超2600亿</td></tr>
+</table>
+
+<div class="highlight highlight-red">
+  <strong>🔴 成交额仅1.94万亿，创4月8日以来新低。</strong> 全市场超4900只个股下跌。市场博弈焦点集中在长鑫科技上市——短线资金"躲长鑫"、逐步撤出观望，导致连续3个交易日缩量。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=SN20260724160557a6e3aa0d" target="_blank">来源：每日经济新闻</a></div>
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 科创50午后异动：一度涨超2%后回落。</strong> 半导体设备板块托伦斯20CM 4天3板，正帆科技/芯碁微装/精测电子/拓荆科技大涨。科创50ETF华夏单日成交近73亿元，所有宽基ETF中排名榜首。部分资金在长鑫上市前"拿先手"。
+</div>
+
+<div class="card">
+  <strong>🔵 深度背景：</strong>
+  <ul class="bullet">
+    <li>7月以来双创板块深度调整：7/1-7/23，2010只股票中跌超30%的443只，跌超20%的754只，上涨仅385只</li>
+    <li>招商策略："杠杆去化、交易降温、ETF托底"三位一体筑底信号显现</li>
+    <li>长鑫首日预计成交额1000-1200亿（按50%换手率），占科创板日常成交（4000-6000亿）比例较2020年中芯国际上市时显著降低</li>
+    <li>部分券商下发内部风控通知，要求50万以上客户避免参与长鑫上市初期炒作</li>
+    <li>估值：上证PE 16.66x（92.54%分位），深成指PE 34.00x（94.68%分位）</li>
+  </ul>
+</div>
+
+<h3>🇭🇰 港股（7/24 周五收盘）</h3>
+<table>
+  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>本周累计</th></tr>
+  <tr><td>恒生指数</td><td>24,963.23</td><td class="green">-0.98%</td><td class="red">+1.63%</td></tr>
+  <tr><td>恒生科技</td><td>4,629.51</td><td class="green">-1.47%</td><td class="red">+0.14%</td></tr>
+  <tr><td>国企指数</td><td>8,271.06</td><td class="green">-0.98%</td><td class="red">+1.65%</td></tr>
+</table>
+
+<div class="highlight highlight-red">
+  <strong>🔴 成交额仅2099亿港元，年内"地量"。</strong> 此前仅元旦/春节/五一假期期间因缺南向资金低于2000亿。南向资金净��出超15亿港元。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=SN20260724165603a6e3c167" target="_blank">来源：每日经济新闻</a></div>
+</div>
+
+<div class="card">
+  <strong>板块分化：</strong>
+  <ul class="bullet">
+    <li><span class="red">中银香港 +6%</span>创历史新高（51.25港元），年内累涨35%，总市值5419亿</li>
+    <li><span class="red">智谱 +5.64%</span>逆势领涨AI板块</li>
+    <li>科网普跌：阿里巴巴 <span class="green">-4.26%</span>，腾讯 <span class="green">-2.38%</span></li>
+    <li>PCB概念重挫：建滔积层板 <span class="green">-7.32%</span></li>
+  </ul>
+</div>
+
+<!-- ═══════════ 策略观点 ═══════════ -->
+<h2>💡 策略观点</h2>
+
+<div class="highlight highlight-red">
+  <strong>🔴 国泰海通：8月启动秋季行情，已进入"带血筹码"布局窗口。</strong><br>
+  A股港股5月中旬已率先调整，汇金等"有形之手"托底能力与意愿充足，未来1个月有望领先海外市场见顶企稳。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=SN20260724164126b67019f6" target="_blank">来源：财联社</a></div>
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 招商策略：融资出清后半段，恐慌盘集中释放，下行空间有限。</strong><br>
+  "杠杆去化、交易降温、ETF托底"三位一体，市场将以分化震荡方式逐步筑底。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=SN20260724155846a6e3a626" target="_blank">来源：每日经济新闻</a></div>
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 东吴证券：券商业绩高增+极低机构持仓，配置窗口不容忽视。</strong><br>
+  预计2026年行业营收6746亿（+25%）、净利2766亿（+26%），PB仅1.32x（5年34.7%分位），机构持仓0.52%远低标配3.25%。推荐广发证券、国泰海通、中信证券、中金公司。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=SN20260724143513a48cecfd" target="_blank">来源：东吴证券</a></div>
+</div>
+
+<div class="highlight highlight-orange">
+  <strong>🟠 申万王胜：AI超跌反弹已出现，但需等待重磅产业催化开启新一轮中期行情。</strong><br>
+  算力通胀行情中波段划分段落，后续可能演绎分化——供给瓶颈松动的资产估值中枢面临下修。存储涨价来自云计算厂商的阻力增加，AI产业链利润传导不畅。
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN20260721214701a6deea48" target="_blank">来源：21世纪经济报道</a></div>
+</div>
+
+<div class="card">
+  <strong>其他券商观点：</strong>
+  <table>
+    <tr><th>机构</th><th>核心观点</th></tr>
+    <tr><td><strong>华泰证券</strong></td><td>霍尔木兹二次封锁冲击或超上一轮。SPR降至1983年最低，静态原油供给缺口550-600万桶/天（占全球需求5-6%），危机正从原油外溢至成品油/关键工业气体/农产品</td></tr>
+    <tr><td><strong>瑞银孟磊</strong></td><td>科技板块和AI仍是下半年市场主线。各类资金有望持续净流入，科技板块"抱团"在时间和空间上仍有提升潜力</td></tr>
+    <tr><td><strong>中信证券</strong></td><td>下半年红利资产有望进入估值修复区间。黄金短期震荡磨底长期结构支撑，主动权益风格中性组合有望受益</td></tr>
+    <tr><td><strong>天风证券</strong></td><td>继续看好消费板块（白酒防御属性显著）。科技回调资金再平衡背景下白酒配置价值凸显</td></tr>
+    <tr><td><strong>中金</strong></td><td>本轮大周期尚未结束，但融资热vs资金紧矛盾突出。高拥挤度和高杠杆下，流动性未转宽前市场"中场休息"</td></tr>
+    <tr><td><strong>光大策略</strong></td><td>⭐ 7月A股金股：中微公司、宁德时代、杰瑞股份、新雷能、紫金矿业、奥来德、中国巨石、百龙创园、格力电器、华能国际。港股：建滔积层板、长飞光纤光缆、华虹宏力、中芯国际、国民技术、中国人寿</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════ 持仓个股 ═══════════ -->
+<h2>🔬 持仓个股增量</h2>
+<p style="color:var(--text2);font-size:0.85em;margin-bottom:10px">本日休市，以下为周五（7/24）盘后至周末最新信息。</p>
+
+<h3>A股核心持仓</h3>
+<table>
+  <tr><th>标的</th><th>代码</th><th>核心增量</th><th>信号</th></tr>
+  <tr>
+    <td><strong>中芯国际</strong></td>
+    <td>688981</td>
+    <td>午后半导体板块异动拉升同步上涨。长鑫上市为板块核心变量，虹吸效应较2020年中芯国际上市时显著减弱</td>
+    <td><span class="tag tag-blue">🔵</span></td>
+  </tr>
+  <tr>
+    <td><strong>通富微电</strong></td>
+    <td>002156</td>
+    <td>7/24午后涨停（+9.77%），受益于半导体设备板块异动+长鑫上市前"拿先手"资金布局</td>
+    <td><span class="tag tag-red">🔴</span></td>
+  </tr>
+  <tr>
+    <td><strong>兆易创新</strong></td>
+    <td>603986</td>
+    <td>存储芯片标的承压。费半隔夜暴跌4.25%对存储板块情绪形成压制。摩根士丹利警告内存合同价格预计Q4见顶</td>
+    <td><span class="tag tag-green">⚠️</span></td>
+  </tr>
+  <tr>
+    <td><strong>北方华创</strong></td>
+    <td>002371</td>
+    <td>半导体设备板块午后拉升，托伦斯/正帆科技/芯碁微装大涨，长鑫上市带动设备板块情绪回暖</td>
+    <td><span class="tag tag-red">🔴</span></td>
+  </tr>
+  <tr>
+    <td><strong>宁德时代</strong></td>
+    <td>300750</td>
+    <td>电池消费税分两步恢复征收（先2%后4%），固态/钠电继续免征至2028年底。光大7月金股组合纳入</td>
+    <td><span class="tag tag-orange">🟠</span></td>
+  </tr>
+  <tr>
+    <td><strong>寒武纪</strong></td>
+    <td>688256</td>
+    <td>AI芯片板块震荡。申万提示需等待重磅产业催化开启新一轮中期行情</td>
+    <td><span class="tag tag-blue">🔵</span></td>
+  </tr>
+  <tr>
+    <td><strong>药明康德</strong></td>
+    <td>603259</td>
+    <td>CXO板块震荡。国泰海通认为"估值筑底，基本面与资金面共振"持续推荐创新药</td>
+    <td><span class="tag tag-blue">🔵</span></td>
+  </tr>
+</table>
+
+<h3>港股核心持仓</h3>
+<table>
+  <tr><th>标的</th><th>代码</th><th>核心增量</th><th>信号</th></tr>
+  <tr>
+    <td><strong>腾讯控股</strong></td>
+    <td>00700.HK</td>
+    <td>-2.38%报434.60港元。恒生科技NTM PE约18.9x（5年27.5%分位），AI叙事+业绩触底共振下具估值修复空间</td>
+    <td><span class="tag tag-orange">🟠</span></td>
+  </tr>
+  <tr>
+    <td><strong>阿里巴巴</strong></td>
+    <td>09988.HK</td>
+    <td>-4.26%报110.00港元，科网股跌幅之最。中美降税谈判推进或为边际利好</td>
+    <td><span class="tag tag-green">🟢</span></td>
+  </tr>
+  <tr>
+    <td><strong>中芯国际H</strong></td>
+    <td>00981.HK</td>
+    <td>逆势+0.85%报71.35港元。光大7月港股金股纳入，长鑫上市形成"比价效应+产业链联动"双逻辑</td>
+    <td><span class="tag tag-red">🔴</span></td>
+  </tr>
+  <tr>
+    <td><strong>华虹宏力</strong></td>
+    <td>01347.HK</td>
+    <td>逆势+0.27%报149.80港元。光大7月港股金股纳入，受益于晶圆代工国产替代+长鑫联动</td>
+    <td><span class="tag tag-red">🔴</span></td>
+  </tr>
+  <tr>
+    <td><strong>建滔积层板</strong></td>
+    <td>01888.HK</td>
+    <td>重挫-7.32%报37.72港元。PCB概念全线下跌，PTFE方案设计进展引发电子布替代担忧</td>
+    <td><span class="tag tag-green">⚠️</span></td>
+  </tr>
+  <tr>
+    <td><strong>美团-W</strong></td>
+    <td>03690.HK</td>
+    <td>微跌-0.69%报86.70港元，相对抗跌</td>
+    <td><span class="tag tag-blue">🔵</span></td>
+  </tr>
+  <tr>
+    <td><strong>小米集团</strong></td>
+    <td>01810.HK</td>
+    <td>-1.55%报26.72港元。北京Token经济政策利好智能体生态</td>
+    <td><span class="tag tag-blue">🔵</span></td>
+  </tr>
+</table>
+
+<!-- ═══════════ 知识星球 ═══════════ -->
+<h2>🌟 知识星球（zsxq）</h2>
+<p style="color:var(--text2);font-size:0.85em;margin-bottom:10px">数据源：水木调研纪要-2.0（88888142214212）+ 调研纪要更新（48844242514558）</p>
+
+<h3>本周重点推荐 ⭐</h3>
+<table>
+  <tr><th>机构</th><th>标的</th><th>核心逻辑</th><th>日期</th></tr>
+  <tr>
+    <td>财通食饮</td>
+    <td><strong>⭐ 天味食品</strong></td>
+    <td>重点推荐，为数不多今年上调盈利预测标的。Q2主业超预期，Q3环比加速。18x PE对应5%+股息率，安全边际充足</td>
+    <td>7/22</td>
+  </tr>
+  <tr>
+    <td>国联民生计算机</td>
+    <td><strong>⭐ 浪潮信息</strong></td>
+    <td>7月金股，业绩高增且高确定性，ARM CPU龙头中国长城同步涨停</td>
+    <td>7/20</td>
+  </tr>
+  <tr>
+    <td>某券商</td>
+    <td><strong>银龙股份</strong></td>
+    <td>7月金股，低位+Q2业绩预告高增（单Q2上限100%增速）+估值便宜26年仅11倍</td>
+    <td>7/16</td>
+  </tr>
+  <tr>
+    <td>某券商</td>
+    <td><strong>妙可蓝多</strong></td>
+    <td>重点推荐，H1收入延续高增，Q2盈利同比高增。B端国产替代高速增长，远期深加工龙头</td>
+    <td>7/17</td>
+  </tr>
+  <tr>
+    <td>某券商</td>
+    <td><strong>杰普特</strong></td>
+    <td>7月金股，MPO/FAU加单，业绩预期大幅上修</td>
+    <td>7/10</td>
+  </tr>
+</table>
+
+<h3>7月金股组合参考（光大策略 6/30）</h3>
+<div class="card">
+  <strong>A股：</strong> 中微公司、宁德时代、杰瑞股份、新雷能、紫金矿业、奥来德、中国巨石、百龙创园、格力电器、华能国际<br><br>
+  <strong>港股：</strong> 建滔积层板、长飞光纤光缆、华虹宏力、中芯国际、国民技术、中国人寿
+</div>
+
+<h3>持续推荐方向</h3>
+<ul class="bullet">
+  <li><strong>国泰海通医药</strong> (7/6)：估值筑底，Big Pharma成色凸显，持续重点推荐海思科、创新药板块</li>
+  <li><strong>国金金属</strong> (7/22)：黄金股利空钝化、资金先行，买黄金股做简单题</li>
+  <li><strong>申万化工</strong> (6/2)：电子材料持续重点推荐，板块催化不断，调整即买入机会</li>
+  <li><strong>长江机械</strong> (5/18)：工程机械内外景气趋势明确，重视回调后优质资产买入机会</li>
+  <li><strong>中泰建材&化工</strong> (6/18)：国瓷材料从MLCC陶瓷粉体龙头走向新时代新材料龙头，25年9月起翻了4倍</li>
+</ul>
+
+<!-- ═══════════ 关注清单 ═══════════ -->
+<h2>👀 关注清单（11只）</h2>
+<table>
+  <tr><th>股票</th><th>代码</th><th>关注逻辑</th><th>最新动态</th></tr>
+  <tr><td>长鑫科技</td><td>688825</td><td>7/27科创板上市</td><td>发行价8.66元，上半年净利500-570亿</td></tr>
+  <tr><td>澜起科技</td><td>688008</td><td>AI内存接口芯片龙头</td><td>7/21 AI反弹日涨15.62%</td></tr>
+  <tr><td>托伦斯</td><td>301583</td><td>半导体设备新锐</td><td>4天3板20CM，午后异动龙头</td></tr>
+  <tr><td>中际旭创</td><td>300308</td><td>光模块龙头/港交所IPO</td><td>光通信板块承压，费半暴跌拖累</td></tr>
+  <tr><td>海光信息</td><td>688041</td><td>国产CPU/DCU</td><td>科技板块跟随调整</td></tr>
+  <tr><td>国瓷材料</td><td>300285</td><td>电子陶瓷粉体</td><td>中泰建材化工持续重点推荐</td></tr>
+  <tr><td>中国巨石</td><td>600176</td><td>玻纤龙头</td><td>光大7月A股金股</td></tr>
+  <tr><td>广发证券</td><td>000776</td><td>券商龙头/低估值</td><td>东吴/申万等多家推荐</td></tr>
+  <tr><td>智谱</td><td>02513.HK</td><td>港股AI标的</td><td>7/24逆势+5.64%</td></tr>
+  <tr><td>中银香港</td><td>02388.HK</td><td>银行股新高</td><td>7/24涨近6%创历史新高</td></tr>
+  <tr><td>天味食品</td><td>603317</td><td>食饮上调盈利</td><td>财通食饮重点推荐</td></tr>
+</table>
+
+<!-- ═══════════ 数据溯源 ═══════════ -->
+<div class="divider"></div>
+<h2>📋 数据溯源</h2>
+<table>
+  <tr><th>板块</th><th>数据源</th><th>状态</th></tr>
+  <tr><td>宏观/政策</td><td>NeoData Financial Search</td><td>✅</td></tr>
+  <tr><td>美股行情</td><td>NeoData Financial Search</td><td>✅</td></tr>
+  <tr><td>A股行情</td><td>NeoData Financial Search</td><td>✅</td></tr>
+  <tr><td>港股行情</td><td>NeoData Financial Search</td><td>✅</td></tr>
+  <tr><td>策略观点</td><td>NeoData Financial Search</td><td>✅</td></tr>
+  <tr><td>知识星球</td><td>zsxq-cli（水木调研纪要-2.0 + 调研纪要更新）</td><td>✅</td></tr>
+  <tr><td>Bloomberg</td><td>bbgwire 未安装</td><td>❌</td></tr>
+</table>
+
+<div class="report-footer">
+  数据来源：NeoData Financial Search · 腾讯自选股 · zsxq知识星球 · 各券商研报<br>
+  本报告为休市简化版，聚焦隔夜增量信息。数据截至2026年7月25日08:00 CST<br>
+  My Research Central · <a href="https://rj-research.pages.dev" style="color:var(--blue)">rj-research.pages.dev</a> · via WB
+</div>
+
+</body>
+</html>
