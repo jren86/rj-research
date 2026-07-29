@@ -143,9 +143,10 @@
       "id": "ai_news",
       "name": "每日AI新闻",
       "description": "AI行业每日新闻汇总",
-      "reportCount": 40,
-      "latestDate": "2026-07-29",
+      "reportCount": 41,
+      "latestDate": "2026-07-30",
       "files": {
+        "2026-07-30": "reports/每日AI新闻_2026-07-30.html",
         "2026-07-29": "reports/每日AI新闻_2026-07-29.html",
         "2026-07-28": "reports/每日AI新闻_2026-07-28.html",
         "2026-07-27": "reports/每日AI新闻_2026-07-27.html",
