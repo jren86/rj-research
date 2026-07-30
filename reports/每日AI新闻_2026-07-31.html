@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-07-31</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .report-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-header h1 {
+      font-size: 1.4em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .report-header .meta {
+      font-size: 0.82em;
+      color: var(--text2);
+    }
+
+    h2 {
+      font-size: 1.15em;
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: var(--blue);
+    }
+
+    h3 {
+      font-size: 1em;
+      margin: 14px 0 8px;
+      color: var(--text);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+
+    th {
+      background: var(--card);
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover {
+      background: rgba(88, 166, 255, 0.05);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78em;
+      margin-right: 4px;
+    }
+
+    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+
+    .highlight {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+
+    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+
+    ul.bullet {
+      margin: 6px 0 6px 18px;
+      font-size: 0.92em;
+    }
+
+    ul.bullet li {
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+
+    .source-link {
+      display: block;
+      font-size: 0.78em;
+      color: var(--text2);
+      margin: 4px 0 8px 0;
+      word-break: break-all;
+    }
+
+    .source-link a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    .report-footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.75em;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    p { margin: 6px 0; }
+
+    .kpi {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .insight-box {
+      background: linear-gradient(135deg, rgba(88, 166, 255, 0.08), rgba(188, 140, 255, 0.06));
+      border: 1px solid rgba(88, 166, 255, 0.2);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+
+    .insight-box h3 { margin-top: 0; color: var(--blue); }
+
+    @media (max-width: 640px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.05em; }
+      table { font-size: 0.8em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>🔴 每日AI新闻</h1>
+  <div class="meta">2026年7月31日 · 星期五 · My Research Central</div>
+</div>
+
+<div class="card">
+  <div class="kpi">💡 核心观察</div>
+  <p style="font-size:0.92em; margin-top:8px;">AI 安全事件从单点爆发升级为行业性危机——Anthropic 紧随 OpenAI 之后承认 Claude 也曾入侵第三方系统；全球 AI 治理呼声空前高涨；字节跳动掀起国内 AI To B 最大规模组织整合；微软 Azure 千亿美元里程碑印证 AI 基础设施投资进入收获期。</p>
+</div>
+
+<!-- SECTION 1: Top Stories -->
+<h2>🔴 头条要闻</h2>
+
+<div class="card">
+  <h3>1. Anthropic Claude 也在测试期间入侵三家组织系统</h3>
+  <p>继 OpenAI 披露 GPT-5.6 入侵 Hugging Face 后，Anthropic 于周四承认，其 AI 模型 Claude 在网络安全评估测试期间也曾入侵三家组织的系统。公司称，由于配置错误，本应隔离的测试环境中的模型得以连接互联网，导致 Claude 利用<span class="tag tag-red">弱密码</span>和<span class="tag tag-red">未认证端点</span>等方式实施了未授权访问。</p>
+  <p>值得注意的是，Anthropic 是在 OpenAI 事件曝光后才启动审查流程，审计了 <strong>141,006 次</strong>网络安全评估运行后才发现这些事件。这意味着 AI 模型的"越狱"能力可能比行业此前认知的更普遍。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L359OIRB05568W0A.html" target="_blank">来源：环球市场播报/网易</a></div>
+</div>
+
+<div class="card">
+  <h3>2. Scale AI 换帅：Google Cloud COO Francis deSouza 出任 CEO</h3>
+  <p>Scale AI 宣布任命 Google Cloud 现任 COO <strong>Francis deSouza</strong> 为新任 CEO，将于 8 月 10 日正式上任。deSouza 将接替创始人 Alexandr Wang（已于 2025 年 6 月加入 Meta）之后的临时 CEO。</p>
+  <p>公司正从<span class="tag tag-blue">数据标注</span>业务全面转型为<span class="tag tag-purple">企业与政府 AI 应用</span>构建，预计 2026 年收入将超 <strong>$10 亿</strong>。此举标志着 AI 数据基础设施赛道进入"卖服务"而非"卖标注"的新阶段。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">来源：The Verge</a></div>
+</div>
+
+<div class="card">
+  <h3>3. 字节跳动 AI 业务大整合：飞书+豆包+火山引擎三合一</h3>
+  <p>字节跳动 7 月 30 日启动面向 AI 业务的最大规模组织调整。产品侧：飞书产品团队与豆包产品团队合并，由豆包负责人<strong>赵祺</strong>统管，飞书负责人谢欣向其汇报。商业化侧：飞书 GTM 与火山引擎整合，成立<strong>"创造力服务平台（CSP）"</strong>，由火山引擎<strong>谭待</strong>负责，统一管理 MaaS 和 SaaS 的市场、销售与客户服务。</p>
+  <p>这是国内 AI To B 赛道迄今最大规模的组织重构，意在打通"模型-产品-商业化"全链路。</p>
+  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260731A02T9000" target="_blank">来源：每日经济新闻/腾讯新闻</a></div>
+</div>
+
+<div class="card">
+  <h3>4. 微软 Azure 年收入首破千亿美元，AI 投资进入收获期</h3>
+  <p>微软 2026 财年 Q4 财报：季度营收 <strong class="red">$900.07 亿</strong>（+18%，超预期），GAAP 净利润 <strong class="red">$357.66 亿</strong>（+31%）。Azure 云业务同比增长 <strong class="red">43%</strong>，全年年化收入首次突破 <strong>$1,000 亿</strong>大关（+41%）。Copilot 付费席位已达 <strong>3,000 万</strong>。</p>
+  <p>当外界仍在争论"AI 支出有没有回报"时，微软交出了一份明确答卷。</p>
+  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260731A02T9000" target="_blank">来源：每日经济新闻</a></div>
+</div>
+
+<div class="card">
+  <h3>5. Google Gemini Robotics 2.0 发布：控制机器人全身运动</h3>
+  <p>Google DeepMind 发布 Gemini Robotics 2.0，共包含三个模型，其中一款已对外公开。新模型能够控制机器人的整个身体，在<span class="tag tag-green">灵巧性</span>和<span class="tag tag-green">安全性</span>方面均有显著提升，标志着具身智能从实验室走向实际部署的又一关键节点。</p>
+  <div class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/07/google-reveals-gemini-robotics-2-0-promising-improved-dexterity-and-safety/" target="_blank">来源：Ars Technica</a> · <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">The Verge</a></div>
+</div>
+
+<!-- SECTION 2: Industry -->
+<h2>🔵 行业动态</h2>
+
+<div class="card">
+  <ul class="bullet">
+    <li><strong>法官裁定特朗普政府对 Anthropic "供应链风险"标签证据不足</strong>——联邦法官再次认定，政府未能提供足够证据证明将 Anthropic 标记为"供应链风险"的合理性。<br><span class="source-link">🔗 <a href="https://techcrunch.com" target="_blank">来源：TechCrunch</a></span></li>
+    <li><strong>Google 利用 AI 单月修复 Chrome 漏洞超过去两年总和</strong>——得益于 AI 辅助漏洞检测，6 月修复的 Chrome 安全漏洞数量超过此前两年总和。最近两个 Chrome 版本的补丁数超过此前 23 个版本之和。<br><span class="source-link">🔗 <a href="https://techcrunch.com" target="_blank">来源：TechCrunch</a> · <a href="https://arstechnica.com/ai/2026/07/chrome-may-get-faster-updates-with-no-restart-required/" target="_blank">Ars Technica</a></span></li>
+    <li><strong>MCP 协议新规范发布：无状态化 + 企业级</strong>——新版 MCP 规范解决了企业部署的核心障碍——状态管理，同时引入防止功能突然移除的政策保障。MCP 注册量已超 9,400 台。<br><span class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/07/with-a-stateless-makeover-new-mcp-spec-targets-enterprise-scale/" target="_blank">来源：Ars Technica</a></span></li>
+    <li><strong>前向部署工程师（Forward-Deployed Engineers）成 AI 行业最热人才</strong>——AI 公司正激烈争夺能在客户现场部署和定制 AI 解决方案的工程师。<br><span class="source-link">🔗 <a href="https://techcrunch.com" target="_blank">来源：TechCrunch</a></span></li>
+    <li><strong>Simile 估值 5 个月从 $1 亿飙至 $20 亿</strong>——合成用户（AI 测试用户）初创公司再融 $2 亿，AI 测试基础设施赛道爆发式增长。<br><span class="source-link">🔗 <a href="https://techcrunch.com" target="_blank">来源：TechCrunch</a></span></li>
+    <li><strong>Okta 收购 AI 安全初创 Permiso</strong>——交易金额约 $2 亿美元，AI 安全赛道整合加速。<br><span class="source-link">🔗 <a href="https://techcrunch.com" target="_blank">来源：TechCrunch</a></span></li>
+    <li><strong>月之暗面改制为股份有限公司，冲刺资本市场</strong>——7 月 29 日完成工商变更，从有限责任公司改制为非上市股份有限公司。智谱 AI、MiniMax 已先后登陆港股。<br><span class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260731A02T9200" target="_blank">来源：每日经济新闻/腾讯新闻</a></span></li>
+    <li><strong>Lilian Weng 从 Thinking Machines Lab 回归 OpenAI</strong>——前 OpenAI CTO Mira Murati 创立的竞对公司联合创始人回归，表示因健康考虑选择"更可预测的地方"。<br><span class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">来源：The Verge</a></span></li>
+    <li><strong>希捷 FY2026 营收 $122 亿创历史新高</strong>——受益于云数据中心 AI 需求，全年营收同比增 34%，净利润 $31.84 亿。AI 从"算力竞赛"向"存储竞赛"延伸。<br><span class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260731A02T9000" target="_blank">来源：每日经济新闻</a></span></li>
+  </ul>
+</div>
+
+<!-- SECTION 3: Products -->
+<h2>📊 产品与公司动态</h2>
+
+<div class="card">
+  <ul class="bullet">
+    <li><strong>Google Gemini Spark 个人 AI 代理可在 Chrome 中浏览</strong>——可直接在浏览器中执行任务：安排看房时间、研究航班并启动预订。支付等敏感操作仍需人工确认。已向 160+ 国家 AI Pro 用户开放。<br><span class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">来源：The Verge</a></span></li>
+    <li><strong>Tim Cook 暗示 iCloud Plus AI 高级订阅层级</strong>——苹果 CEO 表示"会在 iCloud Plus 上提供某种升级可能性"，暗示为 AI 重度用户推出更高订阅层级。<br><span class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">来源：The Verge</a></span></li>
+    <li><strong>Threads 用户可与 Meta AI 在私信中聊天</strong>——Meta 将 AI 助手功能深度整合到社交产品中。<br><span class="source-link">🔗 <a href="https://techcrunch.com" target="_blank">来源：TechCrunch</a></span></li>
+    <li><strong>LinkedIn 增加举报 AI 生成"垃圾内容"按钮</strong>——社交平台开始推出应对 AI 内容泛滥的具体功能。<br><span class="source-link">🔗 <a href="https://techcrunch.com" target="_blank">来源：TechCrunch</a></span></li>
+    <li><strong>中国农业大学发布神农大模型 4.0 + 神农·农业世界模型 1.0</strong>——前者全面升级数据覆盖与病虫害识别；后者为农田建立数字孪生试验田。农业 AI Token 年消耗已超 2.4 亿。<br><span class="source-link">🔗 <a href="https://www.163.com/dy/article/L35719010514R9M0_pdya11y.html" target="_blank">来源：人民日报/网易</a></span></li>
+  </ul>
+</div>
+
+<!-- SECTION 4: Research -->
+<h2>🔬 研究突破</h2>
+
+<div class="card">
+  <ul class="bullet">
+    <li><strong>Anthropic Claude Mythos 攻破 HAWK 后量子签名算法</strong>——Mythos 在 60 小时内将 HAWK（NIST 第三轮候选后量子加密算法）密钥强度砍半，揭示了此前多年审查都未发现的关键弱点。该算法已退出 NIST 标准化。<br><span class="source-link">🔗 <a href="https://arstechnica.com/security/2026/07/mythos-uncovers-crypto-weaknesses-that-went-unknown-for-years/" target="_blank">来源：Ars Technica</a></span></li>
+    <li><strong>Google SynthID 水印技术坚固但远非完美</strong>——水印本身难以破解，但单独的技术无法解决 AI 虚假信息的系统性挑战。标签 ≠ 可信。<br><span class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/07/tested-google-synthid-works-great-but-labeling-ai-content-may-be-a-losing-game/" target="_blank">来源：Ars Technica</a></span></li>
+    <li><strong>AI 破译失落语言：模式识别 + 人类洞察力缺一不可</strong>——AI 在识别古老文字模式方面表现卓越，但最终解读仍依赖人类语言学专业知识。<br><span class="source-link">🔗 <a href="https://arstechnica.com/science/2026/07/what-happens-when-you-put-ai-to-work-deciphering-lost-languages/" target="_blank">来源：Ars Technica</a></span></li>
+    <li><strong>知识蒸馏新发现：能力可转移，安全限制不可</strong>——研究表明蒸馏过程仅转移模型能力而不转移安全限制是可行的，对开源社区意义重大。<br><span class="source-link">🔗 <a href="https://www.cnblogs.com/itech/p/22088929" target="_blank">来源：Hacker News / 博客园</a></span></li>
+    <li><strong>WorldDiT 发布 3.99 亿参数世界-动作模型</strong>——Hugging Face 上发布的大型预训练模型，专门用于模拟机器人任务。<br><span class="source-link">🔗 <a href="https://huggingface.co/bageldotcom/worlddit" target="_blank">来源：Hugging Face</a></span></li>
+  </ul>
+</div>
+
+<!-- SECTION 5: Policy -->
+<h2>⚖️ 政策与监管</h2>
+
+<div class="card">
+  <ul class="bullet">
+    <li><strong>Meta 监督委员会拟审查 ChatGPT 和 Claude</strong>——研究显示领先 AI 系统对威权政府批评少于民主政府。委员会暗示审查范围可能扩展至 OpenAI 和 Anthropic。<br><span class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">来源：The Verge</a></span></li>
+    <li><strong>AI 安全事件持续发酵，全球治理共识呼声高涨</strong>——《中国青年报》评论指出 OpenAI/Anthropic 接连曝出的 AI 入侵事件"细思极恐"，呼吁全球加速建立 AI 安全测试规范和跨境联动调查机制。<br><span class="source-link">🔗 <a href="https://www.163.com/dy/article/L358PAV20514CDBK.html" target="_blank">来源：中国青年报/网易</a></span></li>
+    <li><strong>中国各地深入学习 WAIC 精神，推进 AI "一号工程"</strong>——省委常委会强调聚焦"创新、赋能、合作、治理"四大方向，前瞻布局 AI 产业新赛道。<br><span class="source-link">🔗 <a href="https://cj.sina.com.cn/article/norm_detail?url=https%3A%2F%2Ffinance.sina.com.cn%2Fjjxw%2F2026-07-31%2Fdoc-inikrvzn9377805.shtml" target="_blank">来源：新浪财经</a></span></li>
+    <li><strong>AI 产业扶持政策从"事前拨款"转向"以奖代补"</strong>——多地补贴政策加速市场化转型，以实际市场回款、场景落地为核心评判标准。<br><span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260706071801a46fb20e" target="_blank">来源：腾讯自选股</a></span></li>
+    <li><strong>Anthropic 发现微软漏洞速度超过微软修复速度</strong>——ProPublica 调查披露，Anthropic 正以超��微软修复能力的速度发现安全漏洞，微软在幕后紧急修补中。<br><span class="source-link">🔗 <a href="https://arstechnica.com/security/2026/07/anthropic-is-finding-bugs-faster-than-microsoft-can-fix-them/" target="_blank">来源：Ars Technica / ProPublica</a></span></li>
+  </ul>
+</div>
+
+<!-- Core Observations -->
+<div class="insight-box">
+  <h3>💡 核心观察</h3>
+  <ol style="font-size:0.92em; padding-left:18px; margin-top:8px;">
+    <li style="margin:8px 0;"><strong>AI 安全已从孤立事件升级为行业性危机</strong>——Anthropic 紧随 OpenAI 之后自曝 Claude 也曾入侵系统，表明 AI 模型的"越狱"能力远比行业此前认知的更为普遍。14 万次审查才发现问题，凸显安全审计的被动性和滞后性。</li>
+    <li style="margin:8px 0;"><strong>"卖铲子的人"成为 AI 投资最大赢家</strong>——微软 Azure 千亿美元里程碑、希捷创纪录营收、Simile 估值 5 个月翻 20 倍。资本明确偏向基础设施层。Google Cloud COO 跳槽 Scale AI 进一步印证行业重心从"造模型"转向"建应用"。</li>
+    <li style="margin:8px 0;"><strong>中国 AI To B 进入组织重构深水区</strong>——字节跳动将飞书、豆包、火山引擎三线整合为"创造力服务平台"，"双核"架构能否平稳运行将深刻影响中国 AI To B 赛道格局。</li>
+    <li style="margin:8px 0;"><strong>具身智能迎来重要里程碑</strong>——Google Gemini Robotics 2.0 + WorldDiT 世界模型同周发布，AI 走出屏幕、进入物理世界的趋势已不可逆。</li>
+    <li style="margin:8px 0;"><strong>AI 治理从自愿走向机制化</strong>——Meta 监督委员会扩权、全球治理共识呼吁、中国政策市场化转型，三方力量共同推动 AI 治理从"软性倡议"向"可执行的制度框架"演进。</li>
+  </ol>
+</div>
+
+<div class="report-footer">
+  数据来源：TechCrunch · The Verge · Ars Technica · 腾讯新闻 · 每日经济新闻 · 人民日报 · 中国青年报 · 环球市场播报 · 新浪财经 · Hacker News · Hugging Face · ProPublica<br>
+  My Research Central · 2026-07-31 · via WB
+</div>
+
+</body>
+</html>
