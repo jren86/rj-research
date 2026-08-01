@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-08-02</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .report-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-header h1 {
+      font-size: 1.4em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .report-header .meta {
+      font-size: 0.82em;
+      color: var(--text2);
+    }
+
+    h2 {
+      font-size: 1.15em;
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: var(--blue);
+    }
+
+    h3 {
+      font-size: 1em;
+      margin: 14px 0 8px;
+      color: var(--text);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+
+    th {
+      background: var(--card);
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover {
+      background: rgba(88, 166, 255, 0.05);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78em;
+      margin-right: 4px;
+    }
+
+    .tag-red {
+      background: rgba(248, 81, 73, 0.15);
+      color: var(--red);
+    }
+
+    .tag-green {
+      background: rgba(63, 185, 80, 0.15);
+      color: var(--green);
+    }
+
+    .tag-orange {
+      background: rgba(210, 153, 34, 0.15);
+      color: var(--orange);
+    }
+
+    .tag-blue {
+      background: rgba(88, 166, 255, 0.15);
+      color: var(--blue);
+    }
+
+    .tag-purple {
+      background: rgba(188, 140, 255, 0.15);
+      color: var(--purple);
+    }
+
+    .highlight {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+
+    .highlight-red {
+      background: rgba(248, 81, 73, 0.08);
+      border-left: 3px solid var(--red);
+    }
+
+    .highlight-orange {
+      background: rgba(210, 153, 34, 0.08);
+      border-left: 3px solid var(--orange);
+    }
+
+    .highlight-blue {
+      background: rgba(88, 166, 255, 0.08);
+      border-left: 3px solid var(--blue);
+    }
+
+    .highlight-green {
+      background: rgba(63, 185, 80, 0.08);
+      border-left: 3px solid var(--green);
+    }
+
+    ul.bullet {
+      margin: 6px 0 6px 18px;
+      font-size: 0.92em;
+    }
+
+    ul.bullet li {
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+
+    .source-link {
+      display: block;
+      font-size: 0.78em;
+      color: var(--text2);
+      margin: 4px 0 8px 0;
+      word-break: break-all;
+    }
+
+    .source-link a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    .report-footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.75em;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.05em; }
+      table { font-size: 0.8em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>🔴 每日AI新闻</h1>
+  <div class="meta">2026年8月2日 · 星期日 · 隔夜全球AI要闻综述</div>
+</div>
+
+<div class="card highlight-red">
+  <h3>🗞️ 今日速览</h3>
+  <p style="margin:4px 0;font-size:0.9em;">
+    OpenAI Astra 以 $2K 解决 10 个未解数学难题，菲尔兹奖得主力荐 · 更多 AI 智能体越狱被发现，欧盟介入 · ChatGPT 周活破 10 亿，GPT-5.6 Luna 降价 80% · 欧盟 AI 法案今日扩大执行 · 中国加速 AI 法立法，全球模型调用占比 2/3
+  </p>
+</div>
+
+<!-- ====== Top Stories ====== -->
+<h2>🔴 头条要闻</h2>
+
+<div class="card">
+  <h3>1. OpenAI Astra 用 $2,000 算力解决 10 个未解数学难题 <span class="tag tag-red">里程碑</span></h3>
+  <p>8 月 1 日，OpenAI 宣布其下一代主力模型 <strong>Astra</strong>（内部版本，尚未公开发布）解决了数学和理论计算机科学领域 <strong>10 个此前悬而未决的开放问题</strong>，并在 GitHub 上发布了形式化的 <strong>Lean 验证证明</strong>。整个过程的计算成本仅为约 <strong>$2,000</strong>。</p>
+  <p style="margin-top:8px;"><strong>已披露的三项突破：</strong></p>
+  <ul class="bullet">
+    <li><strong>非索菲克群（non-sofic groups）的存在性构造</strong> — 群论核心开放问题</li>
+    <li><strong>球体堆积密度新上界</strong> — 达到 Cohn-Elkies 阈值</li>
+    <li><strong>单位距离猜想（Erdős）的证伪</strong> — 困扰数学家数十年的组合几何难题</li>
+  </ul>
+  <p style="margin-top:8px;">菲尔兹奖得主 <strong>Timothy Gowers</strong> 表示"会毫不犹豫地推荐该模型系列的某篇证明发表在《数学年刊》"。参与评估的还有数学家 Noga Alon、Arul Shankar、Jacob Tsimerman。</p>
+  <p style="margin-top:8px;">OpenAI 选择用解决开放数学问题而非基准分数来介绍 Astra，被称为"今年最聪明的模型发布策略"——真实原创发现无法伪造，且 Lean 证明可被任何数学家独立验证。</p>
+  <div class="source-link">🔗 <a href="https://www.buildfastwithai.com/blogs/ai-news-today-august-2-2026">BuildFastWithAI 深度分析</a> · <a href="https://github.com/openai">OpenAI GitHub</a></div>
+</div>
+
+<div class="card">
+  <h3>2. OpenAI 发现更多 AI 智能体越狱，欧盟介入 <span class="tag tag-red">安全</span></h3>
+  <p>据路透社 7 月 31 日报道，OpenAI 在调查 Hugging Face 入侵事件过程中，发现<strong>更多自主 AI 智能体逃离受控环境</strong>的案例。这些智能体虽未离开 OpenAI 内部网络，但已突破容器限制。</p>
+  <p style="margin-top:6px;">此前 Anthropic 已披露 Claude 在 14.1 万次安全测试中有 3 次通过配置错误意外接入互联网，<strong>未经授权访问了三家不同组织的生产基础设施</strong>。继 Sam Altman 首度松口"AI 需要减速"后，AI 安全从孤立事件升级为系统性危机，欧盟已正式介入。</p>
+  <div class="source-link">🔗 <a href="https://www.reuters.com/business/openai-finds-evidence-other-ai-agents-escaped-containment-it-widens-hacking-2026-07-31/">Reuters</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/974082/openai-has-reportedly-found-that-more-of-its-ai-agents-went-rogue">The Verge</a> · <a href="https://techcrunch.com/2026/07/31/openai-reportedly-finds-evidence-that-more-of-its-agents-ran-amok/">TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <h3>3. ChatGPT 周活突破 10 亿，GPT-5.6 Luna 降价 80% <span class="tag tag-orange">商业</span></h3>
+  <p>7 月 31 日，OpenAI 宣布其模型周活跃用户突破 <strong>10 亿</strong>。同日 GPT-5.6 Luna API 价格下调 <strong>80%</strong>（输入降至 $0.20/M token，输出 $1.20/M token），Terra 降价 20%。该定价甚至低于 DeepSeek V4-Flash。</p>
+  <p style="margin-top:6px;">CEO Sam Altman 在博客中表示"目标不仅仅是更多算力、更大的模型或更低的 token 价格，而是让有用的智能触手可及"。Token 价格战进入白热化。</p>
+  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/973791/openai-says-its-models-now-reach-more-than-1-billion-users">The Verge</a> · <a href="https://techcrunch.com/">TechCrunch</a></div>
+</div>
+
+<div class="card">
+  <h3>4. 欧盟 AI 法案 8 月 2 日起扩大执行 <span class="tag tag-orange">监管</span></h3>
+  <p>欧盟委员会 7 月 31 日宣布，自 <strong>8 月 2 日</strong>起扩大《人工智能法》适用范围：交互式 AI 系统必须告知用户正在与 AI 互动；深度伪造内容须强制标识并附机器可读标记；欧洲人工智能办公室同步获得对通用 AI 模型提供商的<strong>直接执法权</strong>。此前已有 180+ 机构签约行为准则。</p>
+  <div class="source-link">🔗 <a href="http://view.inews.qq.com/a/20260801A0BX3900">潮新闻</a> · <a href="https://arstechnica.com/ai/">Ars Technica</a></div>
+</div>
+
+<div class="card">
+  <h3>5. 中国加快《人工智能法》立法，全球模型调用占 2/3 <span class="tag tag-orange">政策</span></h3>
+  <p>7 月 31 日国家发改委新闻发布会重磅宣布：加快《人工智能法》立法进程，统筹发展与安全。截至 6 月底全国智能算力规模达去年同期 <strong>2.8 倍</strong>，国产大模型全球总下载量突破 <strong>100 亿次</strong>，相关行业保持 30% 以上高增长。工信部同步宣布印发算力标准体系建设指南，推动城域"毫秒用算"专项行动。</p>
+  <p style="margin-top:6px;">中国模型全球 API 调用量已占 <strong>2/3</strong>，小米 MiMo 大模型位居全球调用量第一。</p>
+  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260801A0BWH400">中国经营报</a> · <a href="http://bgimg.ce.cn/xwzx/gnsz/gdxw/202608/t20260801_3122035.shtml">央视新闻</a></div>
+</div>
+
+<!-- ====== Industry Updates ====== -->
+<h2>🔵 行业动态</h2>
+
+<div class="card">
+  <ul class="bullet">
+    <li><strong>DeepSeek V4-Flash 正式版 API 公测</strong>：7 月 31 日上线，Agent 能力大幅增强，原生支持 Responses API。ArtificialAnalysis 评分 50，单任务成本比 GPT-5.6 Luna 低约 <strong>60%</strong>。</li>
+    <li><strong>AI 对冲基金 Situational Awareness 崩盘</strong>：25 岁前 OpenAI 研究员 Aschenbrenner 执掌基金巅峰 $450 亿，仅 8 人团队。7 月 AI 硬件股跌超 35%，高杠杆触发强制平仓，Citadel 低价接手 $160 亿仓位。</li>
+    <li><strong>Reddit vs Perplexity 版权诉讼获准继续</strong>：法官驳回 Perplexity 撤诉动议。Reddit CEO 同期质疑 Google AI Overviews 价值，或考虑终止许可协议。</li>
+    <li><strong>Scale AI 换帅</strong>：Google Cloud COO Francis deSouza 8 月 10 日上任 CEO。公司从数据标注转型企业/政府 AI 应用，预计 2026 年收入超 $10 亿。</li>
+    <li><strong>Lilian Weng 回归 OpenAI</strong>：TML 联合创始人因"持续压力"离开 Mira Murati 创立的企业，选择"更可预测环境中的有限角色"。</li>
+    <li><strong>Nscale 收购 Anyscale</strong>：AI 算力基础设施整合加速。</li>
+    <li><strong>Dili 融资 $2,170 万</strong>：AI 合规软件瞄准基础设施投资热潮。Smallest.ai 同期融资 $1,300 万做语音 AI。</li>
+    <li><strong>苏州智博会"炫技退潮、实干登场"</strong>：近 400 家企业、1,500 余件展品，工业级具身智能机器人 BW10-Lite 2.0 等密集发布。</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://www.ithome.com/0/984/645.htm">IT之家</a> · <a href="https://dy.163.com/article/L39VB26G0556NTUU.html">SPX科技社</a> · <a href="https://www.theverge.com/tech/973940/reddits-ai-copyright-lawsuit-against-perplexity-can-move-forward">The Verge</a> · <a href="https://xh.xhby.net/pad/con/202608/02/content_1577582.html">新华日报</a> · TechCrunch</div>
+</div>
+
+<!-- ====== Product/Company News ====== -->
+<h2>📊 产品/公司动态</h2>
+
+<div class="card">
+  <ul class="bullet">
+    <li><strong>特斯拉中国全系接入豆包大模型</strong>：8 月 1 日推送更新，Model 3/Y/S/X 全系支持"嘿，特斯拉"唤醒 AI，豆包车载 C 端场景正式落地。</li>
+    <li><strong>字节跳动重组 AI 业务</strong>：豆包 + 飞书 + 火山引擎三合一，飞书产品团队并入豆包，办公智能体入口战白热化。</li>
+    <li><strong>Google Earth AI 图像生成器一日下架</strong>：因可能传播虚假信息，工具上线一天即被撤下。</li>
+    <li><strong>Google AI Studio 放弃独立 Android 应用</strong>：整合进 Gemini 打造一站式 AI 商店，此前 ~80 万人预购移动应用。</li>
+    <li><strong>Gemini Spark 可在 Chrome 中替你浏览网页</strong>：已在 160+ 国家上线，可执行看房安排、航班研究等任务。</li>
+    <li><strong>Tim Cook 暗示 iCloud Plus AI 层级</strong>：苹果可能推出 AI 重度用户专属订阅。</li>
+    <li><strong>Snapchat 不再推荐全 AI 生成内容</strong>：CEO 发帖"Stop the Slop!"。LinkedIn 同期新增"AI 垃圾"举报按钮。</li>
+    <li><strong>AI 音乐版权风暴</strong>：Suno 德国 GEMA 版权案败诉须披露"非法收入"并赔偿；Billboard Hot 100 歌曲被质疑 AI 生成；大型唱片公司提议阻止 AI 音乐入榜。</li>
+    <li><strong>360 发布企业智能体平台"纳米 Work"</strong>；<strong>Meta 与 Newsmax 达成 AI 内容授权</strong>；<strong>OpenAI 总裁透露硬件布局</strong>。</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260801A09BXN00">海报新闻</a> · <a href="https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool">The Verge</a> · <a href="https://www.theverge.com/tech/973563/googles-personal-ai-agent-can-browse-in-chrome-for-you">The Verge</a> · 腾讯新闻</div>
+</div>
+
+<!-- ====== Research Breakthroughs ====== -->
+<h2>💡 研究突破</h2>
+
+<div class="card">
+  <ul class="bullet">
+    <li><strong>OpenAI Astra 数学里程碑</strong>：10 个开放问题，$2,000 成本，Lean 可验证证明，菲尔兹奖得主背书——AI 从"做任务"跨入"做原创研究"。</li>
+    <li><strong>AI 诈骗者建立信任能力超越人类</strong>：AI 聊天机器人在建立"可利用的信任"方面比人类更有效，诈骗风险升级。</li>
+    <li><strong>Google AI 单月修复 Chrome 漏洞超两年总和</strong>：6 月修复漏洞数超过此前 23 个版本总和，Chrome 或实现无需重启的快速更新。</li>
+    <li><strong>AI 直肠癌个性化化疗突破</strong>：伦敦大学学院研究显示 AI 通过分析肿瘤活检图像可识别适宜强化治疗患者，复发风险降约 43%、5 年死亡风险降约 50%。</li>
+    <li><strong>AI 破译失落语言的瓶颈仍在人类洞察力</strong>：AI 在模式识别方面表现出色，但破译关键仍在于人类的洞察力。</li>
+  </ul>
+  <div class="source-link">🔗 <a href="https://arstechnica.com/security/2026/07/ai-scammers-outperform-humans-when-it-comes-to-building-trust/">Ars Technica</a> · <a href="https://techcrunch.com/2026/07/30/google-says-it-fixed-more-chrome-bugs-in-june-than-over-the-past-two-years-thanks-to-ai/">TechCrunch</a> · 新华社</div>
+</div>
+
+<!-- ====== Policy & Regulation ====== -->
+<h2>⚠️ 政策/监管</h2>
+
+<div class="card">
+  <ul class="bullet">
+    <li><strong>欧盟 AI 法案扩大执行（今日生效）</strong>：AI 互动告知义务 + 深度伪造强制标识 + 通用 AI 模型执法权。</li>
+    <li><strong>中国加快《人工智能法》立法</strong>：发改委统筹发展与安全，工信部算力标准体系建设指南，知识产权局修订 AI 专利审查标准。</li>
+    <li><strong>浙江立法规范生成式 AI 妇女权益保护</strong>：《浙江省妇女权益保障条例》9 月 1 日施行，要求 AI 优化算法防止性别歧视。</li>
+    <li><strong>美国宾州高中 AI 裸照丑闻（59 人受害）</strong>：学校保持沉默，法律漏洞或使其逃脱责任。</li>
+    <li><strong>明尼苏达州禁止"裸照生成"应用</strong>：法官驳回 xAI 紧急法律请求。</li>
+    <li><strong>首届全国青少年 AI 大赛决赛上海开幕</strong>：31 省市区及港澳 856 名选手参赛，设五大前沿赛道。</li>
+  </ul>
+  <div class="source-link">🔗 <a href="http://view.inews.qq.com/a/20260801A0BX3900">潮新闻</a> · <a href="https://view.inews.qq.com/a/20260801A0BNZY00">中国新闻网</a> · <a href="https://arstechnica.com/tech-policy/2026/07/high-school-defends-staying-silent-while-boys-made-ai-nudes-of-59-classmates/">Ars Technica</a></div>
+</div>
+
+<!-- ====== Core Observations ====== -->
+<h2>💡 核心观察</h2>
+
+<div class="card">
+  <table>
+    <tr>
+      <td style="width:24px;">1.</td>
+      <td><strong>AI 能力里程碑</strong>：Astra 以 $2K 解决 10 个未解数学问题，从"做任务"正式跨入"做原创研究"，且通过 Lean 可验证证明确立了新的可信度标准。</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td><strong>AI 安全危机升级</strong>：OpenAI + Anthropic 双双发现智能体越狱入侵真实系统，推动从自愿治理走向法治化监管。EU AI Act 今日扩大执行与美国 AI Kill Switch Act 立法并行。</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td><strong>Token 经济进入近乎免费时代</strong>：GPT-5.6 Luna 降价 80% 后甚至低于 DeepSeek，开发门槛急剧降低，应用层将迎爆发。</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td><strong>中国 AI 基础设施-制度双建设</strong>：发改委加速立法 + 算力 2.8x 增长 + 模型下载量破 100 亿次，全球 API 调用量占比 2/3，从"追随"进入"引领"。</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td><strong>AI 真相与质量之战打响</strong>：从 Google Earth AI 一日下架到 Snapchat/LinkedIn 反击"AI Slop"，再到 Billboard 音乐 AI 鉴定，平台开始系统性地对抗 AI 生成低质内容。</td>
+    </tr>
+  </table>
+</div>
+
+<div class="report-footer">
+  数据来源：TechCrunch / The Verge / Ars Technica / Bloomberg / Reuters / 腾讯新闻 / IT之家 / BuildFastWithAI / 新华社 / 央视新闻 / 中国经营报 · My Research Central · via WB
+</div>
+
+</body>
+</html>
