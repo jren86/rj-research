@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间投研日报 · 2026-08-02</title>
+  <style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+.tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+.tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+.tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+.tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+.highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+.highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+.highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover { text-decoration: underline; }
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>晚间投研日报 · 2026-08-02（周日）</h1>
+  <div class="meta">休市简化版 — 聚焦周五(7/31)收盘数据 + 周末增量信息</div>
+</div>
+
+<!-- 催化剂日历 -->
+<h2>📅 催化剂日历</h2>
+<table>
+<tr><th>日期</th><th>事件</th><th>影响</th></tr>
+<tr><td>8/2~8/3（周末）</td><td>特朗普取消对伊朗军事打击</td><td><span class="tag tag-red">🔴 地缘降温</span></td></tr>
+<tr><td>8/2 周末</td><td>DS V4 Pro/Flash 发布</td><td><span class="tag tag-red">🔴 AI 推理成本再降</span></td></tr>
+<tr><td>8/10</td><td>宇树科技 688836 打新</td><td><span class="tag tag-red">🔴 具身智能第一股</span></td></tr>
+<tr><td>8/1 起</td><td>三星电机 MLCC 全系列提价 30%</td><td><span class="tag tag-red">🔴 AI 新材料涨价周期</span></td></tr>
+<tr><td>本周</td><td>关注美伊地缘后续 + A股反弹延续性</td><td><span class="tag tag-orange">🟠</span></td></tr>
+</table>
+
+<!-- 宏观 -->
+<h2>🌍 宏观</h2>
+
+<h3>🔴 美伊地缘：第二次「最后一刻叫停」</h3>
+<div class="highlight highlight-red">
+<ul class="bullet">
+<li>7/31 美官员称特朗普下令周末对伊朗发动新一轮袭击，CBS 披露美以准备轰炸伊朗能源目标</li>
+<li>WTI 当日涨 3.84% 至 <strong>$86.80</strong>，布伦特盘中冲高至 $90.38</li>
+<li>8/1 特朗普发推宣布取消打击（沙特王储致电敦促缓和）</li>
+<li><strong>7月以来第二次军事行动在临界点被叫停</strong>，双方对油价与全球通胀后果均有忌惮</li>
+<li>沙特主动劝和 → 第三方国家成本已高到主动降温</li>
+<li><strong>展望</strong>：取消打击确认后，周一油价可能进一步回吐地缘溢价</li>
+<li>7月 WTI 累涨 22.23%，布油累涨 23.53%</li>
+</ul>
+</div>
+<div class="source-link">🔗 来源：国联民生宏观团队 周末宏观事件0802</div>
+
+<h3>🔵 美联储 & 利率</h3>
+<ul class="bullet">
+<li>联储半年度报告：关税+中东推高通胀，AI 是双刃剑（短期推高通胀，长期提升生产率）</li>
+<li>市场定价年底前加息概率约 30%</li>
+</ul>
+
+<h3>📊 7月月度收官数据</h3>
+<table>
+<tr><th>指数</th><th>月度涨跌幅</th></tr>
+<tr><td>纳斯达克100</td><td class="green">-6.61%</td></tr>
+<tr><td>费城半导体</td><td class="green">-20.6%</td></tr>
+<tr><td>存储芯片指数</td><td class="green">-29.25%</td></tr>
+<tr><td>道指</td><td class="red">+0.32%</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<!-- 市场概览 -->
+<h2>📊 市场概览（7/31 周五收盘）</h2>
+
+<table>
+<tr><th>指数</th><th>收盘价</th><th>涨跌幅</th></tr>
+<tr><td>上证指数</td><td>3,832.26</td><td class="red">+0.72%</td></tr>
+<tr><td>深证成指</td><td>13,578.93</td><td class="red">+2.21%</td></tr>
+<tr><td>创业板指</td><td>3,343.96</td><td class="red">+3.06%</td></tr>
+<tr><td>科创50</td><td>1,635.96</td><td class="red">+2.99%</td></tr>
+<tr><td>恒生指数</td><td>25,884.43</td><td class="red">+0.10%</td></tr>
+<tr><td>恒生科技</td><td>4,829.22</td><td class="red">+0.53%</td></tr>
+</table>
+<div class="source-link">🔗 数据来源：Wind MCP stock_data.get_stock_price_indicators</div>
+
+<div class="highlight highlight-blue">
+💡 <strong>周五 A 股全线反弹</strong>：成交 2.56 万亿放量 2000 亿，5189 只上涨。双创领涨——创业板 +3.06%、科创50 +2.99%。核心催化：政治局定调政策发力提效、亚马逊 CAPEX 上调至 2200 亿$、字节 Seedance 2.5+MiniMax H3 驱动 AI 应用爆发。
+</div>
+
+<h3>大宗商品</h3>
+<table>
+<tr><th>品种</th><th>最新价</th><th>涨跌幅</th></tr>
+<tr><td>WTI 原油</td><td>$86.80</td><td class="red">+3.84%</td></tr>
+<tr><td>伦敦金现货</td><td>$4,098.60</td><td class="green">-1.49%</td></tr>
+<tr><td>ICE 布伦特</td><td>数据暂不可用</td><td>—</td></tr>
+</table>
+<div class="source-link">🔗 WTI/黄金：NeoData --data-type api 结构化数据</div>
+
+<div class="divider"></div>
+
+<!-- 策略观点 -->
+<h2>🧠 策略观点</h2>
+
+<div class="card">
+<h3>🔴 天风电新：AI 贝塔的三个担忧与回应（0802）</h3>
+<ul class="bullet">
+<li><strong>担忧1</strong>：token 降价 = AI 硬件结束？→ 类比新能源车降价后百花齐放，<strong>降价刺激需求大放量是常态</strong></li>
+<li><strong>担忧2</strong>：涨价杀估值？→ 升级带来的涨价 ≠ 低端产能被挤占的涨价；<strong>GB300 贵 30-40% 但单 token 成本降 80%</strong></li>
+<li><strong>担忧3</strong>：AI 需求叙事？→ RSI 会快速拉升训练需求，<strong>比 coding 更大的商业化场景一定会出现</strong></li>
+<li><strong>推荐主线</strong>：AI 升级链（Rubin 载板国产化升级）> bottleneck 环节（AI 缺电 SOFC、机器人本体/数采）</li>
+</ul>
+<div class="source-link">🔗 来源：调研纪要更新 · 天风电新&汽车 孙潇雅</div>
+</div>
+
+<div class="card">
+<h3>🔵 天风建筑建材：AI 资本开支逻辑未变，去杠杆尾声抄底硬科技（0801）</h3>
+<ul class="bullet">
+<li>外围云厂商季报继续确认 CAPEX 高位：AWS $2200亿、MSFT Q4 $410亿、Alphabet $850-950亿、Meta $660-720亿</li>
+<li><strong>MLCC 涨价</strong>：三星电机 8/1 全系列 +30%，太阳诱电 9 月继续提价</li>
+<li>电子布 7628 涨 1.5 元/米至 10 元关口</li>
+<li>外围去杠杆接近尾声：微软 +22%、亚马逊 +17%，<strong>抄底硬科技开始具备赔率</strong></li>
+<li>⭐ 推荐：国瓷材料、国际复材、中国巨石、中材科技、圣泉集团、联瑞新材</li>
+</ul>
+<div class="source-link">🔗 来源：调研纪要更新 · 天风建筑建材&新材料 鲍荣富</div>
+</div>
+
+<div class="card">
+<h3>🔴 天风电新：顺络电子半年报交流——AI 业务未充分定价（0802）</h3>
+<ul class="bullet">
+<li>26H1 业绩略超预期，Q2 毛利率 34.4% 环比 +1.9pct</li>
+<li><strong>AI 业务</strong>：26H1 AI 收入 1.6 亿，全年占比 8-10%（6-8 亿）</li>
+<li>⭐ 钽电容：国内存储 eSSD/服务器客户小批量交付；海外高端消费电子大客户爬坡</li>
+<li>⭐ TLVR 电感：渗透率远超预期，国内仅顺络具备，北美大客户已出货</li>
+<li><strong>27 年目标市值 550 亿（+60% 空间）</strong>，27 年归母净利 20 亿+，PE 17x</li>
+</ul>
+<div class="source-link">🔗 来源：水木调研纪要-2.0 · 天风电新 孙潇雅</div>
+</div>
+
+<div class="card">
+<h3>🔴 宇树科技 IPO（688836）</h3>
+<ul class="bullet">
+<li><strong>发行</strong>：≈104 元/股，募资 42 亿，市值 420 亿</li>
+<li><strong>地位</strong>：全球人形机器人出货第一（2025 超 5500 台），已盈利，毛利 60%</li>
+<li><strong>筹码结构</strong>：首日流通仅 7.36%（2977 万股），散户中签率万 2~万 5</li>
+<li><strong>预判</strong>：流通盘极小 + 叙事极性感 = 前 5 天无涨跌幅纯情绪市</li>
+</ul>
+<div class="source-link">🔗 来源：调研纪要更新</div>
+</div>
+
+<div class="card">
+<h3>🔵 华福计算机：一切变化都指向软件（0802）</h3>
+<ul class="bullet">
+<li>DS V4 大幅降低 Agent 复杂推理 Token 门槛</li>
+<li>微软 Azure/AWS 云超预期，企业大量调用 API 使用智能体</li>
+<li>⭐ 推荐：深信服、卓易信息、金山办公、唐源电气、泛微网络</li>
+</ul>
+<div class="source-link">🔗 来源：调研纪要更新 · 华福计算机</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 持仓个股监控 -->
+<h2>📈 持仓个股监控（7/31 周五）</h2>
+
+<h3>A股持仓（14只）</h3>
+<table>
+<tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>主题</th></tr>
+<tr><td>东方钽业</td><td>000962</td><td>43.88</td><td class="red">+6.89%</td><td>AI材料</td></tr>
+<tr><td>长川科技</td><td>300604</td><td>259.64</td><td class="red">+5.76%</td><td>AI设备</td></tr>
+<tr><td>中恒电气</td><td>002364</td><td>35.48</td><td class="red">+3.74%</td><td>AI设备</td></tr>
+<tr><td>惠泰医疗</td><td>688617</td><td>227.40</td><td class="red">+3.47%</td><td>创新药械</td></tr>
+<tr><td>应流股份</td><td>603308</td><td>42.85</td><td class="red">+3.28%</td><td>AI设备</td></tr>
+<tr><td>京东方A</td><td>000725</td><td>5.51</td><td class="red">+2.80%</td><td>AI材料</td></tr>
+<tr><td>N长鑫</td><td>688825</td><td>53.97</td><td class="red">+2.08%</td><td>AI材料</td></tr>
+<tr><td>亨通光电</td><td>600487</td><td>47.61</td><td class="red">+0.87%</td><td>AI设备</td></tr>
+<tr><td>巨化股份</td><td>600160</td><td>39.52</td><td class="green">-0.23%</td><td>化工材料</td></tr>
+<tr><td>中国人寿</td><td>601628</td><td>39.52</td><td class="green">-0.55%</td><td>保险</td></tr>
+<tr><td>恒瑞医药</td><td>600276</td><td>54.08</td><td class="green">-1.04%</td><td>创新药械</td></tr>
+<tr><td>中国太保</td><td>601601</td><td>32.36</td><td class="green">-1.34%</td><td>保险</td></tr>
+<tr><td>宁德时代</td><td>300750</td><td>395.30</td><td class="green">-1.64%</td><td>新能源</td></tr>
+<tr><td>新和成</td><td>002001</td><td>30.01</td><td class="green">-1.67%</td><td>化工材料</td></tr>
+</table>
+<div class="source-link">🔗 数据来源：NeoData --data-type api / Wind MCP</div>
+
+<p><strong>A股持仓小结</strong>：<span class="red">9涨5跌</span>。AI 设备/材料标的大涨——东方钽业 +6.89% 领涨，长川科技 +5.76%、中恒电气 +3.74%。保险和新能源拖后腿。</p>
+
+<h3>港股持仓（10只）</h3>
+<table>
+<tr><th>标的</th><th>代码</th><th>收盘价(HKD)</th><th>涨跌幅</th><th>主题</th></tr>
+<tr><td>联想集团</td><td>00992</td><td>23.86</td><td class="red">+9.75%</td><td>AI设备</td></tr>
+<tr><td>兆威机电</td><td>02692</td><td>43.88</td><td class="red">+9.37%</td><td>新能源/电动车</td></tr>
+<tr><td>英矽智能</td><td>03696</td><td>45.70</td><td class="red">+8.65%</td><td>创新药械</td></tr>
+<tr><td>长飞光纤光缆</td><td>06869</td><td>96.75</td><td class="red">+5.16%</td><td>AI材料</td></tr>
+<tr><td>康方生物</td><td>09926</td><td>93.95</td><td class="red">+0.80%</td><td>创新药械</td></tr>
+<tr><td>腾讯控股</td><td>00700</td><td>475.20</td><td class="red">+0.72%</td><td>AI应用</td></tr>
+<tr><td>万科企业</td><td>02202</td><td>2.48</td><td class="red">+0.40%</td><td>地产</td></tr>
+<tr><td>紫金黄金国际</td><td>02259</td><td>118.20</td><td>0.00%</td><td>能源/有色</td></tr>
+<tr><td>泡泡玛特</td><td>09992</td><td>162.60</td><td class="green">-0.37%</td><td>传媒娱乐</td></tr>
+<tr><td>大族数控</td><td>03200</td><td>⚠️ 未覆盖</td><td>—</td><td>AI设备</td></tr>
+</table>
+<div class="source-link">🔗 数据来源：NeoData --data-type api；大族数控(03200.HK)港股数据未覆盖</div>
+
+<p><strong>港股持仓小结</strong>：<span class="red">8涨1跌1未覆盖</span>。联想集团 +9.75% 领涨，兆威机电 +9.37%、英矽智能 +8.65% 等科技/医药大涨。</p>
+
+<h3>按主题汇总</h3>
+<table>
+<tr><th>主题</th><th>标的</th><th>表现</th></tr>
+<tr><td><span class="red">🔴 AI设备&材料</span></td><td>联想+9.75%、东方钽业+6.89%、长川+5.76%、长飞+5.16%、中恒+3.74%、应流+3.28%、京东方+2.80%、N长鑫+2.08%、亨通+0.87%</td><td>全线大涨</td></tr>
+<tr><td><span class="red">🔴 新能源/电动车</span></td><td>兆威+9.37%、宁德-1.64%</td><td>分化</td></tr>
+<tr><td><span class="blue">🔵 创新药械</span></td><td>英矽+8.65%、惠泰+3.47%、康方+0.80%、恒瑞-1.04%</td><td>整体偏强</td></tr>
+<tr><td><span class="green">🟢 保险</span></td><td>国寿-0.55%、太保-1.34%</td><td>双双下跌</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<!-- 知识星球 -->
+<h2>🌐 知识星球精选</h2>
+
+<h3>水木调研纪要-2.0</h3>
+
+<div class="card">
+<h3>🔴 周末宏观事件0802：AI 估值重构月后的 TACO Saturday</h3>
+<p>国联民生 陶川/林彦</p>
+<ul class="bullet">
+<li>特朗普取消伊朗打击 → 油价周一看回吐</li>
+<li>7月纳指100 -6.61%、费半 -20.6%，存储芯片 -29.25%</li>
+<li>8月观察：油价回吐幅度、A股反弹延续性、日元美元不对称交易</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>📊 韩国 DRAM 和 NAND 出口价格（7/31）</h3>
+<ul class="bullet">
+<li>DRAM（不含模块）：出口额 $135.45亿，同比 <span class="red">+467%</span>，单价 $91,931/kg，同比 <span class="red">+517%</span></li>
+<li>MCP（HBM）：出口额 $100.83亿，同比 <span class="red">+140%</span></li>
+<li>NAND：出口额 $17.81亿，同比 <span class="red">+280%</span></li>
+</ul>
+</div>
+
+<div class="card">
+<h3>⚠️ 海外投行报告 ×3 篇</h3>
+<ul class="bullet">
+<li>美银：The Flow Show - Credibility, Intervention & Liquidation</li>
+<li>其他 2 篇标注 #海外投行报告</li>
+<li>⚠️ PDF 文件需手动查看</li>
+</ul>
+</div>
+
+<h3>调研纪要更新</h3>
+
+<div class="card">
+<h3>🔴 宇树科技 688836 IPO</h3>
+<ul class="bullet">
+<li>8/10 打新，发行价≈104 元，市值 420 亿</li>
+<li>全球人形机器人出货第一，首日流通仅 7.36%</li>
+<li>流通盘极小 + 叙事极性感 = 纯情绪市</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🔴 天风电新&汽车：关于市场担忧 AI 贝塔的思考（孙潇雅）</h3>
+<ul class="bullet">
+<li>升级链为核心主线：<strong>Rubin 和载板的国产化升级</strong></li>
+<li>SOFC 系统集成商推荐顺序优于 BE 供应链</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🔵 华福计算机：一切变化都指向软件</h3>
+<ul class="bullet">
+<li>DS V4 降低 Agent 门槛，Azure/AWS 云超预期</li>
+<li>⭐ 推荐：深信服、卓易信息、金山办公</li>
+</ul>
+</div>
+
+<div class="divider"></div>
+
+<!-- 数据溯源 -->
+<h2>📋 数据溯源</h2>
+<table>
+<tr><th>数据类别</th><th>来源</th><th>工具/调用</th></tr>
+<tr><td>指数行情（6只）</td><td>Wind MCP</td><td>stock_data.get_stock_price_indicators ×6</td></tr>
+<tr><td>A股持仓行情（14只）</td><td>NeoData API</td><td>query.py --data-type api ×2</td></tr>
+<tr><td>港股持仓行情（10只）</td><td>NeoData API</td><td>query.py --data-type api ×1</td></tr>
+<tr><td>WTI原油/黄金现货</td><td>NeoData API</td><td>query.py --data-type api</td></tr>
+<tr><td>新闻/策略观点</td><td>Wind MCP + ZSXQ</td><td>financial_docs + group +topics + topic +detail</td></tr>
+<tr><td>知识星球精选</td><td>ZSXQ CLI</td><td>group +topics ×2 + topic +detail ×8</td></tr>
+</table>
+
+<div class="report-footer">
+  数据来源：Wind MCP / NeoData API / ZSXQ CLI · My Research Central · via WB<br>
+  2026-08-02 周日休市简化版 · 网站：<a href="https://rj-research.pages.dev" style="color:var(--blue)">rj-research.pages.dev</a>
+</div>
+
+</body>
+</html>
