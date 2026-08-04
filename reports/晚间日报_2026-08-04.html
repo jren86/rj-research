@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间投研日报 · 2026-08-04</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   ============================================ */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(188, 140, 255, 0.15);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(210, 153, 34, 0.08);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(88, 166, 255, 0.08);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(63, 185, 80, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📊 晚间投研日报 · 2026-08-04（周二）</h1>
+  <div class="meta">2026-08-04 · My Research Central · via WB</div>
+</div>
+
+<h1>晚间投研日报 · 2026-08-04（周二）</h1>
+<div class="highlight highlight-blue">
+<p><strong>久违的大涨日</strong> — 创业板指放量大涨 5.64%，算力硬件集体反弹，两市成交 2.21 万亿放量 2162 亿。通信板块领涨超 9%，长鑫科技成交超 200 亿。大金融回调，四大行均跌超 3%。WTI 原油暴跌 5.74% 至 $75.73。</p>
+</div>
+<div class="divider"></div>
+<h2>📅 催化剂日历</h2>
+<div style="overflow-x:auto"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>事件</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/4（今日）</td>
+<td>创业板指大涨 5.64%，算力硬件集体反弹</td>
+<td>🔴 科技成长修复</td>
+</tr>
+<tr>
+<td>8/4</td>
+<td>通信板块领涨超 9%，20 股涨停/涨幅超 10%</td>
+<td>🔴 光通信/CPO 主线</td>
+</tr>
+<tr>
+<td>8/4</td>
+<td>存储芯片：长鑫科技成交超 200 亿，兆易创新超 200 亿</td>
+<td>🔴 存储链活跃</td>
+</tr>
+<tr>
+<td>8/4</td>
+<td>央行开展 465 亿元 7 天逆回购，利率 1.4% 持平</td>
+<td>🔵 流动性平稳</td>
+</tr>
+<tr>
+<td>8/4</td>
+<td>WTI 原油 -5.74% 至 $75.73，油价持续回落</td>
+<td>🟢 地缘溢价消退</td>
+</tr>
+<tr>
+<td>8/10</td>
+<td>宇树科技 688836 打新</td>
+<td>🔴 具身智能第一股</td>
+</tr>
+<tr>
+<td>本周</td>
+<td>中报密集披露期，关注业绩兑现</td>
+<td>🟠</td>
+</tr>
+</tbody>
+</table></div>
+<div class="divider"></div>
+<h2>🌍 宏观</h2>
+<h3>🔵 央行公开市场操作</h3>
+<ul>
+<li>8/4 央行开展 465 亿元 7 天期逆回购，操作利率 1.4%，与此前持平</li>
+<li>流动性维持平稳偏松格局</li>
+</ul>
+<div class="highlight highlight-blue">
+<p>数据来源：Wind 新闻终端 2026-08-04</p>
+</div>
+<h3>🟢 大宗商品：WTI 继续暴跌，黄金走强</h3>
+<ul>
+<li>WTI 原油 $75.73（-5.74%），两日累计跌幅显著，地缘溢价持续回吐</li>
+<li>COMEX 黄金 $4,145.10（+1.33%），避险资金与降息预期支撑</li>
+<li>沪原油主力（SC2609）549.5 元/桶（-3.51%），内外盘油价联动下行</li>
+<li>布伦特原油：NeoData 数据暂不可用（查询被路由至国内原油合约），以 WTI + 沪原油作为替代参考</li>
+</ul>
+<div class="highlight highlight-blue">
+<p>数据来源：NeoData 期货实时行情 2026-08-04</p>
+</div>
+<h3>🔵 港股：恒指小幅回调，恒生科技微涨</h3>
+<ul>
+<li>恒生指数 25,852.92（-0.60%），恒生科技 4,885.61（+0.21%）</li>
+<li>A 股科技大涨但港股科技相对平淡，AH 联动有限</li>
+</ul>
+<div class="highlight highlight-blue">
+<p>数据来源：Wind 指数行情 2026-08-04</p>
+</div>
+<div class="divider"></div>
+<h2>📊 市场概览（8/4 周二收盘）</h2>
+<div style="overflow-x:auto"><table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3,822.28</td>
+<td>🔴 +0.33%</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>13,885.71</td>
+<td>🔴 +3.25%</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>3,488.97</td>
+<td>🔴 +5.64%</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>1,616.36</td>
+<td>🔴 +4.09%</td>
+</tr>
+<tr>
+<td>恒生指数</td>
+<td>25,852.92</td>
+<td>🟢 -0.60%</td>
+</tr>
+<tr>
+<td>恒生科技</td>
+<td>4,885.61</td>
+<td>🔴 +0.21%</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight highlight-blue">
+<p>数据来源：Wind 指数行情（index_data）2026-08-04</p>
+</div>
+<p>💡 <strong>放量大反弹</strong>：两市成交 2.21 万亿，较上一交易日放量 2,162 亿。全市场超 3,600 只个股上涨，超百股涨停。<strong>通信板块领涨超 9%</strong>，板块内 20 股涨停/涨幅超 10%（欣天科技、光库科技 20cm 涨停，天孚通信、新易盛、中际旭创等大涨）。13 只个股成交额超 100 亿，其中中际旭创、新易盛、长鑫科技、兆易创新 4 只成交超 200 亿。</p>
+<h3>板块热点</h3>
+<div style="overflow-x:auto"><table>
+<thead>
+<tr>
+<th>板块</th>
+<th>表现</th>
+<th>点评</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 通信/光模块</td>
+<td>领涨超 9%</td>
+<td>CPO 概念震荡反弹，东山精密涨停</td>
+</tr>
+<tr>
+<td>🔴 算力租赁</td>
+<td>延续强势</td>
+<td>美利云 3 连板，利通电子 3 天 2 板</td>
+</tr>
+<tr>
+<td>🔴 半导体设备</td>
+<td>震荡拉升</td>
+<td>金海通涨停，长川科技 +8.09%</td>
+</tr>
+<tr>
+<td>🔴 PCB</td>
+<td>走强</td>
+<td>宝鼎科技 3 天 2 板，深南电路涨停</td>
+</tr>
+<tr>
+<td>🔴 CRO</td>
+<td>表现活跃</td>
+<td>药明康德、凯莱英、百花医药涨停</td>
+</tr>
+<tr>
+<td>🟢 银行/保险</td>
+<td>跌幅居前</td>
+<td>四大行均跌超 3%，中国太保 -3.64%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>大宗商品</h3>
+<div style="overflow-x:auto"><table>
+<thead>
+<tr>
+<th>品种</th>
+<th>最新价</th>
+<th>涨跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WTI 原油</td>
+<td>$75.73</td>
+<td>🟢 -5.74%</td>
+</tr>
+<tr>
+<td>COMEX 黄金</td>
+<td>$4,145.10</td>
+<td>🔴 +1.33%</td>
+</tr>
+<tr>
+<td>沪原油主力（SC2609）</td>
+<td>549.5 元</td>
+<td>🟢 -3.51%</td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>数据暂不可用</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight highlight-blue">
+<p>数据来源：NeoData API 期货行情 2026-08-04</p>
+</div>
+<div class="divider"></div>
+<h2>🧠 策略观点</h2>
+<h3>🔴 中信证券：K 型思维替代牛熊思维，"AI+能化"新杠铃（7/28）</h3>
+<ul>
+<li>A 股悲观情绪已充分释放，市场调整属于牛市中后期正常技术性回调</li>
+<li>聚焦中报预增主线，布局业绩确定性强的细分赛道</li>
+<li>配置方向：AI+能化杠铃（算力、半导体 + 化工、有色），增配低估值券商</li>
+</ul>
+<h3>🔵 主流券商一周策略：8 月修复窗口（7/27 汇总）</h3>
+<ul>
+<li>观点 A：政策底已现，但市场将在反复震荡中缓慢磨底，不会立即 V 形反转</li>
+<li>观点 B：情绪已达冰点，8 月市场出现普遍轮动修复的概率很高</li>
+<li>共同方向：8 月修复窗口 + 科技内部结构分化 + 业绩为王</li>
+</ul>
+<h3>🔵 光大证券等（7 月金股）</h3>
+<ul>
+<li>分析师普遍对 8 月 A 股行情持乐观态度，核心逻辑为 AI 产业趋势持续深化</li>
+<li>"基本面及产业趋势支撑，市场有望震荡上行"</li>
+</ul>
+<div class="highlight highlight-blue">
+<p>来源：Wind 新闻终端（财联社、证券日报等）2026-07-27 ~ 08-04</p>
+</div>
+<div class="divider"></div>
+<h2>💼 持仓个股监控（国泰海通组合 · 8/4 收盘）</h2>
+<h3>A股（14只）</h3>
+<div style="overflow-x:auto"><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>名称</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300750.SZ</td>
+<td>宁德时代</td>
+<td>395.10</td>
+<td>🔴 +0.18%</td>
+<td>中报净赚 432.84 亿（7/27）</td>
+</tr>
+<tr>
+<td>600276.SH</td>
+<td>恒瑞医药</td>
+<td>53.42</td>
+<td>🔴 +0.79%</td>
+<td></td>
+</tr>
+<tr>
+<td>002001.SZ</td>
+<td>新和成</td>
+<td>30.11</td>
+<td>🟢 -1.18%</td>
+<td></td>
+</tr>
+<tr>
+<td>000725.SZ</td>
+<td>京东方A</td>
+<td>5.63</td>
+<td>🔴 +3.87%</td>
+<td>换手 4.96%</td>
+</tr>
+<tr>
+<td>300604.SZ</td>
+<td>长川科技</td>
+<td>245.82</td>
+<td>🔴 +8.09%</td>
+<td>半导体设备领涨</td>
+</tr>
+<tr>
+<td>600160.SH</td>
+<td>巨化股份</td>
+<td>41.35</td>
+<td>🔴 +3.74%</td>
+<td></td>
+</tr>
+<tr>
+<td>002364.SZ</td>
+<td>中恒电气</td>
+<td>37.57</td>
+<td>🔴 +10.01%</td>
+<td><strong>涨停</strong>，换手 7.41%</td>
+</tr>
+<tr>
+<td>600487.SH</td>
+<td>亨通光电</td>
+<td>50.27</td>
+<td>🔴 +6.12%</td>
+<td>通信板块领涨，成交 111.8 亿</td>
+</tr>
+<tr>
+<td>601601.SH</td>
+<td>中国太保</td>
+<td>31.78</td>
+<td>🟢 -3.64%</td>
+<td>保险板块跌幅居前</td>
+</tr>
+<tr>
+<td>688617.SH</td>
+<td>惠泰医疗</td>
+<td>216.01</td>
+<td>🟢 -2.19%</td>
+<td></td>
+</tr>
+<tr>
+<td>601628.SH</td>
+<td>中国人寿</td>
+<td>37.66</td>
+<td>🟢 -2.21%</td>
+<td>保险板块回调</td>
+</tr>
+<tr>
+<td>603308.SH</td>
+<td>应流股份</td>
+<td>45.47</td>
+<td>🔴 +5.21%</td>
+<td></td>
+</tr>
+<tr>
+<td>000962.SZ</td>
+<td>东方钽业</td>
+<td>46.94</td>
+<td>🔴 +10.01%</td>
+<td><strong>涨停</strong></td>
+</tr>
+<tr>
+<td>688825.SH</td>
+<td>长鑫科技</td>
+<td>55.00</td>
+<td>🔴 +0.02%</td>
+<td>成交 277.6 亿，全市场前四</td>
+</tr>
+</tbody>
+</table></div>
+<h3>港股（10只）</h3>
+<div style="overflow-x:auto"><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>名称</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0700.HK</td>
+<td>腾讯控股</td>
+<td>487.60</td>
+<td>🟢 -0.57%</td>
+<td></td>
+</tr>
+<tr>
+<td>9926.HK</td>
+<td>康方生物</td>
+<td>93.85</td>
+<td>🔴 +2.18%</td>
+<td></td>
+</tr>
+<tr>
+<td>9992.HK</td>
+<td>泡泡玛特</td>
+<td>160.20</td>
+<td>🔴 +0.19%</td>
+<td></td>
+</tr>
+<tr>
+<td>0992.HK</td>
+<td>联想集团</td>
+<td>25.16</td>
+<td>🔴 +1.70%</td>
+<td></td>
+</tr>
+<tr>
+<td>2259.HK</td>
+<td>紫金黄金国际</td>
+<td>117.10</td>
+<td>🔴 +0.09%</td>
+<td>金价走强受益</td>
+</tr>
+<tr>
+<td>3696.HK</td>
+<td>英矽智能</td>
+<td>42.44</td>
+<td>🔴 +1.00%</td>
+<td></td>
+</tr>
+<tr>
+<td>3200.HK</td>
+<td>大族数控</td>
+<td>104.40</td>
+<td>🔴 +15.94%</td>
+<td><strong>大涨</strong>，PCB 设备主线</td>
+</tr>
+<tr>
+<td>6869.HK</td>
+<td>长飞光纤光缆</td>
+<td>105.60</td>
+<td>🔴 +10.34%</td>
+<td><strong>大涨</strong>，光通信主线</td>
+</tr>
+<tr>
+<td>2202.HK</td>
+<td>万科企业</td>
+<td>2.46</td>
+<td>🟢 -2.38%</td>
+<td></td>
+</tr>
+<tr>
+<td>2692.HK</td>
+<td>兆威机电</td>
+<td>45.12</td>
+<td>🔴 +1.30%</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight highlight-blue">
+<p>数据来源：Wind 行情（stock_data）2026-08-04 收盘</p>
+</div>
+<h3>💡 组合要点</h3>
+<ul>
+<li><strong>AI 硬件主线全面爆发</strong>：长川科技 +8.09%、亨通光电 +6.12%、中恒电气涨停、大族数控 +15.94%、长飞光纤 +10.34% —— 通信/PCB/半导体设备共振</li>
+<li><strong>存储链最亮眼</strong>：长鑫科技成交 277.6 亿（全市场前四），存储芯片概念活跃</li>
+<li><strong>保险回调拖累组合</strong>：中国太保 -3.64%、中国人寿 -2.21%，大金融整体走弱</li>
+<li><strong>涨停家数</strong>：中恒电气、东方钽业 2 只涨停</li>
+</ul>
+<div class="divider"></div>
+<h2>📚 知识星球（水木调研纪要-2.0 / 调研纪要更新）</h2>
+<h3>🔴 六家公司资本开支指引全部上调（7/30，水木调研纪要-2.0）</h3>
+<ul>
+<li>谷歌：2026 指引 1800-1900 亿 → <strong>1950-2050 亿美元</strong>，Q2 单季 449 亿同比翻倍，2027 继续大增</li>
+<li>特斯拉：200 亿 → <strong>≥250 亿美元</strong>（Dojo 算力、Terafab 晶圆厂、机器人产线）</li>
+<li>英特尔：180 亿 → <strong>200 亿美元以上</strong>（先进制程、代工、封装）</li>
+<li>SK 海力士：<strong>48-50 万亿韩元区间高位（约 275 亿美元）</strong>，重点扩产 HBM</li>
+<li>Meta：1250-1450 亿 → <strong>1300-1450 亿美元</strong>，年初以来连续两轮上调</li>
+<li>微软：7 月末 1900 亿小幅下调至 1750 亿，<strong>属会计口径调整，AI 硬件采购实质未收缩</strong></li>
+<li><strong>结论</strong>：六大云厂/芯片厂 AI 扩产资本开支全部上调，无一家主动缩减真实算力投入 → 利好 AI 硬件链（存储/光模块/PCB/半导体设备）</li>
+</ul>
+<div class="highlight highlight-blue">
+<p>来源：zsxq 水木调研纪要-2.0（88888142214212）2026-07-30</p>
+</div>
+<h3>🔴 招商传媒：坚定强推影视板块（7/30，两个星球均有）</h3>
+<ul>
+<li>安徽卫视上线 AI 影视剧是标志性事件，AI 影视政策大力支持</li>
+<li>未来 AI 影视有望成为 AI 编程后新的 AI 应用主战场</li>
+<li>《蝙蝠侠》票房全线飘红，行业景气度堪比 23 年 8 月</li>
+<li>CJ 游戏展主题为 AI 游戏，游戏板块绝对底部继续强推</li>
+<li><strong>8 月有望复制 23 年影视带动传媒反弹行情</strong></li>
+</ul>
+<div class="highlight highlight-blue">
+<p>来源：zsxq 水木调研纪要-2.0 / 调研纪要更新 2026-07-30</p>
+</div>
+<h3>🔵 存储行情（6/22）：市场严重低估本轮存储周期</h3>
+<ul>
+<li>「市场严重低估本轮存储行情」——存储涨价 + HBM 扩产双轮驱动</li>
+<li>长鑫科技上市后存储链关注度持续提升</li>
+</ul>
+<div class="highlight highlight-blue">
+<p>来源：zsxq 水木调研纪要-2.0 2026-06-22</p>
+</div>
+<h3>⚠️ 需手动查看</h3>
+<ul>
+<li>「全部上调指引」帖含数据图片（资本开支汇总表），已提取文字要点，原图建议手动核对</li>
+</ul>
+<div class="divider"></div>
+<h2>🔗 数据溯源</h2>
+<div style="overflow-x:auto"><table>
+<thead>
+<tr>
+<th>数据类别</th>
+<th>来源</th>
+<th>时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>指数/个股行情</td>
+<td>Wind 万得（index_data / stock_data）</td>
+<td>2026-08-04 收盘</td>
+</tr>
+<tr>
+<td>大宗商品期货</td>
+<td>NeoData 结构化 API（--data-type api）</td>
+<td>2026-08-04</td>
+</tr>
+<tr>
+<td>市场新闻/收评</td>
+<td>Wind financial_docs（财联社、证券日报等）</td>
+<td>2026-08-04</td>
+</tr>
+<tr>
+<td>券商策略观点</td>
+<td>Wind financial_docs</td>
+<td>2026-07-27 ~ 08-04</td>
+</tr>
+<tr>
+<td>调研纪要</td>
+<td>知识星球 zsxq-cli（水木调研纪要-2.0 / 调研纪要更新）</td>
+<td>2026-07-30</td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>NeoData 数据暂不可用，标注不降级</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<div class="divider"></div>
+<p><em>本报告由 WorkBuddy 自动生成 · My Research Central · via WB</em></p>
+
+<div class="report-footer">
+  数据来源：Wind 万得 + NeoData API + 知识星球 · My Research Central · via WB
+</div>
+
+</body>
+</html>
