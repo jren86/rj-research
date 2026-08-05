@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日国家队增减持动向 · 2026-08-05</title>
+  <style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover { background: rgba(88, 166, 255, 0.05); }
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+.tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+.tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+.tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+.tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+.tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+.highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+.highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+.highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+
+ul.bullet { margin: 6px 0 6px 18px; font-size: 0.92em; }
+ul.bullet li { margin: 4px 0; line-height: 1.6; }
+
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a { color: var(--blue); text-decoration: none; }
+.source-link a:hover { text-decoration: underline; }
+
+.divider { height: 1px; background: var(--border); margin: 16px 0; }
+
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日国家队增减持动向</h1>
+  <div class="meta">2026-08-05（周三） · Wind 数据暂不可用，本期基于东方财富妙想 + NeoData</div>
+</div>
+
+<div class="highlight highlight-orange">
+  ⚠️ <strong>数据说明</strong>：Wind 万得金融终端因 Astrill VPN DNS 劫持（<code>mcp.wind.com.cn</code> 无法解析）不可用。本期 ETF 资金流数据来源于 mx-finance-data / mx-finance-search，增减持公告来源于 mx-finance-search 文档召回。
+</div>
+
+<!-- ===== 一、ETF资金流 ===== -->
+<h2>📊 一、ETF 资金流数据</h2>
+
+<h3>7 月整体：股票型 ETF 净流入 4,778 亿元，刷新历史纪录</h3>
+
+<p>7 月股票型 ETF 合计净流入 <span class="red">4,778.36 亿元</span>，刷新 A 股月度净流入历史纪录（此前峰值：2025 年 4 月 1,931.59 亿）。宽基 ETF 净流入 <strong>3,157 亿</strong>（占 66%），行业主题 ETF 净流入 1,577 亿。</p>
+
+<div class="card">
+<strong>单月净流入 TOP5 ETF：</strong>
+<table>
+<tr><th>排名</th><th>产品</th><th>净流入（亿元）</th><th>月末规模（亿元）</th></tr>
+<tr><td>1</td><td>科创50ETF 华夏</td><td class="red">402.87</td><td>~900</td></tr>
+<tr><td>2</td><td>沪深300ETF 华泰柏瑞</td><td class="red">347.38</td><td>1,229.99</td></tr>
+<tr><td>3</td><td>创业板ETF 易方达</td><td class="red">338.41</td><td>~700</td></tr>
+<tr><td>4</td><td>中证1000ETF 南方</td><td class="red">~200+</td><td>—</td></tr>
+<tr><td>5</td><td>科创半导体ETF 华夏</td><td class="red">299.27</td><td>—</td></tr>
+</table>
+</div>
+
+<div class="source-link">🔗 <a href="http://mp.weixin.qq.com/s?__biz=MzI5MjE1ODM5Mw==&mid=2650429161&idx=1&sn=b99b469936845a17e185b5a74a37e2fa">7月股票型ETF净流入规模刷新历史纪录 — 金融时报</a></div>
+
+<p><strong>主力宽基指数 7 月净流入排名</strong>（证券时报）：科创50 <span class="red">677.80 亿</span>、中证A500 458.67 亿、沪深300 454.10 亿、中证1000 451.81 亿、创业板指 432.31 亿。</p>
+
+<div class="source-link">🔗 <a href="https://www.stcn.com">股票ETF7月吸金超4700亿元 — 证券时报</a></div>
+
+<h3>上周（7/28-8/1）：宽基 ETF 净流入 533-999 亿</h3>
+
+<p>太平洋证券金工 ETF 周报：净流入 TOP3 为科创50ETF 华夏 <span class="red">+145.67 亿</span>、沪深300ETF 华泰柏瑞 <span class="red">+123.07 亿</span>、创业板ETF 易方达 <span class="red">+58.39 亿</span>。中信建投流动性周报（8/5）显示净流入 998.8 亿，双创 ETF 净流入 397.7 亿。</p>
+
+<div class="source-link">🔗 <a href="https://research.pacific-cn.com">金工ETF点评 — 太平洋证券</a></div>
+
+<h3>本周（8/3-8/5）：资金从大涨中获利了结</h3>
+
+<ul class="bullet">
+  <li><strong>8/3（周一）</strong>：科创50ETF 华夏净流入 <span class="red">+39.97 亿</span>，沪深300ETF 华泰柏瑞 <span class="red">+27.25 亿</span>，科创半导体ETF 华夏 <span class="red">+18.35 亿</span></li>
+  <li><strong>8/4（周二）</strong>：股票 ETF 合计<span class="green">净流出 243 亿</span>，半导体 <span class="green">-86 亿</span>、创业板 <span class="green">-53.7 亿</span>为主要流出方向。资金转向中证1000 <span class="red">+27.6 亿</span>、A500 近5日 <span class="red">+142 亿</span></li>
+  <li><strong>8/5（今日）</strong>：科创50 午间领涨超 5%，芯片概念主力净流入 182 亿，AI/机器人板块同步爆发</li>
+</ul>
+
+<div class="source-link">🔗 <a href="http://www.nbd.com.cn/rss/eastmoney/articles/4532387.html">ETF规模速报（8/5）— 每日经济新闻</a></div>
+<div class="source-link">🔗 <a href="https://www.chinafundnews.com">昨日股票ETF净流出超243亿元 — 中国基金报</a></div>
+
+<h3>国家队 ETF 持仓追踪</h3>
+
+<p>兴业证券测算：汇金重点持仓 ETF 7 月以来合计净流入 <span class="red">1,762 亿元</span>。中信建投研报：大机构资金上周增持方向与国家队高度一致，中国人寿为华夏科创50ETF 第二大持有人（持仓 4.03%）。</p>
+
+<div class="source-link">🔗 <a href="https://www.21jingji.com">股票ETF单月吸金超4778亿元 — 21世纪经济报道</a></div>
+
+<!-- ===== 二、大股东持股变动 ===== -->
+<h2>🏛️ 二、大股东持股变动</h2>
+
+<h3>社保基金二季度调仓浮现</h3>
+
+<p>截至 8 月 4 日，二季度末社保基金共现身 <strong>7 只个股</strong>前十大流通股东，合计持股市值约 22.85 亿：</p>
+
+<div class="card">
+<table>
+<tr><th>股票</th><th>持股量（万股）</th><th>变动</th><th>行业</th><th>2家社保</th></tr>
+<tr><td>华峰化学</td><td>3,069.10</td><td><span class="tag tag-green">减持</span></td><td>化工</td><td>—</td></tr>
+<tr><td>盛屯矿业</td><td>2,623.63</td><td><span class="tag tag-red">🆕新进</span></td><td>有色</td><td>—</td></tr>
+<tr><td>桂冠电力</td><td>2,604.44</td><td>—</td><td>电力</td><td>✅</td></tr>
+<tr><td>萤石网络</td><td>958.70</td><td><span class="tag tag-red">增持</span></td><td>电子</td><td>✅</td></tr>
+<tr><td>乐鑫科技</td><td>—</td><td><span class="tag tag-green">减持</span></td><td>电子</td><td>—</td></tr>
+<tr><td>众鑫股份</td><td>—</td><td><span class="tag tag-red">增持</span></td><td>轻工</td><td>—</td></tr>
+<tr><td>顺络电子</td><td>—</td><td><span class="tag tag-green">减持</span></td><td>电子</td><td>—</td></tr>
+</table>
+</div>
+
+<p>另有 <strong>富春股份</strong> 为社保新进标的。行业集中：电子 3 只（42.9%），新质生产力主线明确。</p>
+
+<div class="source-link">🔗 <a href="https://www.stcn.com/article/detail/4056751.html">社保基金二季度现身7只股前十大流通股东榜 — 证券时报</a></div>
+<div class="source-link">🔗 <a href="https://www.ccstock.cn">11.81亿元！社保基金第一重仓方向曝光 — 证券日报</a></div>
+
+<h3>证金/汇金：减持近尾声</h3>
+
+<p>招商证券研报：证金、汇金 2025 年末持有 A 股 ETF 份额 3,820.68 亿份，25H2 变化不大。汇金减持近尾声，26Q1 末持仓市值约 3.9 万亿，ETF 筹码剩余比例降至合理区间（沪深300 约 42%）。</p>
+
+<div class="source-link">🔗 <a href="https://www.cls.cn/detail/2446510">国家队历次进场后A股怎么走 — 财联社</a></div>
+
+<!-- ===== 三、知名交易 ===== -->
+<h2>🛒 三、知名交易</h2>
+
+<h3>增持回购密集公告（8/3-8/4）</h3>
+
+<div class="highlight highlight-orange">
+<strong>🟠 主要增持公告：</strong>
+<ul class="bullet">
+  <li><strong>东吴证券</strong>：控股股东拟增持 1-2 亿元（不设价格区间）</li>
+  <li><strong>飞鹿股份</strong>：控股股东拟 5,000 万-1 亿增持</li>
+  <li><strong>东阳光</strong>：控股股东拟 3-6 亿增持 + 3-6 亿回购</li>
+  <li><strong>海亮股份</strong>：控股股东获建行 8.6 亿增持贷款（利率 1.8%，三年期）</li>
+</ul>
+</div>
+
+<div class="highlight highlight-blue">
+<strong>🔵 主要回购公告：</strong>
+<ul class="bullet">
+  <li><strong>大秦铁路</strong>：4-5 亿回购（注销）</li>
+  <li><strong>阳光电源</strong>：5-10 亿回购</li>
+  <li><strong>三环集团</strong>：5-10 亿回购（获工行 9 亿专项贷款）</li>
+  <li><strong>铂科新材</strong>：1-2 亿回购（注销）</li>
+  <li><strong>兆易创新</strong>：10-20 亿回购注销 + 董事长承诺 12 个月不减持</li>
+  <li><strong>网宿科技</strong>：3-6 亿回购注销</li>
+  <li><strong>山东高速</strong>：1-2 亿回购注销</li>
+</ul>
+</div>
+
+<div class="source-link">🔗 <a href="https://www.cs.com.cn">上市公司密集推出回购增持计划 — 中国证券报</a></div>
+<div class="source-link">🔗 <a href="https://www.chinafundnews.com">又一批A股公司宣布回购增持 — 中国基金报</a></div>
+
+<h3>央企增持回购潮（持续跟踪）</h3>
+
+<div class="card">
+<table>
+<tr><th>公司</th><th>类型</th><th>金额</th><th>进度</th></tr>
+<tr><td>三峡能源</td><td>控股股东增持</td><td class="red">15-30 亿</td><td>进行中</td></tr>
+<tr><td>中国铝业</td><td>控股股东增持(A+H)</td><td class="red">10-20 亿</td><td>进行中</td></tr>
+<tr><td>国电南瑞</td><td>董事长提议回购</td><td class="red">5-10 亿</td><td>预案</td></tr>
+<tr><td>中国建筑</td><td>大股东增持</td><td class="red">5-10 亿</td><td>进行中</td></tr>
+<tr><td>川投能源</td><td>控股股东增持</td><td class="red">2-3 亿</td><td>进行中</td></tr>
+<tr><td>中煤能源</td><td>控股股东增持</td><td>≤0.9 亿</td><td>进行中</td></tr>
+</table>
+</div>
+
+<div class="source-link">🔗 <a href="https://www.yicai.com/news/103303423.html">7月沪市回购增持迎高峰期 — 第一财经</a></div>
+
+<h3>近 5 日重要股东增减持统计（7/27-7/31）</h3>
+
+<div class="card">
+<table>
+<tr><th>方向</th><th>家数</th><th>金额</th></tr>
+<tr><td><span class="red">增持</span></td><td>34 家</td><td class="red">15.05 亿</td></tr>
+<tr><td><span class="green">减持</span></td><td>51 家</td><td class="green">29.49 亿</td></tr>
+</table>
+</div>
+
+<p><strong>增持金额前三</strong>：华大九天 <span class="red">4.25 亿</span>、中国宝安 <span class="red">3.25 亿</span>、瑞可达 <span class="red">1.35 亿</span>。增持行业集中：机械设备 4 只、电子 4 只。</p>
+
+<div class="source-link">🔗 <a href="https://www.stcn.com/article/detail/4051184.html">6股获重要股东大手笔增持 — 证券时报</a></div>
+
+<h3>7 月回顾：科技股掀起「注销式」回购潮</h3>
+
+<p>7 月 249 家公司宣布回购，上限合计 <span class="red">631.40 亿元</span>。宁德时代 200-400 亿回购注销为 A 股史上最大。34 家公司回购目的含"注销"/"减资"（占比 28%），注销式回购直接缩减总股本，提升 EPS。</p>
+
+<div class="source-link">🔗 <a href="https://toutiao.com/group/7669304929529512502/">科技股掀回购潮 — 21世纪经济报道</a></div>
+
+<!-- ===== 四、汇总统计 ===== -->
+<h2>📈 四、汇总统计</h2>
+
+<div class="card">
+<table>
+<tr><th>指标</th><th>数值</th><th>趋势</th></tr>
+<tr><td>7 月股票 ETF 净流入</td><td class="red">4,778 亿</td><td>🟢 创历史新高</td></tr>
+<tr><td>其中宽基 ETF 净流入</td><td class="red">3,157 亿</td><td>🟢 年内首月净流入</td></tr>
+<tr><td>汇金重点持仓 ETF 净流入</td><td class="red">1,762 亿</td><td>🟢 7 月以来</td></tr>
+<tr><td>上周宽基 ETF 净流入</td><td>533-999 亿</td><td>🟢 连续净流入</td></tr>
+<tr><td>8/4 单日 ETF 净流出</td><td class="green">243 亿</td><td>🟡 获利了结</td></tr>
+<tr><td>近 5 日重要股东增持</td><td>15.05 亿</td><td>🟡 低于减持</td></tr>
+<tr><td>社保基金二季度新进/增持</td><td>5 只</td><td>🟢 电子+有色</td></tr>
+<tr><td>7 月增持回购计划上限</td><td class="red">631 亿</td><td>🟢 历史级别</td></tr>
+<tr><td>央企 7 月下旬以来增持</td><td>53-83 亿</td><td>🟢 持续加码</td></tr>
+</table>
+</div>
+
+<h3>关键信号</h3>
+
+<div class="highlight highlight-red">
+<strong>🔴 7 月 ETF 净流入创历史纪录</strong><br>
+宽基 ETF（3,157 亿）为绝对主力，资金从大盘蓝筹向科技成长扩散趋势明确。科创 50 单月 678 亿居首。
+</div>
+
+<div class="highlight highlight-red">
+<strong>🔴 国家队从"买银行"到"买科技"换挡</strong><br>
+国新+诚通 600 亿+增持明确指向科技 ETF，科创 50 7 月净流入 678 亿居首。稳市目标从"守住指数"升级为"引导新质生产力定价"。
+</div>
+
+<div class="highlight highlight-orange">
+<strong>🟠 短期获利了结 vs 长期配置加码</strong><br>
+8/4 单日 ETF 净流出 243 亿（半导体 -86 亿/创业板 -53.7 亿），但中证 1000 + A500 逆势吸金。近 5 日增持 15.05 亿低于减持 29.49 亿，但差距在收窄。
+</div>
+
+<div class="highlight highlight-green">
+<strong>🟢 社保基金二季度调仓：锚定新质生产力</strong><br>
+7 只重仓股中电子占 3 只（42.9%），新进盛屯矿业、富春股份，增持萤石网络。社保组合集体偏好电子+有色赛道。
+</div>
+
+<div class="highlight highlight-green">
+<strong>🟢 增持回购"政策牛"延续</strong><br>
+央企（三峡/铝业/建筑/南瑞）+ 民企（宁德/中际/兆易/东阳光）双轮驱动。专项贷款承诺函案例增多，利率低至 1.8%。
+</div>
+
+<div class="divider"></div>
+
+<div class="report-footer">
+  数据来源：mx-finance-search（东方财富妙想） · mx-finance-data（东方财富妙想）<br>
+  ⚠️ Wind 万得金融终端本期因网络环境不可用 · My Research Central · via WB
+</div>
+
+</body>
+</html>
