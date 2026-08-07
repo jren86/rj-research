@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-08-08</title>
+  <style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+.tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+.tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+.tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+.tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+.tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+.highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+.highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+.highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📰 每日AI新闻 · 2026-08-08</h1>
+  <div class="meta">周六简报 · My Research Central · via WB</div>
+</div>
+
+<!-- 🔴 头条要闻 -->
+<h2>🔴 头条要闻</h2>
+
+<div class="card">
+  <h3>1. OpenAI 暂停 Astra 部分研发——AI 史上首次因安全顾虑主动放缓前沿模型 <span class="tag tag-red">BREAKING</span></h3>
+  <p>OpenAI 当地时间周五（8/7）宣布，因内部评估<span class="red">无法排除其下一代模型 Astra 具备"关键级"网络安全能力</span>的可能性，已暂停所有不符合更高安全要求的 Astra 内部开发工作。Astra 将转移至隔离测试环境，限制网络与工具访问，强化沙箱执行。</p>
+  <p>根据 OpenAI《准备框架》，若模型能在仅获高层指令的情况下自主发现并利用零日漏洞，或对高安全目标实施端到端网络攻击，即达到"关键级"门槛。<span class="orange">这是 AI 史上首次有前沿实验室因网络安全担忧主动承诺放缓模型开发。</span></p>
+  <p>Palisade Research 执行主任 Jeffrey Ladish 批评"这显然已经晚了"，呼吁公众大幅降低对 AI 企业自我监管的信任。Sam Altman 则表态："把顶尖模型局限在少数人手里不是好策略，但鉴于其在网络安全方面的强大能力，还需要一点时间确保万无一失。"</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3PQ9KHU05198CJN.html" target="_blank">来源：财联社</a> · <a href="https://www.ithome.com/0/987/221.htm" target="_blank">来源：IT之家</a> · <a href="https://www.163.com/dy/article/L3PHNSU205198NMR.html" target="_blank">来源：华尔街见闻</a></div>
+</div>
+
+<div class="card">
+  <h3>2. AMD 收购 AI 推理芯片公司 Taalas——AI 芯片进入异构计算时代</h3>
+  <p>AMD 于 8 月 6 日宣布达成最终协议，收购加拿大 AI 推理芯片先驱 Taalas。该公司"模型即计算机"理念可将任意 AI 模型快速转化为定制芯片，处理 Llama 3.1 8B 模型可达每秒 16,960 token，<span class="red">比英伟达通用 GPU 快 48 倍</span>。</p>
+  <p>AMD 计划将 Taalas 技术整合进 Helios 机架级方案及 Instinct GPU 路线图，构建系统级异构计算能力。此次收购距英伟达年初 $200 亿收购 Groq 仅 7 个多月，全球两大 GPU 厂商均将目光投向推理定制化芯片市场。</p>
+  <div class="source-link">🔗 <a href="https://newsroom.amd.com/news/amd-acquires-taalas-ai-inference" target="_blank">来源：AMD Newsroom</a> · <a href="https://www.163.com/dy/article/L3O5OP2L05198CJN.html" target="_blank">来源：财联社</a></div>
+</div>
+
+<div class="card">
+  <h3>3. OpenAI 首款消费级硬件曝光——Jony Ive 操刀的 AI"甜甜圈" <span class="tag tag-orange">EXCLUSIVE</span></h3>
+  <p>据彭博社 Mark Gurman 8 月 7 日报道，OpenAI 首款消费级 AI 硬件外形像甜甜圈、大小约等于冰球，本质上是<span class="orange">一台"没有显示屏的智能音箱"</span>，由前苹果设计总监 Jony Ive 旗下 LoveFrom 工作室操刀设计。设备配备可移动机械部件、摄像头和多种传感器，交互依托 GPT-Live 全双工语音模式，预计 2027 年上市，售价 $300-400。</p>
+  <p>苹果已就商业机密侵权起诉 OpenAI，后者否认所有指控并申请驳回。若苹果初步禁令获批，可能直接影响新品发布进度。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3NQ2VLO0550B1DU.html" target="_blank">来源：科创板日报</a> · <a href="https://www.chosun.com/english/industry-en/2026/08/07/2MBP2QRWYRB5FA6HATP7SSZV2Q" target="_blank">来源：Bloomberg/Chosun</a></div>
+</div>
+
+<div class="card">
+  <h3>4. 中国自动驾驶 L3/L4 强制国标正式落地——2027 年 7 月实施</h3>
+  <p>工信部组织制定的《智能网联汽车 自动驾驶系统安全要求》（GB44721—2026）强制性国家标准近日获批发布，拟于 2027 年 7 月 1 日起实施，标志着我国 L3/L4 级自动驾驶首次有统一"准入门槛"。与 6 月发布的 L2 组合驾驶辅助强制国标共同构建完整监管体系。</p>
+  <p>核心要求：<span class="blue">车企全生命周期负责制</span>、系统安全水平至少达到"合格且专注的人类驾驶人"水平、必须通过仿真/场地/道路三重试验+第三方检测。标准为结果导向，不强制特定硬件方案。</p>
+  <div class="source-link">🔗 <a href="https://www.miit.gov.cn/xwfb/mtbd/twbd/art/2026/art_fe96aa32c4c94b9c96772bda26ca0a5f.html" target="_blank">来源：工信部</a> · <a href="https://www.163.com/dy/article/L3OB5IU70514R9L4.html" target="_blank">来源：人民日报海外版</a></div>
+</div>
+
+<div class="card">
+  <h3>5. Meta 资本支出暴增至 $1,300 亿——同期发布 Muse Code 编程智能体</h3>
+  <p>Meta 在 Q2 财报电话会议上将全年资本支出预测从 $1,250 亿上调至 $1,300 亿，主要投向服务器和数据中心基础设施。同期正式发布首款 AI 编程智能体 Muse Code 测试版，由 Muse Spark 1.2 驱动。贡献者版定价仅每百万输出 token <span class="red">$0.20</span>（竞品 $2-10），以极致价格为差异化武器正面挑战 Anthropic Claude Code 和 OpenAI Codex。扎克伯格表示正考虑出售数据中心多余计算能力。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3KFA88H05198CJN.html" target="_blank">来源：财联社</a> · <a href="https://k.sina.com.cn/article_5953466437_162dab0450670b7h24.html" target="_blank">来源：机器之心</a></div>
+</div>
+
+<!-- 🔵 行业动态 -->
+<h2>🔵 行业动态</h2>
+
+<ul class="bullet">
+  <li><strong>中国大模型"八周五连发"</strong>：Qwen3.8-Max、Kimi K3、DeepSeek-V4-Flash、GLM-5.2、Seedance 2.5 密集亮相。斯坦福《2026 AI 指数报告》指出中美顶尖模型差距大幅收窄，硅谷企业因成本优势开始切业务流量到中国模型。
+    <div class="source-link">🔗 <a href="https://www.toutiao.com/article/7671336477162340900" target="_blank">来源：21世纪经济报道</a></div>
+  </li>
+  <li><strong>中国 AI 专利量质齐升</strong>：全球约 60% 的 AI 专利、约三分之二机器人专利来自中国，高价值发明专利 236 万件。百度/华为/中科院在专利布局上领先。
+    <div class="source-link">🔗 <a href="https://cj.sina.com.cn/article/norm_detail/?url=https%3A%2F%2Ffinance.sina.com.cn%2Fjjxw%2F2026-08-08%2Fdoc-inimpsqc4510249.shtml" target="_blank">来源：新华社</a></div>
+  </li>
+  <li><strong>DeepSeek 宣布近期大幅上调 API 价格</strong>：V4-Flash 周调用 7.22 万亿 Token 全球第一后告别"价格屠夫"策略，业内分析或因即将上线 V4-Pro 正式版。
+    <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3NFPB7N0534A4SC.html" target="_blank">来源：界面新闻</a></div>
+  </li>
+  <li><strong>NVIDIA 考虑降低 Rubin GPU 显存以应对 HBM 供应紧张</strong>：已测试至少三个版本配置。同期 Intel 有望代工 NVIDIA Feynman GPU 部分晶圆制造和先进封装。
+    <div class="source-link">🔗 <a href="https://dy.163.com/article/L3P4SQAI0512MJDN.html" target="_blank">来源：Wccftech/电脑吧</a></div>
+  </li>
+  <li><strong>游戏行业 AI 普及率 86%</strong>：头部游戏企业从求效率转向拼创造，三七互娱 AI 使用覆盖率 100%，日均提问超 1.5 万次。伽马数据预测 2030 年 AI 推动中国游戏净利润从 ¥1,100 亿增至超 ¥1,600 亿。
+    <div class="source-link">🔗 <a href="https://cj.sina.com.cn/article/norm_detail/?url=https%3A%2F%2Ffinance.sina.com.cn%2Fjjxw%2F2026-08-08%2Fdoc-inimpspz2901027.shtml" target="_blank">来源：证券时报</a></div>
+  </li>
+  <li><strong>欧盟 AI 法案执法正式启动</strong>：聊天机器人必须主动告知 AI 身份，深度伪造强制标识，最高罚金 €3,500 万或全球年收入 7%。190+ 组织签署行为准则。
+    <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3FVF60C0514R9OJ.html" target="_blank">来源：环球网</a> · <a href="https://www.ai-jarvis.eu/eu-ai-act-enforcement-goes-live-chatbots-must-identify-themselves-deepfakes-must-be-labelled" target="_blank">来源：Jarvis AI</a></div>
+  </li>
+</ul>
+
+<!-- 📱 产品 & 公司 -->
+<h2>📱 产品 & 公司</h2>
+
+<ul class="bullet">
+  <li><strong>ChatGPT 免费用户开放无限文字聊天</strong>：默认模型升级为 GPT-5.6 Luna，新增"思考"按钮支持深度推理，周活用户已达 10 亿里程碑。
+    <div class="source-link">🔗 <a href="https://weibo.com/2099539611/5329203831506288" target="_blank">来源：微博科技早报</a></div>
+  </li>
+  <li><strong>张一鸣内部明确禁止 AI 蒸馏</strong>：即使模型短期落后于 DeepSeek/Kimi/Qwen，坚持"不从零开始看短期收益的人做不出新时代的 Infra"。
+    <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3NFPB7N0534A4SC.html" target="_blank">来源：界面新闻</a></div>
+  </li>
+  <li><strong>Meta 被判赔青少年伤害案 $9.42 亿</strong>：新墨西哥州法院裁定创纪录罚金。同期在印度因短暂限制莫迪帖文面临失去法律豁免风险。
+    <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260808A0375800" target="_blank">来源：腾讯新闻</a></div>
+  </li>
+  <li><strong>亚马逊 Zoox 拉斯维加斯启动收费 Robotaxi</strong>：全球首个无方向盘、无刹车踏板的原生无人出租车获商业运营许可，比特斯拉 Cybercab 抢先一步商业化。
+    <div class="source-link">🔗 <a href="https://www.toutiao.com/article/7670738725692899882" target="_blank">来源：今日头条</a></div>
+  </li>
+  <li><strong>宇树科技科创板 IPO</strong>：发行价 ¥150.80/股，初始市值近 ¥610 亿，创始人王兴兴身家超 ¥200 亿。
+    <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3NFPB7N0534A4SC.html" target="_blank">来源：第一财经</a></div>
+  </li>
+  <li><strong>红杉资本募资 $100 亿，向 Anthropic 追加 $25 亿</strong>：合伙人在比较 $10 亿与 $25 亿方案后选择了后者。红杉今年已向投资者返还超 $50 亿。
+    <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3NFPB7N0534A4SC.html" target="_blank">来源：界面新闻</a></div>
+  </li>
+</ul>
+
+<!-- 🔬 研究突破 -->
+<h2>🔬 研究突破</h2>
+
+<ul class="bullet">
+  <li><strong>上交大 BigBang-V1</strong>：35B 参数自进化科研大模型，让 AI 自己给自己造题并迭代优化。在 10 项评测上达到同规模最高分，部分高难度任务追平更大规模前沿模型。
+    <div class="source-link">🔗 <a href="https://k.sina.com.cn/article_5952915720_162d2490806704nbym.html" target="_blank">来源：机器之心</a></div>
+  </li>
+  <li><strong>康奈尔微波神经网络 (MNN)</strong>：功耗低至 200 毫瓦，跳过 ADC/DAC 数字化步骤，直接在射频域完成雷达信号分类和推理运算。《自然-通讯》7 月 29 日发表。
+    <div class="source-link">🔗 <a href="https://k.sina.com.cn/article_5952915705_162d248f906703j7i4.html" target="_blank">来源：DeepTech 深科技</a></div>
+  </li>
+  <li><strong>浙大 SkillRise 框架</strong>：让 AI 智能体在完成系列任务过程中积累可复用经验技巧，如同老工匠越干越聪明。在 ALFWorld/WebShop/ScienceWorld 三个场景中均超过所有对比方法。
+    <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3P4CUUK0511DTVV.html" target="_blank">来源：科技行者</a></div>
+  </li>
+  <li><strong>OpenAI Astra 攻克 10 项数学难题</strong>：成本仅约 $2,000 Token，横跨高维几何/编码理论/群论/量子复杂性等领域，全部通过 Lean 形式化验证，菲尔兹奖得主力荐。
+    <div class="source-link">🔗 <a href="https://www.toutiao.com/article/7669272170106847778" target="_blank">来源：机器之心</a></div>
+  </li>
+  <li><strong>腾讯 Hyra 科研智能体</strong>：24 小时攻克 50 年未解的加法组合学和差集难题，将最优指数推进至理论极限值 2，多智能体协作模式接近人类数学家研究路径。
+    <div class="source-link">🔗 <a href="https://www.toutiao.com/article/7670409293170065966" target="_blank">来源：科技日报</a></div>
+  </li>
+</ul>
+
+<!-- 🏛️ 政策 & 监管 -->
+<h2>🏛️ 政策 & 监管</h2>
+
+<ul class="bullet">
+  <li><strong>EU AI Act 8 月 2 日正式执法</strong>：欧盟 AI 办公室获审计和罚款权，通用 AI 模型需公开训练数据概要、建立版权审核机制。有系统性风险的模型须额外评估。中国出海模型企业面临合规挑战。
+    <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260803A07ORN00" target="_blank">来源：新华社/腾讯新闻</a> · <a href="https://compliancehub.wiki/eu-ai-act-august-2-2026-what-actually-applies-article-50-omnibus" target="_blank">来源：Compliance Hub</a></div>
+  </li>
+  <li><strong>中国夯实 AI 制度保障</strong>：《经济日报》刊文指出需完善全链条制度规范，涵盖算力调配、数据共享、技术转化、知识产权保护和安全治理五大环节。核心产业规模已突破 ¥1.2 万亿。
+    <div class="source-link">🔗 <a href="https://www.ce.cn/xwzx/gnsz/gdxw/202608/t20260805_3129078.shtml" target="_blank">来源：经济日报</a></div>
+  </li>
+  <li><strong>中国 AI 专利制度明确</strong>：AI 不能作为发明人署名，但 AI 辅助完成的发明满足条件可获得专利保护。已建成国家级知识产权公共服务机构 519 家。
+    <div class="source-link">🔗 <a href="https://cj.sina.com.cn/article/norm_detail/?url=https%3A%2F%2Ffinance.sina.com.cn%2Fjjxw%2F2026-08-08%2Fdoc-inimpsqc4510249.shtml" target="_blank">来源：新华社</a></div>
+  </li>
+  <li><strong>腾讯云联合亿欧在北京举办 AI 智能体产业落地闭门活动</strong>：聚焦 Agent 从"要不要用"到"如何用出实效"的转型，展示已验证的 Agent 工具链和行业共创经验。
+    <div class="source-link">🔗 <a href="https://dy.163.com/article/L3P9V90K05118K7K.html" target="_blank">来源：亿欧</a></div>
+  </li>
+</ul>
+
+<!-- 💡 本周核心观察 -->
+<h2>💡 本周核心观察</h2>
+
+<div class="highlight highlight-red">
+  <strong>1. AI 安全从"事后发现"到"事前暂停"</strong><br>
+  OpenAI 对 Astra 的主动限速标志着行业安全治理范式转变。Sam Altman 同时表态"把顶尖模型局限在少数人手里并非好策略"，展示安全与开放的平衡难题。
+</div>
+
+<div class="highlight highlight-blue">
+  <strong>2. AI 芯片异构化加速</strong><br>
+  AMD/Taalas、NVIDIA/Groq 先后布局推理专用芯片，"GPU 搞定一切"的时代正在结束。定制芯片可实现通用 GPU 48-1000 倍推理加速。
+</div>
+
+<div class="highlight highlight-orange">
+  <strong>3. 中国大模型供给"闪电战"</strong><br>
+  八周五模型密集发布，从"低端平替"到追平甚至超越美国闭源产品，倒逼全球企业重新评估模型选型。
+</div>
+
+<div class="highlight highlight-blue">
+  <strong>4. AI 硬件"新物种"浮现</strong><br>
+  OpenAI 甜甜圈音箱、Zoox 无方向盘 Robotaxi 同时推进，从软件服务向物理世界渗透加速。
+</div>
+
+<div class="highlight highlight-green">
+  <strong>5. 全球 AI 治理加速制度化</strong><br>
+  EU AI Act 执法启动 + 中国自动驾驶国标落地 + 中国深化知识产权保护，三线并行构建法治化框架。
+</div>
+
+<div class="report-footer">
+  数据来源：Bloomberg / 彭博社 / 财联社 / IT之家 / 华尔街见闻 / 证券时报 / 21世纪经济报道 / 新华社 / 经济日报 / AMD Newsroom / 机器之心 / 科技日报 · My Research Central · via WB
+</div>
+
+</body>
+</html>
