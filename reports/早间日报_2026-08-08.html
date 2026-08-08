@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>早间投研日报 · 2026-08-08</title>
+  <style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --red: #f85149;
+  --green: #3fb950;
+  --orange: #d29922;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+.tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+.tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+.tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+.tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+.tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+.highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+.highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+.highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📊 早间投研日报 · 2026-08-08（周六）</h1>
+  <div class="meta">市场状态：周六休市 · 数据覆盖周五（8月7日）A股/港股/美股收盘</div>
+</div>
+
+<!-- 核心摘要 -->
+<h2>一、核心摘要</h2>
+
+<div class="highlight highlight-red">
+  <strong>🔴 A股8/7全线收涨：</strong>上证<span class="red">+1.02%</span>报3940.04，深证<span class="red">+1.42%</span>，创业板<span class="red">+1.35%</span>，科创50<span class="red">+2.51%</span>领跑。两市成交2.66万亿（放量1356亿），超2800股上涨。本周累计：上证<span class="red">+2.81%</span>，深证<span class="red">+5.39%</span>，创业板<span class="red">+6.55%</span>。
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 板块主线清晰：</strong>CRO/创新药（药明康德H1超预期+恒瑞舒地胰岛素获批）、PCB/AI硬件（高盛上调AI服务器PCB市场预期）、半导体设备/材料三大方向领涨。
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 港股跟涨温和：</strong>恒指<span class="red">+0.54%</span>报25668，恒生科技<span class="red">+0.78%</span>报4858。联想<span class="red">+8.33%</span>（AI服务器需求爆发），英矽智能<span class="red">+10.88%</span>（AI制药概念），康方生物<span class="red">+4.11%</span>。
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 美股8/7收涨：</strong>标普500<span class="red">+0.62%</span>报7757.64，纳斯达克100<span class="red">+1.19%</span>报29722.30，科技股领涨。
+</div>
+
+<div class="highlight highlight-orange">
+  <strong>🟠 策略共识：8月修复可期。</strong>中信/招商/华金/银河等多家券商认为A股调整基本结束，8月震荡上行。药明康德+宁德时代各获8家券商8月金股推荐。
+</div>
+
+<div class="highlight highlight-blue">
+  <strong>🔵 央行政策定调：</strong>降准优先于降息，Q3窗口期25-50bp降准可期。美债利率加速上行，期限溢价成为核心驱动。
+</div>
+
+<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=2A38A522C16A">来源：Wind金融终端</a></div>
+
+<!-- 宏观要闻 -->
+<h2>二、宏观要闻</h2>
+
+<div class="highlight highlight-red">
+  <strong>🔴 货币政策：降准先于降息的路径更加清晰。</strong>政治局会议从"精准有效实施"调整为"实施好"，政策重心转向加大力度。央行下半年工作会议删除"降准降息"具体措辞，改为"综合运用并适时调整"，进入"待命"状态。预计Q3降准窗口25-50bp，LPR下降空间仅5-10bp。制约因素：银行净息差1.40%历史低位 + 美联储9月加息概率67.2%。
+</div>
+
+<div class="highlight highlight-orange">
+  <strong>🟠 美债定价框架切换：</strong>从"政策利率预期"到"财政风险溢价+供需错配"。7月以来短端利率上行动能放缓，但长端利率加速上行，收益率曲线陡峭化。"期限溢价"接棒成为长端利率上行核心驱动，下半年长端利率易上难下。
+</div>
+
+<ul class="bullet">
+  <li>上半年宏观数据回顾：GDP+4.7%（Q1+5.0%, Q2+4.3%），社零+1.3%，固投-5.7%，CPI+1.0%，PPI+1.5%</li>
+  <li>消费与投资承压，逆周期调节必要性上升。大公国际预计全年GDP增速4.6%-4.8%</li>
+  <li>专家建议增发2万亿特别国债，加大财政逆周期调节力度</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=E32F75566FEC">来源：21世纪经济报道（8/6）· Wind金融终端</a></div>
+
+<!-- 市场概览 -->
+<h2>三、市场概览</h2>
+
+<h3>A股主要指数（2026-08-07 收盘）</h3>
+<table>
+  <tr><th>指数</th><th>收盘价</th><th>涨跌幅</th><th>成交额</th></tr>
+  <tr><td>上证指数</td><td>3940.04</td><td class="red">+1.02%</td><td>1.21万亿</td></tr>
+  <tr><td>深证成指</td><td>14311.01</td><td class="red">+1.42%</td><td>1.45万亿</td></tr>
+  <tr><td>创业板指</td><td>3563.12</td><td class="red">+1.35%</td><td>7301亿</td></tr>
+  <tr><td>科创50</td><td>1744.02</td><td class="red">+2.51%</td><td>1363亿</td></tr>
+  <tr><td>沪深300</td><td>4694.44</td><td class="red">+0.93%</td><td>7884亿</td></tr>
+</table>
+
+<h3>港股主要指数（2026-08-07 收盘）</h3>
+<table>
+  <tr><th>指数</th><th>收盘价</th><th>涨跌幅</th></tr>
+  <tr><td>恒生指数</td><td>25668.03</td><td class="red">+0.54%</td></tr>
+  <tr><td>恒生科技</td><td>4858.29</td><td class="red">+0.78%</td></tr>
+</table>
+
+<h3>美股主要指数（2026-08-07 收盘）</h3>
+<table>
+  <tr><th>指数</th><th>收盘价</th><th>涨跌幅</th></tr>
+  <tr><td>标普500</td><td>7757.64</td><td class="red">+0.62%</td></tr>
+  <tr><td>纳斯达克100</td><td>29722.30</td><td class="red">+1.19%</td></tr>
+</table>
+
+<div class="card">
+  <strong>📊 本周A股表现：</strong>上证<span class="red">+2.81%</span>，深证<span class="red">+5.39%</span>，创业板<span class="red">+6.55%</span>，科创综指<span class="red">+10.96%</span>。融资余额前四日净买入264.49亿元，资金情绪回暖。<br><br>
+  <strong>8/7板块表现：</strong><br>
+  🔴 领涨：医药生物<span class="red">+4.77%</span>（CRO/创新药涨停潮）、电子<span class="red">+3.53%</span>（PCB/半导体材料）、建筑材料<span class="red">+3.33%</span><br>
+  🟢 领跌：家用电器<span class="green">-0.86%</span>、银行<span class="green">-0.65%</span>、交通运输<span class="green">-0.64%</span>
+</div>
+
+<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=481CA0EF477F">来源：Wind金融终端 · 资金情绪持续回暖，A股市场稳健上行（8/8）</a></div>
+
+<!-- 策略观点 -->
+<h2>四、策略观点</h2>
+
+<h3>8月金股：药明康德、宁德时代双双获8家券商推荐</h3>
+
+<div class="highlight highlight-red">
+  <strong>🔴 药明康德</strong>（8家推荐：浙商/开源/国信/中泰/西部/银河/平安/天风）：CXO龙头受益产业链转移红利，多肽/小核酸新分子进入规模化供应阶段。H1营收<span class="red">+38.93%</span>，归母净利润<span class="red">+83.2%</span>，在手订单<span class="red">+25.2%</span>。
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 宁德时代</strong>（8家推荐：浙商/光大/国联民生/华福/银河/华泰/中原/国投）：固态电池10年研发积累，行业领先地位稳固。大额分红回购彰显长期信心。
+</div>
+
+<div class="highlight highlight-orange">
+  <strong>🟠 其他高频推荐：</strong>美的集团(5家)、中际旭创(5家)、紫金矿业(4家)、北方华创(4家)、中芯国际(4家)。
+</div>
+
+<h3>策略核心观点</h3>
+
+<ul class="bullet">
+  <li><strong>中信证券</strong>：调整基本结束，8月修复可期。A股本轮调整是拥挤交易修正而非去杠杆冲击。ETF持续净流入提供流动性支撑。建议增配能化/有色/非银/创新药。</li>
+  <li><strong>招商证券</strong>：A股仍处盈利驱动上行第三阶段。科技调整是流动性冲击，政策+产业趋势+微观流动性共撑蓄势上攻。</li>
+  <li><strong>中国银河</strong>：建议哑铃型策略——一端AI业绩筛选（持续盈利能力+景气度优势），一端红利资产再平衡。</li>
+  <li><strong>华金证券</strong>：8月震荡筑底，慢牛趋势不变。建议均衡配置科技成长（半导体/AI硬件/创新药）+大金融/消费低估值蓝筹。</li>
+</ul>
+
+<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=A1A4BEB72C94">来源：证券日报（8/4）· Wind金融终端</a></div>
+
+<!-- 持仓个股监控 -->
+<h2>五、持仓个股监控</h2>
+<div class="meta" style="margin-bottom:10px;">国泰海通组合 · 2026-08-07 收盘 · 全部数据来自 Wind MCP</div>
+
+<h3>🟣 创新药械</h3>
+<table>
+  <tr><th>标的</th><th>收盘价</th><th>涨跌幅</th><th>要点</th></tr>
+  <tr>
+    <td>恒瑞医药(600276)</td>
+    <td>¥54.62</td>
+    <td class="red">+4.82%</td>
+    <td>舒地胰岛素获批（首个国产长效胰岛素），创新药IND密集获批</td>
+  </tr>
+  <tr>
+    <td>康方生物(09926)</td>
+    <td>HK$100.00</td>
+    <td class="red">+4.11%</td>
+    <td>HARMONi-6入选ASCO全体大会，BD出海逻辑持续验证</td>
+  </tr>
+  <tr>
+    <td>惠泰医疗(688617)</td>
+    <td>¥208.50</td>
+    <td class="green">-0.58%</td>
+    <td>小幅回调无显著催化</td>
+  </tr>
+  <tr>
+    <td>英矽智能(03696)</td>
+    <td>HK$45.44</td>
+    <td class="red">+10.88%</td>
+    <td>AI制药概念爆发，领涨港股持仓</td>
+  </tr>
+</table>
+
+<div class="highlight highlight-blue">
+  <strong>🔵 恒瑞医药催化：</strong>舒地胰岛素注射液获批，同日5项创新药IND获批。HER3 ADC已申报上市（首个国产）。与BMS 152亿美元合作后续里程碑持续兑现。恒瑞医药已成为持仓中创新药板块核心alpha标的。
+</div>
+
+<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=627C4A6A37EC">来源：Wind金融终端 · 科创创新药ETF汇添富（7/30）</a></div>
+
+<h3>🔵 AI设备 & 材料</h3>
+<table>
+  <tr><th>标的</th><th>收盘价</th><th>涨跌幅</th><th>要点</th></tr>
+  <tr><td>联想集团(00992)</td><td>HK$28.10</td><td class="red">+8.33%</td><td>AI服务器需求爆发，单日成交32亿港币</td></tr>
+  <tr><td>京东方A(000725)</td><td>¥6.07</td><td class="red">+1.85%</td><td>面板价格企稳，OLED渗透率提升</td></tr>
+  <tr><td>长川科技(300604)</td><td>¥283.21</td><td class="red">+1.68%</td><td>半导体测试设备国产替代加速 ⭐西部计算机推荐</td></tr>
+  <tr><td>中恒电气(002364)</td><td>¥40.08</td><td class="red">+4.00%</td><td>AI电源/数据中心概念活跃</td></tr>
+  <tr><td>亨通光电(600487)</td><td>¥59.52</td><td class="red">+6.00%</td><td>连续两日大涨，H1预增87-121%逻辑验证</td></tr>
+  <tr><td>应流股份(603308)</td><td>¥48.52</td><td class="red">+0.94%</td><td>两机叶片高景气，跟随板块</td></tr>
+  <tr><td>大族数控(03200)</td><td>HK$109.60</td><td class="red">+6.93%</td><td>PCB设备受益AI硬件高景气</td></tr>
+  <tr><td>长飞光纤光缆(06869)</td><td>HK$124.10</td><td class="red">+5.80%</td><td>光通信受益AI算力基建，成交额43亿港币</td></tr>
+  <tr><td>东方钽业(000962)</td><td>¥55.18</td><td class="red">+2.45%</td><td>上游材料持续走强</td></tr>
+  <tr><td>N长鑫(688825)</td><td>¥52.48</td><td class="red">+1.00%</td><td>存储龙头科创板上市催化，成交额267亿</td></tr>
+</table>
+
+<div class="highlight highlight-blue">
+  <strong>🔵 亨通光电连续两日大涨：</strong>8/6 +3.20% + 8/7 +6.00%。光通信板块受高盛上调AI服务器PCB市场预期+AI算力需求双重催化，板块整体爆发。成交额165亿显示资金高度活跃。H1预增87-121%逻辑正在兑现。
+</div>
+
+<div class="highlight highlight-blue">
+  <strong>🔵 中信电子（8/2）：</strong>7月电子板块整体-23%，卖压衰竭。国内半导体设备、Fab及国产算力自主可控链上行趋势明确。多家设备公司反馈订单爆发，下半年存储客户订单和新品验证新进展。<strong>建议关注：北方华创/中微公司/中科飞测/长川科技等。</strong>
+</div>
+
+<h3>🟠 AI应用</h3>
+<table>
+  <tr><th>标的</th><th>收盘价</th><th>涨跌幅</th><th>要点</th></tr>
+  <tr><td>腾讯控股(00700)</td><td>HK$478.80</td><td class="green">-0.08%</td><td>微幅波动，港股科网权重股整体偏弱</td></tr>
+</table>
+
+<h3>🟢 新能源/电动车</h3>
+<table>
+  <tr><th>标的</th><th>收盘价</th><th>涨跌幅</th><th>要点</th></tr>
+  <tr><td>宁德时代(300750)</td><td>¥388.07</td><td class="red">+0.02%</td><td>8家券商8月金股推荐，固态电池+储能双催化</td></tr>
+  <tr><td>兆威机电(02692)</td><td>HK$47.42</td><td class="red">+3.36%</td><td>微型传动受益机器人+AI硬件需求</td></tr>
+</table>
+
+<h3>🟡 保险</h3>
+<table>
+  <tr><th>标的</th><th>收盘价</th><th>涨跌幅</th><th>要点</th></tr>
+  <tr><td>中国太保(601601)</td><td>¥31.47</td><td class="green">-0.63%</td><td>银行/保险板块小幅调整</td></tr>
+  <tr><td>中国人寿(601628)</td><td>¥38.57</td><td class="red">+1.10%</td><td>保险板块分化，国寿相对强势</td></tr>
+</table>
+
+<h3>🟤 化工/材料 · 能源/有色 · 传媒/娱乐 · 地产/基建</h3>
+<table>
+  <tr><th>标的</th><th>收盘价</th><th>涨跌幅</th><th>要点</th></tr>
+  <tr><td>新和成(002001)</td><td>¥30.59</td><td class="red">+0.46%</td><td>VA/VE价格高位运行</td></tr>
+  <tr><td>巨化股份(600160)</td><td>¥43.29</td><td class="green">-1.25%</td><td>氟化工短期回调</td></tr>
+  <tr><td>紫金黄金国际(02259)</td><td>HK$137.10</td><td class="red">+4.34%</td><td>金价高位+铜矿量价齐升</td></tr>
+  <tr><td>泡泡玛特(09992)</td><td>HK$157.80</td><td class="red">+0.32%</td><td>平稳运行</td></tr>
+  <tr><td>万科企业(02202)</td><td>HK$2.50</td><td class="red">+0.40%</td><td>地产板块普跌中微涨显韧性</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<h3>📊 持仓表现总览</h3>
+<div class="card">
+  <strong>领涨 TOP 5：</strong><br>
+  🔴 英矽智能 <span class="red">+10.88%</span> | 联想集团 <span class="red">+8.33%</span> | 大族数控 <span class="red">+6.93%</span> | 亨通光电 <span class="red">+6.00%</span> | 长飞光纤光缆 <span class="red">+5.80%</span><br><br>
+  <strong>领跌：</strong><br>
+  🟢 巨化股份 <span class="green">-1.25%</span> | 中国太保 <span class="green">-0.63%</span> | 惠泰医疗 <span class="green">-0.58%</span> | 腾讯控股 <span class="green">-0.08%</span><br><br>
+  <strong>汇总：</strong>24只标的中 20涨 4跌。A股12涨2跌；港股8涨2跌。整体持仓日收益偏正面。
+</div>
+
+<!-- 知识星球 -->
+<h2>六、知识星球精选</h2>
+
+<h3>调研纪要更新</h3>
+
+<div class="highlight highlight-red">
+  <strong>🔴 【中信电子：最新观点&市场情绪反馈】（8/2）</strong><br>
+  · 7月电子板块整体-23%，前期杠杆与拥挤风险已充分出清，卖压衰竭，板块情绪迎来阶段性底部<br>
+  · 半导体设备订单爆发：多家设备及零部件公司反馈今年订单爆发，下半年存储客户订单和新品验证新进展<br>
+  · 坚定看好半导体设备投资机会：北方华创、中微公司、中科飞测、芯源微、京仪装备等<br>
+  · 存储超级成长趋势：SK海力士26Q2 DRAM/NAND ASP环比+30%/+55%<br>
+  · 国产算力：部分地方对数据中心建设态度积极，后续有望自上而下推进
+</div>
+
+<div class="highlight highlight-red">
+  <strong>🔴 【西部计算机】看好国产AI叙事（7/31）</strong><br>
+  · 国产化已从单点替代升级为全链条突破，AI芯片进入全产业链自主突破阶段<br>
+  · 持续看好国产算力和互联芯片、晶圆制造、半导体设备环节<br>
+  · ⭐ 半导体设备推荐含：<strong>长川科技</strong>、华峰测控、精智达（持仓相关标的）<br>
+  · ⭐ 存储推荐：<strong>长鑫科技</strong>（持仓N长鑫688825）
+</div>
+
+<div class="highlight highlight-orange">
+  <strong>🟠 【港股下半年主线：创新药+硬科技】（7/9）</strong><br>
+  · 港股创新药从"讲故事"到"看业绩"，2026年1-5月BD交易816亿美元(+73%)<br>
+  · 港股硬科技：恒生科技半年跌19%但AI含量持续提升<br>
+  · 存储芯片涨价贯穿2027年，AI算力从训练端向推理端扩散——两到三年产业周期
+</div>
+
+<div class="source-link">🔗 来源：知识星球（调研纪要更新 / 水木调研纪要-2.0）</div>
+
+<!-- 数据溯源 -->
+<h2>七、数据溯源</h2>
+
+<table>
+  <tr><th>数据类别</th><th>数据源</th><th>调用次数</th><th>状态</th></tr>
+  <tr><td>A股指数行情</td><td>Wind MCP stock_data</td><td>1次(5指数)</td><td>✅</td></tr>
+  <tr><td>港股指数行情</td><td>Wind MCP stock_data</td><td>1次(2指数)</td><td>✅</td></tr>
+  <tr><td>美股指数行情</td><td>Wind MCP stock_data</td><td>1次(2指数)</td><td>✅</td></tr>
+  <tr><td>A股持仓个股(14只)</td><td>Wind MCP stock_data</td><td>1次</td><td>✅</td></tr>
+  <tr><td>港股持仓个股(10只)</td><td>Wind MCP stock_data</td><td>1次</td><td>✅</td></tr>
+  <tr><td>宏观/策略新闻</td><td>Wind MCP financial_docs</td><td>2次</td><td>✅</td></tr>
+  <tr><td>半导体/AI新闻</td><td>Wind MCP financial_docs</td><td>1次</td><td>✅</td></tr>
+  <tr><td>美股/国际新闻</td><td>Wind MCP financial_docs</td><td>1次</td><td>✅</td></tr>
+  <tr><td>创新药新闻</td><td>Wind MCP financial_docs</td><td>1次</td><td>✅</td></tr>
+  <tr><td>新能源/AI硬件新闻</td><td>Wind MCP financial_docs</td><td>1次</td><td>✅</td></tr>
+  <tr><td>持仓个股新闻</td><td>Wind MCP financial_docs</td><td>2次</td><td>✅</td></tr>
+  <tr><td>A股盘面新闻</td><td>Wind MCP financial_docs</td><td>1次</td><td>✅</td></tr>
+  <tr><td>ZSXQ水木调研纪要</td><td>zsxq-cli</td><td>3次</td><td>✅</td></tr>
+  <tr><td>ZSXQ调研纪要更新</td><td>zsxq-cli</td><td>4次</td><td>✅</td></tr>
+</table>
+
+<div class="highlight highlight-blue">
+  <strong>数据源铁律执行：</strong><br>
+  ✅ 全部数值型数据（指数/股价/涨跌幅/成交额）→ Wind MCP stock_data 结构化 API<br>
+  ✅ 新闻/公告/研报文本 → Wind MCP financial_docs<br>
+  ✅ 调研纪要 → zsxq-cli<br>
+  ✅ 未加载 wb-finance-skill<br>
+  ✅ 未使用 WebSearch/百度/NeoData 获取任何数值型金融数据<br>
+  ⚠️ 大宗商品（WTI/布伦特/黄金）本期未获取（Wind不覆盖，NeoData凭证问题）
+</div>
+
+<div class="report-footer">
+  数据截止：2026-08-07（周五收盘）· 数据来源：Wind金融终端 · 知识星球 · My Research Central · via WB
+</div>
+
+</body>
+</html>
