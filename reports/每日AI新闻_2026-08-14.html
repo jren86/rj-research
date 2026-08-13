@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日 AI 全球新闻 · 2026-08-14</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --red: #f85149;
+      --green: #3fb950;
+      --orange: #d29922;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .report-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-header h1 {
+      font-size: 1.4em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .report-header .meta {
+      font-size: 0.82em;
+      color: var(--text2);
+    }
+
+    h2 {
+      font-size: 1.15em;
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: var(--blue);
+    }
+
+    h3 {
+      font-size: 1em;
+      margin: 14px 0 8px;
+      color: var(--text);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+
+    th {
+      background: var(--card);
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover { background: rgba(88, 166, 255, 0.05); }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78em;
+      margin-right: 4px;
+    }
+
+    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
+    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+
+    .highlight {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0;
+    }
+
+    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
+    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
+    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+
+    ul.bullet {
+      margin: 6px 0 6px 18px;
+      font-size: 0.92em;
+    }
+
+    ul.bullet li { margin: 4px 0; line-height: 1.6; }
+
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .orange { color: var(--orange); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+
+    .source-link {
+      display: block;
+      font-size: 0.78em;
+      color: var(--text2);
+      margin: 4px 0 8px 0;
+      word-break: break-all;
+    }
+
+    .source-link a { color: var(--blue); text-decoration: none; }
+    .source-link a:hover { text-decoration: underline; }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    .report-footer {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.75em;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      h2 { font-size: 1.05em; }
+      table { font-size: 0.8em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日 AI 全球新闻</h1>
+  <div class="meta">2026-08-14 · 星期五 · 数据来源：彭博社 / 财联社 / 第一财经 / IT之家 / 新浪财经 / 华尔街见闻 / 经济日报 / TechCrunch / The Agent Times / arXiv</div>
+</div>
+
+<h2>一、头条要闻</h2>
+
+<div class="card">
+  <h3>🔴 1. OpenAI 联合 Cerebras 推出 GPT-5.6 Sol「超高速模式」，推理提速 14 倍</h3>
+  <p>8 月 14 日凌晨，OpenAI 正式预览其旗舰模型 GPT-5.6 Sol 的全新服务层级 Ultrafast Mode。该模式由晶圆级芯片厂商 Cerebras 提供算力，输出速度最高可达 <strong>750 tokens/s</strong>，较标准模式（约 53 tokens/s）提升最高 <strong>14 倍</strong>，且不牺牲任何质量。横向对比，加速后的 GPT-5.6 Sol 比 Claude Fable 5 快约 11 倍、比 Opus 4.8（Fast 模式）快 5 倍。在「人类最后的考试」（HLE）基准上，Ultrafast 仅用 11 小时 11 分钟答完全部 2500 道题，而 Fable 5 需 78 小时 27 分钟。突破的关键在于 Cerebras 晶圆级芯片（WSE-3，4 万亿晶体管、44GB 片上 SRAM）将模型权重常驻片上、避免反复访问片外 HBM 的带宽瓶颈。</p>
+  <div class="source-link">🔗 <a href="https://finance.sina.com.cn/tech/roll/2026-08-14/doc-ininfrtu4264182.shtml">来源：新浪财经</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 2. 谷歌发布 Gemini 3.7 Flash，编程与智能体能力大幅提升</h3>
+  <p>距上一代 Gemini 3.6 Flash 仅三周，谷歌于 8 月 14 日正式发布 Gemini 3.7 Flash，定位为 Flash 系列最强「主力」型号，重点面向编程与 AI 智能体场景。DeepSWE v1.1 得分从 49% 提升至 <strong>65.3%</strong>，FrontierCode 1.1 Main 从 34.4% 升至 43.6%，WebDev Arena Elo 达 1588 分。定价上，2026 年底前每百万输入 token 0.75 美元、输出 3.75 美元，仅为 Gemini 3.6 Flash 原价的一半；2027 年起翻倍。新模型已接入 Gemini Spark（24 小时个人 AI 智能体），覆盖 160+ 国家。</p>
+  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_0576a7e4dfa82752">来源：CNMO 科技消息</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 3. DeepSeek V4 Pro 正式转正，峰谷定价 8 月 17 日上线</h3>
+  <p>DeepSeek V4 Pro 结束测试阶段全量上线，成为 DeepSeek 当前主力旗舰。模型支持 <strong>100 万 Token 超长上下文</strong>、单次输出 384K Token，AI 编程智能体基准 DeepSWE 得分从预览版的 12.8 跃升至 <strong>62.7</strong>。与此同时，DeepSeek 官宣 8 月 17 日起实行峰谷定价，标志着国产大模型从「价格屠夫」转向精细化商业化运营。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48JO3FI0519DDQ2.html">来源：第一财经</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 4. 阿里开源 Qwen3.8-2.4T-A95B：首次开放 Max 级旗舰权重</h3>
+  <p>阿里正式开放 Qwen3.8-2.4T-A95B 模型权重，系阿里首次将 Max 级别旗舰模型开源。该模型 2.4 万亿参数、激活 95B，PaperBench 93.0 登顶，多项性能比肩 Claude Fable 5。这与此前 DeepSeek V4 Pro、Kimi K3、智谱 GLM-5.2、MiniMax H3 等构成国产开源矩阵，推动中国开源模型全球下载占比达 41%、首超美国。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48JO3FI0519DDQ2.html">来源：第一财经</a></div>
+</div>
+
+<div class="card">
+  <h3>🔴 5. Anthropic 为 Claude 全球强制启用隐形水印，冲刺 10 月 IPO</h3>
+  <p>8 月 14 日凌晨，Anthropic 为 Claude 全产品全球强制启用隐形 AI 水印，复制粘贴或简单改词也难以洗掉标记，以遵守欧盟《AI 法案》对 AI 生成内容溯源的要求。同步消息显示，Anthropic 拟于 10 月启动 IPO，估值或达 <strong>2 万亿美元</strong>。</p>
+  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260813V0BPVM00">来源：AI 的风向标</a></div>
+</div>
+
+<h2>二、行业动态</h2>
+
+<div class="card">
+  <h3>🔵 1. 开源「围剿」闭源：中国大模型掀翻硅谷定价逻辑</h3>
+  <p>第一财经分析指出，DeepSeek V4 Pro、阿里 Qwen3.8-2.4T、Meta Muse Glimmer 三家头部厂商几乎在同一时间窗口押注开源并非巧合。据 Hugging Face《2026 年春季全球开源 AI 生态报告》，中国开源模型下载占比达 41% 首超美国，累计下载量突破 100 亿次。开源模型已从「追赶者」转变为对闭源模型的「围剿者」。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48JO3FI0519DDQ2.html">来源：第一财经</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 2. 扎克伯格 6500 字长文押注开源民主化，Meta 联手英伟达反击</h3>
+  <p>Meta 发布开源模型 Muse Glimmer，扎克伯格以 6500 字长文呼吁降低开源限制，并承诺未来几周开放旗舰 Muse Spark 1.2 权重。Meta 与英伟达同周密集开源多款高参数量本地部署模型，被解读为针对中国 DeepSeek、Qwen 等开源领跑的战略反击；英伟达深度参与被指以免费软件锁定算力硬件销售。</p>
+  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260814A03K0000">来源：经济日报</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 3. 「大空头」密集警示 AI 估值风险</h3>
+  <p>曾做空次贷的史蒂夫·艾斯曼（Steve Eisman）在 CNBC 表示，当前 AI 产业回报高度依赖 OpenAI 和 Anthropic 两家公司，二者贡献微软、亚马逊、谷歌、甲骨文约 70% 的 AI 相关收入；中国低成本开源模型崛起可能引发全球价格战，动摇万亿美元 AI 基建投资逻辑。同期，「大空头」迈克尔·伯里（Michael Burry）重提安然丑闻，矛头指向当前 AI 资本开支与融资模式。</p>
+  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260814A01L7E00">来源：FX168 财经网</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 4. OpenAI 2026 年化营收有望翻番至 400 亿美元</h3>
+  <p>据彭博社报道，OpenAI 在 IPO 前发展势头良好，2026 年年化收入预计超 400 亿美元，较 2025 年约 200 亿美元翻番；7 月月度营收环比增长超 20%，并通过降价抵御竞争。</p>
+  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260814A03HG100">来源：IT之家（彭博社）</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 5. Databricks 完成 50 亿美元融资，估值升至 1900 亿美元</h3>
+  <p>数据分析与 AI 软件公司 Databricks 宣布完成 50 亿美元融资，投后估值达 1900 亿美元，距上次融资约六个月，反映 AI 数据平台赛道资本热度持续攀升。</p>
+  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260814A00SUA00">来源：财联社</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 6. 谷歌 AI 业务换帅，Gemini 3.5 Pro 延迟成难题</h3>
+  <p>Koray Kavukcuoglu 接替 Demis Hassabis 出任谷歌 DeepMind 高级副总裁，直接向 CEO Sundar Pichai 汇报。谷歌旗舰模型 Gemini 3.5 Pro 因编程能力短板迟迟未能发布，成为新掌门亟待解决的「补课」任务。晨星分析师指出，谷歌在编程能力上落后 Anthropic 与 OpenAI「不止一个身位」。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48JBQ2G05198NMR.html">来源：华尔街见闻</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 7. 腾讯 Q2 资本开支 528 亿元，同比增 176%</h3>
+  <p>腾讯发布 2026 年第二季度财报，单季资本开支 528 亿元、同比大增 176%，上半年累计 847 亿元，主要投向 AI 算力基础设施（GPU 集群、数据中心扩建、混元大模型迭代）。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48L156C05569XIR.html">来源：前沿在线</a></div>
+</div>
+
+<h2>三、产品 / 公司新闻</h2>
+
+<div class="card">
+  <h3>🔵 1. SpaceXAI 发布 Grok 4.6：智能体跑分 1753 超 Fable 5，API 半价</h3>
+  <p>xAI（SpaceXAI）正式发布 Grok 4.6，在主流智能体能力评测中取得 1753 分、超越 Fable 5 登顶，重点优化多步骤推理、工具编排与长周期自主执行，同时 API 定价下调至同类旗舰模型的一半。</p>
+  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260814A00LOE00">来源：Barrons 巴伦</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 2. 荣耀发布全球首款机器人手机 Robot Phone，9999 元起</h3>
+  <p>荣耀推出全球首款机器人手机 Robot Phone，起售价 9999 元，融合手机计算能力与机器人运动机构，搭载多自由度机械结构与端侧大模型，可自主完成空间感知、物品操作、全屋设备联动，开辟消费级智能终端新品类。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48L156C05569XIR.html">来源：前沿在线</a></div>
+</div>
+
+<div class="card">
+  <h3>🟠 3. 面壁智能启动 A 股 IPO 辅导，估值超 200 亿元</h3>
+  <p>面壁智能正式启动 A 股 IPO 辅导，当前估值超 200 亿元，成为继智元、月之暗面之后又一家冲刺资本市场的国产 AI 头部企业，标志国产大模型行业进入资本化加速期。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48L156C05569XIR.html">来源：前沿在线</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 4. Dyna Robotics 发布 DYNA-2：百万小时视频预训练，任务成功率 90%</h3>
+  <p>Dyna Robotics 发布新一代具身智能模型 DYNA-2，依托百万小时海量视频预训练，在真实场景实物操作任务中成功率达 90%，无需针对单一场景大量微调即可适配多种作业需求。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48L156C05569XIR.html">来源：前沿在线</a></div>
+</div>
+
+<div class="card">
+  <h3>🔵 5. LTX-2.5 开源视频模型发布：双 GB200 仅 6.8 秒生成 10 秒 720p 视频</h3>
+  <p>LTX 发布 2.5 版本开源视频生成模型，推理效率大幅突破，在双 GB200 显卡配置下仅需 6.8 秒生成 10 秒 720p 高清视频，推动 AI 视频生成从「分钟级等待」迈向「近实时输出」。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48L156C05569XIR.html">来源：前沿在线</a></div>
+</div>
+
+<h2>四、研究突破</h2>
+
+<div class="card">
+  <h3>💡 1. SHAPER 框架：具身智能体免重训练自进化</h3>
+  <p>八位研究者提出 SHAPER 框架（arXiv:2608.11350），通过进化外部技能库与执行 harness 代码、而非重训基础模型权重，实现具身智能体在目标环境的免训练自适应。冻结模型同时担任「规划者」与「优化者」双重角色，在 VLABench 与 ESI-Bench 上验证，为工业机器人部署场景提供了低成本的持续进化路径。</p>
+  <div class="source-link">🔗 <a href="https://theagenttimes.com/articles/shaper-framework-lets-embodied-agents-self-evolve-without-re-86359289">来源：The Agent Times / arXiv</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 2. 戴盟机器人发布「触觉锚定世界模型」Daimon-TWM</h3>
+  <p>具身公司戴盟机器人发布 Daimon-TWM，定位「物理交互脑」，将触觉作为判断物理世界的「最终证据」——当视觉显示插头已对准、但触觉受力显示顶歪时，模型以触觉为准修正动作。蚂蚁集团领投数亿元融资，系蚂蚁在触觉方向的首次出手。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48KVMDO055674H6.html">来源：四木相对论</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 3. 日本研发 BBCube 半导体集成平台：AI 芯片更紧凑、高速、节能</h3>
+  <p>日本东京科学大学团队开发出 BBCube 平台，融合高密度芯片贴装、无凸点芯片互连与多尺度热分析三项技术。芯片间距缩至 10 微米时，同等互连面积信号带宽最高提升 16 倍；「华夫格」晶圆结构使热阻降低约 52%。</p>
+  <div class="source-link">🔗 <a href="https://www.stdaily.com/web/gdxw/2026-08/14/content_563414.html">来源：科技日报</a></div>
+</div>
+
+<div class="card">
+  <h3>💡 4. 自变量机器人 WALL-B 世界模型：分拣 1816 件/小时反超 Figure AI 45%</h3>
+  <p>自变量机器人完成 1 小时全自主物流分拣直播，以双机械臂+夹爪方案实现 1816 件/小时、准确率超 98%，较 Figure AI 公开标杆提升 45%、硬件成本降约 70%，核心为自研 WALL-B 世界统一模型。</p>
+  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260814A02X1A00">来源：红星新闻</a></div>
+</div>
+
+<h2>五、政策与监管</h2>
+
+<div class="card">
+  <h3>📄 1. 欧盟《人工智能法》扩大适用范围，透明度规则正式执法</h3>
+  <p>自 8 月 2 日起，欧盟进一步扩大《人工智能法》适用范围，聊天机器人须明确告知用户正在与 AI 互动，深度伪造内容须强制标识；欧洲人工智能办公室开始对通用 AI 模型提供商执行监管。违规供应商可被处以最高 1500 万欧元或全球年营业额 3% 罚款。这是欧盟首次通过立法明确禁止「脱衣换脸」类应用。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L499BSUM0519AKBM.html">来源：经济日报</a></div>
+</div>
+
+<div class="card">
+  <h3>📄 2. 欧盟《数字综合法案》推进：引入「暂停计时」机制</h3>
+  <p>欧盟委员会已完成《数字综合法案》一读程序，进入三方谈判阶段。其最突出创新是「暂停计时」机制——高风险 AI 合规义务不再与固定日期挂钩，而与监管准备度关键节点（协调标准发布）关联；预计到 2029 年可削减至多 50 亿欧元行政成本。</p>
+  <div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index&id=SN2026080308450198aed621">来源：腾讯新闻</a></div>
+</div>
+
+<div class="card">
+  <h3>📄 3. 中国全方位推动人工智能全球治理走深走实</h3>
+  <p>从国务院《关于深入实施「人工智能+」行动的意见》到《智能体规范应用与创新发展实施意见》，中国正加快构建与 AI 演进相适应的法律法规与政策制度。东壁科技数据联合上海财经大学发布《全球大语言模型安全防范能力测评报告（2026）》，以 313 条高风险问题测评国内外 38 个大模型的安全防范能力。</p>
+  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260814A00NV000">来源：腾讯新闻</a></div>
+</div>
+
+<div class="card">
+  <h3>📄 4. 文本 AI 水印落地面临技术困境</h3>
+  <p>随着欧盟 AI 法案 8 月强制执行第 50 条（所有 AI 输出须可被检测为人工生成），文本水印成为焦点。相比图像水印（可嵌入人眼不可见噪声），文本作为高度压缩媒介几乎无法在不损害质量的前提下加入隐藏签名；谷歌 SynthID 与 OpenAI、Anthropic 的 Unicode 技巧均为局部方案。</p>
+  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L48I5S0C05561FZO.html">来源：网易号</a></div>
+</div>
+
+<h2>💡 核心观察</h2>
+
+<div class="highlight highlight-blue">
+  <ul class="bullet">
+    <li><strong>推理速度成为新战场</strong>：OpenAI 借 Cerebras 晶圆级芯片实现 14 倍加速，谷歌 Gemini 3.7 Flash 三周迭代——「每秒完成更多有价值工作」正取代单纯的能力刷分，成为大模型竞争新维度。</li>
+    <li><strong>开源「围剿」闭源进入密集兑现期</strong>：DeepSeek、阿里、Meta 同周押注开源，中国开源模型下载占比 41% 首超美国，定价权博弈从「闭源降价、开源变贵」的峰谷定价可见一斑。</li>
+    <li><strong>资本与估值分歧加剧</strong>：一边是 Anthropic 冲刺 2 万亿美元 IPO、Databricks 1900 亿美元估值、OpenAI 营收翻倍；另一边是「大空头」艾斯曼、伯里密集警示 AI 估值与融资模式风险。</li>
+    <li><strong>AI 内容溯源时代到来</strong>：Anthropic 全球强制水印 + 欧盟透明度规则执法，标志 AI 生成内容从「事后治理」转向「源头可溯」。</li>
+    <li><strong>具身智能从「炫技」转向「量产交付」</strong>：DYNA-2、Daimon-TWM、WALL-B 等模型密集落地，时耘 RD3 Ultra 量产下线、无界动力 1 亿美元订单交付，行业重心转向成本与可靠性。</li>
+  </ul>
+</div>
+
+<div class="report-footer">
+  数据来源：彭博社 / 财联社 / 第一财经 / IT之家 / 新浪财经 / 华尔街见闻 / 经济日报 / TechCrunch / The Agent Times / arXiv · My Research Central · via WB
+</div>
+
+</body>
+</html>
