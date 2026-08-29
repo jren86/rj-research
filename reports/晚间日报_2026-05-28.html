@@ -8,35 +8,35 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: #0f1117; color: #c9d1d9; line-height: 1.75;
+    background: #faf9f7; color: #2c2a28; line-height: 1.75;
     padding: 16px; max-width: 760px; margin: 0 auto; font-size: 14px;
   }
-  .header { text-align: center; padding: 24px 0 16px; border-bottom: 1px solid #30363d; margin-bottom: 24px; }
+  .header { text-align: center; padding: 24px 0 16px; border-bottom: 1px solid #cfc9c1; margin-bottom: 24px; }
   .header h1 { font-size: 22px; font-weight: 700; color: #f0f6fc; margin-bottom: 4px; }
-  .header .meta { font-size: 11px; color: #8b949e; }
+  .header .meta { font-size: 11px; color: #6b6760; }
   .section { margin-bottom: 28px; }
   .section h2 {
     font-size: 17px; font-weight: 600; color: #f0f6fc;
-    margin-bottom: 12px; padding-left: 10px; border-left: 3px solid #58a6ff;
+    margin-bottom: 12px; padding-left: 10px; border-left: 3px solid #3a6b96;
   }
   .section h3 {
-    font-size: 14px; font-weight: 600; color: #c9d1d9;
-    margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #21262d;
+    font-size: 14px; font-weight: 600; color: #2c2a28;
+    margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #f4f2ef;
   }
   .section h3.fire { border-bottom-color: #f8717170; }
   table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 12px; }
-  th { background: #21262d; color: #8b949e; font-weight: 600; text-align: left; padding: 5px 8px; border: 1px solid #30363d; font-size: 11px; }
-  td { padding: 5px 8px; border: 1px solid #30363d; color: #c9d1d9; }
+  th { background: #f4f2ef; color: #6b6760; font-weight: 600; text-align: left; padding: 5px 8px; border: 1px solid #cfc9c1; font-size: 11px; }
+  td { padding: 5px 8px; border: 1px solid #cfc9c1; color: #2c2a28; }
   .up { color: #f87171; font-weight: 600; } /* 涨 = 红 */
   .down { color: #4ade80; } /* 跌 = 绿 */
   .fire-badge { display: inline-block; background: #f8717120; color: #f87171; padding: 1px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
   .warn-box { background: #1a1311; border-left: 3px solid #f59e0b; border-radius: 4px; padding: 10px 14px; margin: 10px 0; font-size: 12px; line-height: 1.7; }
   .warn-box strong { color: #f59e0b; }
-  .info-box { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 10px 14px; margin: 8px 0; font-size: 12px; color: #8b949e; }
-  .info-box.bp { border-left: 3px solid #58a6ff; }
+  .info-box { background: #f4f2ef; border: 1px solid #cfc9c1; border-radius: 6px; padding: 10px 14px; margin: 8px 0; font-size: 12px; color: #6b6760; }
+  .info-box.bp { border-left: 3px solid #3a6b96; }
   .info-box.gp { border-left: 3px solid #7c3aed; }
   .card {
-    background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+    background: #f4f2ef; border: 1px solid #cfc9c1; border-radius: 8px;
     padding: 16px 18px; margin-bottom: 12px;
   }
   .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
@@ -45,34 +45,34 @@
   .chg-up { background: #f8717120; color: #f87171; }
   .chg-down { background: #4ade8020; color: #4ade80; }
   .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 14px; font-size: 12px; }
-  .card-grid .l { color: #8b949e; }
-  .card-grid .v { color: #c9d1d9; font-weight: 500; text-align: right; }
+  .card-grid .l { color: #6b6760; }
+  .card-grid .v { color: #2c2a28; font-weight: 500; text-align: right; }
   .card-grid .v.up { text-align: right; }
   .card-grid .v.down { text-align: right; }
   .dual-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0 14px; }
-  .dual-col { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 10px 12px; }
-  .dual-col .label { font-size: 11px; color: #8b949e; }
+  .dual-col { background: #f4f2ef; border: 1px solid #cfc9c1; border-radius: 6px; padding: 10px 12px; }
+  .dual-col .label { font-size: 11px; color: #6b6760; }
   .dual-col .price { font-size: 15px; font-weight: 700; color: #f0f6fc; }
-  .dual-col .detail { font-size: 11px; color: #8b949e; margin-top: 4px; }
+  .dual-col .detail { font-size: 11px; color: #6b6760; margin-top: 4px; }
   .insight {
-    background: #0d1117; border: 1px solid #21262d; border-radius: 6px;
-    padding: 10px 14px; margin-top: 10px; font-size: 12px; color: #8b949e; line-height: 1.7;
+    background: #faf9f7; border: 1px solid #f4f2ef; border-radius: 6px;
+    padding: 10px 14px; margin-top: 10px; font-size: 12px; color: #6b6760; line-height: 1.7;
   }
-  .insight b { color: #c9d1d9; }
+  .insight b { color: #2c2a28; }
   .tag {
     display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 3px; margin-right: 4px; font-weight: 500;
   }
   .tag-ima { background: #1a3a2a; color: #4ade80; }
   .tag-zsxq { background: #2a1a3a; color: #a78bfa; }
-  .tag-news { background: #1a2a3a; color: #58a6ff; }
+  .tag-news { background: #1a2a3a; color: #3a6b96; }
   .badge { display: inline-block; font-size: 10px; padding: 2px 6px; border-radius: 10px; margin-right: 4px; font-weight: 600; }
   .badge-hot { background: #f8717140; color: #f87171; }
   .badge-new { background: #f59e0b40; color: #f59e0b; }
   footer {
-    text-align: center; padding: 20px 0; border-top: 1px solid #30363d;
-    margin-top: 24px; font-size: 11px; color: #484f58;
+    text-align: center; padding: 20px 0; border-top: 1px solid #cfc9c1;
+    margin-top: 24px; font-size: 11px; color: #9a958c;
   }
-  hr { border: none; border-top: 1px solid #21262d; margin: 20px 0; }
+  hr { border: none; border-top: 1px solid #f4f2ef; margin: 20px 0; }
 </style>
 </head>
 <body>
@@ -149,7 +149,7 @@
 </div>
 
 <h3>后市展望</h3>
-<ol style="font-size:12px; padding-left:18px; color:#8b949e; line-height:2;">
+<ol style="font-size:12px; padding-left:18px; color:#6b6760; line-height:2;">
   <li><strong style="color:#f59e0b;">外部风险</strong>：今夜PCE是核心变量，数据若超预期热，美股可能跳水，明日A股半导体高估值个股承压</li>
   <li><strong style="color:#f0f6fc;">内部催化</strong>：台积电提价 + AI算力Capex持续上调，半导体设备/材料景气度持续</li>
   <li><strong style="color:#f0f6fc;">技术信号</strong>：创业板指收盘价5年首超上证，结构性牛市标志性信号</li>
@@ -164,7 +164,7 @@
 <!-- 芯碁微装 -->
 <div class="card">
   <div class="card-header">
-    <h4>🔬 芯碁微装 <span style="font-size:11px;color:#8b949e;">688630.SH</span></h4>
+    <h4>🔬 芯碁微装 <span style="font-size:11px;color:#6b6760;">688630.SH</span></h4>
     <span class="chg chg-up">+15.19%</span>
     <span class="fire-badge">涨停榜</span>
   </div>
@@ -190,7 +190,7 @@
 <!-- 工业富联 -->
 <div class="card">
   <div class="card-header">
-    <h4>🖥️ 工业富联 <span style="font-size:11px;color:#8b949e;">601138.SH</span></h4>
+    <h4>🖥️ 工业富联 <span style="font-size:11px;color:#6b6760;">601138.SH</span></h4>
     <span class="chg chg-up">+7.02%</span>
     <span class="fire-badge">大涨</span>
   </div>
@@ -216,7 +216,7 @@
 <!-- 精智达 -->
 <div class="card">
   <div class="card-header">
-    <h4>🔬 精智达 <span style="font-size:11px;color:#8b949e;">688627.SH</span></h4>
+    <h4>🔬 精智达 <span style="font-size:11px;color:#6b6760;">688627.SH</span></h4>
     <span class="chg chg-up">+2.61%</span>
   </div>
   <div class="card-grid">
@@ -233,7 +233,7 @@
 <!-- 长川科技 -->
 <div class="card">
   <div class="card-header">
-    <h4>🔬 长川科技 <span style="font-size:11px;color:#8b949e;">300604.SZ</span></h4>
+    <h4>🔬 长川科技 <span style="font-size:11px;color:#6b6760;">300604.SZ</span></h4>
     <span class="chg chg-down">-0.53%</span>
   </div>
   <div class="card-grid">
@@ -250,7 +250,7 @@
 <!-- 宁德时代 双市场 -->
 <div class="card">
   <div class="card-header">
-    <h4>🔋 宁德时代 <span style="font-size:11px;color:#8b949e;">300750 / 03750</span></h4>
+    <h4>🔋 宁德时代 <span style="font-size:11px;color:#6b6760;">300750 / 03750</span></h4>
   </div>
   <div class="dual-row">
     <div class="dual-col">
@@ -270,7 +270,7 @@
 <!-- 京东方A -->
 <div class="card">
   <div class="card-header">
-    <h4>📺 京东方A <span style="font-size:11px;color:#8b949e;">000725.SZ</span></h4>
+    <h4>📺 京东方A <span style="font-size:11px;color:#6b6760;">000725.SZ</span></h4>
     <span class="chg chg-down">-0.70%</span>
   </div>
   <div class="card-grid">
@@ -286,7 +286,7 @@
 <!-- 容百科技 -->
 <div class="card">
   <div class="card-header">
-    <h4>🔋 容百科技 <span style="font-size:11px;color:#8b949e;">688005.SH</span></h4>
+    <h4>🔋 容百科技 <span style="font-size:11px;color:#6b6760;">688005.SH</span></h4>
     <span class="chg chg-down">-1.16%</span>
   </div>
   <div class="card-grid">
@@ -302,7 +302,7 @@
 <!-- 信达生物 -->
 <div class="card">
   <div class="card-header">
-    <h4>💊 信达生物 <span style="font-size:11px;color:#8b949e;">01801.HK</span></h4>
+    <h4>💊 信达生物 <span style="font-size:11px;color:#6b6760;">01801.HK</span></h4>
     <span class="chg chg-down">-5.19%</span>
     <span class="fire-badge" style="background:#4ade8020;color:#4ade80;">大跌</span>
   </div>

@@ -3,25 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>晚间投研日报 · 2026-07-01</title>
+  <title>晚间日报 · 2026-07-01</title>
   <style>
 /* ============================================
    Unified Report Template — My Research Central
    All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
    ============================================ */
 
 :root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --border: #30363d;
-  --text: #e6edf3;
-  --text2: #8b949e;
-  --red: #f85149;
-  --green: #3fb950;
-  --orange: #d29922;
-  --blue: #58a6ff;
-  --purple: #bc8cff;
-  --yellow: #e3b341;
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,6 +40,21 @@ body {
   font-size: 14px;
 }
 
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
 .report-header {
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -54,6 +72,7 @@ body {
   color: var(--text2);
 }
 
+/* ── Section headers ── */
 h2 {
   font-size: 1.15em;
   margin: 22px 0 10px;
@@ -68,26 +87,29 @@ h3 {
   color: var(--text);
 }
 
+/* ── Cards ── */
 .card {
-  background: var(--card);
+  background: var(--card-alt);
   border-radius: 8px;
   padding: 12px 14px;
   margin: 10px 0;
   border: 1px solid var(--border);
 }
 
+/* ── Tables ── */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 8px 0;
   font-size: 0.85em;
+  background: var(--card-alt);
 }
 
 th {
   background: var(--card);
   padding: 6px 8px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   color: var(--text2);
   font-weight: 600;
 }
@@ -99,9 +121,10 @@ td {
 }
 
 tr:hover {
-  background: rgba(88, 166, 255, 0.05);
+  background: rgba(58, 107, 150, 0.05);
 }
 
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
@@ -110,24 +133,65 @@ tr:hover {
   margin-right: 4px;
 }
 
-.tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-.tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-.tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-.tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-.tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
-.tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
 
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
 .highlight {
   padding: 10px 14px;
   border-radius: 6px;
   margin: 8px 0;
+  background: var(--card-alt);
 }
 
-.highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-.highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-.highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
-.highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
 
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
 ul.bullet {
   margin: 6px 0 6px 18px;
   font-size: 0.92em;
@@ -138,6 +202,44 @@ ul.bullet li {
   line-height: 1.6;
 }
 
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
 .red { color: var(--red); }
 .green { color: var(--green); }
 .orange { color: var(--orange); }
@@ -145,6 +247,7 @@ ul.bullet li {
 .purple { color: var(--purple); }
 .yellow { color: var(--yellow); }
 
+/* ── Source links ── */
 .source-link {
   display: block;
   font-size: 0.78em;
@@ -154,7 +257,7 @@ ul.bullet li {
 }
 
 .source-link a {
-  color: var(--blue);
+  color: #2d5f8a;
   text-decoration: none;
 }
 
@@ -162,12 +265,14 @@ ul.bullet li {
   text-decoration: underline;
 }
 
+/* ── Divider ── */
 .divider {
   height: 1px;
   background: var(--border);
   margin: 16px 0;
 }
 
+/* ── Footer ── */
 .report-footer {
   text-align: center;
   color: var(--text2);
@@ -177,380 +282,108 @@ ul.bullet li {
   border-top: 1px solid var(--border);
 }
 
+/* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 10px; }
   h1 { font-size: 1.2em; }
   h2 { font-size: 1.05em; }
   table { font-size: 0.8em; }
 }
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>晚间投研日报 · 2026-07-01</h1>
+  <h1>晚间日报 · 2026-07-01</h1>
   <div class="meta">📅 A股正常交易日（周三）| 7月开门红，市场风格大切换 | 聚焦当日增量信息</div>
 </div>
 
-<div class="divider"></div>
-
+<hr>
 <h2>🔴 催化剂日历</h2>
-
-<table>
-  <thead>
-    <tr><th>时间</th><th>事件</th><th>重要性</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>7/1</td><td><strong>7月开门红！A股风格大切换</strong> — 沪指+0.44%，超4300只个股上涨，226只涨停；科技股集体回调，寒武纪跌近7%</td><td>🔴</td></tr>
-    <tr><td>7/1</td><td><strong>全球近20家模拟及功率半导体企业7/1启动新一轮涨价</strong>，半导体涨价潮延续</td><td>🔴</td></tr>
-    <tr><td>7/1</td><td><strong>美团发布LongCat-2.0万亿参数大模型</strong>，业界首个五万卡国产算力集群全流程训练</td><td>🔴</td></tr>
-    <tr><td>7/1</td><td><strong>工信部/国资委启动2026年度人形机器人与具身智能实景实训专项行动</strong></td><td>🔴</td></tr>
-    <tr><td>7/1</td><td><strong>机器人板块连续爆发</strong>，拓斯达20CM涨停，多只机器人ETF涨超7%</td><td>🔵</td></tr>
-    <tr><td>7/1</td><td><strong>《拜猪文》引发舆论争议</strong> — 牧原股份企业文化稿件遭网友热议</td><td>🟠</td></tr>
-    <tr><td>7/1</td><td>中证协修订发布《证券公司做好金融"五篇大文章"专项评价办法》</td><td>🔵</td></tr>
-    <tr><td>7/1</td><td><strong>晶圆代工/功率半导体涨价</strong> — 中信建投：涨价直接转化为利润</td><td>🟠</td></tr>
-    <tr><td>7/1</td><td>韩国三星2655万亿韩元+SK 1100万亿韩元半导体投资计划</td><td>🔵</td></tr>
-    <tr><td>7/2</td><td>美国6月ISM制造业PMI</td><td>🟠</td></tr>
-    <tr><td>7/3</td><td>美国6月非农就业数据</td><td>🟠</td></tr>
-  </tbody>
-</table>
-
-<div class="divider"></div>
-
+<table><thead><tr><th>时间</th><th>事件</th><th>重要性</th></tr></thead><tbody><tr><td>7/1</td><td><strong>7月开门红！A股风格大切换</strong> — 沪指+0.44%，超4300只个股上涨，226只涨停；科技股集体回调，寒武纪跌近7%</td><td>🔴</td></tr><tr><td>7/1</td><td><strong>全球近20家模拟及功率半导体企业7/1启动新一轮涨价</strong>，半导体涨价潮延续</td><td>🔴</td></tr><tr><td>7/1</td><td><strong>美团发布LongCat-2.0万亿参数大模型</strong>，业界首个五万卡国产算力集群全流程训练</td><td>🔴</td></tr><tr><td>7/1</td><td><strong>工信部/国资委启动2026年度人形机器人与具身智能实景实训专项行动</strong>，年底前打造百个以上高价值场景</td><td>🔴</td></tr><tr><td>7/1</td><td><strong>机器人板块连续爆发</strong>，拓斯达20CM涨停，多只机器人ETF涨超7%</td><td>🔵</td></tr><tr><td>7/1</td><td><strong>《拜猪文》引发舆论争议</strong> — 牧原股份企业文化稿件遭网友热议，公司回应：无PUA导向</td><td>🟠</td></tr><tr><td>7/1</td><td>中证协修订发布《证券公司做好金融"五篇大文章"专项评价办法》</td><td>🔵</td></tr><tr><td>7/1</td><td><strong>晶圆代工/功率半导体涨价</strong> — 中信建投：涨价直接转化为利润</td><td>🟠</td></tr><tr><td>7/1</td><td>韩国三星2655万亿韩元+SK 1100万亿韩元半导体投资计划</td><td>🔵</td></tr><tr><td>7/2</td><td>美国6月ISM制造业PMI</td><td>🟠</td></tr><tr><td>7/3</td><td>美国6月非农就业数据</td><td>🟠</td></tr></tbody></table>
+<hr>
 <h2>🌐 宏观动态</h2>
-
 <h3>🔴 6月官方制造业PMI回升至50.3%，连续4个月扩张</h3>
-
 <p>国家统计局6月30日公布：6月制造业PMI录得<strong>50.3%</strong>，较上月回升0.3个百分点，连续四个月处于扩张区间。<strong>核心亮点：</strong></p>
-
-<ul class="bullet">
-  <li>新订单指数升至<strong>51.2%</strong>（前值+1.3pct），市场需求改善</li>
-  <li>新出口订单指数回升至<strong>50.1%</strong>，2017年以来6月首次站上荣枯线</li>
-  <li>高技术制造业PMI <strong>53.5%</strong>，装备制造业PMI <strong>52.5%</strong>，AI相关产业持续高景气</li>
-  <li>高耗能行业PMI仅<strong>47.1%</strong>，黑色金属供需仍承压</li>
-  <li>出厂价格指数回落至<strong>48.2%</strong>，成本压力缓解</li>
-</ul>
-
+<ul><li>新订单指数升至<strong>51.2%</strong>（前值+1.3pct），市场需求改善</li><li>新出口订单指数回升至<strong>50.1%</strong>，2017年以来6月首次站上荣枯线</li><li>高技术制造业PMI <strong>53.5%</strong>，装备制造业PMI <strong>52.5%</strong>，AI相关产业持续高景气</li><li>高耗能行业PMI仅<strong>47.1%</strong>，黑色金属供需仍承压</li><li>出厂价格指数回落至<strong>48.2%</strong>，成本压力缓解</li></ul>
 <p><strong>驱动解读：</strong> 本轮PMI改善主要由出口驱动。全球制造业景气上行（摩根大通5月全球PMI 52.6%），AI投资拉动国内高技术与装备制造业保持高位扩张。美伊冲突缓和使霍尔木兹海峡通航恢复，中国对中东出口集装箱运量降幅从-55.9%收窄至-36.7%。</p>
-
-<div class="source-link">🔗 来源：Wind 万得 · 国家统计局6月PMI数据</div>
-
+<p><div class="source-link">🔗 来源：Wind 万得 · 国家统计局6月PMI数据</div></p>
 <h3>🔵 工信部等8部门印发《工业互联网高质量发展实施意见》</h3>
-
 <p>目标2030年工业互联网核心产业增加值突破<strong>2.5万亿元</strong>，建设5万张工业5G专网，培育覆盖全部207个工业中类的融合应用。</p>
-
-<div class="source-link">🔗 来源：Wind 万得 · 工信部政策发布</div>
-
+<p><div class="source-link">🔗 来源：Wind 万得 · 工信部政策发布</div></p>
 <h3>海外宏观</h3>
-
 <p>美伊多哈谈判进入第二阶段，霍尔木兹海峡通航逐步正常化，国际原油价格较前期大幅回落。美东时间6/30美股三大指数集体收涨，纳指+1.52%，费城半导体指数+3.92%。</p>
-
-<div class="source-link">🔗 来源：Wind 万得 · 海外市场快讯</div>
-
-<div class="divider"></div>
-
+<p><div class="source-link">🔗 来源：Wind 万得 · 海外市场快讯</div></p>
+<hr>
 <h2>📊 市场概览（7月1日收盘）</h2>
-
 <h3>🔴 7月开门红！风格大切换：传统行业全线爆发，科技股集体回调</h3>
-
 <p><strong>A股三大指数分化</strong>，沪指重返4100点上方，创业板指、科创50震荡走低：</p>
-
-<table>
-  <thead>
-    <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>上证指数</td><td>4,112.45</td><td><span style="color:#f85149;">+0.44%</span></td></tr>
-    <tr><td>深证成指</td><td>16,119.17</td><td><span style="color:#3fb950;">-0.53%</span></td></tr>
-    <tr><td>创业板指</td><td>4,260.72</td><td><span style="color:#3fb950;">-1.89%</span></td></tr>
-    <tr><td>沪深300</td><td>4,958.98</td><td><span style="color:#3fb950;">-0.41%</span></td></tr>
-    <tr><td>科创50</td><td>2,153.04</td><td><span style="color:#3fb950;">-2.48%</span></td></tr>
-    <tr><td>上证50</td><td>2,985.24</td><td><span style="color:#3fb950;">-0.14%</span></td></tr>
-    <tr><td>北证50</td><td>1,264.94</td><td><span style="color:#f85149;">+1.10%</span></td></tr>
-    <tr><td>万得全A</td><td>7,162.38</td><td><span style="color:#f85149;">+0.19%</span></td></tr>
-  </tbody>
-</table>
-
-<ul class="bullet">
-  <li><strong>成交额</strong>：3.68万亿（较前日放量3,890亿）</li>
-  <li><strong>涨跌比</strong>：4,300+只上涨 / 1,200只下跌，226只涨停</li>
-  <li><strong>风格特征</strong>：上半年领涨的科技/算力板块回调，上半年表现不佳的传统/周期股全线爆发</li>
-</ul>
-
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>上证指数</td><td>4,112.45</td><td><span style="color:#f85149;">+0.44%</span></td></tr><tr><td>深证成指</td><td>16,119.17</td><td><span style="color:#3fb950;">-0.53%</span></td></tr><tr><td>创业板指</td><td>4,260.72</td><td><span style="color:#3fb950;">-1.89%</span></td></tr><tr><td>沪深300</td><td>4,958.98</td><td><span style="color:#3fb950;">-0.41%</span></td></tr><tr><td>科创50</td><td>2,153.04</td><td><span style="color:#3fb950;">-2.48%</span></td></tr><tr><td>上证50</td><td>2,985.24</td><td><span style="color:#3fb950;">-0.14%</span></td></tr><tr><td>北证50</td><td>1,264.94</td><td><span style="color:#f85149;">+1.10%</span></td></tr><tr><td>万得全A</td><td>7,162.38</td><td><span style="color:#f85149;">+0.19%</span></td></tr></tbody></table>
+<ul><li><strong>成交额</strong>：3.68万亿（较前日放量3,890亿）</li><li><strong>涨跌比</strong>：4,300+只上涨 / 1,200只下跌，226只涨停</li><li><strong>风格特征</strong>：上半年领涨的科技/算力板块回调，上半年表现不佳的传统/周期股全线爆发</li></ul>
 <h3>板块轮动 — "老登股"全线爆发</h3>
-
-<table>
-  <thead>
-    <tr><th>领涨</th><th>涨跌幅</th><th>领跌</th><th>涨跌幅</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>保险</td><td><span style="color:#f85149;">+4.88%</span></td><td>通信设备</td><td><span style="color:#3fb950;">-4.12%</span></td></tr>
-    <tr><td>制药/创新药</td><td><span style="color:#f85149;">+4.82%</span></td><td>电工电网</td><td><span style="color:#3fb950;">-2.32%</span></td></tr>
-    <tr><td>农林牧渔（猪/鸡）</td><td><span style="color:#f85149;">+4.89%</span></td><td>电子元器件</td><td><span style="color:#3fb950;">-1.87%</span></td></tr>
-    <tr><td>证券</td><td><span style="color:#f85149;">多股涨停</span></td><td>CPO/PCB/光纤</td><td><span style="color:#3fb950;">集体回调</span></td></tr>
-    <tr><td>氟化工/工业气体</td><td><span style="color:#f85149;">概念爆发</span></td><td>储能/逆变器</td><td><span style="color:#3fb950;">阳光电源-13%</span></td></tr>
-    <tr><td>机器人</td><td><span style="color:#f85149;">拓斯达20CM涨停</span></td><td>半导体/算力</td><td><span style="color:#3fb950;">寒武纪-7%</span></td></tr>
-  </tbody>
-</table>
-
+<table><thead><tr><th>领涨</th><th>涨跌幅</th><th>领跌</th><th>涨跌幅</th></tr></thead><tbody><tr><td>保险</td><td><span style="color:#f85149;">+4.88%</span></td><td>通信设备</td><td><span style="color:#3fb950;">-4.12%</span></td></tr><tr><td>制药/创新药</td><td><span style="color:#f85149;">+4.82%</span></td><td>电工电网</td><td><span style="color:#3fb950;">-2.32%</span></td></tr><tr><td>农林牧渔（猪/鸡）</td><td><span style="color:#f85149;">+4.89%</span></td><td>电子元器件</td><td><span style="color:#3fb950;">-1.87%</span></td></tr><tr><td>证券</td><td><span style="color:#f85149;">多股涨停</span></td><td>CPO/PCB/光纤</td><td><span style="color:#3fb950;">集体回调</span></td></tr><tr><td>氟化工/工业气体</td><td><span style="color:#f85149;">概念爆发</span></td><td>储能/逆变器</td><td><span style="color:#3fb950;">阳光电源-13%</span></td></tr><tr><td>机器人</td><td><span style="color:#f85149;">拓斯达20CM涨停</span></td><td>半导体/算力</td><td><span style="color:#3fb950;">寒武纪-7%</span></td></tr></tbody></table>
 <p><strong>关键特征：</strong></p>
-<ul class="bullet">
-  <li><strong>保险板块飙升</strong>：中国人寿+9.7%尾盘逼近涨停，新华保险+9.59%，中国平安+4%</li>
-  <li><strong>券商多股涨停</strong>：华安证券、天风证券、国盛证券涨停</li>
-  <li><strong>养殖板块暴力反弹</strong>：新希望、傲农生物、湘佳股份、益生股份涨停；牧原+2.77%</li>
-  <li><strong>创新药走强</strong>：汇宇制药、宣泰医药20CM涨停，艾力斯+15%创历史新高</li>
-  <li><strong>氟化工爆发</strong>：多氟多3连板，三美股份连续2日涨停</li>
-  <li><strong>工业气体活跃</strong>：金宏气体20CM涨停，中船特气+8%</li>
-  <li><strong>算力芯片回调</strong>：寒武纪-7%，芯原股份大幅回调，中天科技一度跌停</li>
-  <li><strong>储能暴跌</strong>：阳光电源-13%（对光储逆变器禁令影响）</li>
-  <li><strong>CPO/PCB回落</strong>：快克智能跌停，新易盛-5%，中际旭创-3%</li>
-</ul>
-
-<div class="source-link">🔗 来源：Wind 万得 · A股每日行情复盘 7/1</div>
-
+<ul><li><strong>保险板块飙升</strong>：中国人寿+9.7%尾盘逼近涨停，新华保险+9.59%，中国平安+4%</li><li><strong>券商多股涨停</strong>：华安证券、天风证券、国盛证券涨停</li><li><strong>养殖板块暴力反弹</strong>：新希望、傲农生物、湘佳股份、益生股份涨停；牧原+2.77%</li><li><strong>创新药走强</strong>：汇宇制药、宣泰医药20CM涨停，艾力斯+15%创历史新高</li><li><strong>氟化工爆发</strong>：多氟多3连板，三美股份连续2日涨停</li><li><strong>工业气体活跃</strong>：金宏气体20CM涨停，中船特气+8%</li><li><strong>算力芯片回调</strong>：寒武纪-7%，芯原股份大幅回调，中天科技一度跌停</li><li><strong>储能暴跌</strong>：阳光电源-13%（对光储逆变器禁令影响）</li><li><strong>CPO/PCB回落</strong>：快克智能跌停，新易盛-5%，中际旭创-3%</li></ul>
+<p><div class="source-link">🔗 来源：Wind 万得 · A股每日行情复盘 7/1</div></p>
 <p><strong>港股方面</strong>：7月1日港股涨跌互现，恒生科技指数半日涨1.8%，中芯国际+5%，智谱+7%。美团发布LongCat-2.0万亿参数大模型。半导体涨价潮利好港股硬科技。</p>
-
-<div class="source-link">🔗 来源：Wind 万得 · 港股市场数据</div>
-
-<div class="divider"></div>
-
+<p><div class="source-link">🔗 来源：Wind 万得 · 港股市场数据</div></p>
+<hr>
 <h2>💡 策略观点</h2>
-
 <h3>天风证券7月金股全面发布</h3>
-
 <p>天风证券7月1日批量发布7月金股推荐，覆盖多行业：</p>
-<ul class="bullet">
-  <li><strong>中际旭创</strong> — 获<strong>8家</strong>券商推荐，7月最热门金股（西部/长江/兴业/国联民生等）</li>
-  <li><strong>中国巨石/药明康德/海光信息</strong> — 各获<strong>6家</strong>推荐</li>
-  <li><strong>兆易创新/广发证券/寒武纪</strong> — 各获3-4家推荐</li>
-  <li><strong>牧原股份/腾讯控股/中芯国际/潮宏基/百润股份/安井食品/珀莱雅/美的集团</strong> — 天风推荐</li>
-</ul>
-
+<ul><li><strong>中际旭创</strong> — 获<strong>8家</strong>券商推荐，7月最热门金股（西部/长江/兴业/国联民生等）</li><li><strong>中国巨石/药明康德/海光信息</strong> — 各获<strong>6家</strong>推荐</li><li><strong>兆易创新/广发证券/寒武纪</strong> — 各获3-4家推荐</li><li><strong>牧原股份/腾讯控股/中芯国际/潮宏基/百润股份/安井食品/珀莱雅/美的集团</strong> — 天风推荐</li></ul>
 <p><strong>中际旭创核心逻辑</strong>（西部/长江证券）：</p>
-<ul class="bullet">
-  <li>全球数通光模块龙头，NPO新订单或将下达</li>
-  <li>Agent推理需求爆发推动AI算力需求持续高增长</li>
-  <li>硅光方案份额显著领先同业，降本增效净利率有望提升</li>
-</ul>
-
+<ul><li>全球数通光模块龙头，NPO新订单或将下达</li><li>Agent推理需求爆发推动AI算力需求持续高增长</li><li>硅光方案份额显著领先同业，降本增效净利率有望提升</li></ul>
 <p><strong>中国巨石核心逻辑</strong>（浙商证券）：</p>
-<ul class="bullet">
-  <li>AI高速高频PCB需求爆发直接拉动高端电子布量价齐升</li>
-  <li>特种电子布供不应求有望持续到2027年</li>
-  <li>普通电子布下半年仍有涨价预期</li>
-</ul>
-
-<div class="source-link">🔗 来源：Wind 万得 · 天风证券7月金股报告</div>
-
+<ul><li>AI高速高频PCB需求爆发直接拉动高端电子布量价齐升</li><li>特种电子布供不应求有望持续到2027年</li><li>普通电子布下半年仍有涨价预期</li></ul>
+<p><div class="source-link">🔗 来源：Wind 万得 · 天风证券7月金股报告</div></p>
 <h3>华龙证券：7月进入中报业绩披露期</h3>
-
 <p>华龙证券表示，7月市场进入半年报业绩披露期，业绩表现较好的方向将获得市场关注。当前市场仍处于总体有利环境中：美伊阶段性协议推进、霍尔木兹海峡通航逐步正常化、国际原油价格回落、市场估值总体合理。局部估值扩张较快但存在较明确景气度支撑。</p>
-
-<div class="source-link">🔗 来源：Wind 万得 · 收盘点评 7/1</div>
-
+<p><div class="source-link">🔗 来源：Wind 万得 · 收盘点评 7/1</div></p>
 <h3>中信建投：券商"科创属性"有望迎系统性价值重估</h3>
-
 <p>中证协修订《证券公司做好金融"五篇大文章"专项评价办法》，推动行业要素资源向科技创新等领域集聚。叠加A股上半年累计成交额刷新半年度历史纪录，券商二季度中报业绩有望超预期。当前非银板块估值仍处历史偏低区间。</p>
-
-<div class="source-link">🔗 来源：Wind 万得 · 中信建投研报</div>
-
+<p><div class="source-link">🔗 来源：Wind 万得 · 中信建投研报</div></p>
 <h3>开源证券：AI产业链利润向上游扩散，"AI材料"迎戴维斯双击</h3>
-
 <p>年初至今AI行情三分天下：AI材料、AI硬件、国产半导体三条主线并驾齐驱。AI材料链共识度高，伴随着涨价潮正在被市场重新定价。电子特气、电子铜箔、高端树脂、电子氟化液等材料具备较强盈利兑现能力。</p>
-
-<div class="source-link">🔗 来源：Wind 万得 · 开源证券AI上游涨价链全景梳理</div>
-
+<p><div class="source-link">🔗 来源：Wind 万得 · 开源证券AI上游涨价链全景梳理</div></p>
 <h3>中信建投：关注"去日化"交易下的材料选择</h3>
-
 <p>日本半导体材料企业在全球市占率较高（19种主要材料中14种市占率第一）。关键材料"去日化"有望进一步演绎，关注：CMP抛光液、HighK金属前驱体、六氯乙硅烷、先进封装用环氧塑封料、陶瓷基板等国产替代方向。</p>
-
-<div class="source-link">🔗 来源：Wind 万得 · 中信建投化工新材料周报</div>
-
-<div class="divider"></div>
-
+<p><div class="source-link">🔗 来源：Wind 万得 · 中信建投化工新材料周报</div></p>
+<hr>
 <h2>🔵 持仓个股增量信息</h2>
-
 <h3>A股（13只核心标的）</h3>
-
-<table>
-  <thead>
-    <tr><th>标的</th><th>代码</th><th>事件</th><th>观点</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><strong>牧原股份</strong></td><td>sz002714</td><td>① 天风证券7月金股推荐；② 秦英林获"全国优秀共产党员"；③ 猪价全线上涨，板块+4.89%，牧原主力净流入5.5亿；④ 《拜猪文》引发舆论争议</td><td>🔴 养殖板块暴力反弹，猪周期底部信号明确</td></tr>
-    <tr><td><strong>中科曙光</strong></td><td>sh603019</td><td><strong>80亿可转债获证监会注册批复</strong>（证监许可〔2026〕1498号），全额投入AI算力基础设施</td><td>🔴 6/30涨停后今日科技回调承压，长期AI逻辑未变</td></tr>
-    <tr><td><strong>浪潮信息</strong></td><td>sz000977</td><td>融资连续4日净买入，累计净买入2.42亿</td><td>🔵 融资资金持续流入</td></tr>
-    <tr><td><strong>大族激光</strong></td><td>sz002008</td><td>今日<strong>跌8.08%</strong>，成交额114亿。大宗交易13万股溢价0.38%，融资连续3日净偿还累计9.27亿</td><td>🟢 科技股回调叠加融资偿还压力</td></tr>
-    <tr><td><strong>复旦微电</strong></td><td>sh688385</td><td>融资连续4日净买入，累计净买入1.81亿，净买入额创年内新高</td><td>🔵 融资持续流入，FPGA+AI方向逻辑未变</td></tr>
-    <tr><td><strong>水晶光电</strong></td><td>sz002273</td><td><strong>连续2日涨停（2连板）</strong>，激光雷达+元宇宙概念联动。公司回应：北美大客户调价事项未对基本面产生明显影响</td><td>🔴 AR光学+涂布滤光片双轮驱动</td></tr>
-    <tr><td><strong>旭光电子</strong></td><td>sh600353</td><td>今日科技股回调环境中承压</td><td>🟠 绿通快检监制授权逻辑待观察</td></tr>
-    <tr><td><strong>宗申动力</strong></td><td>sz001696</td><td>融资连续8日净偿还累计7.81亿。<strong>ESG评级由BBB上调至A</strong></td><td>🟢 ESG改善但资金面偏弱</td></tr>
-    <tr><td><strong>韦尔股份</strong></td><td>sh603501</td><td>半导体板块今日走低，寒武纪-7%，韦尔承压</td><td>🟢 科技股集体回调背景</td></tr>
-    <tr><td><strong>致欧科技</strong></td><td>sz301376</td><td><strong>获首次覆盖研报</strong>，跨境家居龙头，多平台多渠道协同发力，盈利修复信号积极</td><td>🔵 机构首次覆盖关注</td></tr>
-    <tr><td><strong>瑞松科技</strong></td><td>sh688090</td><td><strong>主力资金净流入3602万，创逾1年新高</strong></td><td>🔴 资金面积极信号</td></tr>
-    <tr><td><strong>拓荆科技</strong></td><td>sh688072</td><td><strong>停牌中</strong>（筹划收购无锡尚积），中邮基金自6/30起采用指数收益法估值</td><td>⚠️ 停牌中，关注复牌节奏</td></tr>
-    <tr><td><strong>中船特气</strong></td><td>sh688146</td><td>电子特气概念走强，金宏气体20CM涨停带动，<strong>中船特气+8%</strong></td><td>🔴 电子特气涨价逻辑，但573倍PE需关注风险</td></tr>
-  </tbody>
-</table>
-
-<p><strong>整体特征：</strong> 今日A股风格大切换，<strong>牧原/养殖板块</strong>领涨，牧原利好集中释放（金股+政治荣誉+猪价反弹）。<strong>水晶光电</strong>2连板。科技股方面分化——<strong>中科曙光/浪潮信息</strong>融资持续流入但科技股集体回调承压，<strong>大族激光</strong>今日大跌8%。<strong>瑞松科技</strong>主力资金创逾1年新高。</p>
-
+<table><thead><tr><th>标的</th><th>代码</th><th>事件</th><th>观点</th></tr></thead><tbody><tr><td><strong>牧原股份</strong></td><td>sz002714</td><td>① 天风证券7月金股推荐；② 秦英林获"全国优秀共产党员"；③ 猪价全线上涨，板块+4.89%，牧原主力净流入5.5亿；④ 《拜猪文》引发舆论争议</td><td>🔴 养殖板块暴力反弹，猪周期底部信号明确；公司回应舆论争议，管理经营正常</td></tr><tr><td><strong>中科曙光</strong></td><td>sh603019</td><td><strong>80亿可转债获证监会注册批复</strong>（证监许可〔2026〕1498号），全额投入AI算力基础设施</td><td>🔴 6/30涨停后，今日科技股回调背景下承压，但长期AI算力逻辑未变</td></tr><tr><td><strong>浪潮信息</strong></td><td>sz000977</td><td>融资连续4日净买入，累计净买入2.42亿</td><td>🔵 信创+AI服务器核心标的，融资资金持续流入</td></tr><tr><td><strong>大族激光</strong></td><td>sz002008</td><td>今日<strong>跌8.08%</strong>，成交额114亿。大宗交易成交13万股（溢价0.38%），融资连续3日净偿还累计9.27亿</td><td>🟢 科技股回调叠加融资偿还压力，需关注回调幅度</td></tr><tr><td><strong>复旦微电</strong></td><td>sh688385</td><td>融资连续4日净买入，累计净买入1.81亿，净买入额创年内新高</td><td>🔵 融资持续流入，FPGA+AI方向逻辑未变</td></tr><tr><td><strong>水晶光电</strong></td><td>sz002273</td><td><strong>连续2日涨停（2连板）</strong>，激光雷达+元宇宙概念联动。公司回应：北美大客户调价事项未对基本面产生明显影响</td><td>🔴 AR光学+涂布滤光片双轮驱动，2026H2有望小批量量产贡献收入</td></tr><tr><td><strong>旭光电子</strong></td><td>sh600353</td><td>今日科技股回调环境中承压</td><td>🟠 绿通快检监制授权逻辑待观察</td></tr><tr><td><strong>宗申动力</strong></td><td>sz001696</td><td>融资连续8日净偿还，累计净偿还7.81亿。<strong>ESG评级由BBB上调至A</strong></td><td>🟢 融资持续净偿还，但ESG评级提升是积极信号</td></tr><tr><td><strong>韦尔股份</strong></td><td>sh603501</td><td>半导体板块今日走低，寒武纪-7%，韦尔承压</td><td>🟢 科技股集体回调背景</td></tr><tr><td><strong>致欧科技</strong></td><td>sz301376</td><td><strong>获首次覆盖研报</strong>，跨境家居龙头，多平台多渠道协同发力，盈利修复信号积极</td><td>🔵 机构首次覆盖，核心关注海外仓配+多渠道协同效应释放</td></tr><tr><td><strong>瑞松科技</strong></td><td>sh688090</td><td><strong>主力资金净流入3602万，创逾1年新高</strong></td><td>🔴 资金面积极信号，康宁GlassBridge方向持续跟踪</td></tr><tr><td><strong>拓荆科技</strong></td><td>sh688072</td><td><strong>停牌中</strong>（筹划收购无锡尚积），中邮基金自6/30起采用指数收益法估值</td><td>⚠️ 停牌中，基金估值调整关注复牌节奏</td></tr><tr><td><strong>中船特气</strong></td><td>sh688146</td><td>今日电子特气概念走强，金宏气体20CM涨停带动，<strong>中船特气+8%</strong></td><td>🔴 复牌后持续活跃，电子特气涨价逻辑持续；但573倍PE需关注风险</td></tr></tbody></table>
+<p><strong>整体特征：</strong> 今日A股风格大切换，<strong>牧原/养殖板块</strong>领涨，牧原利好集中释放（金股+政治荣誉+猪价反弹）。<strong>水晶光电</strong>2连板，光学+AR概念持续发酵。科技股方面分化——<strong>中科曙光/浪潮信息</strong>融资持续流入但今日科技股集体回调承压，<strong>大族激光</strong>今日大跌8%。<strong>瑞松科技</strong>主力资金创逾1年新高。<strong>拓荆科技</strong>仍停牌中。</p>
 <h3>港股（7只核心标的）</h3>
-
-<table>
-  <thead>
-    <tr><th>标的</th><th>代码</th><th>今日动态</th><th>观点</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><strong>腾讯控股</strong></td><td>hk00700</td><td>天风证券7月金股推荐（共2家券商推荐），隔夜中概股腾讯+2.95%</td><td>🔴 持续回购+金股推荐</td></tr>
-    <tr><td><strong>美团-W</strong></td><td>hk03690</td><td><strong>发布LongCat-2.0万亿参数大模型</strong>，业界首个五万卡国产算力集群全流程训练，即将开源；连续2日回购累计2亿港元</td><td>🔴 国产算力里程碑！投资价值重估</td></tr>
-    <tr><td><strong>中芯国际</strong></td><td>hk00981</td><td>天风证券7月金股推荐。全球近20家模拟及功率半导体企业7/1启动新一轮涨价</td><td>🔴 涨价周期+国产替代双受益</td></tr>
-    <tr><td><strong>携程集团</strong></td><td>hk09961</td><td>出席第四届穗港澳影视文旅产业对接活动</td><td>🔵 暑期出行旺季+影视文旅联动</td></tr>
-    <tr><td><strong>舜宇光学科技</strong></td><td>hk02382</td><td>港股通信息技术ETF权重3.14%</td><td>🔵 车载光学全球第一+分拆上市催化</td></tr>
-    <tr><td><strong>名创优品</strong></td><td>hk09896</td><td>国元国际维持买入评级，目标价14美元；IP战略升级为自有生态孵化</td><td>🔵 估值仅8.3倍PE，上行空间显著</td></tr>
-    <tr><td><strong>中国太平</strong></td><td>hk00966</td><td>无明显增量公告</td><td>保险板块估值修复逻辑</td></tr>
-  </tbody>
-</table>
-
-<p><strong>港股特征：</strong> 美团LongCat-2.0是今日最大亮点——国产算力产业链需求确定性与订单可见度被显著增强。王兴在股东会上坦承两大战略失误，释放"财务纪律"信号。</p>
-
-<div class="divider"></div>
-
+<table><thead><tr><th>标的</th><th>代码</th><th>今日动态</th><th>观点</th></tr></thead><tbody><tr><td><strong>腾讯控股</strong></td><td>hk00700</td><td>天风证券7月金股推荐（共2家券商推荐），隔夜中概股腾讯+2.95%</td><td>🔴 持续回购+金股推荐，港股科技反弹核心</td></tr><tr><td><strong>美团-W</strong></td><td>hk03690</td><td><strong>发布LongCat-2.0万亿参数大模型</strong>，业界首个五万卡国产算力集群全流程训练，即将开源；连续2日回购累计2亿港元；王兴股东会反思两大战略失误</td><td>🔴 国产算力里程碑！美团万亿参数模型彻底打消国产算力疑虑，投资价值重估催化</td></tr><tr><td><strong>中芯国际</strong></td><td>hk00981</td><td>天风证券7月金股推荐。全球近20家模拟及功率半导体企业7/1启动新一轮涨价</td><td>🔴 涨价周期+国产替代双受益，天风金股覆盖</td></tr><tr><td><strong>携程集团</strong></td><td>hk09961</td><td>出席第四届穗港澳影视文旅产业对接活动，"跟着影视去旅行"主题演讲</td><td>🔵 暑期出行旺季+影视文旅联动，基本面稳健</td></tr><tr><td><strong>舜宇光学科技</strong></td><td>hk02382</td><td>港股通信息技术ETF权重3.14%，半导体涨价潮带动电子产业链</td><td>🔵 车载光学全球第一+分拆上市催化，等待港股流动性改善</td></tr><tr><td><strong>名创优品</strong></td><td>hk09896</td><td>国元国际维持买入评级，目标价14美元；IP战略升级为自有生态孵化，FY26Q1营收+28.5%</td><td>🔵 估值仅8.3倍PE，具备显著上行空间</td></tr><tr><td><strong>中国太平</strong></td><td>hk00966</td><td>无明显增量公告</td><td>保险板块估值修复逻辑，等待中报催化</td></tr></tbody></table>
+<p><strong>港股特征：</strong> 美团LongCat-2.0是今日最大亮点——国产算力产业链需求确定性与订单可见度被显著增强。王兴在股东会上坦承两大战略失误（出海太晚、美团优选），释放"财务纪律"信号。中芯国际受益于全球半导体涨价潮。腾讯持续获金股推荐+回购支撑。</p>
+<hr>
 <h2>📄 ZSXQ（知识星球）</h2>
-
 <blockquote>搜索范围：水木调研纪要-2.0（群ID: 88888142214212）+ 调研纪要更新（群ID: 48844242514558）</blockquote>
-
 <h3>今日增量（7月1日最新发布）</h3>
-
 <p><strong>水木调研纪要-2.0 今日热门帖：</strong></p>
-
-<table>
-  <thead>
-    <tr><th>时间</th><th>标题</th><th>关键词</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>17:39</td><td>【国投证券化工&新材料】7月金股</td><td>金股/新材料</td></tr>
-    <tr><td>17:39</td><td>【星源材质】7月金股—半导体零部件</td><td>金股/半导体材料</td></tr>
-    <tr><td>17:39</td><td>天风通信｜【飞凯材料】交流</td><td>通信/材料</td></tr>
-    <tr><td>17:38</td><td>【中信建投医药】创新药：全球临床</td><td>创新药</td></tr>
-    <tr><td>17:38</td><td>东方非银：券商Q2环比Q1继续改善</td><td>券商/非银</td></tr>
-    <tr><td>17:38</td><td>【天风机械】今日我们重点看好的...</td><td>机械</td></tr>
-    <tr><td>17:37</td><td>【阳光电源】对光储逆变器禁令的</td><td>阳光电源/储能</td></tr>
-    <tr><td>17:37</td><td>阳光电源交流更新0701</td><td>阳光电源</td></tr>
-    <tr><td>17:36</td><td>今日科技波动点评 — 风格切换</td><td>科技/策略</td></tr>
-    <tr><td>14:32</td><td>⭐️⭐️⭐️【国金AI金属】钽</td><td><span class="tag" style="background:rgba(227,179,65,0.15);color:var(--yellow);">AI金属/钽</span></td></tr>
-    <tr><td>14:29</td><td>【华泰电子】强call北京君正</td><td><span class="tag" style="background:rgba(248,81,73,0.15);color:var(--red);">电子/强call</span></td></tr>
-    <tr><td>14:28</td><td>【国金农业】底部信号明确，新一轮猪周期</td><td><span class="tag" style="background:rgba(63,185,80,0.15);color:var(--green);">农业/猪周期</span></td></tr>
-    <tr><td>14:27</td><td>【国海资产配置】油价降温后</td><td>资产配置</td></tr>
-    <tr><td>14:25</td><td>🔥【SX计算机】两大信号共振</td><td>计算机</td></tr>
-    <tr><td>14:25</td><td>[玫瑰]【申万机械】强烈推荐半导体</td><td><span class="tag" style="background:rgba(188,140,255,0.15);color:var(--purple);">半导体/机械</span></td></tr>
-    <tr><td>14:24</td><td>【国金电新】再再再call六氟</td><td>六氟/化工</td></tr>
-  </tbody>
-</table>
-
+<table><thead><tr><th>时间</th><th>标题</th><th>关键词</th></tr></thead><tbody><tr><td>17:39</td><td>【国投证券化工&amp;新材料】7月金股</td><td>金股/新材料</td></tr><tr><td>17:39</td><td>【星源材质】7月金股—半导体零部件</td><td>金股/半导体材料</td></tr><tr><td>17:39</td><td>天风通信｜【飞凯材料】交流</td><td>通信/材料</td></tr><tr><td>17:38</td><td>【中信建投医药】创新药：全球临床</td><td>创新药</td></tr><tr><td>17:38</td><td>东方非银：券商Q2环比Q1继续改善</td><td>券商/非银</td></tr><tr><td>17:38</td><td>【天风机械】今日我们重点看好的...</td><td>机械</td></tr><tr><td>17:37</td><td>【阳光电源】对光储逆变器禁令的</td><td>阳光电源/储能</td></tr><tr><td>17:37</td><td>阳光电源交流更新0701</td><td>阳光电源</td></tr><tr><td>17:36</td><td>今日科技波动点评 — 风格切换</td><td>科技/策略</td></tr><tr><td>14:32</td><td>⭐️⭐️⭐️<strong>【国金AI金属】钽</strong></td><td>AI金属/钽</td></tr><tr><td>14:29</td><td>【华泰电子】<strong>强call北京君正</strong></td><td>⭐ 电子/强call</td></tr><tr><td>14:28</td><td>【国金农业】底部信号明确，<strong>新一轮猪周期</strong></td><td>⭐ 农业/猪周期</td></tr><tr><td>14:27</td><td>【国海资产配置】油价降温后</td><td>资产配置</td></tr><tr><td>14:25</td><td>🔥【SX计算机】两大信号共振</td><td>计算机</td></tr><tr><td>14:25</td><td>[玫瑰]【申万机械】<strong>强烈推荐半导体</strong></td><td>⭐ 半导体/机械</td></tr><tr><td>14:24</td><td>【国金电新】再再再call六氟</td><td>六氟/化工</td></tr></tbody></table>
 <p><strong>调研纪要更新 今日热门帖：</strong></p>
-
-<table>
-  <thead>
-    <tr><th>时间</th><th>标题</th><th>关键词</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>17:57</td><td>【信达消费】太阳纸业推荐更新</td><td>消费/造纸</td></tr>
-    <tr><td>17:57</td><td>【国联民生交运】航空日度数据</td><td>交运</td></tr>
-    <tr><td>17:56</td><td>GS 韩国收盘 — KOSPI</td><td>韩国/半导体</td></tr>
-    <tr><td>17:56</td><td>阳光电源交流更新0701</td><td>阳光电源</td></tr>
-    <tr><td>17:56</td><td><strong>特斯拉机器人量产预期上调🔥</strong></td><td><span class="tag" style="background:rgba(248,81,73,0.15);color:var(--red);">机器人</span></td></tr>
-    <tr><td>17:55</td><td>【浙商大制造】蓝箭航天更新招股书</td><td>航天/商业航天</td></tr>
-    <tr><td>17:55</td><td>【国产AI算力三个为什么】</td><td><span class="tag" style="background:rgba(88,166,255,0.15);color:var(--blue);">AI算力</span></td></tr>
-    <tr><td>17:55</td><td>【东财新消费｜美护】抖音月度</td><td>消费/美妆</td></tr>
-    <tr><td>17:38</td><td>永兴材料：季报期，买永兴！</td><td><span class="tag" style="background:rgba(63,185,80,0.15);color:var(--green);">买入/锂电</span></td></tr>
-    <tr><td>17:37</td><td><strong>【首次覆盖】致欧科技：跨境家居龙头</strong></td><td><span class="tag" style="background:rgba(188,140,255,0.15);color:var(--purple);">首次覆盖/家居</span></td></tr>
-    <tr><td>17:37</td><td>【长江电子杨洋团队】重...</td><td>电子</td></tr>
-    <tr><td>17:37</td><td>奥普特：光模块视觉设备订单暴增</td><td><span class="tag" style="background:rgba(88,166,255,0.15);color:var(--blue);">光模块</span></td></tr>
-    <tr><td>17:36</td><td>🚩【长城机械】迈信林：可能是算力...</td><td>算力/机械</td></tr>
-    <tr><td>17:36</td><td><strong>普通电子布涨价再加速</strong></td><td>电子布/涨价</td></tr>
-  </tbody>
-</table>
-
-<h3>关键词过滤 — 强推/买入/重点推荐/上调/增持（今日最新）</h3>
-
-<ol class="bullet">
-  <li>⭐ <strong>【华泰电子】强call北京君正</strong> — 水木调研纪要今日强call，半导体方向</li>
-  <li>⭐ <strong>【国金AI金属】钽</strong> — 三⭐推荐，AI金属材料方向</li>
-  <li>⭐ <strong>【国金农业】底部信号明确，新一轮猪周期</strong> — 猪周期反转信号</li>
-  <li>⭐ <strong>【申万机械】强烈推荐半导体</strong> — 半导体设备/材料方向</li>
-  <li>⭐ <strong>【国金电新】再再再call六氟</strong> — 六氟磷酸锂涨价持续关注</li>
-  <li>⭐ <strong>【信达消费】太阳纸业推荐更新</strong> — 消费建材方向</li>
-  <li>⭐ <strong>特斯拉机器人量产预期上调🔥</strong> — 机器人产业链重大利好</li>
-  <li>⭐ <strong>永兴材料：季报期，买永兴！</strong> — 锂电材料方向</li>
-  <li>⭐ <strong>【首次覆盖】致欧科技：跨境家居龙头</strong> — 首次覆盖，盈利修复逻辑</li>
-  <li>⭐ <strong>奥普特：光模块视觉设备订单暴增</strong> — 光模块检测设备</li>
-  <li>⭐ <strong>普通电子布涨价再加速</strong> — 覆铜板/PCB上游涨价</li>
-</ol>
-
+<table><thead><tr><th>时间</th><th>标题</th><th>关键词</th></tr></thead><tbody><tr><td>17:57</td><td>【信达消费】太阳纸业推荐更新</td><td>消费/造纸</td></tr><tr><td>17:57</td><td>【国联民生交运】航空日度数据</td><td>交运</td></tr><tr><td>17:56</td><td>GS 韩国收盘 — KOSPI</td><td>韩国/半导体</td></tr><tr><td>17:56</td><td>阳光电源交流更新0701</td><td>阳光电源</td></tr><tr><td>17:56</td><td><strong>特斯拉机器人量产预期上调🔥</strong></td><td>⭐ 机器人</td></tr><tr><td>17:55</td><td>【浙商大制造】蓝箭航天更新招股书</td><td>航天/商业航天</td></tr><tr><td>17:55</td><td>【国产AI算力三个为什么】</td><td>⭐ AI算力</td></tr><tr><td>17:55</td><td>【东财新消费｜美护】抖音月度</td><td>消费/美妆</td></tr><tr><td>17:38</td><td>永兴材料：<strong>季报期，买永兴！</strong></td><td>⭐ 买入/锂电</td></tr><tr><td>17:37</td><td><strong>【首次覆盖】致欧科技：跨境家居龙头</strong></td><td>⭐ 首次覆盖/家居</td></tr><tr><td>17:37</td><td>【长江电子杨洋团队】重...</td><td>电子</td></tr><tr><td>17:37</td><td>奥普特：<strong>光模块视觉设备订单暴增</strong></td><td>⭐ 光模块</td></tr><tr><td>17:36</td><td>🚩【长城机械】迈信林：可能是算力...</td><td>算力/机械</td></tr><tr><td>17:36</td><td><strong>普通电子布涨价再加速</strong></td><td>电子布/涨价</td></tr></tbody></table>
+<h3>关键词过滤 — 强推/买入/重点推荐/上调/增持</h3>
+<p><strong>（今日7月1日最新）</strong></p>
+<ul><li>⭐ <strong>【华泰电子】强call北京君正</strong> — 水木调研纪要今日强call，半导体方向</li><li>⭐ <strong>【国金AI金属】钽</strong> — 三⭐推荐，AI金属材料方向</li><li>⭐ <strong>【国金农业】底部信号明确，新一轮猪周期</strong> — 猪周期反转信号</li><li>⭐ <strong>【申万机械】强烈推荐半导体</strong> — 半导体设备/材料方向</li><li>⭐ <strong>【国金电新】再再再call六氟</strong> — 六氟磷酸锂涨价持续关注</li><li>⭐ <strong>【信达消费】太阳纸业推荐更新</strong> — 消费建材方向</li><li>⭐ <strong>特斯拉机器人量产预期上调🔥</strong> — 机器人产业链重大利好</li><li>⭐ <strong>永兴材料：季报期，买永兴！</strong> — 锂电材料方向</li><li>⭐ <strong>【首次覆盖】致欧科技：跨境家居龙头</strong> — 首次覆盖，盈利修复逻辑</li><li>⭐ <strong>奥普特：光模块视觉设备订单暴增</strong> — 光模块检测设备</li><li>⭐ <strong>普通电子布涨价再加速</strong> — 覆铜板/PCB上游涨价</li></ul>
 <p><strong>历史关键词（近3日）：</strong></p>
-<ul class="bullet">
-  <li>❗<strong>【强推中船特气】</strong>（6/30）— 中船特气今日+8%</li>
-  <li>⭐ <strong>【国泰海通医药】重点推荐医药中间体</strong>（6/29）</li>
-  <li>⭐ <strong>【国联】底部强推寒武纪</strong>（4/15）— 寒武纪今日回调-7%</li>
-</ul>
-
-<div class="divider"></div>
-
+<ul><li>❗<strong>【强推中船特气】</strong>（6/30）— 中船特气今日+8%</li><li>⭐ <strong>【国泰海通医药】重点推荐医药中间体</strong>（6/29）</li><li>⭐ <strong>【国联】底部强推寒武纪</strong>（4/15）— 寒武纪今日回调-7%</li></ul>
+<hr>
 <h2>👁️ 关注清单（11只）增量信息</h2>
-
-<table>
-  <thead>
-    <tr><th>序号</th><th>标的</th><th>今日增量</th><th>方向</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td><strong>中船特气</strong></td><td>复牌后持续活跃，今日电子特气概念走强+8%。573倍PE需警惕</td><td>🔴 电子特气涨价逻辑，但估值过高</td></tr>
-    <tr><td>2</td><td><strong>宗申动力</strong></td><td>融资连续8日净偿还，ESG评级由BBB上调至A</td><td>🟢 ESG改善，资金面偏弱</td></tr>
-    <tr><td>3</td><td><strong>水晶光电</strong></td><td><strong>2连板涨停！</strong> 激光雷达+元宇宙概念联动</td><td>🔴 强势标的，注意波动风险</td></tr>
-    <tr><td>4</td><td><strong>瑞松科技</strong></td><td>主力资金净流入3602万创逾1年新高</td><td>🔴 资金面积极信号</td></tr>
-    <tr><td>5</td><td><strong>旭光电子</strong></td><td>科技股回调背景下承压</td><td>🟠 等待催化</td></tr>
-    <tr><td>6</td><td><strong>中科曙光</strong></td><td>80亿可转债获批，6/30涨停后今日科技回调承压</td><td>🔴 长期算力逻辑未变</td></tr>
-    <tr><td>7</td><td><strong>浪潮信息</strong></td><td>融资连续4日净买入累计2.42亿</td><td>🔵 融资持续流入</td></tr>
-    <tr><td>8</td><td><strong>牧原股份</strong></td><td>天风7月金股，猪价全线上涨，板块+4.89%</td><td>🔴 猪周期底部信号</td></tr>
-    <tr><td>9</td><td><strong>大族激光</strong></td><td>今日大跌8.08%，大宗交易溢价0.38%</td><td>🟢 短期回调关注支撑</td></tr>
-    <tr><td>10</td><td><strong>复旦微电</strong></td><td>融资净买入创年内新高</td><td>🔵 融资资金持续流入</td></tr>
-    <tr><td>11</td><td><strong>致欧科技</strong></td><td>获首次覆盖研报，盈利修复信号</td><td>🔵 首次覆盖关注</td></tr>
-  </tbody>
-</table>
-
+<table><thead><tr><th>序号</th><th>标的</th><th>今日增量</th><th>方向</th></tr></thead><tbody><tr><td>1</td><td><strong>中船特气</strong></td><td>复牌后持续活跃，今日电子特气概念走强+8%。但573倍PE需警惕情绪泡沫风险</td><td>🔴 电子特气涨价逻辑，但估值过高</td></tr><tr><td>2</td><td><strong>宗申动力</strong></td><td>融资连续8日净偿还，ESG评级由BBB上调至A</td><td>🟢 ESG改善，但资金面偏弱</td></tr><tr><td>3</td><td><strong>水晶光电</strong></td><td><strong>2连板涨停！</strong> 激光雷达+元宇宙概念联动，AR光学方向获认可</td><td>🔴 强势标的，连板股注意波动风险</td></tr><tr><td>4</td><td><strong>瑞松科技</strong></td><td>主力资金净流入3602万创逾1年新高</td><td>🔴 资金面积极信号</td></tr><tr><td>5</td><td><strong>旭光电子</strong></td><td>科技股回调背景下承压</td><td>🟠 等待催化</td></tr><tr><td>6</td><td><strong>中科曙光</strong></td><td>80亿可转债获证监会注册批复，6/30涨停后今日科技回调承压</td><td>🔴 长期算力逻辑未变</td></tr><tr><td>7</td><td><strong>浪潮信息</strong></td><td>融资连续4日净买入累计2.42亿，资金持续流入</td><td>🔵 融资持续流入</td></tr><tr><td>8</td><td><strong>牧原股份</strong></td><td>天风7月金股，猪价全线上涨，板块+4.89%，养殖板块全线爆发</td><td>🔴 猪周期底部信号</td></tr><tr><td>9</td><td><strong>大族激光</strong></td><td>今日大跌8.08%，大宗交易溢价0.38%，融资连续净偿还</td><td>🟢 短期回调，关注支撑</td></tr><tr><td>10</td><td><strong>复旦微电</strong></td><td>融资净买入创年内新高，连续4日净买入</td><td>🔵 融资资金持续流入</td></tr><tr><td>11</td><td><strong>致欧科技</strong></td><td>获首次覆盖研报，跨境家居龙头，盈利修复信号</td><td>🔵 首次覆盖关注</td></tr></tbody></table>
 <h3>额外关注</h3>
-<ul class="bullet">
-  <li><strong>美团-W</strong> — LongCat-2.0万亿参数大模型，国产算力里程碑</li>
-  <li><strong>中际旭创</strong> — 7月最热门金股（8家券商推荐）</li>
-  <li><strong>寒武纪</strong> — 今日-7%回调，科技股情绪切换</li>
-  <li><strong>阳光电源</strong> — 今日暴跌-13%，光储逆变器禁令影响</li>
-  <li><strong>机器人概念</strong> — 人形机器人实景实训专项行动启动</li>
-</ul>
-
-<div class="divider"></div>
-
+<ul><li><strong>美团-W</strong> — 发布LongCat-2.0万亿参数大模型，国产算力里程碑事件，投资价值重估</li><li><strong>中际旭创</strong> — 7月最热门金股（8家券商推荐），光模块龙头</li><li><strong>寒武纪</strong> — 今日-7%回调，上半年涨幅+63.83%，短期科技股情绪切换</li><li><strong>阳光电源</strong> — 今日暴跌-13%，光储逆变器禁令影响，关注后续</li><li><strong>机器人概念</strong> — 工信部/国资委启动人形机器人实景实训专项行动，政策从"喊口号"变"下指标"</li></ul>
+<hr>
 <h2>🔗 数据溯源</h2>
-
-<table>
-  <thead>
-    <tr><th>数据类别</th><th>来源</th><th>获取方式</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>行情指数</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code> — A股每日行情复盘 7/1</td></tr>
-    <tr><td>财经新闻/政策</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code> × 8次</td></tr>
-    <tr><td>券商策略/金股</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code> — 天风/华龙/中信建投/开源等</td></tr>
-    <tr><td>个股公告/新闻</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code> — 持仓个股全覆盖</td></tr>
-    <tr><td>调研纪要/星球观点</td><td>知识星球 zsxq</td><td><code>group +topics</code> + <code>topic +search</code></td></tr>
-    <tr><td>港股数据</td><td>Wind 万得</td><td>港交所披露 + 美团/腾讯公告</td></tr>
-    <tr><td>宏观数据/PMI</td><td>Wind 万得</td><td>国家统计局6月PMI发布</td></tr>
-    <tr><td>海外市场</td><td>Wind 万得</td><td>美股/港股市场快讯</td></tr>
-  </tbody>
-</table>
-
-<div class="divider"></div>
+<table><thead><tr><th>数据类别</th><th>来源</th><th>获取方式</th></tr></thead><tbody><tr><td>行情指数</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code> — A股每日行情复盘 7/1</td></tr><tr><td>财经新闻/政策</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code> × 8次 — PMI/市场/板块/持仓全覆盖</td></tr><tr><td>券商策略/金股</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code> — 天风/华龙/中信建投/开源等7月金股</td></tr><tr><td>个股公告/新闻</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code> — 持仓个股全覆盖13+7只</td></tr><tr><td>调研纪要/星球观点</td><td>知识星球 zsxq</td><td><code>group +topics</code> + <code>topic +search</code> — 水木调研纪要-2.0 + 调研纪要更新</td></tr><tr><td>港股回购数据</td><td>Wind 万得</td><td>港交所披露 + 美团/腾讯公告</td></tr><tr><td>宏观数据/PMI</td><td>Wind 万得</td><td>国家统计局6月PMI数据发布</td></tr><tr><td>海外市场</td><td>Wind 万得</td><td>美股/港股市场快讯</td></tr></tbody></table>
+<hr>
+<blockquote>*本报告由 Cleo 🐾 自动生成 · 数据截至 2026-07-01 17:55 GMT+8 · A股正常交易日（7月开门红）*<br>*数据来源：Wind 万得金融终端 · 知识星球（zsxq）· My Research Central · <strong>via WB</strong>*</blockquote>
 
 <div class="report-footer">
-  数据来源：Wind 万得金融终端 · 知识星球（zsxq）· My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

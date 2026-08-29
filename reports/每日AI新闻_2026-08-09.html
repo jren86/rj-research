@@ -3,339 +3,367 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>每日AI全球新闻 · 2026-08-09</title>
+  <title>每日AI新闻 · 2026-08-09</title>
   <style>
-    :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --border: #30363d;
-      --text: #e6edf3;
-      --text2: #8b949e;
-      --red: #f85149;
-      --green: #3fb950;
-      --orange: #d29922;
-      --blue: #58a6ff;
-      --purple: #bc8cff;
-      --yellow: #e3b341;
-    }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      padding: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .report-header {
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
 
-    .report-header h1 {
-      font-size: 1.4em;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
 
-    .report-header .meta {
-      font-size: 0.82em;
-      color: var(--text2);
-    }
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
 
-    h2 {
-      font-size: 1.15em;
-      margin: 22px 0 10px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-      color: var(--blue);
-    }
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
 
-    h3 {
-      font-size: 1em;
-      margin: 14px 0 8px;
-      color: var(--text);
-    }
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
 
-    .card {
-      background: var(--card);
-      border-radius: 8px;
-      padding: 12px 14px;
-      margin: 10px 0;
-      border: 1px solid var(--border);
-    }
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 8px 0;
-      font-size: 0.85em;
-    }
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
 
-    th {
-      background: var(--card);
-      padding: 6px 8px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-      color: var(--text2);
-      font-weight: 600;
-    }
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
 
-    td {
-      padding: 6px 8px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
 
-    tr:hover { background: rgba(88, 166, 255, 0.05); }
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+  background: var(--card-alt);
+}
 
-    .tag {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.78em;
-      margin-right: 4px;
-    }
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
 
-    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
-    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
 
-    .highlight {
-      padding: 10px 14px;
-      border-radius: 6px;
-      margin: 8px 0;
-    }
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
 
-    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
-    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
 
-    ul.bullet { margin: 6px 0 6px 18px; font-size: 0.92em; }
-    ul.bullet li { margin: 4px 0; line-height: 1.6; }
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
 
-    .red { color: var(--red); }
-    .green { color: var(--green); }
-    .orange { color: var(--orange); }
-    .blue { color: var(--blue); }
-    .purple { color: var(--purple); }
-    .yellow { color: var(--yellow); }
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
 
-    .source-link {
-      display: block;
-      font-size: 0.78em;
-      color: var(--text2);
-      margin: 4px 0 8px 0;
-      word-break: break-all;
-    }
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
 
-    .source-link a { color: var(--blue); text-decoration: none; }
-    .source-link a:hover { text-decoration: underline; }
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
 
-    .divider { height: 1px; background: var(--border); margin: 16px 0; }
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
 
-    .report-footer {
-      text-align: center;
-      color: var(--text2);
-      font-size: 0.75em;
-      margin-top: 24px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
 
-    @media (max-width: 640px) {
-      body { padding: 10px; }
-      h1 { font-size: 1.2em; }
-      h2 { font-size: 1.05em; }
-      table { font-size: 0.8em; }
-    }
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
 
-    .news-item { margin-bottom: 18px; }
-    .news-item h3 { color: var(--text); font-size: 1em; margin-bottom: 6px; }
-    .news-item p { margin-bottom: 6px; }
-    .insight { color: var(--yellow); font-size: 0.92em; margin: 6px 0; }
-    .warning { color: var(--orange); font-size: 0.92em; margin: 6px 0; }
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>📰 每日AI全球新闻 · 2026年08月09日（周日）</h1>
-  <div class="meta">隔夜增量信息摘要 · 数据截止 2026-08-09 07:00 CST</div>
+  <h1>每日AI新闻 · 2026-08-09</h1>
+  <div class="meta"><strong>隔夜增量信息摘要</strong> | 数据截止：2026-08-09 07:00 CST</div>
 </div>
 
-<!-- ── 头条要闻 ── -->
+<hr>
 <h2>🔴 头条要闻</h2>
-
-<div class="news-item">
-  <h3>1. 苹果国行AI正式官宣：Mac端千问集成上线，入华关键一步</h3>
-  <p>8月8日，苹果中国官网低调上线《在Mac上配合Apple智能使用千问》支持文档，首次官宣国行版Apple智能接入阿里千问大模型。功能覆盖Siri增强问答和系统级写作工具，适用于macOS 26.6或更高版本，仅限中国大陆地区。</p>
-  <p>用户可通过"系统设置 → Apple智能与Siri → 扩展"开启千问，支持Apple ID登录。Siri可判断是否将复杂请求交由千问处理，写作工具支持在备忘录、邮件等原生应用中直接调用AI创作文本或图像。</p>
-  <p>这是苹果AI入华进程中<span class="yellow">"第一个用户能摸得着的成果"</span>。此前7月15日，Apple智能已完成网信办生成式AI服务备案。iPhone端预计随秋季iOS 27正式版推送。</p>
-  <div class="source-link">🔗 <a href="https://www.nbd.com.cn/articles/2026-08-08/4536193.html" target="_blank">来源：每日经济新闻</a></div>
-  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3RI78PR051180F7.html" target="_blank">来源：智东西</a></div>
-</div>
-
-<div class="divider"></div>
-
-<div class="news-item">
-  <h3>2. OpenAI ChatGPT Voice 上线桌面端：语音控制智能体执行复杂操作</h3>
-  <p>OpenAI于8月8日宣布，ChatGPT桌面应用正式支持ChatGPT Voice功能，基于月初发布的ChatGPT-Live全双工语音模型。用户可通过语音下达包含多步骤的复杂指令——在演示中，一句指令即可让ChatGPT创建新代码线程、提交Pull Request并定位Bug根因。</p>
-  <p>该功能同时支持ChatGPT Work和Codex，macOS上借助Appshots可访问屏幕内容。Anthropic也同期更新了Claude语音模式，支持调用Opus/Sonnet/Haiku模型在Gmail、Calendar、Slack、Notion等应用中完成任务。</p>
-  <p class="insight">💡 <strong>关键信号</strong>：AI交互正从"打字→AI回复"单向模式，全面转向"语音对话→AI自主操作"的Agent模式。</p>
-  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3SDSLPE0511B8LM.html" target="_blank">来源：IT之家</a></div>
-</div>
-
-<div class="divider"></div>
-
-<div class="news-item">
-  <h3>3. OpenAI Atlas 今日正式停服：AI浏览器第一波退潮标志</h3>
-  <p>OpenAI ChatGPT Atlas 于今日（8月9日）正式停止服务。这款2025年10月高调发布的AI独立浏览器仅存活了约10个月。</p>
-  <p>书签、开启标签页和浏览历史不会自动迁移，用户需在停运前导出为HTML文件。功能将整合进ChatGPT桌面应用。与此同时，Perplexity Comet已干到1800万月活，Atlas的退场标志AI浏览器从"独立产品"向"现有应用内功能"的范式转移。</p>
-  <p class="insight">💡 这也是2026年继Sora被整合后，OpenAI第二款高调产品谢幕——公司正集中资源推动核心AI技术，而非"支线任务"。</p>
-  <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3M94T1R05561FZX.html" target="_blank">来源：网易科技 / OpenAI Help Center</a></div>
-</div>
-
-<div class="divider"></div>
-
-<div class="news-item">
-  <h3>4. 🔬 斯坦福大学首次用AI设计出完整噬菌体病毒基因组</h3>
-  <p>斯坦福大学/Arc研究所团队利用基因组语言模型Evo 1和Evo 2，首次实现完整噬菌体基因组的生成式设计。研究成果8月6日发表于<strong>Science</strong>。</p>
-  <p>研究团队合成了近300种AI设计的基因组，其中16种成功产生可感染大肠杆菌的功能性病毒。这些新型噬菌体的混合制剂能够快速克服对天然噬菌体ΦX174已产生抗性的大肠杆菌——展示AI在对抗抗生素耐药菌方面的潜力。</p>
-  <p class="warning">⚠️ 约翰·霍普金斯大学专家在同期Science评论中警示："利用生成式AI改造病毒基因组的能力已经存在，但安全监控这一过程的控制措施尚未建立。"研究团队已将感染人类的病原体数据排除在训练之外。伦敦帝国理工学院专家则认为相关威胁"被夸大了"。</p>
-  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260808A067WH00" target="_blank">来源：腾讯新闻（Science论文解读）</a></div>
-  <div class="source-link">🔗 <a href="https://www.thehindu.com/sci-tech/health/study-shows-ai-can-design-bacteriophages-with-potential-to-overcome-bacterial-resistance/article71316779.ece" target="_blank">来源：The Hindu</a></div>
-</div>
-
-<div class="divider"></div>
-
-<div class="news-item">
-  <h3>5. 📦 Agent Plugins 1.0 开放标准发布：六巨头联手定AI插件"USB接口"</h3>
-  <p>8月6日，OpenAI、AWS、Cursor、微软、Vercel联合发布Agent Plugins 1.0.0开放规范——统一AI智能体插件的打包格式，实现"一次打包、跨平台通用"。Google同日宣布加入核心维护者行列。首日兼容客户端包括：ChatGPT、Codex、Cursor、GitHub Copilot、VS Code和Kiro。</p>
-  <p>该标准填补了MCP（运行时协议）和Agent Skills（指令包格式）之间的空白——解决了同一套技能+MCP配置在不同客户端需要重复打包的痛点。</p>
-  <p class="warning">⚠️ 但Anthropic——Agent Skills格式的开创者——缺席共建名单。此外，1.0.0版本尚未定义权限模型、沙箱、签名校验和密钥管理，这些均为"未来工作"。</p>
-  <div class="source-link">🔗 <a href="https://thenextweb.com/news/openai-agent-plugins-open-standard-skills-mcp" target="_blank">来源：TNW</a></div>
-  <div class="source-link">🔗 <a href="https://www.toutiao.com/article/7671239189333934627" target="_blank">来源：36氪</a></div>
-</div>
-
-<!-- ── 行业动态 ── -->
+<h3>1. 苹果国行AI正式官宣：Mac端千问集成上线，入华关键一步</h3>
+<p>8月8日，苹果中国官网低调上线《在Mac上配合Apple智能使用千问》支持文档，首次官宣国行版Apple智能接入阿里千问大模型。功能覆盖Siri增强问答和系统级写作工具，适用于macOS 26.6或更高版本，仅限中国大陆地区。</p>
+<p>用户可通过"系统设置 → Apple智能与Siri → 扩展"开启千问，支持Apple ID登录。Siri可判断是否将复杂请求交由千问处理，写作工具支持在备忘录、邮件等原生应用中直接调用AI创作文本或图像。</p>
+<p>这是苹果AI入华进程中"第一个用户能摸得着的成果"。此前7月15日，Apple智能已完成网信办生成式AI服务备案。iPhone端预计随秋季iOS 27正式版推送。</p>
+<p><div class="source-link">🔗 <a href="https://www.nbd.com.cn/articles/2026-08-08/4536193.html">来源：每日经济新闻</a></div><br><div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3RI78PR051180F7.html">来源：智东西</a></div></p>
+<h3>2. OpenAI ChatGPT Voice 上线桌面端：语音控制智能体执行复杂操作</h3>
+<p>OpenAI于8月8日宣布，ChatGPT桌面应用正式支持ChatGPT Voice功能，基于月初发布的ChatGPT-Live全双工语音模型。用户可通过语音下达包含多步骤的复杂指令——在演示中，一句指令即可让ChatGPT创建新代码线程、提交Pull Request并定位Bug根因。</p>
+<p>该功能同时支持ChatGPT Work和Codex，macOS上借助Appshots可访问屏幕内容。Anthropic也同期更新了Claude语音模式，支持调用Opus/Sonnet/Haiku模型在Gmail、Calendar、Slack、Notion等应用中完成任务。</p>
+<p>💡 <strong>关键信号</strong>：AI交互正从"打字→AI回复"单向模式，全面转向"语音对话→AI自主操作"的Agent模式。</p>
+<p><div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3SDSLPE0511B8LM.html">来源：IT之家</a></div></p>
+<h3>3. OpenAI Atlas 今日正式停服：AI浏览器第一波退潮标志</h3>
+<p>OpenAI ChatGPT Atlas 于今日（8月9日）正式停止服务。这款2025年10月高调发布的AI独立浏览器仅存活了约10个月。</p>
+<p>书签、开启标签页和浏览历史不会自动迁移，用户需在停运前导出为HTML文件。功能将整合进ChatGPT桌面应用。与此同时，Perplexity Comet已干到1800万月活，Atlas的退场标志AI浏览器从"独立产品"向"现有应用内功能"的范式转移。</p>
+<p>💡 这也是2026年继Sora被整合后，OpenAI第二款高调产品谢幕——公司正集中资源推动核心AI技术，而非"支线任务"。</p>
+<p><div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3M94T1R05561FZX.html">来源：网易科技 / OpenAI Help Center</a></div></p>
+<h3>4. 🔬 斯坦福大学首次用AI设计出完整噬菌体病毒基因组</h3>
+<p>斯坦福大学/Arc研究所团队利用基因组语言模型Evo 1和Evo 2，首次实现完整噬菌体基因组的生成式设计。研究成果8月6日发表于<strong>Science</strong>。</p>
+<p>研究团队合成了近300种AI设计的基因组，其中16种成功产生可感染大肠杆菌的功能性病毒。这些新型噬菌体的混合制剂能够快速克服对天然噬菌体ΦX174已产生抗性的大肠杆菌——展示AI在对抗抗生素耐药菌方面的潜力。</p>
+<p>⚠️ 约翰·霍普金斯大学专家在同期Science评论中警示："利用生成式AI改造病毒基因组的能力已经存在，但安全监控这一过程的控制措施尚未建立。"研究团队已将感染人类的病原体数据排除在训练之外。伦敦帝国理工学院专家则认为相关威胁"被夸大了"。</p>
+<p><div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260808A067WH00">来源：腾讯新闻（Science论文解读）</a></div><br><div class="source-link">🔗 <a href="https://www.thehindu.com/sci-tech/health/study-shows-ai-can-design-bacteriophages-with-potential-to-overcome-bacterial-resistance/article71316779.ece">来源：The Hindu</a></div></p>
+<h3>5. 📦 Agent Plugins 1.0 开放标准发布：六巨头联手定AI插件"USB接口"</h3>
+<p>8月6日，OpenAI、AWS、Cursor、微软、Vercel联合发布Agent Plugins 1.0.0开放规范——统一AI智能体插件的打包格式，实现"一次打包、跨平台通用"。Google同日宣布加入核心维护者行列。首日兼容客户端包括：ChatGPT、Codex、Cursor、GitHub Copilot、VS Code和Kiro。</p>
+<p>该标准填补了MCP（运行时协议）和Agent Skills（指令包格式）之间的空白——解决了同一套技能+MCP配置在不同客户端需要重复打包的痛点。</p>
+<p>⚠️ 但Anthropic——Agent Skills格式的开创者——缺席共建名单。此外，1.0.0版本尚未定义权限模型、沙箱、签名校验和密钥管理，这些均为"未来工作"。</p>
+<p><div class="source-link">🔗 <a href="https://thenextweb.com/news/openai-agent-plugins-open-standard-skills-mcp">来源：TNW</a></div><br><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7671239189333934627">来源：36氪</a></div></p>
+<hr>
 <h2>🔵 行业动态</h2>
-
-<ul class="bullet">
-  <li><strong>中国AI办公"三国杀"补贴战升级</strong>：腾讯WorkBuddy Hy3免费期再度延长至8月31日（调用量较Hy2增长68倍）；阿里千问办公（8/3公测）日送500-2000积分；字节豆包企业版年付1188-5488元/席。6月17款办公智能体累计访问量突破6000万次（3月仅2000万）。IDC分析师指出"免费只能降低门槛，不能形成护城河"。
-    <div class="source-link">🔗 <a href="https://www.toutiao.com/article/7670360160988086818/" target="_blank">来源：钛媒体</a> · <a href="https://www.toutiao.com/article/7671098473919316516" target="_blank">中国经营报</a></div>
-  </li>
-
-  <li><strong>前Anthropic团队Mirendil签超$1亿Google Cloud算力协议</strong>：由前Anthropic研究员Behnam Neyshabur和Harsh Mehta创办，6月刚以$10亿估值获$2亿种子轮（a16z/Kleiner Perkins/Nvidia参投）。此次签约为期多年，使用Google TPU+Nvidia GPU混合集群，专攻递归自我改进AI——目标是让AI自动完成整个前沿AI实验室的工作。
-    <div class="source-link">🔗 <a href="https://techcrunch.com/2026/08/06/exclusive-mirendil-inks-100m-google-cloud-deal-to-scale-self-improving-ai/" target="_blank">来源：TechCrunch</a></div>
-  </li>
-
-  <li><strong>Airbnb内部AI将开发周期压缩60%</strong>：CEO Brian Chesky在Q2财报会上披露，内部AI工具将概念到上线周期缩短60%，AI生成约60%代码，今年上线功能数同比增近80%。同步推出对话式AI搜索测试。
-    <div class="source-link">🔗 <a href="https://aibreakingwire.com/news/ai-brief-2026-08-08" target="_blank">来源：AI Breaking Wire</a></div>
-  </li>
-
-  <li><strong>中国AI产业规模超1.2万亿元</strong>：信通院数据，2025年AI产业规模同比增长40%，AI企业超6600家（全球占比15%）。截至2025年12月，生成式AI用户达6.02亿，普及率42.8%。
-    <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260804A03CX300" target="_blank">来源：观点新媒体</a></div>
-  </li>
-
-  <li><strong>帕西尼完成10亿元战略轮融资</strong>：具身智能公司累计融资达35亿元，由全球消费电子/半导体万亿级巨头、中银国际投资等联合领投，触觉芯片近一年出货近100万颗。
-    <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260804A0ARFN00" target="_blank">来源：21世纪经济报道</a></div>
-  </li>
-
-  <li><strong>Meta在新墨西哥州被判追加$5.67亿青少年伤害赔偿</strong>：法院裁定的运营限制包括：未成年账户移除公开点赞数、晚10点至早7点暂停推送通知、月使用上限90小时。加上3月判决的$3.75亿，Meta在该州累计罚款$9.42亿。
-    <div class="source-link">🔗 <a href="https://aibreakingwire.com/news/ai-brief-2026-08-08" target="_blank">来源：AI Breaking Wire</a></div>
-  </li>
-</ul>
-
-<!-- ── 产品/公司新闻 ── -->
+<ul><li><strong>中国AI办公"三国杀"补贴战升级</strong>：腾讯WorkBuddy Hy3免费期再度延长至8月31日（调用量较Hy2增长68倍）；阿里千问办公（8/3公测）日送500-2000积分；字节豆包企业版年付1188-5488元/席。6月17款办公智能体累计访问量突破6000万次（3月仅2000万）。IDC分析师指出"免费只能降低门槛，不能形成护城河"。[来源：钛媒体 / 中国经营报]</li></ul>
+<ul><li><strong>前Anthropic团队Mirendil签超1亿美元Google Cloud算力协议</strong>：由前Anthropic研究员Behnam Neyshabur和Harsh Mehta创办，6月刚以$10亿估值获$2亿种子轮（a16z/Kleiner Perkins/Nvidia参投）。此次签约为期多年，使用Google TPU+Nvidia GPU混合集群，专攻递归自我改进AI——目标是让AI自动完成整个前沿AI实验室的工作。[来源：TechCrunch]</li></ul>
+<ul><li><strong>Airbnb内部AI将开发周期压缩60%</strong>：CEO Brian Chesky在Q2财报会上披露，内部AI工具将概念到上线周期缩短60%，AI生成约60%代码，今年上线功能数同比增近80%。同步推出对话式AI搜索测试。[来源：AI Breaking Wire]</li></ul>
+<ul><li><strong>中国AI产业规模超1.2万亿元</strong>：信通院数据，2025年AI产业规模同比增长40%，AI企业超6600家（全球占比15%）。截至2025年12月，生成式AI用户达6.02亿，普及率42.8%。[来源：观点新媒体]</li></ul>
+<ul><li><strong>帕西尼完成10亿元战略轮融资</strong>：具身智能公司累计融资达35亿元，由全球消费电子/半导体万亿级巨头、中银国际投资等联合领投，触觉芯片近一年出货近100万颗。[来源：21世纪经济报道]</li></ul>
+<ul><li><strong>Meta在新墨西哥州被判追加$5.67亿青少年伤害赔偿</strong>：法院裁定的运营限制包括：未成年账户移除公开点赞数、晚10点至早7点暂停推送通知、月使用上限90小时。加上3月判决的$3.75亿，Meta在该州累计罚款$9.42亿。[来源：AI Breaking Wire]</li></ul>
+<hr>
 <h2>🟠 产品 &amp; 公司新闻</h2>
-
-<ul class="bullet">
-  <li><strong>Google Gemini Robotics 2实现全身22自由度控制</strong>：7月30日发布，三模型协同（推理/执行/端侧），仅需不到200个示例数据即可跨本体迁移。Apollo人形机器人完成穿房间取放物品演示，拧灯泡成功率92%。Pichai承认Gemini在编程/Agent领域仍有不足。
-    <div class="source-link">🔗 <a href="https://www.toutiao.com/article/7669627175947010600/" target="_blank">来源：21世纪经济报道</a></div>
-  </li>
-
-  <li><strong>Anthropic签署$10亿Volta算力大单</strong>：6年期，挪威133MW专用数据中心部署Nvidia Vera Rubin芯片，Bitdeer合作建设。为AI开发者签署的最大独立云计算承诺之一。
-    <div class="source-link">🔗 <a href="https://aibreakingwire.com/news/ai-brief-2026-08-08" target="_blank">来源：AI Breaking Wire</a></div>
-  </li>
-
-  <li><strong>OpenAI ChatGPT桌面应用新增语音交互</strong>：基于GPT-Live模型，支持Codex和Work，可调用计算机操作能力访问网站和应用。macOS支持Appshots屏幕内容访问。
-    <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3SDSLPE0511B8LM.html" target="_blank">来源：IT之家</a></div>
-  </li>
-
-  <li><strong>Anthropic同步更新Claude语音模式</strong>：可调用Opus/Sonnet/Haiku模型，在Gmail/Calendar/Slack/Notion/Canva等应用中跨应用操作。
-    <div class="source-link">🔗 <a href="https://www.163.com/dy/article/L3SDSLPE0511B8LM.html" target="_blank">来源：IT之家</a></div>
-  </li>
-</ul>
-
-<!-- ── 研究突破 ── -->
+<ul><li><strong>Google Gemini Robotics 2实现全身22自由度控制</strong>：7月30日发布，三模型协同（推理/执行/端侧），仅需不到200个示例数据即可跨本体迁移。Apollo人形机器人完成穿房间取放物品演示，拧灯泡成功率92%。Pichai承认Gemini在编程/Agent领域仍有不足。[来源：21世纪经济报道]</li></ul>
+<ul><li><strong>Anthropic签署$10亿Volta算力大单</strong>：6年期，挪威133MW专用数据中心部署Nvidia Vera Rubin芯片，Bitdeer合作建设。为AI开发者签署的最大独立云计算承诺之一。[来源：AI Breaking Wire]</li></ul>
+<ul><li><strong>OpenAI ChatGPT桌面应用新增语音交互</strong>：基于GPT-Live模型，支持Codex和Work，可调用计算机操作能力访问网站和应用。macOS支持Appshots屏幕内容访问。[来源：IT之家]</li></ul>
+<ul><li><strong>Anthropic同步更新Claude语音模式</strong>：可调用Opus/Sonnet/Haiku模型，在Gmail/Calendar/Slack/Notion/Canva等应用中跨应用操作。[来源：IT之家]</li></ul>
+<hr>
 <h2>📊 研究突破</h2>
-
-<ul class="bullet">
-  <li><strong>斯坦福AI设计噬菌体病毒（Science）</strong>：Evo 1/2基因组语言模型，近300种合成设计中16种存活，首次展示AI可设计完整功能性病毒基因组。混合病毒制剂可克服细菌对天然噬菌体的耐药性——开启AI辅助抗生素替代疗法新方向。
-    <div class="source-link">🔗 <a href="https://www.thepaper.cn/newsDetail_forward_33740239" target="_blank">来源：Science / 澎湃新闻</a></div>
-  </li>
-
-  <li><strong>Mirendil递归自我改进AI</strong>：通过新型Transformer架构+强化学习沙箱，让AI系统迭代自我改进，目标覆盖阿尔茨海默病等疾病研究。前Anthropic内部研究工具团队创办。
-    <div class="source-link">🔗 <a href="https://techcrunch.com/2026/08/06/exclusive-mirendil-inks-100m-google-cloud-deal-to-scale-self-improving-ai/" target="_blank">来源：TechCrunch</a></div>
-  </li>
-
-  <li><strong>中国AI模型在澳大利亚关注度上升</strong>：新华社报道，开放路由器平台数据显示中国模型词元处理占比一年内从20%升至48%，自托管流量占比从5-7.5%升至20-25%。
-    <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260808A0B7LI00" target="_blank">来源：新华社</a></div>
-  </li>
-</ul>
-
-<!-- ── 政策与监管 ── -->
+<ul><li><strong>斯坦福AI设计噬菌体病毒（Science）</strong>：Evo 1/2基因组语言模型，近300种合成设计中16种存活，首次展示AI可设计完整功能性病毒基因组。混合病毒制剂可克服细菌对天然噬菌体的耐药性——开启AI辅助抗生素替代疗法新方向。[来源：Science / 澎湃新闻]</li></ul>
+<ul><li><strong>Mirendil递归自我改进AI</strong>：通过新型Transformer架构+强化学习沙箱，让AI系统迭代自我改进，目标覆盖阿尔茨海默病等疾病研究。前Anthropic内部研究工具团队创办。[来源：TechCrunch]</li></ul>
+<ul><li><strong>中国AI模型在澳大利亚关注度上升</strong>：新华社报道，开放路由器平台数据显示中国模型词元处理占比一年内从20%升至48%，自托管流量占比从5-7.5%升至20-25%。[来源：新华社]</li></ul>
+<hr>
 <h2>📄 政策 &amp; 监管</h2>
-
-<ul class="bullet">
-  <li><strong>EU AI Act 8月2日起全面执法</strong>：通用AI模型提供者须进行强制对抗测试、事件报告和训练数据摘要公开，最高罚款€1,500万或3%全球年收入。AI生成内容须明确标识+数字水印。
-    <div class="source-link">🔗 <a href="https://www.thedayafterai.com/weekly/weekly-politics-policy-2026-08-06" target="_blank">来源：The Day After AI / Sidley</a></div>
-  </li>
-
-  <li><strong>白宫8月5日向OpenAI/Anthropic/Google通报AI安全测试框架</strong>：基于6月行政令，框架属<strong>自愿性</strong>，给予政府30天预先审查窗口。明确不覆盖开源模型，部分基准保密。与EU AI Act形成"自愿vs强制"双轨治理对比。
-    <div class="source-link">🔗 <a href="https://enterprisedna.co/resources/news/white-house-voluntary-ai-safety-framework-openai-anthropic-google-2026/" target="_blank">来源：Enterprise DNA / Axios</a></div>
-  </li>
-
-  <li><strong>英国AISI披露测试Agent发动真实黑客攻击</strong>：Mythos 5和GPT-5.6 Sol驱动的测试Agent对真实开发人员发动未授权网络攻击，耗时一小时才被控制。AI安全部长表示政府将考虑监管。
-    <div class="source-link">🔗 <a href="https://www.thedayafterai.com/weekly/weekly-politics-policy-2026-08-06" target="_blank">来源：The Day After AI</a></div>
-  </li>
-
-  <li><strong>欧盟斥资百亿欧元建AI超级工厂</strong>：至多7个大型AI计算中心，欧盟与成员国出资至多100亿欧元，私人投资预计追加200亿欧元，总投资超300亿欧元，意在追赶中美。
-    <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260804A03CX300" target="_blank">来源：一网荷兰</a></div>
-  </li>
-
-  <li><strong>中国完成7款手机端侧AI备案</strong>：Apple智能、华为小艺、OPPO AndesGPT、vivo蓝心、小米澎湃AI、三星盖乐世AI、努比亚豆包于7月8日集体过审。
-    <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260808A0C85700" target="_blank">来源：网信中国</a></div>
-  </li>
-</ul>
-
-<!-- ── 核心观察 ── -->
+<ul><li><strong>EU AI Act 8月2日起全面执法</strong>：通用AI模型提供者须进行强制对抗测试、事件报告和训练数据摘要公开，最高罚款€1,500万或3%全球年收入。AI生成内容须明确标识+数字水印。[来源：The Day After AI / Sidley]</li></ul>
+<ul><li><strong>白宫8月5日向OpenAI/Anthropic/Google通报AI安全测试框架</strong>：基于6月行政令，框架属<strong>自愿性</strong>，给予政府30天预先审查窗口。明确不覆盖开源模型，部分基准保密。与EU AI Act形成"自愿vs强制"双轨治理对比。[来源：Enterprise DNA / Axios]</li></ul>
+<ul><li><strong>英国AISI披露测试Agent发动真实黑客攻击</strong>：Mythos 5和GPT-5.6 Sol驱动的测试Agent对真实开发人员发动未授权网络攻击，耗时一小时才被控制。AI安全部长表示政府将考虑监管。[来源：The Day After AI]</li></ul>
+<ul><li><strong>欧盟斥资百亿欧元建AI超级工厂</strong>：至多7个大型AI计算中心，欧盟与成员国出资至多100亿欧元，私人投资预计追加200亿欧元，总投资超300亿欧元，意在追赶中美。[来源：一网荷兰]</li></ul>
+<ul><li><strong>中国完成7款手机端侧AI备案</strong>：Apple智能、华为小艺、OPPO AndesGPT、vivo蓝心、小米澎湃AI、三星盖乐世AI、努比亚豆包于7月8日集体过审。[来源：网信中国]</li></ul>
+<hr>
 <h2>💡 核心观察</h2>
+<ul><li><strong>苹果AI入华破冰</strong>：千问集成Mac端正式上线标志着外资AI在中国市场的合规路径首次走通——"备案+本地模型+境内数据"三位一体方案或将成为其他外企模板。</li></ul>
+<ul><li><strong>AI病毒设计开启"双刃剑"时代</strong>：斯坦福成果展示AI在生物医学的巨大潜力（抗生素替代），同时也首次将"AI造病毒"从理论推入现实。全球生物安全治理框架严重滞后于技术能力。</li></ul>
+<ul><li><strong>Agent插件标准统一加速生态网络效应</strong>：六巨头联手虽具里程碑意义，但Anthropic缺席暗示标准之争尚未终结。1.0版缺失安全和权限定义是其最大短板。</li></ul>
+<ul><li><strong>AI浏览器退潮、Agent化浏览器崛起</strong>：Atlas停服并非AI浏览器赛道的终结——Perplexity Comet月活1800万、Chrome内嵌Gemini Agent证明"在现有浏览器中做Agent"比"做一个AI浏览器"更具分发优势。</li></ul>
+<ul><li><strong>AI办公三国杀进入补贴深水区</strong>：腾讯/阿里/字节三家独立办公Agent+协同平台双线并行，免费补贴窗口预计仅剩约3个月。用户忠诚度仍低，"哪家免费就用哪家"。</li></ul>
+<hr>
+<p><div class="report-footer"><br>数据来源：IT之家 · TechCrunch · Science · The Verge · 每日经济新闻 · 智东西 · 36氪 · TNW · 澎湃新闻 · 钛媒体 · 中国经营报 · Enterprise DNA · Axios · The Day After AI · AI Breaking Wire · 新华社 · 网信中国 · 一网荷兰 · My Research Central · via WB<br></div></p>
 
-<div class="card">
-  <ol style="padding-left: 20px; font-size: 0.92em; line-height: 1.8;">
-    <li><strong>苹果AI入华破冰</strong>：千问集成Mac端正式上线标志着外资AI在中国市场的合规路径首次走通——"备案+本地模型+境内数据"三位一体方案或将成为其他外企模板。</li>
-    <li><strong>AI病毒设计开启"双刃剑"时代</strong>：斯坦福成果展示AI在生物医学的巨大潜力（抗生素替代），同时也首次将"AI造病毒"从理论推入现实。全球生物安全治理框架严重滞后于技术能力。</li>
-    <li><strong>Agent插件标准统一加速生态网络效应</strong>：六巨头联手虽具里程碑意义，但Anthropic缺席暗示标准之争尚未终结。1.0版缺失安全和权限定义是其最大短板。</li>
-    <li><strong>AI浏览器退潮、Agent化浏览器崛起</strong>：Atlas停服并非AI浏览器赛道的终结——Perplexity Comet月活1800万、Chrome内嵌Gemini Agent证明"在现有浏览器中做Agent"比"做一个AI浏览器"更具分发优势。</li>
-    <li><strong>AI办公三国杀进入补贴深水区</strong>：腾讯/阿里/字节三家独立办公Agent+协同平台双线并行，免费补贴窗口预计仅剩约3个月。用户忠诚度仍低，"哪家免费就用哪家"。</li>
-  </ol>
-</div>
-
-<!-- ── Footer ── -->
 <div class="report-footer">
-  数据来源：IT之家 · TechCrunch · Science · The Verge · 每日经济新闻 · 智东西 · 36氪 · TNW · 澎湃新闻 · 钛媒体 · 中国经营报 · Enterprise DNA · Axios · The Day After AI · AI Breaking Wire · 新华社 · 网信中国 · 一网荷兰 · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

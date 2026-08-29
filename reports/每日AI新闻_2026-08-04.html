@@ -5,470 +5,433 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>每日AI新闻 · 2026-08-04</title>
   <style>
-    /* ============================================
-       Unified Report Template — My Research Central
-       ============================================ */
-    :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --border: #30363d;
-      --text: #e6edf3;
-      --text2: #8b949e;
-      --red: #f85149;
-      --green: #3fb950;
-      --orange: #d29922;
-      --blue: #58a6ff;
-      --purple: #bc8cff;
-      --yellow: #e3b341;
-    }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      padding: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .report-header {
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
 
-    .report-header h1 {
-      font-size: 1.4em;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
 
-    .report-header .meta {
-      font-size: 0.82em;
-      color: var(--text2);
-    }
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
 
-    h2 {
-      font-size: 1.15em;
-      margin: 22px 0 10px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-      color: var(--blue);
-    }
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
 
-    h3 {
-      font-size: 1em;
-      margin: 14px 0 8px;
-      color: var(--text);
-    }
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
 
-    .card {
-      background: var(--card);
-      border-radius: 8px;
-      padding: 12px 14px;
-      margin: 10px 0;
-      border: 1px solid var(--border);
-    }
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 8px 0;
-      font-size: 0.85em;
-    }
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
 
-    th {
-      background: var(--card);
-      padding: 6px 8px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-      color: var(--text2);
-      font-weight: 600;
-    }
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
 
-    td {
-      padding: 6px 8px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
 
-    tr:hover {
-      background: rgba(88, 166, 255, 0.05);
-    }
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+  background: var(--card-alt);
+}
 
-    ul.bullet {
-      margin: 6px 0 6px 18px;
-      font-size: 0.92em;
-    }
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
 
-    ul.bullet li {
-      margin: 4px 0;
-      line-height: 1.6;
-    }
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
 
-    .red { color: var(--red); }
-    .green { color: var(--green); }
-    .orange { color: var(--orange); }
-    .blue { color: var(--blue); }
-    .purple { color: var(--purple); }
-    .yellow { color: var(--yellow); }
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
 
-    .tag {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.78em;
-      margin-right: 4px;
-    }
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
 
-    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
 
-    .highlight {
-      padding: 10px 14px;
-      border-radius: 6px;
-      margin: 8px 0;
-    }
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
 
-    .highlight-red {
-      background: rgba(248, 81, 73, 0.08);
-      border-left: 3px solid var(--red);
-    }
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
 
-    .highlight-blue {
-      background: rgba(88, 166, 255, 0.08);
-      border-left: 3px solid var(--blue);
-    }
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
 
-    .source-link {
-      display: block;
-      font-size: 0.78em;
-      color: var(--text2);
-      margin: 4px 0 8px 0;
-      word-break: break-all;
-    }
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
 
-    .source-link a {
-      color: var(--blue);
-      text-decoration: none;
-    }
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
 
-    .source-link a:hover {
-      text-decoration: underline;
-    }
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
 
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 16px 0;
-    }
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
 
-    .report-footer {
-      text-align: center;
-      color: var(--text2);
-      font-size: 0.75em;
-      margin-top: 24px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
 
-    .insight-box {
-      background: rgba(88, 166, 255, 0.06);
-      border-left: 3px solid var(--blue);
-      padding: 10px 14px;
-      margin: 10px 0;
-      border-radius: 6px;
-    }
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
 
-    .insight-box strong {
-      color: var(--blue);
-    }
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
 
-    p { margin: 8px 0; }
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
 
-    @media (max-width: 640px) {
-      body { padding: 10px; }
-      h1 { font-size: 1.2em; }
-      h2 { font-size: 1.05em; }
-      table { font-size: 0.8em; }
-    }
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>🔴 每日AI新闻 · 2026-08-04（周二）</h1>
-  <div class="meta">全球AI要闻 | 覆盖 8月2日–4日 隔夜增量信息 | My Research Central</div>
+  <h1>每日AI新闻 · 2026-08-04</h1>
+  <div class="meta">全球AI要闻 | 覆盖 8月2日–4日 隔夜增量信息</div>
 </div>
 
-<!-- ── 头条要闻 ── -->
+<hr>
 <h2>🔴 头条要闻</h2>
-
-<h3>1. 阿里发布 Qwen3.8-Max：2.4万亿参数旗舰模型，自主编程16天，PaperBench 93.0 超越 Fable 5</h3>
-
+<h3>1. 🔴 阿里发布 Qwen3.8-Max：2.4万亿参数旗舰模型，自主编程16天，PaperBench 93.0 超越 Fable 5</h3>
 <p>8月3日，阿里巴巴正式发布千问系列迄今最大旗舰模型 <strong>Qwen3.8-Max</strong>：总参数量 2.4 万亿（稀疏 MoE，激活仅 95B），上下文窗口 1M Tokens，支持原生视觉理解。同一日放榜的 Arena 排行榜显示 Qwen 系列已位居全球第二，仅次于 Anthropic Claude。</p>
-
-<p><strong>核心亮点：自主编程突破</strong>——从空文件夹出发，自主运行16天工程循环，完成 "oh-my-cli" 自进化智能体框架并开源至 GitHub。团队同时披露了 125 小时自主科研复现、330 个子智能体协同 6,000 次量化回测等能力。</p>
-
-<div class="card">
-  <p><strong>关键数据：</strong></p>
-  <ul class="bullet">
-    <li>PaperBench <span class="red">93.0</span> 分（Fable 5 为 88.8，环比 +28.2）</li>
-    <li>CodeArena 全球第四 · Vision Arena 全球第二 · Text Arena 全球第五</li>
-    <li>国内定价 ¥12/百万输入、¥36/输出（缓存命中仅 ¥1.5）</li>
-    <li>国际价格仅为 Opus 5 的 40%（输入）/ 24%（输出）</li>
-    <li>Qwen3.8-Max 预计下周开源，同步开源 Qwen3.8-27B</li>
-  </ul>
-</div>
-
-<p>同日，阿里发布 <strong>千问办公（QwenWork）</strong> Agent 产品，整合 QoderWork、悟空、MuleRun 三款 Agent，通过 PC 客户端与钉钉触达用户。阿里港股当日涨幅近 6%。</p>
-
-<div class="source-link">🔗 <a href="https://www.toutiao.com/article/7669673567243567650">来源：澎湃新闻</a> · <a href="https://www.163.com/dy/article/L3EFQHPA0518E0HL.html">阿里云云栖号</a></div>
-
-<div class="insight-box">
-  <strong>💡 关键洞察：</strong>2.4T 参数 + 95B 激活对标 Anthropic Opus 5 的稀疏路线，以「下周开源 + 1/4 价格」形成差异化攻势。自主 16 天编程意味着 AI 工程能力已从"写函数"进化到"独自交付项目"——这是 Agent 经济的关键拐点。
-</div>
-
-<div class="divider"></div>
-
-<h3>2. 白宫今日召集 AI 巨头讨论前沿模型安全测试框架</h3>
-
+<p>核心亮点：<strong>自主编程突破</strong>——从空文件夹出发，自主运行16天工程循环，完成 "oh-my-cli" 自进化智能体框架并开源至 GitHub。同时团队披露了 125 小时自主科研复现、330 个子智能体协同 6,000 次量化回测等能力。</p>
+<p><strong>关键数据：</strong></p>
+<ul><li>PaperBench 93.0 分（Fable 5 为 88.8，环比 +28.2）</li><li>CodeArena 全球第四、Vision Arena 全球第二</li><li>国内定价 ¥12/百万输入、¥36/输出（缓存命中仅 ¥1.5）</li><li>国际价格仅为 Opus 5 的 40%（输入）/ 24%（输出）</li><li>Qwen3.8-Max 预计下周开源，同步开源 Qwen3.8-27B</li></ul>
+<p>同日，阿里发布 <strong>千问办公（QwenWork）</strong> Agent 产品，整合 QoderWork、悟空、MuleRun 三款 Agent，通过 PC 客户端与钉钉触达用户。</p>
+<p><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7669673567243567650">来源：澎湃新闻</a> · <a href="https://www.163.com/dy/article/L3EFQHPA0518E0HL.html">阿里云云栖号</a></div></p>
+<blockquote>💡 <strong>关键洞察</strong>：2.4T 参数 + 95B 激活的设计思路对标 Anthropic Opus 5 的稀疏架构路线，但以开源周 + 1/4 价格形成差异化攻势。自主 16 天编程意味着 AI 工程能力已从"写函数"进化到"独自交付项目"，这是 Agent 经济的关键拐点。</blockquote>
+<hr>
+<h3>2. 🔴 白宫今日召集 AI 巨头讨论前沿模型安全测试框架</h3>
 <p>美国白宫将于当地时间 <strong>8月4日（周二）</strong> 召集 Anthropic、OpenAI、Google、Meta 等 AI 企业，讨论特朗普 6 月行政令要求的<strong>前沿模型自愿性安全评估框架</strong>。重点评估先进 AI 模型在网络攻击方面的能力。</p>
-
-<p>该框架要求开发商在模型开放前最多向政府提供 <strong>30 天访问权限</strong>，但目前基准标准仍属机密，且未设强制许可或预审机制。白宫自身的 8月1日截止日期已过、框架未如期发布，监管真空期持续。</p>
-
-<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260804A02HN700">来源：财联社</a></div>
-
-<div class="insight-box">
-  <strong>💡 关键洞察：</strong>特朗普政府延续"轻触式"监管路线（自愿框架 + 安全审查），与欧盟 8月2日生效的强制性执法形成鲜明对比。美国企业面临两边合规的双重压力，模型层合规正成为出海刚需。
-</div>
-
-<div class="divider"></div>
-
-<h3>3. OpenAI GPT-Live 全双工架构深度揭秘：推理引擎 Go 重写，WARP 协议首曝</h3>
-
-<p>8月3日，OpenAI 发布 GPT-Live 工程深度解析，首次公开第三代语音系统的全双工架构细节：</p>
-
-<ul class="bullet">
-  <li><strong>推理引擎用 Go 重写</strong>：替换 Python asyncio 管线，帧交付 p95 延迟降至旧版 p50</li>
-  <li><strong>WARP 协议</strong>（WebRTC Abridged Roundtrip Protocol）：媒体会话启动从 6 个网络往返降至 1 个</li>
-  <li><strong>Instant Connect</strong>：预协商 SDP 参数，单 UDP 包即可建立会话</li>
-  <li><strong>双模架构</strong>：GPT-Live 作为快速对话前端，GPT-5.5 在后端处理深度推理——用户感知不到切换</li>
-  <li>支持热替换模型实例、上下文预填充与压缩，全程无媒体中断</li>
-</ul>
-
-<p>该架构已支撑 ChatGPT 桌面端电脑操控和 Agent 协调功能，GPT-Live API 即将开放。</p>
-
-<div class="source-link">🔗 <a href="https://openai.com/index/introducing-gpt-live/">来源：OpenAI 官方</a> · <a href="https://vanja.io/gpt-live">深度分析：vanja.io</a></div>
-
-<div class="insight-box">
-  <strong>💡 关键洞察：</strong>GPT-Live 的真正创新不在语音模型本身，而在 <strong>「快嘴+慢脑」的委托架构</strong>。语音作为交互层正在成为全新产品范式——快速模型维持对话，昂贵推理在后台无声完成。这对所有 AI 产品设计都有深远影响。
-</div>
-
-<div class="divider"></div>
-
-<h3>4. OpenAI Astra 首批成果：$2,000 算力攻克 10 道十年未解数学难题</h3>
-
-<p>8月1日，OpenAI 公布下一代模型 <strong>Astra</strong> 首个公开成果：10 项数学与理论计算机科学前沿突破，全部经 <strong>Lean 形式化验证</strong>，代码开源至 GitHub。</p>
-
-<div class="card">
-  <p><strong>核心成果：</strong></p>
-  <ul class="bullet">
-    <li>高维球堆积新上界（触及 Cohn-Elkies 阈值）</li>
-    <li>非索菲克群的构造</li>
-    <li>最近向量问题（CVP）多项式因子近似硬度（涉及后量子密码学）</li>
-    <li>Erdős 问题 #183 的解决 · 多色 Ramsey 数新界</li>
-    <li>总推理成本仅 <span class="red">$2,000</span>（GPT-5.6 Sol API 价格）</li>
-    <li>249 页论证 + 62 页发现笔记公开</li>
-  </ul>
-</div>
-
-<div class="source-link">🔗 <a href="https://openai.com/index/ten-advances-in-mathematics/">来源：OpenAI</a> · <a href="https://www.163.com/dy/article/L3EAFPAG05118O92.html">钛媒体</a></div>
-
-<div class="insight-box">
-  <strong>💡 关键洞察：</strong>"AI 做原创数学"从年初的个别突破到系统性成果，速度惊人。Lean 验证意味着不可伪造——AI 正从"答题者"变为"知识生产者"。$2,000 的价格彻底打破了"科研需要巨额投入"的预期。
-</div>
-
-<div class="divider"></div>
-
-<h3>5. 欧盟 AI 法案 8/2 全面执法启动；加州同日生效 AI 透明度法</h3>
-
-<p>8月2日成为 AI 监管史上里程碑日：<strong>两大司法管辖区同日开启执法</strong>。</p>
-
-<p><strong>欧盟：</strong></p>
-<ul class="bullet">
-  <li>AI 办公室正式获执法权：可审计模型、要求文档、限制/撤回模型，罚款最高 3% 全球年营收或 €1,500 万</li>
-  <li>透明度规则生效：聊天机器人须标明 AI 身份、深度伪造须标识、AI 生成内容须带机器可读标记</li>
-  <li>180+ 机构签署《AI 生成内容透明度行为准则》</li>
-  <li>高风险 AI 规则推迟至 2027年12月（招聘/教育等），嵌入式 AI 推迟至 2028年8月</li>
-</ul>
-
-<p><strong>加州 SB 942：</strong>月活超 100 万的生成式 AI 提供商须嵌入机器可读出处标记、提供免费公开检测工具、允许用户添加可见 AI 标签。</p>
-
-<p>对中国出海大模型厂商：内容标识已有工程实践，<strong>真正的短板在模型层系统性风险评估、重大安全事件报告、网络安全保障和技术文档留存</strong>。</p>
-
-<div class="source-link">🔗 <a href="https://ysxw.cctv.cn/article.html?item_id=5736578233430433879">来源：央视新闻</a> · <a href="https://new.qq.com/rain/a/20260803A07ORN00">腾讯新闻</a> · <a href="https://weblifter.com.au/resources/ai-news/whats-new-in-ai-week-of-03-august-2026">Web Lifter</a></div>
-
-<!-- ── 行业动态 ── -->
+<p>该框架要求开发商在模型开放前最多向政府提供 <strong>30 天访问权限</strong>，但目前相关基准标准仍属机密，且未设强制许可或预审机制。值得关注的是，白宫自身的 8月1日截止日期已过，框架未如期发布，监管真空期仍在持续。</p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260804A02HN700">来源：财联社</a></div></p>
+<blockquote>💡 <strong>关键洞察</strong>：特朗普政府延续"轻触式"监管路线（自愿框架 + 安全审查），与欧盟 8月2日生效的强制性执法形成鲜明对比。美国企业面临两边合规的双重压力。</blockquote>
+<hr>
+<h3>3. 🔴 OpenAI GPT-Live 全双工架构深度揭秘：推理引擎 Go 重写，WARP 协议首曝</h3>
+<p>8月3日，OpenAI 发布 GPT-Live 工程深度解析文章，首次公开其<strong>第三代语音系统的全双工架构</strong>细节：</p>
+<ul><li><strong>推理引擎用 Go 重写</strong>，替换 Python asyncio 管线，帧交付 p95 延迟降至旧版 p50</li><li><strong>WARP 协议</strong>（WebRTC Abridged Roundtrip Protocol）：媒体会话启动从 6 个网络往返降至 1 个</li><li><strong>Instant Connect</strong>：预协商 SDP 参数，单 UDP 包即可建立会话</li><li><strong>双模架构</strong>：GPT-Live 作为快速对话前端，GPT-5.5 在后端处理深度推理/工具调用——用户感知不到切换</li><li>支持热替换模型实例、上下文预填充与压缩，全程无媒体中断</li></ul>
+<p>该架构已支撑 ChatGPT 桌面端电脑操控和 Agent 协调功能，OpenAI 表示即将开放 GPT-Live API。</p>
+<p><div class="source-link">🔗 <a href="https://openai.com/index/introducing-gpt-live/">来源：OpenAI 官方</a> · <a href="https://vanja.io/gpt-live">分析：vanja.io</a></div></p>
+<blockquote>💡 <strong>关键洞察</strong>：GPT-Live 的真正创新不在语音模型本身，而在<strong>「快嘴+慢脑」的委托架构</strong>。语音作为交互层正在成为新的产品范式——快速模型维持对话，昂贵推理在后台无声完成，用户只需要一个好的"对话体验"。这对所有 AI 产品设计都有深远影响。</blockquote>
+<hr>
+<h3>4. 🔴 OpenAI Astra 首批成果：$2,000 算力攻克 10 道十年未解数学难题</h3>
+<p>8月1日，OpenAI 公布下一代模型 <strong>Astra</strong> 的首个公开成果：10 项数学与理论计算机科学前沿突破，每道题学术积压均超十年。全部结果经 <strong>Lean 形式化验证</strong>，代码开源至 GitHub。</p>
+<p><strong>核心成果：</strong></p>
+<ul><li>高维球堆积新上界（触及 Cohn-Elkies 阈值）</li><li>非索菲克群的构造</li><li>最近向量问题（CVP）的多项式因子近似硬度（涉及后量子密码学）</li><li>Erdős 问题 #183 的解决</li><li>Ramer 色彩数新界</li></ul>
+<p>关键数字：10 道题，<strong>总推理成本约 $2,000</strong>（GPT-5.6 Sol API 价格），249 页论证 + 62 页发现笔记公开。</p>
+<p><div class="source-link">🔗 <a href="https://openai.com/index/ten-advances-in-mathematics/">来源：OpenAI</a> · <a href="https://www.163.com/dy/article/L3EAFPAG05118O92.html">钛媒体</a></div></p>
+<blockquote>💡 <strong>关键洞察</strong>："AI 做原创数学"从年初的个别突破到如今的系统性成果，速度惊人。Lean 验证意味着不可伪造——AI 正在从"答题者"变为"知识生产者"。$2,000 的价格更是彻底改变了"科研需要巨额投入"的预期。</blockquote>
+<hr>
+<h3>5. 🔴 欧盟 AI 法案 8月2日全面执法启动；加州同日生效 AI 透明度法</h3>
+<p>8月2日成为 AI 监管史上的里程碑日：<strong>两大司法管辖区同日开启执法</strong>。</p>
+<p><strong>欧盟方面：</strong></p>
+<ul><li>AI 办公室正式获得执法权：可审计模型、要求文档、限制/撤回模型，罚款最高 3% 全球年营收或 €1,500 万</li><li>透明度规则生效：聊天机器人必须标明 AI 身份、深度伪造必须标识、AI 生成内容须带机器可读标记</li><li>180+ 机构签署《AI 生成内容透明度行为准则》</li><li>高风险 AI 系统规则（招聘/教育/执法等）推迟至 2027年12月，嵌入式 AI（医疗/机械）推迟至 2028年8月</li></ul>
+<p><strong>加州方面：</strong></p>
+<ul><li>SB 942 AI 透明度法同日生效：月活超 100 万的生成式 AI 提供商须嵌入机器可读出处标记、提供免费公开检测工具、允许用户添加可见 AI 标签</li></ul>
+<p>对中国出海大模型厂商的影响：内容标识已有工程实践，<strong>真正的短板在模型层系统性风险评估、重大安全事件报告、网络安全保障和技术文档留存</strong>。</p>
+<p><div class="source-link">🔗 <a href="https://ysxw.cctv.cn/article.html?item_id=5736578233430433879">来源：央视新闻</a> · <a href="https://new.qq.com/rain/a/20260803A07ORN00">腾讯新闻</a> · <a href="https://weblifter.com.au/resources/ai-news/whats-new-in-ai-week-of-03-august-2026">Web Lifter 分析</a></div></p>
+<hr>
 <h2>🔵 行业动态</h2>
-
 <h3>AI 价格战全面升级：OpenAI 降价 80%，中美模型性价比大对决</h3>
-
 <p>7月31日至8月初，全球大模型 API 价格出现历史性集中调整：</p>
-
-<table>
-  <tr><th>厂商</th><th>模型</th><th>变化</th><th>备注</th></tr>
-  <tr><td>OpenAI</td><td>GPT-5.6 Luna</td><td>输入/输出降 80%（$1→$0.20 / $6→$1.20）</td><td>永久降价</td></tr>
-  <tr><td>OpenAI</td><td>GPT-5.6 Terra</td><td>降 20%</td><td>永久降价</td></tr>
-  <tr><td>DeepSeek</td><td>V4-Flash-0731</td><td>同价升级，Agent 基准逼近 V4-Pro 预览版</td><td>公测</td></tr>
-  <tr><td>Google</td><td>Gemini 3.6 Flash</td><td>输出降 16.7%</td><td>—</td></tr>
-  <tr><td>Anthropic</td><td>Claude Sonnet 5</td><td>$2/$10 限时引入（9月1日恢复 $3/$15）</td><td>限时优惠</td></tr>
-</table>
-
-<p>标准化工作负载（2M输入+500K输出）下，DeepSeek V4 Flash 单任务成本仅 $0.42（Sol 的 1.7%），Luna 降至 $1.00（Sol 的 4%）。市场形成三路定价策略：永久压缩 / 限时获客 / 性能升级同价。</p>
-
-<div class="source-link">🔗 <a href="https://devtk.ai/en/blog/ai-api-price-war-august-2026">来源：DevTk.AI 深度分析</a> · <a href="https://www.163.com/dy/article/L3ESJ44005561FZD.html">网易</a></div>
-
-<h3>中国 AI 办公三巨头同月整合：阿里千问办公、字节豆包+飞书、腾讯 WorkBuddy</h3>
-
-<p>8月国内 AI 办公赛道出现罕见战略同步——阿里千问办公公测（整合三款 Agent）、字节飞书团队并入豆包成立"创造力服务平台"、腾讯 WorkBuddy 上线"人机双写"协同编辑。三家共同指向：<strong>让 AI 成为办公 App 基础能力，争夺下一代办公入口</strong>。</p>
-
-<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260804A00EQ900">来源：智东西</a></div>
-
-<h3>全球 AI 大抛售：$450 亿对冲基金爆仓，$5,000 亿芯片债务预警</h3>
-
-<p>7月 AI 主题大抛售中，前 OpenAI 研究员创立的 $450 亿 A I对冲基金 Situational Awareness 因 4 倍杠杆爆仓。城堡证券预测，到 2028 年美国科技公司仅 AI 芯片采购就将催生逾 $5,000 亿债务发行。分析认为市场去杠杆已完成约 90%，8 月下旬或迎布局窗口。</p>
-
-<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260804A000X300">来源：秦朔朋友圈</a> · <a href="https://view.inews.qq.com/a/20260804A02G9S00">华尔街见闻</a></div>
-
+<table><thead><tr><th>厂商</th><th>模型</th><th>变化</th><th>备注</th></tr></thead><tbody><tr><td>OpenAI</td><td>GPT-5.6 Luna</td><td>输入/输出降 80%（$1→$0.20 / $6→$1.20）</td><td>永久降价</td></tr><tr><td>OpenAI</td><td>GPT-5.6 Terra</td><td>降 20%</td><td>永久降价</td></tr><tr><td>DeepSeek</td><td>V4-Flash-0731</td><td>同价升级，Agent 基准逼近 V4-Pro 预览版</td><td>公测</td></tr><tr><td>Google</td><td>Gemini 3.6 Flash</td><td>输出降 16.7%</td><td>—</td></tr><tr><td>Anthropic</td><td>Claude Sonnet 5</td><td>$2/$10 引入价（9月1日恢复 $3/$15）</td><td>限时优惠</td></tr></tbody></table>
+<p>以标准化工作负载（2M输入+500K输出）计算，DeepSeek V4 Flash 单任务成本仅 $0.42（Sol 的 1.7%），OpenAI Luna 降至 $1.00（Sol 的 4%）。市场形成三路定价策略：永久压缩（OpenAI）、限时获客（Anthropic）、性能升级同价（DeepSeek）。</p>
+<p><div class="source-link">🔗 <a href="https://devtk.ai/en/blog/ai-api-price-war-august-2026">来源：DevTk.AI 深度分析</a> · <a href="https://www.163.com/dy/article/L3ESJ44005561FZD.html">网易</a></div></p>
+<hr>
+<h3>中国 AI 办公三巨头同月整合：阿里千问办公、字节豆包+飞书、腾讯 WorkBuddy 人机双写</h3>
+<p>8月国内 AI 办公赛道出现罕见的战略同步：</p>
+<ul><li><strong>阿里</strong>：8月3日千问办公公测，整合三款 Agent</li><li><strong>字节</strong>：飞书产品团队并入豆包，销售线划归火山引擎，成立"创造力服务平台（CSP）"</li><li><strong>腾讯</strong>：WorkBuddy 上线"人机双写"协同编辑</li></ul>
+<p>三家共同指向同一方向——<strong>让 AI 成为办公 App 的基础能力而非附加功能，争夺下一代办公入口</strong>。</p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260804A00EQ900">来源：智东西</a></div></p>
+<hr>
+<h3>全球 AI 大抛售引泡沫之辩：$450 亿对冲基金爆仓，市场去杠杆近尾声？</h3>
+<p>7月 AI 主题出现大抛售：前 OpenAI 研究员创立的 $450 亿 AI 对冲基金 Situational Awareness 因 <strong>4 倍杠杆爆仓</strong>。城堡证券预测，到 2028 年美国科技公司为支持 AI 芯片采购将在公开和私募市场累计发行逾 <strong>$5,000 亿债务</strong>，相当于彭博美国投资级指数的 5% 以上。分析认为市场去杠杆已完成约 90%，AI 投资回报初显迹象，8 月下旬或迎布局窗口。</p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260804A000X300">来源：秦朔朋友圈</a> · <a href="https://view.inews.qq.com/a/20260804A02G9S00">华尔街见闻</a></div></p>
+<hr>
 <h3>Fireworks AI 估值 $175 亿，年化收入突破 $10 亿</h3>
-
-<p>AI 推理服务商 Fireworks 完成 $15 亿融资，估值 $175 亿，ARR 达 $10 亿。Neocloud 赛道在 Together AI（$83 亿）后再添一极。</p>
-
-<div class="source-link">🔗 <a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-august-4-2026-qwen-38-max-ships-mythos-cracks-hawk-fireworks-hits-1b-arr-26ok">来源：dev.to AI Daily Digest</a></div>
-
-<h3>中国 AI 产业半年报：开源下载破 100 亿次，人形机器人 400+ 款</h3>
-
-<p>工信部数据：2025年 AI 核心产业规模突破 ¥1.2 万亿，企业超 6,200 家。H1 2026 AI 行业增长 30%+。国产开源模型全球下载量 100 亿次，HuggingFace 新增中国模型占 41%。人形机器人整机 400+ 款、全球销量占比 80%。988 款生成式 AI 服务完成备案。</p>
-
-<div class="source-link">🔗 <a href="https://cj.sina.com.cn/article/norm_detail?url=https://finance.sina.com.cn/roll/2026-08-04/doc-inimawmz2359348.shtml">来源：人民邮电报</a></div>
-
-<!-- ── 产品/公司动态 ── -->
-<h2>📱 产品 / 公司动态</h2>
-
-<h3>OpenAI 7月 ARR 继续攀升，GPT-5.6 + Codex + ChatGPT Work 为三大引擎</h3>
-
-<p>OpenAI CFO Sarah Friar 透露，7月年化经常性收入已超过 Q2 任意单月，增长动能来自 GPT-5.6 系列、企业级 Agent ChatGPT Work 和 Codex 采用率上升。Q3 收入预计继续加速。</p>
-
-<div class="source-link">🔗 <a href="https://www.toutiao.com/article/7669239185168990754">来源：第一财经</a></div>
-
-<h3>字节 Seedance 2.5 + MiniMax H3：中国视频生成双雄同日上新</h3>
-
-<p>7月31日同日发布——字节 Seedance 2.5（30s视频/长叙事/多模态音视频联合生成）和 MiniMax H3（首款开源多模态生成模型/视频编辑全球第一/¥0.8/秒 2K）。</p>
-
-<div class="source-link">🔗 <a href="https://dy.163.com/article/L380URRK05119FMA.html">来源：极客公园</a></div>
-
-<h3>京东外卖 AI 智能头盔：端侧 AI 进入垂直产业场景</h3>
-
-<p>搭载 AI 语音助手、"单王带路"路线推荐、一键 SOS、商户环境核验四项功能，首批免费发放全职骑手。</p>
-
-<div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_6756a711f1326552">来源：每日经济新闻</a></div>
-
-<h3>Apple 国行 AI 定档 9 月上线</h3>
-
-<p>苹果中国区 AI 功能（Apple Intelligence 国行版）预计 9 月随 iOS 更新上线，具体合作方待公布。中国 AI 手机渗透率有望在下半年加速。</p>
-
-<div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260804A03A9300">来源：腾讯新闻</a></div>
-
-<h3>AI 造谣首次被罚没：孙哲元利用 AI 编造虚假信息被罚 48.5 万元</h3>
-
-<p>四川证监局公布 AI 造谣处罚首案：利用 AI 工具批量编造虚假证券信息获利 8.5 万元，罚没共计 48.5 万元。AI 造谣的监管态度正从软约束走向硬执法。</p>
-
-<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260804A0386O00">来源：金融界</a></div>
-
+<p>AI 推理服务商 Fireworks 完成 $15 亿融资，估值 $175 亿，年化经常性收入已达 $10 亿。Neocloud 赛道在 Together AI（$83 亿）之后再添一极，推理基础设施的资本密度持续攀升。</p>
+<p><div class="source-link">🔗 <a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-august-4-2026-qwen-38-max-ships-mythos-cracks-hawk-fireworks-hits-1b-arr-26ok">来源：dev.to AI Daily Digest</a></div></p>
+<hr>
+<h3>中国 AI 产业半年报：开源下载破 100 亿次，人形机器人整机 400+ 款</h3>
+<p>工业和信息化部最新数据：2025 年 AI 核心产业规模突破 1.2 万亿元，专业化企业超 6,200 家。2026 上半年 AI 行业保持 <strong>30%+ 高速增长</strong>。国产开源大模型全球累计下载量突破 100 亿次，HuggingFace 新增下载中中国模型占 41%。国内人形机器人整机产品 400+ 款，全球销量占比 80%。截至 6 月末，全国 988 款生成式 AI 服务完成备案。</p>
+<p><div class="source-link">🔗 <a href="https://cj.sina.com.cn/article/norm_detail?url=https://finance.sina.com.cn/roll/2026-08-04/doc-inimawmz2359348.shtml">来源：人民邮电报</a></div></p>
+<hr>
+<h2>📱 产品/公司动态</h2>
+<h3>OpenAI 7月年化收入继续攀升，增长动力来自 GPT-5.6 + Codex + ChatGPT Work</h3>
+<p>OpenAI CFO Sarah Friar 在内部会议透露，7月 ARR 已超过 Q2 任意单月，增长动能主要来自 GPT-5.6 系列、企业级 Agent ChatGPT Work 及 Codex 采用率上升。OpenAI 预计 Q3 收入将继续加速。</p>
+<p><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7669239185168990754">来源：第一财经</a></div></p>
+<hr>
+<h3>字节 Seedance 2.5 + MiniMax H3：中国视频生成模型同日上新</h3>
+<p>7月31日，两家中国公司同日发布视频生成模型：</p>
+<ul><li><strong>字节跳动 Seedance 2.5</strong>：单次生成 30 秒（翻倍），突破长叙事能力，多模态音视频联合生成，面向影视/广告/具身智能/自动驾驶</li><li><strong>MiniMax H3</strong>：首款开源多模态生成模型，视频编辑能力全球第一，价格仅同类旗舰 1/3（¥0.8/秒 2K）</li></ul>
+<p><div class="source-link">🔗 <a href="https://dy.163.com/article/L380URRK05119FMA.html">来源：极客公园</a></div></p>
+<hr>
+<h3>京东外卖 AI 智能头盔：端侧 AI 从消费电子进入垂直产业</h3>
+<p>搭载 AI 语音助手、"单王带路"（最佳路径推荐）、一键 SOS、商户环境核验四项功能。首批免费发放全职骑手，是端侧 AI 硬件从消费电子走向产业场景的标志性落地。</p>
+<p><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_6756a711f1326552">来源：每日经济新闻</a></div></p>
+<hr>
+<h3>Apple 国行 AI 时间表敲定：9 月上线</h3>
+<p>苹果中国区 AI 功能（Apple Intelligence 国行版）预计 9 月随 iOS 更新上线，具体合作方和功能细节待官方公布。</p>
+<p><div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260804A03A9300">来源：腾讯新闻 AI 日报</a></div></p>
+<hr>
+<h3>AI 造谣被罚：孙哲元利用 AI 编造虚假信息被罚没 48.5 万元</h3>
+<p>四川证监局公布，孙哲元利用 AI 工具批量编造、传播虚假证券信息获利 8.5 万元，被罚没共计 48.5 万元。其"长期患精神疾病"申辩被驳回——<strong>AI 造谣的监管态度正在从软约束走向硬执法</strong>。</p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260804A0386O00">来源：金融界</a></div></p>
+<hr>
 <h3>月之暗面 IPO 传闻被否，Kimi K3 融资超募至 $350 亿估值</h3>
-
-<p>传闻月之暗面最早本月提交香港 IPO 申请被知情人士否认。F 轮超 $35 亿（超募 3 倍），估值 $350 亿，Pre-IPO 轮已启动（投前估值 $500 亿）。</p>
-
-<div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_6756a711f1326552">来源：每日经济新闻</a></div>
-
-<!-- ── 研究突破 ── -->
+<p>此前传闻月之暗面最早于本月提交香港 IPO 申请，知情人士已否认。公司已完成 F 轮超 $35 亿融资（超募 3 倍），估值 $350 亿，Pre-IPO 轮已提前启动（投前估值 $500 亿）。</p>
+<p><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_6756a711f1326552">来源：每日经济新闻</a></div></p>
+<hr>
 <h2>🔬 研究突破</h2>
-
-<h3>浙大"求是引擎"：AI 自主科研系统实现千步级长程推理</h3>
-
-<p>浙江大学发布 <strong>"求是引擎"</strong>，首次实现千步级长程科研推理。多智能体协同架构（规划/构建/执行/分析/质疑），能围绕开放科学目标持续判断、动态调整。光学实验验证中连续自主研究十余小时，经历多轮失败—排查—修正后自主发现多项原创成果。</p>
-
-<div class="source-link">🔗 <a href="http://scitech.ce.cn/sy/zx/202608/t20260803_3124484.shtml">来源：科技日报</a></div>
-
-<h3>自变量 HOST 框架开源：机器人看数十秒视频即学会新技能</h3>
-
-<p>自变量机器人发布 HOST（Human-to-robot One-Shot Skill Acquisition）框架并开源。机器人仅需观察数十秒人类示范视频即可学会新技能并保留已有技能库。将技能获取从"专业反复训练"简化为"拍一段视频"。</p>
-
-<div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_6756a711f1326552">来源：每日经济新闻</a></div>
-
-<h3>Anthropic Mythos 后续：HAWK 正式退出 NIST 后量子竞赛</h3>
-
-<p>HAWK 团队正式退出 NIST 后量子签名标准化流程。Anthropic 联合多所大学发布 CryptanalysisBench——将"验证 AI 发现"本身变成可度量研究方向。<strong>发现不再是最难的部分，验证才是。</strong></p>
-
-<div class="source-link">🔗 <a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-august-4-2026-qwen-38-max-ships-mythos-cracks-hawk-fireworks-hits-1b-arr-26ok">来源：dev.to</a></div>
-
-<h3>AI 监考翻车：58,000 名学生需重考</h3>
-
-<p>AI 远程监考考试中高分成绩异常激增 5 倍，导致 58,000 名学生需重新考试。再次暴露 AI 替代人工监督在公平性方面的深层缺陷。</p>
-
-<div class="source-link">🔗 <a href="https://arstechnica.com/culture/2026/08/an-ai-supervised-remote-exam-went-so-badly-that-58000-students-must-retake-it/">来源：Ars Technica</a></div>
-
-<!-- ── 政策与监管 ── -->
+<h3>浙大"求是引擎"：AI 自主科研系统，千步级长程推理</h3>
+<p>浙江大学信息与电子工程学院发布 <strong>"求是引擎"</strong>，首次实现千步级长程科研推理。系统采用多智能体协同架构（规划/构建/执行/分析/质疑），能围绕开放科学目标持续判断、动态调整、自主推进。在光学实验验证中，系统连续自主研究十余小时，经历多轮失败—排查—修正—验证后，自主发现多项原创成果。</p>
+<p><div class="source-link">🔗 <a href="http://scitech.ce.cn/sy/zx/202608/t20260803_3124484.shtml">来源：科技日报</a></div></p>
+<hr>
+<h3>自变量 HOST 框架开源：机器人看数十秒视频即可学会新技能</h3>
+<p>自变量机器人发布并开源 <strong>HOST</strong>（Human-to-robot One-Shot Skill Acquisition）框架。机器人仅需观察一段数十秒的人类示范视频，即可学会新技能且保留已有技能库。将技能获取从"专业人员反复训练"简化为"任何人拍一段视频"，降低了具身智能部署门槛。</p>
+<p><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_6756a711f1326552">来源：每日经济新闻</a></div></p>
+<hr>
+<h3>Anthropic Mythos 密码学突破后续：HAWK 正式退出 NIST 后量子竞赛</h3>
+<p>继 7月28日 Anthropic 公布 Claude Mythos 发现 HAWK 和简化 AES 的数学缺陷后，HAWK 团队已正式退出 NIST 后量子签名标准化流程。Anthropic 同期联合 ETH Zurich、特拉维夫大学、海法大学发布 <strong>CryptanalysisBench</strong>，将"验证 AI 发现"本身变成一个可度量的研究方向——<strong>发现不再是最难的部分，验证才是</strong>。</p>
+<p><div class="source-link">🔗 <a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-august-4-2026-qwen-38-max-ships-mythos-cracks-hawk-fireworks-hits-1b-arr-26ok">来源：dev.to AI Daily Digest</a></div></p>
+<hr>
+<h3>AI 监考翻车：58,000 名学生需重考，AI 远程监考高分率飙升 5 倍</h3>
+<p>AI 监考的远程考试出现严重问题，高分成绩异常激增 5 倍，导致 58,000 名学生需重新考试。事件再次暴露 AI 替代人工监督在公平性和可靠性方面的深层缺陷。</p>
+<p><div class="source-link">🔗 <a href="https://arstechnica.com/culture/2026/08/an-ai-supervised-remote-exam-went-so-badly-that-58000-students-must-retake-it/">来源：Ars Technica</a></div></p>
+<hr>
 <h2>⚖️ 政策与监管</h2>
-
 <h3>美国监管真空：白宫 8/1 截止日已过，框架未出</h3>
-
-<p>特朗普行政令要求 8月1日前发布前沿 AI 联邦评估框架，截止日已过，框架未公布。OpenAI 与 Anthropic 双双正式背书"放慢前沿 AI"公开信（1,100+ 员工联名请愿），以官方政策立场推动国际协调机制。</p>
-
-<div class="source-link">🔗 <a href="https://weblifter.com.au/resources/ai-news/whats-new-in-ai-week-of-03-august-2026">来源：Web Lifter</a></div>
-
-<h3>中国 AI 治理扩展：智能体入法 + 东莞 AI 城市方案</h3>
-
-<p>《互联网信息服务管理办法（修订草案）》将 <strong>智能体列为与网站、APP 并列的新型信息服务主体</strong>。东莞发布《人工智能+城市实施方案（2026-2030）》，系统布局全维度支撑体系。</p>
-
-<div class="source-link">🔗 <a href="https://cj.sina.com.cn/article/norm_detail?url=https://finance.sina.com.cn/roll/2026-08-04/doc-inimawmz2359348.shtml">来源：人民邮电报</a></div>
-
-<!-- ── 核心观察 ── -->
+<p>特朗普 6 月行政令要求 8月1日前发布前沿 AI 模型联邦评估框架，但截止日已过，框架未公布。与此同时，OpenAI 与 Anthropic 双双正式背书"放慢前沿 AI"公开信（原为 1,100+ 员工联名请愿），以官方政策立场推动政府建立国际协调机制，在网络攻击等风险场景中<strong>有意限制前沿模型速度</strong>。</p>
+<p><div class="source-link">🔗 <a href="https://weblifter.com.au/resources/ai-news/whats-new-in-ai-week-of-03-august-2026">来源：Web Lifter</a></div></p>
+<hr>
+<h3>中国 AI 治理版图扩展：智能体监管入法 + 东莞"人工智能+"城市方案</h3>
+<ul><li>《互联网信息服务管理办法（修订草案征求意见稿）》将 <strong>智能体列为与网站、APP 并列的新型信息服务主体</strong>，监管框架进一步延伸</li><li>东莞发布《人工智能+城市实施方案（2026-2030）》，系统布局算力/数据/模型/平台/集聚区/人才/场景/安全全维度</li><li>上半年 AI 相关行业保持 30%+ 增长，发改委预测全年增速有望维持</li></ul>
+<p><div class="source-link">🔗 <a href="https://cj.sina.com.cn/article/norm_detail?url=https://finance.sina.com.cn/roll/2026-08-04/doc-inimawmz2359348.shtml">来源：人民邮电报</a></div></p>
+<hr>
+<h3>美国 AI 芯片债务融资 2028 年将超 $5,000 亿——城堡证券预警</h3>
+<p>城堡证券最新报告预测：到 2028 年，美国科技公司仅 AI 芯片采购就将催生逾 $5,000 亿债务发行，规模相当于彭博美国投资级指数 5%+。仅 2028 年芯片制造商债务发行量就将超 $2,500 亿。"史无前例"的融资规模可能重塑投资级信用市场格局——AI 泡沫之争不再只是估值问题，更涉及信用市场的系统性稳定。</p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260804A02G9S00">来源：华尔街见闻</a></div></p>
+<hr>
 <h2>💡 核心观察</h2>
-
-<div class="card">
-  <p><strong>1. AI 模型能力正式跨过"创知"门槛</strong></p>
-  <p style="font-size:0.92em;color:var(--text2)">Qwen3.8 自主编程 16 天交付项目、Astra 攻克 10 道十年难题、求是引擎千步级自主科研——AI 从"辅助工具"到"独立研究者"的范式转换正在加速。下一个问题：人类如何定义自己在知识生产链条中的新角色？</p>
-</div>
-
-<div class="card">
-  <p><strong>2. 全球 AI 治理进入"双轨执法时代"</strong></p>
-  <p style="font-size:0.92em;color:var(--text2)">8月2日 EU/加州同日开罚，8月4日白宫又召集安全峰会。美欧路径分化（自愿 vs. 强制）但方向一致——可审计、可追踪、可追责。中国大模型出海面临"模型层合规"新挑战。</p>
-</div>
-
-<div class="card">
-  <p><strong>3. Token 价格战进入深水区</strong></p>
-  <p style="font-size:0.92em;color:var(--text2)">OpenAI Luna 降价 80% 后与 DeepSeek V4 Flash 实际价差仍有 2.4 倍。价格不再是区分因素——缓存命中率、Agent 任务成功率才是企业选型真实变量。便宜不等于划算。</p>
-</div>
-
-<div class="card">
-  <p><strong>4. 中国 AI 办公三国杀成形</strong></p>
-  <p style="font-size:0.92em;color:var(--text2)">阿里（千问办公+Qwen3.8）、字节（豆包+飞书整合）、腾讯（WorkBuddy人机双写）在同月内完成战略集结。办公场景作为最高频、最高价值的 AI 应用入口，争夺战正式开打。</p>
-</div>
-
-<div class="card">
-  <p><strong>5. "AI 发现 vs. AI 验证"瓶颈在转移</strong></p>
-  <p style="font-size:0.92em;color:var(--text2)">Anthropic 承认 Mythos 找到攻击只用一周、验证花了一个月。OpenAI Astra 依赖 Lean 形式化验证。事实：产生假说越来越便宜，区分"真突破"和"幻觉"的成本在急剧上升。</p>
-</div>
+<ul><li><strong>AI 模型能力正式跨过"创知"门槛</strong>：Qwen3.8 自主编程 16 天交付项目、Astra 攻克 10 道十年难题、求是引擎千步级自主科研——AI 从"辅助工具"到"独立研究者"的范式转换正在加速。下一个问题是：人类如何定义自己在知识生产链条中的新角色？</li></ul>
+<ul><li><strong>全球 AI 治理进入"双轨执法时代"</strong>：8月2日 EU/加州同日开罚，8月4日白宫又召集安全峰会。美欧路径分化（自愿 vs. 强制）但方向一致——可审计、可追踪、可追责。中国大模型出海面临"模型层合规"新挑战，这不是内容标识能覆盖的。</li></ul>
+<ul><li><strong>Token 价格战进入深水区</strong>：OpenAI Luna 降价 80% 后与 DeepSeek V4 Flash 的实际价差仍有 2.4 倍。价格不再是区分因素——缓存命中率、Agent 任务成功率、工具调用效率才是企业选型的真实变量。便宜不等于划算。</li></ul>
+<ul><li><strong>中国 AI 办公三国杀成形</strong>：阿里（千问办公+Qwen3.8）、字节（豆包+飞书整合）、腾讯（WorkBuddy人机双写）在同一个月内完成战略集结。办公场景作为最高频、最高价值的 AI 应用入口，争夺战正式开打。</li></ul>
+<ul><li><strong>"AI 发现 vs. AI 验证"的瓶颈在转移</strong>：Anthropic 公开承认 Mythos 找到 AES 攻击只用了一周，两个研究员花了一个月才确认正确。OpenAI Astra 的数学成果依赖 Lean 形式化验证。事实正在变成：产生假说越来越便宜，但区分"真突破"和"幻觉"的成本在急剧上升。</li></ul>
+<hr>
+<p><div class="report-footer"><br>  数据来源：TechCrunch · The Verge · Ars Technica · 腾讯新闻 · 央视新闻 · 财联社 · 澎湃新闻 · OpenAI 官方 · 人民邮电报 · 科技日报 · 每日经济新闻 · dev.to · Web Lifter · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：TechCrunch · The Verge · Ars Technica · 腾讯新闻 · 央视新闻 · 财联社 · 澎湃新闻 · OpenAI 官方 · 人民邮电报 · 科技日报 · 每日经济新闻 · dev.to · Web Lifter · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

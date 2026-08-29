@@ -3,20 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>早间投研日报 · 2026-07-30</title>
+  <title>早间日报 · 2026-07-30</title>
   <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --border: #30363d;
-  --text: #e6edf3;
-  --text2: #8b949e;
-  --red: #f85149;
-  --green: #3fb950;
-  --orange: #d29922;
-  --blue: #58a6ff;
-  --purple: #bc8cff;
-  --yellow: #e3b341;
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,414 +40,349 @@ body {
   font-size: 14px;
 }
 
-.report-header { margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-.report-header h1 { font-size: 1.4em; color: var(--text); margin-bottom: 4px; }
-.report-header .meta { font-size: 0.82em; color: var(--text2); }
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
 
-h2 { font-size: 1.15em; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--blue); }
-h3 { font-size: 1em; margin: 14px 0 8px; color: var(--text); }
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
 
-.card { background: var(--card); border-radius: 8px; padding: 12px 14px; margin: 10px 0; border: 1px solid var(--border); }
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
 
-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.85em; }
-th { background: var(--card); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text2); font-weight: 600; }
-td { padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
-tr:hover { background: rgba(88, 166, 255, 0.05); }
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
 
-.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78em; margin-right: 4px; }
-.tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-.tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-.tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-.tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-.tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
 
-.highlight { padding: 10px 14px; border-radius: 6px; margin: 8px 0; }
-.highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-.highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-.highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
 
-ul.bullet { margin: 6px 0 6px 18px; font-size: 0.92em; }
-ul.bullet li { margin: 4px 0; line-height: 1.6; }
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
 
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
 .red { color: var(--red); }
 .green { color: var(--green); }
 .orange { color: var(--orange); }
 .blue { color: var(--blue); }
 .purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
 
-.source-link { display: block; font-size: 0.78em; color: var(--text2); margin: 4px 0 8px 0; word-break: break-all; }
-.source-link a { color: var(--blue); text-decoration: none; }
-.source-link a:hover { text-decoration: underline; }
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
 
-.divider { height: 1px; background: var(--border); margin: 16px 0; }
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
 
-.report-footer { text-align: center; color: var(--text2); font-size: 0.75em; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border); }
+.source-link a:hover {
+  text-decoration: underline;
+}
 
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 10px; }
   h1 { font-size: 1.2em; }
   h2 { font-size: 1.05em; }
   table { font-size: 0.8em; }
 }
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>早间投研日报 · 2026年7月30日（周四）</h1>
+  <h1>早间日报 · 2026-07-30</h1>
   <div class="meta">数据截止：美股7/28收盘 | A股/港股7/29收盘 | 隔夜增量信息</div>
 </div>
 
-<!-- 催化剂日历 -->
+<hr>
 <h2>📅 催化剂日历</h2>
-<table>
-<tr><th>日期</th><th>事件</th><th>影响标的/板块</th></tr>
-<tr><td>7/30</td><td>中际旭创 H股正式挂牌港交所</td><td>光通信/CPO</td></tr>
-<tr><td>7/30</td><td>长飞光纤、东方钽业临时股东大会</td><td>光纤光缆 / 稀有金属</td></tr>
-<tr><td>7/31</td><td>美联储 FOMC 利率决议（北京时间凌晨）</td><td>全球风险资产</td></tr>
-<tr><td>7/31</td><td>7月政治局会议（预计）</td><td>A股政策预期</td></tr>
-<tr><td>7/31</td><td>万科企业股东特别大会</td><td>地产</td></tr>
-<tr><td>本周</td><td>微软/Meta/苹果/亚马逊 Q2财报密集披露</td><td>科技/AI产业链</td></tr>
-<tr><td>8/1</td><td>三星电机 MLCC 统一涨价30%生效</td><td>被动元件/MLCC</td></tr>
-</table>
-
-<!-- 宏观 -->
+<table><thead><tr><th>日期</th><th>事件</th><th>影响标的/板块</th></tr></thead><tbody><tr><td>7/30</td><td>中际旭创 H股正式挂牌港交所</td><td>光通信/CPO</td></tr><tr><td>7/30</td><td>长飞光纤临时股东大会</td><td>光纤光缆</td></tr><tr><td>7/30</td><td>东方钽业临时股东大会</td><td>稀有金属</td></tr><tr><td>7/31</td><td>美联储 FOMC 利率决议（北京时间凌晨）</td><td>全球风险资产</td></tr><tr><td>7/31</td><td>7月政治局会议（预计）</td><td>A股政策预期</td></tr><tr><td>7/31</td><td>万科企业股东特别大会</td><td>地产</td></tr><tr><td>本周</td><td>微软/Meta/苹果/亚马逊 Q2财报密集披露</td><td>科技/AI产业链</td></tr><tr><td>8/1</td><td>三星电机 MLCC 统一涨价30%生效</td><td>被动元件/MLCC</td></tr></tbody></table>
+<hr>
 <h2>🌍 宏观</h2>
-
-<div class="highlight highlight-red">
-<strong>🔴 美欧达成贸易协议</strong>：特朗普与冯德莱恩7/27共同宣布，美国对欧盟商品征收15%基准关税（此前威胁30%），欧盟承诺对美6,000亿美元投资+7,500亿美元能源采购。德国总理默茨表示不满但承认"无法期待更好结果"。半导体设备等战略产品纳入零关税范围。
-</div>
-<div class="source-link">🔗 来源：财联社 / 新华社</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 美联储利率决议今夜公布</strong>：华尔街普遍预期7月按兵不动，9月降息概率更高。特朗普施压降息，鲍威尔坚持依赖数据。当前联邦基金利率4.25%-4.50%。
-</div>
-<div class="source-link">🔗 来源：CNBC / 美联社</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 央行九部门联合发文科技金融</strong>：7月29日，央行等九部门印发《关于加强科技金融领域数据开发利用的通知》，鼓励地方向科技型企业提供授权开放信息渠道，加强数据共建共享。
-</div>
-<div class="source-link">🔗 来源：证券日报</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 国资委部署下半年地方国企改革</strong>：7月28-29日在京举办地方国资委负责人研讨班，研究部署下半年重点任务。多家央企密集增持回购释放积极信号。
-</div>
-<div class="source-link">🔗 来源：中国证券报</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 中美贸易会谈开始举行</strong>。离岸人民币7.1819，A50期货夜盘-0.44%。东吴证券：下半年美国财政基调趋紧，三季度海外宏观流动性有望逐步改善，加息预期将逐步落空。
-</div>
-
-<!-- 市场概览 -->
+<h3>隔夜要闻</h3>
+<p>🔴 <strong>美欧达成贸易协议</strong>：特朗普与冯德莱恩7/27共同宣布，美国对欧盟商品征收15%基准关税（此前威胁30%），欧盟承诺对美6000亿美元投资+7500亿美元能源采购。德国总理默茨表示不满但承认"无法期待更好结果"。半导体设备等战略产品纳入零关税范围。</p>
+<p>🔗 来源：财联社 / 新华社</p>
+<p>🔴 <strong>美联储利率决议今夜公布</strong>：华尔街普遍预期7月按兵不动，9月降息概率更高。特朗普施压降息，但鲍威尔坚持依赖数据。当前联邦基金利率4.25%-4.50%。</p>
+<p>🔗 来源：CNBC / 美联社</p>
+<p>🔴 <strong>央行九部门联合发文科技金融</strong>：7月29日，央行等九部门印发《关于加强科技金融领域数据开发利用的通知》，鼓励地方向科技型企业提供授权开放信息渠道，加强数据共建共享。</p>
+<p>🔗 来源：证券日报</p>
+<p>🔴 <strong>国资委部署下半年地方国企改革</strong>：7月28-29日在京举办地方国资委负责人研讨班，研究部署下半年重点任务。多家央企密集增持回购释放积极信号。</p>
+<p>🔗 来源：中国证券报</p>
+<p>🟠 <strong>中美贸易会谈开始举行</strong>。离岸人民币7.1819，A50期货夜盘-0.44%。</p>
+<p>🟠 <strong>东吴证券</strong>：下半年美国财政基调趋紧，三季度海外宏观流动性有望逐步改善，加息预期将逐步落空。</p>
+<hr>
 <h2>📊 市场概览</h2>
-
 <h3>美股（7/28收盘）— 标普纳指续创新高</h3>
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
-<tr><td>道琼斯</td><td>44,837.56</td><td class="green">-0.14%</td></tr>
-<tr><td>标普500</td><td>6,389.77</td><td class="red">+0.02%</td></tr>
-<tr><td>纳斯达克</td><td>21,178.58</td><td class="red">+0.33%</td></tr>
-</table>
-<div style="margin:6px 0 12px;font-size:0.85em;color:var(--text2);">标普500连续第6日创新高；纳指本月第14次刷新纪录（1999年12月以来最多）</div>
-
-<table>
-<tr><th>龙头股</th><th>涨跌幅</th><th>要点</th></tr>
-<tr><td>英伟达</td><td class="red">+1.88%</td><td>市值突破4.3万亿美元创历史新高</td></tr>
-<tr><td>特斯拉</td><td class="red">+3.02%</td><td>领涨七巨头</td></tr>
-<tr><td>AMD</td><td class="red">+4%+</td><td>半导体普涨</td></tr>
-<tr><td>阿斯麦</td><td class="red">+2%+</td><td>半导体设备纳入零关税</td></tr>
-<tr><td>金龙指数</td><td class="green">-0.69%</td><td>中概多数收跌</td></tr>
-</table>
-
-<table>
-<tr><th>大宗商品</th><th>价格</th><th>涨跌</th></tr>
-<tr><td>WTI原油</td><td>$66.71</td><td class="red">+2.38%</td></tr>
-<tr><td>布伦特</td><td>$70.04</td><td class="red">+2.34%</td></tr>
-<tr><td>COMEX黄金</td><td>$3,314</td><td class="green">-0.65%</td></tr>
-</table>
-<div class="source-link">🔗 来源：NeoData / 财联社 / 每经</div>
-
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>道琼斯</td><td>44,837.56</td><td><span class="red">-0.14%</span></td></tr><tr><td>标普500</td><td>6,389.77</td><td><span class="red">+0.02%</span></td></tr><tr><td>纳斯达克</td><td>21,178.58</td><td><span class="red">+0.33%</span></td></tr></tbody></table>
+<blockquote>标普500连续第6日创新高；纳指本月第14次刷新纪录（1999年12月以来最多）</blockquote>
+<table><thead><tr><th>龙头股</th><th>涨跌幅</th><th>要点</th></tr></thead><tbody><tr><td>英伟达</td><td><span class="red">+1.88%</span></td><td>市值突破4.3万亿美元创历史新高</td></tr><tr><td>特斯拉</td><td><span class="red">+3.02%</span></td><td>领涨七巨头</td></tr><tr><td>AMD</td><td><span class="red">+4%+</span></td><td>半导体普涨</td></tr><tr><td>阿斯麦</td><td><span class="red">+2%+</span></td><td>半导体设备纳入零关税</td></tr><tr><td>金龙指数</td><td><span class="green">-0.69%</span></td><td>中概多数收跌</td></tr></tbody></table>
+<table><thead><tr><th>大宗商品</th><th>价格</th><th>涨跌</th></tr></thead><tbody><tr><td>WTI原油</td><td>$66.71</td><td><span class="red">+2.38%</span></td></tr><tr><td>布伦特</td><td>$70.04</td><td><span class="red">+2.34%</span></td></tr><tr><td>COMEX黄金</td><td>$3,314</td><td><span class="green">-0.65%</span></td></tr></tbody></table>
+<p>🔗 来源：NeoData / 财联社 / 每经</p>
 <h3>A股（7/29收盘）— 午后深V反弹，大消费领涨</h3>
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr>
-<tr><td>上证综指</td><td>3,828.47</td><td class="red">+0.40%</td><td>午后拉升翻红</td></tr>
-<tr><td>深证成指</td><td>13,658.44</td><td class="red">+1.10%</td><td></td></tr>
-<tr><td>创业板指</td><td>3,378.70</td><td class="red">+1.55%</td><td>盘中一度-2%</td></tr>
-<tr><td>科创50</td><td>1,678.74</td><td class="green">-0.87%</td><td>盘中一度-5%</td></tr>
-</table>
-
-<ul class="bullet">
-<li><strong>成交额</strong>：2.31万亿（放量2,708亿）</li>
-<li><strong>涨跌家数</strong>：4,253涨 / 1,215跌（涨跌中位数+1.58%）</li>
-<li><strong>内资主力</strong>：净卖出119.5亿</li>
-<li><strong>两融余额</strong>：2.66万亿（7/28）</li>
-</ul>
-
-<p style="margin:8px 0;font-size:0.9em;">
-<span class="tag tag-red">领涨</span> 食品饮料、零售、乳业、大金融、固态电池、MLCC<br>
-<span class="tag tag-green">领跌</span> 半导体、存储芯片、光刻机、CPO、高带宽内存
-</p>
-
-<div class="highlight highlight-red">
-<strong>🔴 ETF资金持续涌入</strong>：7/28股票型ETF单日净流入超270亿，7月累计净流入超4,100亿。长鑫科技纳入MSCI中国指数将引来被动资金配置。
-</div>
-<div class="source-link">🔗 来源：NeoData / 财联社 / 人民财讯</div>
-
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>上证综指</td><td>3,828.47</td><td><span class="red">+0.40%</span></td><td>午后拉升翻红</td></tr><tr><td>深证成指</td><td>13,658.44</td><td><span class="red">+1.10%</span></td><td></td></tr><tr><td>创业板指</td><td>3,378.70</td><td><span class="red">+1.55%</span></td><td>盘中一度-2%</td></tr><tr><td>科创50</td><td>1,678.74</td><td><span class="green">-0.87%</span></td><td>盘中一度-5%</td></tr></tbody></table>
+<ul><li><strong>成交额</strong>：2.31万亿（放量2,708亿）</li><li><strong>涨跌家数</strong>：4,253涨 / 1,215跌（涨跌中位数+1.58%）</li><li><strong>内资主力</strong>：净卖出119.5亿</li><li><strong>两融余额</strong>：2.66万亿（7/28）</li></ul>
+<p><strong>板块表现</strong>：</p>
+<ul><li>🔴 领涨：食品饮料、零售、乳业、大金融、固态电池、MLCC</li><li>🟢 领跌：半导体、存储芯片、光刻机、CPO、高带宽内存</li></ul>
+<p><strong>关键个股</strong>：</p>
+<ul><li>长鑫科技 <span class="red">+12.66%</span> 报52.95元，成交448亿，将纳入MSCI中国全股票指数</li><li>中际旭创 <span class="red">+4.74%</span> 报951元</li></ul>
+<p>🔴 <strong>ETF资金持续涌入</strong>：7/28股票型ETF单日净流入超270亿，7月累计净流入超4,100亿。</p>
+<p>🔗 来源：NeoData / 财联社 / 人民财讯</p>
 <h3>港股（7/29收盘）</h3>
-<table>
-<tr><th>指数/个股</th><th>收盘</th><th>涨跌幅</th></tr>
-<tr><td>恒生指数</td><td>25,807.92</td><td class="red">+1.96%</td></tr>
-<tr><td>腾讯控股</td><td>HK$466.40</td><td class="red">+4.29%</td></tr>
-<tr><td>康方生物</td><td>HK$95.65</td><td class="green">-0.36%</td></tr>
-<tr><td>泡泡玛特</td><td>HK$166.40</td><td class="red">+2.21%</td></tr>
-<tr><td>联想集团</td><td>HK$22.98</td><td class="green">-1.88%</td></tr>
-</table>
-<div class="source-link">🔗 来源：NeoData</div>
-
-<!-- 策略观点 -->
+<table><thead><tr><th>指数/个股</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>恒生指数</td><td>25,807.92</td><td><span class="red">+1.96%</span></td></tr><tr><td>腾讯控股</td><td>HK$466.40</td><td><span class="red">+4.29%</span></td></tr><tr><td>康方生物</td><td>HK$95.65</td><td><span class="green">-0.36%</span></td></tr><tr><td>泡泡玛特</td><td>HK$166.40</td><td><span class="red">+2.21%</span></td></tr><tr><td>联想集团</td><td>HK$22.98</td><td><span class="green">-1.88%</span></td></tr></tbody></table>
+<p>🔗 来源：NeoData</p>
+<hr>
 <h2>💡 策略观点</h2>
-
-<div class="highlight highlight-red">
-<strong>🔴 中信证券：8月普遍轮动修复概率高</strong><br>二次原油冲击不改8月行情修复趋势。降风偏过程接近尾声，看好三个维度收敛——AI链上游vs下游平台型、国内非AI工业vs海外对标、科技vs非科技。
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 中信建投：W型筑底，震荡再平衡</strong><br>两融7月撤出超3,000亿但近期企稳，TMT主题ETF 4周流入超1,600亿，北向Q2净流入约1,580亿。增量资金入场仍可期待。
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 国泰基金：7月底或是再布局合适时机</strong><br>市场资金底或已确认，稳市力量与上市公司回购释放积极信号，极端交易结构逐步消化。
-</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 东吴证券</strong>：美联储加息难度较大，三季度海外流动性有望改善。科技股重点关注7月二季报，风险与机遇均在7-8月。
-</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 华西证券/国泰海通</strong>：资金从高估值科技转向低估值金融，保险股估值修复机会，"增持"评级。
-</div>
-
-<div class="source-link">🔗 来源：NeoData / 券商研报</div>
-
-<!-- 持仓个股监控 -->
+<p>🔴 <strong>中信证券</strong>：二次原油冲击不改8月行情修复趋势。降风偏过程接近尾声，8月普遍轮动修复概率高。看好三个维度收敛——AI链上游vs下游平台型、国内非AI工业vs海外对标、科技vs非科技。</p>
+<p>🔴 <strong>中信建投</strong>：W型筑底，市场"震荡再平衡"。两融7月撤出超3,000亿但近期企稳，TMT主题ETF 4周流入超1,600亿，北向Q2净流入约1,580亿。增量资金入场仍可期待。</p>
+<p>🔴 <strong>国泰基金</strong>：市场资金底或已确认，稳市力量与上市公司回购释放积极信号，极端交易结构逐步消化，7月底或是再布局的合适时机。</p>
+<p>🟠 <strong>东吴证券</strong>：美联储加息难度较大，三季度海外流动性有望改善。科技股重点关注7月二季报，风险与机遇均在7-8月。</p>
+<p>🟠 <strong>华西证券</strong>：资金从高估值科技板块撤离涌入低估值金融，保险等低估值板块可能继续受资金青睐。</p>
+<p>🟠 <strong>国泰海通</strong>：关注保险股估值修复机会，维持行业"增持"。</p>
+<p>🔗 来源：NeoData / 券商研报</p>
+<hr>
 <h2>📈 持仓个股监控（国泰海通组合 · 24只）</h2>
-
 <h3>A股（14只）</h3>
-<table>
-<tr><th>标的</th><th>代码</th><th>7/29收盘</th><th>涨跌幅</th><th>要点</th></tr>
-<tr>
-  <td>宁德时代</td><td>300750</td><td>¥396.84</td><td class="red">+1.53%</td>
-  <td>振幅5.24%，成交159亿</td>
-</tr>
-<tr>
-  <td>恒瑞医药</td><td>600276</td><td>¥53.89</td><td class="red">+1.13%</td>
-  <td><span class="tag tag-red">重磅</span> 舒地胰岛素获批（中国首个自主研发长效胰岛素），累计研发投入5.44亿</td>
-</tr>
-<tr>
-  <td>新和成</td><td>002001</td><td>¥30.30</td><td class="red">+3.80%</td>
-  <td><span class="tag tag-red">重磅</span> PA12特种尼龙国产突破，打破赢创50年全球垄断，千吨级量产</td>
-</tr>
-<tr>
-  <td>京东方A</td><td>000725</td><td>¥5.71</td><td class="red">+2.33%</td>
-  <td><span class="tag tag-red">重磅</span> 参与国仪公司战略配售，布局半导体显示量检测设备+玻璃基封装</td>
-</tr>
-<tr>
-  <td>长川科技</td><td>300604</td><td>¥271.00</td><td class="green">-1.95%</td>
-  <td>振幅13.39%，盘中一度触及249元低点</td>
-</tr>
-<tr>
-  <td>巨化股份</td><td>600160</td><td>¥39.11</td><td class="red">+1.74%</td>
-  <td>制冷剂/氟化工</td>
-</tr>
-<tr>
-  <td>中恒电气</td><td>002364</td><td>¥36.18</td><td class="red">+0.47%</td>
-  <td>换手率6.48%</td>
-</tr>
-<tr>
-  <td>亨通光电</td><td>600487</td><td>¥49.75</td><td class="green">-0.52%</td>
-  <td>换手率7.10%，光通信H1业绩大面积预喜</td>
-</tr>
-<tr>
-  <td>中国太保</td><td>601601</td><td>—</td><td>—</td>
-  <td>副总裁：保险服务新能源车出海需融入全链条；险企集体发声力挺资本市场</td>
-</tr>
-<tr>
-  <td>惠泰医疗</td><td>688617</td><td>—</td><td>—</td>
-  <td>创新医疗器械</td>
-</tr>
-<tr>
-  <td>中国人寿</td><td>601628</td><td>—</td><td>—</td>
-  <td>H1净利预增~230%（1,289-1,371亿）；减持兆易创新高位套现6.82亿</td>
-</tr>
-<tr>
-  <td>应流股份</td><td>603308</td><td>—</td><td>—</td>
-  <td>两机叶片/高温合金，7/20大宗交易成交价48.70元溢价10.93%</td>
-</tr>
-<tr>
-  <td>东方钽业</td><td>000962</td><td>—</td><td>—</td>
-  <td><span class="tag tag-red">主线</span> 钽电容供需紧张（钽锭半年涨158%至6,920元/kg），AI服务器用量激增</td>
-</tr>
-<tr>
-  <td>N长鑫</td><td>688825</td><td>¥52.95</td><td class="red">+12.66%</td>
-  <td><span class="tag tag-red">重磅</span> 纳入MSCI中国指数引被动资金，成交448亿全市场第一</td>
-</tr>
-</table>
-
+<table><thead><tr><th>标的</th><th>代码</th><th>7/29收盘</th><th>涨跌幅</th><th>要点</th></tr></thead><tbody><tr><td>宁德时代</td><td>300750</td><td>¥396.84</td><td><span class="red">+1.53%</span></td><td>振幅5.24%，成交159亿</td></tr><tr><td>恒瑞医药</td><td>600276</td><td>¥53.89</td><td><span class="red">+1.13%</span></td><td>🔴 <strong>舒地胰岛素获批</strong>（中国首个自主研发长效胰岛素）</td></tr><tr><td>新和成</td><td>002001</td><td>¥30.30</td><td><span class="red">+3.80%</span></td><td>🔴 <strong>PA12特种尼龙国产突破</strong>，打破赢创50年垄断</td></tr><tr><td>京东方A</td><td>000725</td><td>¥5.71</td><td><span class="red">+2.33%</span></td><td>🔴 参与国仪公司战略配售，布局半导体显示量检测设备</td></tr><tr><td>长川科技</td><td>300604</td><td>¥271.00</td><td><span class="green">-1.95%</span></td><td>振幅13.39%，盘中一度触及249元低点</td></tr><tr><td>巨化股份</td><td>600160</td><td>¥39.11</td><td><span class="red">+1.74%</span></td><td>制冷剂/氟化工</td></tr><tr><td>中恒电气</td><td>002364</td><td>¥36.18</td><td><span class="red">+0.47%</span></td><td>换手率6.48%</td></tr><tr><td>亨通光电</td><td>600487</td><td>¥49.75</td><td><span class="green">-0.52%</span></td><td>换手率7.10%，光通信H1业绩大面积预喜</td></tr><tr><td>中国太保</td><td>601601</td><td>—</td><td>—</td><td>🔴 副总裁：服务新能源车出海需融入全链条；险企集体发声力挺资本市场</td></tr><tr><td>惠泰医疗</td><td>688617</td><td>—</td><td>—</td><td>创新医疗器械</td></tr><tr><td>中国人寿</td><td>601628</td><td>—</td><td>—</td><td>🔴 H1净利预增~230%（1,289-1,371亿）；减持兆易创新高位套现</td></tr><tr><td>应流股份</td><td>603308</td><td>—</td><td>—</td><td>两机叶片/高温合金</td></tr><tr><td>东方钽业</td><td>000962</td><td>—</td><td>—</td><td>🔴 钽电容供需紧张（钽锭半年涨158%），AI服务器推高需求</td></tr><tr><td>N长鑫</td><td>688825</td><td>¥52.95</td><td><span class="red">+12.66%</span></td><td>🔴 纳入MSCI中国指数，成交448亿全市场第一</td></tr></tbody></table>
 <h3>港股（10只）</h3>
-<table>
-<tr><th>标的</th><th>代码</th><th>7/29收盘</th><th>涨跌幅</th><th>要点</th></tr>
-<tr>
-  <td>腾讯控股</td><td>00700</td><td>HK$466.40</td><td class="red">+4.29%</td>
-  <td><span class="tag tag-red">重磅</span> WorkBuddy上架鸿蒙，月访问量2,097万办公智能体市场第一</td>
-</tr>
-<tr>
-  <td>康方生物</td><td>09926</td><td>HK$95.65</td><td class="green">-0.36%</td>
-  <td>创新药双抗龙头</td>
-</tr>
-<tr>
-  <td>泡泡玛特</td><td>09992</td><td>HK$166.40</td><td class="red">+2.21%</td>
-  <td><span class="tag tag-orange">关注</span> 段永平：10年后赚的远比现在多，"celebrate life"提法有意思</td>
-</tr>
-<tr>
-  <td>联想集团</td><td>00992</td><td>HK$22.98</td><td class="green">-1.88%</td>
-  <td><span class="tag tag-red">重磅</span> 联想创投CVC创投周开幕，聚焦AI算力/终端/大模型，年内涨幅151%</td>
-</tr>
-<tr>
-  <td>紫金黄金国际</td><td>02259</td><td>—</td><td>—</td>
-  <td>黄金/铜矿，金价$3,314偏弱</td>
-</tr>
-<tr>
-  <td>英矽智能</td><td>03696</td><td>—</td><td>—</td>
-  <td>AI制药</td>
-</tr>
-<tr>
-  <td>大族数控</td><td>03200</td><td>—</td><td>—</td>
-  <td>获光学镜片调整机构新专利，年内专利+65%，研发投入+71%</td>
-</tr>
-<tr>
-  <td>长飞光纤光缆</td><td>06869</td><td>—</td><td>—</td>
-  <td>7/30临时股东大会</td>
-</tr>
-<tr>
-  <td>万科企业</td><td>02202</td><td>—</td><td>—</td>
-  <td>7/31股东特别大会</td>
-</tr>
-<tr>
-  <td>兆威机电</td><td>02692</td><td>—</td><td>—</td>
-  <td>微型传动系统</td>
-</tr>
-</table>
-
+<table><thead><tr><th>标的</th><th>代码</th><th>7/29收盘</th><th>涨跌幅</th><th>要点</th></tr></thead><tbody><tr><td>腾讯控股</td><td>00700</td><td>HK$466.40</td><td><span class="red">+4.29%</span></td><td>🔴 WorkBuddy上架鸿蒙，月访问量2,097万办公智能体第一</td></tr><tr><td>康方生物</td><td>09926</td><td>HK$95.65</td><td><span class="green">-0.36%</span></td><td>创新药双抗龙头</td></tr><tr><td>泡泡玛特</td><td>09992</td><td>HK$166.40</td><td><span class="red">+2.21%</span></td><td>🟠 段永平：10年后赚的远比现在多，"celebrate life"提法有意思</td></tr><tr><td>联想集团</td><td>00992</td><td>HK$22.98</td><td><span class="green">-1.88%</span></td><td>🔴 联想创投CVC创投周开幕，聚焦AI算力/终端/大模型</td></tr><tr><td>紫金黄金国际</td><td>02259</td><td>—</td><td>—</td><td>黄金/铜矿</td></tr><tr><td>英矽智能</td><td>03696</td><td>—</td><td>—</td><td>AI制药</td></tr><tr><td>大族数控</td><td>03200</td><td>—</td><td>—</td><td>🟠 获光学镜片调整机构新专利，年内专利+65%</td></tr><tr><td>长飞光纤光缆</td><td>06869</td><td>—</td><td>—</td><td>7/30临时股东大会</td></tr><tr><td>万科企业</td><td>02202</td><td>—</td><td>—</td><td>7/31股东特别大会</td></tr><tr><td>兆威机电</td><td>02692</td><td>—</td><td>—</td><td>微型传动系统</td></tr></tbody></table>
 <h3>重大增量信息</h3>
-
-<div class="highlight highlight-red">
-<strong>🔴 恒瑞医药舒地胰岛素获批</strong><br>7/29晚公告，国家药监局批准1类生物制品舒地胰岛素注射液上市——中国首个自主研发长效胰岛素类似物。中国糖尿病患者1.48亿，T2DM占90%+。累计研发投入约5.44亿元。
-</div>
-<div class="source-link">🔗 来源：恒瑞医药公告</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 新和成PA12特种尼龙突破</strong><br>完成千吨级十二内酰胺工艺定型（纯度99.92%），打破赢创/阿科玛/巴斯夫三巨头50年全球垄断。PA12 3D打印粉末300-500元/kg，市场空间百亿级。
-</div>
-<div class="source-link">🔗 来源：博研咨询 / 新和成公告</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 京东方参与国仪公司战略配售</strong><br>围绕电子枪、探测器等关键部品技术攻关，布局半导体显示领域量检测设备、硅基微显示、玻璃基封装等前沿方向。
-</div>
-<div class="source-link">🔗 来源：京东方公告</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 A股密集回购潮</strong><br>兆易创新20亿回购注销+董事长增持、澜起科技1亿回购、广电电气1-2亿回购、虹软科技1-1.5亿回购——产业资本真金白银释放信心。
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 东方钽业钽电容主线</strong><br>AI服务器GPU单颗需~59颗钽电容，GB200整机约3,000颗（传统服务器8-10倍），下一代GB300预计5,000颗。钽锭现货半年涨158%至6,920元/kg。
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 中际旭创H股定价980港元</strong><br>7/29晚公告，全球发售5,450万股H股，暗盘收跌1.07%报969.5港元。7/30正式挂牌。
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 光通信H1业绩大面积预喜</strong><br>24家已披露H1业绩预告中18家预喜（占比75%），全产业链共振——上游光纤光缆/芯片→中游光模块→下游器件。
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 中国人寿H1暴增+高位减持兆易创新</strong><br>H1净利预增~230%，但7/8以611-625元区间减持兆易创新约110.97万股（变现6.82亿），精准卖在下跌初期。
-</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 MLCC涨价：三星电机8/1统一涨价30%，太阳诱电9/1调价</strong><br>MLCC概念7/29领涨（风华高科、昀冢科技涨停）。
-</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 段永平密集发声</strong><br>存储供不应求或持续2-3年甚至更久；泡泡玛特10年后赚的远比现在多；不认可加杠杆，空头是价值投资者的朋友。
-</div>
-<div class="source-link">🔗 来源：雪球 / 证星研究院</div>
-
-<!-- 知识星球 -->
+<p>🔴 <strong>恒瑞医药舒地胰岛素获批</strong>：7/29晚公告，国家药监局批准1类生物制品舒地胰岛素注射液上市——中国首个自主研发长效胰岛素类似物。累计研发投入约5.44亿元。中国糖尿病患者1.48亿，T2DM占90%+。</p>
+<p>🔗 来源：恒瑞医药公告</p>
+<p>🔴 <strong>新和成PA12特种尼龙突破</strong>：完成千吨级十二内酰胺工艺定型（纯度99.92%），打破赢创/阿科玛/巴斯夫三巨头50年全球垄断。PA12国内3D打印粉末300-500元/kg，市场空间百亿级。</p>
+<p>🔗 来源：博研咨询/新和成公告</p>
+<p>🔴 <strong>京东方参与国仪公司战略配售</strong>：围绕电子枪、探测器等关键部品技术攻关，布局半导体显示领域量检测设备、硅基微显示、玻璃基封装等前沿方向。</p>
+<p>🔗 来源：京东方公告</p>
+<p>🔴 <strong>A股密集回购潮</strong>：兆易创新20亿回购注销+董事长增持、澜起科技1亿回购、广电电气1-2亿回购、虹软科技1-1.5亿回购——产业资本真金白银释放信心。</p>
+<p>🔴 <strong>东方钽业钽电容主线</strong>：AI服务器GPU单颗需~59颗钽电容，GB200整机约3,000颗（传统服务器8-10倍），下一代GB300预计5,000颗。钽锭现货半年涨158%至6,920元/kg。</p>
+<p>🔴 <strong>中际旭创H股定价980港元</strong>：7/29晚公告，全球发售5,450万股H股，暗盘收跌1.07%报969.5港元。7/30正式挂牌。</p>
+<p>🔴 <strong>光通信H1业绩大面积预喜</strong>：24家已披露H1业绩预告中18家预喜（占比75%），全产业链共振——上游光纤光缆/芯片→中游光模块→下游器件。</p>
+<p>🔴 <strong>中国人寿H1暴增+高位减持兆易创新</strong>：H1净利预增~230%，但7/8以611-625元区间减持兆易创新约110.97万股（变现6.82亿），精准卖在下跌初期。</p>
+<p>🟠 <strong>MLCC涨价</strong>：三星电机8/1统一涨价30%，太阳诱电9/1调价。MLCC概念7/29领涨（风华高科、昀冢科技涨停）。</p>
+<p>🟠 <strong>段永平密集发声</strong>：存储供不应求或持续2-3年甚至更久；泡泡玛特10年后赚的远比现在多；不认可加杠杆，空头是价值投资者的朋友。</p>
+<hr>
 <h2>🔬 知识星球精选</h2>
-
 <h3>水木调研纪要-2.0（88888142214212）</h3>
-<table>
-<tr><th>日期</th><th>标题</th><th>关键词</th><th>状态</th></tr>
-<tr>
-  <td>7/26</td>
-  <td>MLCC资料更新：三环/风华/国瓷/洁美盈利预测+弹性测算</td>
-  <td>涨价、调研纪要</td>
-  <td><span class="tag tag-orange">⚠️ 附件图片需手动查看</span></td>
-</tr>
-<tr>
-  <td>7/18</td>
-  <td>光模块液冷cage双雄奕东电子+鼎通科技持续重点推荐</td>
-  <td><span class="tag tag-red">重点推荐、买入</span></td>
-  <td>明年AI市场规模300-400亿，两家分享75-100亿利润</td>
-</tr>
-</table>
-
-<div class="card">
-<strong>光模块液冷cage核心逻辑</strong>：行业趋势明确，明年市场规模急速放大至300-400亿元，奕东电子+鼎通科技两家分享75-100亿元利润。当前两家市值合计约500亿元。AI行业回调带来买入机会。
-</div>
-
+<table><thead><tr><th>日期</th><th>标题</th><th>关键词</th><th>状态</th></tr></thead><tbody><tr><td>7/26</td><td>MLCC资料更新：三环/风华/国瓷/洁美盈利预测+弹性测算</td><td>涨价、调研纪要</td><td>⚠️ 附件图片需手动查看</td></tr><tr><td>7/18</td><td>光模块液冷cage双雄奕东电子+鼎通科技持续重点推荐</td><td>重点推荐、买入</td><td>明年AI市场规模300-400亿，两家分享75-100亿利润</td></tr></tbody></table>
+<p><strong>光模块液冷cage核心逻辑</strong>：行业趋势明确，明年市场规模急速放大至300-400亿元，奕东电子+鼎通科技两家分享75-100亿元利润。当前两家市值合计约500亿元。AI行业回调带来买入机会。</p>
+<p>🔗 来源：zsxq 水木调研纪要-2.0</p>
 <h3>调研纪要更新（48844242514558）</h3>
-<table>
-<tr><th>日期</th><th>标题</th><th>关键词</th><th>状态</th></tr>
-<tr>
-  <td>7/28</td>
-  <td>染料行业跟踪：中间体再度涨价，涨价行情有望延续</td>
-  <td>涨价、受益标的</td>
-  <td>浙江龙盛/闰土股份/吉华集团/安诺其</td>
-</tr>
-<tr>
-  <td>7/27</td>
-  <td>财通策略：韩国养老金7月首次净��入，SK海力士买入最多</td>
-  <td>外资动向</td>
-  <td>韩国KOSPI反弹+0.97%</td>
-</tr>
-</table>
-
-<div class="card">
-<strong>染料涨价核心逻辑</strong>：H酸出厂报价10万元/吨，活性黑较去年末+30.43%，分散黑+51.52%。核心原料还原物供给收紧+传统旺季+低库存共振。
-</div>
-
-<div class="source-link">🔗 来源：zsxq 水木调研纪要-2.0 / 调研纪要更新</div>
-
-<!-- 数据溯源 -->
+<table><thead><tr><th>日期</th><th>标题</th><th>关键词</th><th>状态</th></tr></thead><tbody><tr><td>7/28</td><td>染料行业跟踪：中间体再度涨价，涨价行情有望延续</td><td>涨价、受益标的</td><td>浙江龙盛/闰土股份/吉华集团/安诺其</td></tr><tr><td>7/27</td><td>财通策略：韩国养老金7月首次净买入，SK海力士买入最多</td><td>外资动向</td><td>韩国KOSPI反弹+0.97%</td></tr></tbody></table>
+<p><strong>染料涨价核心逻辑</strong>：H酸出厂报价10万元/吨，活性黑较去年末+30.43%，分散黑+51.52%。核心原料还原物供给收紧+传统旺季+低库存共振。</p>
+<p>🔗 来源：zsxq 调研纪要更新</p>
+<hr>
 <h2>📋 数据溯源</h2>
-<table>
-<tr><th>数据板块</th><th>数据源</th><th>查询次数</th><th>状态</th></tr>
-<tr><td>宏观/市场概览</td><td>NeoData Financial Search</td><td>3</td><td>✅</td></tr>
-<tr><td>策略观点</td><td>NeoData Financial Search</td><td>1</td><td>✅</td></tr>
-<tr><td>美股隔夜</td><td>NeoData + 财联社</td><td>1</td><td>✅</td></tr>
-<tr><td>A股收盘</td><td>NeoData + 财联社</td><td>1</td><td>✅</td></tr>
-<tr><td>港股收盘</td><td>NeoData</td><td>1</td><td>✅</td></tr>
-<tr><td>持仓A股</td><td>NeoData</td><td>1</td><td>✅</td></tr>
-<tr><td>持仓港股</td><td>NeoData</td><td>1</td><td>✅</td></tr>
-<tr><td>知识星球</td><td>zsxq-cli（水木2.0+调研纪要更新）</td><td>4搜索+4详情</td><td>✅</td></tr>
-<tr><td>Wind/万得</td><td>CLI未安装，本次未调用</td><td>—</td><td>⚠️</td></tr>
-</table>
+<table><thead><tr><th>数据板块</th><th>数据源</th><th>查询次数</th><th>状态</th></tr></thead><tbody><tr><td>宏观/市场概览</td><td>NeoData Financial Search</td><td>3</td><td>✅</td></tr><tr><td>策略观点</td><td>NeoData Financial Search</td><td>1</td><td>✅</td></tr><tr><td>美股隔夜</td><td>NeoData Financial Search + 财联社</td><td>1</td><td>✅</td></tr><tr><td>A股收盘</td><td>NeoData Financial Search + 财联社</td><td>1</td><td>✅</td></tr><tr><td>港股收盘</td><td>NeoData Financial Search</td><td>1</td><td>✅</td></tr><tr><td>持仓A股</td><td>NeoData Financial Search</td><td>1</td><td>✅</td></tr><tr><td>持仓港股</td><td>NeoData Financial Search</td><td>1</td><td>✅</td></tr><tr><td>知识星球</td><td>zsxq-cli（水木2.0+调研纪要更新）</td><td>4次搜索+4次详情</td><td>✅</td></tr><tr><td>Wind/万得</td><td>未安装CLI，本次未调用</td><td>—</td><td>⚠️</td></tr></tbody></table>
+<blockquote>注：westock-data CLI 未安装，本次主要通过 NeoData Financial Search 获取结构化金融数据。Wind 万得 CLI 环境不完整，已通过 NeoData 覆盖替代。</blockquote>
+<hr>
+<p>*报告生成时间：2026-07-30 08:20 · My Research Central · via WB*</p>
 
 <div class="report-footer">
-  数据来源：NeoData Financial Search · zsxq-cli · 财联社 · 券商研报 · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

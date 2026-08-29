@@ -3,20 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>早间投研日报 · 2026-06-21</title>
+  <title>早间日报 · 2026-06-21</title>
   <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --border: #30363d;
-  --text: #e6edf3;
-  --text2: #8b949e;
-  --red: #f85149;
-  --green: #3fb950;
-  --orange: #d29922;
-  --blue: #58a6ff;
-  --purple: #bc8cff;
-  --yellow: #e3b341;
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,6 +40,21 @@ body {
   font-size: 14px;
 }
 
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
 .report-header {
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -49,6 +72,7 @@ body {
   color: var(--text2);
 }
 
+/* ── Section headers ── */
 h2 {
   font-size: 1.15em;
   margin: 22px 0 10px;
@@ -63,26 +87,29 @@ h3 {
   color: var(--text);
 }
 
+/* ── Cards ── */
 .card {
-  background: var(--card);
+  background: var(--card-alt);
   border-radius: 8px;
   padding: 12px 14px;
   margin: 10px 0;
   border: 1px solid var(--border);
 }
 
+/* ── Tables ── */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 8px 0;
   font-size: 0.85em;
+  background: var(--card-alt);
 }
 
 th {
   background: var(--card);
   padding: 6px 8px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   color: var(--text2);
   font-weight: 600;
 }
@@ -94,9 +121,10 @@ td {
 }
 
 tr:hover {
-  background: rgba(88, 166, 255, 0.05);
+  background: rgba(58, 107, 150, 0.05);
 }
 
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
@@ -105,33 +133,65 @@ tr:hover {
   margin-right: 4px;
 }
 
-.tag-red { background: rgba(248,81,73,0.15); color: var(--red); }
-.tag-green { background: rgba(63,185,80,0.15); color: var(--green); }
-.tag-orange { background: rgba(210,153,34,0.15); color: var(--orange); }
-.tag-blue { background: rgba(88,166,255,0.15); color: var(--blue); }
-.tag-purple { background: rgba(188,140,255,0.15); color: var(--purple); }
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
 
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
 .highlight {
   padding: 10px 14px;
   border-radius: 6px;
   margin: 8px 0;
+  background: var(--card-alt);
 }
 
 .highlight-red {
-  background: rgba(248,81,73,0.08);
+  background: rgba(184, 84, 74, 0.06);
   border-left: 3px solid var(--red);
 }
 
 .highlight-orange {
-  background: rgba(210,153,34,0.08);
+  background: rgba(168, 129, 60, 0.07);
   border-left: 3px solid var(--orange);
 }
 
 .highlight-blue {
-  background: rgba(88,166,255,0.08);
+  background: rgba(58, 107, 150, 0.06);
   border-left: 3px solid var(--blue);
 }
 
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
 ul.bullet {
   margin: 6px 0 6px 18px;
   font-size: 0.92em;
@@ -142,12 +202,52 @@ ul.bullet li {
   line-height: 1.6;
 }
 
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
 .red { color: var(--red); }
 .green { color: var(--green); }
 .orange { color: var(--orange); }
 .blue { color: var(--blue); }
 .purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
 
+/* ── Source links ── */
 .source-link {
   display: block;
   font-size: 0.78em;
@@ -157,18 +257,22 @@ ul.bullet li {
 }
 
 .source-link a {
-  color: var(--blue);
+  color: #2d5f8a;
   text-decoration: none;
 }
 
-.source-link a:hover { text-decoration: underline; }
+.source-link a:hover {
+  text-decoration: underline;
+}
 
+/* ── Divider ── */
 .divider {
   height: 1px;
   background: var(--border);
   margin: 16px 0;
 }
 
+/* ── Footer ── */
 .report-footer {
   text-align: center;
   color: var(--text2);
@@ -178,276 +282,92 @@ ul.bullet li {
   border-top: 1px solid var(--border);
 }
 
+/* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 10px; }
   h1 { font-size: 1.2em; }
   h2 { font-size: 1.05em; }
   table { font-size: 0.8em; }
 }
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>早间投研日报 · 2026年6月21日（周日）</h1>
-  <div class="meta"><span class="tag tag-red">🚫 端午节假期第三天 · A股/港股休市 — 非交易日简化版</span> · 明日6/22周一恢复交易</div>
+  <h1>早间日报 · 2026-06-21</h1>
+  <div class="meta"><strong>🚫 端午节假期第三天，A股/港股休市。此为非交易日简化版。</strong> 明日（6月22日周一）市场恢复正常交易。</div>
 </div>
 
-<!-- ─── 催化剂日历 ─── -->
+<hr>
 <h2>📅 催化剂日历</h2>
-<table>
-<tr><th>日期</th><th>事件</th><th>影响板块</th></tr>
-<tr><td>6/19-21（假期）</td><td>端午节休市</td><td>—</td></tr>
-<tr><td>6/21</td><td>伊美埃及会晤（和平协议后续谈判）</td><td>能源/军工/航运</td></tr>
-<tr><td>6/22（周一）</td><td>A股/港股恢复交易</td><td>全市场</td></tr>
-<tr><td>6/22</td><td>6月LPR公布</td><td>金融/地产</td></tr>
-<tr><td>6/23-25</td><td>以黎华盛顿谈判</td><td>军工/能源</td></tr>
-<tr><td>6月底前</td><td>7550亿中央预算+1万亿超长期特别国债下达完毕</td><td>基建/工程</td></tr>
-<tr><td>7月</td><td>中报预告窗口开启</td><td>全市场</td></tr>
-</table>
-
-<!-- ─── 宏观 ─── -->
+<table><thead><tr><th>日期</th><th>事件</th><th>影响板块</th></tr></thead><tbody><tr><td>6/19-21（假期）</td><td>端午节休市</td><td>—</td></tr><tr><td>6/21</td><td>伊美埃及会晤（和平协议后续谈判）</td><td>能源/军工/航运</td></tr><tr><td>6/22（周一）</td><td>A股/港股恢复交易</td><td>全市场</td></tr><tr><td>6/22</td><td>6月LPR公布</td><td>金融/地产</td></tr><tr><td>6/23-25</td><td>以黎华盛顿谈判</td><td>军工/能源</td></tr><tr><td>6月底前</td><td>7550亿中央预算内投资+1万亿超长期特别国债下达完毕</td><td>基建/工程</td></tr><tr><td>7月</td><td>中报预告窗口开启</td><td>全市场</td></tr></tbody></table>
+<hr>
 <h2>🌐 宏观要点</h2>
-
-<h3>🔴 美联储6月决议鹰派落地 — 加息预期正式进入定价框架</h3>
-<div class="card">
-<p>6月18日凌晨，美联储宣布连续第四次维持联邦基金利率在<span class="red">3.50%-3.75%</span>不变。点阵图显示，<span class="red">18位官员中9位预计2026年需加息</span>，经济预测摘要将2026年利率预测中值从3.4%上调至3.8%。PCE通胀预测中值从2.7%大幅上调至3.6%，GDP增速从2.4%下调至2.2%。</p>
+<h3>🔴 美联储6月决议鹰派落地——加息预期正式进入定价框架</h3>
+<p>6月18日凌晨，美联储宣布连续第四次维持联邦基金利率在3.50%-3.75%不变。<strong>点阵图显示，18位官员中9位预计2026年需加息</strong>，经济预测摘要将2026年联邦基金利率预测中值从3月的3.4%上调至3.8%。PCE通胀预测中值从2.7%大幅上调至3.6%，GDP增速预测从2.4%下调至2.2%。</p>
 <p>新任主席沃什首秀释放鹰派信号："持续的高物价对美国民众而言是一种负担。"市场已完全定价美联储2027年Q1前加息两次。</p>
-<ul class="bullet">
-  <li>CME FedWatch：12月加息25bp概率68%</li>
-  <li>美股6/18尾盘跳水：纳指<span class="green">-1.34%</span>、标普<span class="green">-1.21%</span>、道指<span class="green">-0.98%</span></li>
-  <li>现货黄金<span class="green">跌1.79%</span>报4276美元/盎司；白银<span class="green">跌2.93%</span></li>
-</ul>
-</div>
-<div class="source-link">🔗 数据来源：Wind 万得金融数据服务 / 央视新闻</div>
-
-<h3>🔴 美伊和平协议正式签署 — 霍尔木兹海峡即将重开</h3>
-<div class="card">
-<p>6月18日，伊朗外交部确认美伊谅解备忘录已最终敲定、双方正式签署。协议核心：立即永久停火、美国30天内结束海上封锁、解除伊朗能源制裁、霍尔木兹海峡重开。</p>
-<ul class="bullet">
-  <li>WTI跌破<span class="green">77美元/桶</span>（6/17结算76.79），布伦特跌破80</li>
-  <li>摩根士丹利：伊朗协议或使债市解除对美联储升息的押注</li>
-  <li>⚠️ 协议仅为临时安排（60天新一轮核谈判窗口）；以色列拒绝从黎巴嫩南部撤军</li>
-</ul>
-</div>
-<div class="source-link">🔗 数据来源：Wind 万得金融数据服务 / 央视新闻</div>
-
-<h3>🟠 5月中国宏观经济：外强内弱延续</h3>
-<div class="card">
-<p>5月工业增加值+4.1%（前值+5.7%）、社零+0.2%（前值+1.7%）、固投-1.6%。1-4月出口+14.9%，集成电路出口+78.3%。内需偏弱：汽车/家电/金银珠宝社零负增长。政策端：7550亿中央预算+1万亿特别国债6月底前下达、8000亿新型政策性金融工具。</p>
-</div>
-<div class="source-link">🔗 数据来源：Wind 万得金融数据服务 / 国家统计局</div>
-
-<!-- ─── 市场概览 ─── -->
+<ul><li>CME FedWatch：12月加息25bp概率68%</li><li>美债遭抛售，2年期收益率一度走高；美股6/18尾盘跳水（纳指-1.34%、标普-1.21%、道指-0.98%）</li><li>现货黄金跌1.79%报4276美元/盎司；白银跌2.93%报67.96美元/盎司</li></ul>
+<p><div class="source-link">🔗 <a href="#">数据来源：Wind 万得金融数据服务</a></div></p>
+<h3>🔴 美伊和平协议正式签署——霍尔木兹海峡即将重开</h3>
+<p>6月18日，伊朗外交部发言人确认美伊谅解备忘录已最终敲定、双方正式签署。协议核心条款：立即永久停火、美国30天内结束海上封锁、解除伊朗能源制裁、霍尔木兹海峡恢复通航。</p>
+<ul><li>油价应声暴跌：WTI跌破77美元/桶（6/17结算76.79美元），布伦特跌破80美元</li><li>地缘风险溢价快速收缩，全球风险偏好回升</li><li>摩根士丹利：伊朗协议或使债市解除对美联储升息的押注</li><li>⚠️ 需关注：协议为临时性安排，仅开启60天新一轮核谈判窗口；以色列拒绝从黎巴嫩南部撤军</li></ul>
+<p><div class="source-link">🔗 <a href="#">数据来源：Wind 万得金融数据服务 / 央视新闻</a></div></p>
+<h3>🟠 5月中国宏观经济：外强内弱延续，政策加码可期</h3>
+<p>国家统计局5月经济数据：工业增加值+4.1%（前值+5.7%）、社零+0.2%（前值+1.7%）、固投-1.6%（扣地产+1.3%）。1-4月出口+14.9%，集成电路出口+78.3%。</p>
+<ul><li>内需偏弱明显：消费品零售增速放缓，汽车/家电/金银珠宝负增长</li><li>政策工具箱：7550亿中央预算+1万亿特别国债6月底前下达、8000亿新型政策性金融工具</li><li>中金：短期政策处于观察期，若内需继续走弱或出口减速，增量政策将加码</li></ul>
+<p><div class="source-link">🔗 <a href="#">数据来源：Wind 万得金融数据服务 / 国家统计局</a></div></p>
+<hr>
 <h2>📊 市场概览</h2>
-<p style="color:var(--text2);font-size:0.88em;margin-bottom:8px;">上一交易日（6月18日周三，节前最后交易日）</p>
-<table>
-<tr><th>指数</th><th>变动</th><th>核心驱动</th></tr>
-<tr><td>上证综指</td><td class="green">-0.43%</td><td>保险/电力走弱拖累</td></tr>
-<tr><td>深证成指</td><td class="red">+0.94%</td><td>科技成长支撑</td></tr>
-<tr><td>科创50</td><td class="red">+3.84%</td><td>半导体/消费电子领涨</td></tr>
-<tr><td>创业板指</td><td class="red">+2.05%</td><td>通信设备/机器人活跃</td></tr>
-<tr><td>恒生指数</td><td class="green">-0.74%</td><td>大金融受Fed鹰派冲击</td></tr>
-<tr><td>恒生科技</td><td class="red">+0.22%</td><td>半导体/电子硬件逆势</td></tr>
-<tr><td>标普500</td><td class="green">-1.21%</td><td>Fed鹰派+获利了结</td></tr>
-<tr><td>纳指</td><td class="green">-1.34%</td><td>科技股尾盘跳水</td></tr>
-</table>
-
-<div class="highlight highlight-blue">
-<strong>💡 节后展望（6/22周一）</strong><br>
-三大事件窗口：LPR + 伊美后续谈判 + 以黎华盛顿会谈。Fed鹰派短期压制成长股估值，但AI景气度未改变。半导体设备+光模块算力链仍是主线。关注中报预告窗口开启。
-</div>
-
-<!-- ─── 策略观点 ─── -->
+<blockquote><strong>上一交易日（6月18日周三，节前最后交易日）回顾</strong></blockquote>
+<table><thead><tr><th>指数</th><th>收盘</th><th>变动</th><th>核心驱动</th></tr></thead><tbody><tr><td>上证综指</td><td>4090.48</td><td>-0.43%</td><td>保险/电力走弱拖累</td></tr><tr><td>深证成指</td><td>16030.70</td><td>+0.94%</td><td>科技成长支撑</td></tr><tr><td>科创50</td><td>—</td><td>+3.84%</td><td>半导体/消费电子领涨</td></tr><tr><td>创业板指</td><td>—</td><td>+2.05%</td><td>通信设备/机器人活跃</td></tr><tr><td>恒生指数</td><td>—</td><td>-0.74%</td><td>大金融受Fed鹰派冲击</td></tr><tr><td>恒生科技</td><td>—</td><td>+0.22%</td><td>半导体/电子硬件逆势</td></tr><tr><td>标普500</td><td>—</td><td>-1.21%</td><td>Fed鹰派+获利了结</td></tr><tr><td>纳指</td><td>—</td><td>-1.34%</td><td>科技股尾盘跳水</td></tr></tbody></table>
+<p><strong>隔夜全球（6/18美股收盘）</strong>：美联储鹰派决议后美股尾盘跳水。费城半导体指数逆势+1.38%（ARM+5%、博通+4%、西部数据+4%），但SpaceX上市以来首次收跌-4.95%。中概股金龙指数-1.14%，阿里-3.18%、拼多多-2.12%。</p>
+<p><strong>节后展望（6/22周一）</strong>：</p>
+<ul><li>三大事件窗口交汇：LPR + 伊美后续谈判 + 以黎华盛顿会谈</li><li>油价低位利好航空/化工/物流成本改善</li><li>Fed鹰派短期压制成长股估值，但AI景气度未改变</li><li>半导体设备+光模块算力链仍是主线方向</li><li>关注中报预告窗口开启</li></ul>
+<hr>
 <h2>💡 策略观点</h2>
-<p style="color:var(--text2);font-size:0.88em;margin-bottom:8px;">综合研判：AI主线不变，关注内部分化与均衡化</p>
-
-<div class="card">
-<p><strong>中金公司</strong>：国际秩序重构与产业创新共振是市场上行核心驱动力，两大条件未动摇。局部板块估值偏高，下半年需防范行情脆弱性与波动风险。</p>
-</div>
-<div class="card">
-<p><strong>招商证券（张夏）</strong>：A股已进入盈利驱动的上行阶段，6月震荡上行、高点抬升。AI兼具产业增长与波动放大双重属性，配置聚焦资源品、AI算力链及出口制造。</p>
-</div>
-<div class="card">
-<p><strong>光大证券（张宇生）</strong>：短期扰动不改中长期走势。国内基本面确定性将成为下阶段支撑市场上行核心力量。</p>
-</div>
-<div class="card">
-<p><strong>中国银河（杨超）</strong>：科技成长仍是主线，交易拥挤度已高，或进入"震荡整固+内部分化"阶段。关注中报业绩前瞻。</p>
-</div>
-<div class="card">
-<p><strong>华泰证券</strong>：9月前美联储维持利率不变，年底加息概率50%。港股高贴现率将持续压制高成长科技板块估值。</p>
-</div>
-<div class="card">
-<p><strong>中银证券</strong>：6月金股 — <span class="red">⭐宁德时代</span>、沪电股份、深南电路、雅克科技等，AI产业链仍是景气上行最确定方向。</p>
-</div>
-
-<div class="source-link">🔗 数据来源：Wind 万得金融数据服务 / 券商策略报告</div>
-
-<!-- ─── 持仓个股 ─── -->
-<h2>🏢 持仓个股（A股13只 + 港股7只）</h2>
-
-<h3>A股持仓</h3>
-<table>
-<tr><th>标的</th><th>关键增量信息</th></tr>
-<tr><td><strong>宁德时代</strong></td><td><span class="tag tag-red">🟠</span> 6月获8家券商联合推荐（最热金股）。ESG报告发布：2025核心运营碳中和达成，钠新电池通过新国标认证</td></tr>
-<tr><td><strong>中微公司</strong></td><td><span class="tag tag-red">🔴</span> 5-3nm ICP刻蚀机完成在先进逻辑芯片厂评估。3nm原型机完成。股价屡创新高</td></tr>
-<tr><td><strong>长川科技</strong></td><td><span class="tag tag-orange">🟠</span> 营收前五半导体设备企业，受益存储扩产+设备国产化。瑞银上调中国晶圆厂设备支出预测</td></tr>
-<tr><td><strong>澜起科技</strong></td><td><span class="tag tag-orange">🟠</span> 5月金股涨幅45%+。大基金减持（询价转让方式），市场已消化</td></tr>
-<tr><td><strong>比亚迪</strong></td><td><span class="tag tag-orange">🟠</span> 6月多家券商推荐。闪充技术落地开启新产品周期</td></tr>
-<tr><td><strong>工业富联</strong></td><td><span class="tag tag-orange">🟠</span> 入选6月券商金股名单，AI算力全产业链布局</td></tr>
-<tr><td><strong>通富微电</strong></td><td><span class="tag tag-orange">🟠</span> 入选6月金股。先进封装+AMD核心封测伙伴</td></tr>
-<tr><td><strong>沪硅产业</strong></td><td><span class="tag tag-orange">🟠</span> 6/9大反弹日涨7%。300mm大硅片国产替代</td></tr>
-<tr><td><strong>南大光电</strong></td><td><span class="tag tag-orange">🟠</span> 6/9半导体反弹日涨4%+。半导体材料受益国产替代</td></tr>
-<tr><td>京东方A</td><td>静默期，无重大公告</td></tr>
-<tr><td>芯碁微装</td><td>静默期，无重大公告</td></tr>
-<tr><td>精智达</td><td>静默期，无重大公告</td></tr>
-<tr><td>容百科技</td><td>静默期，三元正极材料，关注锂电产业链景气</td></tr>
-</table>
-
-<h3>港股持仓</h3>
-<table>
-<tr><th>标的</th><th>关键增量信息</th></tr>
-<tr><td><strong>中芯国际</strong></td><td><span class="tag tag-red">🔴</span> Q2指引环比+14-16%。海外客户订单大量转移至国内制造，趋势有望持续至2027年</td></tr>
-<tr><td><strong>腾讯控股</strong></td><td><span class="tag tag-orange">🟠</span> 南向资金轮动明显（6/2买入21亿→6/5卖出15亿）。恒生科技第一大权重</td></tr>
-<tr><td><strong>小米集团-W</strong></td><td><span class="tag tag-orange">🟠</span> 南向净买入（6/5 +4.78亿）。小米汽车1-4月累计10.9万辆进入全球新能源TOP10</td></tr>
-<tr><td><strong>比亚迪股份</strong></td><td><span class="tag tag-orange">🟠</span> 6/2涨超6%。港股通科技ETF核心成分股</td></tr>
-<tr><td><strong>美团-W</strong></td><td><span class="tag tag-orange">🟠</span> 南向净卖出（6/5 -3.85亿）。受Fed鹰派压制估值</td></tr>
-<tr><td><strong>阿里巴巴-W</strong></td><td><span class="tag tag-orange">🟠</span> 6/18美联储鹰派后跌3.18%。美伊协议利好中概股风险偏好</td></tr>
-<tr><td>信达生物</td><td>静默期，港股通科技ETF成分股</td></tr>
-</table>
-
-<div class="source-link">🔗 数据来源：Wind 万得金融数据服务 / 财联社</div>
-
-<!-- ─── 知识星球 ─── -->
+<h3>综合研判：AI主线不变，关注内部分化与均衡化</h3>
+<p><strong>中金公司</strong>：国际秩序重构与产业创新趋势共振是推动市场上行核心驱动力，两大条件未动摇。市场整体估值合理，但局部板块估值偏高，下半年需防范部分领域行情脆弱性与波动风险。</p>
+<p><strong>招商证券（张夏）</strong>：A股已进入盈利驱动的上行阶段，6月指数将呈震荡上行、高点抬升格局。AI兼具产业增长与波动放大双重属性，超额收益来源于业绩、供需与涨价链条，配置聚焦资源品、AI算力链及出口制造。</p>
+<p><strong>光大证券（张宇生）</strong>：短期扰动不改中长期走势。市场波动主要与风险偏好变化有关，中长期上涨逻辑未受影响。上市公司业绩逐步改善，国内基本面的确定性将成为下阶段支撑市场上行的核心力量。</p>
+<p><strong>中国银河（杨超）</strong>：科技成长仍是主线，但短期交易拥挤度已高，市场或进入"震荡整固+内部分化"阶段。有业绩支撑的龙头将继续受益，建议关注中报业绩前瞻。</p>
+<p><strong>华泰证券</strong>：9月前美联储将维持利率不变，年底12月加息概率接近50%。港股流动性与美元利率联动，高贴现率将持续压制高成长科技板块估值。</p>
+<p><strong>中银证券</strong>：短期震荡不改AI主线，关注成长内部高低切与均衡化。AI产业链仍是当下最为确定的景气上行方向。6月金股：宁德时代⭐、沪电股份、深南电路、雅克科技、卫星化学、中国国航等。</p>
+<p><strong>中原证券</strong>：沪指维持震荡整理，短线关注半导体、消费电子、通信设备及机器人。5月PMI回落至50%荣枯线，社融同比少增，但M1回升、进出口两位数增长仍是积极信号。</p>
+<p><strong>东吴证券</strong>：港股赔率优势明显，关注补涨窗口。美股AI正从硬件向软件应用扩散，港股有望共振。部分资金将轮动至消费、地产等板块。港股全年EPS有望增长5-6%。</p>
+<p><strong>国泰海通/中信证券</strong>：机构调研热度持续升温，半导体设备成核心关注。盛美上海本周接待129家机构调研居首。券商/基金密集调研高端制造与科技赛道。</p>
+<p><div class="source-link">🔗 <a href="#">数据来源：Wind 万得金融数据服务 / 券商策略报告</a></div></p>
+<hr>
+<h2>🏢 持仓个股</h2>
+<h3>A股持仓（13只）</h3>
+<table><thead><tr><th>标的</th><th>关键增量信息</th></tr></thead><tbody><tr><td><strong>宁德时代</strong></td><td>6月获8家券商联合推荐（最热金股）。开源/光大：全球锂电龙头，地缘扰动下新能源战略地位抬升。ESG报告发布：2025核心运营碳中和达成，钠新电池通过新国标认证。在手订单充足</td></tr><tr><td><strong>京东方A</strong></td><td>静默期，无重大公告。受益面板景气度+AI终端升级</td></tr><tr><td><strong>芯碁微装</strong></td><td>静默期，无重大公告。半导体设备国产替代主线</td></tr><tr><td><strong>精智达</strong></td><td>静默期，无重大公告</td></tr><tr><td><strong>长川科技</strong></td><td>🟠 测试设备龙头，2025年营收前五半导体设备企业，受益存储扩产+设备国产化。瑞银上调中国晶圆厂设备支出预测</td></tr><tr><td><strong>容百科技</strong></td><td>静默期，无重大公告。三元正极材料，关注锂电产业链景气</td></tr><tr><td><strong>南大光电</strong></td><td>🟠 6/9半导体设备反弹日涨超4%。半导体材料板块受益国产替代加速</td></tr><tr><td><strong>工业富联</strong></td><td>入选6月券商金股名单。AI算力全产业链布局，受益英伟达GB300等新品周期</td></tr><tr><td><strong>澜起科技</strong></td><td>🟠 5月金股涨幅超45%。股东减持（大基金/询价转让方式），市场已消化。受益DDR5渗透+AI服务器内存接口芯片</td></tr><tr><td><strong>比亚迪</strong></td><td>6月获多家券商推荐。闪充技术落地开启新产品周期，出口业务受益全球电动车需求。港股比亚迪股份涨超6%（6/2）</td></tr><tr><td><strong>中微公司</strong></td><td>🔴 5-3nm逻辑芯片ICP刻蚀机完成在先进逻辑芯片生产厂家评估。3nm刻蚀机Alpha原型机完成设计。2025研发投入资本化率27.92%。股价屡创新高</td></tr><tr><td><strong>通富微电</strong></td><td>🟠 入选6月金股。先进封装+AMD核心封测伙伴，受益HBM/AI芯片需求爆发</td></tr><tr><td><strong>沪硅产业</strong></td><td>🟠 半导体硅片龙头。6/9大反弹日涨7%。300mm大硅片国产替代持续推进</td></tr></tbody></table>
+<h3>港股持仓（7只）</h3>
+<table><thead><tr><th>标的</th><th>关键增量信息</th></tr></thead><tbody><tr><td><strong>腾讯控股</strong></td><td>🟠 6/2单日暴涨超10%，南向资金轮动明显。6/5南向净买入16.87亿港元。恒生科技指数第一大权重</td></tr><tr><td><strong>信达生物</strong></td><td>静默期，无重大公告。港股通科技ETF成分股</td></tr><tr><td><strong>美团-W</strong></td><td>🟠 6/2涨超9%后高位震荡。南向资金净卖出（6/5 -3.85亿港元）。受Fed鹰派压制估值</td></tr><tr><td><strong>小米集团-W</strong></td><td>🟠 南向资金净买入（6/5 +4.78亿）。小米汽车1-4月累计10.9万辆进入全球新能源TOP10</td></tr><tr><td><strong>阿里巴巴-W</strong></td><td>🟠 6/11跌超5%（金龙指数拖累）。6/18美联储鹰派后跌3.18%。美伊协议利好中概股风险偏好</td></tr><tr><td><strong>中芯国际</strong></td><td>🔴 港股中芯6/5南向净买入11.29亿港元但6/2遭净卖出27.83亿。Q2指引环比+14-16%，全球产能紧张。大量海外客户订单转移至国内制造，趋势有望持续至2027年</td></tr><tr><td><strong>比亚迪股份</strong></td><td>🟠 6/2涨超6%。港股通科技ETF成分股，受南向资金关注</td></tr></tbody></table>
+<p><div class="source-link">🔗 <a href="#">数据来源：Wind 万得金融数据服务 / 财联社</a></div></p>
+<hr>
 <h2>🌟 知识星球（zsxq）</h2>
-<p style="color:var(--text2);font-size:0.88em;margin-bottom:8px;">搜索范围：水木调研纪要-2.0 + 调研纪要更新 | 关键词：强推/上调/重视/推荐/买入/增持</p>
-
+<blockquote>搜索范围：水木调研纪要-2.0 + 调研纪要更新 | 关键词：强推/上调/重视/推荐/买入/增持</blockquote>
 <h3>🔴 强推/上调标的</h3>
-<table>
-<tr><th>标的</th><th>来源</th><th>核心观点</th><th>日期</th></tr>
-<tr>
-  <td><strong>中船特气</strong> <span class="tag tag-red">⭐</span></td>
-  <td>水木/更新双发</td>
-  <td>六氟化钨涨价潮已开启，6月海外定价大幅跳涨。上调目标市值至3000-4000亿。回调即买入机会</td>
-  <td>6/15</td>
-</tr>
-<tr>
-  <td><strong>香江控股</strong> <span class="tag tag-red">⭐</span></td>
-  <td>调研纪要更新</td>
-  <td>强call！规模从300-400亿上修至600亿。项目有序推进不变</td>
-  <td>6/12</td>
-</tr>
-<tr>
-  <td><strong>柏诚股份</strong></td>
-  <td>水木调研纪要</td>
-  <td>广发建筑强推洁净室。两存市占率超20%，26/27年业绩4.1/6.3亿，目标180-200亿市值</td>
-  <td>6/8</td>
-</tr>
-<tr>
-  <td><strong>亚翔集成</strong></td>
-  <td>水木调研纪要</td>
-  <td>海外营收+55.7%占比74%。美光/世界先进新加坡项目确定</td>
-  <td>6/8</td>
-</tr>
-<tr>
-  <td><strong>康平科技</strong></td>
-  <td>水木调研纪要</td>
-  <td>HF大制造+国投机械双覆盖。子公司凌臣切入光模块设备运控，市值目标80-100亿翻倍空间</td>
-  <td>6/3</td>
-</tr>
-</table>
-
-<h3>🟠 产业深度纪要</h3>
-<ul class="bullet">
-  <li><strong>长江通信AI/光模块策略（5/11）</strong>：NPO和Scale-Across 27-28年或爆发，光芯片缺口超30%。看好中际旭创/新易盛/东山精密/源杰/天孚</li>
-  <li><strong>水晶光电投资者日（5/27）</strong>：向AI时代核心光学玻璃方案供应商转型，远期AI收入有望达传统业务1倍以上</li>
-  <li><strong>中美科技叙事共振（4/27）</strong>：五大主赛道：AI MaaS/半导体设备/光模块/3D装备/商业航天</li>
-</ul>
-
-<div class="source-link">🔗 数据来源：知识星球 zsxq — 水木调研纪要-2.0 / 调研纪要更新</div>
-
-<!-- ─── 关注清单 ─── -->
+<table><thead><tr><th>标的</th><th>来源</th><th>核心观点</th><th>日期</th></tr></thead><tbody><tr><td><strong>中船特气</strong> ⭐</td><td>水木调研纪要-2.0 / 调研纪要更新</td><td>六氟化钨涨价潮已开启，6月海外定价大幅跳涨。上调目标市值至3000-4000亿（500万价格→100亿利润×30-40倍PE）。强调周五为错杀，回调即买入机会</td><td>6/15</td></tr><tr><td><strong>香江控股</strong> ⭐</td><td>调研纪要更新</td><td>强call！规模从300-400亿上修至600亿。项目有序推进不变，规模明显上修</td><td>6/12</td></tr><tr><td><strong>柏诚股份</strong></td><td>水木调研纪要-2.0</td><td>广发建筑强推洁净室赛道。两存市占率超20%，布局医药/IDC/半导体洁净室模块化。26/27年业绩分别4.1/6.3亿，目标180-200亿市值，景气度高点看230亿</td><td>6/8</td></tr><tr><td><strong>亚翔集成</strong></td><td>水木调研纪要-2.0</td><td>2025年海外营收36.2亿（+55.7%），占比74%。美光/世界先进新加坡项目确定，业绩兑现加速</td><td>6/8</td></tr><tr><td><strong>康平科技</strong></td><td>水木调研纪要-2.0</td><td>HF大制造+国投机械双覆盖。子公司凌臣科技切入光模块设备运控系统（罗博特科/剑桥），Q1营收3亿，市值目标80-100亿翻倍空间</td><td>6/3</td></tr></tbody></table>
+<h3>🟠 产业深度/调研纪要</h3>
+<table><thead><tr><th>主题</th><th>核心内容</th><th>日期</th></tr></thead><tbody><tr><td><strong>AI/光模块策略</strong></td><td>长江通信：AI基建到2030年增长置信度提升，NPO和Scale-Across 27-28年或爆发。光芯片缺口超30%，看好中际旭创/新易盛/东山精密/源杰科技/天孚通信</td><td>5/11</td></tr><tr><td><strong>水晶光电投资者日</strong></td><td>向AI时代核心光学玻璃解决方案供应商转型。2026-2027年推出波分复用滤光片等AI产品，远期AI收入有望达传统业务1倍以上</td><td>5/27</td></tr><tr><td><strong>中美科技叙事共振</strong></td><td>AI MaaS平台（协创/宏景）、半导体设备（长川）、光模块（东山）、3D（大族）、商业航天（信维）五大赛道</td><td>4/27</td></tr></tbody></table>
+<p><div class="source-link">🔗 <a href="#">数据来源：知识星球 zsxq — 水木调研纪要-2.0 / 调研纪要更新</a></div></p>
+<hr>
 <h2>👁️ 关注清单（11只）</h2>
-<table>
-<tr><th>标的</th><th>关键跟踪要点</th></tr>
-<tr>
-  <td><strong>北方华创</strong></td>
-  <td><span class="tag tag-red">🔴</span> 在手订单超820亿排产至2028Q1。首台600mm面板级封装去胶设备出货。瑞银大幅上调目标价</td>
-</tr>
-<tr>
-  <td><strong>盛美上海</strong></td>
-  <td><span class="tag tag-red">🔴</span> 本周机构调研热度第一（129家）。瑞银上调目标价34-48%</td>
-</tr>
-<tr>
-  <td><strong>中际旭创</strong></td>
-  <td><span class="tag tag-orange">🟠</span> 800G市占40%/1.6T 50-70%。目标价上调至1650元。长江通信强推AI光通信主线</td>
-</tr>
-<tr>
-  <td><strong>沪电股份</strong></td>
-  <td><span class="tag tag-orange">🟠</span> 6月获4家券商推荐。AI驱动PCB需求强劲增长</td>
-</tr>
-<tr>
-  <td><strong>生益科技</strong></td>
-  <td><span class="tag tag-orange">🟠</span> 5月最牛金股（+84%），Q1业绩超预期。CCL涨价+AI产品放量</td>
-</tr>
-<tr>
-  <td><strong>帝尔激光</strong></td>
-  <td><span class="tag tag-orange">🟠</span> 5月金股涨幅40%+。光伏激光设备龙头</td>
-</tr>
-<tr>
-  <td>拓荆科技</td>
-  <td>CVD/PVD龙头，量产键合设备用于HBM。瑞银上调国产设备份额预测至40-50%</td>
-</tr>
-<tr>
-  <td>华海清科</td>
-  <td>CMP龙头，收购芯嵛半导体补齐离子注入机短板</td>
-</tr>
-<tr>
-  <td>世运电路</td>
-  <td>静默期。受益AI服务器PCB需求</td>
-</tr>
-<tr>
-  <td>南亚新材</td>
-  <td>静默期。覆铜板景气度受益AI算力</td>
-</tr>
-<tr>
-  <td>东威科技</td>
-  <td>静默期</td>
-</tr>
-</table>
-
-<div class="source-link">🔗 数据来源：Wind 万得金融数据服务</div>
-
-<!-- ─── 风险提示 ─── -->
+<table><thead><tr><th>标的</th><th>关键跟踪要点</th></tr></thead><tbody><tr><td><strong>北方华创</strong></td><td>🔴 在手订单超820亿，排产至2028Q1，2026Q1营收103亿（+25.8%）。首台600mm面板级封装去胶设备成功出货。瑞银大幅上调目标价</td></tr><tr><td><strong>中微公司</strong></td><td>🔴 3nm刻蚀机Alpha原型机完成。CCP刻蚀60:1超高深宽比成国内标配。2025营收增28%，股价屡创新高</td></tr><tr><td><strong>拓荆科技</strong></td><td>🟠 CVD/PVD龙头，量产键合设备用于HBM/芯片三维集成。瑞银上调国产设备份额预测至40-50%</td></tr><tr><td><strong>华海清科</strong></td><td>🟠 CMP龙头，通过收购芯嵛半导体补齐离子注入机短板。2025营收前五设备企业</td></tr><tr><td><strong>盛美上海</strong></td><td>🟠 🔴 本周机构调研热度第一（129家）。SAPS清洗技术已用于逻辑28nm/DRAM 10nm。瑞银上调目标价</td></tr><tr><td><strong>中际旭创</strong></td><td>🟠 全球高速光模块龙头，800G市占40%/1.6T 50-70%。长江通信强推AI光通信主线。目标价上调至1650元</td></tr><tr><td><strong>沪电股份</strong></td><td>🟠 6月获4家券商推荐。AI驱动PCB需求强劲增长。企业通讯板+汽车板双轮驱动</td></tr><tr><td><strong>世运电路</strong></td><td>静默期。受益AI服务器PCB需求</td></tr><tr><td><strong>生益科技</strong></td><td>🟠 5月最牛金股（+84%），Q1业绩超预期。CCL涨价+AI产品放量驱动利润增长</td></tr><tr><td><strong>南亚新材</strong></td><td>静默期。覆铜板景气度受益AI算力</td></tr><tr><td><strong>东威科技</strong></td><td>静默期</td></tr><tr><td><strong>帝尔激光</strong></td><td>🟠 5月金股涨幅超40%。光伏激光设备龙头，受益TOPCon/HJT技术迭代</td></tr></tbody></table>
+<p><div class="source-link">🔗 <a href="#">数据来源：Wind 万得金融数据服务</a></div></p>
+<hr>
 <h2>⚠️ 节后风险提示</h2>
-<div class="highlight highlight-red">
-<ol style="font-size:0.92em;margin-left:18px;">
-  <li><strong>美联储加息预期压制估值</strong>：点阵图鹰派，全球流动性收紧，高估值科技/成长板块短期承压</li>
-  <li><strong>美伊协议不确定性</strong>：仅为临时安排（60天谈判窗口），核问题仍存变数；以色列拒绝撤军</li>
-  <li><strong>内需持续偏弱</strong>：5月社零+0.2%接近零增长，居民信贷未企稳</li>
-  <li><strong>半导体高位震荡风险</strong>：交易拥挤度较高，中报预告或引发估值修正</li>
-  <li><strong>汇率波动</strong>：Fed鹰派→美元走强→人民币承压，港股外资流出风险上升</li>
-</ol>
-</div>
-
-<div class="divider"></div>
-
-<!-- ─── 数据溯源 ─── -->
-<table>
-<tr><th>板块</th><th>数据源</th><th>状态</th></tr>
-<tr><td>宏观/市场</td><td>Wind financial_docs</td><td>✅</td></tr>
-<tr><td>策略观点</td><td>Wind + zsxq</td><td>✅</td></tr>
-<tr><td>A股持仓（13只）</td><td>Wind financial_docs</td><td>✅</td></tr>
-<tr><td>港股持仓（7只）</td><td>Wind financial_docs</td><td>✅</td></tr>
-<tr><td>关注清单（11只）</td><td>Wind financial_docs</td><td>✅</td></tr>
-<tr><td>知识星球</td><td>zsxq topic +search/+detail</td><td>✅</td></tr>
-<tr><td>彭博头条</td><td>bbgwire CLI</td><td>⚠️ 未安装</td></tr>
-<tr><td>MX财经搜索</td><td>EM_API_KEY</td><td>⚠️ 未配置</td></tr>
-</table>
-<p style="font-size:0.82em;color:var(--text2);margin-top:4px;">Wind x7次查询 | 知识星球 x4次搜索+3次详情 | 数据截止：2026-06-21 08:20 CST</p>
+<ul><li><strong>美联储加息预期压制估值</strong>：点阵图鹰派，全球流动性收紧预期升温，高估值科技/成长板块短期承压</li><li><strong>美伊协议不确定性</strong>：协议仅为临时安排（60天谈判窗口），未来核问题谈判仍存变数；以色列拒绝撤军</li><li><strong>内需持续偏弱</strong>：5月社零+0.2%接近零增长，M1回升但居民信贷未企稳，政策效果需观察</li><li><strong>半导体高位震荡风险</strong>：板块交易拥挤度较高，中报预告窗口或引发估值修正</li><li><strong>汇率波动</strong>：Fed鹰派→美元走强→人民币承压，港股外资流出风险上升</li></ul>
+<hr>
+<h2>📋 数据溯源</h2>
+<table><thead><tr><th>板块</th><th>数据源</th><th>状态</th></tr></thead><tbody><tr><td>宏观/市场</td><td>Wind financial_docs.get_financial_news</td><td>✅</td></tr><tr><td>策略观点</td><td>Wind financial_docs.get_financial_news + zsxq</td><td>✅</td></tr><tr><td>A股持仓</td><td>Wind financial_docs.get_company_announcements + get_financial_news</td><td>✅</td></tr><tr><td>港股持仓</td><td>Wind financial_docs.get_financial_news</td><td>✅</td></tr><tr><td>关注清单</td><td>Wind financial_docs.get_financial_news</td><td>✅</td></tr><tr><td>知识星球</td><td>zsxq topic +search / topic +detail</td><td>✅</td></tr><tr><td>彭博头条</td><td>❌ bbgwire CLI未安装</td><td>⚠️</td></tr><tr><td>MX财经搜索</td><td>❌ EM_API_KEY未配置</td><td>⚠️</td></tr></tbody></table>
+<p><strong>数据获取通道</strong>：Wind万得 x 7次查询 | 知识星球 x 4次搜索+3次详情 | 数据截止时间：2026-06-21 08:20 CST</p>
+<hr>
+<p><div style="text-align:center;color:#8b949e;font-size:0.75em;margin-top:24px;padding-top:12px;border-top:1px solid #30363d;"><br>数据来源：Wind 万得金融数据服务 · 知识星球（水木调研纪要-2.0 / 调研纪要更新） · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-数据来源：Wind 万得金融数据服务 · 知识星球（水木调研纪要-2.0 / 调研纪要更新） · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

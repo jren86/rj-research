@@ -10,9 +10,9 @@
   --bg: #f8f9fb;
   --card-bg: #ffffff;
   --border: #e2e6ed;
-  --text: #1a1d23;
+  --text: #f4f2ef;
   --text-secondary: #6b7280;
-  --text-tertiary: #9ca3af;
+  --text-tertiary: #6b6760;
   --accent: #2563eb;
   --accent-light: #eff6ff;
   --red: #dc2626;
@@ -815,7 +815,7 @@ new Chart(document.getElementById('sectorPie'), {
       legend: { display: false },
       tooltip: {
         backgroundColor: '#fff',
-        titleColor: '#1a1d23',
+        titleColor: '#f4f2ef',
         bodyColor: '#6b7280',
         borderColor: '#e2e6ed',
         borderWidth: 1,
@@ -850,7 +850,7 @@ new Chart(document.getElementById('marketPie'), {
       legend: { display: false },
       tooltip: {
         backgroundColor: '#fff',
-        titleColor: '#1a1d23',
+        titleColor: '#f4f2ef',
         bodyColor: '#6b7280',
         borderColor: '#e2e6ed',
         borderWidth: 1,
@@ -882,8 +882,8 @@ function corrColor(val) {
   return 'rgb('+r+','+g+','+b+')';
 }
 function corrTextColor(val) {
-  if (val === null || val === undefined) return '#9ca3af';
-  return Math.abs(val) > 0.55 ? '#fff' : '#1a1d23';
+  if (val === null || val === undefined) return '#6b6760';
+  return Math.abs(val) > 0.55 ? '#fff' : '#f4f2ef';
 }
 
 // ── Portfolio vs Indices Correlation Table ──

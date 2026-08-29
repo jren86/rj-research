@@ -3,363 +3,400 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>晚间投研日报 · 2026-07-30</title>
+  <title>晚间日报 · 2026-07-30</title>
   <style>
-    :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --border: #30363d;
-      --text: #e6edf3;
-      --text2: #8b949e;
-      --red: #f85149;
-      --green: #3fb950;
-      --orange: #d29922;
-      --blue: #58a6ff;
-      --purple: #bc8cff;
-      --yellow: #e3b341;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      padding: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
-    .report-header { margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-    .report-header h1 { font-size: 1.4em; color: var(--text); margin-bottom: 4px; }
-    .report-header .meta { font-size: 0.82em; color: var(--text2); }
-    h2 { font-size: 1.15em; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--blue); }
-    h3 { font-size: 1em; margin: 14px 0 8px; color: var(--text); }
-    .card { background: var(--card); border-radius: 8px; padding: 12px 14px; margin: 10px 0; border: 1px solid var(--border); }
-    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.85em; }
-    th { background: var(--card); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text2); font-weight: 600; }
-    td { padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
-    tr:hover { background: rgba(88, 166, 255, 0.05); }
-    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78em; margin-right: 4px; }
-    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-    .highlight { padding: 10px 14px; border-radius: 6px; margin: 8px 0; }
-    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
-    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
-    ul.bullet { margin: 6px 0 6px 18px; font-size: 0.92em; }
-    ul.bullet li { margin: 4px 0; line-height: 1.6; }
-    .red { color: var(--red); }
-    .green { color: var(--green); }
-    .orange { color: var(--orange); }
-    .blue { color: var(--blue); }
-    .purple { color: var(--purple); }
-    .source-link { display: block; font-size: 0.78em; color: var(--text2); margin: 4px 0 8px 0; word-break: break-all; }
-    .source-link a { color: var(--blue); text-decoration: none; }
-    .source-link a:hover { text-decoration: underline; }
-    .divider { height: 1px; background: var(--border); margin: 16px 0; }
-    .report-footer { text-align: center; color: var(--text2); font-size: 0.75em; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border); }
-    @media (max-width: 640px) { body { padding: 10px; } h1 { font-size: 1.2em; } h2 { font-size: 1.05em; } table { font-size: 0.8em; } }
-    .insight { font-size: 0.88em; color: var(--text2); background: rgba(88,166,255,0.05); padding: 8px 12px; border-radius: 6px; margin: 8px 0; }
-    .insight strong { color: var(--blue); }
-    .warning-box { font-size: 0.88em; background: rgba(248, 81, 73, 0.06); border-left: 3px solid var(--red); padding: 8px 12px; border-radius: 4px; margin: 8px 0; }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>晚间投研日报 · 2026-07-30（周四）</h1>
-  <div class="meta">Cleo 投研团队 | 交易日正常版 | 数据截至 18:00 CST</div>
+  <h1>晚间日报 · 2026-07-30</h1>
+  <div class="meta"><strong>Cleo 投研团队</strong> | 交易日正常版 | 数据截至 18:00 CST</div>
 </div>
 
-<!-- ====== 催化剂日历 ====== -->
+<hr>
 <h2>一、催化剂日历</h2>
-<div class="card">
-<table>
-<tr><th>日期</th><th>事件</th><th>影响标的</th></tr>
-<tr><td>7/31（周五）</td><td>苹果 FY26Q3 财报（盘后）</td><td>苹果链、消费电子</td></tr>
-<tr><td>7/31</td><td>亚马逊 FY26Q2 财报（盘后）</td><td>AI 云计算、电商</td></tr>
-<tr><td>7/31</td><td>Meta FY26Q2 财报</td><td>社交媒体、AI 应用</td></tr>
-<tr><td>7/31</td><td>中国 7 月官方制造业 PMI</td><td>A 股宏观</td></tr>
-<tr><td>下周</td><td>微软 FY26Q4 财报</td><td>AI 基础设施</td></tr>
-</table>
-</div>
-<div class="insight">💡 本周科技巨头财报密集，亚马逊/Meta/微软资本开支指引将直接影响全球 AI 算力链估值锚。</div>
-
-<!-- ====== 宏观 ====== -->
+<table><thead><tr><th>日期</th><th>事件</th><th>影响标的</th></tr></thead><tbody><tr><td>7/31（周五）</td><td>苹果FY26Q3财报（盘后）</td><td>苹果链、消费电子</td></tr><tr><td>7/31</td><td>亚马逊FY26Q2财报（盘后）</td><td>AI云计算、电商</td></tr><tr><td>7/31</td><td>Meta FY26Q2财报</td><td>社交媒体、AI应用</td></tr><tr><td>7/31</td><td>中国7月官方制造业PMI</td><td>A股宏观</td></tr><tr><td>下周</td><td>微软FY26Q4财报</td><td>AI基础设施</td></tr></tbody></table>
+<p>💡 本周科技巨头财报密集，亚马逊/Meta/微软资本开支指引将直接影响全球AI算力链估值锚。</p>
+<hr>
 <h2>二、宏观</h2>
-
-<div class="highlight highlight-red">
 <h3>🔴 政治局会议定调下半年：落实存量、谋划增量</h3>
-<p>中共中央政治局 7 月 30 日召开会议，分析研究当前经济形势，部署下半年经济工作。核心要点：</p>
-<ol style="margin-left:18px; font-size:0.92em; line-height:1.8;">
-  <li><strong>总量定调</strong>：延续 4 月"有效应对各种外部冲击和内部困难"积极评价，淡化总量、强调结构亮点。</li>
-  <li><strong>财政货币提速</strong>：「加快财政支出和债券资金使用进度」「综合运用并适时调整货币政策工具」——下半年财政支出和专项债发行有望加速，降准概率大于降息。</li>
-  <li><strong>内需抓手</strong>：扎实推进「六张网」规划建设，适应不同群体消费需求扩大优质供给。</li>
-  <li><strong>产业政策</strong>：加强对基础研究长期稳定支持，深入实施「人工智能+」行动，发展智能经济新形态。</li>
-  <li><strong>风险化解</strong>：实施好一揽子化债方案，常态化解决企业账款拖欠问题。</li>
-  <li><strong>贸易平衡</strong>：「促进贸易平衡发展」——回应近期中欧经贸摩擦。</li>
-</ol>
-<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN2026073017245398a9dc75" target="_blank">来源：NeoData/腾讯自选股</a></div>
-</div>
-
-<div class="highlight highlight-orange">
+<p>中共中央政治局7月30日召开会议，分析研究当前经济形势，部署下半年经济工作。核心要点：</p>
+<ul><li><strong>总量定调</strong>：延续4月"有效应对各种外部冲击和内部困难"积极评价，淡化总量、强调结构亮点。</li><li><strong>财政货币提速</strong>：「加快财政支出和债券资金使用进度」「综合运用并适时调整货币政策工具」——下半年财政支出和专项债发行有望加速，降准概率大于降息。</li><li><strong>内需抓手</strong>：扎实推进「六张网」规划建设，适应不同群体消费需求扩大优质供给。</li><li><strong>产业政策</strong>：加强对基础研究长期稳定支持，深入实施「人工智能+」行动，发展智能经济新形态。</li><li><strong>风险化解</strong>：实施好一揽子化债方案，常态化解决企业账款拖欠问题（2024年3年6万亿化债政策收官年）。</li><li><strong>贸易平衡</strong>：「促进贸易平衡发展」——回应近期中欧经贸摩擦，大力发展服务贸易。</li></ul>
+<p><div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN2026073017245398a9dc75">来源：NeoData/腾讯自选股</a></div></p>
 <h3>🟠 证监会新型逆周期调节框架</h3>
-<p>经济学家连平指出：当前 A 股的体系化、常态化稳市治理模式是"资本市场发展史上前所未有的全新制度安排"。央行体系（2.1 万亿隔夜逆回购）和国资委体系（国新/诚通 600 亿+增持）介入资本市场，标志调节思路从应急托底迈向制度化长效机制。</p>
-</div>
-
-<div class="highlight highlight-blue">
-<h3>🔵 海外宏观：美联储按兵不动，3 票委主张加息</h3>
-<ul class="bullet">
-  <li><strong>美联储</strong>：维持联邦基金利率 3.50%-3.75% 不变，连续 5 次会议按兵不动</li>
-  <li><strong>分歧</strong>：12 名 FOMC 成员中 3 人投票反对，主张加息 25bp</li>
-  <li><strong>市场定价</strong>：9 月加息 25bp 概率 56.4%，维持不变概率 23.4%</li>
-  <li><strong>美股反应</strong>：道指 <span class="green">-2.19%</span>（单日跌超 1,100 点），纳指 <span class="green">-1.74%</span>，标普 <span class="green">-1.52%</span></li>
-</ul>
-<div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN2026073005561094bf7478" target="_blank">来源：中新经纬/NeoData</a></div>
-</div>
-
-<!-- ====== 市场概览 ====== -->
+<p>经济学家连平指出：当前A股的体系化、常态化稳市治理模式是"资本市场发展史上前所未有的全新制度安排"。央行体系（2.1万亿隔夜逆回购）和国资委体系（国新/诚通600亿+增持）介入资本市场，标志调节思路从应急托底迈向制度化长效机制。</p>
+<h3>🔵 海外宏观：美联储按兵不动，3票委主张加息</h3>
+<ul><li><strong>美联储</strong>：维持联邦基金利率3.50%-3.75%不变，连续5次会议按兵不动</li><li><strong>分歧</strong>：12名FOMC成员中3人投票反对，主张加息25bp</li><li><strong>市场定价</strong>：9月加息25bp概率56.4%，维持不变概率23.4%</li><li><strong>美股反应</strong>：道指-2.19%（单日跌超1100点），纳指-1.74%，标普-1.52%</li></ul>
+<p><div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN2026073005561094bf7478">来源：中新经纬/NeoData</a></div></p>
+<hr>
 <h2>三、市场概览</h2>
-
-<h3>A 股：科技深跌，白酒银行逆势护盘</h3>
-<div class="card">
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>5 日</th><th>20 日</th><th>年初至今</th></tr>
-<tr><td>上证指数</td><td>3,804.69</td><td class="green">-0.62%</td><td>-1.86%</td><td>-5.56%</td><td>-4.14%</td></tr>
-<tr><td>深证成指</td><td>13,285.80</td><td class="green">-2.73%</td><td class="green">-5.93%</td><td class="green">-14.28%</td><td>-1.77%</td></tr>
-<tr><td>创业板指</td><td>3,244.62</td><td class="green">-3.97%</td><td class="green">-9.25%</td><td class="green">-19.23%</td><td class="red">+1.29%</td></tr>
-<tr><td>科创 50</td><td>1,588.41</td><td class="green">-5.38%</td><td class="green">-11.25%</td><td class="green">-20.07%</td><td class="red">+18.17%</td></tr>
-<tr><td>北证 50</td><td>1,049.07</td><td class="green">-1.43%</td><td>-2.41%</td><td class="green">-17.15%</td><td class="green">-27.17%</td></tr>
-</table>
-</div>
-<ul class="bullet">
-  <li><strong>成交</strong>：沪深京三市 23,584 亿，小幅放量 467 亿</li>
-  <li><strong>涨跌</strong>：~1,700 只上涨，50+ 股涨停，800+ 只跌超 5%</li>
-</ul>
-
+<h3>A股：科技深跌，白酒银行逆势护盘</h3>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>5日</th><th>20日</th><th>年初至今</th></tr></thead><tbody><tr><td>上证指数</td><td>3,804.69</td><td><span class="green">-0.62%</span></td><td>-1.86%</td><td>-5.56%</td><td>-4.14%</td></tr><tr><td>深证成指</td><td>13,285.80</td><td><span class="green">-2.73%</span></td><td>-5.93%</td><td>-14.28%</td><td>-1.77%</td></tr><tr><td>创业板指</td><td>3,244.62</td><td><span class="green">-3.97%</span></td><td>-9.25%</td><td>-19.23%</td><td>+1.29%</td></tr><tr><td>科创50</td><td>1,588.41</td><td><span class="green">-5.38%</span></td><td>-11.25%</td><td>-20.07%</td><td>+18.17%</td></tr><tr><td>北证50</td><td>1,049.07</td><td><span class="green">-1.43%</span></td><td>-2.41%</td><td>-17.15%</td><td>-27.17%</td></tr></tbody></table>
+<ul><li><strong>成交</strong>：沪深京三市 23,584 亿，小幅放量 467 亿</li><li><strong>涨跌</strong>：~1,700只上涨，50+股涨停，800+只跌超5%</li></ul>
 <p><strong>板块分化剧烈：</strong></p>
-<ul class="bullet">
-  <li>🔴 <strong>领涨</strong>：白酒（金徽酒/舍得酒业涨停）、银行（工行/建行双双历史新高）、保险、汽车（江淮汽车涨停）、食品消费</li>
-  <li>🟢 <strong>领跌</strong>：半导体 <span class="green">-6.63%</span>、通信设备 <span class="green">-8.57%</span>、电子元器件、光通信</li>
-  <li>全志科技 <span class="green">-19.93%</span>，源杰科技/星宸科技 <span class="green">-17%+</span>，长光华芯/联讯仪器 <span class="green">-14%+</span></li>
-</ul>
-
+<ul><li>🔴 <strong>领涨</strong>：白酒（金徽酒/舍得酒业涨停）、银行（工行+2%/建行+3%双双历史新高）、保险、汽车（江淮汽车涨停）、食品消费</li><li>🟢 <strong>领跌</strong>：半导体-6.63%、通信设备-8.57%、电子元器件、光通信</li><li>电子板块-6.53%，全志科技-19.93%，源杰科技/星宸科技-17%+，长光华芯/联讯仪器-14%+</li></ul>
 <h3>港股：恒指微涨，科技分化</h3>
-<div class="card">
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>5 日</th><th>20 日</th></tr>
-<tr><td>恒生指数</td><td>25,858.88</td><td class="red">+0.20%</td><td class="red">+2.57%</td><td class="red">+12.16%</td></tr>
-<tr><td>恒生科技</td><td>4,803.77</td><td class="green">-1.25%</td><td class="red">+2.24%</td><td class="red">+7.85%</td></tr>
-<tr><td>国企指数</td><td>8,644.71</td><td class="red">+0.25%</td><td class="red">+3.50%</td><td class="red">+13.56%</td></tr>
-</table>
-</div>
-
-<h3>隔夜美股（7/29 收盘）</h3>
-<div class="card">
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>关键信息</th></tr>
-<tr><td>道指</td><td>51,594.14</td><td class="green">-2.19%</td><td>单日跌超 1,100 点</td></tr>
-<tr><td>纳指</td><td>24,442.94</td><td class="green">-1.74%</td><td>连续 6 日下跌</td></tr>
-<tr><td>标普 500</td><td>7,316.15</td><td class="green">-1.52%</td><td>—</td></tr>
-<tr><td>费城半导体</td><td>—</td><td class="green">-5.33%</td><td>连续 5 日跌近 16%</td></tr>
-</table>
-</div>
-<ul class="bullet">
-  <li>美光 <span class="green">-10%</span>（Q2 不及预期）、科天半导体 <span class="green">-10%</span>、AMD <span class="green">-5%</span>、ARM <span class="green">-8%</span></li>
-  <li>苹果盘中创新高（5 万亿市值）后收跌 <span class="green">-0.56%</span></li>
-  <li>中概股金龙指数逆势 <span class="red">+1.73%</span></li>
-  <li>油价：WTI <span class="red">+6.28%</span> 至 $84.24（特朗普威胁打击伊朗）</li>
-</ul>
-
-<!-- ====== 策略观点 ====== -->
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>5日</th><th>20日</th></tr></thead><tbody><tr><td>恒生指数</td><td>25,858.88</td><td><span class="red">+0.20%</span></td><td>+2.57%</td><td>+12.16%</td></tr><tr><td>恒生科技</td><td>4,803.77</td><td><span class="green">-1.25%</span></td><td>+2.24%</td><td>+7.85%</td></tr><tr><td>国企指数</td><td>8,644.71</td><td><span class="red">+0.25%</span></td><td>+3.50%</td><td>+13.56%</td></tr></tbody></table>
+<h3>隔夜美股（7/29收盘）</h3>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>关键信息</th></tr></thead><tbody><tr><td>道指</td><td>51,594.14</td><td><span class="green">-2.19%</span></td><td>单日跌超1,100点</td></tr><tr><td>纳指</td><td>24,442.94</td><td><span class="green">-1.74%</span></td><td>连续6日下跌</td></tr><tr><td>标普500</td><td>7,316.15</td><td><span class="green">-1.52%</span></td><td>—</td></tr><tr><td>费城半导体</td><td>—</td><td><span class="green">-5.33%</span></td><td>连续5日跌近16%</td></tr></tbody></table>
+<ul><li>美光-10%（Q2不及预期）、科天半导体-10%、AMD-5%、ARM-8%</li><li>苹果盘中创新高（5万亿市值）后收跌-0.56%</li><li>中概股金龙指数逆势+1.73%</li><li>油价：WTI +6.28%至$84.24（特朗普威胁打击伊朗）</li></ul>
+<hr>
 <h2>四、策略观点</h2>
-
 <h3>机构核心判断</h3>
-
-<div class="card">
 <p><strong>华福证券</strong>：科技长牛常态是"上行斜率+周期性回调"。当前科技调整更接近高波动主线中的再平衡，并非行情终结，回撤由高拥挤/高预期/叙事扰动共同触发。</p>
-</div>
-<div class="card">
-<p><strong>东方证券</strong>：A 股调整更多来自热门方向微观交易结构压力而非系统性风险。建议延续均衡配置，优先关注宽基指数修复机会。</p>
-</div>
-<div class="card">
-<p><strong>中国银河证券</strong>：主动偏股型基金重仓结构高度集中于科技成长，7 月以来科技回调进入结构再平衡。短期均衡配置——静待科技中报景气度兑现，把握低位价值板块修复窗口。</p>
-</div>
-<div class="card">
-<p><strong>浙商证券</strong>（展望 8 月）：板块轮动正在恢复，建议三条线索——① EPS 边际改善（煤炭/证券）；② 低成交量受益品种（银行/公用事业/交运/石化）；③ 产业趋势（电子/通信反弹机会）。</p>
-</div>
-<div class="card">
-<p><strong>海通国际（张忆东）</strong>：当前调整似"危"实"机"，中国股市已逐步进入左侧布局窗口，有望领先海外市场企稳，8 月开启秋季行情。建议分批布局、以时间换空间。</p>
-</div>
-
-<h3>7 月金股 TOP5</h3>
-<div class="card">
-<table>
-<tr><th>排名</th><th>标的</th><th>推荐次数</th><th>类别</th></tr>
-<tr><td>⭐ 1</td><td>中际旭创 (300308)</td><td>13 家</td><td>光模块/AI 算力</td></tr>
-<tr><td>2</td><td>海光信息 (688041)</td><td>10 家</td><td>AI 芯片</td></tr>
-<tr><td>2</td><td>中国巨石 (600176)</td><td>10 家</td><td>玻纤/周期</td></tr>
-<tr><td>4</td><td>药明康德 (603259)</td><td>9 家</td><td>CXO/医药</td></tr>
-<tr><td>5</td><td><strong>巨化股份 (600160)</strong></td><td>6 家</td><td>氟化工/材料 ⭐ 持仓</td></tr>
-</table>
-</div>
-
-<!-- ====== 持仓个股监控 ====== -->
+<p><strong>东方证券</strong>：A股调整更多来自热门方向微观交易结构压力而非系统性风险。建议延续均衡配置，优先关注宽基指数修复机会。</p>
+<p><strong>中国银河证券</strong>：主动偏股型基金重仓结构高度集中于科技成长，7月以来科技回调进入结构再平衡。短期均衡配置——静待科技中报景气度兑现，把握低位价值板块修复窗口。</p>
+<p><strong>浙商证券</strong>（展望8月）：板块轮动正在恢复，建议三条线索：①EPS边际改善（煤炭/证券）；②低成交量受益品种（银行/公用事业/交运/石化）；③产业趋势（电子/通信反弹机会）。</p>
+<p><strong>海通国际（张忆东）</strong>：当前调整似"危"实"机"，中国股市已逐步进入左侧布局窗口，有望领先海外市场企稳，8月开启秋季行情。建议分批布局、以时间换空间。</p>
+<h3>7月金股汇总</h3>
+<table><thead><tr><th>排名</th><th>标的</th><th>推荐次数</th><th>类别</th></tr></thead><tbody><tr><td>⭐1</td><td>中际旭创(300308)</td><td>13家</td><td>光模块/AI算力</td></tr><tr><td>2</td><td>海光信息(688041)</td><td>10家</td><td>AI芯片</td></tr><tr><td>2</td><td>中国巨石(600176)</td><td>10家</td><td>玻纤/周期</td></tr><tr><td>4</td><td>药明康德(603259)</td><td>9家</td><td>CXO/医药</td></tr><tr><td>5</td><td>巨化股份(600160)</td><td>6家</td><td>氟化工/材料</td></tr></tbody></table>
+<blockquote>7月金股涉持仓标的：⭐巨化股份（6家推荐，持仓）、宁德时代（5家推荐，持仓）</blockquote>
+<hr>
 <h2>五、持仓个股监控（国泰海通组合 24 只）</h2>
-
 <h3>创新药械</h3>
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>5 日</th><th>关键信息</th></tr>
-<tr><td>恒瑞医药</td><td>600276</td><td>¥54.65</td><td class="red">+1.41%</td><td>-0.47%</td><td>逆势收涨，相对抗跌</td></tr>
-<tr><td>惠泰医疗</td><td>688617</td><td>¥219.77</td><td class="red">+0.58%</td><td class="red">+2.33%</td><td>连续温和上涨</td></tr>
-<tr><td>康方生物</td><td>09926</td><td>HK$93.20</td><td class="green">-2.56%</td><td class="green">-9.34%</td><td>生物技术板块 -2.04%</td></tr>
-<tr><td>英矽智能</td><td>03696</td><td>HK$42.06</td><td class="green">-3.31%</td><td class="green">-13.17%</td><td>冲高回落，日内振幅近 10%</td></tr>
-</table>
-</div>
-<div class="insight">💡 医药生物板块 -1.11%，恒瑞/惠泰逆势收涨，创新药相对防御属性体现。迈瑞医疗被 ZSXQ 标记「长周期拐点」。</div>
-
-<h3>AI 设备 & 材料</h3>
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr>
-<tr><td>N 长鑫</td><td>688825</td><td>¥52.87</td><td class="green">-0.15%</td><td>成交 447 亿/换手 19%</td></tr>
-<tr><td>京东方 A</td><td>000725</td><td>¥5.36</td><td class="green">-6.13%</td><td>电子板块重灾，20 日 <span class="green">-41%</span></td></tr>
-<tr><td>长川科技</td><td>300604</td><td>¥245.50</td><td class="green">-9.41%</td><td>半导体 <span class="green">-6.63%</span>，5 日 <span class="green">-15.71%</span></td></tr>
-<tr><td>亨通光电</td><td>600487</td><td>¥47.20</td><td class="green">-5.13%</td><td>通信设备 <span class="green">-8.57%</span>，20 日 <span class="green">-49.70%</span></td></tr>
-<tr><td>东方钽业</td><td>000962</td><td>¥41.05</td><td class="green">-9.40%</td><td>20 日 <span class="green">-50.47%</span></td></tr>
-<tr><td>应流股份</td><td>603308</td><td>¥41.49</td><td class="green">-5.49%</td><td>通用设备 <span class="green">-5.39%</span></td></tr>
-<tr><td>中恒电气</td><td>002364</td><td>¥34.20</td><td class="green">-5.47%</td><td>电力设备 <span class="green">-1.14%</span></td></tr>
-</table>
-</div>
-
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr>
-<tr><td>联想集团</td><td>00992</td><td>HK$21.74</td><td class="green">-5.40%</td><td>5 日 <span class="green">-11.70%</span></td></tr>
-<tr><td>大族数控</td><td>301200</td><td>¥211.40</td><td class="green">-8.31%</td><td>20 日 <span class="green">-39.36%</span></td></tr>
-<tr><td>长飞光纤光缆</td><td>06869</td><td>HK$92.00</td><td class="green">-10.51%</td><td>5 日 <span class="green">-26.87%</span>，20 日 <span class="green">-53.53%</span></td></tr>
-</table>
-</div>
-<div class="warning-box">⚠️ <strong>AI 设备&材料成为今日最大重灾区</strong>：全球半导体暴跌传导（费城半导体近 16%）、存储周期见顶担忧、前期涨幅过大获利了结三重压力叠加。亨通/东方钽业/长飞光纤光缆 20 日跌幅均超 49% 进入极度超卖区域。</div>
-
-<h3>AI 应用</h3>
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>5 日</th><th>关键信息</th></tr>
-<tr><td>腾讯控股</td><td>00700</td><td>HK$471.80</td><td class="red">+1.16%</td><td class="red">+5.97%</td><td>连续走强，20 日 <span class="red">+9.67%</span></td></tr>
-</table>
-</div>
-<div class="insight">💡 腾讯今日逆势涨，AI 应用板块普联软件 20cm 涨停、税友股份涨停，AI 应用方向相对独立于硬件调整。</div>
-
-<h3>新能源 / 电动车</h3>
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr>
-<tr><td>宁德时代</td><td>300750</td><td>¥401.88</td><td class="red">+1.27%</td><td>5 日 <span class="red">+4.12%</span>，PE 21.87</td></tr>
-<tr><td>兆威机电</td><td>003021</td><td>¥72.73</td><td class="green">-3.48%</td><td>年初至今 <span class="green">-41.25%</span></td></tr>
-</table>
-</div>
-
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>5日</th><th>关键信息</th></tr></thead><tbody><tr><td>恒瑞医药</td><td>600276</td><td>¥54.65</td><td><span class="red">+1.41%</span></td><td>-0.47%</td><td>逆势收涨，相对抗跌</td></tr><tr><td>惠泰医疗</td><td>688617</td><td>¥219.77</td><td><span class="red">+0.58%</span></td><td>+2.33%</td><td>连续温和上涨</td></tr><tr><td>康方生物</td><td>09926</td><td>HK$93.20</td><td><span class="green">-2.56%</span></td><td>-9.34%</td><td>生物技术板块-2.04%</td></tr><tr><td>英矽智能</td><td>03696</td><td>HK$42.06</td><td><span class="green">-3.31%</span></td><td>-13.17%</td><td>冲高回落，日内振幅近10%</td></tr></tbody></table>
+<p>💡 <strong>板块观察</strong>：医药生物板块-1.11%，恒瑞/惠泰逆势收涨，创新药相对防御属性体现。迈瑞医疗被ZSXQ标记「长周期拐点」。</p>
+<h3>AI设备&amp;材料</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr></thead><tbody><tr><td>N长鑫</td><td>688825</td><td>¥52.87</td><td><span class="green">-0.15%</span></td><td>成交447亿/换手19%，20日+510%(上市基准)</td></tr><tr><td>京东方A</td><td>000725</td><td>¥5.36</td><td><span class="green">-6.13%</span></td><td>电子板块重灾，20日-41%</td></tr><tr><td>长川科技</td><td>300604</td><td>¥245.50</td><td><span class="green">-9.41%</span></td><td>半导体-6.63%，5日-15.71%</td></tr><tr><td>亨通光电</td><td>600487</td><td>¥47.20</td><td><span class="green">-5.13%</span></td><td>通信设备-8.57%，20日暴跌-49.70%</td></tr><tr><td>东方钽业</td><td>000962</td><td>¥41.05</td><td><span class="green">-9.40%</span></td><td>小金属-3.52%，20日-50.47%</td></tr><tr><td>应流股份</td><td>603308</td><td>¥41.49</td><td><span class="green">-5.49%</span></td><td>通用设备-5.39%</td></tr><tr><td>中恒电气</td><td>002364</td><td>¥34.20</td><td><span class="green">-5.47%</span></td><td>电力设备-1.14%</td></tr></tbody></table>
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr></thead><tbody><tr><td>联想集团</td><td>00992</td><td>HK$21.74</td><td><span class="green">-5.40%</span></td><td>5日-11.70%，电脑器材-4.47%</td></tr><tr><td>大族数控</td><td>301200</td><td>¥211.40</td><td><span class="green">-8.31%</span></td><td>专用设备-4.48%，20日-39.36%</td></tr><tr><td>长飞光纤光缆</td><td>06869</td><td>HK$92.00</td><td><span class="green">-10.51%</span></td><td>5日-26.87%，20日-53.53%！极度超跌</td></tr></tbody></table>
+<p>⚠️ <strong>AI设备&amp;材料成为今日最大重灾区</strong>：全球半导体暴跌传导（费城半导体近16%）、存储周期见顶担忧、前期涨幅过大获利了结三重压力叠加。亨通/东方钽业/长飞光纤光缆 20日跌幅均超49%进入极度超卖区域。</p>
+<h3>AI应用</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>5日</th><th>关键信息</th></tr></thead><tbody><tr><td>腾讯控股</td><td>00700</td><td>HK$471.80</td><td><span class="red">+1.16%</span></td><td>+5.97%</td><td>连续走强，20日+9.67%</td></tr></tbody></table>
+<p>💡 腾讯今日逆势涨，AI应用板块普联软件20cm涨停、税友股份涨停，AI应用方向相对独立于硬件调整。</p>
+<h3>新能源/电动车</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr></thead><tbody><tr><td>宁德时代</td><td>300750</td><td>¥401.88</td><td><span class="red">+1.27%</span></td><td>5日+4.12%，20日+5.11%，PE 21.87</td></tr><tr><td>兆威机电</td><td>003021</td><td>¥72.73</td><td><span class="green">-3.48%</span></td><td>年初至今-41.25%，电机板块-1.90%</td></tr></tbody></table>
+<p>💡 宁德时代逆势领涨新能源，PE 21.87x 估值合理。兆威机电年初至今-41%深度超跌。</p>
 <h3>保险</h3>
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr>
-<tr><td>中国太保</td><td>601601</td><td>¥32.80</td><td class="red">+2.72%</td><td>保险板块 <span class="red">+2.39%</span>，20 日 <span class="red">+15.17%</span></td></tr>
-<tr><td>中国人寿</td><td>02628</td><td>HK$28.90</td><td class="red">+2.05%</td><td>PE 4.98，保险板块资金流入</td></tr>
-</table>
-</div>
-<div class="insight">💡 保险板块今日逆势领涨，太保/国寿双双走强，资金向低估值价值股切换。美股金融板块 ETF 创历史新高同步印证轮动逻辑。</div>
-
-<h3>化工 / 材料</h3>
-<div class="highlight highlight-blue">
-<h3>🔵 巨化股份重大催化：长江化工强推氟化工</h3>
-<p>长江化工发布氟化工强推报告——制冷剂在需求压力测试下证明超强议价权（Q3 企业大幅提升 R32 长协报价）；氟化工材料涉半导体/AI 应用（PFA/冷却液/电子级氢氟酸），巨化股份 PFA 完成 0 到 1 国产替代突破，科技方向赋予新增成长空间。相关：三美股份、东岳集团、永和股份等。</p>
-</div>
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr>
-<tr><td>巨化股份</td><td>600160</td><td>¥39.61</td><td class="red">+1.28%</td><td>⭐ 长江化工强推，PFA 突破</td></tr>
-<tr><td>新和成</td><td>002001</td><td>¥30.52</td><td class="red">+0.73%</td><td>PE 13.98，5 日 <span class="green">-3.90%</span></td></tr>
-</table>
-</div>
-
-<h3>能源 / 有色 | 传媒 / 娱乐 | 地产 / 基建</h3>
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr>
-<tr><td>紫金黄金国际</td><td>02259</td><td>HK$118.20</td><td class="red">+0.42%</td><td>贵金属板块 +0.28%，振幅 7.82%</td></tr>
-<tr><td>泡泡玛特</td><td>09992</td><td>HK$163.20</td><td class="green">-1.92%</td><td>PE 15.37，ZSXQ 长江轻工专题</td></tr>
-<tr><td>万科企业</td><td>02202</td><td>HK$2.47</td><td class="green">-0.40%</td><td>地产+0.30%，缩量横盘</td></tr>
-</table>
-</div>
-
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr></thead><tbody><tr><td>中国太保</td><td>601601</td><td>¥32.80</td><td><span class="red">+2.72%</span></td><td>保险板块+2.39%，20日+15.17%</td></tr><tr><td>中国人寿</td><td>601628</td><td>—</td><td>—</td><td>港股(02628) +2.05%至HK$28.90，PE 4.98</td></tr></tbody></table>
+<p>💡 保险板块今日逆势领涨，太保/国寿双双走强，资金向低估值价值股切换。美股金融板块ETF创历史新高同步印证轮动逻辑。</p>
+<h3>化工/材料</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr></thead><tbody><tr><td>巨化股份</td><td>600160</td><td>¥39.61</td><td><span class="red">+1.28%</span></td><td>长江化工强推氟化工！制冷剂长期向上</td></tr><tr><td>新和成</td><td>002001</td><td>¥30.52</td><td><span class="red">+0.73%</span></td><td>PE 13.98，5日-3.90%</td></tr></tbody></table>
+<p>🔵 <strong>巨化股份重大催化</strong>：长江化工发布氟化工强推报告——制冷剂在需求压力测试下证明超强议价权（Q3企业大幅提升R32长协报价）；氟化工材料涉半导体/AI应用（PFA/冷却液/电子级氢氟酸），巨化股份PFA完成0到1国产替代突破，科技方向赋予新增成长空间。相关：三美股份、东岳集团、永和股份等。</p>
+<h3>能源/有色</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr></thead><tbody><tr><td>紫金黄金国际</td><td>02259</td><td>HK$118.20</td><td><span class="red">+0.42%</span></td><td>贵金属板块+0.28%，振幅7.82%</td></tr></tbody></table>
+<h3>传媒/娱乐</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr></thead><tbody><tr><td>泡泡玛特</td><td>09992</td><td>HK$163.20</td><td><span class="green">-1.92%</span></td><td>PE 15.37，日内振幅6.19%</td></tr></tbody></table>
+<p>🔵 ZSXQ：长江轻工&amp;传媒发布「泡泡玛特和潮流玩具」专题报告。</p>
+<h3>地产/基建</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>关键信息</th></tr></thead><tbody><tr><td>万科企业</td><td>02202</td><td>HK$2.47</td><td><span class="green">-0.40%</span></td><td>地产发展商板块+0.30%，缩量横盘</td></tr></tbody></table>
+<hr>
 <h3>📊 持仓汇总</h3>
-<div class="card">
-<table>
-<tr><th>统计</th><th>A 股 (14 只)</th><th>港股 (10 只)</th></tr>
-<tr><td>上涨</td><td>5 只</td><td>4 只</td></tr>
-<tr><td>下跌</td><td>9 只</td><td>6 只</td></tr>
-<tr><td>领涨</td><td>中国太保 <span class="red">+2.72%</span>、恒瑞 <span class="red">+1.41%</span></td><td>腾讯 <span class="red">+1.16%</span></td></tr>
-<tr><td>领跌</td><td>长川 <span class="green">-9.41%</span>、东方钽业 <span class="green">-9.40%</span></td><td>长飞光纤 <span class="green">-10.51%</span>、大族数控 <span class="green">-8.31%</span></td></tr>
-</table>
-</div>
-<div class="warning-box">⚠️ <strong>重点风险提示</strong>：长飞光纤光缆（20日 <span class="green">-53.53%</span>）、亨通光电（20日 <span class="green">-49.70%</span>）、东方钽业（20日 <span class="green">-50.47%</span>）三只标的进入极度超卖区域。全球存储/半导体杀跌传导仍在持续，科技硬件类需关注止损纪律。</div>
-
-<!-- ====== 知识星球 ====== -->
+<table><thead><tr><th>统计</th><th>A股(14只)</th><th>港股(10只)</th></tr></thead><tbody><tr><td>上涨</td><td>5只</td><td>4只</td></tr><tr><td>下跌</td><td>9只</td><td>6只</td></tr><tr><td>领涨</td><td>中国太保+2.72%、恒瑞+1.41%</td><td>腾讯+1.16%、紫金黄金国际+0.42%</td></tr><tr><td>领跌</td><td>长川科技-9.41%、东方钽业-9.40%</td><td>长飞光纤光缆-10.51%、大族数控-8.31%</td></tr></tbody></table>
+<p>⚠️ <strong>重点风险提示</strong>：长飞光纤光缆（20日-53.53%）、亨通光电（20日-49.70%）、东方钽业（20日-50.47%）三只标的进入极度超卖区域。全球存储/半导体杀跌传导仍在持续，科技硬件类需关注止损纪律。</p>
+<hr>
 <h2>六、知识星球</h2>
-
-<h3>水木调研纪要-2.0</h3>
-
-<div class="highlight highlight-red">
-<h3>🔴 亚钾国际推荐</h3>
-<p>坚定看好。钾肥涨价逻辑清晰：国内秋耕备货+东南亚雨季追肥+磷钾价差扩大补涨空间大。2026 年冲刺 300 万吨产量，2027 年有望冲刺 500 万吨。公司成长性充裕，正推进第四/第五个百万吨采矿权。</p>
-</div>
-
-<div class="highlight highlight-blue">
-<h3>🔵 长江化工氟化工强推 ⭐ 持仓巨化股份核心受益</h3>
-<p>制冷剂在需求压力测试下证明超强议价权，长期配额减量加速涨价斜率。氟材料涉半导体/AI 应用（PFA/冷却液），巨化股份 PFA 从 0 到 1 国产替代，科技方向赋予新增成长空间。</p>
-</div>
-
-<ul class="bullet">
-  <li>🟠 <strong>迈瑞医疗</strong>：长周期拐点来临</li>
-  <li>🔵 <strong>财通电子 MLCC 再 Call</strong>：MLCC 底部再 Call，低估值配置窗口</li>
-  <li>🔵 <strong>陈果点评</strong>：再平衡=各回各家，红利可能发挥基底配置作用</li>
-  <li>🔵 <strong>万华化学</strong>：亨斯迈聚氨酯提价，看好万华化学</li>
-  <li>📊 其他：长江机械成长周期再均衡、光大宏观、国金计算机盛视科技、卫龙美味持续推荐、海外投行报告×3 <span class="orange">⚠️</span></li>
-</ul>
-
-<h3>调研纪要更新</h3>
-<ul class="bullet">
-  <li>🔴 <strong>政治局会议对比分析</strong>：两星球均发布 7 月与 4 月政治局会议逐项对比，政策信号偏积极</li>
-  <li>🔵 <strong>华泰电新光伏供改</strong>：光伏供改政策加码</li>
-  <li>🔵 <strong>长江轻工&传媒泡泡玛特</strong> ⭐ 持仓相关：泡泡玛特和潮流玩具专题</li>
-  <li>🔵 <strong>天风电子智立方</strong>：电子板块新标的</li>
-  <li>🔵 <strong>中烟加热卷烟</strong>：高度重视中烟放开加热卷烟政策催化</li>
-  <li>📊 其他：国盛食饮原奶周期、浦银国际百威亚太 Q2、广发纺服阿迪达斯、天风电新台光 Q2</li>
-</ul>
-
-<!-- ====== 数据溯源 ====== -->
+<h3>水木调研纪要-2.0（88888142214212）</h3>
+<p><strong>今日重点关注：</strong></p>
+<p>🔴 <strong>亚钾国际推荐</strong>（17:12）——坚定看好。钾肥涨价逻辑清晰：国内秋耕备货+东南亚雨季追肥+磷钾价差扩大补涨空间大。2026年冲刺300万吨产量，2027年有望冲刺500万吨。公司成长性充裕，正推进第四/第五个百万吨采矿权。</p>
+<p>🔵 <strong>长江化工氟化工强推</strong>（15:02）——⭐ <strong>持仓巨化股份核心受益</strong>。制冷剂在需求压力测试下证明超强议价权，长期配额减量加速涨价斜率。氟材料涉半导体/AI应用(PFA/冷却液)，巨化股份PFA从0到1国产替代，科技方向赋予新增成长空间。</p>
+<p>🟠 <strong>迈瑞医疗长周期拐点</strong>（17:08）——长周期拐点来临，建议关注。</p>
+<p>🔵 <strong>财通电子MLCC再Call</strong>（15:01）——MLCC底部再Call，低估值配置窗口。</p>
+<p>🔵 <strong>陈果点评</strong>（14:17）——再平衡=各回各家。红利可能发挥基底配置作用。</p>
+<p>🔵 <strong>万华化学</strong>（13:51）——亨斯迈聚氨酯提价，看好万华化学。</p>
+<p>📊 <strong>其他帖子</strong>：长江机械成长周期再均衡(建议关注工程机械)、光大宏观、国金计算机盛视科技(算力设备)、卫龙美味(估值低位持续推荐)、MLCC再Call、恒誉环保拟更名恒誉科技、外资交易台A股总结、海外投行报告×3 ⚠️。</p>
+<h3>调研纪要更新（48844242514558）</h3>
+<p><strong>今日重点关注：</strong></p>
+<p>🔴 <strong>政治局会议对比分析</strong>（17:53）——两星球均发布了7月政治局会议与4月会议的逐项对比，政策信号整体偏积极，财政货币双提速。</p>
+<p>🔵 <strong>华泰电新光伏供改</strong>（17:48）——光伏供改政策加码。</p>
+<p>🔵 <strong>长江轻工&amp;传媒泡泡玛特</strong>（17:46）——⭐ <strong>持仓泡泡玛特相关</strong>。发布泡泡玛特和潮流玩具专题报告。</p>
+<p>🔵 <strong>天风电子智立方</strong>（17:45）——电子板块新标的推荐。</p>
+<p>🔵 <strong>中烟加热卷烟</strong>（17:54）——建议高度重视中烟放开加热卷烟的政策催化。</p>
+<p>📊 <strong>其他帖子</strong>：国盛食饮原奶周期、浦银国际百威亚太Q2、广发纺服阿迪达斯FY2026Q2、台湾财报天风电新台光Q2、巴基斯坦美伊谈判进行中。</p>
+<hr>
 <h2>七、数据溯源</h2>
-<div class="card">
-<table>
-<tr><th>板块</th><th>数据源</th><th>查询次数</th></tr>
-<tr><td>指数行情</td><td>NeoData Financial Search</td><td>×2</td></tr>
-<tr><td>A 股持仓个股</td><td>NeoData Financial Search</td><td>×2</td></tr>
-<tr><td>港股持仓个股</td><td>NeoData Financial Search</td><td>×1</td></tr>
-<tr><td>宏观政策</td><td>NeoData Financial Search</td><td>×1</td></tr>
-<tr><td>策略观点/板块</td><td>NeoData Financial Search</td><td>×1</td></tr>
-<tr><td>海外市场</td><td>NeoData Financial Search</td><td>×1</td></tr>
-<tr><td>知识星球</td><td>zsxq-cli</td><td>×6</td></tr>
-</table>
-</div>
-<div class="insight">📊 数据获取均为 API 直接调用，金融数据全部来自 NeoData。Wind/彭博本次未使用。全部数据截至 2026-07-30 18:00 CST。</div>
+<table><thead><tr><th>板块</th><th>数据源</th><th>查询次数</th></tr></thead><tbody><tr><td>指数行情</td><td>NeoData Financial Search</td><td>×2</td></tr><tr><td>A股持仓个股</td><td>NeoData Financial Search</td><td>×2</td></tr><tr><td>港股持仓个股</td><td>NeoData Financial Search</td><td>×1</td></tr><tr><td>宏观政策</td><td>NeoData Financial Search</td><td>×1</td></tr><tr><td>策略观点/板块</td><td>NeoData Financial Search</td><td>×1</td></tr><tr><td>海外市场</td><td>NeoData Financial Search</td><td>×1</td></tr><tr><td>知识星球</td><td>zsxq-cli (group +topics × 2 + topic +detail × 2 + topic +search × 2)</td><td>×6</td></tr></tbody></table>
+<blockquote>数据获取均为API直接调用，金融数据全部来自NeoData。Wind/彭博本次未使用。全部数据截至 2026-07-30 18:00 CST。</blockquote>
+<hr>
+<p>*报告由 Cleo 🐾 自动生成 · My Research Central · via WB*</p>
 
 <div class="report-footer">
-  数据来源：NeoData Financial Search · 知识星球 (zsxq-cli) · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

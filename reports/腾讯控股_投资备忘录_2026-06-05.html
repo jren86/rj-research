@@ -1,1418 +1,390 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>腾讯控股 (0700.HK) 投资备忘录 — 2026-06-05</title>
-<style>
-  :root {
-    --bg-primary: #0D1117;
-    --bg-secondary: #161B22;
-    --bg-tertiary: #1C2129;
-    --bg-card: #1A1F2B;
-    --border: #2D333B;
-    --text-primary: #E6EDF3;
-    --text-secondary: #8B949E;
-    --text-muted: #6E7681;
-    --red: #E74C3C;
-    --green: #27AE60;
-    --blue: #58A6FF;
-    --gold: #D29922;
-    --purple: #A371F7;
-    --orange: #F0883E;
-    --cyan: #39D2C0;
-    --accent: #58A6FF;
-    --font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>腾讯控股 · 投资备忘录 · 2026-06-05</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
 
-  body {
-    font-family: var(--font-sans);
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 16px;
-  }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
 
-  /* Header */
-  .header {
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
 
-  .header::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--blue), var(--purple), var(--cyan));
-  }
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
 
-  .header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-  }
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
 
-  .header .subtitle {
-    font-size: 14px;
-    color: var(--text-secondary);
-    font-family: var(--font-mono);
-  }
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
 
-  .header .verdict {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 8px 24px;
-    background: rgba(39, 174, 96, 0.15);
-    border: 1px solid rgba(39, 174, 96, 0.3);
-    border-radius: 24px;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--green);
-    letter-spacing: 1px;
-  }
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
 
-  /* Status bar */
-  .status-bar {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin-bottom: 20px;
-  }
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
 
-  @media (max-width: 640px) {
-    .status-bar { grid-template-columns: repeat(3, 1fr); }
-  }
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
 
-  .stat-pill {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 12px;
-    text-align: center;
-  }
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
 
-  .stat-pill .label {
-    font-size: 11px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+  background: var(--card-alt);
+}
 
-  .stat-pill .value {
-    font-size: 20px;
-    font-weight: 700;
-    font-family: var(--font-mono);
-  }
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
 
-  .stat-pill .change {
-    font-size: 11px;
-    margin-top: 2px;
-  }
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
 
-  .red { color: var(--red); }
-  .green { color: var(--green); }
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
 
-  /* Sections */
-  .section {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 20px;
-  }
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
 
-  .section h2 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
 
-  .section h3 {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 20px 0 12px;
-  }
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
 
-  /* Canvas containers */
-  .canvas-container {
-    margin: 16px 0;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px;
-    overflow-x: auto;
-  }
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
 
-  .canvas-container canvas {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-  }
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
 
-  /* Tables */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    margin: 12px 0;
-  }
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
 
-  .data-table thead th {
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-    font-weight: 600;
-    padding: 10px 12px;
-    text-align: left;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid var(--border);
-  }
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
 
-  .data-table tbody td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-primary);
-    font-family: var(--font-mono);
-    font-size: 13px;
-  }
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
 
-  .data-table tbody tr:hover {
-    background: rgba(88, 166, 255, 0.04);
-  }
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
 
-  /* Scenario cards */
-  .scenario-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 16px 0;
-  }
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
 
-  @media (max-width: 768px) {
-    .scenario-grid { grid-template-columns: 1fr; }
-  }
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
 
-  .scenario-card {
-    border-radius: 10px;
-    padding: 20px;
-    border: 1px solid var(--border);
-  }
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
 
-  .scenario-card.bull { border-color: rgba(231, 76, 60, 0.3); background: rgba(231, 76, 60, 0.05); }
-  .scenario-card.base { border-color: rgba(210, 153, 34, 0.3); background: rgba(210, 153, 34, 0.05); }
-  .scenario-card.bear { border-color: rgba(39, 174, 96, 0.3); background: rgba(39, 174, 96, 0.05); }
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
 
-  .scenario-card .scenario-header {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
 
-  .scenario-card .scenario-price {
-    font-size: 28px;
-    font-weight: 700;
-    font-family: var(--font-mono);
-    margin: 8px 0;
-  }
+ul {
+  margin: 6px 0 6px 20px;
+}
 
-  .scenario-card .scenario-prob {
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
 
-  .scenario-card ul {
-    list-style: none;
-    margin-top: 12px;
-    font-size: 13px;
-    line-height: 1.8;
-    color: var(--text-secondary);
-  }
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
 
-  .scenario-card ul li::before {
-    content: '· ';
-    color: var(--accent);
-  }
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
 
-  /* Risk Level indicators */
-  .risk-high { color: var(--red); font-weight: 600; }
-  .risk-med { color: var(--gold); font-weight: 600; }
-  .risk-low { color: var(--green); font-weight: 600; }
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
 
-  /* Decision box */
-  .decision-box {
-    background: linear-gradient(135deg, rgba(39, 174, 96, 0.08), rgba(39, 174, 96, 0.02));
-    border: 1px solid rgba(39, 174, 96, 0.25);
-    border-radius: 12px;
-    padding: 24px;
-    margin: 20px 0;
-  }
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
 
-  .decision-box h3 {
-    color: var(--green);
-    font-size: 18px;
-    margin-top: 0;
-  }
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
 
-  /* Checklist */
-  .checklist {
-    list-style: none;
-    font-size: 14px;
-    line-height: 2;
-  }
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
 
-  .checklist li::before {
-    content: '☐ ';
-    margin-right: 8px;
-    color: var(--text-muted);
-  }
+.source-link a:hover {
+  text-decoration: underline;
+}
 
-  .checklist li.priority-high::before {
-    color: var(--red);
-  }
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
 
-  .checklist li.priority-med::before {
-    color: var(--gold);
-  }
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
 
-  /* Info chips */
-  .chip-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 12px 0;
-  }
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
 
-  .chip {
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 500;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-  }
-
-  .chip.green { border-color: rgba(39,174,96,0.3); color: var(--green); background: rgba(39,174,96,0.1); }
-  .chip.red { border-color: rgba(231,76,60,0.3); color: var(--red); background: rgba(231,76,60,0.1); }
-  .chip.blue { border-color: rgba(88,166,255,0.3); color: var(--blue); background: rgba(88,166,255,0.1); }
-  .chip.gold { border-color: rgba(210,153,34,0.3); color: var(--gold); background: rgba(210,153,34,0.1); }
-
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 24px;
-    color: var(--text-muted);
-    font-size: 12px;
-    border-top: 1px solid var(--border);
-    margin-top: 24px;
-  }
-
-  .conviction-bar {
-    height: 6px;
-    border-radius: 3px;
-    background: linear-gradient(90deg, var(--green) 0%, var(--gold) 60%, var(--red) 100%);
-    position: relative;
-    margin: 16px 0;
-  }
-
-  .conviction-marker {
-    position: absolute;
-    top: -6px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: var(--text-primary);
-    border: 3px solid var(--accent);
-    transform: translateX(-50%);
-  }
-</style>
+  </style>
 </head>
 <body>
 
-<div class="container">
-
-  <!-- HEADER -->
-  <div class="header">
-    <h1>🏦 腾讯控股 (0700.HK) 综合投资备忘录</h1>
-    <div class="subtitle">编制日期：2026-06-05 | 分析师：Cleo | via WB</div>
-    <div class="verdict">📊 核心结论：BUY · 逢低建仓 分步加仓</div>
-  </div>
-
-  <!-- STATUS BAR -->
-  <div class="status-bar">
-    <div class="stat-pill">
-      <div class="label">最新价</div>
-      <div class="value">HK$453.2</div>
-      <div class="change red">▼ 1.26%</div>
-    </div>
-    <div class="stat-pill">
-      <div class="label">市值</div>
-      <div class="value">HK$4.13T</div>
-      <div class="change" style="color:var(--text-muted)">港股#1</div>
-    </div>
-    <div class="stat-pill">
-      <div class="label">PE (TTM)</div>
-      <div class="value">15.52x</div>
-      <div class="change green">历史低位</div>
-    </div>
-    <div class="stat-pill">
-      <div class="label">YTD</div>
-      <div class="value red">-23.67%</div>
-      <div class="change" style="color:var(--text-muted)">深度回调</div>
-    </div>
-    <div class="stat-pill">
-      <div class="label">52W 区间</div>
-      <div class="value" style="font-size:14px">420-678</div>
-      <div class="change" style="color:var(--text-muted)">距低点+7.8%</div>
-    </div>
-    <div class="stat-pill">
-      <div class="label">分析师目标</div>
-      <div class="value green">HK$734</div>
-      <div class="change green">+62% ↑</div>
-    </div>
-  </div>
-
-  <!-- SCENARIO CARDS -->
-  <div class="section">
-    <h2>🎯 观点矩阵 · 概率加权估值</h2>
-    <div class="scenario-grid">
-      <div class="scenario-card bull">
-        <div class="scenario-header" style="color:var(--red)">🔴 看涨 Bull</div>
-        <div class="scenario-price" style="color:var(--red)">HK$757</div>
-        <div class="scenario-prob">概率 35% · 上行 +67%</div>
-        <ul>
-          <li>AI 广告变现加速 (Q1 +20%)</li>
-          <li>游戏储备强劲 (流水创新高)</li>
-          <li>云服务 AI 需求爆发 (国际+40%)</li>
-          <li>PE 重估至 22x (AI 溢价)</li>
-          <li>微信→超级 Agent 平台</li>
-        </ul>
-      </div>
-      <div class="scenario-card base">
-        <div class="scenario-header" style="color:var(--gold)">🟡 中性 Base</div>
-        <div class="scenario-price" style="color:var(--gold)">HK$602</div>
-        <div class="scenario-prob">概率 45% · 上行 +33%</div>
-        <ul>
-          <li>游戏+广告双引擎 10-15% 增长</li>
-          <li>AI Capex 可控 (核心 +17%)</li>
-          <li>PE 温和修复至 18x</li>
-          <li>回购+分红持续回报</li>
-          <li>监管风险大幅消退</li>
-        </ul>
-      </div>
-      <div class="scenario-card bear">
-        <div class="scenario-header" style="color:var(--green)">🟢 看跌 Bear</div>
-        <div class="scenario-price" style="color:var(--green)">HK$363</div>
-        <div class="scenario-prob">概率 20% · 下行 -20%</div>
-        <ul>
-          <li>AI 投入回报不确定</li>
-          <li>Prosus 持续减持 (23%持仓)</li>
-          <li>竞争格局恶化</li>
-          <li>PE 压缩至 12x</li>
-          <li>宏观下行 + 做空压制</li>
-        </ul>
-      </div>
-    </div>
-
-    <div style="text-align:center; margin-top:24px;">
-      <div style="font-size:14px; color:var(--text-secondary); margin-bottom:8px;">概率加权目标价</div>
-      <div style="font-size:42px; font-weight:700; color:var(--cyan); font-family:var(--font-mono);">
-        HK$609
-      </div>
-      <div style="font-size:14px; color:var(--green); margin-top:4px;">
-        vs 当前 HK$453.2 → 上行空间 <strong>+34%</strong>
-      </div>
-    </div>
-  </div>
-
-  <!-- VALUATION CANVAS -->
-  <div class="section">
-    <h2>📈 估值情景分析</h2>
-    <div class="canvas-container">
-      <canvas id="valuationCanvas" width="880" height="320"></canvas>
-    </div>
-  </div>
-
-  <!-- PEER COMPARISON -->
-  <div class="section">
-    <h2>⚖️ 同业对比 · 竞争力矩阵</h2>
-    <div class="canvas-container">
-      <canvas id="peerRadarCanvas" width="880" height="400"></canvas>
-    </div>
-
-    <table class="data-table" style="margin-top:16px;">
-      <thead>
-        <tr>
-          <th>指标</th>
-          <th>腾讯</th>
-          <th>阿里巴巴</th>
-          <th>美团</th>
-          <th>网易</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="font-family:var(--font-sans);">营收增速 (YoY)</td>
-          <td style="color:var(--gold)">+9%</td>
-          <td>+8%</td>
-          <td style="color:var(--green)">+15%</td>
-          <td>+8%</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans);">毛利率</td>
-          <td style="color:var(--green);font-weight:700;">56.6% 🥇</td>
-          <td>33.4%</td>
-          <td>38%</td>
-          <td style="color:var(--green)">62% 🥇</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans);">净利率</td>
-          <td style="color:var(--green);font-weight:700;">30.2% 🥇</td>
-          <td>10.5%</td>
-          <td>8%</td>
-          <td>28%</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans);">ROE (年化)</td>
-          <td style="color:var(--green);font-weight:700;">21.1%</td>
-          <td>10.2%</td>
-          <td>12%</td>
-          <td style="color:var(--green)">25% 🥇</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans);">PE (TTM)</td>
-          <td style="color:var(--blue)">15.5x</td>
-          <td style="color:var(--green)">10.5x</td>
-          <td>20x</td>
-          <td>13x</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans);">FCF Yield</td>
-          <td style="color:var(--green);font-weight:700;">~6.0% 🥇</td>
-          <td>~4%</td>
-          <td>~3%</td>
-          <td>~5%</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- FINANCIAL TRENDS -->
-  <div class="section">
-    <h2>📊 核心财务趋势 (FY2021-Q1 2026)</h2>
-    <div class="canvas-container">
-      <canvas id="trendCanvas" width="880" height="380"></canvas>
-    </div>
-    <table class="data-table">
-      <thead>
-        <tr><th>财年</th><th>营收 (¥B)</th><th>毛利率</th><th>净利率</th><th>ROE</th><th>FCF (¥B)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>FY2021</td><td>560.1</td><td>43.9%</td><td>40.7%</td><td>29.8%</td><td>145.9</td></tr>
-        <tr><td>FY2022</td><td>554.6</td><td>43.1%</td><td>34.0%</td><td>24.6%</td><td>123.4</td></tr>
-        <tr><td>FY2023</td><td>609.0</td><td>48.1%</td><td>19.4%</td><td>15.1%</td><td>201.0</td></tr>
-        <tr><td>FY2024</td><td>660.3</td><td style="color:var(--green)">52.9%</td><td>29.8%</td><td style="color:var(--green)">21.8%</td><td>195.6</td></tr>
-        <tr><td>FY2025</td><td style="color:var(--green)">751.8</td><td style="color:var(--green)">56.2%</td><td style="color:var(--green)">30.6%</td><td>21.1%</td><td style="color:var(--green)">215.6</td></tr>
-        <tr><td style="color:var(--blue)">Q1 2026</td><td>196.5</td><td style="color:var(--green);font-weight:700">56.6%</td><td style="color:var(--green)">30.2%</td><td>5.1%(Q)</td><td>101.4(Q)</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- POSITION SIZING -->
-  <div class="section">
-    <h2>📐 头寸规模 · 分批建仓框架</h2>
-    <div class="canvas-container">
-      <canvas id="positionCanvas" width="880" height="280"></canvas>
-    </div>
-
-    <table class="data-table">
-      <thead>
-        <tr><th>阶段</th><th>价格区间 (HKD)</th><th>仓位比例</th><th>操作</th><th>条件</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="color:var(--blue);font-weight:700">初始建仓</td>
-          <td>440-460</td>
-          <td style="font-weight:700">1.5-2.0%</td>
-          <td>买入 1/3 目标仓位</td>
-          <td>当前可行 → 执行</td>
-        </tr>
-        <tr>
-          <td style="color:var(--gold);font-weight:700">加仓一</td>
-          <td>420-440</td>
-          <td>+1.0-1.5%</td>
-          <td>接近 52W 低点加仓</td>
-          <td>总仓位 2.5-3.5%</td>
-        </tr>
-        <tr>
-          <td style="color:var(--orange);font-weight:700">加仓二</td>
-          <td>400-420</td>
-          <td>+0.5-1.0%</td>
-          <td>极端折扣加仓</td>
-          <td>总仓位 3.0-4.5%</td>
-        </tr>
-        <tr>
-          <td style="color:var(--red);font-weight:700">止损平仓</td>
-          <td>&lt; 380</td>
-          <td>全部平仓</td>
-          <td>Bear Case 触发</td>
-          <td>观点失效</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- RISK REGISTER -->
-  <div class="section">
-    <h2>🛡️ 风险登记册</h2>
-    <div class="canvas-container">
-      <canvas id="riskCanvas" width="880" height="320"></canvas>
-    </div>
-    <table class="data-table">
-      <thead>
-        <tr><th>风险</th><th>概率</th><th>影响</th><th>等级</th><th>应对</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="font-family:var(--font-sans)">AI 投入回报不确定</td>
-          <td>中</td><td>高</td>
-          <td class="risk-med">🟡 中高</td>
-          <td style="font-family:var(--font-sans);font-size:12px">跟踪剔除AI口径利润率</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">Prosus 减持 (23%持仓)</td>
-          <td>高</td><td>中</td>
-          <td class="risk-med">🟡 中高</td>
-          <td style="font-family:var(--font-sans);font-size:12px">设置止盈止损位</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">竞争加剧 (字节/阿里)</td>
-          <td>中</td><td>中</td>
-          <td class="risk-med">🟡 中</td>
-          <td style="font-family:var(--font-sans);font-size:12px">跟踪市场份额</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">监管风险</td>
-          <td>低</td><td>高</td>
-          <td class="risk-med">🟡 中</td>
-          <td style="font-family:var(--font-sans);font-size:12px">仓位可控即可</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">宏观下行</td>
-          <td>中</td><td>中</td>
-          <td class="risk-med">🟡 中</td>
-          <td style="font-family:var(--font-sans);font-size:12px">关注PMI/社零先行指标</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">港股流动性风险</td>
-          <td>低</td><td>高</td>
-          <td class="risk-low">🟢 低</td>
-          <td style="font-family:var(--font-sans);font-size:12px">南向资金缓冲</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">做空压力 (14.7%)</td>
-          <td>中</td><td>低</td>
-          <td class="risk-low">🟢 低</td>
-          <td style="font-family:var(--font-sans);font-size:12px">回购+业绩消化</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- CATALYST TIMELINE -->
-  <div class="section">
-    <h2>📅 催化剂日历</h2>
-    <div class="canvas-container">
-      <canvas id="catalystCanvas" width="880" height="350"></canvas>
-    </div>
-  </div>
-
-  <!-- DECISION MEMO -->
-  <div class="decision-box">
-    <h3>📋 综合决策备忘录</h3>
-    <table class="data-table" style="margin-top:12px;">
-      <thead>
-        <tr><th>决策维度</th><th>判断</th><th>依据</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="font-family:var(--font-sans);font-weight:700;color:var(--green)">开仓/加仓</td>
-          <td style="font-weight:700;color:var(--green)">逢低建仓 + 分步加仓</td>
-          <td style="font-family:var(--font-sans);font-size:12px">PE 15.5x 历史低位，+34% 概率加权上行</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">当前仓位</td>
-          <td>1.5-2% (初始建仓)</td>
-          <td style="font-family:var(--font-sans);font-size:12px">HKD 453 处于低估区间上沿</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">止损线</td>
-          <td style="color:var(--red);font-weight:700">HKD 380</td>
-          <td style="font-family:var(--font-sans);font-size:12px">Bear Case 确认，观点完全失效</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">止盈参考</td>
-          <td style="color:var(--green);font-weight:700">HKD 600-700</td>
-          <td style="font-family:var(--font-sans);font-size:12px">Base-Bull Case 目标区间</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">持有周期</td>
-          <td style="font-weight:700">6-12 个月</td>
-          <td style="font-family:var(--font-sans);font-size:12px">等待 Q2 财报 + AI 商业化验证</td>
-        </tr>
-        <tr>
-          <td style="font-family:var(--font-sans)">下次评估</td>
-          <td style="font-weight:700;color:var(--blue)">2026-07-05</td>
-          <td style="font-family:var(--font-sans);font-size:12px">Q2 业绩前瞻评估</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3 style="color:var(--text-primary);margin-top:20px;">行动清单</h3>
-    <ul class="checklist">
-      <li class="priority-high">执行初始建仓：HKD 440-460 区间买入 1.5-2% 仓位</li>
-      <li class="priority-high">设置止损单：HKD 380 GTC 止损</li>
-      <li class="priority-med">设置加仓提醒：HKD 420、HKD 400</li>
-      <li class="priority-med">跟踪 Q2 财报日期（预计 8 月中旬）</li>
-      <li class="priority-med">每周监控：AI 产品进展、南向资金、Prosus 减持</li>
-      <li>下次评估日期：2026-07-05</li>
-    </ul>
-  </div>
-
-  <!-- WEEKLY CHANGES -->
-  <div class="section">
-    <h2>📋 本周变化跟踪 (05/30 - 06/05)</h2>
-    <table class="data-table">
-      <thead>
-        <tr><th>日期</th><th>事件</th><th>影响</th><th>观点调整</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>06-02</td>
-          <td style="font-family:var(--font-sans)">大涨 +10%，436→481.6</td>
-          <td class="green">🟢 超跌反弹</td>
-          <td style="font-family:var(--font-sans)">维持看涨</td>
-        </tr>
-        <tr>
-          <td>06-05</td>
-          <td style="font-family:var(--font-sans)">汤道生×姚顺雨：腾讯AI下半场</td>
-          <td class="green">🟢 战略清晰</td>
-          <td style="font-family:var(--font-sans)">强化看涨</td>
-        </tr>
-        <tr>
-          <td>06-05</td>
-          <td style="font-family:var(--font-sans)">TokenHub 日消耗 5万亿</td>
-          <td class="green">🟢 超预期</td>
-          <td style="font-family:var(--font-sans)">强化看涨</td>
-        </tr>
-        <tr>
-          <td>06-05</td>
-          <td style="font-family:var(--font-sans)">文档「人机双写」首发</td>
-          <td class="green">🟢 产品矩阵</td>
-          <td style="font-family:var(--font-sans)">强化看涨</td>
-        </tr>
-        <tr>
-          <td>每日</td>
-          <td style="font-family:var(--font-sans)">持续回购 HKD 1-5B/日</td>
-          <td class="green">🟢 支撑股价</td>
-          <td style="font-family:var(--font-sans)">维持看涨</td>
-        </tr>
-      </tbody>
-    </table>
-    <div style="margin-top:12px;font-weight:600;color:var(--green);font-size:14px;">
-      本周净影响：🟢 偏正面 — AI 叙事显著增强，回购持续，游戏流水创新高
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    腾讯控股 (0700.HK) 投资备忘录 · 2026-06-05 · 数据来源：Wind、NeoData、腾讯自选股、公开研报<br>
-    本备忘录仅用于内部投研讨论，不构成投资建议。via WB
-  </div>
+<div class="report-header">
+  <h1>腾讯控股 · 投资备忘录 · 2026-06-05</h1>
+  <div class="meta"><strong>编制日期：</strong> 2026-06-05 | <strong>分析师：</strong> Cleo | <strong>核心结论：</strong> BUY（逢低建仓，分步加仓）</div>
 </div>
 
-<script>
-// ==================== Canvas Charts ====================
-
-// Common drawing helpers
-function roundRect(ctx, x, y, w, h, r) {
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + w - r, y);
-  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-  ctx.lineTo(x + w, y + h - r);
-  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-  ctx.lineTo(x + r, y + h);
-  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-  ctx.lineTo(x, y + r);
-  ctx.quadraticCurveTo(x, y, x + r, y);
-  ctx.closePath();
-}
-
-function getCanvasCtx(id) {
-  const canvas = document.getElementById(id);
-  const dpr = window.devicePixelRatio || 1;
-  const rect = canvas.getBoundingClientRect();
-  canvas.width = rect.width * dpr;
-  canvas.height = rect.height * dpr;
-  const ctx = canvas.getContext('2d');
-  ctx.scale(dpr, dpr);
-  canvas.style.width = rect.width + 'px';
-  canvas.style.height = rect.height + 'px';
-  return { ctx, w: rect.width, h: rect.height };
-}
-
-// 1. Valuation Scenario Chart
-function drawValuation() {
-  const { ctx, w, h } = getCanvasCtx('valuationCanvas');
-  const margin = { top: 40, right: 60, bottom: 50, left: 200 };
-  const plotW = w - margin.left - margin.right;
-  const plotH = h - margin.top - margin.bottom;
-
-  // Background
-  ctx.fillStyle = '#161B22';
-  roundRect(ctx, 0, 0, w, h, 8);
-  ctx.fill();
-
-  const scenarios = [
-    { name: 'Bear', price: 363, color: '#27AE60', prob: 20 },
-    { name: 'Base', price: 602, color: '#D29922', prob: 45 },
-    { name: 'Bull', price: 757, color: '#E74C3C', prob: 35 },
-  ];
-
-  const minPrice = 300, maxPrice = 800;
-  const barH = 40, gap = 16;
-
-  // Title
-  ctx.fillStyle = '#E6EDF3';
-  ctx.font = 'bold 16px Inter, sans-serif';
-  ctx.fillText('情景目标价 vs 当前价 (HK$453.2)', margin.left, 25);
-
-  // Current price line
-  const curX = margin.left + ((453.2 - minPrice) / (maxPrice - minPrice)) * plotW;
-  ctx.strokeStyle = '#39D2C0';
-  ctx.lineWidth = 2;
-  ctx.setLineDash([6, 4]);
-  ctx.beginPath();
-  ctx.moveTo(curX, margin.top);
-  ctx.lineTo(curX, margin.top + plotH);
-  ctx.stroke();
-  ctx.setLineDash([]);
-
-  // Label
-  ctx.fillStyle = '#39D2C0';
-  ctx.font = 'bold 13px SF Mono, monospace';
-  ctx.textAlign = 'center';
-  ctx.fillText('当前 HK$453.2', curX, margin.top + plotH + 18);
-
-  // Bars
-  scenarios.forEach((s, i) => {
-    const y = margin.top + i * (barH + gap + 30);
-    const barW = ((s.price - minPrice) / (maxPrice - minPrice)) * plotW;
-    const barX = margin.left;
-
-    // Label
-    ctx.fillStyle = '#E6EDF3';
-    ctx.font = '600 14px Inter, sans-serif';
-    ctx.textAlign = 'right';
-    ctx.fillText(s.name, margin.left - 12, y + barH/2 + 5);
-
-    // Probability
-    ctx.fillStyle = '#8B949E';
-    ctx.font = '12px SF Mono, monospace';
-    ctx.fillText(`${s.prob}%`, margin.left - 12, y + barH/2 + 22);
-
-    // Bar background
-    ctx.fillStyle = 'rgba(255,255,255,0.03)';
-    roundRect(ctx, barX, y, plotW, barH, 6);
-    ctx.fill();
-
-    // Bar fill
-    const gradient = ctx.createLinearGradient(barX, 0, barX + barW, 0);
-    gradient.addColorStop(0, s.color + '40');
-    gradient.addColorStop(1, s.color + 'CC');
-    ctx.fillStyle = gradient;
-    roundRect(ctx, barX, y, barW, barH, 6);
-    ctx.fill();
-
-    // Price label on bar
-    ctx.fillStyle = '#fff';
-    ctx.font = 'bold 15px SF Mono, monospace';
-    ctx.textAlign = 'left';
-    ctx.fillText(`HK$${s.price}`, barX + barW + 10, y + barH/2 + 5);
-
-    // Upside/downside
-    const chg = ((s.price - 453.2) / 453.2 * 100);
-    ctx.fillStyle = chg > 0 ? '#E74C3C' : '#27AE60';
-    ctx.font = '12px SF Mono, monospace';
-    ctx.fillText(`(${chg > 0 ? '+' : ''}${chg.toFixed(0)}%)`, barX + barW + 10, y + barH/2 + 22);
-  });
-
-  // Weighted avg
-  const wy = margin.top + 3 * (barH + gap + 30) + 20;
-  ctx.fillStyle = '#D29922';
-  ctx.font = 'bold 14px Inter, sans-serif';
-  ctx.textAlign = 'left';
-  ctx.fillText('概率加权目标价: HK$609 (+34%)', margin.left, wy);
-}
-
-// 2. Peer Radar Chart
-function drawPeerRadar() {
-  const { ctx, w, h } = getCanvasCtx('peerRadarCanvas');
-  const cx = 220, cy = h / 2, radius = Math.min(180, (h - 80) / 2);
-
-  ctx.fillStyle = '#161B22';
-  roundRect(ctx, 0, 0, w, h, 8);
-  ctx.fill();
-
-  const metrics = ['营收增速', '毛利率', '净利率', 'ROE', 'FCF Yield', 'AI布局'];
-  const angles = metrics.map((_, i) => (Math.PI * 2 * i / metrics.length) - Math.PI / 2);
-
-  // Draw grid
-  [0.2, 0.4, 0.6, 0.8, 1.0].forEach(level => {
-    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
-    ctx.beginPath();
-    angles.forEach((a, i) => {
-      const x = cx + Math.cos(a) * radius * level;
-      const y = cy + Math.sin(a) * radius * level;
-      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-    });
-    ctx.closePath();
-    ctx.stroke();
-  });
-
-  // Axes
-  angles.forEach(a => {
-    ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-    ctx.beginPath();
-    ctx.moveTo(cx, cy);
-    ctx.lineTo(cx + Math.cos(a) * radius, cy + Math.sin(a) * radius);
-    ctx.stroke();
-  });
-
-  // Labels
-  ctx.fillStyle = '#8B949E';
-  ctx.font = '12px Inter, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  metrics.forEach((m, i) => {
-    const x = cx + Math.cos(angles[i]) * (radius + 30);
-    const y = cy + Math.sin(angles[i]) * (radius + 30);
-    ctx.fillText(m, x, y);
-  });
-
-  // Data - normalized 0-1
-  const companies = {
-    '腾讯': { color: '#58A6FF', data: [0.45, 0.91, 0.97, 0.84, 0.92, 0.55] },
-    '阿里巴巴': { color: '#F0883E', data: [0.40, 0.54, 0.34, 0.41, 0.62, 0.80] },
-    '美团': { color: '#F5C842', data: [0.75, 0.61, 0.26, 0.48, 0.46, 0.20] },
-    '网易': { color: '#E74C3C', data: [0.40, 1.0, 0.90, 1.0, 0.77, 0.15] },
-  };
-
-  Object.entries(companies).forEach(([name, { color, data }]) => {
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    data.forEach((val, i) => {
-      const x = cx + Math.cos(angles[i]) * radius * val;
-      const y = cy + Math.sin(angles[i]) * radius * val;
-      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-    });
-    ctx.closePath();
-    ctx.stroke();
-
-    // Fill
-    ctx.fillStyle = color + '15';
-    ctx.fill();
-  });
-
-  // Legend
-  const legendX = cx + radius + 60;
-  let ly = cy - 80;
-  Object.entries(companies).forEach(([name, { color }]) => {
-    ctx.fillStyle = color;
-    ctx.fillRect(legendX, ly, 12, 12);
-    ctx.fillStyle = '#E6EDF3';
-    ctx.font = '13px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillText(name, legendX + 18, ly + 11);
-    ly += 24;
-  });
-
-  // Comparison table on right
-  const tx = legendX;
-  let ty = ly + 16;
-  ctx.fillStyle = '#8B949E';
-  ctx.font = 'bold 11px Inter, sans-serif';
-  ctx.fillText('综合竞争力排名', tx, ty);
-  ty += 20;
-
-  const rankings = [
-    { name: '腾讯', score: '🥇 综合最强', color: '#58A6FF' },
-    { name: '网易', score: '🥈 盈利领先', color: '#E74C3C' },
-    { name: '阿里巴巴', score: '🥉 AI领先', color: '#F0883E' },
-    { name: '美团', score: '   增长领先', color: '#F5C842' },
-  ];
-  rankings.forEach(r => {
-    ctx.fillStyle = r.color;
-    ctx.font = '12px SF Mono, monospace';
-    ctx.fillText(r.name, tx, ty);
-    ctx.fillStyle = '#8B949E';
-    ctx.fillText(' ' + r.score, tx + 50, ty);
-    ty += 20;
-  });
-}
-
-// 3. Financial Trends
-function drawTrends() {
-  const { ctx, w, h } = getCanvasCtx('trendCanvas');
-  const margin = { top: 30, right: 60, bottom: 60, left: 70 };
-  const plotW = w - margin.left - margin.right;
-  const plotH = h - margin.top - margin.bottom;
-
-  ctx.fillStyle = '#161B22';
-  roundRect(ctx, 0, 0, w, h, 8);
-  ctx.fill();
-
-  const years = ['FY21', 'FY22', 'FY23', 'FY24', 'FY25', 'Q1\n2026'];
-
-  // Revenue bars + Gross Margin line
-  const revs = [560.1, 554.6, 609.0, 660.3, 751.8, 196.5];
-  const grossMargins = [43.9, 43.1, 48.1, 52.9, 56.2, 56.6];
-  const netMargins = [40.7, 34.0, 19.4, 29.8, 30.6, 30.2];
-
-  const maxRev = 800;
-  const maxMargin = 60;
-  const minMargin = 15;
-
-  const barW = plotW / years.length * 0.5;
-  const gap = plotW / years.length * 0.25;
-
-  // Bars
-  years.forEach((_, i) => {
-    const x = margin.left + i * (plotW / years.length);
-    const barH = (revs[i] / maxRev) * plotH;
-    const y = margin.top + plotH - barH;
-
-    const grad = ctx.createLinearGradient(x, y, x, margin.top + plotH);
-    grad.addColorStop(0, '#58A6FF');
-    grad.addColorStop(1, '#58A6FF40');
-    ctx.fillStyle = grad;
-    roundRect(ctx, x + gap/2, y, barW, barH, 4);
-    ctx.fill();
-
-    // Revenue label
-    ctx.fillStyle = '#E6EDF3';
-    ctx.font = '10px SF Mono, monospace';
-    ctx.textAlign = 'center';
-    ctx.fillText('¥' + revs[i] + 'B', x + gap/2 + barW/2, y - 6);
-
-    // Year label
-    ctx.fillStyle = '#8B949E';
-    ctx.font = '11px Inter, sans-serif';
-    const lines = years[i].split('\n');
-    lines.forEach((line, li) => {
-      ctx.fillText(line, x + gap/2 + barW/2, margin.top + plotH + 18 + li * 14);
-    });
-  });
-
-  // Gross Margin line
-  ctx.strokeStyle = '#27AE60';
-  ctx.lineWidth = 3;
-  ctx.setLineDash([]);
-  ctx.beginPath();
-  years.forEach((_, i) => {
-    const x = margin.left + i * (plotW / years.length) + gap/2 + barW/2;
-    const y = margin.top + plotH - ((grossMargins[i] - minMargin) / (maxMargin - minMargin)) * plotH;
-    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-  });
-  ctx.stroke();
-
-  // GM dots
-  years.forEach((_, i) => {
-    const x = margin.left + i * (plotW / years.length) + gap/2 + barW/2;
-    const y = margin.top + plotH - ((grossMargins[i] - minMargin) / (maxMargin - minMargin)) * plotH;
-    ctx.fillStyle = '#27AE60';
-    ctx.beginPath();
-    ctx.arc(x, y, 5, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = '#E6EDF3';
-    ctx.font = 'bold 10px SF Mono, monospace';
-    ctx.fillText(grossMargins[i] + '%', x, y - 12);
-  });
-
-  // Net Margin line
-  ctx.strokeStyle = '#A371F7';
-  ctx.lineWidth = 2;
-  ctx.setLineDash([4, 3]);
-  ctx.beginPath();
-  years.forEach((_, i) => {
-    const x = margin.left + i * (plotW / years.length) + gap/2 + barW/2;
-    const y = margin.top + plotH - ((netMargins[i] - minMargin) / (maxMargin - minMargin)) * plotH;
-    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-  });
-  ctx.stroke();
-  ctx.setLineDash([]);
-
-  // Legend
-  const lx = margin.left;
-  const ly = margin.top - 10;
-  ctx.fillStyle = '#27AE60';
-  ctx.fillRect(lx, ly, 20, 3);
-  ctx.fillStyle = '#E6EDF3';
-  ctx.font = '11px Inter, sans-serif';
-  ctx.textAlign = 'left';
-  ctx.fillText('毛利率', lx + 24, ly + 5);
-
-  ctx.fillStyle = '#A371F7';
-  ctx.fillRect(lx + 80, ly, 20, 3);
-  ctx.fillText('净利率', lx + 104, ly + 5);
-
-  ctx.fillStyle = '#58A6FF';
-  ctx.fillText('▬ 营收 (¥B)', lx + 160, ly + 5);
-}
-
-// 4. Position Sizing
-function drawPosition() {
-  const { ctx, w, h } = getCanvasCtx('positionCanvas');
-  const margin = { top: 30, right: 40, bottom: 60, left: 50 };
-  const plotW = w - margin.left - margin.right;
-  const plotH = h - margin.top - margin.bottom;
-
-  ctx.fillStyle = '#161B22';
-  roundRect(ctx, 0, 0, w, h, 8);
-  ctx.fill();
-
-  const zones = [
-    { label: '止损', low: 340, high: 380, color: '#E74C3C', opacity: 0.3, action: '平仓', pct: 0 },
-    { label: '加仓二', low: 380, high: 420, color: '#F0883E', opacity: 0.5, action: '+0.5-1%', pct: 3.5 },
-    { label: '加仓一', low: 420, high: 450, color: '#D29922', opacity: 0.5, action: '+1-1.5%', pct: 2.5 },
-    { label: '建仓区', low: 440, high: 470, color: '#58A6FF', opacity: 0.6, action: '1.5-2%', pct: 1.5 },
-    { label: '偏高', low: 470, high: 550, color: '#39D2C0', opacity: 0.2, action: '观望', pct: 0 },
-    { label: '止盈', low: 550, high: 700, color: '#27AE60', opacity: 0.2, action: '分批止盈', pct: 0 },
-  ];
-
-  const priceRange = { min: 340, max: 720 };
-
-  zones.forEach(z => {
-    const x = margin.left + ((z.low - priceRange.min) / (priceRange.max - priceRange.min)) * plotW;
-    const w2 = ((z.high - z.low) / (priceRange.max - priceRange.min)) * plotW;
-
-    ctx.fillStyle = z.color + Math.round(z.opacity * 255).toString(16).padStart(2, '0');
-    roundRect(ctx, x, margin.top, w2, plotH, 4);
-    ctx.fill();
-
-    ctx.fillStyle = z.color;
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(z.label, x + w2/2, margin.top + 24);
-
-    ctx.fillStyle = '#E6EDF3';
-    ctx.font = '11px SF Mono, monospace';
-    if (z.pct > 0) ctx.fillText(`仓位: ${z.pct}%`, x + w2/2, margin.top + plotH/2);
-    ctx.fillText(z.action, x + w2/2, margin.top + plotH/2 + (z.pct > 0 ? 18 : 0));
-  });
-
-  // Current price marker
-  const curX = margin.left + ((453.2 - priceRange.min) / (priceRange.max - priceRange.min)) * plotW;
-  ctx.strokeStyle = '#FFFFFF';
-  ctx.lineWidth = 2;
-  ctx.setLineDash([]);
-  ctx.beginPath();
-  ctx.moveTo(curX, margin.top - 8);
-  ctx.lineTo(curX, margin.top + plotH + 8);
-  ctx.stroke();
-
-  // Arrow
-  ctx.fillStyle = '#FFFFFF';
-  ctx.beginPath();
-  ctx.moveTo(curX, margin.top - 8);
-  ctx.lineTo(curX - 6, margin.top - 18);
-  ctx.lineTo(curX + 6, margin.top - 18);
-  ctx.closePath();
-  ctx.fill();
-
-  // Current price label
-  ctx.fillStyle = '#E6EDF3';
-  ctx.font = 'bold 13px SF Mono, monospace';
-  ctx.textAlign = 'center';
-  ctx.fillText('当前 HK$453.2', curX, margin.top - 24);
-
-  // X axis labels
-  ctx.fillStyle = '#8B949E';
-  ctx.font = '11px SF Mono, monospace';
-  [360, 400, 440, 480, 520, 560, 600, 640, 680].forEach(price => {
-    const x = margin.left + ((price - priceRange.min) / (priceRange.max - priceRange.min)) * plotW;
-    ctx.fillText('HK$' + price, x, margin.top + plotH + 18);
-  });
-}
-
-// 5. Risk Heat Map
-function drawRiskMap() {
-  const { ctx, w, h } = getCanvasCtx('riskCanvas');
-  const margin = { top: 30, right: 30, bottom: 50, left: 70 };
-  const plotW = w - margin.left - margin.right;
-  const plotH = h - margin.top - margin.bottom;
-
-  ctx.fillStyle = '#161B22';
-  roundRect(ctx, 0, 0, w, h, 8);
-  ctx.fill();
-
-  // Quadrants
-  ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-  ctx.lineWidth = 1;
-  const midX = margin.left + plotW / 2;
-  const midY = margin.top + plotH / 2;
-  ctx.beginPath();
-  ctx.moveTo(midX, margin.top);
-  ctx.lineTo(midX, margin.top + plotH);
-  ctx.moveTo(margin.left, midY);
-  ctx.lineTo(margin.left + plotW, midY);
-  ctx.stroke();
-
-  // Quadrant labels
-  ctx.fillStyle = '#6E7681';
-  ctx.font = '10px Inter, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('高概率 · 高影响\n⚠️ 重点关注', margin.left + plotW * 0.75, margin.top + 40);
-  ctx.fillText('高概率 · 低影响\n📊 持续监测', margin.left + plotW * 0.75, margin.top + plotH * 0.75);
-  ctx.fillText('低概率 · 高影响\n🛡️ 风险对冲', margin.left + plotW * 0.25, margin.top + 40);
-  ctx.fillText('低概率 · 低影响\n✅ 可接受', margin.left + plotW * 0.25, margin.top + plotH * 0.75);
-
-  // Axis labels
-  ctx.fillStyle = '#8B949E';
-  ctx.font = '12px Inter, sans-serif';
-  ctx.fillText('← 概率 →', margin.left + plotW/2, margin.top + plotH + 25);
-  ctx.save();
-  ctx.translate(margin.left - 20, margin.top + plotH/2);
-  ctx.rotate(-Math.PI/2);
-  ctx.fillText('← 影响 →', -40, 0);
-  ctx.restore();
-
-  // Risk bubbles
-  const risks = [
-    { name: 'AI回报', prob: 0.55, impact: 0.75, r: 28, color: '#D29922' },
-    { name: 'Prosus\n减持', prob: 0.75, impact: 0.55, r: 32, color: '#D29922' },
-    { name: '竞争\n加剧', prob: 0.50, impact: 0.50, r: 24, color: '#D29922' },
-    { name: '监管', prob: 0.20, impact: 0.80, r: 22, color: '#8B949E' },
-    { name: '宏观\n下行', prob: 0.50, impact: 0.50, r: 24, color: '#D29922' },
-    { name: '流动性', prob: 0.20, impact: 0.70, r: 20, color: '#27AE60' },
-    { name: '做空\n压力', prob: 0.55, impact: 0.25, r: 22, color: '#27AE60' },
-  ];
-
-  risks.forEach(r => {
-    const x = margin.left + r.prob * plotW;
-    const y = margin.top + (1 - r.impact) * plotH;
-
-    // Glow
-    ctx.fillStyle = r.color + '30';
-    ctx.beginPath();
-    ctx.arc(x, y, r.r + 8, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Bubble
-    ctx.fillStyle = r.color + '80';
-    ctx.beginPath();
-    ctx.arc(x, y, r.r, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.strokeStyle = r.color;
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    // Label
-    ctx.fillStyle = '#E6EDF3';
-    ctx.font = '11px Inter, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    const lines = r.name.split('\n');
-    lines.forEach((line, i) => {
-      ctx.fillText(line, x, y + (i - (lines.length - 1) / 2) * 14);
-    });
-  });
-
-  // Legend
-  const lx = w - 160;
-  const ly = 12;
-  ctx.fillStyle = '#D29922';
-  ctx.fillRect(lx, ly, 12, 12);
-  ctx.fillStyle = '#E6EDF3';
-  ctx.font = '11px Inter, sans-serif';
-  ctx.textAlign = 'left';
-  ctx.fillText('中高风险', lx + 16, ly + 10);
-  ctx.fillStyle = '#27AE60';
-  ctx.fillRect(lx + 80, ly, 12, 12);
-  ctx.fillText('低风险', lx + 96, ly + 10);
-}
-
-// 6. Catalyst Timeline
-function drawCatalystTimeline() {
-  const { ctx, w, h } = getCanvasCtx('catalystCanvas');
-  const margin = { top: 30, right: 30, bottom: 30, left: 30 };
-  const plotW = w - margin.left - margin.right;
-  const plotH = h - margin.top - margin.bottom;
-
-  ctx.fillStyle = '#161B22';
-  roundRect(ctx, 0, 0, w, h, 8);
-  ctx.fill();
-
-  const timelineY = margin.top + 60;
-
-  // Timeline line
-  ctx.strokeStyle = 'rgba(255,255,255,0.2)';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.moveTo(margin.left, timelineY);
-  ctx.lineTo(margin.left + plotW, timelineY);
-  ctx.stroke();
-
-  // Months
-  const months = ['2026\nJun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', '2027\nQ1'];
-  const monthW = plotW / (months.length - 1);
-
-  months.forEach((m, i) => {
-    const x = margin.left + i * monthW;
-    ctx.fillStyle = '#8B949E';
-    ctx.font = '11px Inter, sans-serif';
-    ctx.textAlign = 'center';
-    const lines = m.split('\n');
-    lines.forEach((line, li) => {
-      ctx.fillText(line, x, timelineY - 10 - li * 14);
-    });
-
-    // Dot
-    ctx.fillStyle = 'rgba(255,255,255,0.3)';
-    ctx.beginPath();
-    ctx.arc(x, timelineY, 4, 0, Math.PI * 2);
-    ctx.fill();
-  });
-
-  // Events
-  const events = [
-    { time: 0.05, label: '每日\n回购', impact: '🟢', y: -90, color: '#27AE60' },
-    { time: 0.10, label: 'Hy3\n正式版', impact: '🟢', y: -50, color: '#58A6FF' },
-    { time: 0.12, label: '国产GPU\n交付', impact: '🟢', y: -90, color: '#F0883E' },
-    { time: 0.20, label: '归环\n测试', impact: '🟢', y: -130, color: '#A371F7' },
-    { time: 0.30, label: '彩虹六号\n上线', impact: '🟢', y: -160, color: '#A371F7' },
-    { time: 0.45, label: '⭐Q2财报\n关键验证', impact: '🟡', y: -45, color: '#D29922' },
-    { time: 0.55, label: '微信Agent\n灰度', impact: '🟢', y: -85, color: '#58A6FF' },
-    { time: 0.62, label: '更大参数\nHy模型', impact: '🟢', y: -50, color: '#58A6FF' },
-    { time: 0.72, label: '异人之下\n上线', impact: '🟢', y: -130, color: '#A371F7' },
-    { time: 0.80, label: '云算力\n缓解', impact: '🟢', y: -90, color: '#F0883E' },
-    { time: 0.95, label: 'FY26\n年报', impact: '🟡', y: -50, color: '#D29922' },
-  ];
-
-  events.forEach(e => {
-    const x = margin.left + e.time * plotW;
-    const y = timelineY + e.y;
-
-    // Connector
-    ctx.strokeStyle = e.color + '60';
-    ctx.lineWidth = 1;
-    ctx.setLineDash([2, 2]);
-    ctx.beginPath();
-    ctx.moveTo(x, timelineY);
-    ctx.lineTo(x, y + 15);
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    // Dot
-    ctx.fillStyle = e.color;
-    ctx.beginPath();
-    ctx.arc(x, y + 15, 5, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Label
-    ctx.fillStyle = '#E6EDF3';
-    ctx.font = 'bold 10px Inter, sans-serif';
-    ctx.textAlign = 'center';
-    const lines = e.label.split('\n');
-    lines.forEach((line, li) => {
-      ctx.fillText(line, x, y - (lines.length - 1 - li) * 12 + (li > 0 ? 0 : 0));
-    });
-  });
-
-  // Risk events below
-  ctx.fillStyle = '#8B949E';
-  ctx.font = '11px Inter, sans-serif';
-  ctx.textAlign = 'left';
-  ctx.fillText('风险线', margin.left, timelineY + 30);
-
-  ctx.strokeStyle = 'rgba(231,76,60,0.3)';
-  ctx.lineWidth = 1;
-  ctx.setLineDash([4, 4]);
-  ctx.beginPath();
-  ctx.moveTo(margin.left, timelineY + 50);
-  ctx.lineTo(margin.left + plotW, timelineY + 50);
-  ctx.stroke();
-  ctx.setLineDash([]);
-
-  const riskEvents = [
-    { time: 0.0, label: 'Prosus减持', color: '#E74C3C' },
-    { time: 0.5, label: '中美摩擦', color: '#E74C3C' },
-    { time: 1.0, label: '宏观恶化', color: '#E74C3C' },
-  ];
-
-  riskEvents.forEach(re => {
-    const x = margin.left + re.time * plotW;
-    ctx.fillStyle = re.color;
-    ctx.font = '10px Inter, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(re.label, x, timelineY + 68);
-  });
-}
-
-// Draw all charts
-document.addEventListener('DOMContentLoaded', () => {
-  drawValuation();
-  drawPeerRadar();
-  drawTrends();
-  drawPosition();
-  drawRiskMap();
-  drawCatalystTimeline();
-});
-
-// Redraw on resize
-let resizeTimeout;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    drawValuation();
-    drawPeerRadar();
-    drawTrends();
-    drawPosition();
-    drawRiskMap();
-    drawCatalystTimeline();
-  }, 250);
-});
-</script>
+<hr>
+<h2>📊 关键市场数据</h2>
+<table><thead><tr><th>指标</th><th>数值</th><th>备注</th></tr></thead><tbody><tr><td>最新收盘价</td><td><strong>HKD 453.2</strong></td><td>2026-06-05</td></tr><tr><td>日涨跌幅</td><td>-1.26%</td><td>港股全市场弱</td></tr><tr><td>5日涨跌幅</td><td>+6.09%</td><td>从 420.4 低点反弹</td></tr><tr><td>60日涨跌幅</td><td><span style="color:#E74C3C">-11.78%</span></td><td>中期承压</td></tr><tr><td>YTD涨跌幅</td><td><span style="color:#E74C3C">-23.67%</span></td><td>年内深度回调</td></tr><tr><td>52周高/低</td><td>HKD 677.7 / 420.4</td><td>距低点 +7.8%</td></tr><tr><td>总市值</td><td>HKD 4,132B (≈¥3,595B)</td><td>港股最大市值</td></tr><tr><td>PE (TTM)</td><td><strong>15.52x</strong></td><td>近5年低分位</td></tr><tr><td>远期PE</td><td>15.70x</td><td>—</td></tr><tr><td>PB</td><td>3.26x</td><td>—</td></tr><tr><td>PS (TTM)</td><td>4.75x</td><td>—</td></tr><tr><td>股息率 (TTM)</td><td>1.17%</td><td>FY2025: HKD 5.3/股</td></tr><tr><td>日均成交额</td><td>≈HKD 18B</td><td>流动性充裕</td></tr><tr><td>南向持股</td><td>11.58%</td><td>≈10.56亿股</td></tr><tr><td>做空比率</td><td>14.72%</td><td>偏高，反映短期分歧</td></tr></tbody></table>
+<hr>
+<h2>🎯 投资观点矩阵</h2>
+<h3>🔴 看涨观点（Bull Case）— 目标价 HKD 700-880</h3>
+<p><strong>核心叙事：AI 全面赋能，从"流量帝国"到"超级智能体平台"的范式跃迁</strong></p>
+<table><thead><tr><th>论点</th><th>证据</th><th>置信度</th></tr></thead><tbody><tr><td><strong>AI 广告变现加速</strong></td><td>Q1 广告收入 +20% YoY，AIM+ 覆盖30%投放预算，视频号时长 +20%</td><td>🟢 高</td></tr><tr><td><strong>游戏储备强劲，24H2-25H1 兑现</strong></td><td>《洛克王国:世界》DAU 1,300万；三款长青游戏Q1流水创新高；递延收入环比 +28% 至 ¥1,413B</td><td>🟢 高</td></tr><tr><td><strong>云服务因 AI 需求加速</strong></td><td>Q1 企业服务 +20%，国际云 +40%，国产GPU下半年放量</td><td>🟡 中高</td></tr><tr><td><strong>微信超级App进化</strong></td><td>小程序→Agent Skills，微信/QQ/企微三端合围 Agent 入口</td><td>🟡 中</td></tr><tr><td><strong>估值修复空间大</strong></td><td>PE 15.5x vs 历史中枢 20-25x；48家机构平均目标价 HKD 734</td><td>🟢 高</td></tr><tr><td><strong>回购+分红持续回报</strong></td><td>Q1 回购 HKD 76B，FY2025 股息 HKD 5.3/股（+18%）</td><td>🟢 高</td></tr><tr><td><strong>Hy3 模型表现超预期</strong></td><td>OpenRouter 全球 Token 消耗第一；WorkBuddy 中国 DAU 最高效率 AI</td><td>🟡 中高</td></tr></tbody></table>
+<p><strong>Bull Case 估值框架：</strong></p>
+<ul><li>2026E Non-IFRS 净利润：¥273B（机构一致预期）</li><li>目标PE：22x（AI 溢价重估）</li><li>隐含市值：¥6,006B → HKD 6,903B → 约 <strong>HKD 757/股</strong></li><li>上行空间：<strong>+67%</strong></li></ul>
+<hr>
+<h3>🟡 中性观点（Base Case）— 目标价 HKD 550-600</h3>
+<p><strong>核心叙事：主业稳健增长，AI 投入有序，但短期估值修复需要催化剂验证</strong></p>
+<table><thead><tr><th>论点</th><th>证据</th><th>置信度</th></tr></thead><tbody><tr><td><strong>游戏/广告双引擎 10-15% 增长</strong></td><td>Q1 游戏流水 +10%+，广告 +20%，全年增长确定性高</td><td>🟢 高</td></tr><tr><td><strong>AI 资本开支可控</strong></td><td>Q1 Capex ¥319B（占收入 16.3%），剔除AI后经营利润 +17%</td><td>🟡 中</td></tr><tr><td><strong>估值有安全边际</strong></td><td>PE 15.5x 处于历史低分位，FCF yield ~6%（¥2,156B / ¥3,595B）</td><td>🟢 高</td></tr><tr><td><strong>监管风险消退</strong></td><td>游戏版号常态化，反垄断压力大幅缓解</td><td>🟢 高</td></tr></tbody></table>
+<p><strong>Base Case 估值框架：</strong></p>
+<ul><li>2026E Non-IFRS 净利润：¥265B</li><li>目标PE：18x（与当前接近，温和修复）</li><li>隐含市值：¥4,770B → HKD 5,483B → 约 <strong>HKD 602/股</strong></li><li>上行空间：<strong>+33%</strong></li></ul>
+<hr>
+<h3>🟢 看跌观点（Bear Case）— 目标价 HKD 350-400</h3>
+<p><strong>核心叙事：AI 投入回报不确定，竞争压力加剧，Prosus 减持压制估值</strong></p>
+<table><thead><tr><th>论点</th><th>证据</th><th>置信度</th></tr></thead><tbody><tr><td><strong>AI Capex 巨额且回报不确定</strong></td><td>Q1 Capex 同比 +45亿，环比 +123亿，剔除AI口径暗示投入巨大</td><td>🟡 中</td></tr><tr><td><strong>竞争格局恶化</strong></td><td>字节豆包/阿里通义千问领先；游戏面对网易/米哈游挤压</td><td>🟡 中</td></tr><tr><td><strong>Prosus 持续减持</strong></td><td>持股 23.09%，每日约 HKD 5B 回购规模远小于 Prosus 潜在减持</td><td>🔴 高（机制风险）</td></tr><tr><td><strong>港股流动性折价</strong></td><td>YTD -23.67%，市场情绪脆弱</td><td>🟡 中</td></tr><tr><td><strong>宏观经济拖累</strong></td><td>消费降级影响游戏/广告支出，支付增速仍低</td><td>🟡 中</td></tr><tr><td><strong>做空比率高</strong></td><td>14.72% 做空比率显示短期空头力量</td><td>🟡 中</td></tr></tbody></table>
+<p><strong>Bear Case 估值框架：</strong></p>
+<ul><li>2026E Non-IFRS 净利润：¥240B</li><li>目标PE：12x（去AI溢价，港股流动性折价）</li><li>隐含市值：¥2,880B → HKD 3,310B → 约 <strong>HKD 363/股</strong></li><li>下行空间：<strong>-20%</strong></li></ul>
+<hr>
+<h2>⚖️ 概率加权综合估值</h2>
+<table><thead><tr><th>情景</th><th>概率</th><th>目标价 (HKD)</th><th>加权贡献</th></tr></thead><tbody><tr><td>🔴 Bull Case</td><td>35%</td><td>757</td><td>265</td></tr><tr><td>🟡 Base Case</td><td>45%</td><td>602</td><td>271</td></tr><tr><td>🟢 Bear Case</td><td>20%</td><td>363</td><td>73</td></tr><tr><td><strong>概率加权目标价</strong></td><td><strong>100%</strong></td><td>—</td><td><strong>HKD 609</strong></td></tr><tr><td><strong>vs 当前价 HKD 453.2</strong></td><td>—</td><td>—</td><td><strong>+34% 上行空间</strong></td></tr></tbody></table>
+<hr>
+<h2>📈 同业对比分析</h2>
+<h3>核心财务指标对比（最新报告期）</h3>
+<table><thead><tr><th>指标</th><th>腾讯</th><th>阿里巴巴</th><th>美团</th><th>网易</th><th>行业均值</th></tr></thead><tbody><tr><td><strong>市场</strong></td><td>港股</td><td>美股 + 港股</td><td>港股</td><td>美股 + 港股</td><td>—</td></tr><tr><td><strong>市值 (B USD)</strong></td><td>~530</td><td>~370</td><td>~110</td><td>~64</td><td>—</td></tr><tr><td><strong>营收增速 (YoY)</strong></td><td>+9%</td><td>+8%</td><td>+15%</td><td>+8%</td><td>~10%</td></tr><tr><td><strong>毛利率</strong></td><td><strong>56.6%</strong></td><td>33.4%</td><td>38%</td><td>62%</td><td>~47%</td></tr><tr><td><strong>净利率</strong></td><td><strong>30.2%</strong></td><td>10.5%</td><td>8%</td><td>28%</td><td>~19%</td></tr><tr><td><strong>ROE (年化)</strong></td><td><strong>21.1%</strong></td><td>10.2%</td><td>12%</td><td>25%</td><td>~17%</td></tr><tr><td><strong>PE (TTM)</strong></td><td><strong>15.5x</strong></td><td>10.5x</td><td>20x</td><td>13x</td><td>~15x</td></tr><tr><td><strong>FCF Yield</strong></td><td><strong>~6.0%</strong></td><td>~4%</td><td>~3%</td><td>~5%</td><td>~4.5%</td></tr><tr><td><strong>资产负债率</strong></td><td>40.9%</td><td>41.0%</td><td>45%</td><td>22%</td><td>~37%</td></tr></tbody></table>
+<h3>竞争力矩阵</h3>
+<table><thead><tr><th>维度</th><th>腾讯</th><th>阿里巴巴</th><th>美团</th><th>网易</th></tr></thead><tbody><tr><td>增长潜力</td><td>🟡 中高（AI+游戏）</td><td>🟡 中（云恢复）</td><td>🟢 高（本地生活）</td><td>🟡 中（游戏周期）</td></tr><tr><td>利润率</td><td>🟢 <strong>卓越</strong></td><td>🟡 中等</td><td>🟡 中等</td><td>🟢 优秀</td></tr><tr><td>资本回报率</td><td>🟢 <strong>卓越 (ROE 21%)</strong></td><td>🟡 中等 (ROE 10%)</td><td>🟡 中等</td><td>🟢 优秀 (ROE 25%)</td></tr><tr><td>估值吸引力</td><td>🟢 <strong>低估值 (PE 15.5x)</strong></td><td>🟢 低估值 (PE 10x)</td><td>🟡 中等 (PE 20x)</td><td>🟡 中等 (PE 13x)</td></tr><tr><td>护城河</td><td>🟢 <strong>最强</strong>（社交网络）</td><td>🟡 强（电商+云）</td><td>🟡 强（本地生活）</td><td>🟡 强（游戏IP）</td></tr><tr><td>资产负债表</td><td>🟢 健康 (D/E 0.69)</td><td>🟢 健康 (D/E 0.56)</td><td>🟡 偏弱</td><td>🟢 极强 (D/E 0.28)</td></tr><tr><td>AI 布局</td><td>🟡 加速追赶</td><td>🟢 领先（通义千问）</td><td>🔴 弱</td><td>🔴 弱</td></tr><tr><td>股东回报</td><td>🟢 回购+分红</td><td>🟡 分红为主</td><td>🔴 弱</td><td>🟡 分红为主</td></tr></tbody></table>
+<p><strong>核心发现：腾讯在利润率、资本回报率和护城河三个维度均居首位，估值处于同业偏低水平。主要短板是增速不如美团进攻性强，AI 布局起步晚于阿里。</strong></p>
+<hr>
+<h2>📅 催化剂与事件日历</h2>
+<h3>近期催化剂（未来 1-3 个月）</h3>
+<table><thead><tr><th>日期</th><th>事件</th><th>影响方向</th><th>重要性</th><th>跟踪状态</th></tr></thead><tbody><tr><td>2026-06 持续</td><td>每日回购约 HKD 1-5B</td><td>🟢 利好</td><td>⭐⭐⭐</td><td>✅ 跟踪中</td></tr><tr><td>2026-06 中旬</td><td>《归环》预约/测试</td><td>🟢 潜在利好</td><td>⭐⭐</td><td>🔍 待确认</td></tr><tr><td>2026-06/07</td><td>Hy3 正式版发布</td><td>🟢 重大利好</td><td>⭐⭐⭐⭐</td><td>🔍 待确认</td></tr><tr><td>2026-06/07</td><td>国产 GPU 交付进展（华为昇腾等）</td><td>🟢 利好</td><td>⭐⭐⭐</td><td>🔍 观察中</td></tr><tr><td>2026-07 月中</td><td>《彩虹六号：攻势》上线</td><td>🟢 潜在利好</td><td>⭐⭐</td><td>🔍 待确认</td></tr><tr><td>2026-08 中旬</td><td>Q2 2026 财报发布</td><td>🟡 关键验证</td><td>⭐⭐⭐⭐⭐</td><td>🔍 待披露</td></tr></tbody></table>
+<h3>中长期催化剂（3-12 个月）</h3>
+<table><thead><tr><th>日期</th><th>事件</th><th>影响方向</th><th>重要性</th></tr></thead><tbody><tr><td>2026 H2</td><td>更大参数 Hy 模型发布</td><td>🟢 利好</td><td>⭐⭐⭐</td></tr><tr><td>2026 H2</td><td>微信 Agent 功能灰度</td><td>🟢 重大利好</td><td>⭐⭐⭐⭐</td></tr><tr><td>2026 H2</td><td>《异人之下》《粒粒的小人国》上线</td><td>🟢 利好</td><td>⭐⭐⭐</td></tr><tr><td>2026 H2</td><td>腾讯云国际业务持续扩张</td><td>🟢 利好</td><td>⭐⭐</td></tr><tr><td>2026 Q4</td><td>《归环》上线</td><td>🟢 利好</td><td>⭐⭐⭐</td></tr><tr><td>2026 Q4</td><td>云业务算力瓶颈缓解</td><td>🟢 利好</td><td>⭐⭐⭐</td></tr><tr><td>2026 年末</td><td>Q3/Q4 财报验证 AI 变现</td><td>🟡 关键</td><td>⭐⭐⭐⭐</td></tr><tr><td>2027 Q1</td><td>2026 全年业绩 &amp; 分红公告</td><td>🟡 关键</td><td>⭐⭐⭐⭐</td></tr></tbody></table>
+<h3>风险事件日历</h3>
+<table><thead><tr><th>日期</th><th>事件</th><th>影响方向</th><th>重要性</th></tr></thead><tbody><tr><td>持续</td><td>Prosus 减持节奏</td><td>🔴 利空</td><td>⭐⭐⭐⭐</td></tr><tr><td>持续</td><td>中美科技摩擦升级</td><td>🔴 利空</td><td>⭐⭐⭐</td></tr><tr><td>随时</td><td>游戏监管政策变动</td><td>🔴 利空</td><td>⭐⭐⭐⭐</td></tr><tr><td>2026 H2</td><td>宏观经济数据恶化</td><td>🔴 利空</td><td>⭐⭐⭐</td></tr><tr><td>2026 H2</td><td>做空比率持续高位</td><td>🔴 短期压力</td><td>⭐⭐</td></tr></tbody></table>
+<hr>
+<h2>🔍 观点失效条件 &amp; 验证信号</h2>
+<h3>看涨观点失效条件</h3>
+<table><thead><tr><th>条件</th><th>阈值</th><th>当前状态</th></tr></thead><tbody><tr><td>广告增速跌破 10%</td><td>连续2季度 &lt; 10% YoY</td><td>当前 +20%，✅ 健康</td></tr><tr><td>AI Capex ROI 证伪</td><td>剔除AI后经营利润增速 &lt; 5%</td><td>当前 +17%，✅ 健康</td></tr><tr><td>游戏流水下滑</td><td>核心游戏 DAU/流水趋势向下</td><td>Q1 创新高，✅ 健康</td></tr><tr><td>微信生态变现受阻</td><td>视频号时长增长停滞</td><td>当前 +20%，✅ 健康</td></tr><tr><td>估值溢价消失</td><td>PE &lt; 12x</td><td>当前 15.5x，⚠️ 需警惕</td></tr></tbody></table>
+<h3>看跌观点失效条件</h3>
+<table><thead><tr><th>条件</th><th>阈值</th><th>当前状态</th></tr></thead><tbody><tr><td>AI 产品突破性进展</td><td>Hy3 正式版超预期 + Agent 落地</td><td>Hy3 Preview 已超预期 ✅</td></tr><tr><td>南向资金持续流入</td><td>月净买入 &gt; HKD 10B</td><td>Q1 略有流出，⚠️ 观察</td></tr><tr><td>做空比率回落</td><td>&lt; 10%</td><td>当前 14.7%，⚠️ 未满足</td></tr><tr><td>宏观环境改善</td><td>PMI/社零连续改善</td><td>待验证</td></tr></tbody></table>
+<hr>
+<h2>🛡️ 风险登记册</h2>
+<table><thead><tr><th>风险ID</th><th>风险描述</th><th>概率</th><th>影响</th><th>风险等级</th><th>应对措施</th></tr></thead><tbody><tr><td>R1</td><td><strong>AI投入回报不确定</strong>：Q1 Capex ¥319B，若AI商业化不及预期将持续侵蚀利润</td><td>中</td><td>高</td><td>🟡 中高</td><td>跟踪剔除AI口径利润率变化</td></tr><tr><td>R2</td><td><strong>Prosus减持压力</strong>：持有23.09%，减持节奏难以预测</td><td>高</td><td>中</td><td>🟡 中高</td><td>设置 400/420 止损位</td></tr><tr><td>R3</td><td><strong>竞争加剧</strong>：字节/阿里在AI和电商领域强势</td><td>中</td><td>中</td><td>🟡 中</td><td>跟踪市场份额数据</td></tr><tr><td>R4</td><td><strong>监管风险</strong>：游戏版号或反垄断政策变化</td><td>低</td><td>高</td><td>🟡 中</td><td>保持仓位可管理</td></tr><tr><td>R5</td><td><strong>宏观下行</strong>：消费降级影响支付/广告/游戏</td><td>中</td><td>中</td><td>🟡 中</td><td>关注宏观先行指标</td></tr><tr><td>R6</td><td><strong>港股流动性风险</strong>：地缘政治导致外资撤离</td><td>低</td><td>高</td><td>🟢 低</td><td>南向资金为缓冲</td></tr><tr><td>R7</td><td><strong>做空压力</strong>：14.7% 做空比率短期有压制</td><td>中</td><td>低</td><td>🟢 低</td><td>回购+业绩可逐步消化</td></tr></tbody></table>
+<hr>
+<h2>📐 头寸规模建议</h2>
+<h3>核心假设</h3>
+<table><thead><tr><th>参数</th><th>数值</th><th>来源</th></tr></thead><tbody><tr><td>当前价格</td><td>HKD 453.2</td><td>2026-06-05 收盘</td></tr><tr><td>概率加权目标价</td><td>HKD 609</td><td>模型输出</td></tr><tr><td>预期回报</td><td>+34%</td><td>—</td></tr><tr><td>52周低点</td><td>HKD 420.4</td><td>下行 -7.3%</td></tr><tr><td>Bear Case 目标</td><td>HKD 363</td><td>下行 -20%</td></tr><tr><td>波动率 (60日)</td><td>~2.5% 日均</td><td>—</td></tr><tr><td>催化剂时间窗口</td><td>1-3 个月（Q2 财报）</td><td>—</td></tr></tbody></table>
+<h3>仓位框架：3-5% 组合总仓位</h3>
+<table><thead><tr><th>阶段</th><th>价格区间</th><th>仓位比例</th><th>操作</th></tr></thead><tbody><tr><td><strong>初始建仓</strong></td><td>HKD 440-460</td><td>1.5-2.0%</td><td>当前价格买入1/3目标仓位</td></tr><tr><td><strong>加仓一</strong></td><td>HKD 420-440</td><td>追加 1.0-1.5%</td><td>接近52周低点加仓，总仓位至 2.5-3.5%</td></tr><tr><td><strong>加仓二</strong></td><td>HKD 400-420</td><td>追加 0.5-1.0%</td><td>跌破52周低点，极端折扣，总仓位至 3.0-4.5%</td></tr><tr><td><strong>止损平仓</strong></td><td>&lt; HKD 380</td><td>全部平仓</td><td>Bear Case 被触发，观点失效</td></tr></tbody></table>
+<h3>凯利公式参考</h3>
+<p>基于概率加权回报：</p>
+<ul><li>胜率（超过当前价概率）：~70%（Bull 35% + Base 45%）</li><li>赔率比（平均盈利 / 平均亏损）：(609-453) / (453-363) = 156/90 = 1.73</li><li>凯利比例：f* = (0.70 × 1.73 - 0.30) / 1.73 = 0.53</li><li><strong>半凯利</strong>（保守调整）：<strong>26.5%</strong> → 折算到组合总仓位建议 3-5%</li></ul>
+<p><strong>核心原则：当前位置（PE 15.5x, 距52周低点 +7.8%）具备良好安全边际，适合分批建仓而非一次性重仓。</strong></p>
+<hr>
+<h2>📋 决策备忘录</h2>
+<h3>本周变化跟踪（2026-05-30 至 2026-06-05）</h3>
+<table><thead><tr><th>日期</th><th>事件</th><th>影响</th><th>观点调整</th></tr></thead><tbody><tr><td>06-02</td><td>股价大涨 +10%，从 436→481.6</td><td>🟢 超跌反弹，南向+回购驱动</td><td>维持看涨</td></tr><tr><td>06-03</td><td>回购 HKD 1.27B（27.55万股）</td><td>🟢 持续回购支撑</td><td>维持</td></tr><tr><td>06-04</td><td>回调 -3.16% 至 466.4</td><td>🟡 短期获利回吐</td><td>维持</td></tr><tr><td>06-05</td><td>汤道生×姚顺雨对话：腾讯AI下半场</td><td>🟢 AI战略清晰化</td><td>强化看涨</td></tr><tr><td>06-05</td><td>腾讯云 TokenHub 日消耗 5万亿 tokens</td><td>🟢 AI基础设施超预期</td><td>强化看涨</td></tr><tr><td>06-05</td><td>Hy3 Preview 任务完成时间缩短47%</td><td>🟢 模型效果验证</td><td>强化看涨</td></tr><tr><td>06-05</td><td>腾讯文档「人机双写」首发</td><td>🟢 AI产品矩阵扩充</td><td>强化看涨</td></tr><tr><td>06-05</td><td>当日回购 HKD 5B（109.2万股）</td><td>🟢 回购力度加大</td><td>强化看涨</td></tr><tr><td>06-05</td><td>股价收 453.2，-1.26%</td><td>🟡 跟随大市回调</td><td>维持</td></tr></tbody></table>
+<p><strong>本周净影响：🟢 偏正面</strong> — AI 叙事显著增强，回购持续，游戏流水创新高。</p>
+<hr>
+<h3>综合决策表</h3>
+<table><thead><tr><th>决策维度</th><th>判断</th><th>依据</th></tr></thead><tbody><tr><td><strong>开仓/加仓/减仓</strong></td><td><strong>逢低建仓 + 分步加仓</strong></td><td>PE 15.5x 历史低位，34% 概率加权上行空间</td></tr><tr><td><strong>当前仓位建议</strong></td><td>1.5-2% 组合仓位（初始建仓）</td><td>HKD 453 处于低估区间上沿</td></tr><tr><td><strong>下一个加仓点</strong></td><td>HKD 420-440</td><td>接近52周低点，安全边际更高</td></tr><tr><td><strong>止损线</strong></td><td>HKD 380</td><td>Bear Case 确认，观点失效</td></tr><tr><td><strong>止盈参考</strong></td><td>HKD 600-700</td><td>Base-Bull Case 目标区间</td></tr><tr><td><strong>持有周期</strong></td><td>6-12 个月</td><td>等待 Q2 财报和 AI 商业化验证</td></tr></tbody></table>
+<hr>
+<h3>行动清单</h3>
+<table><thead><tr><th>序号</th><th>行动项</th><th>优先级</th><th>负责</th></tr></thead><tbody><tr><td>1</td><td><strong>执行初始建仓</strong>：HKD 440-460 区间买入 1.5-2% 仓位</td><td>🔴 高</td><td>立即执行</td></tr><tr><td>2</td><td><strong>设置加仓提醒</strong>：HKD 420（+加仓）、HKD 400（+加仓）</td><td>🟡 中</td><td>本周</td></tr><tr><td>3</td><td><strong>设置止损单</strong>：HKD 380 GTC 止损</td><td>🔴 高</td><td>建仓后立即</td></tr><tr><td>4</td><td><strong>跟踪 Q2 财报日期</strong>：关注 8 月中旬</td><td>🟡 中</td><td>持续</td></tr><tr><td>5</td><td><strong>监控 AI 产品进展</strong>：Hy3 正式版、微信 Agent、TokenHub 数据</td><td>🟡 中</td><td>每周</td></tr><tr><td>6</td><td><strong>跟踪南向资金</strong>：每周查看南向持仓变化</td><td>🟡 中</td><td>每周</td></tr><tr><td>7</td><td><strong>监控 Prosus 减持</strong>：关注港股披露权益变动</td><td>🔴 高</td><td>持续</td></tr><tr><td>8</td><td><strong>下一次评估日期</strong>：<strong>2026-07-05</strong>（Q2 业绩前瞻）</td><td>🟡 中</td><td>设定日历</td></tr></tbody></table>
+<hr>
+<h2>📊 附录：关键财务数据</h2>
+<h3>近年核心财务指标趋势</h3>
+<table><thead><tr><th>财年</th><th>营收 (¥B)</th><th>YoY</th><th>毛利率</th><th>营业利润率</th><th>净利率</th><th>ROE</th><th>FCF (¥B)</th></tr></thead><tbody><tr><td>FY2021</td><td>560.1</td><td>+16%</td><td>43.9%</td><td>48.5%</td><td>40.7%</td><td>29.8%</td><td>145.9</td></tr><tr><td>FY2022</td><td>554.6</td><td>-1%</td><td>43.1%</td><td>20.0%</td><td>34.0%</td><td>24.6%</td><td>123.4</td></tr><tr><td>FY2023</td><td>609.0</td><td>+10%</td><td>48.1%</td><td>26.3%</td><td>19.4%</td><td>15.1%</td><td>201.0</td></tr><tr><td>FY2024</td><td>660.3</td><td>+8%</td><td>52.9%</td><td>31.5%</td><td>29.8%</td><td>21.8%</td><td>195.6</td></tr><tr><td>FY2025</td><td>751.8</td><td>+14%</td><td>56.2%</td><td>32.1%</td><td>30.6%</td><td>21.1%</td><td>215.6</td></tr><tr><td>Q1 2026</td><td>196.5</td><td>+9%</td><td>56.6%</td><td>34.3%</td><td>30.2%</td><td>5.1%(Q)</td><td>101.4(Q)</td></tr></tbody></table>
+<p><strong>趋势判断：</strong> 毛利率、营业利润率、净利润率连续四年改善。ROE 保持在 20%+ 水平。FCF 突破 ¥215B，为 AI 资本开支提供充足弹药。</p>
+<h3>分析师一致预期</h3>
+<table><thead><tr><th>指标</th><th>2026E</th><th>2027E</th><th>2028E</th></tr></thead><tbody><tr><td>营收 (¥B)</td><td>822.9</td><td>900.0</td><td>989.0</td></tr><tr><td>Non-IFRS 净利润 (¥B)</td><td>273.3</td><td>305.7</td><td>343.7</td></tr><tr><td>Non-IFRS PE (当前)</td><td>14.8x</td><td>13.7x</td><td>12.1x</td></tr><tr><td>机构目标价 (HKD)</td><td>666-704</td><td>—</td><td>—</td></tr><tr><td>评级分布</td><td>买入: 44 / 增持: 9 / 持有: 2 / 卖出: 1</td><td>—</td><td>—</td></tr></tbody></table>
+<hr>
+<h2>⚠️ 免责声明</h2>
+<p>本备忘录仅用于内部投研讨论，不构成任何投资建议。所有数据和观点基于公开信息，可能存在偏差或延迟。投资决策需独立做出并自行承担风险。过往表现不代表未来收益。</p>
+<hr>
+<p>*文档生成时间：2026-06-05 23:23 CST | 数据来源：Wind、NeoData、腾讯自选股、公开研报*</p>
+
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
+</div>
 
 </body>
 </html>

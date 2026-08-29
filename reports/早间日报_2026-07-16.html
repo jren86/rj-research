@@ -3,184 +3,353 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>早间投研日报 · 2026-07-16</title>
+  <title>早间日报 · 2026-07-16</title>
   <style>
-    :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --text2: #8b949e; --red: #f85149; --green: #3fb950; --orange: #d29922; --blue: #58a6ff; }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; line-height:1.6; padding:16px; max-width:880px; margin:0 auto; font-size:14px; }
-    .header { margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; }
-    .header h1 { font-size:1.35em; }
-    .header .meta { font-size:0.8em; color:var(--text2); }
-    h2 { font-size:1.1em; margin:18px 0 10px; color:var(--blue); border-bottom:1px solid var(--border); padding-bottom:4px; }
-    h3 { font-size:0.95em; margin:12px 0 6px; }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
 
-    /* Dashboard grid */
-    .dashboard { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:10px; margin:12px 0; }
-    .metric-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center; }
-    .metric-card .label { font-size:0.75em; color:var(--text2); margin-bottom:4px; }
-    .metric-card .value { font-size:1.3em; font-weight:700; }
-    .metric-card .sub { font-size:0.8em; margin-top:2px; }
-    .red { color:var(--red); }
-    .green { color:var(--green); }
-    .orange { color:var(--orange); }
-    .blue { color:var(--blue); }
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
 
-    /* Cards */
-    .card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 14px; margin:10px 0; }
-    .card.warn { border-left:3px solid var(--orange); }
-    .card.alert { border-left:3px solid var(--red); }
-    .card.info { border-left:3px solid var(--blue); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* Tables */
-    table { width:100%; border-collapse:collapse; margin:8px 0; font-size:0.85em; }
-    th { background:var(--card); padding:6px 8px; text-align:left; border-bottom:1px solid var(--border); color:var(--text2); font-weight:600; }
-    td { padding:6px 8px; border-bottom:1px solid var(--border); }
-    tr:hover { background:rgba(88,166,255,0.04); }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
 
-    .source-link { font-size:0.75em; color:var(--text2); margin:4px 0; }
-    .source-link a { color:var(--blue); text-decoration:none; }
-    .tag { display:inline-block; padding:1px 7px; border-radius:3px; font-size:0.75em; margin-right:4px; }
-    .tag-red { background:rgba(248,81,73,0.15); color:var(--red); }
-    .tag-orange { background:rgba(210,153,34,0.15); color:var(--orange); }
-    .tag-blue { background:rgba(88,166,255,0.15); color:var(--blue); }
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
 
-    .divider { height:1px; background:var(--border); margin:14px 0; }
-    .footer { text-align:center; color:var(--text2); font-size:0.72em; margin-top:20px; padding-top:12px; border-top:1px solid var(--border); }
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
 
-    @media (max-width:640px) {
-      body { padding:10px; }
-      .dashboard { grid-template-columns:repeat(3,1fr); }
-      .header { flex-direction:column; align-items:flex-start; }
-    }
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
   </style>
 </head>
 <body>
 
-<div class="header">
-  <div>
-    <h1>📊 早间投研日报</h1>
-    <div class="meta">2026年7月16日 星期四 · Wind万得</div>
-  </div>
-  <div style="text-align:right;">
-    <span class="tag tag-red">A股盘中</span>
-    <span class="tag tag-blue">港股盘中</span>
-  </div>
+<div class="report-header">
+  <h1>早间日报 · 2026-07-16</h1>
+  <div class="meta"><strong>日期</strong>：2026年7月16日 星期四 · <strong>市场状态</strong>：A股盘中 / 港股盘中 · <strong>数据来源</strong>：Wind万得</div>
 </div>
 
-<!-- Dashboard -->
-<h2>📈 核心指数</h2>
-<div class="dashboard">
-  <div class="metric-card">
-    <div class="label">上证指数</div>
-    <div class="value green">3,927.46</div>
-    <div class="sub green">-0.71%</div>
-  </div>
-  <div class="metric-card">
-    <div class="label">深证成指</div>
-    <div class="value green">14,701.44</div>
-    <div class="sub green">-0.53%</div>
-  </div>
-  <div class="metric-card">
-    <div class="label">创业板指</div>
-    <div class="value green">3,756.06</div>
-    <div class="sub green">-1.28%</div>
-  </div>
-  <div class="metric-card">
-    <div class="label">科创50</div>
-    <div class="value green">1,918.86</div>
-    <div class="sub green">-0.28%</div>
-  </div>
-  <div class="metric-card">
-    <div class="label">恒生指数</div>
-    <div class="value red">25,114.23</div>
-    <div class="sub red">+1.75%</div>
-  </div>
-  <div class="metric-card">
-    <div class="label">恒生科技</div>
-    <div class="value red">4,889.04</div>
-    <div class="sub red">+3.13%</div>
-  </div>
-</div>
-
-<div class="card" style="margin-top:8px;">
-  <strong>📊 市场状态：</strong>上证上涨<span style="color:var(--red)">1211</span>家 / 下跌<span style="color:var(--green)">1071</span>家，成交额约<span style="color:var(--blue)">6,201亿</span>。A股整体回调但港股强势反弹，恒生科技涨超3%。
-  <div class="source-link">🔗 <a href="#">来源：Wind万得</a></div>
-</div>
-
-<!-- Overnight News -->
+<hr>
+<h2>📊 市场概览</h2>
+<table><thead><tr><th>指数</th><th>最新价</th><th>涨跌幅</th></tr></thead><tbody><tr><td>上证指数</td><td>3,927.46</td><td><span class="green">-0.71%</span></td></tr><tr><td>深证成指</td><td>14,701.44</td><td><span class="green">-0.53%</span></td></tr><tr><td>创业板指</td><td>3,756.06</td><td><span class="green">-1.28%</span></td></tr><tr><td>科创50</td><td>1,918.86</td><td><span class="green">-0.28%</span></td></tr><tr><td>恒生指数</td><td>25,114.23</td><td><span class="red">+1.75%</span></td></tr><tr><td>恒生科技</td><td>4,889.04</td><td><span class="red">+3.13%</span></td></tr></tbody></table>
+<p>A股整体回落，上证上涨家数1211 / 下跌1071，成交额约6201亿。港股表现强劲，恒生科技大涨3.13%。</p>
+<p>🔗 来源：Wind万得</p>
+<hr>
 <h2>🔥 隔夜要闻</h2>
-
-<div class="card alert">
-  <h3>🔴 中东局势持续升级</h3>
-  <p>特朗普称对伊朗打击将持续"直到我说够了为止"。美伊周二举行谈判，美国敦促伊朗达成协议。伊朗军方声明持续对地区美军基地开展无人机打击。美军恢复对伊朗港口及沿岸船只海上封锁。</p>
-  <div class="source-link">🔗 <a href="#">来源：Wind财经新闻 · 2026-07-15</a></div>
-</div>
-
-<div class="card alert">
-  <h3>🔴 IBM 创115年最大单日跌幅：暴跌25%</h3>
-  <p>IBM暴跌25.21%，创公司115年历史最大单日跌幅，成交146.63亿美元，市值蒸发690亿美元。</p>
-  <div class="source-link">🔗 <a href="#">来源：Wind财经新闻 · 2026-07-15</a></div>
-</div>
-
-<div class="card warn">
-  <h3>🟠 央行：研究逐步增加隔夜逆回购操作频率</h3>
-  <p>副行长邹澜表示将结合一级交易商需求，研究逐步增加隔夜逆回购的操作频率。目前7天期逆回购操作利率仍是主要政策利率，隔夜逆回购侧重超短期流动性调节。利率走廊从70bp缩至50bp。</p>
-  <div class="source-link">🔗 <a href="#">来源：Wind财经新闻 · 2026-07-16</a></div>
-</div>
-
-<div class="card warn">
-  <h3>🟠 苹果获罕见看跌评级</h3>
-  <p>KeyBanc给予苹果股票看跌评级，表示需求和估值令人担忧。</p>
-  <div class="source-link">🔗 <a href="#">来源：Wind财经新闻 · 2026-07-15</a></div>
-</div>
-
-<div class="card info">
-  <h3>🔵 美联储沃什：现有通胀指标不理想</h3>
-  <p>美联储理事沃什表示现有基础通胀指标不理想，"超有兴趣"寻找新的通胀监测工具。</p>
-  <div class="source-link">🔗 <a href="#">来源：Wind财经新闻 · 2026-07-15</a></div>
-</div>
-
-<!-- Strategy -->
+<h3>🔴 中东局势持续升级：特朗普称对伊朗打击将继续</h3>
+<p>美国总统特朗普称对伊朗的打击将持续"直到我说够了为止"，美伊周二举行谈判，美国敦促伊朗达成协议。伊朗军方声明持续对地区美军基地开展无人机打击。美国中央司令部宣布恢复对伊朗港口及沿岸船只海上封锁。</p>
+<p>🔗 来源：Wind财经新闻 · 2026-07-15</p>
+<hr>
+<h3>🔴 IBM 创115年最大单日跌幅：暴跌25%</h3>
+<p>IBM 周二暴跌25.21%，创公司115年历史最大单日跌幅，成交146.63亿美元，市值蒸发690亿美元。</p>
+<p>🔗 来源：Wind财经新闻 · 2026-07-15</p>
+<hr>
+<h3>🟠 央行：研究逐步增加隔夜逆回购操作频率</h3>
+<p>央行副行长邹澜表示，将结合一级交易商需求，研究逐步增加隔夜逆回购的操作频率。目前7天期逆回购操作利率仍是主要政策利率，隔夜逆回购看重的是对超短期流动性的调节能力。</p>
+<p>🔗 来源：Wind财经新闻 · 2026-07-16</p>
+<hr>
+<h3>🟠 苹果获罕见看跌评级</h3>
+<p>KeyBanc 给予苹果股票看跌评级，表示需求和估值令人担心。</p>
+<p>🔗 来源：Wind财经新闻 · 2026-07-15</p>
+<hr>
+<h3>🔵 美联储沃什：现有通胀指标不理想</h3>
+<p>美联储理事沃什表示现有基础通胀指标不理想，"超有兴趣"寻找新的通胀监测工具。</p>
+<p>🔗 来源：Wind财经新闻 · 2026-07-15</p>
+<hr>
 <h2>💡 策略观点</h2>
+<p>⚠️ 隔夜券商策略观点更新数据暂未从 Wind 研报模块获取到今日增量内容，以下为近期关键策略方向回顾：</p>
+<table><thead><tr><th>机构</th><th>核心观点</th></tr></thead><tbody><tr><td>招商证券</td><td>2026上半年A股收官，科创50指数累涨64.25%，科技主线延续</td></tr><tr><td>基金观点</td><td>预计6-7月沪指在3900-4200点反复震荡，操作"轻指数、重方向"</td></tr><tr><td>科技+能源</td><td>全年持仓以科技+能源为主，存储/电子/新材料可保留底仓</td></tr></tbody></table>
+<p>🔗 来源：Wind财经新闻 · 综合</p>
+<hr>
+<h2>🔬 宏观 &amp; 政策</h2>
+<ul><li><strong>央行上半年金融数据发布</strong>：2026年上半年熊猫债券发行超1600亿元，同比增长超60%</li><li><strong>利率走廊收窄</strong>：利率走廊从70bp缩至50bp，临时正逆回购操作时间优化为15:00-15:30</li><li><strong>GDP Q1增长5.0%</strong>，PPI同比由负转正，非金融企业Q1归母净利润同比增12.25%</li><li><strong>外资持仓A股</strong>：截至5月28日，境外投资者持有A股流通市值超4万亿元</li></ul>
+<hr>
+<h2>📌 持仓个股增量信息</h2>
+<p>⚠️ 持仓个股列表未在上下文加载，请提供持仓清单后补充增量分析。</p>
+<hr>
+<h2>📋 关注清单</h2>
+<p>⚠️ 关注清单未在上下文加载，请提供后补充。</p>
+<hr>
+<h2>🗂️ 知识星球 (zsxq)</h2>
+<p>⚠️ zsxq 工具调用未在本次执行中完成，建议后续单独拉取「水木调研纪要-2.0」和「调研纪要更新」两个星球的最新内容。</p>
+<hr>
+<h2>📎 数据溯源</h2>
+<table><thead><tr><th>数据</th><th>来源</th><th>时点</th></tr></thead><tbody><tr><td>指数行情</td><td>Wind万得</td><td>2026-07-16 盘中</td></tr><tr><td>隔夜要闻</td><td>Wind财经新闻</td><td>2026-07-15/16</td></tr><tr><td>宏观数据</td><td>Wind财经新闻</td><td>2026年Q1/H1</td></tr><tr><td>策略观点</td><td>Wind财经新闻</td><td>2026-06/07 综合</td></tr></tbody></table>
+<hr>
+<p>数据来源：Wind万得 · My Research Central · via WB</p>
 
-<table>
-  <tr><th>机构</th><th>核心观点</th></tr>
-  <tr><td>招商证券</td><td>H1收官，科创50累涨<span class="red">64.25%</span>，科技主线延续</td></tr>
-  <tr><td>基金经理</td><td>预计6-7月沪指在<span class="blue">3900-4200</span>点反复震荡</td></tr>
-  <tr><td>策略配置</td><td>全年持仓<span class="orange">科技+能源</span>为主，硬科技可保留底仓</td></tr>
-</table>
-
-<div class="source-link">🔗 <a href="#">来源：Wind财经新闻 · 2026-06/07 综合</a></div>
-
-<!-- Macro -->
-<h2>🔬 宏观 & 政策</h2>
-
-<div class="dashboard" style="grid-template-columns:repeat(auto-fit, minmax(250px,1fr));">
-  <div class="metric-card">
-    <div class="label">GDP Q1</div>
-    <div class="value red">+5.0%</div>
-    <div class="sub">同比增速</div>
-  </div>
-  <div class="metric-card">
-    <div class="label">熊猫债H1</div>
-    <div class="value red">1,600亿+</div>
-    <div class="sub">同比增长超60%</div>
-  </div>
-  <div class="metric-card">
-    <div class="label">外资持有A股</div>
-    <div class="value blue">4万亿+</div>
-    <div class="sub">截至5月28日</div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="card warn">
-  <p><strong>⚠️ 待补充：</strong>持仓个股/关注清单增量信息、zsxq（知识星球）纪要、券商最新策略研报。建议后续单独拉取。</p>
-</div>
-
-<div class="footer">
-  数据来源：Wind万得 · My Research Central · via WB
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

@@ -3,20 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>晚间投研日报 · 2026-06-28</title>
+  <title>晚间日报 · 2026-06-28</title>
   <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --border: #30363d;
-  --text: #e6edf3;
-  --text2: #8b949e;
-  --red: #f85149;
-  --green: #3fb950;
-  --orange: #d29922;
-  --blue: #58a6ff;
-  --purple: #bc8cff;
-  --yellow: #e3b341;
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,6 +40,21 @@ body {
   font-size: 14px;
 }
 
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
 .report-header {
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -49,6 +72,7 @@ body {
   color: var(--text2);
 }
 
+/* ── Section headers ── */
 h2 {
   font-size: 1.15em;
   margin: 22px 0 10px;
@@ -63,26 +87,29 @@ h3 {
   color: var(--text);
 }
 
+/* ── Cards ── */
 .card {
-  background: var(--card);
+  background: var(--card-alt);
   border-radius: 8px;
   padding: 12px 14px;
   margin: 10px 0;
   border: 1px solid var(--border);
 }
 
+/* ── Tables ── */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 8px 0;
   font-size: 0.85em;
+  background: var(--card-alt);
 }
 
 th {
   background: var(--card);
   padding: 6px 8px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   color: var(--text2);
   font-weight: 600;
 }
@@ -94,9 +121,10 @@ td {
 }
 
 tr:hover {
-  background: rgba(88, 166, 255, 0.05);
+  background: rgba(58, 107, 150, 0.05);
 }
 
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
@@ -106,56 +134,64 @@ tr:hover {
 }
 
 .tag-red {
-  background: rgba(248, 81, 73, 0.15);
+  background: rgba(184, 84, 74, 0.12);
   color: var(--red);
 }
 
 .tag-green {
-  background: rgba(63, 185, 80, 0.15);
+  background: rgba(74, 138, 92, 0.12);
   color: var(--green);
 }
 
 .tag-orange {
-  background: rgba(210, 153, 34, 0.15);
+  background: rgba(168, 129, 60, 0.14);
   color: var(--orange);
 }
 
 .tag-blue {
-  background: rgba(88, 166, 255, 0.15);
+  background: rgba(58, 107, 150, 0.12);
   color: var(--blue);
 }
 
 .tag-purple {
-  background: rgba(188, 140, 255, 0.15);
+  background: rgba(125, 107, 143, 0.14);
   color: var(--purple);
 }
 
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
 .highlight {
   padding: 10px 14px;
   border-radius: 6px;
   margin: 8px 0;
+  background: var(--card-alt);
 }
 
 .highlight-red {
-  background: rgba(248, 81, 73, 0.08);
+  background: rgba(184, 84, 74, 0.06);
   border-left: 3px solid var(--red);
 }
 
 .highlight-orange {
-  background: rgba(210, 153, 34, 0.08);
+  background: rgba(168, 129, 60, 0.07);
   border-left: 3px solid var(--orange);
 }
 
 .highlight-blue {
-  background: rgba(88, 166, 255, 0.08);
+  background: rgba(58, 107, 150, 0.06);
   border-left: 3px solid var(--blue);
 }
 
 .highlight-green {
-  background: rgba(63, 185, 80, 0.08);
+  background: rgba(74, 138, 92, 0.06);
   border-left: 3px solid var(--green);
 }
 
+/* ── Bullet lists ── */
 ul.bullet {
   margin: 6px 0 6px 18px;
   font-size: 0.92em;
@@ -166,6 +202,44 @@ ul.bullet li {
   line-height: 1.6;
 }
 
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
 .red { color: var(--red); }
 .green { color: var(--green); }
 .orange { color: var(--orange); }
@@ -173,6 +247,7 @@ ul.bullet li {
 .purple { color: var(--purple); }
 .yellow { color: var(--yellow); }
 
+/* ── Source links ── */
 .source-link {
   display: block;
   font-size: 0.78em;
@@ -182,7 +257,7 @@ ul.bullet li {
 }
 
 .source-link a {
-  color: var(--blue);
+  color: #2d5f8a;
   text-decoration: none;
 }
 
@@ -190,12 +265,14 @@ ul.bullet li {
   text-decoration: underline;
 }
 
+/* ── Divider ── */
 .divider {
   height: 1px;
   background: var(--border);
   margin: 16px 0;
 }
 
+/* ── Footer ── */
 .report-footer {
   text-align: center;
   color: var(--text2);
@@ -205,280 +282,112 @@ ul.bullet li {
   border-top: 1px solid var(--border);
 }
 
+/* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 10px; }
   h1 { font-size: 1.2em; }
   h2 { font-size: 1.05em; }
   table { font-size: 0.8em; }
 }
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>晚间投研日报</h1>
-  <div class="meta">2026-06-28 周日 · A股休市 · 休市简化版</div>
+  <h1>晚间日报 · 2026-06-28</h1>
+  <div class="meta">📌 A股今日休市 | 本报告为周日休市简化版，聚焦周末增量信息与下周前瞻</div>
 </div>
 
-<div class="card highlight-blue">
-  <strong>📌 周日休市 · 本报告为休市日简化版</strong><br>
-  聚焦周末增量信息与下周核心催化
-</div>
-
-<!-- ==================== 催化剂日历 ==================== -->
+<hr>
 <h2>🔮 催化剂日历 · 下周前瞻（6/29 – 7/5）</h2>
-
-<table>
-  <thead>
-    <tr><th>日期</th><th>事件</th><th>关注度</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>6/29 周一</td><td>两大存储巨头（长鑫/长江存储）发布大规模投资计划</td><td><span class="tag tag-red">🔴</span></td></tr>
-    <tr><td>6/29 周一</td><td>GPT-5.6 向小范围合作机构开放预览版</td><td><span class="tag tag-red">🔴</span></td></tr>
-    <tr><td>6/30 周二</td><td>中国6月官方制造业PMI公布</td><td><span class="tag tag-red">🔴</span></td></tr>
-    <tr><td>6/30 周二</td><td>半年末资金面压力最大时点</td><td><span class="tag tag-orange">🟠</span></td></tr>
-    <tr><td>7/1 周三</td><td>中国6月财新制造业PMI / A股上半年收官</td><td><span class="tag tag-red">🔴</span></td></tr>
-    <tr><td>7/2 周四</td><td>美国6月ISM制造业PMI</td><td><span class="tag tag-blue">🔵</span></td></tr>
-    <tr><td>7/3 周五</td><td>美国6月非农就业数据</td><td><span class="tag tag-orange">🟠</span></td></tr>
-    <tr><td>7 月上旬</td><td>长十乙可回收火箭航警发布</td><td><span class="tag tag-red">🔴</span></td></tr>
-    <tr><td>7/18</td><td>中船特气首发半年报（A股首家）</td><td><span class="tag tag-orange">🟠</span></td></tr>
-  </tbody>
-</table>
-<div class="source-link">🔗 来源：Wind 万得金融终端 · 知识星球</div>
-
-<!-- ==================== 宏观 ==================== -->
+<table><thead><tr><th>日期</th><th>事件</th><th>关注度</th></tr></thead><tbody><tr><td>6/29 周一</td><td>两大存储巨头（长鑫/长江存储）发布大规模投资计划</td><td>🔴</td></tr><tr><td>6/29 周一</td><td>GPT-5.6 向小范围合作机构开放预览版</td><td>🔴</td></tr><tr><td>6/30 周二</td><td>中国6月官方制造业PMI公布</td><td>🔴</td></tr><tr><td>6/30 周二</td><td>半年末资金面压力最大时点</td><td>🟠</td></tr><tr><td>7/1 周三</td><td>中国6月财新制造业PMI</td><td>🔵</td></tr><tr><td>7/1 周三</td><td>A股上半年收官，中报预告窗口开启</td><td>🔴</td></tr><tr><td>7/2 周四</td><td>美国6月ISM制造业PMI</td><td>🔵</td></tr><tr><td>7/3 周五</td><td>美国6月非农就业数据</td><td>🟠</td></tr><tr><td>7 月上旬</td><td>长十乙可回收火箭航警发布（已确定航警）</td><td>🔴</td></tr><tr><td>7/18</td><td>中船特气首发半年报（A股首家）</td><td>🟠</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：Wind 万得金融终端 · 知识星球</div></p>
+<hr>
 <h2>🌐 宏观 · 周末重要动态</h2>
-
 <h3>海外</h3>
-
-<div class="card">
-  <strong><span class="tag tag-red">🔴</span> 美联储6月议息维持利率3.5%-3.75%不变</strong><br>
-  点阵图大幅上调利率预期，半数票委支持年内至少加息一次。市场对加息叙事敏感，但中信建投认为当前定价趋于极致，下半年均值回归方向更可能是宽松。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · FOMC声明</div>
-</div>
-
-<div class="card">
-  <strong><span class="tag tag-orange">🟠</span> 美伊谈判持续</strong><br>
-  伊朗称60天谈判期内免收通行费，霍尔木兹海峡通行正常。美伊临时协议一度缓解通胀忧虑，但美国国内政治争议令地缘风险仍存变数。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · 宏观简报</div>
-</div>
-
-<div class="card">
-  <strong><span class="tag tag-blue">🔵</span> 欧洲经济数据分化</strong><br>
-  德国6月制造业PMI 50（低于预期50.4），服务业PMI 46.8创43个月新低；法国服务业PMI 47.4（高于预期46），萎缩势头放缓。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · 欧洲宏观简报</div>
-</div>
-
+<ul><li><strong>美联储6月议息维持利率3.5%-3.75%不变</strong>，点阵图大幅上调利率预期，半数票委支持年内至少加息一次。市场对加息叙事敏感，但部分机构认为当前定价趋于极致，下半年均值回归方向更可能是宽松。（中信建投观点）</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · FOMC声明</div></p>
+<ul><li><strong>美伊谈判持续</strong>：伊朗称60天谈判期内免收通行费，霍尔木兹海峡通行正常。美伊临时协议一度缓解通胀忧虑，但美国国内政治争议令地缘风险仍存变数。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · 宏观简报</div></p>
+<ul><li><strong>美国5月核心PCE即将公布</strong>（下周），将是判断美联储后续政策路径的关键数据。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端</div></p>
+<ul><li><strong>欧洲经济数据分化</strong>：德国6月制造业PMI 50（低于预期50.4），服务业PMI 46.8创43个月新低；法国服务业PMI 47.4（高于预期46），萎缩势头放缓。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · 欧洲宏观简报</div></p>
 <h3>国内</h3>
-
-<div class="card">
-  <strong><span class="tag tag-red">🔴</span> 国务院发布私募基金高质量发展指导意见</strong><br>
-  首次系统部署私募基金领域，强调"源头严防、过程严管、风险严控、违规严惩"。
-  <div class="source-link">🔗 来源：Wind 万得金融终端</div>
-</div>
-
-<div class="card">
-  <strong><span class="tag tag-blue">🔵</span> 市场监管总局召开企业公平竞争座谈会</strong><br>
-  涉及制造业、AI、医药、建筑等领域，强调破除统一市场和公平竞争卡点堵点。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · 新闻</div>
-</div>
-
-<!-- ==================== 市场概览 ==================== -->
+<ul><li><strong>国务院办公厅印发《关于加强监管防范风险促进私募投资基金高质量发展的指导意见》</strong>，首次系统部署私募基金领域，强调"源头严防、过程严管、风险严控、违规严惩"。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端</div></p>
+<ul><li><strong>市场监管总局召开企业公平竞争座谈会</strong>（6/25），涉及制造业、AI、医药、建筑等领域，强调破除统一市场和公平竞争卡点堵点。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · 新闻</div></p>
+<hr>
 <h2>📊 市场概览 · 上周回顾（6/22 – 6/26）</h2>
-
 <p>上周A股先扬后抑，周五出现调整。主要指数表现分化明显：</p>
-
-<table>
-  <thead>
-    <tr><th>指数</th><th>周涨跌幅</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>科创50</td><td class="red">+6.32%</td></tr>
-    <tr><td>科创综指</td><td class="red">+1.99%</td></tr>
-    <tr><td>中证500</td><td class="red">+0.35%</td></tr>
-    <tr><td>沪深300</td><td class="green">-1.48%</td></tr>
-    <tr><td>上证指数</td><td class="green">-1.55%</td></tr>
-    <tr><td>上证50</td><td class="green">-0.74%</td></tr>
-    <tr><td>中证红利</td><td class="green">-4.34%</td></tr>
-    <tr><td>万得微盘股</td><td class="green">-5.51%</td></tr>
-  </tbody>
-</table>
-
-<div class="highlight highlight-orange">
-  <strong>关键特征：</strong><br>
-  · 仅1052家股票周线上涨，为3月下旬以来最差一周<br>
-  · 6月以来19个交易日中，"涨多跌少"的交易日仅6个<br>
-  · 微盘股指数已连跌7周<br>
-  · 近980只个股低于2024年9月23日行情启动前水平（含34只千亿市值股）
-</div>
-<div class="source-link">🔗 来源：Wind 万得金融终端</div>
-
-<!-- ==================== 策略观点 ==================== -->
-<h2>💡 策略观点 · 券商最新研判</h2>
-
-<div class="card">
-  <strong>中信证券</strong> — 坚定看好电子板块<br>
-  预计2026Q2电子行业整体业绩全面向好。国内半导体设备、国产算力上行拐点明确，全球AI趋势下的电源相关、PCB、存储表现持续强劲。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div>
-</div>
-
-<div class="card">
-  <strong>中金公司</strong> — 黄金牛市尚未结束<br>
-  当前调整主要受美伊冲突推升油价+美联储鹰派表态双重压制。美国通胀可能已见顶，下半年或进入下行通道，转机或已不远，建议逢低吸纳。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div>
-</div>
-
-<div class="card">
-  <strong>中信建投</strong> — 6月建议"杠铃结构"<br>
-  一端保留AI、半导体等高景气底仓，另一端配置高股息、现金流稳定资产。内部应从高涨幅环节切向半导体材料、设备零部件等滞涨方向。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div>
-</div>
-
-<div class="card">
-  <strong>国泰海通</strong> — 看好机器人感知系统与核心零部件<br>
-  物理AI基础模型加速机器人研发进程，推荐触觉/视觉传感器、灵巧手/丝杠/轻量化材料、头部本体厂商。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div>
-</div>
-
-<div class="card">
-  <strong>交银国际</strong> — 下半年宏观叙事转向"再通胀下的AI驱动"<br>
-  中东地缘+中国PPI转正+美国服务通胀粘性三重叠加。港股核心逻辑转向"PPI转正带动盈利上修+AI科技叙事+国产替代"。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · 券商观点</div>
-</div>
-
-<div class="card">
-  <strong>申万宏源</strong> — 中国资产正迎来重新审视、重新定价、重新配置的战略期<br>
-  来自宏观经济修复、产业结构升级和资本市场改革三大力量同频共振。
-  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div>
-</div>
-
-<!-- ==================== 知识星球 ==================== -->
+<table><thead><tr><th>指数</th><th>周涨跌幅</th></tr></thead><tbody><tr><td>科创50</td><td><span style="color: #f85149;">+6.32%</span></td></tr><tr><td>科创综指</td><td><span style="color: #f85149;">+1.99%</span></td></tr><tr><td>中证500</td><td><span style="color: #f85149;">+0.35%</span></td></tr><tr><td>沪深300</td><td><span style="color: #3fb950;">-1.48%</span></td></tr><tr><td>上证指数</td><td><span style="color: #3fb950;">-1.55%</span></td></tr><tr><td>中证红利</td><td><span style="color: #3fb950;">-4.34%</span></td></tr><tr><td>万得微盘股</td><td><span style="color: #3fb950;">-5.51%</span></td></tr></tbody></table>
+<p><strong>关键特征：</strong></p>
+<ul><li>仅1052家股票周线上涨，为3月下旬以来最差一周</li><li>6月以来19个交易日中，"涨多跌少"的交易日仅6个</li><li>微盘股指数已连跌7周</li><li>近980只个股低于2024年9月23日行情启动前水平，其中千亿市值大盘股达34只</li></ul>
+<p><div class="source-link">🔗 来源：Wind 万得金融终端 · analytics_data</div></p>
+<hr>
+<h2>💡 策略观点</h2>
+<h3>中信证券</h3>
+<ul><li><strong>坚定看好电子板块</strong>：预计2026Q2电子行业整体业绩全面向好。国内半导体设备、国产算力上行拐点明确，全球AI趋势下的电源相关、PCB、存储表现持续强劲。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div></p>
+<h3>中金公司</h3>
+<ul><li><strong>黄金牛市尚未结束</strong>：当前调整主要受美伊冲突推升油价+美联储鹰派表态双重压制，但美国通胀可能已见顶，下半年或进入下行通道，转机或已不远，建议逢低吸纳。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div></p>
+<h3>中信建投</h3>
+<ul><li><strong>6月建议"杠铃结构"</strong>：一端保留AI、半导体等高景气底仓，另一端配置高股息、现金流稳定资产控制组合波动。内部应从高涨幅环节切向半导体材料、设备零部件等滞涨方向。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div></p>
+<h3>国泰海通</h3>
+<ul><li><strong>看好机器人感知系统、核心零部件</strong>：物理AI基础模型加速机器人研发进程，推荐触觉与视觉传感器、灵巧手/丝杠/轻量化材料、头部本体厂商。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div></p>
+<h3>交银国际</h3>
+<ul><li><strong>下半年全球宏观叙事转向"再通胀下的AI驱动"</strong>：中东地缘事件持续激活通胀链条，中国PPI转正外溢，美国服务通胀粘性超预期。港股核心逻辑转向"PPI转正带动盈利上修+AI科技叙事+国产替代"。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · 券商观点</div></p>
+<h3>申万宏源</h3>
+<ul><li><strong>中国资产正迎来重新审视、重新定价、重新配置的战略期</strong>，来自宏观经济修复、产业结构升级和资本市场改革三大力量同频共振。</li></ul>
+<p>  <div class="source-link">🔗 来源：Wind 万得金融终端 · 每日投行观点</div></p>
+<hr>
 <h2>📋 知识星球（zsxq）周末精华</h2>
-
-<h3>关键词过滤汇总</h3>
-
-<table>
-  <thead>
-    <tr><th>标题</th><th>来源星球</th><th>状态</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>【瑞松科技】继续强call — 康宁GlassBridge实质利好</td><td>调研纪要更新</td><td><span class="tag tag-blue">✅ 已读取</span></td></tr>
-    <tr><td>【东财建筑建材】电子布跟踪 — 林州光远再闯IPO</td><td>水木调研纪要-2.0</td><td><span class="tag tag-blue">✅ 已读取</span></td></tr>
-    <tr><td>【申万宏源化工】电子材料持续重视</td><td>水木调研纪要-2.0 / 调研纪要更新</td><td><span class="tag tag-orange">⚠️ 需手动查看</span></td></tr>
-    <tr><td>强call香江控股！规模从30亿到300亿</td><td>调研纪要更新</td><td><span class="tag tag-orange">⚠️ 需手动查看</span></td></tr>
-    <tr><td>AIDC板块再推荐</td><td>水木调研纪要-2.0</td><td><span class="tag tag-orange">⚠️ 需手动查看</span></td></tr>
-  </tbody>
-</table>
-
-<h3>周末核心纪要</h3>
-
-<div class="card highlight-red">
-  <strong>🔥 1. 申万宏源通信 · 周观点更新（6/28）</strong><br>
-  <ul class="bullet">
-    <li><strong>光器件</strong>：康宁GlassBridge方案推进被动耦合，关注致尚科技、杰普特、天孚通信等</li>
-    <li><strong>商业航天</strong>：7/10-13长十乙可回收火箭；SpaceX拟收购光模块公司Mesh（太空算力叙事）</li>
-    <li><strong>光纤</strong>：涨价不断，回调即是机会，推荐中天科技、长飞光纤</li>
-    <li><strong>算力基建</strong>：回调充分+产业蝶变，IDC景气度回升，算租模式向按调用量分润演进</li>
-  </ul>
-  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div>
-</div>
-
-<div class="card highlight-red">
-  <strong>🔥 2. 中泰电子 · 周末大事记（6/28）</strong><br>
-  <ul class="bullet">
-    <li><strong>GPT-5.6</strong> 旗舰版Sol部分Benchmark跑赢Anthropic Mythos，定价约为Mythos一半</li>
-    <li><strong>苹果</strong> 正寻求从长鑫存储采购内存芯片 → 国产存储进入海外终端供应链预期升温</li>
-    <li><strong>Anthropic ARR</strong> 达620亿美元，环比5月增长31%</li>
-  </ul>
-  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div>
-</div>
-
-<div class="card">
-  <strong>3. 华泰计算机 · GPT-5.6发布分析（6/28）</strong><br>
-  三款型号：旗舰Sol / 中档Terra / 低价Luna。AI for Science可能成为下一个商业化重点（基因组学、定量生物学）。国产模型开源优势凸显。
-  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div>
-</div>
-
-<div class="card highlight-red">
-  <strong>🔥 4. 陈果电话会核心纪要（6/28）</strong><br>
-  <ul class="bullet">
-    <li><strong>美股AI科技股</strong>：预期极度透支，估值已至2028年 → "超级鱼尾行情"难以延续</li>
-    <li><strong>A股策略</strong>：侧重结构性机会。新老能源（6月数据超预期）、非银金融、消费蓝筹（历史底部PE）</li>
-    <li><strong>中国特色稳市机制</strong>：A股不会同步跟跌美股</li>
-  </ul>
-  <div class="source-link">🔗 来源：调研纪要更新 · zsxq</div>
-</div>
-
-<div class="card highlight-red">
-  <strong>🔥 5. 长光华芯CFCF大会纪要（6/26）</strong><br>
-  <ul class="bullet">
-    <li>200G PAM4 EML <strong>三季度正式量产</strong>，国内首款自研芯片，打开1.6T供给天花板</li>
-    <li>全球高速光芯片紧缺至少持续2-3年，国产化率不到10%</li>
-    <li>IDM模式，2027年初月产能达1000万颗以上</li>
-  </ul>
-  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div>
-</div>
-
-<div class="card">
-  <strong>6. 东财建筑建材 · 电子布跟踪（6/28）</strong><br>
-  林州光远再次申报IPO，7628电子布年初至今涨价超70%，7月有望再提速。推荐中国巨石、宏和科技。
-  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div>
-</div>
-
-<div class="card">
-  <strong>7. 瑞松科技 · 国金强call（6/28）</strong><br>
-  康宁GlassBridge方案利好高芯数MPO，瑞松MPO自动化设备精度0.3微米，契合产业趋势。
-  <div class="source-link">🔗 来源：调研纪要更新 · zsxq</div>
-</div>
-
-<div class="card highlight-orange">
-  <strong>⚠️ 研报附件（需手动查看）</strong><br>
-  · 【风口研报】美光科技上修资本开支，洁净室行业迎来双击<br>
-  · 【风口研报】该化工品酝酿新一轮涨价，年初以来上涨近20%<br>
-  · 【电报解读】算力出海提速，800G以上光模块出口暴增100倍<br>
-  <div class="source-link">🔗 来源：调研纪要更新 · zsxq | ⚠️ PDF附件不可直接读取</div>
-</div>
-
-<!-- ==================== 关注清单 ==================== -->
+<h3>关键词过滤结果</h3>
+<p>归纳星球「水木调研纪要-2.0」和「调研纪要更新」中含"强推/上调/重视/重点推荐/买入/增持"的最新内容：</p>
+<table><thead><tr><th>标题</th><th>来源星球</th><th>时间</th><th>状态</th></tr></thead><tbody><tr><td>烟花【瑞松科技】继续强call — 康宁GlassBridge是实质利好</td><td>调研纪要更新</td><td>6/28</td><td>✅ 已读取</td></tr><tr><td>【东财建筑建材】电子布跟踪 — 林州光远再闯IPO</td><td>水木调研纪要-2.0</td><td>6/28</td><td>✅ 已读取</td></tr><tr><td>【申万宏源化工】电子材料持续重视</td><td>水木调研纪要-2.0</td><td>6/2</td><td>⚠️ 需手动查看附件</td></tr><tr><td>【申万宏源化工】电子材料持续重视</td><td>调研纪要更新</td><td>6/2</td><td>⚠️ 需手动查看附件</td></tr><tr><td>强call香江控股！规模从30亿到300亿</td><td>调研纪要更新</td><td>6/12</td><td>⚠️ 需手动查看附件</td></tr><tr><td>AIDC板块再推荐</td><td>水木调研纪要-2.0</td><td>5/14</td><td>⚠️ 需手动查看</td></tr></tbody></table>
+<h3>周末核心纪要速览</h3>
+<p><strong>1. 申万宏源通信 · 周观点更新（6/28）</strong></p>
+<ul><li><strong>光器件</strong>：康宁GlassBridge方案推进被动耦合，关注致尚科技、杰普特、天孚通信等</li><li><strong>商业航天</strong>：7/10-13长十乙可回收火箭，SpaceX拟收购光模块公司Mesh（太空算力叙事）</li><li><strong>光纤</strong>：涨价不断，回调即是机会，推荐中天科技、长飞光纤</li><li><strong>算力基建</strong>：回调充分+产业蝶变，IDC景气度回升，算租模式向按调用量分润演进</li></ul>
+<p>  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div></p>
+<p><strong>2. 中泰电子 · 周末大事记（6/28）</strong></p>
+<ul><li><strong>GPT-5.6</strong>周五上线预览版，旗舰版Sol部分Benchmark跑赢Anthropic Mythos，定价持平GPT-5.5（约为Mythos一半）</li><li><strong>苹果</strong>正寻求美国政府批准，从长鑫存储采购内存芯片 ➔ 国产存储进入海外终端供应链预期升温</li><li><strong>Anthropic ARR</strong>达620亿美元（环比5月增长31%），OpenAI+Anthropic ARR合计突破1000亿美元</li></ul>
+<p>  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div></p>
+<p><strong>3. 华泰计算机 · GPT-5.6发布（6/28）</strong></p>
+<ul><li>GPT-5.6三款：旗舰版Sol、中等版Terra、低价高速版Luna</li><li>AI for Science（AI4S）可能是下一个商业化重点，尤其是基因组学、定量生物学</li><li>国产模型的开源优势凸显，企业开始有意识控制AI模型成本</li></ul>
+<p>  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div></p>
+<p><strong>4. 陈果电话会核心纪要（6/28）</strong> 🔴</p>
+<ul><li><strong>美股AI科技股</strong>：预期极度透支，估值已至2028年，OpenAI放弃IPO+Anthropic价格战+美国政府限制 → "超级鱼尾行情"难以延续</li><li><strong>A股策略</strong>：中国特色稳市机制，A股不会同步跟跌。推荐新老能源（6月数据超预期）、非银金融、消费蓝筹（历史底部PE）</li></ul>
+<p>  <div class="source-link">🔗 来源：调研纪要更新 · zsxq</div></p>
+<p><strong>5. 长光华芯CFCF大会纪要（6/26）</strong> 🔴</p>
+<ul><li>200G PAM4 EML三季度正式量产，为国内首款自研芯片，直接打开1.6T产业链供给天花板</li><li>全球高速光芯片紧缺至少持续2-3年，国产化率不到10%</li><li>IDM模式2027年初月产能达1000万颗以上</li></ul>
+<p>  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div></p>
+<p><strong>6. 东财建筑建材 · 电子布跟踪（6/28）</strong></p>
+<ul><li>林州光远再次申报IPO，7628电子布年初至今涨价超70%，7月有望再提速</li><li>电子布供需持续偏紧，推荐中国巨石、宏和科技</li></ul>
+<p>  <div class="source-link">🔗 来源：水木调研纪要-2.0 · zsxq</div></p>
+<p><strong>7. 瑞松科技 — 国金强call（6/28）</strong></p>
+<ul><li>康宁GlassBridge方案被动耦合推动高芯数MPO加速，瑞松MPO自动化设备精度0.3微米，契合产业趋势</li></ul>
+<p>  <div class="source-link">🔗 来源：调研纪要更新 · zsxq</div></p>
+<p><strong>8. 研报附件（⚠️ 需手动查看）</strong></p>
+<ul><li>【风口研报】美光科技上修资本开支，洁净室行业迎来订单+利润率双击</li><li>【风口研报】该化工品酝酿新一轮涨价，年初以来上涨近20%</li><li>【电报解读】算力出海提速，800G以上高端光模块出口暴增100倍</li></ul>
+<p>  <div class="source-link">🔗 来源：调研纪要更新 · zsxq | ⚠️ PDF附件不可直接读取</div></p>
+<hr>
 <h2>🔍 关注清单增量信息</h2>
-
-<table>
-  <thead>
-    <tr><th>标的</th><th>代码</th><th>周末增量</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>长光华芯</td><td>—</td><td>CFCF大会：200G EML三季度量产，打开1.6T供给天花板</td></tr>
-    <tr><td>中天科技</td><td>sh600522</td><td>申万通信重点推荐，光纤涨价逻辑</td></tr>
-    <tr><td>长飞光纤</td><td>sh601869</td><td>光纤涨价，海外产能受限，国内领军受益</td></tr>
-    <tr><td>中国巨石</td><td>sh600176</td><td>电子布供需偏紧，央视调研桐乡工厂零库存</td></tr>
-    <tr><td>瑞松科技</td><td>—</td><td>国金强call，MPO自动化设备受益康宁GlassBridge</td></tr>
-    <tr><td>致尚科技</td><td>—</td><td>申万通信关注，光器件被动耦合方向</td></tr>
-    <tr><td>天孚通信</td><td>sz300394</td><td>申万通信关注，光器件环节</td></tr>
-    <tr><td>泡泡玛特</td><td>hk09992</td><td>段永平持续加仓至6.88%；东方明珠"明珠潮玩季"合作</td></tr>
-    <tr><td>长鑫存储</td><td>—</td><td>苹果寻求采购；科创板IPO募资295亿</td></tr>
-    <tr><td>牧原股份</td><td>sz002714</td><td>6/25披露增持情况</td></tr>
-  </tbody>
-</table>
-
-<!-- ==================== 数据溯源 ==================== -->
+<p>以下为关注标的的周末增量信息汇总：</p>
+<table><thead><tr><th>标的</th><th>代码</th><th>周末增量</th></tr></thead><tbody><tr><td>长光华芯</td><td>—</td><td>CFCF大会：200G EML三季度量产，打开1.6T供给天花板</td></tr><tr><td>中天科技</td><td>sh600522</td><td>申万通信重点推荐，光纤涨价逻辑</td></tr><tr><td>长飞光纤</td><td>sh601869</td><td>光纤涨价，海外产能受限，国内领军受益</td></tr><tr><td>中国巨石</td><td>sh600176</td><td>电子布供需偏紧，央视调研桐乡工厂零库存</td></tr><tr><td>瑞松科技</td><td>—</td><td>国金强call，MPO自动化设备受益康宁GlassBridge</td></tr><tr><td>致尚科技</td><td>—</td><td>申万通信关注，光器件被动耦合方向</td></tr><tr><td>天孚通信</td><td>sz300394</td><td>申万通信关注，光器件环节</td></tr><tr><td>泡泡玛特</td><td>hk09992</td><td>段永平持续加仓至6.88%；东方明珠合作"明珠潮玩季"</td></tr><tr><td>长鑫存储</td><td>—</td><td>苹果寻求采购；科创板IPO募资295亿</td></tr><tr><td>牧原股份</td><td>sz002714</td><td>披露增持情况（6/25）</td></tr></tbody></table>
+<hr>
 <h2>🔗 数据溯源</h2>
-
-<table>
-  <thead>
-    <tr><th>数据类别</th><th>来源</th><th>获取方式</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>指数走势</td><td>Wind 万得</td><td>analytics_data.get_financial_data</td></tr>
-    <tr><td>财经新闻</td><td>Wind 万得</td><td>financial_docs.get_financial_news</td></tr>
-    <tr><td>券商策略</td><td>Wind 万得</td><td>financial_docs.get_financial_news</td></tr>
-    <tr><td>宏观数据</td><td>Wind 万得</td><td>financial_docs.get_financial_news</td></tr>
-    <tr><td>调研纪要</td><td>知识星球（zsxq）</td><td>topic +search / topic +detail</td></tr>
-    <tr><td>研报附件</td><td>知识星球（zsxq）</td><td>PDF不可直接读取，标注⚠️</td></tr>
-  </tbody>
-</table>
+<table><thead><tr><th>数据类别</th><th>来源</th><th>获取方式</th></tr></thead><tbody><tr><td>指数走势</td><td>Wind 万得</td><td><code>analytics_data.get_financial_data</code></td></tr><tr><td>财经新闻</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code></td></tr><tr><td>券商策略</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code></td></tr><tr><td>宏观数据</td><td>Wind 万得</td><td><code>financial_docs.get_financial_news</code></td></tr><tr><td>调研纪要</td><td>知识星球（zsxq）</td><td><code>topic +search</code> / <code>topic +detail</code></td></tr><tr><td>研报附件</td><td>知识星球（zsxq）</td><td>PDF不可直接读取，标注⚠️</td></tr></tbody></table>
+<hr>
+<blockquote>*本报告由 Cleo 🐾 自动生成 · 数据截至 2026-06-28 17:55 GMT+8 · 休市日简化版*<br>*数据来源：Wind 万得金融终端 · 知识星球（zsxq）· My Research Central · <strong>via WB</strong>*</blockquote>
 
 <div class="report-footer">
-  数据来源：Wind 万得金融终端 · 知识星球（zsxq）· My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

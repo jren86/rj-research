@@ -3,26 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>晚间投研日报 · 2026-06-16</title>
+  <title>晚间日报 · 2026-06-16</title>
   <style>
 /* ============================================
    Unified Report Template — My Research Central
    All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
    ============================================ */
+
 :root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --border: #30363d;
-  --text: #e6edf3;
-  --text2: #8b949e;
-  --red: #f85149;
-  --green: #3fb950;
-  --orange: #d29922;
-  --blue: #58a6ff;
-  --purple: #bc8cff;
-  --yellow: #e3b341;
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -33,21 +39,39 @@ body {
   margin: 0 auto;
   font-size: 14px;
 }
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
 /* ── Header ── */
 .report-header {
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
+
 .report-header h1 {
   font-size: 1.4em;
   color: var(--text);
   margin-bottom: 4px;
 }
+
 .report-header .meta {
   font-size: 0.82em;
   color: var(--text2);
 }
+
 /* ── Section headers ── */
 h2 {
   font-size: 1.15em;
@@ -56,42 +80,50 @@ h2 {
   border-bottom: 1px solid var(--border);
   color: var(--blue);
 }
+
 h3 {
   font-size: 1em;
   margin: 14px 0 8px;
   color: var(--text);
 }
+
 /* ── Cards ── */
 .card {
-  background: var(--card);
+  background: var(--card-alt);
   border-radius: 8px;
   padding: 12px 14px;
   margin: 10px 0;
   border: 1px solid var(--border);
 }
+
 /* ── Tables ── */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 8px 0;
   font-size: 0.85em;
+  background: var(--card-alt);
 }
+
 th {
   background: var(--card);
   padding: 6px 8px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   color: var(--text2);
   font-weight: 600;
 }
+
 td {
   padding: 6px 8px;
   border-bottom: 1px solid var(--border);
   vertical-align: top;
 }
+
 tr:hover {
-  background: rgba(88, 166, 255, 0.05);
+  background: rgba(58, 107, 150, 0.05);
 }
+
 /* ── Tags ── */
 .tag {
   display: inline-block;
@@ -100,61 +132,113 @@ tr:hover {
   font-size: 0.78em;
   margin-right: 4px;
 }
+
 .tag-red {
-  background: rgba(248, 81, 73, 0.15);
+  background: rgba(184, 84, 74, 0.12);
   color: var(--red);
 }
+
 .tag-green {
-  background: rgba(63, 185, 80, 0.15);
+  background: rgba(74, 138, 92, 0.12);
   color: var(--green);
 }
+
 .tag-orange {
-  background: rgba(210, 153, 34, 0.15);
+  background: rgba(168, 129, 60, 0.14);
   color: var(--orange);
 }
+
 .tag-blue {
-  background: rgba(88, 166, 255, 0.15);
+  background: rgba(58, 107, 150, 0.12);
   color: var(--blue);
 }
+
 .tag-purple {
-  background: rgba(188, 140, 255, 0.15);
+  background: rgba(125, 107, 143, 0.14);
   color: var(--purple);
 }
+
 .tag-yellow {
-  background: rgba(227, 179, 65, 0.15);
+  background: rgba(154, 132, 71, 0.14);
   color: var(--yellow);
 }
+
 /* ── Highlights ── */
 .highlight {
   padding: 10px 14px;
   border-radius: 6px;
   margin: 8px 0;
+  background: var(--card-alt);
 }
+
 .highlight-red {
-  background: rgba(248, 81, 73, 0.08);
+  background: rgba(184, 84, 74, 0.06);
   border-left: 3px solid var(--red);
 }
+
 .highlight-orange {
-  background: rgba(210, 153, 34, 0.08);
+  background: rgba(168, 129, 60, 0.07);
   border-left: 3px solid var(--orange);
 }
+
 .highlight-blue {
-  background: rgba(88, 166, 255, 0.08);
+  background: rgba(58, 107, 150, 0.06);
   border-left: 3px solid var(--blue);
 }
+
 .highlight-green {
-  background: rgba(63, 185, 80, 0.08);
+  background: rgba(74, 138, 92, 0.06);
   border-left: 3px solid var(--green);
 }
+
 /* ── Bullet lists ── */
 ul.bullet {
   margin: 6px 0 6px 18px;
   font-size: 0.92em;
 }
+
 ul.bullet li {
   margin: 4px 0;
   line-height: 1.6;
 }
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
 /* ── Colors ── */
 .red { color: var(--red); }
 .green { color: var(--green); }
@@ -162,6 +246,7 @@ ul.bullet li {
 .blue { color: var(--blue); }
 .purple { color: var(--purple); }
 .yellow { color: var(--yellow); }
+
 /* ── Source links ── */
 .source-link {
   display: block;
@@ -170,19 +255,23 @@ ul.bullet li {
   margin: 4px 0 8px 0;
   word-break: break-all;
 }
+
 .source-link a {
-  color: var(--blue);
+  color: #2d5f8a;
   text-decoration: none;
 }
+
 .source-link a:hover {
   text-decoration: underline;
 }
+
 /* ── Divider ── */
 .divider {
   height: 1px;
   background: var(--border);
   margin: 16px 0;
 }
+
 /* ── Footer ── */
 .report-footer {
   text-align: center;
@@ -192,6 +281,7 @@ ul.bullet li {
   padding-top: 12px;
   border-top: 1px solid var(--border);
 }
+
 /* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 10px; }
@@ -199,270 +289,101 @@ ul.bullet li {
   h2 { font-size: 1.05em; }
   table { font-size: 0.8em; }
 }
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>晚间投研日报</h1>
-  <div class="meta">2026年6月16日（周二） · 超级周第二天 · via WB</div>
+  <h1>晚间日报 · 2026-06-16</h1>
+  <div class="meta"><strong>2026年6月16日（周二）</strong></div>
 </div>
 
-<div class="highlight highlight-red">
-  <strong>今日核心变量：</strong>A股冲高回落分化（创业板+1.72%/沪指-0.11%），AI硬件主线持续爆发（PCB/光通信/MLCC涨停潮），亿纬锂能中报预增点燃中报行情；港股恒科-2.24%科网股普跌；5月经济数据分化加剧（工业超预期vs消费/投资严重低预期）；日本央行加息1.0%；FOMC闭门首日；美伊MOU已签署；《矿产资源法实施条例》正式施行。
-</div>
-
-<h2>📅 催化剂日历</h2>
-
-<table>
-<tr><th>时间</th><th>事件</th><th>重要性</th></tr>
-<tr><td><strong>6/17</strong></td><td>🔴 陆家嘴论坛开幕（6/17-18），科创板改革"1+6"政策预期</td><td><span class="tag tag-red">🔴</span></td></tr>
-<tr><td><strong>6/17</strong></td><td>京东方A分红股权登记日（每10股派0.56元）</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>6/18 凌晨2:00</strong></td><td>🔴 FOMC决议+沃什首场新闻发布会</td><td><span class="tag tag-red">🔴</span></td></tr>
-<tr><td><strong>6/19</strong></td><td>🔴 美伊协议正式签署仪式（瑞士）</td><td><span class="tag tag-red">🔴</span></td></tr>
-<tr><td><strong>6/19-21</strong></td><td>端午节休市</td><td><span class="tag tag-yellow">🟡</span></td></tr>
-</table>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/财经日历</a></div>
-
-<h2>🌍 宏观与政策</h2>
-
+<hr>
+<h2>一、今日摘要</h2>
+<p>A股冲高回落分化，沪指微跌但创业板指涨1.72%，AI硬件主线持续爆发（PCB/光通信/MLCC/电子特气涨停潮），亿纬锂能中报预增点燃中报行情；港股低开低走，恒科跌2.24%，科网股普跌但中资券商逆市上涨；5月经济数据分化加剧（工业超预期vs消费/投资严重低预期），政策加码预期升温；日本央行加息至1.0%（30年最高），FOMC闭门会议首日；美伊MOU已签署，6/19正式签署仪式；《矿产资源法实施条例》正式施行，36种关键矿产列入国家战略目录。</p>
+<hr>
+<h2>二、催化剂日历</h2>
+<table><thead><tr><th>时间</th><th>事件</th><th>重要性</th></tr></thead><tbody><tr><td><strong>6/17</strong></td><td>🔴 陆家嘴论坛开幕（6/17-18），科创板改革"1+6"政策预期</td><td>🔴</td></tr><tr><td><strong>6/17</strong></td><td>🟠 京东方A分红股权登记日（每10股派0.56元）</td><td>🟠</td></tr><tr><td><strong>6/18 凌晨2:00</strong></td><td>🔴 FOMC决议+沃什首场新闻发布会</td><td>🔴</td></tr><tr><td><strong>6/19</strong></td><td>🔴 美伊协议正式签署仪式（瑞士）</td><td>🔴</td></tr><tr><td><strong>6/19-21</strong></td><td>🟡 端午节休市</td><td>🟡</td></tr><tr><td><strong>6/24</strong></td><td>🟡 澜起科技年度股东会（H股激励计划待表决）</td><td>🟡</td></tr><tr><td>本周</td><td>🟡 49家公司限售股解禁，合计8.94亿股/430.6亿元</td><td>🟡</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：财联社/财经日历</div></p>
+<hr>
+<h2>三、宏观与政策</h2>
 <h3>🔴 5月经济数据大幅分化：工业超预期 vs 消费/投资严重低预期</h3>
-
-<div class="card">
-<ul class="bullet">
-<li><strong>5月工业增加值同比+4.5%</strong>（超预期4.3%，前值4.1%）：装备制造业+9.5%，高技术制造业+15.1%</li>
-<li><strong>5月社零同比-0.6%</strong>（大幅低于预期0%，前值0.2%）→ <span class="red">消费承压信号</span></li>
-<li><strong>1-5月固投同比-4.1%</strong>（大幅低于预期-2%，前值-1.6%）→ <span class="red">投资疲弱</span>，房地产-16.2%仍是最大拖累</li>
-<li><strong>5月进出口+16.9%</strong>：出口+13.8%/进口+21.5%，外贸韧性持续</li>
-<li>💡 <strong>核心结论</strong>：需求侧"弱修复而非企稳"，增量政策出台预期升温。关注6/17-18陆家嘴论坛政策信号</li>
-</ul>
-</div>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：国家统计局/财联社</a></div>
-
+<ul><li><strong>5月规模以上工业增加值同比+4.5%</strong>（超预期4.3%，前值4.1%）：装备制造业+9.5%，高技术制造业+15.1%</li><li><strong>5月社零同比-0.6%</strong>（大幅低于预期0%，前值0.2%）→ 🔴 消费承压信号</li><li><strong>1-5月固投同比-4.1%</strong>（大幅低于预期-2%，前值-1.6%）→ 🔴 投资疲弱，房地产-16.2%仍是最大拖累</li><li><strong>5月进出口+16.9%</strong>：出口+13.8%/进口+21.5%，外贸韧性持续</li><li>💡 <strong>核心结论</strong>：需求侧"弱修复而非企稳"，增量政策出台预期升温。关注6/17-18陆家嘴论坛政策信号</li></ul>
+<p><div class="source-link">🔗 来源：国家统计局/财联社</div></p>
 <h3>🔴 日本央行加息至1.0%（30年最高）+ FOMC闭门首日</h3>
-
-<div class="card">
-<ul class="bullet">
-<li><strong>日本央行</strong>：加息至1.0%（1995年来最高），行长植田因病缺席，副行长冰见野良三主持</li>
-<li><strong>FOMC 6/16-17闭门会议</strong>：6/18凌晨2:00公布决议，按兵不动概率98.5%。关键看点：①沃什首秀基调；②可能取消点阵图；③SEP经济预测更新</li>
-<li><strong>美伊和平协议</strong>：6/15 MOU已电子签署，部分条款同日执行；6/19瑞士正式签署仪式</li>
-</ul>
-</div>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/日本央行/美联储</a></div>
-
+<ul><li><strong>日本央行</strong>：加息至1.0%（1995年来最高），行长植田和男因病缺席，副行长冰见野良三主持。官员后续还可能继续加息</li><li><strong>FOMC 6/16-17闭门会议</strong>：6/18凌晨2:00公布决议，按兵不动概率98.5%。<strong>关键看点</strong>：①沃什首秀新闻发布会基调；②可能取消点阵图；③SEP经济预测更新</li><li><strong>美伊和平协议</strong>：6/15 MOU已电子签署，部分条款同日执行；6/19瑞士正式签署仪式</li></ul>
+<p><div class="source-link">🔗 来源：财联社/日本央行/美联储</div></p>
 <h3>🟠 《矿产资源法实施条例》6/15正式施行</h3>
-
-<div class="card">
-<ul class="bullet">
-<li>稀土、钨、锂、钴、镓、锗等36种关键矿产列入国家级战略性矿产资源目录</li>
-<li>强化管控预期，稀土/钨/钼概念股集体拉涨</li>
-<li>国金证券全面看好锡/稀土/钨/钼行情</li>
-</ul>
-</div>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：国务院/财联社</a></div>
-
-<h2>📈 市场概览</h2>
-
+<ul><li>稀土、钨、锂、钴、镓、锗等36种关键矿产列入国家级战略性矿产资源目录</li><li>强化战略性矿产资源管控预期，稀土/钨/钼概念股集体拉涨</li><li>国金证券全面看好锡/稀土/钨/钼行情</li></ul>
+<p><div class="source-link">🔗 来源：国务院/财联社</div></p>
+<h3>🟠 前5月发票数据：工业企业销售收入同比+6.8%</h3>
+<ul><li>装备制造业+8%，计算机通信设备制造+15.6%，集成电路+57.7%</li><li>清洁能源收入+18.9%，占电力生产收入38.1%（同比提升4.2pct）</li></ul>
+<p><div class="source-link">🔗 来源：国家税务总局/新华社</div></p>
+<hr>
+<h2>四、市场概览</h2>
 <h3>A股（6月16日收盘）</h3>
-
-<div class="card">
-<ul class="bullet">
-<li>上证指数 <span class="green">-0.11%</span> 报4091.89</li>
-<li>深证成指 <span class="red">+0.93%</span> 报15675.25，创业板指 <span class="red">+1.72%</span> 报4102.94，科创50 <span class="red">+0.58%</span> 报1758.42</li>
-<li>成交3.06万亿元（放量335亿），超2700只个股上涨，超百股涨停</li>
-<li><strong>领涨主线</strong>：PCB（十余只涨停）/光通信（太辰光+15%续创历史新高）/MLCC/电网设备/稀土永磁/电子特气</li>
-<li><strong>领跌方向</strong>：港口航运/白酒啤酒/创新药/煤炭/黄金</li>
-</ul>
-</div>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：NeoData/A股收评</a></div>
-
+<ul><li>上证指数 🟢-0.11% 报4091.89</li><li>深证成指 🔴+0.93% 报15675.25，创业板指 🔴+1.72% 报4102.94，科创50 🔴+0.58% 报1758.42</li><li>成交3.06万亿元（放量335亿），超2700只个股上涨，超百股涨停</li><li><strong>领涨主线</strong>：PCB（十余只涨停）/光通信（太辰光+15%续创历史新高）/MLCC/电网设备/稀土永磁/电子特气</li><li><strong>领跌方向</strong>：港口航运/白酒啤酒/创新药/煤炭/黄金</li></ul>
+<p><div class="source-link">🔗 来源：NeoData/A股收评</div></p>
 <h3>港股（6月16日收盘）</h3>
-
-<div class="card">
-<ul class="bullet">
-<li>恒生指数 <span class="green">-1.40%</span> 报24493.95，恒生科技 <span class="green">-2.24%</span> 报4658.65，国企指数 <span class="green">-1.62%</span> 报8240.05</li>
-<li><strong>科网股普跌</strong>：美团<span class="green">-3%+</span>、百度<span class="green">-3.5%</span>、腾讯<span class="green">-2.65%</span>、小米<span class="green">-2.28%</span>、阿里<span class="green">-2.1%</span></li>
-<li><strong>中资券商逆市上涨</strong>：中信证券<span class="red">+4.34%</span>、广发<span class="red">+3.61%</span>、国泰海通<span class="red">+2.62%</span></li>
-<li><strong>商业航天概念</strong>逆势走强：钧达<span class="red">+7.73%</span>、蓝思<span class="red">+5.62%</span></li>
-<li><strong>内房股领跌</strong>：龙湖<span class="green">-8.90%</span>、融创<span class="green">-7.23%</span></li>
-<li>南向资金净买入34.63亿港元</li>
-</ul>
-</div>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：NeoData/港股风向标</a></div>
-
+<ul><li>恒生指数 🟢-1.40% 报24493.95，恒生科技 🟢-2.24% 报4658.65，国企指数 🟢-1.62% 报8240.05</li><li><strong>科网股普跌</strong>：美团🟢-3%+、百度🟢-3.5%、腾讯🟢-2.65%、小米🟢-2.28%、阿里🟢-2.1%</li><li><strong>中资券商逆市上涨</strong>：中信证券🔴+4.34%、广发🔴+3.61%、国泰海通🔴+2.62%</li><li><strong>商业航天概念</strong>逆势走强：钧达股份🔴+7.73%、蓝思科技🔴+5.62%</li><li><strong>内房股领跌</strong>：龙湖🟢-8.90%、融创🟢-7.23%</li><li>南向资金净买入34.63亿港元</li></ul>
+<p><div class="source-link">🔗 来源：NeoData/港股风向标</div></p>
 <h3>美股（6月15日收盘）</h3>
-
-<div class="card">
-<ul class="bullet">
-<li>道指 <span class="red">+0.92%</span> 报51671（历史新高），标普 <span class="red">+1.65%</span>，纳指 <span class="red">+3.07%</span></li>
-<li>SpaceX <span class="red">+19.6%</span>（市值2.52万亿），芯片股全线爆发（西部数据+16%/美光+10%）</li>
-<li>WTI原油重挫近5%创三个月新低</li>
-</ul>
-</div>
-<div class="source-link">🔗 <a href="https://www.bloomberg.com">来源：彭博社/美股收盘</a></div>
-
-<h2>🎯 策略观点</h2>
-
-<div class="card">
+<ul><li>道指 🔴+0.92% 报51671（历史新高），标普 🔴+1.65%，纳指 🔴+3.07%</li><li>SpaceX 🔴+19.6%（市值2.52万亿），芯片股全线爆发（西部数据+16%/美光+10%）</li><li>WTI原油重挫近5%创三个月新低</li></ul>
+<p><div class="source-link">🔗 来源：彭博社/美股收盘</div></p>
+<hr>
+<h2>五、策略观点</h2>
 <h3>🔴 东吴证券：沃什中性表态即可托底风险资产</h3>
-<ul class="bullet">
-<li>催化因素较前期显著增多，除美伊协议外，本周美联储议息会议是重要催化剂</li>
-<li><strong>只要沃什表态相对中性（避免强鹰派信号），即可对全球风险资产形成有效托底</strong></li>
-<li>假设港股全年EPS同比增速5%-6%，恒科存在显著向上修复空间，赔率优势明显</li>
-</ul>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：东吴证券/NeoData</a></div>
-</div>
-
-<div class="card">
-<h3>🔴 中信证券：港股三条主线 + A股券商景气向好</h3>
-<ul class="bullet">
-<li>港股：①供给约束下的强景气周期（能源/海运/强工业金属）；②算力红利驱动的AI外溢硬科技；③业绩稳中向好的泛红利方向</li>
-<li>A股券商：经营景气度持续向好，二季度业绩预期高增。推荐被低估头部机构+估值性价比高+ROE改善逻辑</li>
-</ul>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：中信证券/NeoData</a></div>
-</div>
-
-<div class="card">
+<ul><li>催化因素较前期显著增多，除美伊协议外，本周美联储议息会议是重要催化剂</li><li><strong>只要沃什表态相对中性（避免强鹰派信号），即可对全球风险资产形成有效托底，利好港股反弹与外资回流</strong></li><li>假设港股全年EPS同比增速5%-6%，恒科存在显著向上修复空间，赔率优势明显</li></ul>
+<p><div class="source-link">🔗 来源：东吴证券/NeoData</div></p>
+<h3>🔴 中信证券：港股三条主线</h3>
+<ul><li>随着财报披露落地，港股2026年盈利预期下修幅度已大幅收窄，悲观预期基本出清</li><li><strong>三条主线</strong>：①供给约束下的强景气周期（能源/海运/强工业金属）；②算力红利驱动的AI外溢硬科技；③业绩预期稳中向好的泛红利方向</li><li>A股券商：经营景气度持续向好，二季度业绩预期高增。推荐2条主线：被低估头部机构+估值性价比高+ROE改善逻辑</li></ul>
+<p><div class="source-link">🔗 来源：中信证券/NeoData</div></p>
 <h3>🟠 中泰证券：外围冲击缓和→成长估值回补</h3>
-<ul class="bullet">
-<li>美伊协议框架落地→外围冲击边际缓和→A股交易主线转向"风险偏好修复、成长估值回补和资源品再定价"</li>
-<li>建议：AI及国产自主可控（注意高低切换）/基本面扎实的中小市值修复/高股息防御</li>
-</ul>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：中泰证券/NeoData</a></div>
-</div>
-
-<div class="card">
-<h3>🟠 中国银河：沃什首秀大概率"维持现状+打太极"</h3>
-<ul class="bullet">
-<li>承认经济强劲+通胀偏高，明确不急于降息也不承诺加息</li>
-<li>港股短期以高股息防御策略为主，中期关注科技板块"预期差"修复</li>
-</ul>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：中国银河证券/NeoData</a></div>
-</div>
-
-<div class="card">
+<ul><li>美伊协议框架落地后，外围冲击边际缓和，油价风险溢价快速回落</li><li>A股交易主线由"地缘避险和能源冲击"转向"风险偏好修复、成长估值回补和资源品再定价"</li><li>建议关注：AI及国产自主可控（注意高低切换）/基本面扎实的中小市值修复/高股息防御</li></ul>
+<p><div class="source-link">🔗 来源：中泰证券/NeoData</div></p>
+<h3>🟠 中国银河：沃什首秀"维持现状+删除宽松偏向+打太极"</h3>
+<ul><li>大概率呈现"维持现状+删除宽松偏向+打太极式表态"组合拳</li><li>承认经济强劲+通胀偏高，明确表态不急于降息也不承诺加息</li><li>港股短期以高股息防御策略为主，中期关注科技板块"预期差"修复</li></ul>
+<p><div class="source-link">🔗 来源：中国银河证券/NeoData</div></p>
 <h3>🟠 中信建投：港股主升浪正在确立</h3>
-<ul class="bullet">
-<li>港股正式进入牛市中后段，由盈利、景气度和产业兑现驱动的结构性主升</li>
-</ul>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：中信建投证券/NeoData</a></div>
-</div>
-
-<h2>🔬 持仓个股今日增量</h2>
-
+<ul><li>港股行情由前期估值和情绪修复，转向盈利验证与风险偏好改善共同驱动</li><li>正式进入牛市中后段，不会再是指数普涨行情，而是由盈利、景气度和产业兑现驱动的结构性主升</li></ul>
+<p><div class="source-link">🔗 来源：中信建投证券/NeoData</div></p>
+<h3>🟡 国盛证券：攻守兼备，博弈高切低轮动</h3>
+<ul><li>海外算力链仍是进攻性配置中的优选（光通信/PCB等）</li><li>适当增加短久期防御类资产配置（电力/银行等）</li></ul>
+<p><div class="source-link">🔗 来源：国盛证券/NeoData</div></p>
+<hr>
+<h2>六、持仓个股今日增量</h2>
 <h3>A股持仓（13只）</h3>
-
-<table>
-<tr><th>股票</th><th>今日增量</th><th>重要性</th></tr>
-<tr><td><strong>京东方A 000725</strong></td><td><span class="red">+3.04%</span>；<strong>6/17分红股权登记日</strong>；玻璃基板概念持续爆发（国盛电子重申推荐）</td><td><span class="tag tag-red">🔴</span></td></tr>
-<tr><td><strong>宁德时代 300750</strong></td><td><span class="red">+1.36%</span>；亿纬锂能中报预增点燃锂电板块；5月经济数据分化→新能源政策加码预期升温</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>芯碁微装 688630</strong></td><td><span class="red">+5.84%</span>；PCB扩产潮催化持续；玻璃基板TGV产业化核心标的</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>精智达 688627</strong></td><td><span class="red">+6.41%</span>；5日涨幅+21.86%领涨持仓；存储测试设备持续受益</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>长川科技 300604</strong></td><td><span class="red">+3.87%</span>；燧原科技过会→国产GPU产业链催化+测试设备需求映射</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>容百科技 688005</strong></td><td>碳酸锂重回17.5万/吨；7月排产环比+5-10%</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>南大光电 300346</strong></td><td><span class="red">+2.73%</span>；电子特气概念持续走高（中巨芯6日翻倍）；国内唯一ArF光刻胶通过验收</td><td><span class="tag tag-red">🔴</span></td></tr>
-<tr><td><strong>工业富联 601138</strong></td><td>AI服务器需求持续；英伟达CPO量产+800V HVDC提前商转</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>澜起科技 688008</strong></td><td><span class="red">+1.70%</span>；DDR5第六子代RCD06送样；存储芯片全线大涨映射</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>比亚迪 002594</strong></td><td><span class="green">-1.30%</span>；5月社零偏弱；大唐10万预订单→6/17正式售价公布</td><td><span class="tag tag-yellow">🟡</span></td></tr>
-<tr><td><strong>中微公司 688012</strong></td><td><span class="green">-0.31%</span>；5nm刻蚀机量产；UBS上调WFE预测</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>通富微电 002156</strong></td><td>玻璃基封装受益标的；定增获深交所审核通过</td><td><span class="tag tag-yellow">🟡</span></td></tr>
-<tr><td><strong>沪硅产业 688126</strong></td><td><span class="green">-0.54%</span>；中芯/华虹产能紧张+涨价→硅片需求映射</td><td><span class="tag tag-yellow">🟡</span></td></tr>
-</table>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：NeoData/Wind/雪球</a></div>
-
+<table><thead><tr><th>股票</th><th>今日增量</th><th>重要性</th></tr></thead><tbody><tr><td><strong>京东方A 000725</strong></td><td>🔴+3.04%；<strong>6/17分红股权登记日</strong>（每10股派0.56元）；玻璃基板概念持续爆发（国盛电子重申推荐，台积电CoWoS玻璃基板开发计划，京东方已向华为送样20层玻璃基封装载板）</td><td>🔴</td></tr><tr><td><strong>宁德时代 300750</strong></td><td>🔴+1.36%；亿纬锂能中报预增95%-110%点燃锂电板块；5月经济数据分化→新能源政策加码预期升温；7月排产108GWh环比+7%</td><td>🟠</td></tr><tr><td><strong>芯碁微装 688630</strong></td><td>🔴+5.84%；PCB扩产潮催化持续（600亿+规模）；玻璃基板TGV产业化核心标的；港股IPO聆讯通过后续推进中</td><td>🟠</td></tr><tr><td><strong>精智达 688627</strong></td><td>🔴+6.41%；5日涨幅+21.86%领涨持仓；存储测试设备持续受益于半导体景气周期</td><td>🟠</td></tr><tr><td><strong>长川科技 300604</strong></td><td>🔴+3.87%；燧原科技6/15过会→国产GPU产业链催化+测试设备需求映射</td><td>🟠</td></tr><tr><td><strong>容百科技 688005</strong></td><td>🟠 碳酸锂重回17.5万/吨；7月排产环比+5-10%；锂电板块Q2业绩预期亮眼</td><td>🟠</td></tr><tr><td><strong>南大光电 300346</strong></td><td>🔴+2.73%；电子特气概念持续走高（中巨芯6日翻倍，六氟化钨出口价+203.83%）；国内唯一ArF光刻胶通过验收；半导体零部件超级紧缺+国产替代催化</td><td>🔴</td></tr><tr><td><strong>工业富联 601138</strong></td><td>🟠 AI服务器需求持续；英伟达Spectrum-X CPO量产+800V HVDC提前商转；PCB药水/铜粉2027年需求增1.5-2倍</td><td>🟠</td></tr><tr><td><strong>澜起科技 688008</strong></td><td>🔴+1.70%；DDR5第六子代RCD06送样（9200MT/s领先6-12月）；存储芯片全线大涨映射；6/24股东会表决H股激励计划</td><td>🟠</td></tr><tr><td><strong>比亚迪 002594</strong></td><td>🟢-1.30%；5月社零-0.6%→消费承压；比亚迪大唐10万预订单分析（6/17正式售价公布），预计月销2万+；新能源重卡方案利好</td><td>🟡</td></tr><tr><td><strong>中微公司 688012</strong></td><td>🟢-0.31%；5nm刻蚀机量产；UBS上调WFE预测+中国WFE 2028年达640亿美元；半导体零部件紧缺+国产替代共振</td><td>🟠</td></tr><tr><td><strong>通富微电 002156</strong></td><td>🟡 玻璃基封装受益标的；指数调样受益；定增获深交所审核通过</td><td>🟡</td></tr><tr><td><strong>沪硅产业 688126</strong></td><td>🟢-0.54%；中芯国际/华虹产能紧张+涨价10-25%→硅片需求映射；信越/SUMCO/环球晶圆硅片涨价信号</td><td>🟡</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：NeoData/Wind/雪球</div></p>
 <h3>港股持仓（7只）</h3>
-
-<table>
-<tr><th>股票</th><th>今日增量</th><th>重要性</th></tr>
-<tr><td><strong>腾讯控股 00700</strong></td><td><span class="green">-2.65%</span>；<strong>回购5.01亿港元</strong>；燧原科技过会→国产AI算力布局利好；Claude禁售→混元替代窗口</td><td><span class="tag tag-red">🔴</span></td></tr>
-<tr><td><strong>信达生物 01801</strong></td><td>授出5000份购股权及10.52万股受限制股份；IBI343 III期达主要终点+NDA获优先审评</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>美团-W 03690</strong></td><td><span class="green">-3%+</span>；Q1减亏近100亿；外卖UE二季度预计明显改善；持续优化算法取消超时扣款</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>小米集团-W 01810</strong></td><td><span class="green">-2.28%</span>；持续回购</td><td><span class="tag tag-yellow">🟡</span></td></tr>
-<tr><td><strong>阿里巴巴-W 09988</strong></td><td><span class="green">-2.1%</span>；洽购朴朴超市补前置仓缺口</td><td><span class="tag tag-yellow">🟡</span></td></tr>
-<tr><td><strong>中芯国际 00981</strong></td><td><span class="green">-3%+</span>；BCD/NVM平台产能紧张+涨价10-25%逻辑不变</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>比亚迪股份 01211</strong></td><td><span class="green">同A股逻辑</span>；5月社零偏弱但新能源重卡方案利好</td><td><span class="tag tag-yellow">🟡</span></td></tr>
-</table>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：NeoData/港交所/雪球</a></div>
-
-<h2>📚 知识星球增量</h2>
-
-<div class="card">
+<table><thead><tr><th>股票</th><th>今日增量</th><th>重要性</th></tr></thead><tbody><tr><td><strong>腾讯控股 00700</strong></td><td>🟢-2.65%；<strong>回购5.01亿港元</strong>（108.1万股，回购价458-475.6港元）；燧原科技6/15过会成功（腾讯持股20%+贡献83%收入）→国产AI算力布局利好；Claude Fable5禁售→混元替代窗口</td><td>🔴</td></tr><tr><td><strong>信达生物 01801</strong></td><td>🟠 授出5000份购股权及10.52万股受限制股份（非高管员工）；IBI343（CLDN18.2 ADC）III期达主要终点+NDA获优先审评</td><td>🟠</td></tr><tr><td><strong>美团-W 03690</strong></td><td>🟢-3%+；Q1减亏近100亿（核心本地商业经营亏损从-100.5亿收窄至-20.3亿）；外卖UE二季度预计明显改善；持续优化算法取消超时扣款；即时零售大战持续（收购叮咚/阿里洽购朴朴）</td><td>🟠</td></tr><tr><td><strong>小米集团-W 01810</strong></td><td>🟢-2.28%；持续回购；G7峰会AI议题+华为HDC闭幕→手机/AI竞争格局关注</td><td>🟡</td></tr><tr><td><strong>阿里巴巴-W 09988</strong></td><td>🟢-2.1%；6/11与国内核电央企合作建设SMR为数据中心供电；洽购朴朴超市补前置仓缺口</td><td>🟡</td></tr><tr><td><strong>中芯国际 00981</strong></td><td>🟢-3%+；半导体板块下挫（华虹🟢-4%+）；BCD/NVM平台产能紧张+涨价10-25%逻辑不变；国海首予"买入"</td><td>🟠</td></tr><tr><td><strong>比亚迪股份 01211</strong></td><td>🟢 同A股逻辑；5月社零偏弱但新能源重卡方案利好</td><td>🟡</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：NeoData/港交所/雪球</div></p>
+<hr>
+<h2>七、知识星球增量</h2>
+<blockquote>数据来源：zsxq | 星球范围：<strong>水木调研纪要-2.0</strong>、<strong>调研纪要更新</strong> | 更新时间：6/16</blockquote>
 <h3>🔑 关键词过滤 — 「强推/上调/重视/重点推荐/买入/增持」</h3>
-<table>
-<tr><th>关键词</th><th>标题/摘要</th><th>星球</th><th>时间</th></tr>
-<tr><td><span class="tag tag-red">重视</span></td><td>【天风新材料】重申玻璃基板产业趋势，重视投资机会</td><td>调研纪要更新</td><td>6/16</td></tr>
-<tr><td><span class="tag tag-red">重视</span></td><td>【中邮有色】重视氧化镝投资机会</td><td>调研纪要更新</td><td>6/16</td></tr>
-<tr><td><span class="tag tag-red">重视</span></td><td>【ZX航空航天】重视军工电子的投资机会</td><td>调研纪要更新</td><td>6/16</td></tr>
-<tr><td><span class="tag tag-orange">强推</span></td><td>【PCB钻针四杰】强推AI核心资产——新锐股份/中钨高新/欧科亿/鼎泰高科</td><td>水木调研纪要-2.0</td><td>6/3</td></tr>
-<tr><td><span class="tag tag-orange">重点推荐</span></td><td>【中信医药】重点推荐精锋医疗"买入"</td><td>水木调研纪要-2.0</td><td>6/9</td></tr>
-</table>
-</div>
-
-<div class="card">
+<table><thead><tr><th>关键词</th><th>标题/摘要</th><th>星球</th><th>时间</th></tr></thead><tbody><tr><td><strong>重视</strong></td><td>【天风新材料】再重申玻璃基板产业趋势，<strong>重视</strong>玻璃基板产业链投资机会</td><td>调研纪要更新</td><td>6/16</td></tr><tr><td><strong>重视</strong></td><td>【中邮有色】<strong>重视</strong>氧化镝投资机会</td><td>调研纪要更新</td><td>6/16</td></tr><tr><td><strong>重视</strong></td><td>【ZX航空航天】<strong>重视</strong>军工电子的投资机会</td><td>调研纪要更新</td><td>6/16</td></tr><tr><td><strong>强推</strong></td><td>【PCB钻针四杰】强推AI核心资产——新锐股份/中钨高新/欧科亿/鼎泰高科，上调目标市值</td><td>水木调研纪要-2.0</td><td>6/3</td></tr><tr><td><strong>重点推荐</strong></td><td>【中信医药】<strong>重点推荐</strong>精锋医疗"买入"</td><td>水木调研纪要-2.0</td><td>6/9</td></tr><tr><td><strong>增持</strong></td><td>【长江电新】协鑫科技：公司回购+增持</td><td>水木调研纪要-2.0</td><td>6/11</td></tr></tbody></table>
 <h3>🔴 重点增量内容</h3>
-
-<strong>水木调研纪要-2.0（6/16）</strong>
-<ul class="bullet">
-<li><span class="red">🔴 半导体零部件超级紧缺周期</span>：EFEM涨价+断供风险双催化——日本RORZE已对国内设备厂正式涨价，Q3存在断供风险</li>
-<li><span class="red">🔴 稀土价格破历史新高</span>：氧化镨钕85万/吨→看涨至110万；标的：盛和/北稀/中国稀土/金力永磁/韵升</li>
-<li><span class="red">🔴 长盈通/康宁CPO用保偏光纤</span>：康宁二次来访→CPO产业拐点确认</li>
-<li><span class="orange">🟠 国盛电子</span>：玻璃基板——AI算力时代先进封装核心材料</li>
-<li><span class="orange">🟠 行业景气与国产替代共振</span>：半导体材料基本面持续向好</li>
-</ul>
-
-<strong>调研纪要更新（6/16）</strong>
-<ul class="bullet">
-<li><span class="orange">🟠 永鼎股份更新推荐</span>：MPO产能再次扩产</li>
-<li><span class="orange">🟠 盛科通信重要更新</span>：拿到关键订单</li>
-<li><span class="orange">🟠 杰富瑞</span>：6月13日研究报告更新</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>⚠️ 文件类（需手动查看）</h3>
-<ul class="bullet">
-<li>戈碧迦：被忽视的T布上游标的 — 水木调研纪要-2.0</li>
-<li>唯特偶 盘中再创历史新高 — 水木调研纪要-2.0</li>
-<li>英唐智控基本面重大更新 — 水木调研纪要-2.0</li>
-<li>东方电热：钢壳电池 — 调研纪要更新</li>
-<li>伊戈尔变压器：新能源与数据中心 — 调研纪要更新</li>
-</ul>
-</div>
-<div class="source-link">🔗 <a href="https://www.zsxq.com">来源：zsxq-cli/水木调研纪要-2.0/调研纪要更新</a></div>
-
-<h2>👁️ 关注清单（11只）</h2>
-
-<table>
-<tr><th>标的</th><th>今日增量</th><th>关注度</th></tr>
-<tr><td><strong>中际旭创 300308</strong></td><td>辟谣"汇兑暴雷"后企稳；CPO量产催化持续；1260H清单（公司称不影响）</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>沪电股份 002463</strong></td><td>PCB/AI服务器概念持续走强；获6月多家券商金股推荐</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>世运电路 603920</strong></td><td>分红股权登记日6/17</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>华海清科 688120</strong></td><td>CMP设备国内第一；UBS上调WFE+半导体零部件紧缺周期</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>北方华创 002371</strong></td><td>半导体设备龙头；Q1新签+60%；6月券商金股推荐</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>拓荆科技 688072</strong></td><td>PECVD龙头；指数调样受益+被动资金流入</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>盛美上海 688082</strong></td><td>清洗设备龙头+出海</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>南亚新材 688519</strong></td><td>NVIDIA Rubin Ultra PTFE CCL材料升级</td><td><span class="tag tag-yellow">🟡</span></td></tr>
-<tr><td><strong>生益科技 600183</strong></td><td><span class="red">PCB/CCL领涨</span>；MLCC涨价+PCB扩产600亿+共振</td><td><span class="tag tag-red">🔴</span></td></tr>
-<tr><td><strong>东威科技 688700</strong></td><td><span class="red">+12.09%</span>；电镀设备（玻璃基板TGV产业链）；HVLP铜箔长单排至2027年</td><td><span class="tag tag-orange">🟠</span></td></tr>
-<tr><td><strong>帝尔激光 300776</strong></td><td>激光钻孔设备（玻璃基板TGV产业链）</td><td><span class="tag tag-yellow">🟡</span></td></tr>
-</table>
-<div class="source-link">🔗 <a href="https://www.cls.cn">来源：NeoData/Wind/雪球</a></div>
-
-<h2>⚠️ 风险提示</h2>
-
-<div class="card">
-<ul class="bullet">
-<li><span class="red">FOMC会议（6/18凌晨）</span>：沃什首秀，若释放鹰派信号可能引发全球资产价格波动</li>
-<li><span class="red">5月经济数据分化加剧</span>：消费/投资严重低于预期→政策加码不及预期风险</li>
-<li><span class="orange">端午假期效应</span>：本周仅3个交易日，节前避险情绪可能升温</li>
-<li><span class="orange">科技板块高拥挤度</span>：AI硬件持续爆发后短期追高风险加大</li>
-<li><span class="orange">港股科网股调整</span>：恒科-2.24%，科网股普跌，外资流出风险</li>
-<li><span class="orange">美伊协议执行不确定性</span>：MOU已签但6/19才正式签署</li>
-</ul>
-</div>
+<p><strong>水木调研纪要-2.0（6/16）</strong></p>
+<ul><li><strong>🔴 半导体零部件超级紧缺周期</strong>：EFEM涨价+断供风险双催化——日本RORZE已对国内设备厂正式涨价，Q3存在断供风险；核心标的：机器人（新松半导体，EFEM市场份额第一）</li><li><strong>🔴 稀土价格破历史新高</strong>：氧化镨钕85万/吨→看涨至110万；海外补库逻辑兑现+供改逻辑逐步兑现；标的：盛和/北稀/中国稀土/金力永磁/韵升</li><li><strong>🔴 长盈通/康宁CPO用保偏光纤</strong>：康宁6/15二次来访沟通合作→CPO产业拐点确认</li><li><strong>🟠 国盛电子</strong>：玻璃基板——AI算力时代先进封装核心材料；台积电CoWoS玻璃基板开发，京东方送样20层玻璃基封装载板</li><li><strong>🟠 行业景气与国产替代共振</strong>：半导体材料基本面持续向好</li></ul>
+<p><strong>调研纪要更新（6/16）</strong></p>
+<ul><li><strong>🟠 永鼎股份更新推荐</strong>：MPO产能12条线→再次扩产到20条线</li><li><strong>🟠 盛科通信重要更新</strong>：拿到关键订单</li><li><strong>🟠 杰富瑞</strong>：6月13日研究报告更新</li></ul>
+<h3>📄 文件类（⚠️ 需手动查看）</h3>
+<table><thead><tr><th>标题</th><th>星球</th></tr></thead><tbody><tr><td>戈碧迦：被忽视的T布上游标的</td><td>水木调研纪要-2.0</td></tr><tr><td>唯特偶 盘中再创历史新高</td><td>水木调研纪要-2.0</td></tr><tr><td>英唐智控基本面重大更新</td><td>水木调研纪要-2.0</td></tr><tr><td>东方电热：钢壳电池</td><td>调研纪要更新</td></tr><tr><td>伊戈尔变压器：新能源与数据中心</td><td>调研纪要更新</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：zsxq-cli/水木调研纪要-2.0/调研纪要更新</div></p>
+<hr>
+<h2>八、关注清单（11只）</h2>
+<table><thead><tr><th>标的</th><th>今日增量</th><th>关注度</th></tr></thead><tbody><tr><td><strong>中际旭创 300308</strong></td><td>🟠 辟谣"汇兑暴雷"后企稳；CPO量产催化持续（康宁二次来访长盈通）；被美国国防部列入1260H清单（公司否认，称不影响经营）</td><td>🟠</td></tr><tr><td><strong>沪电股份 002463</strong></td><td>🟠 PCB/AI服务器概念持续走强；mSAP板份额约25%；获6月多家券商金股推荐</td><td>🟠</td></tr><tr><td><strong>世运电路 603920</strong></td><td>🟠 分红股权登记日6/17（每10股派3元）</td><td>🟠</td></tr><tr><td><strong>华海清科 688120</strong></td><td>🟠 CMP设备国内第一；UBS上调WFE+半导体零部件紧缺周期</td><td>🟠</td></tr><tr><td><strong>北方华创 002371</strong></td><td>🟠 半导体设备龙头；Q1新签订单同比+60%；EFEM/零部件紧缺+国产替代共振；6月券商金股推荐</td><td>🟠</td></tr><tr><td><strong>拓荆科技 688072</strong></td><td>🟠 PECVD龙头；指数调样受益+被动资金流入；半导体零部件紧缺</td><td>🟠</td></tr><tr><td><strong>盛美上海 688082</strong></td><td>🟠 清洗设备龙头+出海；UBS上调WFE预测+零部件紧缺利好</td><td>🟠</td></tr><tr><td><strong>南亚新材 688519</strong></td><td>🟡 PCB/CCL概念；NVIDIA Rubin Ultra PTFE材料方案→CCL材料升级</td><td>🟡</td></tr><tr><td><strong>生益科技 600183</strong></td><td>🔴 PCB/CCL领涨；NVIDIA Rubin Ultra PTFE CCL主要供应商；MLCC涨价+PCB扩产600亿+共振；5月券商金股月涨幅84%</td><td>🔴</td></tr><tr><td><strong>东威科技 688700</strong></td><td>🔴+12.09%；电镀设备（玻璃基板TGV产业链）；HVLP铜箔长单排至2027年→电镀需求映射</td><td>🟠</td></tr><tr><td><strong>帝尔激光 300776</strong></td><td>🟡 激光钻孔设备（玻璃基板TGV产业链）</td><td>🟡</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：NeoData/Wind/雪球</div></p>
+<hr>
+<h2>九、风险提示</h2>
+<ul><li><strong>FOMC会议（6/18凌晨）</strong>：沃什首秀，若释放鹰派信号可能引发全球资产价格波动</li><li><strong>5月经济数据分化加剧</strong>：消费/投资严重低于预期→需求侧弱修复，政策加码不及预期风险</li><li><strong>端午假期效应</strong>：本周仅3个交易日（6/17-18交易，6/19-21休市），节前资金避险情绪可能升温</li><li><strong>科技板块高拥挤度</strong>：AI硬件方向持续爆发后短期追高风险加大，需防范获利盘集中兑现</li><li><strong>港股科网股调整</strong>：恒科跌2.24%，科网股普跌，外资流出风险需关注</li><li><strong>美伊协议执行不确定性</strong>：MOU已签但6/19才正式签署，部分条款执行仍存变数</li></ul>
+<hr>
+<p>*数据来源：NeoData Financial Search、zsxq知识星球、财联社、国家统计局 | via WB*<br>*报告生成时间：2026年6月16日 18:00 CST*</p>
 
 <div class="report-footer">
-  数据来源：NeoData Financial Search、zsxq知识星球、财联社、国家统计局 · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

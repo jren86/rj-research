@@ -6,24 +6,24 @@
 <title>A股港股市场全景 · 2026-06-15</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.6;font-size:14px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif;background:#faf9f7;color:#2c2a28;line-height:1.6;font-size:14px}
 .container{max-width:960px;margin:0 auto;padding:16px}
-h1{font-size:22px;color:#f0f6fc;text-align:center;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid #21262d}
-.subtitle{text-align:center;color:#8b949e;font-size:13px;margin-bottom:20px}
-.up{color:#f85149}.down{color:#3fb950}.flat{color:#8b949e}
+h1{font-size:22px;color:#f0f6fc;text-align:center;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid #f4f2ef}
+.subtitle{text-align:center;color:#6b6760;font-size:13px;margin-bottom:20px}
+.up{color:#b8544a}.down{color:#4a8a5c}.flat{color:#6b6760}
 
 /* Top metrics grid */
 .metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:12px 0 20px}
-.metric-card{background:#161b22;border-radius:8px;padding:10px 12px;text-align:center;cursor:pointer;transition:all .2s;border:1px solid transparent}
-.metric-card:hover{border-color:#30363d;transform:translateY(-1px)}
-.metric-card.active{border-color:#58a6ff;box-shadow:0 0 12px rgba(88,166,255,.15)}
-.metric-label{font-size:11px;color:#8b949e;margin-bottom:2px}
+.metric-card{background:#f4f2ef;border-radius:8px;padding:10px 12px;text-align:center;cursor:pointer;transition:all .2s;border:1px solid transparent}
+.metric-card:hover{border-color:#cfc9c1;transform:translateY(-1px)}
+.metric-card.active{border-color:#3a6b96;box-shadow:0 0 12px rgba(88,166,255,.15)}
+.metric-label{font-size:11px;color:#6b6760;margin-bottom:2px}
 .metric-value{font-size:20px;font-weight:700}
-.metric-sub{font-size:10px;color:#8b949e;margin-top:1px}
+.metric-sub{font-size:10px;color:#6b6760;margin-top:1px}
 
 /* Section headers */
 .section{margin:20px 0 12px}
-.section h2{font-size:15px;color:#58a6ff;margin-bottom:10px;padding-left:8px;border-left:3px solid #58a6ff}
+.section h2{font-size:15px;color:#3a6b96;margin-bottom:10px;padding-left:8px;border-left:3px solid #3a6b96}
 
 /* Sector heat map */
 .heatmap{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;margin:8px 0 16px}
@@ -34,56 +34,56 @@ h1{font-size:22px;color:#f0f6fc;text-align:center;padding-bottom:12px;margin-bot
 
 /* Sector tabs */
 .tabs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
-.tab{padding:6px 14px;border-radius:16px;font-size:12px;cursor:pointer;background:#161b22;color:#8b949e;border:1px solid #21262d;transition:all .2s;white-space:nowrap}
-.tab:hover{border-color:#30363d;color:#c9d1d9}
-.tab.active{background:#1a3a5c;color:#58a6ff;border-color:#58a6ff}
+.tab{padding:6px 14px;border-radius:16px;font-size:12px;cursor:pointer;background:#f4f2ef;color:#6b6760;border:1px solid #f4f2ef;transition:all .2s;white-space:nowrap}
+.tab:hover{border-color:#cfc9c1;color:#2c2a28}
+.tab.active{background:#1a3a5c;color:#3a6b96;border-color:#3a6b96}
 .tab.up-tab{border-color:#3d1f1f}.tab.down-tab{border-color:#1f3d1f}
 
 /* Stock ranking tables */
 .rank-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.rank-panel{background:#161b22;border-radius:8px;overflow:hidden}
-.rank-title{padding:8px 12px;font-size:12px;font-weight:600;border-bottom:1px solid #21262d}
-.rank-title.gainers{color:#f85149;background:linear-gradient(90deg,#2d1215,transparent)}
-.rank-title.losers{color:#3fb950;background:linear-gradient(90deg,#122117,transparent)}
+.rank-panel{background:#f4f2ef;border-radius:8px;overflow:hidden}
+.rank-title{padding:8px 12px;font-size:12px;font-weight:600;border-bottom:1px solid #f4f2ef}
+.rank-title.gainers{color:#b8544a;background:linear-gradient(90deg,#2d1215,transparent)}
+.rank-title.losers{color:#4a8a5c;background:linear-gradient(90deg,#122117,transparent)}
 .rank-table{width:100%;border-collapse:collapse;font-size:12px}
-.rank-table th{padding:6px 10px;text-align:left;color:#484f58;font-weight:500;border-bottom:1px solid #21262d;font-size:11px}
-.rank-table td{padding:5px 10px;border-bottom:1px solid #0d1117}
+.rank-table th{padding:6px 10px;text-align:left;color:#9a958c;font-weight:500;border-bottom:1px solid #f4f2ef;font-size:11px}
+.rank-table td{padding:5px 10px;border-bottom:1px solid #faf9f7}
 .rank-table tr:hover{background:#1a1e24}
-.rank-num{color:#484f58;width:24px;text-align:center;font-size:11px}
-.rank-code{color:#8b949e;font-size:11px}
+.rank-num{color:#9a958c;width:24px;text-align:center;font-size:11px}
+.rank-code{color:#6b6760;font-size:11px}
 
 /* Bar visualization */
 .bar-row{display:flex;align-items:center;margin:3px 0;font-size:12px}
-.bar-label{width:70px;text-align:right;padding-right:8px;color:#8b949e;flex-shrink:0;font-size:11px}
-.bar-track{flex:1;height:16px;background:#161b22;border-radius:3px;overflow:hidden;position:relative}
+.bar-label{width:70px;text-align:right;padding-right:8px;color:#6b6760;flex-shrink:0;font-size:11px}
+.bar-track{flex:1;height:16px;background:#f4f2ef;border-radius:3px;overflow:hidden;position:relative}
 .bar-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:6px;font-size:10px;color:#fff;font-weight:500;min-width:40px;transition:width .6s ease}
-.bar-fill.up-bar{background:linear-gradient(90deg,#b33a3a,#f85149)}
-.bar-fill.down-bar{background:linear-gradient(90deg,#2ea043,#3fb950)}
-.bar-fill.neutral-bar{background:#484f58}
+.bar-fill.up-bar{background:linear-gradient(90deg,#b33a3a,#b8544a)}
+.bar-fill.down-bar{background:linear-gradient(90deg,#2ea043,#4a8a5c)}
+.bar-fill.neutral-bar{background:#9a958c}
 
 /* Market sentiment */
 .sentiment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:8px 0}
-.sent-card{background:#161b22;border-radius:8px;padding:10px;text-align:center}
-.sent-label{font-size:11px;color:#8b949e}
+.sent-card{background:#f4f2ef;border-radius:8px;padding:10px;text-align:center}
+.sent-label{font-size:11px;color:#6b6760}
 .sent-val{font-size:22px;font-weight:700;margin-top:2px}
 
 /* AH compare */
 .ah-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
-.ah-card{background:#161b22;border-radius:8px;padding:12px}
-.ah-title{font-size:12px;color:#8b949e;margin-bottom:6px}
+.ah-card{background:#f4f2ef;border-radius:8px;padding:12px}
+.ah-title{font-size:12px;color:#6b6760;margin-bottom:6px}
 .ah-row{display:flex;justify-content:space-between;padding:3px 0;font-size:13px}
 
 /* Insight box */
-.insight{background:#1a1e24;border-radius:8px;padding:12px 16px;margin:12px 0;font-size:12px;color:#8b949e;border-left:3px solid #d29922}
+.insight{background:#1a1e24;border-radius:8px;padding:12px 16px;margin:12px 0;font-size:12px;color:#6b6760;border-left:3px solid #a8813c}
 .insight strong{color:#f0f6fc}
 
 /* Risk box */
-.risk-box{background:#161b22;border-radius:6px;padding:10px 14px;margin:6px 0;border-left:3px solid #f85149}
-.risk-box h4{font-size:12px;color:#f85149;margin-bottom:2px}
-.risk-box p{font-size:12px;color:#8b949e}
+.risk-box{background:#f4f2ef;border-radius:6px;padding:10px 14px;margin:6px 0;border-left:3px solid #b8544a}
+.risk-box h4{font-size:12px;color:#b8544a;margin-bottom:2px}
+.risk-box p{font-size:12px;color:#6b6760}
 
 /* Footer */
-footer{text-align:center;color:#484f58;font-size:11px;padding:20px 0 12px;border-top:1px solid #21262d;margin-top:20px}
+footer{text-align:center;color:#9a958c;font-size:11px;padding:20px 0 12px;border-top:1px solid #f4f2ef;margin-top:20px}
 
 /* Responsive */
 @media(max-width:640px){
@@ -259,7 +259,7 @@ const allSectors = [
 // ===== RENDER =====
 let activeSector = '电子';
 
-function chgColor(v){return v>0?'#f85149':v<0?'#3fb950':'#8b949e'}
+function chgColor(v){return v>0?'#b8544a':v<0?'#4a8a5c':'#6b6760'}
 function chgClass(v){return v>0?'up':v<0?'down':'flat'}
 function chgText(v){return (v>0?'+':'')+v.toFixed(2)+'%'}
 
@@ -330,7 +330,7 @@ function renderSectorTabs(){
 function renderSectorDetail(){
   const el=document.getElementById('sectorDetail');
   const d=sectorData[activeSector];
-  if(!d){el.innerHTML='<div style="color:#8b949e;padding:12px">暂无个股数据</div>';return}
+  if(!d){el.innerHTML='<div style="color:#6b6760;padding:12px">暂无个股数据</div>';return}
   
   let html='<div class="rank-grid">';
   
@@ -348,7 +348,7 @@ function renderSectorDetail(){
       html+=`<tr><td class="rank-num">${i+1}</td><td>${s.name}</td><td class="rank-code">${s.code}</td><td style="text-align:right" class="down">${chgText(s.chg)}</td></tr>`;
     });
   } else {
-    html+='<tr><td colspan="4" style="text-align:center;color:#484f58;padding:20px">全线上涨，无跌股</td></tr>';
+    html+='<tr><td colspan="4" style="text-align:center;color:#9a958c;padding:20px">全线上涨，无跌股</td></tr>';
   }
   html+='</table></div>';
   
@@ -361,12 +361,12 @@ function renderSectorDetail(){
 function renderSentiment(){
   const el=document.getElementById('sentimentGrid');
   const items=[
-    {label:'涨停家数',val:'164',color:'#f85149'},
-    {label:'跌停家数',val:'12',color:'#3fb950'},
-    {label:'涨跌比',val:'2.6:1',color:'#d29922'},
-    {label:'成交额',val:'3.03万亿',color:'#58a6ff'},
-    {label:'沪深300 PE分位',val:'83%',color:'#d29922'},
-    {label:'中证500 PE分位',val:'63%',color:'#8b949e'}
+    {label:'涨停家数',val:'164',color:'#b8544a'},
+    {label:'跌停家数',val:'12',color:'#4a8a5c'},
+    {label:'涨跌比',val:'2.6:1',color:'#a8813c'},
+    {label:'成交额',val:'3.03万亿',color:'#3a6b96'},
+    {label:'沪深300 PE分位',val:'83%',color:'#a8813c'},
+    {label:'中证500 PE分位',val:'63%',color:'#6b6760'}
   ];
   el.innerHTML=items.map(i=>`<div class="sent-card"><div class="sent-label">${i.label}</div><div class="sent-val" style="color:${i.color}">${i.val}</div></div>`).join('');
 }

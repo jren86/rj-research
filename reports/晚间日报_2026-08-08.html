@@ -3,20 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>晚间投研日报 · 2026-08-08</title>
+  <title>晚间日报 · 2026-08-08</title>
   <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --border: #30363d;
-  --text: #e6edf3;
-  --text2: #8b949e;
-  --red: #f85149;
-  --green: #3fb950;
-  --orange: #d29922;
-  --blue: #58a6ff;
-  --purple: #bc8cff;
-  --yellow: #e3b341;
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,6 +40,21 @@ body {
   font-size: 14px;
 }
 
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
 .report-header {
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -49,6 +72,7 @@ body {
   color: var(--text2);
 }
 
+/* ── Section headers ── */
 h2 {
   font-size: 1.15em;
   margin: 22px 0 10px;
@@ -63,26 +87,29 @@ h3 {
   color: var(--text);
 }
 
+/* ── Cards ── */
 .card {
-  background: var(--card);
+  background: var(--card-alt);
   border-radius: 8px;
   padding: 12px 14px;
   margin: 10px 0;
   border: 1px solid var(--border);
 }
 
+/* ── Tables ── */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 8px 0;
   font-size: 0.85em;
+  background: var(--card-alt);
 }
 
 th {
   background: var(--card);
   padding: 6px 8px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   color: var(--text2);
   font-weight: 600;
 }
@@ -94,9 +121,10 @@ td {
 }
 
 tr:hover {
-  background: rgba(88, 166, 255, 0.05);
+  background: rgba(58, 107, 150, 0.05);
 }
 
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
@@ -105,39 +133,65 @@ tr:hover {
   margin-right: 4px;
 }
 
-.tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-.tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-.tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-.tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-.tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
-.tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
 
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
 .highlight {
   padding: 10px 14px;
   border-radius: 6px;
   margin: 8px 0;
+  background: var(--card-alt);
 }
 
 .highlight-red {
-  background: rgba(248, 81, 73, 0.08);
+  background: rgba(184, 84, 74, 0.06);
   border-left: 3px solid var(--red);
 }
 
 .highlight-orange {
-  background: rgba(210, 153, 34, 0.08);
+  background: rgba(168, 129, 60, 0.07);
   border-left: 3px solid var(--orange);
 }
 
 .highlight-blue {
-  background: rgba(88, 166, 255, 0.08);
+  background: rgba(58, 107, 150, 0.06);
   border-left: 3px solid var(--blue);
 }
 
 .highlight-green {
-  background: rgba(63, 185, 80, 0.08);
+  background: rgba(74, 138, 92, 0.06);
   border-left: 3px solid var(--green);
 }
 
+/* ── Bullet lists ── */
 ul.bullet {
   margin: 6px 0 6px 18px;
   font-size: 0.92em;
@@ -148,6 +202,44 @@ ul.bullet li {
   line-height: 1.6;
 }
 
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
 .red { color: var(--red); }
 .green { color: var(--green); }
 .orange { color: var(--orange); }
@@ -155,6 +247,7 @@ ul.bullet li {
 .purple { color: var(--purple); }
 .yellow { color: var(--yellow); }
 
+/* ── Source links ── */
 .source-link {
   display: block;
   font-size: 0.78em;
@@ -164,7 +257,7 @@ ul.bullet li {
 }
 
 .source-link a {
-  color: var(--blue);
+  color: #2d5f8a;
   text-decoration: none;
 }
 
@@ -172,12 +265,14 @@ ul.bullet li {
   text-decoration: underline;
 }
 
+/* ── Divider ── */
 .divider {
   height: 1px;
   background: var(--border);
   margin: 16px 0;
 }
 
+/* ── Footer ── */
 .report-footer {
   text-align: center;
   color: var(--text2);
@@ -187,6 +282,7 @@ ul.bullet li {
   border-top: 1px solid var(--border);
 }
 
+/* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 10px; }
   h1 { font-size: 1.2em; }
@@ -194,271 +290,95 @@ ul.bullet li {
   table { font-size: 0.8em; }
 }
 
-.badge-new {
-  display: inline-block;
-  background: rgba(248, 81, 73, 0.2);
-  color: var(--red);
-  padding: 1px 6px;
-  border-radius: 3px;
-  font-size: 0.7em;
-  font-weight: 600;
-  vertical-align: middle;
-  margin-left: 4px;
-}
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>📰 晚间投研日报 · 2026-08-08 <span class="badge-new">周六休市</span></h1>
-  <div class="meta">数据截至 8/7 收盘及 8/8 最新信息 · 今日A股/港股休市</div>
+  <h1>晚间日报 · 2026-08-08</h1>
+  <div class="meta"><strong>本日A股/港股休市</strong>。本报告基于周五（8/7）收盘数据及周末增量信息整理。</div>
 </div>
 
-<!-- ── 催化剂日历 ── -->
+<hr>
 <h2>📅 催化剂日历</h2>
-<div class="card">
-<table>
-  <tr><th>日期</th><th>事件</th><th>相关标的</th><th>重要性</th></tr>
-  <tr><td>8/13（周三）</td><td>联想集团 Q1 FY2027 业绩</td><td>联想集团(00992)</td><td><span class="tag tag-red">🔴 高</span></td></tr>
-  <tr><td>8/20（周三）</td><td>泡泡玛特 中期业绩</td><td>泡泡玛特(09992)</td><td><span class="tag tag-red">🔴 高</span></td></tr>
-  <tr><td>8月下旬</td><td>美联储9月议息 加息概率约55%</td><td>全球风险资产</td><td><span class="tag tag-red">🔴 高</span></td></tr>
-  <tr><td>待定</td><td>三季度降准窗口（预期25-50bp）</td><td>A股大盘</td><td><span class="tag tag-orange">🟠 中</span></td></tr>
-  <tr><td>待定</td><td>康方生物 HARMONi-3数据+FDA PDUFA</td><td>康方生物(09926)</td><td><span class="tag tag-red">🔴 高</span></td></tr>
-</table>
-</div>
-
-<!-- ── 宏观 ── -->
+<table><thead><tr><th>日期</th><th>事件</th><th>相关标的</th><th>重要性</th></tr></thead><tbody><tr><td>8/13（周三）</td><td>联想集团 Q1 FY2027 业绩</td><td>联想集团(00992)</td><td>🔴 高</td></tr><tr><td>8/20（周三）</td><td>泡泡玛特 中期业绩</td><td>泡泡玛特(09992)</td><td>🔴 高</td></tr><tr><td>8月下旬</td><td>美联储9月议息（9/16-17）加息概率约55%</td><td>全球风险资产</td><td>🔴 高</td></tr><tr><td>待定</td><td>三季度降准窗口（市场预期25-50bp）</td><td>A股大盘</td><td>🟠 中</td></tr><tr><td>待定</td><td>康方生物 HARMONi-3数据发布 + FDA PDUFA</td><td>康方生物(09926)</td><td>🔴 高</td></tr></tbody></table>
+<hr>
 <h2>🌍 宏观</h2>
-
-<div class="highlight highlight-red">
-<strong>🔴 北京楼市新政（8/8午后发布）</strong><br>
-• 非京籍家庭<strong>五环内购房社保/个税年限由2年降至1年</strong><br>
-• 公积金贷款首套提至<strong>最高240万</strong>（原120万），二套提至200万<br>
-• 公积金认房不认贷、支持带押过户、装修提取<br>
-• <strong>点评：</strong>政策温和跟进上海/深圳，托底北京房价下行压力
-</div>
-<div class="source-link">🔗 来源：ZSXQ 水木调研纪要-2.0</div>
-
-<div class="highlight highlight-orange">
-<strong>🔴 美联储加息预期反复</strong><br>
-• 7/30 FOMC维持利率3.5-3.75%不变，但<strong>3票反对主张加息25bp</strong><br>
-• 8/7 非农就业<strong>意外爆冷</strong>→美股先跌后涨，美元走弱<br>
-• CME FedWatch：9月加息概率<strong>约55%</strong>（此前最高67%），边际降温<br>
-• 穆萨莱姆/卡什卡利/哈马克均表态支持加息
-</div>
-<div class="source-link">🔗 来源：Wind MCP financial_docs</div>
-
-<div class="highlight highlight-blue">
-<strong>🟠 中国货币政策：降准优先于降息</strong><br>
-• 政治局会议定调"实施好更加积极的财政政策和适度宽松的货币政策"<br>
-• 央行下半年工作会议删除"灵活高效运用降准降息"，进入"待命"状态<br>
-• H1 GDP 4.7%（Q1 5.0%→Q2 4.3%），社零+1.3%，固投降5.7ppt<br>
-• 银河证券：三季度降息10-20bp、降准50bp
-</div>
-<div class="source-link">🔗 来源：Wind MCP financial_docs</div>
-
-<!-- ── 大宗商品 ── -->
-<h3>大宗商品（8/7收盘）</h3>
-<div class="card">
-<table>
-  <tr><th>品种</th><th>最新价</th><th>涨跌幅</th><th>日内区间</th><th>备注</th></tr>
-  <tr>
-    <td>WTI原油</td>
-    <td>$77.08/桶</td>
-    <td class="green">-0.27%</td>
-    <td>$76.53–$78.77</td>
-    <td>低位震荡</td>
-  </tr>
-  <tr>
-    <td>COMEX黄金</td>
-    <td>$4,401.30/盎司</td>
-    <td class="red">+2.37%</td>
-    <td>$4,288–$4,432</td>
-    <td><span class="tag tag-red">历史新高</span></td>
-  </tr>
-</table>
-</div>
-<div class="source-link">🔗 来源：NeoData 结构化API</div>
-
-<!-- ── 市场概览 ── -->
-<h2>📊 市场概览（周五 8/7 收盘）</h2>
-<div class="highlight highlight-blue">
-昨日A股普涨反弹，成交约2.66万亿活跃。<strong>创新药+AI设备双主线爆发</strong>。今日休市，以下为前一日数据回顾。
-</div>
-<div class="card">
-<table>
-  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
-  <tr><td>上证综指</td><td>~3,845</td><td class="red">+1.02%</td></tr>
-  <tr><td>深证成指</td><td>—</td><td class="red">+1.42%</td></tr>
-  <tr><td>科创50</td><td>—</td><td class="red">+2.51%</td></tr>
-</table>
-</div>
-<div class="source-link">🔗 来源：昨日晚间日报（Wind MCP index_data）</div>
-
-<!-- ── 策略观点 ── -->
+<h3>🔴 北京楼市新政（8/8午后）</h3>
+<ul><li>非京籍家庭<strong>五环内购房社保/个税年限由2年降至1年</strong></li><li>公积金贷款首套提至<strong>最高240万</strong>（原120万），二套提至200万</li><li>公积金认房不认贷、支持带押过户、支持装修提取</li><li><strong>点评</strong>：政策温和跟进上海/深圳，托底北京房价下行压力，短期对地产链形成情绪提振</li></ul>
+<p><div class="source-link">🔗 来源：ZSXQ 水木调研纪要-2.0</div></p>
+<h3>🔴 美联储加息预期反复</h3>
+<ul><li>7/30 FOMC维持利率3.5-3.75%不变，但<strong>3票反对主张加息25bp</strong>（卡什卡利/哈马克/洛根）</li><li>8/7 美国非农就业<strong>意外爆冷</strong>→美股先跌后涨，美元走弱</li><li>CME FedWatch：9月加息概率<strong>约55%</strong>（此前一度67%），加息预期边际降温</li><li>穆萨莱姆：倾向于加息，渐进式比突然变动成本更低；沃什：9月可能加息</li></ul>
+<p><div class="source-link">🔗 来源：Wind MCP financial_docs</div></p>
+<h3>🟠 中国货币政策：降准优先</h3>
+<ul><li>政治局会议定调"实施好更加积极的财政政策和适度宽松的货币政策"</li><li>央行下半年工作会议删除"灵活高效运用降准降息"表述，代之以"综合运用并适时调整"</li><li>银河证券：三季度降息10-20bp、降准50bp；招联：三季度是关键窗口</li><li>H1 GDP 4.7%（Q1 5.0% / Q2 4.3%），社零+1.3%，固投降5.7ppt，内需压力上升</li></ul>
+<p><div class="source-link">🔗 来源：Wind MCP financial_docs</div></p>
+<h3>🟠 大宗商品</h3>
+<table><thead><tr><th>品种</th><th>最新价（8/7收盘）</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>WTI原油</td><td>$77.08/桶</td><td><span class="green">-0.27%</span></td><td>日内 $76.53-$78.77</td></tr><tr><td>COMEX黄金</td><td>$4,401.30/盎司</td><td><span class="red">+2.37%</span></td><td>🔴 <strong>历史新高</strong>，日内触及$4,432</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：NeoData 结构化API</div></p>
+<hr>
+<h2>📊 市场概览（周五 8/7 收盘回顾）</h2>
+<p>*昨日A股普涨反弹，成交活跃。以下为8/7收盘数据：*</p>
+<table><thead><tr><th>指数</th><th>收盘价</th><th>涨跌幅</th></tr></thead><tbody><tr><td>上证综指</td><td>~3,845</td><td><span class="red">+1.02%</span></td></tr><tr><td>深证成指</td><td>—</td><td><span class="red">+1.42%</span></td></tr><tr><td>创业板指</td><td>—</td><td>—</td></tr><tr><td>科创50</td><td>—</td><td><span class="red">+2.51%</span></td></tr><tr><td>恒生指数</td><td>—</td><td>—</td></tr></tbody></table>
+<blockquote>⚠️ 今日休市，以上为前一日数据回顾。详细行情见昨日晚间日报。</blockquote>
+<hr>
 <h2>💡 策略观点</h2>
 <h3>8月金股组合（民生证券）</h3>
-<div class="card">
-<table>
-  <tr><th>标的</th><th>推荐逻辑</th></tr>
-  <tr><td><strong>宝钢股份</strong></td><td>行业龙头，估值底部，产品高端化</td></tr>
-  <tr><td><strong>南钢股份</strong></td><td>特钢占比提升，制造业升级+船板景气</td></tr>
-  <tr><td><strong>赤峰黄金</strong></td><td>估值历史底部，修复空间大</td></tr>
-  <tr><td>⭐ <strong>宁德时代</strong></td><td>大额分红回购，多元新业务成长</td></tr>
-  <tr><td>中宠股份</td><td>Q2增速向好，海外产能释放</td></tr>
-  <tr><td>山西汾酒</td><td>清香龙头，势能不减</td></tr>
-  <tr><td>凯莱英</td><td>新兴业务加速放量</td></tr>
-  <tr><td><strong>翰森制药</strong></td><td>创新转型+BD出海国际化</td></tr>
-  <tr><td>渝农商行</td><td>成渝经济圈区位优势</td></tr>
-</table>
-</div>
-<div class="source-link">🔗 来源：Wind MCP financial_docs</div>
-
+<table><thead><tr><th>标的</th><th>推荐逻辑</th></tr></thead><tbody><tr><td><strong>宝钢股份</strong></td><td>行业龙头，估值底部，产品高端化</td></tr><tr><td><strong>南钢股份</strong></td><td>特钢占比提升，制造业升级+船板景气</td></tr><tr><td><strong>赤峰黄金</strong></td><td>估值历史底部，修复空间大</td></tr><tr><td>⭐ <strong>宁德时代</strong></td><td>大额分红回购，多元新业务成长</td></tr><tr><td>中宠股份</td><td>Q2增速向好，海外产能释放</td></tr><tr><td>山西汾酒</td><td>清香龙头</td></tr><tr><td>凯莱英</td><td>新兴业务加速放量</td></tr><tr><td><strong>翰森制药</strong></td><td>创新转型+BD出海</td></tr><tr><td>渝农商行</td><td>成渝经济圈区位优势</td></tr></tbody></table>
 <h3>ETF轮动策略（金融街证券）</h3>
-<ul class="bullet">
-  <li>当前持有：银行ETF、金融地产ETF、酒ETF</li>
-  <li>本周新增：<strong>电池ETF、有色金属ETF、黄金股ETF</strong></li>
-  <li>信号：资金向资源品+新能源+金融方向扩散</li>
-</ul>
-<div class="source-link">🔗 来源：Wind MCP financial_docs</div>
-
-<!-- ── 持仓个股监控 ── -->
+<ul><li>当前持有：银行、金融地产、酒ETF</li><li>本周新增：电池ETF、有色金属ETF、黄金股ETF</li><li>信号：资金向<strong>资源品+新能源+金融</strong>方向扩散</li></ul>
+<p><div class="source-link">🔗 来源：Wind MCP financial_docs</div></p>
+<hr>
 <h2>🏢 持仓个股监控</h2>
-
-<h3>💊 创新药械</h3>
-<div class="card">
-<table>
-  <tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr>
-  <tr>
-    <td><span class="tag tag-red">🔴</span> 康方生物</td>
-    <td>09926.HK</td>
-    <td>野村维持"买入"，预测H1收入+68%至24亿，中期转盈4600万；HARMONi-3+FDA PDUFA是下半年关键催化剂</td>
-  </tr>
-  <tr><td>恒瑞医药</td><td>600276.SH</td><td>8/6主力资金净流出3.38亿元</td></tr>
-  <tr><td>惠泰医疗</td><td>688617.SH</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>英矽智能</td><td>03696.HK</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-</table>
-</div>
-
-<h3>🔧 AI设备 & 材料</h3>
-<div class="card">
-<table>
-  <tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr>
-  <tr>
-    <td><span class="tag tag-red">🔴</span> N长鑫</td>
-    <td>688825.SH</td>
-    <td>⭐ <strong>UBS首次覆盖给予买入评级</strong>！《把握存储超级周期与中国国产化机遇》，8/8发布</td>
-  </tr>
-  <tr>
-    <td><span class="tag tag-red">🔴</span> 联想集团</td>
-    <td>00992.HK</td>
-    <td>8/5盘中涨超8%；摩根大通估算Q1 AI相关收入占ISG 30%+，利润率0.4%→5%；<strong>8/13审议Q1业绩</strong></td>
-  </tr>
-  <tr>
-    <td><span class="tag tag-red">🔴</span> 长飞光纤光缆</td>
-    <td>06869.HK</td>
-    <td>较6月高点回撤超60%；康宁Q3指引略逊预期引发光纤板块抛售</td>
-  </tr>
-  <tr><td><span class="tag tag-green">🟢</span> 亨通光电</td><td>600487.SH</td><td>8/6主力资金净流出3.56亿</td></tr>
-  <tr><td>京东方A</td><td>000725.SZ</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>长川科技</td><td>300604.SZ</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>中恒电气</td><td>002364.SZ</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>应流股份</td><td>603308.SH</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>大族数控</td><td>03200.HK</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>东方钽业</td><td>000962.SZ</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-</table>
-</div>
-
-<h3>🤖 AI应用 · 新能源 · 保险 · 化工 · 能源 · 传媒 · 地产</h3>
-<div class="card">
-<table>
-  <tr><th>标的</th><th>代码</th><th>板块</th><th>最新增量信息</th></tr>
-  <tr><td><span class="tag tag-blue">🔵</span> 腾讯控股</td><td>00700.HK</td><td>AI应用</td><td>持续回购中；H1净利润+21%，国盛目标价707港元</td></tr>
-  <tr>
-    <td><span class="tag tag-red">🔴</span> 宁德时代</td>
-    <td>300750.SZ</td>
-    <td>新能源</td>
-    <td>H1净利432.84亿+42%，200-400亿回购；高盛/大摩维持买入；钠离子+AIDC新曲线</td>
-  </tr>
-  <tr><td>兆威机电</td><td>02692.HK</td><td>新能源</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>中国太保</td><td>601601.SH</td><td>保险</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>中国人寿</td><td>601628.SH</td><td>保险</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>新和成</td><td>002001.SZ</td><td>化工</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td>巨化股份</td><td>600160.SH</td><td>化工</td><td><span class="tag tag-blue">暂无新增</span></td></tr>
-  <tr><td><span class="tag tag-orange">🟠</span> 紫金黄金国际</td><td>02259.HK</td><td>能源/有色</td><td>COMEX黄金续创历史新高$4,401，金矿股受益</td></tr>
-  <tr>
-    <td><span class="tag tag-red">🔴</span> 泡泡玛特</td>
-    <td>09992.HK</td>
-    <td>传媒/娱乐</td>
-    <td><strong>8/20审议中期业绩及中期股息</strong></td>
-  </tr>
-  <tr><td><span class="tag tag-orange">🟠</span> 万科企业</td><td>02202.HK</td><td>地产</td><td>北京五环内限购放松+公积金提额，温和托底</td></tr>
-</table>
-</div>
-<div class="source-link">🔗 来源：Wind MCP financial_docs / ZSXQ / NeoData</div>
-
-<!-- ── 知识星球 ── -->
+<h3>创新药械</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr></thead><tbody><tr><td>🔴 康方生物</td><td>09926.HK</td><td>野村维持"买入"，预测H1收入+68%至24亿，中期转盈4600万；HARMONi-3 + FDA PDUFA是下半年关键催化剂</td></tr><tr><td>恒瑞医药</td><td>600276.SH</td><td>8/6主力资金净流出3.38亿元</td></tr><tr><td>惠泰医疗</td><td>688617.SH</td><td>暂无新增信息</td></tr><tr><td>英矽智能</td><td>03696.HK</td><td>暂无新增信息</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：Wind MCP financial_docs</div></p>
+<h3>AI设备 &amp; 材料</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr></thead><tbody><tr><td>🔴 N长鑫</td><td>688825.SH</td><td>⭐ <strong>UBS首次覆盖给予买入评级</strong>！报告《把握存储超级周期与中国国产化机遇》，8/8发布；8/6主力资金净流出17.89亿（A股第一）</td></tr><tr><td>🔴 联想集团</td><td>00992.HK</td><td>8/5盘中涨超8%；摩根大通估算Q1 AI相关收入占ISG 30%+，全年ISG收入+60%，利润率0.4%→5%；<strong>8/13董事会审议Q1业绩</strong></td></tr><tr><td>🔴 长飞光纤光缆</td><td>06869.HK</td><td>较6月高点回撤超60%；康宁Q3指引略逊预期引发光纤板块抛售；野村警示新进入者可能加剧竞争</td></tr><tr><td>🔴 亨通光电</td><td>600487.SH</td><td>8/6主力资金净流出3.56亿</td></tr><tr><td>京东方A</td><td>000725.SH</td><td>暂无新增信息</td></tr><tr><td>长川科技</td><td>300604.SH</td><td>暂无新增信息</td></tr><tr><td>中恒电气</td><td>002364.SZ</td><td>暂无新增信息</td></tr><tr><td>应流股份</td><td>603308.SH</td><td>暂无新增信息</td></tr><tr><td>大族数控</td><td>03200.HK</td><td>暂无新增信息</td></tr><tr><td>东方钽业</td><td>000962.SZ</td><td>暂无新增信息</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：Wind MCP financial_docs / ZSXQ</div></p>
+<h3>AI应用</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr></thead><tbody><tr><td>腾讯控股</td><td>00700.HK</td><td>持续回购中（日均约5亿港元）；H1净利润580.93亿+21%；国盛目标价707港元</td></tr></tbody></table>
+<h3>新能源/电动车</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr></thead><tbody><tr><td>🔴 宁德时代</td><td>300750.SZ</td><td>H1归母净利润432.84亿+42%，200-400亿回购注销；高盛重申买入（A股目标565元/H股947港元），大摩重申增持（815港元），大华继显降目标至585/675港元；钠离子电池+巧克力换电+AIDC新增长曲线</td></tr><tr><td>兆威机电</td><td>02692.HK</td><td>暂无新增信息</td></tr></tbody></table>
+<p><div class="source-link">🔗 来源：Wind MCP financial_docs</div></p>
+<h3>保险</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr></thead><tbody><tr><td>中国太保</td><td>601601.SH</td><td>暂无新增信息</td></tr><tr><td>中国人寿</td><td>601628.SH</td><td>暂无新增信息</td></tr></tbody></table>
+<h3>化工/材料</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr></thead><tbody><tr><td>新和成</td><td>002001.SZ</td><td>暂无新增信息</td></tr><tr><td>巨化股份</td><td>600160.SH</td><td>暂无新增信息</td></tr></tbody></table>
+<h3>能源/有色</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr></thead><tbody><tr><td>紫金黄金国际</td><td>02259.HK</td><td>COMEX黄金续创历史新高$4,401，金矿股受益</td></tr></tbody></table>
+<h3>传媒/娱乐</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr></thead><tbody><tr><td>🔴 泡泡玛特</td><td>09992.HK</td><td><strong>8/20开董事会审议中期业绩及中期股息</strong>；上周南向资金净买入36.38亿港元</td></tr></tbody></table>
+<h3>地产/基建</h3>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新增量信息</th></tr></thead><tbody><tr><td>🟠 万科企业</td><td>02202.HK</td><td>北京楼市新政(8/8)：五环内限购放松+公积金提额，政策温和托底</td></tr></tbody></table>
+<hr>
 <h2>📡 知识星球</h2>
-
-<h3>水木调研纪要-2.0</h3>
-
-<div class="highlight highlight-red">
-<strong>🔴 阳光电源通过NV储能认证（8/8 新发布）</strong><br>
-• <strong>第一家</strong>拿到NVIDIA储能系统认证的企业<br>
-• NV构建AI工厂生态，储能成重要一环，阳光有望进入NV AVL<br>
-• 6-7月出货~16GWh，全年或上修至70GWh；Q3业绩环比增幅大<br>
-• 27年海外订单已接近26年全年，海外增长60%+<br>
-• 估值：26E 130亿(17x)，27E 200亿(11x，不含AIDC)
-</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 北京楼市新政点评（8/8）</strong> — 政策力度温和，预计对北京楼市形成温和托举
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🟠 国盛能源开采煤炭调研（8/4）</strong><br>
-• 监管历史最严，超产入刑+多部门联动<br>
-• 煤价上行通道，年底5500大卡或站上900元/吨<br>
-• 供需格局趋势反转，2027年景气维持高位
-</div>
-
-<p style="color:var(--orange);margin:8px 0;">⚠️ 需手动查看：</p>
-<ul class="bullet">
-  <li>财新周刊第28期 PDF（7/21）</li>
-  <li>国内储能招标数据库 图片（8/8）</li>
-</ul>
-
-<h3>调研纪要更新</h3>
-
-<div class="highlight highlight-red">
-<strong>🔴 UBS：长鑫存储首次覆盖Buy（8/8）⭐</strong><br>
-📄 <em>UBS-长鑫存储｜把握存储超级周期与中国国产化机遇；首次覆盖给予买入评级.pdf</em><br>
-→ 直接涉及持仓标的 <strong>N长鑫(688825)</strong>
-</div>
-
-<p style="color:var(--orange);margin:8px 0;">⚠️ 需手动查看（#外资研报，均为8/8发布，含PDF文件）：</p>
-<ul class="bullet">
-  <li>外资研报 ×3（文件无法在线读取）</li>
-</ul>
-
-<!-- ── 数据溯源 ── -->
+<h3>水木调研纪要-2.0（88888142214212）</h3>
+<p><strong>🔴 阳光电源通过NV储能认证（8/8）</strong></p>
+<ul><li><strong>第一家</strong>拿到NVIDIA储能系统认证的企业，PCS已获FCC认证</li><li>NV构建AI工厂生态，储能成为重要一环，阳光有望进入NV AVL</li><li>基本面强劲：6-7月出货~16GWh，全年或上修至70GWh；Q3业绩环比增幅大</li><li>27年海外订单已接近26年全年，海外增长60%+清晰度提升</li><li>估值：26E 130亿（17x），27E 200亿（11x，不含AIDC）</li></ul>
+<p><strong>🟠 北京楼市新政点评（8/8）</strong></p>
+<ul><li>政策力度温和，对北京楼市形成<strong>温和托举</strong>，促进成交减缓跌幅</li></ul>
+<p><strong>🟠 国内储能招标数据库（8/8）⚠️</strong></p>
+<ul><li>图片格式，需手动查看</li></ul>
+<p><strong>🟠 国盛能源开采煤炭调研（8/4）</strong></p>
+<ul><li>监管历史最严，超产入刑+多部门联动</li><li>煤价上行通道，年底5500大卡或站上900元/吨，存在突破1000元可能</li><li>供给端约束明确，供需格局趋势反转</li></ul>
+<p><strong>⚠️ 需手动查看：</strong></p>
+<ul><li>财新周刊第28期 PDF（7/21）</li></ul>
+<h3>调研纪要更新（48844242514558）</h3>
+<p><strong>🔴 UBS：长鑫存储首次覆盖Buy（8/8）⭐</strong></p>
+<ul><li>📄 <code>UBS-长鑫存储｜把握存储超级周期与中国国产化机遇；首次覆盖给予买入评级.pdf</code></li><li>直接涉及持仓标的 N长鑫(688825)</li></ul>
+<p><strong>⚠️ 需手动查看（#外资研报，均为8/8发布，含PDF文件）：</strong></p>
+<ul><li>外资研报 ×3（文件无法在线读取）</li></ul>
+<hr>
 <h2>📋 数据溯源</h2>
-<div class="card">
-<table>
-  <tr><th>数据类别</th><th>数据源</th><th>调用次数</th><th>状态</th></tr>
-  <tr><td>宏观/策略/持仓新闻</td><td>Wind MCP financial_docs</td><td>7次</td><td>✅ 正常</td></tr>
-  <tr><td>大宗商品（WTI/黄金）</td><td>NeoData 结构化API</td><td>2次</td><td>✅ 正常</td></tr>
-  <tr><td>知识星球</td><td>ZSXQ CLI</td><td>6次</td><td>✅ 正常</td></tr>
-  <tr><td>A股/港股行情</td><td>—</td><td>0次</td><td>⚠️ 休市日跳过</td></tr>
-</table>
-</div>
-
-<div class="highlight highlight-blue">
-<strong>数据源纪律：</strong>所有数值型金融数据均来自Wind MCP结构化API或NeoData结构化API。新闻/公告文本来自Wind MCP financial_docs。未加载wb-finance-skill，未使用WebSearch/百度获取金融数据。
-</div>
+<table><thead><tr><th>数据类别</th><th>数据源</th><th>调用次数</th><th>状态</th></tr></thead><tbody><tr><td>宏观/策略/持仓新闻</td><td>Wind MCP financial_docs</td><td>7次</td><td>✅ 正常</td></tr><tr><td>大宗商品（WTI/黄金）</td><td>NeoData 结构化API</td><td>2次</td><td>✅ 正常</td></tr><tr><td>知识星球</td><td>ZSXQ CLI</td><td>6次</td><td>✅ 正常</td></tr><tr><td>A股/港股行情</td><td>—</td><td>0次</td><td>⚠️ 休市日跳过</td></tr></tbody></table>
+<h3>数据源声明</h3>
+<ul><li>所有数值型金融数据均来自Wind MCP结构化API或NeoData结构化API</li><li>新闻/公告文本来自Wind MCP financial_docs</li><li>未加载wb-finance-skill，未使用WebSearch/百度获取金融数据</li><li>大宗商品使用NeoData <code>--data-type api</code> 结构化数据</li></ul>
+<hr>
+<p>*报告生成时间：2026-08-08 18:00 CST · 数据截至8/7收盘及8/8最新信息 · My Research Central · via WB*</p>
 
 <div class="report-footer">
-  数据来源：Wind 万得 · NeoData · ZSXQ · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

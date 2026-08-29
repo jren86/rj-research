@@ -3,20 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>早间投研日报 · 2026-07-28</title>
+  <title>早间日报 · 2026-07-28</title>
   <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --border: #30363d;
-  --text: #e6edf3;
-  --text2: #8b949e;
-  --red: #f85149;
-  --green: #3fb950;
-  --orange: #d29922;
-  --blue: #58a6ff;
-  --purple: #bc8cff;
-  --yellow: #e3b341;
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,6 +40,21 @@ body {
   font-size: 14px;
 }
 
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
 .report-header {
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -49,6 +72,7 @@ body {
   color: var(--text2);
 }
 
+/* ── Section headers ── */
 h2 {
   font-size: 1.15em;
   margin: 22px 0 10px;
@@ -63,26 +87,29 @@ h3 {
   color: var(--text);
 }
 
+/* ── Cards ── */
 .card {
-  background: var(--card);
+  background: var(--card-alt);
   border-radius: 8px;
   padding: 12px 14px;
   margin: 10px 0;
   border: 1px solid var(--border);
 }
 
+/* ── Tables ── */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 8px 0;
   font-size: 0.85em;
+  background: var(--card-alt);
 }
 
 th {
   background: var(--card);
   padding: 6px 8px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   color: var(--text2);
   font-weight: 600;
 }
@@ -94,9 +121,10 @@ td {
 }
 
 tr:hover {
-  background: rgba(88, 166, 255, 0.05);
+  background: rgba(58, 107, 150, 0.05);
 }
 
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
@@ -106,51 +134,64 @@ tr:hover {
 }
 
 .tag-red {
-  background: rgba(248, 81, 73, 0.15);
+  background: rgba(184, 84, 74, 0.12);
   color: var(--red);
 }
 
 .tag-green {
-  background: rgba(63, 185, 80, 0.15);
+  background: rgba(74, 138, 92, 0.12);
   color: var(--green);
 }
 
 .tag-orange {
-  background: rgba(210, 153, 34, 0.15);
+  background: rgba(168, 129, 60, 0.14);
   color: var(--orange);
 }
 
 .tag-blue {
-  background: rgba(88, 166, 255, 0.15);
+  background: rgba(58, 107, 150, 0.12);
   color: var(--blue);
 }
 
 .tag-purple {
-  background: rgba(188, 140, 255, 0.15);
+  background: rgba(125, 107, 143, 0.14);
   color: var(--purple);
 }
 
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
 .highlight {
   padding: 10px 14px;
   border-radius: 6px;
   margin: 8px 0;
+  background: var(--card-alt);
 }
 
 .highlight-red {
-  background: rgba(248, 81, 73, 0.08);
+  background: rgba(184, 84, 74, 0.06);
   border-left: 3px solid var(--red);
 }
 
 .highlight-orange {
-  background: rgba(210, 153, 34, 0.08);
+  background: rgba(168, 129, 60, 0.07);
   border-left: 3px solid var(--orange);
 }
 
 .highlight-blue {
-  background: rgba(88, 166, 255, 0.08);
+  background: rgba(58, 107, 150, 0.06);
   border-left: 3px solid var(--blue);
 }
 
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
 ul.bullet {
   margin: 6px 0 6px 18px;
   font-size: 0.92em;
@@ -161,6 +202,44 @@ ul.bullet li {
   line-height: 1.6;
 }
 
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
 .red { color: var(--red); }
 .green { color: var(--green); }
 .orange { color: var(--orange); }
@@ -168,6 +247,7 @@ ul.bullet li {
 .purple { color: var(--purple); }
 .yellow { color: var(--yellow); }
 
+/* ── Source links ── */
 .source-link {
   display: block;
   font-size: 0.78em;
@@ -177,7 +257,7 @@ ul.bullet li {
 }
 
 .source-link a {
-  color: var(--blue);
+  color: #2d5f8a;
   text-decoration: none;
 }
 
@@ -185,12 +265,14 @@ ul.bullet li {
   text-decoration: underline;
 }
 
+/* ── Divider ── */
 .divider {
   height: 1px;
   background: var(--border);
   margin: 16px 0;
 }
 
+/* ── Footer ── */
 .report-footer {
   text-align: center;
   color: var(--text2);
@@ -200,341 +282,173 @@ ul.bullet li {
   border-top: 1px solid var(--border);
 }
 
+/* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 10px; }
   h1 { font-size: 1.2em; }
   h2 { font-size: 1.05em; }
   table { font-size: 0.8em; }
 }
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>早间投研日报 · 2026-07-28（周二）</h1>
-  <div class="meta">数据截止：2026年7月28日 08:20 · 聚焦隔夜增量信息 · My Research Central</div>
+  <h1>早间日报 · 2026-07-28</h1>
+  <div class="meta"></div>
 </div>
 
-<!-- 📅 催化剂日历 -->
+<hr>
 <h2>📅 催化剂日历</h2>
-<table>
-<tr><th>时间</th><th>事件</th><th>影响</th></tr>
-<tr><td><span class="tag tag-red">07/28 今日</span></td><td>6月规上工业企业利润公布</td><td>宏观</td></tr>
-<tr><td><span class="tag tag-red">07/28 今日</span></td><td>国新办"产能过剩"中方立场发布会（下午3时）</td><td>贸易/产业</td></tr>
-<tr><td><span class="tag tag-red">07/29-30</span></td><td>美联储FOMC议息会议</td><td>全球流动性</td></tr>
-<tr><td><span class="tag tag-red">07/29-31</span></td><td>存储三巨头财报（SK海力士/三星/铠侠）</td><td>AI存储链</td></tr>
-<tr><td><span class="tag tag-red">07/29-31</span></td><td>央行隔夜逆回购（6000亿×3天+3000亿=2.1万亿）</td><td>流动性</td></tr>
-<tr><td><span class="tag tag-red">07/30</span></td><td>中际旭创（300308）港交所上市，同日推期权/权证/做空</td><td>光模块龙头</td></tr>
-<tr><td>07/31</td><td>7月官方PMI公布</td><td>宏观</td></tr>
-<tr><td>待定</td><td>7月政治局会议</td><td>宏观政策</td></tr>
-</table>
-
-<!-- 🌍 宏观 -->
+<table><thead><tr><th>时间</th><th>事件</th><th>影响</th></tr></thead><tbody><tr><td>🔴 07/28 今日</td><td>6月规上工业企业利润公布</td><td>宏观</td></tr><tr><td>🔴 07/28 今日</td><td>国新办"产能过剩"中方立场发布会（下午3时）</td><td>贸易/产业</td></tr><tr><td>🔴 07/29-30</td><td>美联储FOMC议息会议</td><td>全球流动性</td></tr><tr><td>🔴 07/29-31</td><td>存储三巨头财报（SK海力士/三星/铠侠）</td><td>AI存储链</td></tr><tr><td>🔴 07/29-31</td><td>央行隔夜逆回购（6000亿×3天+3000亿=2.1万亿）</td><td>流动性</td></tr><tr><td>🔴 07/30</td><td>中际旭创（300308）港交所上市，同日推期权/权证/做空</td><td>光模块龙头</td></tr><tr><td>07/31</td><td>7月官方PMI公布</td><td>宏观</td></tr><tr><td>待定</td><td>7月政治局会议</td><td>宏观政策</td></tr></tbody></table>
+<hr>
 <h2>🌍 宏观</h2>
-
-<div class="highlight highlight-red">
-<strong>🔴 A股7/27放量普涨，长鑫上市成最大催化</strong><br>
-上证指数+1.15%报3858.25，深证成指+2.72%报14148.73，创业板指+3.16%报3590.79，科创综指+2.49%。成交2.09万亿，放量1442亿。5193只个股上涨，120+只涨停。主力资金全天净流入1043.46亿。长鑫科技上市首日暴涨465.82%报49元，成交1411.87亿元创A股个股单日成交历史纪录，总市值3.28万亿超越工商银行成为A股新"市值一哥"。
-<div class="source-link">🔗 来源：中国证券报/证券时报/央视财经 2026-07-27</div>
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 美伊暂停军事打击，油价暴跌布油跌近9%</strong><br>
-特朗普下令叫停对伊朗空袭（此前连续13天每日打击），为外交谈判留空间。内塔尼亚胡7/27启程访美会晤特朗普。WTI一度跌超8%报89.31美元，布伦特跌近9%一度跌破85美元。COMEX黄金+0.19%报4137.7美元。
-<div class="source-link">🔗 来源：财联社/新华社 2026-07-28</div>
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 央行月末2.1万亿隔夜逆回购，政治局会议待定</strong><br>
-7/29-31每日6000亿+8/3日3000亿=合计2.1万亿隔夜逆回购。此前7/24已开展5000亿MLF（净投放1000亿），叠加买断式逆回购，7月中期流动性工具合计净投放8000亿。政治局会议召开在即。
-<div class="source-link">🔗 来源：新华社/财联社 2026-07-27</div>
-</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 国新办今日下午3时就"产能过剩"问题召开发布会</strong><br>
-商务部副部长鄢东将介绍中方立场，或对新能源/光伏/电池等出口敏感板块产生预期引导。
-<div class="source-link">🔗 来源：证券时报 2026-07-27</div>
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 证监会7/23座谈会 + 金融监管总局年中工作会议</strong><br>
-证监会划定下半年改革路线图（提升制度包容性、推动中长期资金入市）。中信证券认为降风偏过程已接近尾声，8月普遍轮动修复概率高。金融监管总局强调防范化解重点领域风险。
-<div class="source-link">🔗 来源：新华财经/中国证券报 2026-07-27/28</div>
-</div>
-
-<!-- 📊 市场概览 -->
+<p>🔴 <strong>A股7/27放量普涨，长鑫上市成最大催化</strong></p>
+<p>7月27日A股市场迎来全线普涨行情。上证指数涨1.15%报3858.25，深证成指涨2.72%报14148.73，创业板指涨3.16%报3590.79，科创综指涨2.49%。全市场成交2.09万亿，较前日放量1442亿。5193只个股上涨，120+只涨停。主力资金全天净流入1043.46亿，其中科创板净流入801.79亿，电子行业净流入829.65亿。长鑫科技上市首日暴涨465.82%报49元，成交1411.87亿元创A股个股单日成交额历史纪录，总市值3.28万亿超越工商银行成为A股新"市值一哥"。</p>
+<p>🔗 来源：中国证券报/证券时报/央视财经 2026-07-27</p>
+<p>🔴 <strong>美伊暂停军事打击，油价暴跌布油跌近9%</strong></p>
+<p>特朗普下令叫停对伊朗的空袭（此前已连续13天每日打击），为外交谈判留出空间。内塔尼亚胡7/27启程访美会晤特朗普，伊朗问题为核心议题。受此影响，国际油价暴跌——WTI一度跌超8%报89.31美元，布伦特跌近9%一度跌破85美元。COMEX黄金涨0.19%报4137.7美元。</p>
+<p>🔗 来源：财联社/新华社 2026-07-28</p>
+<p>🔴 <strong>央行月末2.1万亿隔夜逆回购投放，政治局会议待定</strong></p>
+<p>央行7/29-31每日6000亿+8/3日3000亿=合计2.1万亿隔夜逆回购操作。此前7/24已开展5000亿MLF（净投放1000亿），叠加买断式逆回购，7月中期流动性工具合计净投放8000亿。政治局会议召开在即，市场聚焦财政政策发力与扩内需部署。</p>
+<p>🔗 来源：新华社/财联社 2026-07-27</p>
+<p>🟠 <strong>国新办今日下午3时就"产能过剩"问题召开发布会</strong></p>
+<p>商务部副部长鄢东将介绍所谓"产能过剩"问题中方立场。此番表态或对新能源、光伏、电池等出口敏感板块产生预期引导。</p>
+<p>🔗 来源：证券时报 2026-07-27</p>
+<p>🔴 <strong>证监会7/23座谈会：深化改革，推动中长期资金入市</strong></p>
+<p>证监会7/23召开系统党的建设暨监管工作座谈会，划定下半年资本市场深化改革路线图，强调提升制度包容性适应性、推动中长期资金入市。中信证券认为降风偏过程已接近尾声，8月市场出现普遍轮动修复的概率很高。</p>
+<p>🔗 来源：新华财经/金融界 2026-07-27</p>
+<p>🟠 <strong>金融监管总局年中工作会议</strong></p>
+<p>强调树牢底线思维，稳步推进中小金融机构改革化险，有效防范化解重点领域风险。坚持问题导向推进严监管强监管，督促金融机构加快改革转型。</p>
+<p>🔗 来源：中国证券报 2026-07-28</p>
+<p>🔴 <strong>A股回购/增持潮密集涌现</strong></p>
+<p>继宁德时代200-400亿回购方案后，近期A股上市公司密集发布回购与增持公告，股票型ETF资金大幅净流入。市场人士认为，当共识凝聚后，转机自然水到渠成。</p>
+<p>🔗 来源：中国证券报 2026-07-28</p>
+<hr>
 <h2>📊 市场概览</h2>
-
 <h3>A股（7/27 收盘）</h3>
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr>
-<tr><td>上证指数</td><td>3,858.25</td><td><span class="red">+1.15%</span></td><td>放量反弹</td></tr>
-<tr><td>深证成指</td><td>14,148.73</td><td><span class="red">+2.72%</span></td><td>—</td></tr>
-<tr><td>创业板指</td><td>3,590.79</td><td><span class="red">+3.16%</span></td><td>领涨</td></tr>
-<tr><td>科创综指</td><td>—</td><td><span class="red">+2.49%</span></td><td>—</td></tr>
-<tr><td>沪深300</td><td>—</td><td><span class="red">+1.15%</span></td><td>—</td></tr>
-</table>
-<ul class="bullet">
-<li>成交额2.09万亿，较前日放量1442亿（前日1.94万亿年内新低）</li>
-<li>5193只个股上涨，仅286只下跌；120+只涨停</li>
-<li>长鑫科技首日+465.82%（收49元），市值3.28万亿居A股第一，成交1411.87亿创历史</li>
-<li>科创板主力资金净流入801.79亿，电子行业流入829.65亿</li>
-<li>领涨：建筑材料(+5.44%)、综合(+5.33%)、美容护理、创新药、PCB、脑机接口</li>
-<li>仅石油石化(-0.45%)、煤炭(-0.13%)下跌</li>
-<li><strong>核心逻辑：长鑫上市"靴子落地" + 美伊降温 + 央行流动性 + 回购潮 → 情绪全面修复</strong></li>
-</ul>
-<div class="source-link">🔗 来源：中国证券报/证券时报/央视财经 2026-07-27</div>
-
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>上证指数</td><td>3,858.25</td><td><span class="red">+1.15%</span></td><td>放量反弹</td></tr><tr><td>深证成指</td><td>14,148.73</td><td><span class="red">+2.72%</span></td><td>—</td></tr><tr><td>创业板指</td><td>3,590.79</td><td><span class="red">+3.16%</span></td><td>领涨</td></tr><tr><td>科创综指</td><td>—</td><td><span class="red">+2.49%</span></td><td>—</td></tr><tr><td>沪深300</td><td>—</td><td><span class="red">+1.15%</span></td><td>—</td></tr></tbody></table>
+<ul><li>成交额2.09万亿，较前日放量1442亿（上日为1.94万亿年内新低）</li><li>5193只个股上涨，仅286只下跌；120+只涨停</li><li>长鑫科技（688825）上市首日收49元（+465.82%），市值3.28万亿居A股第一，成交1411.87亿创历史</li><li>科创板主力资金净流入801.79亿，电子行业流入829.65亿</li><li>领涨板块：建筑材料(+5.44%)、综合(+5.33%)、美容护理、创新药、PCB、脑机接口</li><li>仅石油石化(-0.45%)、煤炭(-0.13%)下跌</li><li><strong>核心逻辑：长鑫上市"靴子落地"（此前连续3日缩量躲长鑫），叠加美伊降温+央行流动性+回购潮，市场情绪全面修复</strong></li></ul>
+<p>🔗 来源：中国证券报/证券时报/央视财经 2026-07-27</p>
 <h3>港股（7/27 收盘）</h3>
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
-<tr><td>恒生指数</td><td>25,207.18</td><td><span class="red">+0.98%</span></td></tr>
-</table>
-<ul class="bullet">
-<li>小米+7.34%（领涨），智谱+3.56%，腾讯+1.93%，美团+3.00%</li>
-<li>南向全天净卖出15.74亿港元（沪港通净卖20.06亿，深港通净买4.32亿）</li>
-<li>南向净买入：美团+12.17亿、智谱+6.16亿、建滔积层板+6.04亿、腾讯+5.60亿</li>
-<li>南向净卖出：小米-12.32亿、中芯国际-6.98亿、阿里-6.75亿</li>
-<li>港交所宣布中际旭创7/30上市时同步推出期权/权证，同日纳入可卖空</li>
-</ul>
-<div class="source-link">🔗 来源：证券时报网 2026-07-27</div>
-
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>恒生指数</td><td>25,207.18</td><td><span class="red">+0.98%</span></td></tr><tr><td>恒生科技</td><td>—</td><td>待确认</td></tr></tbody></table>
+<ul><li>小米集团+7.34%（领涨），智谱+3.56%，腾讯控股+1.93%，美团+3.00%</li><li>南向资金全天净卖出15.74亿港元（沪港通净卖20.06亿，深港通净买4.32亿）</li><li>南向成交活跃：智谱47.05亿/中芯国际44.03亿/小米40.35亿/美团22.10亿</li><li>南向净买入前三：美团+12.17亿、智谱+6.16亿、建滔积层板+6.04亿、腾讯+5.60亿</li><li>南向净卖出前三：小米-12.32亿、中芯国际-6.98亿、阿里-6.75亿</li><li>港交所宣布中际旭创7/30上市时同步推出期权/权证，同日纳入可卖空名单</li></ul>
+<p>🔗 来源：证券时报网 2026-07-27</p>
 <h3>🌙 隔夜美股（7/27 收盘）</h3>
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr>
-<tr><td>道琼斯</td><td>52,210.08</td><td><span class="red">+0.51%</span></td><td>—</td></tr>
-<tr><td>标普500</td><td>7,413.18</td><td><span class="red">+0.02%</span></td><td>—</td></tr>
-<tr><td>纳斯达克</td><td>24,932.08</td><td><span class="green">-0.18%</span></td><td>连续第4日下跌</td></tr>
-<tr><td>费城半导体</td><td>—</td><td><span class="green">-2.23%</span></td><td>盘中一度-5%，创5/20以来新低</td></tr>
-</table>
-<ul class="bullet">
-<li><strong>芯片全线重挫</strong>：英伟达-4.99%（市值缩水~2500亿至4.76万亿），阿斯麦-5.80%，AMD-5.17%</li>
-<li><strong>存储暴跌</strong>：闪迪-11.02%（较6月底高位-45%），SK海力士ADR-7.47%（跌破IPO发行价），铠侠-7%+</li>
-<li>苹果+1.17%创新高，市值4.95万亿重夺全球第一；微软+1.94%、谷歌+2.13%</li>
-<li>中概逆市大涨：金龙指数<span class="red">+2.51%</span>，理想汽车+4%、金山云+4%、哔哩哔哩+4%、网易+3%</li>
-<li>WTI一度跌超8%，布油一度跌破85美元；COMEX黄金+0.19%报4137.7美元</li>
-</ul>
-<div class="source-link">🔗 来源：财联社/新华社/证券时报/澎湃新闻 2026-07-28</div>
-
-<!-- 💡 策略观点 -->
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>道琼斯</td><td>52,210.08</td><td><span class="red">+0.51%</span></td><td>—</td></tr><tr><td>标普500</td><td>7,413.18</td><td><span class="red">+0.02%</span></td><td>—</td></tr><tr><td>纳斯达克</td><td>24,932.08</td><td><span class="green">-0.18%</span></td><td>连续第4日下跌</td></tr><tr><td>费城半导体</td><td>—</td><td><span class="green">-2.23%</span></td><td>盘中一度-5%，创5/20以来新低</td></tr></tbody></table>
+<ul><li><strong>芯片股全线重挫</strong>：英伟达-4.99%（市值缩水~2500亿至4.76万亿），阿斯麦-5.80%，AMD-5.17%</li><li><strong>存储暴跌</strong>：闪迪-11.02%（较6月底高位-45%），SK海力士ADR-7.47%（跌破IPO发行价），铠侠-7%+（较6月底-57%）</li><li>苹果+1.17%逆市创新高，市值4.95万亿超越英伟达重夺全球市值第一</li><li>微软+1.94%、谷歌+2.13%，老牌科技龙头获资金涌入</li><li>中概股逆市大涨：金龙指数+2.51%，理想汽车+4%、金山云+4%、哔哩哔哩+4%、网易+3%</li><li>WTI原油一度跌超8%，布油一度跌破85美元</li><li>COMEX黄金+0.19%报4137.7美元</li><li>本周：微软/Meta（周三）、苹果/亚马逊（周四）等多巨头财报</li></ul>
+<p>🔗 来源：财联社/新华社/证券时报/澎湃新闻 2026-07-28</p>
+<hr>
 <h2>💡 策略观点</h2>
-
-<div class="card">
-<strong>中信证券</strong><br>
-降风偏过程已接近尾声。A股超调风险基本出清，<strong>8月市场出现普遍轮动修复的概率很高</strong>。行情重心加速向半年度业绩验证转移，建议均衡配置+科技成长内部分化中寻觅结构性机会。
-<div class="source-link">🔗 <a href="https://finance.jrj.com.cn/2026/07/27083357906145.shtml">金融界 2026-07-27</a></div>
-</div>
-
-<div class="card">
-<strong>中信建投</strong><br>
-海外科技调整对A股仅形成短期情绪联动，难以改变产业趋势与运行节奏。本轮调整更多是前期行情极致分化后的筹码再平衡与估值修复，并未动摇中长期根基。
-<div class="source-link">🔗 <a href="#">21世纪经济报道 2026-07-27</a></div>
-</div>
-
-<div class="card">
-<strong>中金公司</strong><br>
-中报窗口期科创板/创业板预喜率85%。科技赛道单边普涨终结，风格再平衡成主线。短期优先算力中下游/AI应用/半导体设备；待风险出清后布局算力上游弹性品种。
-<div class="source-link">🔗 <a href="#">21世纪经济报道 2026-07-27</a></div>
-</div>
-
-<div class="card">
-<strong>招商证券 ⭐</strong><br>
-2026上半年创业板指+35.6%，券商Q1营收+31%。展望下半年市场中枢有望稳步抬升，行业全年营收预计+25%。当前券商板块低估值+低持仓+高增长严重错配，<strong>推荐广发证券(H)、国泰海通(H)、中信证券(AH)、中金公司(H)</strong>。
-<div class="source-link">🔗 <a href="#">iFinD财经早餐 2026-07-27</a></div>
-</div>
-
-<div class="card">
-<strong>华创证券（非银）</strong><br>
-17家券商H1预增合计归母净利约1043-1097亿元，中信H1净利233亿(+70%)。板块PB约1.30x（近十年19.5%分位），安全边际极高。"极低估值+中报景气度+并购重组"共振，维持"推荐"。
-<div class="source-link">🔗 <a href="#">华创证券周报 2026-07-27</a></div>
-</div>
-
-<div class="card">
-<strong>西部证券</strong><br>
-策略周末谈"一鲸落，万物生"——长鑫上市"靴子落地"后资金向非存储方向扩散。可再生能源"十五五"规划释放储能/特高压/绿色氢氨醇产业机遇。
-<div class="source-link">🔗 <a href="#">西部证券策略周末谈 2026-07-27</a></div>
-</div>
-
-<!-- 📋 持仓个股增量信息 -->
+<h3>中信证券</h3>
+<p>降风偏的过程已经接近尾声。经过7月中旬阶段性回调，A股超调风险基本出清，企稳修复支撑持续强化。<strong>8月市场出现普遍轮动修复的概率很高</strong>，行情重心将加速向半年度业绩验证转移。建议均衡配置，同时在科技成长内部分化中寻觅结构性机会。</p>
+<p>🔗 来源：金融界 2026-07-27</p>
+<h3>中信建投</h3>
+<p>海外科技板块调整对国内成长赛道形成情绪联动，但影响具短期性、边际弱化特征，难以改变A股产业趋势与运行节奏。本轮A股调整更多是前期行情极致分化后的筹码再平衡与估值修复，属于市场阶段性休整，并未动摇A股中长期运行根基。</p>
+<p>🔗 来源：21世纪经济报道 2026-07-27</p>
+<h3>中金公司</h3>
+<p>中报披露窗口期，科创板/创业板预喜率高达85%，半导体（86.5%）、非银金融（86.1%）预喜率领先。年内A股整体盈利有望稳步增长，中报密集落地将持续提振市场信心。科技赛道单边普涨行情已然终结，风格再平衡成为主线。配置：短期优先算力中下游/AI应用/半导体设备；待风险出清后布局算力上游弹性品种。</p>
+<p>🔗 来源：21世纪经济报道/南方财经 2026-07-27</p>
+<h3>招商证券</h3>
+<p>2026上半年权益市场科技链引领（创业板指+35.6%）。上市券商Q1营收同比+31%，行业并购重组加速。展望下半年，市场中枢有望稳步抬升，预计行业全年营收同比+25%。当前券商板块低估值、低持仓与高增长业绩严重错配，<strong>推荐广发证券(H)、国泰海通(H)、中信证券(AH)、中金公司(H)</strong>。</p>
+<p>🔗 来源：iFinD财经早餐 2026-07-27</p>
+<h3>华创证券（非银）</h3>
+<p>17家A股上市券商已披露半年度业绩预增公告，合计预计归母净利润约1043-1097亿元。中信证券预计H1归母净利233.43亿（+70%）。当前板块PB约1.30x，处近十年19.5%分位，安全边际极高。"极低估值+中报景气度验证+并购重组落地"多重共振，维持行业"推荐"。</p>
+<p>🔗 来源：华创证券周报 2026-07-27</p>
+<h3>东证期货</h3>
+<p>美伊局势降温、短期可能停火，市场风险偏好回升。A股成交跌破2万亿后7/27放量反弹，市场情绪快速修复。本周美股财报季+美联储议息+政治局会议多空交织，A股短期站稳，但上冲仍需更多催化。</p>
+<p>🔗 来源：东证期货综合晨报 2026-07-27</p>
+<h3>西部证券</h3>
+<p>策略周末谈"一鲸落，万物生"——长鑫上市"靴子落地"后市场资金向非存储方向扩散。可再生能源"十五五"规划发布，释放储能/特高压/电力运营/绿色氢氨醇等产业机遇。</p>
+<p>🔗 来源：西部证券策略周末谈 2026-07-27</p>
+<hr>
 <h2>📋 持仓个股增量信息</h2>
-
 <h3>A股核心持仓（13只）</h3>
-
-<div class="highlight highlight-red">
-<strong>🔴 宁德时代（300750）— 最大增量</strong><br>
-H1营收2769.17亿（+54.8%），归母净利432.84亿（+41.98%），Q2净利225.46亿。<strong>200-400亿回购注销方案</strong>（A股史上最大，待股东大会审议），公司称当前股价存在明显低估。动力+储能销量同比+60%，有效产能525GWh/在建764GWh。钠电池产线可灵活切换，587Ah储能大电芯已规模化交付。布局AIDC能源创新解决方案。10派14.11元中期分红（64.93亿）。
-<div class="source-link">🔗 来源：宁德时代公告 2026-07-24/25</div>
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 中际旭创（300308）— 重大增量</strong><br>
-<strong>7/30（周四）港交所正式上市</strong>，港交所同步推出期权+衍生权证，同日纳入可卖空名单。7/12投资者交流会澄清近期传言：Q2业绩严重不及预期为不实，公司对H1经营非常有信心。2027年1.6T需求指引未变化（客户结构调整但总量不变），800G需求较预期更强劲。在手订单覆盖2026全年，Q2毛利率预计稳定。NPO技术方案3月起加速。
-<div class="source-link">🔗 来源：中际旭创投资者关系记录/港交所公告 2026-07-12/27</div>
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 比亚迪（002594）</strong><br>
-子公司BYD(H.K.)以1200万港元中标香港九龙晓光街电动车充电站用地（1022.1平方米，批租期12年）。工信部将加快编制智能网联新能源汽车"十五五"规划。
-<div class="source-link">🔗 来源：观点网/香港地政总署 2026-07-27</div>
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 中信证券（600030）</strong><br>
-H1归母净利233.43亿（+70% YoY），稳居行业首位。Q2公募主动型基金增持券商股。板块PB约1.30x（近十年19.5%分位），中信自身策略认为8月普遍轮动修复概率高。
-<div class="source-link">🔗 来源：华创证券周报/金融界 2026-07-27</div>
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 寒武纪（688256）</strong><br>
-7/24公告作废2023年限制性股票激励计划部分限制性股票。无其他重大公告。
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 药明康德（603259）</strong><br>
-中报业绩窗口期，科创板/创业板预喜率85%，医药板块关注业绩兑现。无隔夜重大新公告。
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 北方华创（002371）</strong><br>
-7/25公告：2022年股票期权激励计划76,951份期权注销完成。半导体设备受长鑫上市+两存扩产持续催化。
-<div class="source-link">🔗 来源：北方华创公告 2026-07-25</div>
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 中芯国际（688981 / 00981.HK）</strong><br>
-港股7/27南向净卖出6.98亿港元。先进封装+成熟制程双线受益国产替代，长鑫上市释放存储/代工联动信号。
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 兆易创新（603986）</strong><br>
-持有长鑫科技1.8%股权，长鑫首日暴涨465%为直接催化。NOR Flash+MCU+DRAM多线受益存储景气周期。
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 韦尔股份（603501）</strong><br>
-无隔夜重大新公告。CIS龙头受益手机/汽车/安防多场景需求复苏。
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 长电科技（600584）</strong><br>
-无隔夜重大新公告。78亿临港"东方芯港"封测工厂推进中。
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 沪硅产业（688126）</strong><br>
-无隔夜重大新公告。大硅片国产替代核心标的，关注中报窗口。
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 东方财富（300059）</strong><br>
-无隔夜重大新公告。受益市场交投活跃与科创板资金流入。
-</div>
-
+<p>🔴 <strong>宁德时代（300750）— 最大增量</strong></p>
+<ul><li>H1营收2769.17亿（+54.8%），归母净利432.84亿（+41.98%），Q2净利225.46亿</li><li><strong>200-400亿回购注销方案</strong>（A股史上最大，待股东大会审议），公司称当前股价存在明显低估</li><li>动力+储能电池合计销量同比+60%，储能占比约1/4</li><li>有效产能525GWh，在建764GWh（大部分未来两年投产）</li><li>钠电池产线可灵活切换，587Ah储能大电芯已规模化交付</li><li>布局AIDC能源创新解决方案，纳入零碳战略</li><li>10派14.11元中期分红（64.93亿）</li></ul>
+<p>🔗 来源：宁德时代公告/投资者关系记录 2026-07-24/25</p>
+<p>🔴 <strong>比亚迪（002594）</strong></p>
+<ul><li>7/27 A股随市场反弹。子公司BYD(H.K.)以1200万港元中标香港九龙晓光街电动车充电站用地（1022.1平方米，批租期12年）</li><li>工信部将加快编制智能网联新能源汽车"十五五"规划，深入推进"车路云一体化"</li></ul>
+<p>🔗 来源：观点网/香港地政总署 2026-07-27</p>
+<p>🔴 <strong>中际旭创（300308）— 重大增量</strong></p>
+<ul><li><strong>7/30（周四）港交所正式上市</strong>，港交所将同步推出期权+衍生权证，同日纳入可卖空名单</li><li>7/12投资者交流会澄清近期传言：①Q2业绩严重不及预期为不实，公司对H1经营非常有信心 ②公司不存在故意压制股价 ③2027年1.6T需求指引未变化（客户结构微调但总量不变）</li><li>2027年800G需求较预期更强劲，NPO技术方案3月起加速</li><li>在手订单覆盖2026全年，部分已下到2027年</li><li>Q2毛利率预计保持稳定，下半年到明年上半年物料紧缺边际改善</li><li>3.2T方案预计2028年成熟</li></ul>
+<p>🔗 来源：中际旭创投资者关系记录/港交所公告 2026-07-12/27</p>
+<p>🔵 <strong>寒武纪（688256）</strong></p>
+<ul><li>7/24公告：因激励对象离职/绩效考核不达标，作废2023年限制性股票激励计划部分限制性股票</li><li>无其他重大公告</li></ul>
+<p>🔴 <strong>药明康德（603259）</strong></p>
+<ul><li>中报业绩窗口期，此前已发布H1强劲业绩预期。已披露中报公司中科创板/创业板预喜率85%，医药板块关注业绩兑现</li><li>无隔夜重大新公告</li></ul>
+<p>🔴 <strong>北方华创（002371）</strong></p>
+<ul><li>7/25公告：2022年股票期权激励计划76,951份股票期权注销完成（8名离职+2名考核不达标）</li><li>半导体设备板块受长鑫上市+两存扩产持续催化</li><li>工信部推进智能网联汽车"十五五"规划→利好半导体设备需求</li></ul>
+<p>🔗 来源：北方华创公告 2026-07-25</p>
+<p>🔴 <strong>中芯国际（688981 / 00981.HK）</strong></p>
+<ul><li>7/27 A股随市场反弹，港股7/27南向净卖出6.98亿港元（港股通买卖总额44.03亿）</li><li>先进封装+成熟制程双线受益国产替代，长鑫上市释放存储/代工联动信号</li></ul>
+<p>🔵 <strong>兆易创新（603986）</strong></p>
+<ul><li>7/27 随市场反弹。持有长鑫科技1.8%股权，长鑫首日暴涨465%为直接催化</li><li>NOR Flash+MCU+DRAM多线受益存储景气周期</li></ul>
+<p>🔵 <strong>韦尔股份（603501）</strong></p>
+<ul><li>无隔夜重大新公告。CIS龙头，受益于手机/汽车/安防多场景需求复苏，关注H1中报窗口</li></ul>
+<p>🔵 <strong>长电科技（600584）</strong></p>
+<ul><li>无隔夜重大新公告。78亿元临港"东方芯港"高端先进封测工厂推进中</li><li>长鑫上市+先进封装国产化双催化</li></ul>
+<p>🔵 <strong>沪硅产业（688126）</strong></p>
+<ul><li>无隔夜重大新公告。大硅片国产替代核心标的，关注中报窗口</li></ul>
+<p>🔴 <strong>中信证券（600030）— 增量</strong></p>
+<ul><li>H1归母净利233.43亿（+70% YoY），稳居行业首位。二季度公募主动型基金增持券商股</li><li>券商板块PB约1.30x（近十年19.5%分位），招商/华创等多家券商看多估值修复</li><li>中信证券自身策略认为8月市场普遍轮动修复概率高</li></ul>
+<p>🔗 来源：华创证券周报/金融界 2026-07-27</p>
+<p>🔵 <strong>东方财富（300059）</strong></p>
+<ul><li>无隔夜重大新公告。受益于市场交投活跃（日均3万亿级）与科创板资金流入</li></ul>
+<hr>
 <h3>港股核心持仓（7只）</h3>
-
-<div class="highlight highlight-red">
-<strong>🔴 腾讯控股（00700.HK）</strong><br>
-7/27 +1.93%，南向净买入5.60亿港元。组织架构调整（基础模型部统一管理）持续发酵。华泰传媒重点推荐（国产模型+物理AI主线）。美股中概金龙+2.51%情绪改善。
-<div class="source-link">🔗 来源：证券时报网 2026-07-27</div>
-</div>
-
-<div class="highlight highlight-green">
-<strong>🟢 阿里巴巴（09988.HK）</strong><br>
-7/27南向净卖出6.75亿港元（连续多日净卖出累计77.39亿）。Qwen-Image-3.0已发布。长鑫科技阿里持股价值超千亿。
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 美团-W（03690.HK）</strong><br>
-7/27 +3.00%，南向净买入12.17亿港元（居首）。LongCat-2.0持续验证国产算力。
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 小米集团-W（01810.HK）</strong><br>
-7/27 +7.34%（大涨），但南向净卖出12.32亿港元（居首）——大涨后获利了结。
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 快手-W（01024.HK）</strong><br>
-华泰传媒在国产模型方向重点推荐。无隔夜重大独立公告。
-</div>
-
-<div class="highlight highlight-blue">
-<strong>🔵 京东集团-SW（09618.HK）</strong><br>
-无隔夜重大新公告。
-</div>
-
-<div class="highlight highlight-red">
-<strong>🔴 网易-S（09999.HK）</strong><br>
-美股中概+3%+受益金龙大涨。国信维持优于大市：《遗忘之海》《无限大》预计26H2-27初上线。上周南向净买入14.09亿港元，持股量环比+27.21%。
-</div>
-
-<!-- 🪐 知识星球 -->
+<p>🔴 <strong>腾讯控股（00700.HK）</strong></p>
+<ul><li>7/27 +1.93%，南向净买入5.60亿港元</li><li>组织架构调整（混元多模态+大模型合并为"基础模型部"，姚顺雨统一管理）持续发酵</li><li>华泰传媒重点推荐腾讯控股（国产模型+物理AI主线）</li><li>美股中概金龙指数+2.51%，海外情绪改善</li></ul>
+<p>🔗 来源：证券时报网/NeData 2026-07-24/27</p>
+<p>🟢 <strong>阿里巴巴（09988.HK）</strong></p>
+<ul><li>7/27 南向净卖出6.75亿港元（连续多日净卖出，累计77.39亿）</li><li>Qwen-Image-3.0已发布（第三代图像生成模型，支持12国语言）</li><li>长鑫科技市值一度超3万亿，阿里持股价值超千亿</li></ul>
+<p>🔵 <strong>美团-W（03690.HK）</strong></p>
+<ul><li>7/27 +3.00%，南向净买入12.17亿港元（居首）</li><li>LongCat-2.0持续验证国产算力</li></ul>
+<p>🔵 <strong>小米集团-W（01810.HK）</strong></p>
+<ul><li>7/27 +7.34%（大涨），但南向净卖出12.32亿港元（居首）</li><li>股价大涨后获利了结，后续需关注SU7交付及AIoT业务进展</li></ul>
+<p>🔵 <strong>快手-W（01024.HK）</strong></p>
+<ul><li>华泰传媒在国产模型方向重点推荐（与腾讯并列）</li><li>无隔夜重大独立公告</li></ul>
+<p>🔵 <strong>京东集团-SW（09618.HK）</strong></p>
+<ul><li>无隔夜重大新公告</li></ul>
+<p>🔵 <strong>网易-S（09999.HK）</strong></p>
+<ul><li>美股中概+3%+，受益金龙指数大涨</li><li>国信维持优于大市评级：《遗忘之海》《无限大》预计26H2-27初上线</li><li>上周南向净买入14.09亿港元，持股量环比+27.21%</li></ul>
+<hr>
 <h2>🪐 知识星球（zsxq）增量</h2>
-
-<div class="highlight highlight-red">
-<strong>🔴 长江汽车周观点0726：持续看好燃机、液冷，重视整车出海+超跌零部件（07/26）</strong><br>
-<strong>液冷已入爆发期</strong>：Google资本开支再上调，谷歌V7量产+英伟达Rubin小批量，重点推荐<strong>飞龙股份、银轮股份</strong>。<strong>燃机板块</strong>：GEV/瓦锡兰订单再上修，推荐<strong>潍柴、天润</strong>。<strong>整车出海</strong>：比亚迪闪充产能释放+吉利Q2有望超预期，推荐<strong>比亚迪、吉利汽车</strong>，弹性<strong>江淮汽车</strong>。<strong>超跌零部件</strong>：敏实集团、伯特利、福耀玻璃、星宇股份。
-<div class="source-link">🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544224242185488&group_id=88888142214212">水木调研纪要-2.0</a></div>
-</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 Alphabet获多家机构上调目标价（07/23-24）</strong><br>
-公民证券目标价上调至515美元、派珀桑德勒维持买入上调至475美元、罗斯资本上调至买入等。Google资本开支持续扩张利好液冷/AI基础设施链。
-<div class="source-link">🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544251211418158&group_id=48844242514558">调研纪要更新</a></div>
-</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 广发建筑：洁净室观点重申（06/04）</strong><br>
-强推<strong>柏诚股份</strong>（中期看230亿），重点推荐<strong>亚翔集成</strong>（27E 20x看400亿），推荐圣晖集成、深桑达A、太极实业。AI应用商业闭环促算力中心建设提速。
-<div class="source-link">🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544585818125448&group_id=88888142214212">水木调研纪要-2.0</a></div>
-</div>
-
-<div class="highlight highlight-orange">
-<strong>🟠 申万宏源化工：电子材料持续重点推荐（06/02）⭐</strong><br>
-①存储：<strong>雅克科技/广钢气体</strong>有极大补涨空间⭐；②封测：<strong>艾森股份首推⭐</strong>/华海诚科/天承科技；③涨价：昊华科技/国瓷材料；④覆铜板：东岳集团/联瑞新材；⑤TAC膜：天禄科技（6月后整线调试关键节点）。
-<div class="source-link">🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544588881851488&group_id=88888142214212">水木调研纪要-2.0</a></div>
-</div>
-
-<p style="font-size:0.85em;color:var(--orange);margin-top:8px;">
-⚠️ 以下历史帖子含关键词，附件为PDF/图片无法直接读取：华辰装备新品发布会(06/29)、AIDC板块再推荐(05/14)、万辰集团持续推荐(04/23)
-</p>
-
-<!-- 👁️ 关注清单 -->
+<blockquote>搜索范围：水木调研纪要-2.0 + 调研纪要更新<br>关键词：强推/上调/重视/重点推荐/买入/增持</blockquote>
+<h3>🔴 长江汽车周观点0726：持续看好燃机、液冷，重视整车出海+超跌零部件（07/26）</h3>
+<p><strong>液冷已进入爆发期</strong>：Google财报资本开支再上调，谷歌V7芯片已量产，英伟达Rubin进入小批量，液冷驶入放量期。重点推荐<strong>飞龙股份、银轮股份</strong>。</p>
+<p><strong>燃机板块</strong>：GEV、瓦锡兰订单指引再上修，产能规划上调。重点推荐<strong>潍柴、天润</strong>，建议关注<strong>中原内配</strong>。</p>
+<p><strong>整车出海</strong>：比亚迪闪充产能释放有望带动内需企稳，吉利Q2有望超预期。重点推荐<strong>比亚迪、吉利汽车</strong>，弹性品种<strong>江淮汽车</strong>。</p>
+<p><strong>超跌零部件</strong>：敏实集团、伯特利、福耀玻璃、星宇股份已到历史估值低位。</p>
+<p>🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544224242185488&amp;group_id=88888142214212" target="_blank">水木调研纪要-2.0</a></p>
+<h3>🟠 Alphabet获多家机构上调目标价（07/23-24）</h3>
+<p>调研纪要更新连续两日汇总Alphabet机构评级调整：公民证券目标价上调至515美元、派珀桑德勒维持买入上调至475美元、罗斯资本上调评级至买入等。Google资本开支持续扩张利好液冷/AI基础设施链。</p>
+<p>🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544251211418158&amp;group_id=48844242514558" target="_blank">调研纪要更新</a></p>
+<h3>🟠 广发建筑：洁净室观点重申（06/04）</h3>
+<p>海外大厂加速扩产+国产替代加速，洁净室工程服务订单最早、业绩最确定。强推<strong>柏诚股份</strong>（中期看230亿目标市值），重点推荐<strong>亚翔集成</strong>（新加坡订单充裕，27E 20x看400亿），推荐<strong>圣晖集成、深桑达A、太极实业</strong>。</p>
+<p>🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544585818125448&amp;group_id=88888142214212" target="_blank">水木调研纪要-2.0</a></p>
+<h3>🟠 申万宏源化工：电子材料持续重点推荐（06/02）</h3>
+<p>五大方向：①存储受益长鑫+长存扩产（鼎龙/雅克/安集/广钢/兴福），<strong>雅克科技/广钢气体</strong>有极大补涨空间⭐；②封测材料国产替代加速（华海诚科/<strong>艾森股份首推⭐</strong>/天承科技）；③涨价品种（六氟化钨/制冷剂，昊华科技/国瓷材料）；④覆铜板材料（PTFE链东岳集团/联瑞新材）；⑤TAC膜天禄科技（6月后项目进入整线调试关键节点）。</p>
+<p>🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544588881851488&amp;group_id=88888142214212" target="_blank">水木调研纪要-2.0</a></p>
+<h3>🔴 长鑫科技上市首日暴涨465%（07/27）</h3>
+<p>长鑫科技今日科创板上市，发行价8.66元，收报49元，总市值3.28万亿成为A股新市值之王。全天成交1411.87亿元，换手率66.4%。阿里巴巴持股价值超千亿。</p>
+<p>🔗 来源：证券日报/雷递 2026-07-27/28</p>
+<h3>⚠️ 需手动查看的历史报告</h3>
+<p>以下帖子含关键词，附件为PDF/图片无法直接读取：</p>
+<table><thead><tr><th>日期</th><th>来源</th><th>标题</th></tr></thead><tbody><tr><td>06/29</td><td>水木调研纪要</td><td>华辰装备新品发布会超预期</td></tr><tr><td>05/22</td><td>水木调研纪要</td><td>申万宏源化工电子材料推荐</td></tr><tr><td>05/19</td><td>水木调研纪要</td><td>申万宏源化工电子材料</td></tr><tr><td>05/14</td><td>水木调研纪要</td><td>AIDC板块再推荐</td></tr><tr><td>04/23</td><td>水木调研纪要</td><td>万辰集团持续重点推荐</td></tr></tbody></table>
+<hr>
 <h2>👁️ 关注清单（11只）</h2>
-<table>
-<tr><th>标的</th><th>最新动态</th></tr>
-<tr><td><span class="tag tag-red">长鑫科技</span></td><td>7/27科创板上市，首日+465.82%收49元，市值3.28万亿A股第一，成交1411.87亿创纪录</td></tr>
-<tr><td><span class="tag tag-red">SK海力士</span></td><td>7/27美股ADR-7.47%跌破IPO发行价；7/29 Q2财报发布；崔泰源会晤黄仁勋确认绑定</td></tr>
-<tr><td>长江存储</td><td>关注IPO进展，半导体存储双雄格局形成</td></tr>
-<tr><td>宇树科技</td><td>"人形机器人第一股"IPO获批后，新品机器狗可扛300斤货物引热议</td></tr>
-<tr><td>DeepSeek</td><td>关注V4正式版最新进展</td></tr>
-<tr><td><span class="tag tag-red">智谱AI</span></td><td>港股+3.56%，南向连续6日净买入（累计31.63亿港元），成交活跃居首</td></tr>
-<tr><td>SpaceX</td><td>关注美股走势</td></tr>
-<tr><td>MiniMax</td><td>关注港股动态</td></tr>
-<tr><td>天数智芯</td><td>关注港股动态</td></tr>
-<tr><td>屹唐股份</td><td>解禁后关注市场影响</td></tr>
-<tr><td>芯碁微装</td><td>PLP2000板级封装设备持续催化，半导体设备板块联动</td></tr>
-</table>
-
-<!-- 数据溯源 -->
+<table><thead><tr><th>标的</th><th>最新动态</th></tr></thead><tbody><tr><td>🔴 长鑫科技</td><td>7/27科创板上市，首日+465.82%收49元，市值3.28万亿A股第一，成交1411.87亿创纪录</td></tr><tr><td>🔴 SK海力士</td><td>7/27美股ADR-7.47%跌破IPO发行价；7/29 Q2财报即将发布；崔泰源会晤黄仁勋确认AI供应链绑定</td></tr><tr><td>长江存储</td><td>关注IPO进展，半导体存储双雄格局形成</td></tr><tr><td>宇树科技</td><td>"人形机器人第一股"IPO注册获批后，机器狗新品可扛300斤货物引热议，关注上市时间表</td></tr><tr><td>DeepSeek</td><td>关注V4正式版最新进展</td></tr><tr><td>🔴 智谱AI</td><td>港股7/27 +3.56%，南向连续6日净买入（累计31.63亿港元），成交活跃居首</td></tr><tr><td>SpaceX</td><td>关注美股走势</td></tr><tr><td>MiniMax</td><td>关注港股动态</td></tr><tr><td>天数智芯</td><td>关注港股动态</td></tr><tr><td>屹唐股份</td><td>解禁后关注市场影响</td></tr><tr><td>芯碁微装</td><td>PLP2000板级封装设备持续催化，半导体设备板块联动</td></tr></tbody></table>
+<hr>
 <h2>🔢 数据溯源</h2>
-<table>
-<tr><th>数据板块</th><th>数据源</th><th>状态</th></tr>
-<tr><td>宏观/政策/流动性</td><td>mx-finance-search</td><td>✅</td></tr>
-<tr><td>美股7/27收盘</td><td>mx-finance-search</td><td>✅</td></tr>
-<tr><td>A股7/27收盘</td><td>mx-finance-search</td><td>✅</td></tr>
-<tr><td>港股7/27收盘</td><td>mx-finance-search</td><td>✅</td></tr>
-<tr><td>券商策略观点</td><td>mx-finance-search</td><td>✅</td></tr>
-<tr><td>A股持仓（13只）</td><td>mx-finance-search</td><td>✅</td></tr>
-<tr><td>港股持仓（7只）</td><td>mx-finance-search</td><td>✅</td></tr>
-<tr><td>知识星球（水木调研纪要-2.0）</td><td>zsxq-cli</td><td>✅</td></tr>
-<tr><td>知识星球（调研纪要更新）</td><td>zsxq-cli</td><td>✅</td></tr>
-<tr><td>Bloomberg (bbgwire)</td><td>—</td><td>❌ 未安装</td></tr>
-<tr><td>NeoData Financial Search</td><td>—</td><td>❌ 401认证失败</td></tr>
-</table>
+<table><thead><tr><th>数据板块</th><th>数据源</th><th>状态</th></tr></thead><tbody><tr><td>宏观/政策/流动性</td><td>mx-finance-search</td><td>✅</td></tr><tr><td>美股7/27收盘</td><td>mx-finance-search</td><td>✅</td></tr><tr><td>A股7/27收盘</td><td>mx-finance-search</td><td>✅</td></tr><tr><td>港股7/27收盘</td><td>mx-finance-search</td><td>✅</td></tr><tr><td>券商策略观点</td><td>mx-finance-search</td><td>✅</td></tr><tr><td>A股持仓（13只）</td><td>mx-finance-search</td><td>✅</td></tr><tr><td>港股持仓（7只）</td><td>mx-finance-search</td><td>✅</td></tr><tr><td>知识星球（水木调研纪要-2.0）</td><td>zsxq-cli</td><td>✅</td></tr><tr><td>知识星球（调研纪要更新）</td><td>zsxq-cli</td><td>✅</td></tr><tr><td>Bloomberg</td><td>bbgwire</td><td>❌ 未安装</td></tr><tr><td>NeoData Financial Search</td><td>401认证失败</td><td>❌</td></tr></tbody></table>
+<p><strong>数据截止时间：</strong> 2026年7月28日 08:20</p>
+<hr>
+<p>*本报告仅供内部研究参考，不构成投资建议 · My Research Central · via WB*</p>
 
 <div class="report-footer">
-  数据来源：mx-finance-search（东方财富妙想）· zsxq-cli（知识星球）· My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

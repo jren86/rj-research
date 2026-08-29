@@ -1,380 +1,412 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>投研晚报 · 2026年5月30日</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-    background: #0d1117;
-    color: #c9d1d9;
-    line-height: 1.6;
-    padding: 16px;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-  h1 {
-    font-size: 20px;
-    color: #f0f6fc;
-    border-bottom: 1px solid #21262d;
-    padding-bottom: 10px;
-    margin-bottom: 16px;
-  }
-  h2 {
-    font-size: 16px;
-    color: #58a6ff;
-    margin: 20px 0 10px;
-    padding-left: 8px;
-    border-left: 3px solid #58a6ff;
-  }
-  h3 {
-    font-size: 14px;
-    color: #d2a8ff;
-    margin: 14px 0 8px;
-  }
-  p { margin: 8px 0; font-size: 14px; }
-  .meta {
-    font-size: 12px;
-    color: #8b949e;
-    margin-bottom: 16px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 10px 0;
-    font-size: 13px;
-  }
-  th {
-    background: #161b22;
-    color: #8b949e;
-    padding: 6px 8px;
-    text-align: left;
-    font-weight: 500;
-    border-bottom: 1px solid #21262d;
-  }
-  td {
-    padding: 6px 8px;
-    border-bottom: 1px solid #21262d;
-    vertical-align: top;
-  }
-  .up { color: #f85149; font-weight: 600; }
-  .down { color: #3fb950; font-weight: 600; }
-  .neutral { color: #8b949e; }
-  .highlight {
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 6px;
-    padding: 12px;
-    margin: 12px 0;
-  }
-  .tag {
-    display: inline-block;
-    background: #1f2937;
-    color: #58a6ff;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 3px;
-    margin-right: 4px;
-    font-weight: 500;
-  }
-  .tag.red { color: #f85149; background: #2d1416; }
-  .tag.green { color: #3fb950; background: #0d1f12; }
-  .tag.yellow { color: #d29922; background: #2a2012; }
-  .tag.purple { color: #d2a8ff; background: #1f102a; }
-  ul, ol { padding-left: 18px; margin: 8px 0; }
-  li { font-size: 13px; margin: 4px 0; }
-  a { color: #58a6ff; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .stock-name { font-weight: 600; color: #f0f6fc; }
-  .source { font-size: 11px; color: #8b949e; margin-top: 4px; }
-  .divider {
-    border: none;
-    border-top: 1px solid #21262d;
-    margin: 20px 0;
-  }
-  .conclusion {
-    background: #0d1f12;
-    border: 1px solid #1a3a24;
-    border-radius: 6px;
-    padding: 12px;
-    margin: 12px 0;
-  }
-  .conclusion h3 { color: #3fb950; }
-  .warn {
-    background: #2a2012;
-    border: 1px solid #3d2e00;
-    border-radius: 6px;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 13px;
-    color: #d29922;
-  }
-  .footer {
-    font-size: 11px;
-    color: #8b949e;
-    text-align: center;
-    margin-top: 24px;
-    padding-top: 12px;
-    border-top: 1px solid #21262d;
-  }
-  .big-event {
-    background: #1c1017;
-    border: 1px solid #3d1a2a;
-    border-radius: 6px;
-    padding: 12px;
-    margin: 12px 0;
-  }
-  .big-event h3 { color: #f85149; }
-  .focus-table td:first-child { white-space: nowrap; font-weight: 600; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间日报 · 2026-05-30</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.85em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 6px 0 6px 18px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+  </style>
 </head>
 <body>
 
-<h1>📡 投研晚报<br><small style="font-size:13px;color:#8b949e;">2026年5月30日</small></h1>
-<p class="meta">聚焦隔夜增量信息 · 去重 · 按时间排序<br>生成时间：2026-05-30 18:00　数据截至今日收盘</p>
+<div class="report-header">
+  <h1>晚间日报 · 2026-05-30</h1>
+  <div class="meta">聚焦隔夜增量信息 · 去重 · 按时间排序 · 生成时间：2026-05-30 18:00　数据截至今日收盘</div>
+</div>
 
-<hr class="divider">
-
+<hr>
 <h2>一、宏观与市场回顾</h2>
-
 <h3>🌍 全球市场收盘表现</h3>
-<table>
-  <tr><th>市场</th><th>指数</th><th>涨跌幅</th><th>备注</th></tr>
-  <tr><td>A股</td><td>上证指数</td><td class="down">-0.73%</td><td>回落整理</td></tr>
-  <tr><td>A股</td><td>深证成指</td><td class="down">-1.81%</td><td>跌幅较大</td></tr>
-  <tr><td>A股</td><td>创业板指</td><td class="down">-2.11%</td><td>回调明显</td></tr>
-  <tr><td>港股</td><td>恒生指数</td><td class="up">+0.70%</td><td>延续强势</td></tr>
-  <tr><td>港股</td><td>恒生科技</td><td class="neutral">-0.09%</td><td>基本持平</td></tr>
-  <tr><td>美股(隔夜)</td><td>标普500</td><td class="up">+0.22%</td><td>5月29日收盘</td></tr>
-  <tr><td>美股(隔夜)</td><td>纳斯达克</td><td class="up">+0.20%</td><td>5月29日收盘</td></tr>
-</table>
-
-<div class="big-event">
-  <h3>🔥 外资持续回流A股格局确认</h3>
-  <p>深交所2026全球投资者大会（5月28-29日）传递明确信号：</p>
-  <ul style="margin-top:8px;">
-    <li>MSCI数据：中国GDP占全球~17%，A股配置权重仅<strong>3%-5%</strong>，严重低配</li>
-    <li>摩根士丹利：亚洲主动基金对中国低配比例从-8.3%收窄至<strong>-1%</strong></li>
-    <li>北向资金年内净流入已超<strong>2800亿元</strong></li>
-    <li>证监会：境外投资者持有A股流通市值超<strong>4万亿元</strong></li>
-    <li>瑞银：2026年有望成为全球投资者加码配置中国资产的<strong>重要元年</strong></li>
-  </ul>
-</div>
-
+<table><thead><tr><th>市场</th><th>指数</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>A股</td><td>上证指数</td><td>-0.73%</td><td>回落整理，收4068.57点</td></tr><tr><td>A股</td><td>深证成指</td><td>-1.81%</td><td>跌幅较大，收15575.13点</td></tr><tr><td>A股</td><td>创业板指</td><td>-2.11%</td><td>回调明显，收4037.95点</td></tr><tr><td>港股</td><td>恒生指数</td><td>+0.70%</td><td>延续强势，收25182点</td></tr><tr><td>港股</td><td>恒生科技</td><td>-0.09%</td><td>基本持平，收4884点</td></tr><tr><td>美股（隔夜）</td><td>标普500</td><td>+0.22%</td><td>5月29日收盘7580点</td></tr><tr><td>美股（隔夜）</td><td>纳斯达克</td><td>+0.20%</td><td>5月29日收盘26972点</td></tr></tbody></table>
+<blockquote>⚠️ 注：A股/港股数据为5月29日收盘；美股为5月29日（北京时间5月30日凌晨）收盘。5月30日A股收盘数据将在盘后更新。</blockquote>
 <h3>💧 宏观流动性</h3>
-<ul>
-  <li>央行公开市场：本周净投放 <strong>7044亿元</strong>，流动性维持宽松</li>
-  <li>DR007 = <strong>1.3809%</strong>，DR001 = <strong>1.3349%</strong>，资金利率低位运行</li>
-  <li>美债收益率持续高位：30年期接近5%，10年期超4.6%；美元走强，人民币阶段性承压</li>
-</ul>
-
-<hr class="divider">
-
+<ul><li><strong>央行公开市场</strong>：本周净投放 <strong>7044亿元</strong>，流动性维持宽松</li><li><strong>DR007</strong> = <strong>1.3809%</strong>，<strong>DR001</strong> = <strong>1.3349%</strong>，资金利率低位运行</li><li>银行间流动性充裕，短端利率持续下行</li></ul>
+<h3>🌐 隔夜重要宏观事件</h3>
+<p><strong>🔥 外资持续回流A股（5月30日确认）</strong></p>
+<ul><li>深交所2026全球投资者大会（5月28-29日）传递明确信号：中国资产"安全溢价"凸显，全球资金稳步流入</li><li>MSCI数据显示：中国GDP占全球~17%，但A股在全球基金配置权重仅3%-5%，<strong>严重低配，修复空间充足</strong></li><li>2026年北向资金<strong>年内净流入已超2800亿元</strong>（一季度净流入3274亿元，创历史同期最高）</li><li>摩根士丹利：亚洲（除日本）主动基金对中国低配比例从2024年2月-8.3%收窄至2026年同期<strong>-1%</strong>；新兴市场主动基金从-4.5%收窄至<strong>-2%</strong></li><li>证监会（5月28日）：各类境外投资者持有A股流通市值超过<strong>4万亿元</strong></li><li>瑞银：2026年有望成为全球投资者加码配置中国资产的重要元年</li></ul>
+<p><strong>⚠️ 美债收益率上行压制全球风险资产</strong></p>
+<ul><li>5月30日，美国30年期国债收益率持续高位（接近5%），10年期超4.6%</li><li>美元指数走强，人民币阶段性承压</li><li>全球资金重新比较风险收益比，部分资金流出新兴市场</li></ul>
+<hr>
 <h2>二、行业与板块动态</h2>
-
-<h3>📊 板块资金流向</h3>
-<table>
-  <tr><th>板块</th><th>主力净流入</th><th>备注</th></tr>
-  <tr><td>电力</td><td class="up">+55.61亿元</td><td>高股息+夏季用电旺季</td></tr>
-  <tr><td>银行</td><td class="up">+24.49亿元</td><td>低估值防御</td></tr>
-  <tr><td>白酒</td><td class="up">+23.98亿元</td><td>促消费预期+估值低位</td></tr>
-  <tr><td>半导体</td><td class="down">-379.3亿元</td><td>高位获利了结，大幅流出</td></tr>
-  <tr><td>电子(整体)</td><td class="down">-618亿元</td><td>科技赛道整体调整</td></tr>
-</table>
-
-<div class="highlight">
-  <p><span class="tag red">⚠️ 风格切换信号</span> 内资主力疯狂抛售半导体/科技股（单日电子行业净流出超618亿元），北向资金逆势净流入超150亿元但集中买入龙头（工业富联、澜起科技等），资金从高弹性科技赛道涌入防御性板块（电力、银行、白酒）。</p>
-</div>
-
-<hr class="divider">
-
+<h3>📊 今日（5月30日）板块资金流向</h3>
+<table><thead><tr><th>板块</th><th>主力净流入</th><th>备注</th></tr></thead><tbody><tr><td>电力</td><td>+55.61亿元</td><td>高股息+夏季用电旺季</td></tr><tr><td>银行</td><td>+24.49亿元</td><td>低估值防御</td></tr><tr><td>白酒</td><td>+23.98亿元</td><td>促消费预期+估值低位</td></tr><tr><td>半导体</td><td><strong>-379.3亿元</strong></td><td>高位获利了结，主力大幅流出</td></tr><tr><td>电子（整体）</td><td><strong>-618亿元</strong></td><td>科技赛道整体调整</td></tr></tbody></table>
+<blockquote>数据来源：主力资金5月29日流向统计（电子行业单日净流出超618亿元，为近期峰值）</blockquote>
+<h3>🏭 重要产业动态</h3>
+<p><strong>AI算力链</strong>：</p>
+<ul><li>戴尔（DELL）Q1 AI服务器收入161亿美元（同比+757%），积压订单<strong>513亿美元</strong>，为A股AI算力供应链（工业富联等）提供持续催化</li><li>工业富联Q1净利105.95亿元（+102.55%），AI ASIC服务器同比<strong>+3.2倍</strong></li></ul>
+<p><strong>创新药（港股）</strong>：</p>
+<ul><li>信达生物与辉瑞105亿美元全球战略合作（5月29日公告），为今日港股生物医药板块最大催化剂</li><li>ASCO大会持续进行，国产创新药临床数据密集读出</li></ul>
+<p><strong>半导体设备</strong>：</p>
+<ul><li>长川科技：HBM测试设备预计Q2-Q3发布，定增已获深交所审核通过</li><li>精智达：5月29日定增方案修订，募资上限降至28.57亿元</li><li>芯碁微装：Q1营收5.15亿元（+112%），二期工厂已投产，机构目标价305.25元</li></ul>
+<hr>
 <h2>三、持仓个股增量信息</h2>
-<p style="font-size:12px;color:#8b949e;margin-bottom:12px;">⚠️ 本节只关注增量信息（公告、研报、调研、产业动态、催化事件），不含股价/涨跌幅等交易数据。</p>
-
-<!-- 长川科技 -->
-<div class="highlight">
-  <p class="stock-name">1. 长川科技（300604.SZ）</p>
-  <p style="margin-top:8px;">📌 无5月30日当日新公告，近期重要增量：</p>
-  <ul style="margin-top:8px;">
-    <li><strong>HBM测试设备</strong>：预计2026年Q2-Q3正式发布，国产HBM测试设备突破在即</li>
-    <li><strong>定增进展</strong>：已获深交所审核通过，尚未获证监会注册批文</li>
-    <li>一季报业绩大超预期，半导体测试设备需求持续旺盛</li>
-  </ul>
-</div>
-
-<!-- 精智达 -->
-<div class="highlight" style="margin-top:12px;">
-  <p class="stock-name">2. 精智达（688627.SH）</p>
-  <p style="margin-top:8px;"><span class="tag">📅 5月29日</span> <strong>定增方案修订</strong></p>
-  <ul style="margin-top:8px;">
-    <li>募集资金上限从29.02亿元<strong>下调至28.57亿元</strong>，减少约4532万元</li>
-    <li>调整对象：半导体存储测试设备智造项目子项目（4.4亿→3.95亿）</li>
-    <li>方案尚需上交所审核通过及证监会同意注册</li>
-  </ul>
-  <p style="margin-top:10px;"><span class="tag">📅 5月25日</span> 拟参与设立<strong>2亿元创投基金</strong>，出资5400万元（占比27%）；6月1日召开临时股东会</p>
-  <p style="margin-top:10px;"><span class="tag yellow">📊 研报</span> 华金证券首次覆盖"增持"评级，预计2026-2028年归母净利2.82/4.43/6.83亿元</p>
-</div>
-
-<!-- 宁德时代 -->
-<div class="highlight" style="margin-top:12px;border-color:#1a3a24;">
-  <p class="stock-name">3. 宁德时代（300750.SZ）<span class="tag red" style="margin-left:8px;">🔥 今日新增量</span></p>
-  <p style="margin-top:8px;"><span class="tag red">📅 5月30日</span> <strong>吴凯确认钠离子电池今年规模化量产</strong></p>
-  <ul style="margin-top:8px;">
-    <li>首席科学家吴凯在"装备强国"论坛公开确认：<strong>钠离子电池将于2026年实现规模化量产</strong></li>
-    <li>这是宁德时代首次由核心高管在公开场合明确量产时间表</li>
-    <li>与<strong>海博思创</strong>签署3年战略合作协议：合计不低于<strong>60GWh</strong>钠电池及应用项目合作</li>
-  </ul>
-  <div class="warn" style="margin-top:10px;">
-    📌 宁德钠电量产确认，对产业链上游形成催化：<strong>容百科技</strong>（钠电正极供应商）受益明显。
-  </div>
-</div>
-
-<!-- 工业富联 -->
-<div class="highlight" style="margin-top:12px;">
-  <p class="stock-name">4. 工业富联（601138.SH）</p>
-  <p style="margin-top:8px;"><span class="tag">📅 5月29日</span> <strong>2025年度利润分配方案</strong></p>
-  <ul style="margin-top:8px;">
-    <li>2025年度归母净利润<strong>352.86亿元</strong>，拟每10股派现<strong>6.5元</strong>，合计派现129.01亿元</li>
-    <li>全年现金分红总额194.51亿元，占净利润比例<strong>55.12%</strong></li>
-    <li>6月9日召开年度股东会</li>
-  </ul>
-  <p style="margin-top:10px;"><span class="tag red">📅 戴尔业绩催化（持续）</span></p>
-  <ul style="margin-top:8px;">
-    <li>戴尔Q1 AI服务器收入161亿美元（+757%），积压订单513亿美元</li>
-    <li>工业富联为核心供应商（整机柜+液冷散热+组装服务）</li>
-    <li>国投证券：AI ASIC服务器出货量同比<strong>+3.2倍</strong></li>
-  </ul>
-</div>
-
-<!-- 容百科技 -->
-<div class="highlight" style="margin-top:12px;">
-  <p class="stock-name">5. 容百科技（688005.SH）</p>
-  <p style="margin-top:8px;">📌 近期重要增量（无5月30日新公告）：</p>
-  <ul style="margin-top:8px;">
-    <li><strong>一季报</strong>：收入37.81亿元（+27.58%），归母净利0.12亿元（同比扭亏），连续两季度盈利</li>
-    <li><strong>钠电</strong>：与宁德时代战略合作，宁德承诺年采购不低于60%；预计2026年实现5万吨产能</li>
-    <li><strong>三元</strong>：中镍高电压2Q26起量；8系高镍进入主流车型供应链认证</li>
-    <li><strong>固态材料</strong>：高镍/超高镍已十吨级出货；富锂锰基获吨级以上订单</li>
-    <li><strong>LMFP</strong>：预计2026年纯用方案上车量产</li>
-    <li><strong>韩国</strong>：6万吨产线已建成，波兰2.5万吨预计2H26建成</li>
-  </ul>
-  <p style="margin-top:10px;"><span class="tag yellow">📊 研报</span> 中金：目标价上调59%至<strong>36.5元</strong>（32x 2027年P/E），维持"跑赢行业"</p>
-</div>
-
-<!-- 京东方A -->
-<div class="highlight" style="margin-top:12px;">
-  <p class="stock-name">6. 京东方A（000725.SZ）</p>
-  <p style="margin-top:8px;"><span class="tag">📅 5月20日</span> <strong>与康宁签署合作备忘录</strong>（持续发酵）</p>
-  <ul style="margin-top:8px;">
-    <li>围绕<strong>玻璃基封装载板、可折叠玻璃、钙钛矿、光互连</strong>合作，有效期三年</li>
-    <li>5月21-22日连续涨停，总市值激增329亿元</li>
-    <li>公司多次风险提示：<strong>与英伟达暂未开展业务合作</strong>；新业务2-3年内对业绩无重大影响</li>
-  </ul>
-  <p style="margin-top:10px;"><span class="tag">📅 5月26日调研</span> 更新：
-  <ul style="margin-top:8px;">
-    <li>玻璃基封装载板试验线已送样国内客户，<strong>未量产</strong></li>
-    <li>钙钛矿三大平台总投资近10亿，<strong>未量产营收</strong></li>
-    <li><strong>8.6代AMOLED预计2026年年中量产</strong></li>
-    <li>LCD价格1-4月全面上涨，5月预计持稳</li>
-  </ul>
-  <p style="margin-top:10px;"><span class="tag yellow">📊 一季报</span> 营收510.01亿元（+0.80%），归母净利17.07亿元（+5.78%），创Q1收入历史新高</p>
-</div>
-
-<!-- 芯碁微装 -->
-<div class="highlight" style="margin-top:12px;">
-  <p class="stock-name">7. 芯碁微装（688630.SH）</p>
-  <p style="margin-top:8px;"><span class="tag red">📅 5月28-29日</span> <strong>连续上涨，创历史新高</strong></p>
-  <ul style="margin-top:8px;">
-    <li>5月28日涨停+15.19%，入选龙虎榜（机构净买入4.88亿元）</li>
-    <li>5月29日继续上涨，收盘324.60元，<strong>创历史新高</strong></li>
-  </ul>
-  <p style="margin-top:10px;"><span class="tag">📅 5月25日</span> 互动平台确认：国内外头部PCB客户订单饱满，<strong>高端载板、HDI及高多层板</strong>需求强劲</p>
-  <p style="margin-top:10px;"><span class="tag yellow">📊 研报</span> 上海证券"买入"：2026Q1营收5.15亿（+112%），归母净利1.08亿（+109%）；目标价<strong>305.25元</strong>，二期工厂已投产</p>
-</div>
-
-<!-- 信达生物 -->
-<div class="highlight" style="margin-top:12px;border-color:#1a3a24;">
-  <p class="stock-name">8. 信达生物（01801.HK）<span class="tag red" style="margin-left:8px;">🔥 今日最大催化剂</span></p>
-  <p style="margin-top:8px;"><span class="tag red">📅 5月29日</span> <strong>与辉瑞签署105亿美元全球战略合作</strong></p>
-  <ul style="margin-top:8px;">
-    <li>就<strong>12个肿瘤早期及源头创新项目</strong>签署全球战略合作</li>
-    <li>合作资产：8个信达早期管线 + 4个辉瑞提议项目；覆盖ADC + 多特异性抗体</li>
-    <li><strong>首付款6.5亿美元</strong> + 里程碑最高<strong>98.5亿美元</strong>，交易总额<strong>105亿美元</strong></li>
-    <li>Co-Co模式：4个核心项目<strong>全球共同开发+中美欧共同商业化+共享利润</strong></li>
-    <li>信达保留大中华区权利；每款上市项目获双位数销售分成</li>
-  </ul>
-  <div class="warn" style="margin-top:10px;">
-    📌 继2025年10月与武田<strong>114亿美元</strong>合作后，信达<strong>第二次以Co-Co模式</strong>与国际巨头深度绑定。创新平台价值持续兑现。
-  </div>
-  <p style="margin-top:10px;"><span class="tag">📅 5月22日</span> <strong>IBI363 ASCO数据</strong>：一线NSCLC ORR达<strong>86.4%</strong>，IO耐药mOS远超标准疗法，成药概率极高</p>
-  <p style="margin-top:10px;"><span class="tag yellow">📊 研报</span> 中金：目标价<strong>118.3港币</strong>（+31.4%上行空间），2026-2027年归母净利33.7/40.8亿元</p>
-</div>
-
-<hr class="divider">
-
+<blockquote>⚠️ 本节只关注增量信息（公告、研报、调研、产业动态、催化事件），不含股价/涨跌幅等交易数据。</blockquote>
+<h3>1. 长川科技（300604.SZ）</h3>
+<p>📌 <strong>最新状态</strong>：无5月30日当日新公告，近期重要增量如下：</p>
+<ul><li><strong>HBM测试设备</strong>：预计2026年Q2-Q3正式发布，国产HBM测试设备突破在即</li><li><strong>定增进展</strong>：已获深交所审核通过，尚未获证监会注册批文</li><li><strong>一季报</strong>：2026Q1业绩大超预期（具体数据待确认），半导体测试设备需求持续旺盛</li><li><strong>关注点</strong>：HBM3E/4测试设备客户验证进展、先进封装测试设备订单节奏</li></ul>
+<hr>
+<h3>2. 精智达（688627.SH）</h3>
+<p>📅 <strong>5月29日</strong>：<strong>定增方案修订</strong></p>
+<ul><li>募集资金总额上限从原29.02亿元<strong>下调至28.57亿元</strong>，减少约4532万元</li><li>调整对象："半导体存储测试设备研发及产业化智造项目"中的产业化智造子项目，拟使用募集资金从4.4亿调整为3.9468亿元</li><li>技术研发子项目、"高端芯片测试设备及前沿技术研发中心项目"、"补充流动资金"使用计划均不变</li><li>方案尚需上交所审核通过及证监会同意注册</li></ul>
+<p>📅 <strong>5月25日</strong>：拟参与设立<strong>2亿元创投基金</strong>，公司（或全资子公司）出资5400万元（占比27%）；6月1日召开临时股东大会审议。</p>
+<p>📊 <strong>研报</strong>（华金证券）：预计2026-2028年归母净利润2.82/4.43/6.83亿元，同比+331%/+57%/+54%，首次覆盖给予"增持"评级。</p>
+<hr>
+<h3>3. 宁德时代（300750.SZ）</h3>
+<p>📅 <strong>5月30日（今日增量）</strong>：<strong>吴凯在装备强国论坛确认钠离子电池今年规模化量产</strong></p>
+<ul><li>宁德时代首席科学家吴凯今日在"装备强国"论坛公开确认：<strong>钠离子电池将于2026年实现规模化量产</strong></li><li>这是宁德时代首次由核心高管在公开场合明确钠电池量产时间表，是重要的官方确认信号</li><li>与<strong>海博思创</strong>签署3年战略合作协议：合计不低于<strong>60GWh</strong>钠电池及应用项目合作（海博思创2025年储能系统出货量已位居全球第一）</li></ul>
+<p>📊 <strong>基本面</strong>：2026Q1业绩强劲，钠离子电池量产落地将开辟第二增长曲线，与容百科技（钠电正极供应商）形成产业链协同。</p>
+<hr>
+<h3>4. 工业富联（601138.SH）</h3>
+<p>📅 <strong>5月29日</strong>：<strong>2025年度利润分配方案公告</strong></p>
+<ul><li>2025年度合并报表归母净利润<strong>352.86亿元</strong></li><li>拟每10股派发现金红利<strong>6.5元</strong>（含税），合计派现<strong>129.01亿元</strong></li><li>本年度现金分红总额194.51亿元，占净利润比例<strong>55.12%</strong></li><li>6月9日召开年度股东会，审议2026年度日常关联交易预计等9项议案</li></ul>
+<p>📅 <strong>戴尔业绩催化（持续）</strong>：</p>
+<ul><li>戴尔2027财年Q1 AI服务器收入161亿美元（同比+757%），积压订单513亿美元</li><li>工业富联为戴尔AI服务器核心供应商（整机柜供应+液冷散热系统+组装服务）</li><li>国投证券：云计算业务收入同比<strong>翻倍增长</strong>，AI GPU服务器与ASIC服务器出货量分别同比<strong>+3.8倍/+3.2倍</strong></li></ul>
+<hr>
+<h3>5. 容百科技（688005.SH）</h3>
+<p>📅 <strong>近期重要增量</strong>（无5月30日新公告）：</p>
+<ul><li><strong>一季报</strong>：2026Q1收入37.81亿元（同比+27.58%），归母净利润0.12亿元（同比扭亏为盈），连续两个季度盈利</li><li><strong>钠电</strong>：已与<strong>宁德时代</strong>签订战略合作协议，宁德承诺每年采购量不低于其总采购量的60%；预计2026年实现<strong>5万吨钠电正极产能</strong></li><li><strong>三元材料</strong>：中镍高电压正极2Q26开始陆续起量；核心8系高镍进入主流终端车型供应链认证；超高镍在低空、人形机器人领域推进顺利</li><li><strong>固态材料</strong>：固态高镍/超高镍三元已实现<strong>十吨级出货</strong>；富锂锰基已获客户<strong>吨级以上订单</strong>；硫化物电解质中试线预计2026年底投产</li><li><strong>磷酸锰铁锂</strong>：预计2026年有望实现LMFP<strong>纯用方案上车量产</strong></li><li><strong>全球化</strong>：韩国6万吨产线已全部建成；波兰2.5万吨高镍产线预计2H26建成；韩国业务股权结构调整完成后，公司预计持有<strong>24.9%股权</strong></li></ul>
+<p>📊 <strong>研报</strong>（中金公司）：下调2026年归母净利润预测22%至3.88亿元，首次引入2027年预测8.10亿元；目标价上调59%至<strong>36.5元</strong>（对应32x 2027年P/E），维持"跑赢行业"评级。</p>
+<hr>
+<h3>6. 京东方A（000725.SZ）</h3>
+<p>📅 <strong>5月20日</strong>：<strong>与康宁（Corning）签署合作备忘录</strong>（持续发酵）</p>
+<ul><li>双方围绕<strong>玻璃基封装载板、可折叠玻璃、钙钛矿玻璃基板、光互连</strong>等重点领域开展合作，有效期三年</li><li>5月21日、5月22日连续两个交易日涨停，总市值激增329亿元</li></ul>
+<p>📅 <strong>5月21日、5月24日</strong>：公司<strong>连续发布风险提示公告</strong>，明确：</p>
+<ul><li>备忘录仅为合作意向，除保密/知识产权/争议解决/责任限制条款外，其他条款<strong>不具有法律约束力</strong></li><li>玻璃基封装载板、钙钛矿、光互连业务尚在技术探讨和验证阶段，<strong>未量产，未产生量产营收</strong></li><li>预计未来<strong>2-3年内</strong>，上述业务都无法对经营业绩产生重大影响</li><li><strong>截至目前，公司与英伟达暂未开展业务合作</strong>，部分媒体推论缺乏事实依据</li><li>客户最终技术路线选择、市场前景具有重大不确定性</li></ul>
+<p>📅 <strong>5月26日调研公告</strong>：创新业务进展更新</p>
+<ul><li>玻璃基封装载板：投资9.93亿元建设试验线，目前给部分国内客户送样，<strong>未实现量产</strong></li><li>钙钛矿业务：总投资近10亿元，建设三大研发平台，<strong>未实现量产营收</strong></li><li>光互联：MicroLED芯片已送样客户，<strong>尚未形成销售收入</strong></li><li><strong>8.6代AMOLED生产线</strong>：预计<strong>2026年年中量产</strong>（2025年5月设备搬入，12月点亮）</li></ul>
+<p>📊 <strong>一季报</strong>：2026Q1营收510.01亿元（同比+0.80%），创一季度收入历史新高；归母净利润17.07亿元（同比+5.78%）</p>
+<hr>
+<h3>7. 芯碁微装（688630.SH）</h3>
+<p>📅 <strong>5月28日</strong>：<strong>涨停+15.19%</strong>，入选龙虎榜</p>
+<ul><li>上榜原因：有价格涨跌幅限制的日收盘价格涨幅达到15%的证券</li><li>北向资金席位净买入527.74万元；机构净买入4.88亿元</li></ul>
+<p>📅 <strong>5月29日</strong>：股价继续上涨，<strong>创历史新高</strong>（收盘价324.60元）</p>
+<p>📅 <strong>5月25日</strong>：公司在互动平台<strong>确认订单饱满</strong></p>
+<ul><li>近期来自国内外头部PCB客户的订单饱满，尤其在<strong>高端载板、HDI及高多层板</strong>领域需求强劲</li><li>发展势头持续向好</li></ul>
+<p>📊 <strong>研报</strong>（上海证券，买入评级）：</p>
+<ul><li>2025年营收14.08亿元（+47.61%），归母净利润2.90亿元（+80.42%）</li><li>2026Q1营收5.15亿元（+112.48%），归母净利润1.08亿元（+108.98%）</li><li>目标价<strong>305.25元</strong>（基于2026E 75倍PE），维持"增持"评级</li><li><strong>二期工厂已投产</strong>，产能瓶颈有望缓解</li></ul>
+<blockquote>⚠️ 风险提示：下游PCB客户扩产幅度低于预期、PCB LDI设备市场竞争压力加大、先进封装客户扩产节奏放缓</blockquote>
+<hr>
+<h3>8. 信达生物（01801.HK）</h3>
+<p>🔥 <strong>5月29日（今日最大催化剂）</strong>：<strong>与辉瑞签署105亿美元全球战略合作协议</strong></p>
+<ul><li>双方就<strong>12个具有突破性潜力的肿瘤早期及源头创新研发项目</strong>签署全球战略合作协议</li><li><strong>协议核心条款</strong>：</li><li>合作资产：8个信达生物早期管线 + 4个辉瑞提议的全新项目；覆盖多款具有新型差异化载荷的ADC，及具备差异化免疫调节特性和独特结构设计的多特异性抗体</li><li><strong>首付款</strong>：信达生物获得<strong>6.5亿美元</strong></li><li><strong>里程碑付款</strong>：信达有资格获得最高<strong>98.5亿美元</strong>的研发、监管与商业化里程碑付款</li><li><strong>交易总额</strong>：<strong>105亿美元</strong></li><li><strong>销售分成</strong>：每一款获批准上市的项目，信达生物将获得最高达<strong>双位数比例</strong>的销售分成</li><li><strong>Co-Co模式</strong>：4个核心项目由双方在全球范围内<strong>共同开发，共同承担开发成本，并在美国和欧洲共同商业化及共享利润</strong>；信达保留大中华区权利</li></ul>
+<ul><li>信达生物首席研发官周辉：本次合作加速将创新癌症药物在全球范围内惠及更多患者</li><li>辉瑞首席肿瘤官Jeff Legos：结合信达在新药发现及早期临床开发方面的创新实力与辉瑞全球研发与商业化综合能力</li></ul>
+<p>📅 <strong>5月22日</strong>：<strong>IBI363 ASCO数据读出</strong></p>
+<ul><li>IBI363（PD-1/IL-2双抗）在一线NSCLC中展现出优异数据，3-1.5mg/kg组ORR达<strong>86.4%</strong>，安全性良好</li><li>在IO耐药的NSCLC中，中位OS远超标准疗法，成药概率极高</li></ul>
+<p>📊 <strong>一季报</strong>：2026Q1产品收入超<strong>38亿元</strong>（同比+50%+），超市场预期</p>
+<p>📊 <strong>研报</strong>（中金公司）：维持"跑赢行业"评级，基于DCF模型目标价<strong>118.3港币</strong>，较当前股价有31.4%上行空间；2026-2027年归母净利润预测33.7/40.8亿元</p>
+<blockquote>📌 <strong>重要背景</strong>：这是信达生物继2025年10月与武田制药达成<strong>114亿美元</strong>战略合作后，<strong>第二次以Co-Co模式</strong>与国际制药巨头深度绑定，充分验证公司创新平台价值的持续兑现。</blockquote>
+<hr>
 <h2>四、知识库增量内容</h2>
-
+<blockquote>知识星球 + IMA知识库 过去24小时新增高价值内容</blockquote>
 <h3>📚 知识星球（zsxq）</h3>
-<p><span class="tag yellow">⚠️ 受限</span> 自动化场景下跳过，需浏览器/企微访问</p>
-
+<p>⚠️ <strong>受限</strong>：需浏览器/企微访问，自动化场景下跳过：</p>
+<ul><li>水木调研纪要-2.0</li><li>调研纪要更新</li><li>行业研究&amp;调研纪要</li><li>每日复盘</li><li>修道为人</li><li>守正出奇</li></ul>
 <h3>🗂️ IMA知识库</h3>
-<div class="warn">
-  ⚠️ IMA连接器未连接，以公开信息补充。请手动连接以获取完整增量。
-</div>
-
-<h3>📄 公开信息补充（今日高价值）</h3>
-<ol>
-  <li>信达生物×辉瑞105亿美元合作——创新药出海Co-Co模式深度分析</li>
-  <li>外资低配中国资产格局修正——深交所全球投资者大会纪要</li>
-  <li>宁德时代钠电今年量产确认——吴凯装备强国论坛发言</li>
-  <li>京东方A玻璃基板业务进展——5月26日调研公告解读</li>
-  <li>芯碁微装创历史新高——AI PCB设备高景气持续验证</li>
-  <li>容百科技钠电+固态材料进展——宁德合作细节跟踪</li>
-</ol>
-
-<hr class="divider">
-
+<p>⚠️ <strong>IMA知识库连接器当前未连接</strong>，以公开信息检索补充。请手动连接IMA连接器以获取完整知识库增量。</p>
+<h3>📄 公开信息补充（今日高价值内容）</h3>
+<ul><li><strong>信达生物×辉瑞105亿美元合作</strong>——创新药出海Co-Co模式深度分析（21世纪经济报道、第一财经、北京商报）</li><li><strong>外资低配中国资产格局迎结构性修正</strong>——深交所2026全球投资者大会纪要（新华财经）</li><li><strong>宁德时代钠离子电池今年量产确认</strong>——装备强国论坛吴凯发言（5月30日）</li><li><strong>京东方A玻璃基板业务进展跟踪</strong>——5月26日调研公告解读</li><li><strong>芯碁微装股价创历史新高</strong>——AI PCB设备高景气持续验证</li><li><strong>容百科技钠电+固态材料进展</strong>——与宁德时代合作细节跟踪</li></ul>
+<hr>
 <h2>五、今日核心结论与关注</h2>
-
-<div class="conclusion">
-  <h3>✅ 今日最重要的三个增量信息</h3>
-  <p style="margin-top:10px;"><span class="tag red">1</span> <strong>宁德时代钠离子电池今年量产官方确认</strong>（今日新增量🔥）</p>
-  <ul style="margin-top:6px;font-size:13px;">
-    <li>吴凯首次公开确认量产时间表，产业化落地路径清晰</li>
-    <li>与海博思创3年60GWh合作，催化产业链上游（容百科技等）</li>
-  </ul>
-  <p style="margin-top:12px;"><span class="tag red">2</span> <strong>信达生物×辉瑞105亿美元全球合作</strong>（今日最大催化剂）</p>
-  <ul style="margin-top:6px;font-size:13px;">
-    <li>首付款6.5亿美元，里程碑最高98.5亿美元，12个肿瘤早期项目</li>
-    <li>Co-Co模式：4个核心项目中美欧共同开发、共同商业化、利润共享</li>
-  </ul>
-  <p style="margin-top:12px;"><span class="tag red">3</span> <strong>外资持续回流A股，低配格局加速修正</strong></p>
-  <ul style="margin-top:6px;font-size:13px;">
-    <li>深交所全球投资者大会释放明确信号</li>
-    <li>北向资金年内净流入超2800亿，低配比例从-8.3%收窄至-1%</li>
-  </ul>
-</div>
-
+<h3>✅ 今日最重要的三个增量信息</h3>
+<p><strong><span style="color:#f85149">1</span> 信达生物×辉瑞105亿美元全球合作（今日最大催化剂）</strong></p>
+<ul><li>首付款6.5亿美元，里程碑最高98.5亿美元，12个肿瘤早期项目</li><li>Co-Co模式：4个核心项目中美欧共同开发、共同商业化、利润共享</li><li>这是国产创新药出海的里程碑式交易，验证了信达国际化BD能力的持续兑现</li></ul>
+<p><strong><span style="color:#f85149">2</span> 宁德时代钠离子电池今年量产官方确认（今日新增量）</strong></p>
+<ul><li>首席科学家吴凯今日在装备强国论坛公开确认，是首次由核心高管明确量产时间表</li><li>与海博思创3年60GWh合作，产业化落地路径清晰</li><li>对容百科技（钠电正极供应商）形成产业链协同利好</li></ul>
+<p><strong><span style="color:#f85149">3</span> 外资持续回流A股，低配格局加速修正</strong></p>
+<ul><li>深交所全球投资者大会释放明确信号：中国资产"安全溢价"凸显</li><li>北向资金年内净流入已超2800亿元，低配比例从-8.3%收窄至-1%</li><li>证监会：境外投资者持有A股流通市值超4万亿元</li></ul>
+<hr>
 <h3>📌 明日/近期关注</h3>
-<table class="focus-table">
-  <tr><td>信达生物</td><td>辉瑞合作细节披露，12个管线具体名单；IBI363一线NSCLC POC数据</td></tr>
-  <tr><td>宁德时代</td><td>钠电量产节奏，海博思创合作落地</td></tr>
-  <tr><td>芯碁微装</td><td>创新高后是否有调研纪要或订单确认；二期工厂产能爬坡</td></tr>
-  <tr><td>容百科技</td><td>钠电、固态材料进展；LMFP纯用方案上车验证</td></tr>
-  <tr><td>长川科技</td><td>HBM测试设备发布节奏（Q2-Q3），新订单或客户验证公告</td></tr>
-  <tr><td>京东方A</td><td>玻璃基板新客户送样确认；8.6代AMOLED量产准备</td></tr>
-  <tr><td>工业富联</td><td>6月9日年度股东会；AI服务器订单持续确认</td></tr>
-  <tr><td>精智达</td><td>6月1日临时股东会（创投基金）；定增方案等待证监会注册</td></tr>
-</table>
+<table><thead><tr><th>标的</th><th>关注要点</th></tr></thead><tbody><tr><td><strong>信达生物</strong></td><td>辉瑞合作细节进一步披露，关注12个管线具体名单；IBI363一线NSCLC POC数据</td></tr><tr><td><strong>宁德时代</strong></td><td>钠离子电池量产节奏，与海博思创合作具体落地；关注是否召开说明会</td></tr><tr><td><strong>芯碁微装</strong></td><td>股价创历史新高后，关注是否有调研纪要或订单进一步确认；二期工厂产能爬坡</td></tr><tr><td><strong>容百科技</strong></td><td>钠电、固态材料进展，关注与宁德时代合作落地细节；LMFP纯用方案上车验证</td></tr><tr><td><strong>长川科技</strong></td><td>HBM测试设备发布节奏（Q2-Q3），关注是否有新订单或客户验证进展公告</td></tr><tr><td><strong>京东方A</strong></td><td>玻璃基板业务进展，关注是否有新客户送样确认；8.6代AMOLED量产准备</td></tr><tr><td><strong>工业富联</strong></td><td>6月9日年度股东会；AI服务器订单持续确认</td></tr><tr><td><strong>精智达</strong></td><td>6月1日临时股东大会（创投基金议案）；定增方案等待证监会注册</td></tr></tbody></table>
+<hr>
+<p>*本报告由 <strong>Cleo 🐾</strong> 自动生成*  <br>*数据来源：NeoData Financial Search · 腾讯自选股 · 公开信息检索*  <br>*⚠️ 本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。*</p>
 
-<hr class="divider">
-
-<div class="footer">
-  <p>本报告由 <strong>Cleo 🐾</strong> 自动生成</p>
-  <p style="margin-top:4px;">数据来源：NeoData Financial Search · 腾讯自选股 · 公开信息检索</p>
-  <p style="margin-top:4px;font-size:10px;color:#6e7681;">⚠️ 本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

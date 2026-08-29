@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>国家队增减持动向日报 · 2026-07-27</title>
+  <title>每日国家队增减持动向 · 2026-07-27</title>
   <style>
 /* ============================================
    Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
    ============================================ */
 
 :root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --border: #30363d;
-  --text: #e6edf3;
-  --text2: #8b949e;
-  --red: #f85149;
-  --green: #3fb950;
-  --orange: #d29922;
-  --blue: #58a6ff;
-  --purple: #bc8cff;
-  --yellow: #e3b341;
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,6 +40,21 @@ body {
   font-size: 14px;
 }
 
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
 .report-header {
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -53,6 +72,7 @@ body {
   color: var(--text2);
 }
 
+/* ── Section headers ── */
 h2 {
   font-size: 1.15em;
   margin: 22px 0 10px;
@@ -67,26 +87,29 @@ h3 {
   color: var(--text);
 }
 
+/* ── Cards ── */
 .card {
-  background: var(--card);
+  background: var(--card-alt);
   border-radius: 8px;
   padding: 12px 14px;
   margin: 10px 0;
   border: 1px solid var(--border);
 }
 
+/* ── Tables ── */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 8px 0;
   font-size: 0.85em;
+  background: var(--card-alt);
 }
 
 th {
   background: var(--card);
   padding: 6px 8px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   color: var(--text2);
   font-weight: 600;
 }
@@ -98,9 +121,10 @@ td {
 }
 
 tr:hover {
-  background: rgba(88, 166, 255, 0.05);
+  background: rgba(58, 107, 150, 0.05);
 }
 
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
@@ -109,24 +133,65 @@ tr:hover {
   margin-right: 4px;
 }
 
-.tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-.tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-.tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-.tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-.tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
-.tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
 
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
 .highlight {
   padding: 10px 14px;
   border-radius: 6px;
   margin: 8px 0;
+  background: var(--card-alt);
 }
 
-.highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-.highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-.highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
-.highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
 
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
 ul.bullet {
   margin: 6px 0 6px 18px;
   font-size: 0.92em;
@@ -137,6 +202,44 @@ ul.bullet li {
   line-height: 1.6;
 }
 
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 4px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
 .red { color: var(--red); }
 .green { color: var(--green); }
 .orange { color: var(--orange); }
@@ -144,6 +247,7 @@ ul.bullet li {
 .purple { color: var(--purple); }
 .yellow { color: var(--yellow); }
 
+/* ── Source links ── */
 .source-link {
   display: block;
   font-size: 0.78em;
@@ -153,7 +257,7 @@ ul.bullet li {
 }
 
 .source-link a {
-  color: var(--blue);
+  color: #2d5f8a;
   text-decoration: none;
 }
 
@@ -161,12 +265,14 @@ ul.bullet li {
   text-decoration: underline;
 }
 
+/* ── Divider ── */
 .divider {
   height: 1px;
   background: var(--border);
   margin: 16px 0;
 }
 
+/* ── Footer ── */
 .report-footer {
   text-align: center;
   color: var(--text2);
@@ -176,230 +282,83 @@ ul.bullet li {
   border-top: 1px solid var(--border);
 }
 
+/* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 10px; }
   h1 { font-size: 1.2em; }
   h2 { font-size: 1.05em; }
   table { font-size: 0.8em; }
 }
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>国家队增减持动向日报</h1>
-  <div class="meta">2026年7月27日 · 星期一 · My Research Central · via WB</div>
+  <h1>每日国家队增减持动向 · 2026-07-27</h1>
+  <div class="meta"><strong>市场概览</strong> | 上证指数 3,858.25 <span class="red">+1.15%</span> · 深成指 14,148.73 <span class="red">+2.72%</span> · 沪深300 4,702.43 <span class="red">+1.15%</span> · 科创50 1,807.95 <span class="red">+1.16%</span> · 创业板指 3,590.79 <span class="red">+3.16%</span> | 两市成交约 ¥2.08万亿</div>
 </div>
 
-<div class="card">
-  <strong>市场概览</strong><br>
-  上证指数 3,858.25 <span class="red">+1.15%</span> · 深成指 14,148.73 <span class="red">+2.72%</span> · 沪深300 4,702.43 <span class="red">+1.15%</span><br>
-  科创50 1,807.95 <span class="red">+1.16%</span> · 创业板指 3,590.79 <span class="red">+3.16%</span><br>
-  两市成交约 ¥2.08万亿
-  <span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html" target="_blank">来源：NeoData Financial Search</a></span>
-</div>
-
-<div class="highlight highlight-red">
-  <strong>🔴 核心信号：</strong>十大国家队两周扫货约1,000亿ETF（高盛数据），维稳资金从"汇金单核"升级为"多层级协同"，资金炮火覆盖沪深300→科创50+创业板全品类。今日市场全面反弹，创业板指+3.16%领涨。
-</div>
-
-<!-- ========== 一、ETF资金流 ========== -->
+<hr>
 <h2>一、ETF资金流数据</h2>
-
-<div class="card">
-  <strong>📊 7月累计净流入创纪录</strong>
-  <p style="margin-top:6px;">截至7月24日，全市场股票型ETF 7月以来累计净流入约 <strong style="color:var(--red)">3,794亿元</strong>，日均净流入超210亿元。7月17日单日净流入771亿元位列历史第三。整体呈现"越跌越买"的逆向投资特征。</p>
-  <span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260727161359a6e7a2e6" target="_blank">来源：Wind/金融投资报 7/27</a></span>
-</div>
-
-<h3>宽基ETF — 绝对吸金主力</h3>
-<p>7月以来宽基ETF累计净流入 <strong style="color:var(--red)">2,173亿元</strong>，占全部股票ETF净流入六成。</p>
-
-<table>
-  <thead>
-    <tr><th>指数</th><th>7月净流入（亿元）</th><th>代表产品最新规模</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>科创50</td><td class="red">500.7</td><td>华夏科创50ETF 870.91亿</td></tr>
-    <tr><td>沪深300</td><td class="red">378.4</td><td>华泰柏瑞沪深300ETF 1,149.23亿（唯一千亿宽基）</td></tr>
-    <tr><td>中证A500</td><td class="red">309.8</td><td>—</td></tr>
-    <tr><td>中证1000</td><td class="red">306.0</td><td>—</td></tr>
-    <tr><td>创业板指</td><td class="red">272.4</td><td>易方达创业板ETF ~598亿</td></tr>
-  </tbody>
-</table>
-<span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260724170858a48d304c" target="_blank">来源：中新经纬/Wind 7/24</a></span>
-
-<h3>近5日（7/20-7/24）资金动向</h3>
-<ul class="bullet">
-  <li>股票型ETF合计净流入 <strong class="red">551.79亿元</strong></li>
-  <li>科创50ETF华夏净流入 <strong class="red">145.67亿</strong> 居首</li>
-  <li>沪深300ETF华泰柏瑞净流入 <strong class="red">123.07亿</strong></li>
-  <li>创业板ETF易方达净流入 <strong class="red">58.39亿</strong></li>
-  <li>7/23单日净流入178.09亿，扭转前两日短暂流出</li>
-</ul>
-<span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260727074005b6735422" target="_blank">来源：上海证券报/Wind 7/27</a></span>
-
-<h3>主题ETF — 半导体大进大出</h3>
-<p>7月以来主题类ETF累计净流入1,199.25亿元。半导体主题ETF在6/22至7/15曾净流入超1,200亿，近期转为大进大出：7/20-7/24合计净流入仅10.71亿，期间7/21单日净流出95.31亿后又快速回流。</p>
-<span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260727074005b6735422" target="_blank">来源：Wind数据 7/27</a></span>
-
-<div class="highlight highlight-blue">
-  <strong>💡 关键洞察：</strong>本轮ETF资金流入呈现"宽基为盾、科技为矛"的双轮驱动格局，7/13-7/24宽基ETF合计流入1,653.28亿（券商研报口径），国资背景资金和险资长线配置为主要增量来源。
-  <span class="source-link">🔗 <a href="http://field.10jqka.com.cn/20260727/c678449952.shtml" target="_blank">来源：同花顺券商观点 7/27</a></span>
-</div>
-
-<!-- ========== 二、大股东持股变动 ========== -->
+<p>📊 <strong>7月累计净流入创纪录</strong></p>
+<p>截至7月24日，全市场股票型ETF 7月以来累计净流入约 <strong>3,794亿元</strong>，日均净流入超210亿元，多日单日流入规模创历史水平。7月17日单日净流入771亿元位列A股股票ETF单日净流入历史第三。整体呈现"越跌越买"的逆向投资特征。</p>
+<p>🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260727161359a6e7a2e6" target="_blank">Wind数据：金融投资报 7/27</a></p>
+<p>📊 <strong>宽基ETF — 绝对吸金主力</strong></p>
+<p>7月以来宽基ETF累计净流入 <strong>2,173亿元</strong>，占全部股票ETF净流入六成。TOP 5指数ETF净流入：</p>
+<table><thead><tr><th>指数</th><th>7月净流入（亿元）</th><th>代表产品最新规模</th></tr></thead><tbody><tr><td>科创50</td><td>500.7</td><td>华夏科创50ETF 870.91亿</td></tr><tr><td>沪深300</td><td>378.4</td><td>华泰柏瑞沪深300ETF 1,149.23亿（唯一千亿宽基）</td></tr><tr><td>中证A500</td><td>309.8</td><td>—</td></tr><tr><td>中证1000</td><td>306</td><td>—</td></tr><tr><td>创业板指</td><td>272.4</td><td>易方达创业板ETF ~598亿</td></tr></tbody></table>
+<p>🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260724170858a48d304c" target="_blank">中新经纬 7/24</a></p>
+<p>📊 <strong>近5日（7/20-7/24）资金动向</strong></p>
+<ul><li>股票型ETF合计净流入 <strong>551.79亿元</strong></li><li>科创50ETF华夏净流入145.67亿居首</li><li>沪深300ETF华泰柏瑞净流入123.07亿</li><li>创业板ETF易方达净流入58.39亿</li><li>7/23单日净流入178.09亿，扭转前两日短暂流出</li></ul>
+<p>🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260727074005b6735422" target="_blank">上海证券报 7/27</a></p>
+<p>📊 <strong>主题ETF — 半导体大进大出</strong></p>
+<p>7月以来主题类ETF累计净流入1,199.25亿元。半导体主题ETF 6/22至7/15曾净流入超1,200亿，近期转为大进大出：7/20-7/24合计净流入仅10.71亿，7/21单日净流出95.31亿后又快速回流。</p>
+<p>🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260727074005b6735422" target="_blank">Wind数据 7/27</a></p>
+<p>💡 <strong>关键洞察：</strong> 本轮ETF资金流入呈现"宽基为盾、科技为矛"的双轮驱动格局，7/13-7/24宽基ETF合计流入1,653.28亿（券商研报口径），国资背景资金和险资长线配置为主要增量来源。</p>
+<p>🔗 <a href="http://field.10jqka.com.cn/20260727/c678449952.shtml" target="_blank">同花顺券商观点 7/27</a></p>
+<hr>
 <h2>二、大股东持股变动</h2>
-
-<div class="highlight highlight-red">
-  <strong>🔴 中国国新、中国诚通 — 超600亿增持落地</strong>
-  <p>7月19日晚，两大国有资本运营公司同步公告大额增持：</p>
-  <ul class="bullet">
-    <li><strong>中国国新</strong>：旗下国新投资已使用股票回购增持专项再贷款及配套资金 <strong style="color:var(--red)">超500亿元</strong>，明确后续继续增持央企股票</li>
-    <li><strong>中国诚通</strong>：及所属诚通资本、诚旸投资累计增持A股资产 <strong style="color:var(--red)">近百亿元</strong>，方向为国资央企+科技企业股票及ETF，后续继续加码</li>
-  </ul>
-  <span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260721080156a6ddb1fe" target="_blank">来源：央视财经 7/20</a> · <a href="https://www.licai.com/licai/post/420820" target="_blank">格上基金研究周刊 7/27</a></span>
-</div>
-
-<div class="highlight highlight-red">
-  <strong>🔴 十大国家队两周扫货1000亿（高盛数据）</strong>
-  <p>据高盛最新数据，中央汇金、中证金、全国社保基金、中国诚通、中国国新等"十大国家队"在过去两周内通过ETF狂吸约<span style="color:var(--red)">1,000亿</span>人民币净流入。关键变化：资金炮火从过去只盯沪深300大盘蓝筹，升级为<span style="color:var(--orange)">同时覆盖创业板和科创板中小盘股</span>。</p>
-  <span class="source-link">🔗 <a href="https://www.toutiao.com/w/1871827452114956" target="_blank">来源：今日头条/高盛 7/27</a></span>
-</div>
-
-<h3>社保基金二季度调仓（截至6/30）</h3>
-<table>
-  <thead>
-    <tr><th>股票</th><th>变动</th><th>详情</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>柳工</td>
-      <td><span class="tag tag-green">107组合新进</span></td>
-      <td>新晋第六大股东，持股1,157.62万股（0.57%）</td>
-    </tr>
-    <tr>
-      <td>柳工</td>
-      <td><span class="tag tag-red">413组合减持</span></td>
-      <td>减持615.24万股至903.88万股</td>
-    </tr>
-    <tr>
-      <td>诺思格</td>
-      <td><span class="tag tag-green">413组合增持</span></td>
-      <td>增持71.37万股至469.88万股（4.87%），市值约2.16亿</td>
-    </tr>
-    <tr>
-      <td>萤石网络</td>
-      <td><span class="tag tag-blue">118+503组合持有</span></td>
-      <td>合计958.70万股（1.22%），17022组合退出</td>
-    </tr>
-    <tr>
-      <td>众鑫股份</td>
-      <td><span class="tag tag-green">三零零五组合新进</span></td>
-      <td>新进88.23万股（2.00%）</td>
-    </tr>
-  </tbody>
-</table>
-<span class="source-link">🔗 <a href="https://www.stcn.com/article/detail/4041988.html" target="_blank">来源：证券时报 7/27</a> · <a href="https://www.stcn.com/article/detail/4041987.html" target="_blank">证券时报 7/27</a></span>
-
-<div class="card">
-  <strong>🔵 外资交易台观察：维稳格局升级</strong>
-  <p style="margin-top:6px;">国家队托市工具已从2008年直接买入银行股→2023年以来广泛买入宽基指数ETF。7/19央企大规模增持标志着"汇金单核"→"多层级协同"格局的形成。周一和周二有资金直接流入科创50与创业板ETF。</p>
-  <span class="source-link">🔗 <a href="https://mp.weixin.qq.com/s/XEEcrvuP96L3IEo_HifttA" target="_blank">来源：水木纪要 7/24</a></span>
-</div>
-
-<div class="card">
-  <strong>🔵 五大险资集体发声 — 耐心资本加速入市</strong>
-  <p style="margin-top:6px;">7/20晚间，五大险企同步公告坚定看好资本市场长期配置价值：</p>
-  <ul class="bullet">
-    <li><strong>国寿资产</strong>：单日净买入A股及场内外基金权益类资产超100亿</li>
-    <li>后续重点投向：科技成长、新质生产力、高股息</li>
-  </ul>
-  <span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260721200749a488312f" target="_blank">来源：上证报 7/21</a></span>
-</div>
-
-<!-- ========== 三、知名交易 ========== -->
+<p>🔴 <strong>中国国新、中国诚通 — 超600亿增持落地</strong></p>
+<p>7月19日晚，两大国有资本运营公司同步公告大额增持：</p>
+<ul><li><strong>中国国新</strong>：旗下国新投资已使用股票回购增持专项再贷款及配套资金 <strong>超500亿元</strong> 维护市场稳定，明确后续继续增持央企股票</li><li><strong>中国诚通</strong>：及所属诚通资本、诚旸投资累计增持A股资产 <strong>近百亿元</strong>，方向为国资央企+科技企业股票及ETF，后续继续使用自有资金+再贷款加码</li></ul>
+<p>🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260721080156a6ddb1fe" target="_blank">央视财经 7/20</a> · <a href="https://www.licai.com/licai/post/420820" target="_blank">格上基金研究周刊 7/27</a></p>
+<p>🔴 <strong>十大国家队两周扫货1000亿（高盛数据）</strong></p>
+<p>据高盛最新数据，中央汇金、中证金、全国社保基金、中国诚通、中国国新等"十大国家队"在过去两周内通过ETF狂吸约1,000亿人民币净流入。关键变化：资金炮火从过去只盯沪深300大盘蓝筹，升级为<strong>同时覆盖创业板和科创板中小盘股</strong>。</p>
+<p>🔗 <a href="https://www.toutiao.com/w/1871827452114956" target="_blank">今日头条 7/27</a></p>
+<p>🔵 <strong>社保基金二季度调仓（截至6/30）</strong></p>
+<table><thead><tr><th>股票</th><th>变动</th><th>详情</th></tr></thead><tbody><tr><td>柳工</td><td>107组合新进</td><td>新晋第六大股东，持股1,157.62万股（0.57%）</td></tr><tr><td>柳工</td><td>413组合减持</td><td>减持615.24万股至903.88万股</td></tr><tr><td>诺思格</td><td>413组合增持</td><td>增持71.37万股至469.88万股（4.87%），市值约2.16亿</td></tr><tr><td>萤石网络</td><td>118+503组合持有</td><td>合计958.70万股（1.22%），17022组合退出</td></tr><tr><td>众鑫股份</td><td>划转三零零五组合新进</td><td>新进88.23万股（2.00%）</td></tr></tbody></table>
+<p>🔗 <a href="https://www.stcn.com/article/detail/4041988.html" target="_blank">证券时报 7/23</a> · <a href="https://www.stcn.com/article/detail/4041987.html" target="_blank">证券时报 7/27</a></p>
+<p>🔵 <strong>外资交易台观察：维稳格局升级</strong></p>
+<p>据外资交易台分析，国家队托市工具已从2008年直接买入银行股、2015/2018年流动性支持，演变为2023年以来更广泛地买入宽基指数ETF。7/19央企大规模增持标志着"汇金单核"→"多层级协同"格局的形成。周一和周二有资金直接流入科创50与创业板ETF。</p>
+<p>🔗 <a href="https://mp.weixin.qq.com/s/XEEcrvuP96L3IEo_HifttA" target="_blank">水木纪要 7/24</a></p>
+<p>🔵 <strong>五大险资集体发声 — 耐心资本加速入市</strong></p>
+<p>7/20晚间，中国人保、中国人寿、中国平安、中国太保、新华保险五大险企同步公告坚定看好资本市场长期配置价值：</p>
+<ul><li><strong>国寿资产</strong>：单日净买入A股及场内外基金权益类资产超100亿</li><li>后续重点投向：科技成长、新质生产力、高股息</li></ul>
+<p>🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260721200749a488312f" target="_blank">上证报 7/21</a></p>
+<hr>
 <h2>三、知名交易</h2>
-
-<div class="highlight highlight-orange">
-  <strong>📊 7/20当日 — 单日最大规模增持回购潮</strong>
-  <p>上交所新增回购计划16家（合计上限45亿）+ 增持计划9家（合计上限68.75亿），另有30家实施回购增持并发布进展。</p>
-  <span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260721080156a6ddb1fe" target="_blank">来源：央视新闻 7/20</a></span>
-</div>
-
-<h3>近期重点增持/回购案例</h3>
-<table>
-  <thead>
-    <tr><th>公司</th><th>类型</th><th>规模</th><th>要点</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>三一重工</td><td>回购</td><td class="red">4-8亿</td><td>董事长提议，自有或自筹资金</td></tr>
-    <tr><td>三峡能源</td><td>增持</td><td class="red">15-30亿</td><td>控股股东三峡集团，12个月内</td></tr>
-    <tr><td>中国建筑</td><td>增持</td><td class="red">5-10亿</td><td>控股股东中建集团</td></tr>
-    <tr><td>华友钴业</td><td>回购</td><td class="red">6-10亿</td><td>维护公司价值及股东权益</td></tr>
-    <tr><td>美的集团</td><td>回购进展</td><td class="red">已回购67.16亿</td><td>8,433.94万股（1.11%），用途变更为注销</td></tr>
-    <tr><td>大秦铁路</td><td>回购</td><td class="red">4-5亿</td><td>董事长提议，用于减资</td></tr>
-    <tr><td>佰维存储</td><td>回购</td><td class="red">2-2.5亿</td><td>董事长提议注销，价格上限558.44元/股</td></tr>
-    <tr><td>璞泰来</td><td>回购</td><td class="red">2-3亿</td><td>股权激励</td></tr>
-    <tr><td>晨光股份</td><td>回购进展</td><td class="red">已回购2.88亿</td><td>累计1,330万股</td></tr>
-    <tr><td>迅游科技</td><td>增持</td><td class="red">4,000-8,000万</td><td>股东海知天+海贵天，6个月内</td></tr>
-    <tr><td>安联锐视</td><td>不减持</td><td>1年</td><td>控股股东+实控人+高管</td></tr>
-    <tr><td>德明利</td><td>不减持</td><td>12个月</td><td>控股股东/董事长承诺</td></tr>
-  </tbody>
-</table>
-<span class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260722215442954d074c" target="_blank">来源：上证报 7/22</a> · <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260720225639989a89d4" target="_blank">证券时报 7/20</a> · <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260722204857a6e08f5e" target="_blank">基金报 7/22</a></span>
-
-<div class="card">
-  <strong>🟠 北交所增持回购升温（新现象）</strong>
-  <p style="margin-top:6px;">截至7/24晚，7月已有十余家北交所公司披露股份回购或重要股东增持计划，资金来源从自有资金拓宽至银行专项贷款。</p>
-  <span class="source-link">🔗 <a href="https://www.lanjinger.com/t/2437303" target="_blank">来源：蓝鲸财经 7/27</a></span>
-</div>
-
-<h3>⚠️ 近期主要减持</h3>
-<table>
-  <thead>
-    <tr><th>公司</th><th>减持方</th><th>规模</th><th>状态</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>腾龙股份</td><td>控股股东腾龙科技</td><td>减持2.19%（1.43亿）</td><td>提前结束，未完成原3%计划</td></tr>
-    <tr><td>港迪技术</td><td>松禾成长+嘉兴力鼎</td><td>减持4.99%（277.84万股/1.34亿）</td><td>已完成</td></tr>
-    <tr><td>财达证券</td><td>河北国控运营</td><td>拟减持不超2%（6,490万股）</td><td>计划中（8/19起）</td></tr>
-  </tbody>
-</table>
-<span class="source-link">🔗 <a href="https://www.yicai.com/news/103293777.html" target="_blank">来源：第一财经 7/27</a> · <a href="https://finance.sina.com.cn/stock/aigc/zjchg/2026-07-27/doc-inikfxaw8413791.shtml" target="_blank">新浪财经 7/27</a></span>
-
-<div class="highlight highlight-blue">
-  <strong>💡 关键洞察：</strong>增持回购力度远超减持。7月以来超500家公司披露回购增持公告。7/23证监会座谈会明确"推动中长期资金稳步提升入市规模和比例"，政策支持力度持续加码。
-</div>
-
-<!-- ========== 四、汇总统计 ========== -->
+<p>📊 <strong>7/20当日 — 单日最大规模增持回购潮</strong></p>
+<p>7月20日，上交所新增回购计划16家（合计上限45亿）+ 增持计划9家（合计上限68.75亿），另有30家实施回购增持并发布进展公告。</p>
+<p>🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260721080156a6ddb1fe" target="_blank">央视新闻 7/20</a></p>
+<p>✅ <strong>近期重点增持/回购案例</strong></p>
+<table><thead><tr><th>公司</th><th>类型</th><th>规模</th><th>要点</th></tr></thead><tbody><tr><td>三一重工</td><td>回购</td><td>4-8亿</td><td>董事长提议，自有或自筹资金</td></tr><tr><td>三峡能源</td><td>增持</td><td>15-30亿</td><td>控股股东三峡集团，12个月内</td></tr><tr><td>中国建筑</td><td>增持</td><td>5-10亿</td><td>控股股东中建集团</td></tr><tr><td>华友钴业</td><td>回购</td><td>6-10亿</td><td>维护公司价值及股东权益</td></tr><tr><td>美的集团</td><td>回购进展</td><td>已回购67.16亿</td><td>8433.94万股（1.11%），用途变更为注销</td></tr><tr><td>大秦铁路</td><td>回购</td><td>4-5亿</td><td>董事长提议，用于减资</td></tr><tr><td>佰维存储</td><td>回购</td><td>2-2.5亿</td><td>董事长提议注销，价格上限558.44元/股</td></tr><tr><td>璞泰来</td><td>回购</td><td>2-3亿</td><td>股权激励</td></tr><tr><td>恒力石化</td><td>回购进展</td><td>已回购1.71亿</td><td>第五期回购快速执行</td></tr><tr><td>晨光股份</td><td>回购进展</td><td>已回购2.88亿</td><td>累计1,330万股</td></tr><tr><td>迅游科技</td><td>增持</td><td>4,000-8,000万</td><td>股东海知天+海贵天，6个月内</td></tr><tr><td>三花智控</td><td>回购</td><td>新方案</td><td>7/27公告，回购+不减持承诺</td></tr><tr><td>安联锐视</td><td>不减持承诺</td><td>1年</td><td>控股股东+实控人+高管</td></tr><tr><td>德明利</td><td>不减持承诺</td><td>12个月</td><td>控股股东/董事长</td></tr><tr><td>富淼科技</td><td>增持完成</td><td>5,394万</td><td>董事长大宗交易增持，持股升至29.56%</td></tr></tbody></table>
+<p>🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260722215442954d074c" target="_blank">上证报 7/22</a> · <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260720225639989a89d4" target="_blank">证券时报 7/20</a> · <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260722204857a6e08f5e" target="_blank">基金报 7/22</a></p>
+<p>✅ <strong>北交所增持回购升温（新现象）</strong></p>
+<p>截至7/24晚，7月已有十余家北交所公司披露股份回购或重要股东增持计划，资金来源从自有资金拓宽至银行专项贷款。</p>
+<p>🔗 <a href="https://www.lanjinger.com/t/2437303" target="_blank">蓝鲸财经 7/27</a></p>
+<p>⚠️ <strong>近期主要减持</strong></p>
+<table><thead><tr><th>公司</th><th>减持方</th><th>规模</th><th>状态</th></tr></thead><tbody><tr><td>腾龙股份</td><td>控股股东腾龙科技</td><td>减持2.19%（1.43亿）</td><td>提前结束，未完成原3%计划</td></tr><tr><td>港迪技术</td><td>松禾成长+嘉兴力鼎</td><td>减持4.99%（277.84万股/1.34亿）</td><td>已完成</td></tr><tr><td>财达证券</td><td>河北国控运营</td><td>拟减持不超2%（6,490万股）</td><td>计划中（8/19起）</td></tr></tbody></table>
+<p>🔗 <a href="https://www.yicai.com/news/103293777.html" target="_blank">第一财经 7/27</a> · <a href="https://finance.sina.com.cn/stock/aigc/zjchg/2026-07-27/doc-inikfxaw8413791.shtml" target="_blank">新浪财经 7/27</a></p>
+<p>💡 <strong>关键洞察：</strong> 增持回购力度远超减持。7月以来超500家公司披露回购增持公告。7/23证监会座谈会明确"推动中长期资金稳步提升入市规模和比例"，政策支持力度持续加码。</p>
+<hr>
 <h2>四、汇总统计</h2>
-
-<table>
-  <thead>
-    <tr><th>指标</th><th>数据</th><th>时段</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>股票型ETF净流入</td><td class="red">~3,794亿</td><td>7/1-7/24</td></tr>
-    <tr><td>宽基ETF净流入</td><td class="red">~2,173亿</td><td>7/1-7/24</td></tr>
-    <tr><td>国家队直接增持（国新+诚通）</td><td class="red">超600亿</td><td>7/19公告</td></tr>
-    <tr><td>十大国家队ETF扫货（高盛）</td><td class="red">~1,000亿</td><td>近两周</td></tr>
-    <tr><td>科创50ETF 7月净流入</td><td class="red">500.7亿</td><td>7/1-7/24</td></tr>
-    <tr><td>险资表态入市（国寿）</td><td class="red">单日超100亿</td><td>7/20</td></tr>
-    <tr><td>上市公司回购增持公告</td><td>超500家</td><td>7月以来</td></tr>
-    <tr><td>私募自购</td><td>24家/13.93亿</td><td>7月以来</td></tr>
-    <tr><td>北交所回购增持</td><td>十余家</td><td>7月以来</td></tr>
-  </tbody>
-</table>
-
-<div class="divider"></div>
-
-<div class="highlight highlight-blue">
-  <strong>💡 总体判断：</strong>本轮国家队入场呈现三大升级——①<strong>工具升级</strong>（直接买股→宽基ETF为主+科技ETF为辅）；②<strong>主体升级</strong>（汇金单核→国新+诚通+社保+险资多层级协同）；③<strong>范围升级</strong>（沪深300→科创50+创业板全覆盖）。资金面的"政策底"信号强烈，今日（7/27）市场全面反弹，创业板指+3.16%领涨，科技成长方向获资金认可。
-</div>
+<table><thead><tr><th>指标</th><th>数据</th><th>时段</th></tr></thead><tbody><tr><td>股票型ETF净流入</td><td>~3,794亿</td><td>7/1-7/24</td></tr><tr><td>宽基ETF净流入</td><td>~2,173亿</td><td>7/1-7/24</td></tr><tr><td>国家队直接增持（国新+诚通）</td><td>超600亿</td><td>7/19公告</td></tr><tr><td>十大国家队ETF扫货（高盛）</td><td>~1,000亿</td><td>近两周</td></tr><tr><td>科创50ETF 7月净流入</td><td>500.7亿</td><td>7/1-7/24</td></tr><tr><td>险资表态入市</td><td>国寿单日超100亿</td><td>7/20</td></tr><tr><td>上市公司回购增持公告</td><td>超500家</td><td>7月以来</td></tr><tr><td>私募自购</td><td>24家/13.93亿</td><td>7月以来</td></tr><tr><td>北交所回购增持</td><td>十余家</td><td>7月以来</td></tr></tbody></table>
+<p>💡 <strong>总体判断：</strong> 本轮国家队入场呈现三大升级——①工具升级（从直接买股→宽基ETF为主+科技ETF为辅）；②主体升级（汇金单核→国新+诚通+社保+险资多层级协同）；③范围升级（沪深300→科创50+创业板全覆盖）。资金面的"政策底"信号强烈，今日（7/27）市场全面反弹，创业板指+3.16%领涨，科技成长方向获资金认可。</p>
+<hr>
+<p><div class="report-footer"><br>数据来源：Wind万得 · 东方财富妙想 · NeoData Financial Search · 证券时报 · 上海证券报 · 第一财经 · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind万得 · 东方财富妙想 · NeoData Financial Search · 证券时报 · 上海证券报 · 第一财经 · 高盛 · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>
