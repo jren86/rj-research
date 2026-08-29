@@ -1,422 +1,503 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A股港股市场全景 · 2026-06-15</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif;background:#faf9f7;color:#2c2a28;line-height:1.6;font-size:14px}
-.container{max-width:960px;margin:0 auto;padding:16px}
-h1{font-size:22px;color:#f0f6fc;text-align:center;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid #f4f2ef}
-.subtitle{text-align:center;color:#6b6760;font-size:13px;margin-bottom:20px}
-.up{color:#b8544a}.down{color:#4a8a5c}.flat{color:#6b6760}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>市场全景 · 2026-06-15</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
 
-/* Top metrics grid */
-.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:12px 0 20px}
-.metric-card{background:#f4f2ef;border-radius:8px;padding:10px 12px;text-align:center;cursor:pointer;transition:all .2s;border:1px solid transparent}
-.metric-card:hover{border-color:#cfc9c1;transform:translateY(-1px)}
-.metric-card.active{border-color:#3a6b96;box-shadow:0 0 12px rgba(88,166,255,.15)}
-.metric-label{font-size:11px;color:#6b6760;margin-bottom:2px}
-.metric-value{font-size:20px;font-weight:700}
-.metric-sub{font-size:10px;color:#6b6760;margin-top:1px}
-
-/* Section headers */
-.section{margin:20px 0 12px}
-.section h2{font-size:15px;color:#3a6b96;margin-bottom:10px;padding-left:8px;border-left:3px solid #3a6b96}
-
-/* Sector heat map */
-.heatmap{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;margin:8px 0 16px}
-.heat-cell{border-radius:6px;padding:8px 6px;text-align:center;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
-.heat-cell:hover{transform:scale(1.05);z-index:1}
-.heat-name{font-size:12px;font-weight:500;color:#f0f6fc}
-.heat-val{font-size:16px;font-weight:700;margin-top:2px}
-
-/* Sector tabs */
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
-.tab{padding:6px 14px;border-radius:16px;font-size:12px;cursor:pointer;background:#f4f2ef;color:#6b6760;border:1px solid #f4f2ef;transition:all .2s;white-space:nowrap}
-.tab:hover{border-color:#cfc9c1;color:#2c2a28}
-.tab.active{background:#1a3a5c;color:#3a6b96;border-color:#3a6b96}
-.tab.up-tab{border-color:#3d1f1f}.tab.down-tab{border-color:#1f3d1f}
-
-/* Stock ranking tables */
-.rank-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.rank-panel{background:#f4f2ef;border-radius:8px;overflow:hidden}
-.rank-title{padding:8px 12px;font-size:12px;font-weight:600;border-bottom:1px solid #f4f2ef}
-.rank-title.gainers{color:#b8544a;background:linear-gradient(90deg,#2d1215,transparent)}
-.rank-title.losers{color:#4a8a5c;background:linear-gradient(90deg,#122117,transparent)}
-.rank-table{width:100%;border-collapse:collapse;font-size:12px}
-.rank-table th{padding:6px 10px;text-align:left;color:#9a958c;font-weight:500;border-bottom:1px solid #f4f2ef;font-size:11px}
-.rank-table td{padding:5px 10px;border-bottom:1px solid #faf9f7}
-.rank-table tr:hover{background:#1a1e24}
-.rank-num{color:#9a958c;width:24px;text-align:center;font-size:11px}
-.rank-code{color:#6b6760;font-size:11px}
-
-/* Bar visualization */
-.bar-row{display:flex;align-items:center;margin:3px 0;font-size:12px}
-.bar-label{width:70px;text-align:right;padding-right:8px;color:#6b6760;flex-shrink:0;font-size:11px}
-.bar-track{flex:1;height:16px;background:#f4f2ef;border-radius:3px;overflow:hidden;position:relative}
-.bar-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:6px;font-size:10px;color:#fff;font-weight:500;min-width:40px;transition:width .6s ease}
-.bar-fill.up-bar{background:linear-gradient(90deg,#b33a3a,#b8544a)}
-.bar-fill.down-bar{background:linear-gradient(90deg,#2ea043,#4a8a5c)}
-.bar-fill.neutral-bar{background:#9a958c}
-
-/* Market sentiment */
-.sentiment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:8px 0}
-.sent-card{background:#f4f2ef;border-radius:8px;padding:10px;text-align:center}
-.sent-label{font-size:11px;color:#6b6760}
-.sent-val{font-size:22px;font-weight:700;margin-top:2px}
-
-/* AH compare */
-.ah-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
-.ah-card{background:#f4f2ef;border-radius:8px;padding:12px}
-.ah-title{font-size:12px;color:#6b6760;margin-bottom:6px}
-.ah-row{display:flex;justify-content:space-between;padding:3px 0;font-size:13px}
-
-/* Insight box */
-.insight{background:#1a1e24;border-radius:8px;padding:12px 16px;margin:12px 0;font-size:12px;color:#6b6760;border-left:3px solid #a8813c}
-.insight strong{color:#f0f6fc}
-
-/* Risk box */
-.risk-box{background:#f4f2ef;border-radius:6px;padding:10px 14px;margin:6px 0;border-left:3px solid #b8544a}
-.risk-box h4{font-size:12px;color:#b8544a;margin-bottom:2px}
-.risk-box p{font-size:12px;color:#6b6760}
-
-/* Footer */
-footer{text-align:center;color:#9a958c;font-size:11px;padding:20px 0 12px;border-top:1px solid #f4f2ef;margin-top:20px}
-
-/* Responsive */
-@media(max-width:640px){
-  .rank-grid{grid-template-columns:1fr}
-  .ah-grid{grid-template-columns:1fr}
-  .metric-grid{grid-template-columns:repeat(3,1fr)}
-  .heatmap{grid-template-columns:repeat(3,1fr)}
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
 
-/* Animations */
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.fade-in{animation:fadeIn .4s ease}
-</style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
-<div class="container">
-<h1>📊 A股港股市场全景</h1>
-<div class="subtitle">2026年6月15日 · Wind 数据驱动 · 美伊和平协议驱动risk-on</div>
 
-<!-- 核心指数卡片 -->
-<div class="section"><h2>一、核心指数概览</h2></div>
-<div class="metric-grid" id="indexCards"></div>
-
-<!-- 行业热力图 -->
-<div class="section"><h2>二、申万一级行业热力图（点击查看个股排行）</h2></div>
-<div class="heatmap" id="sectorHeatmap"></div>
-
-<!-- 板块个股排行 -->
-<div class="section"><h2>三、热门板块个股排行</h2></div>
-<div class="tabs" id="sectorTabs"></div>
-<div id="sectorDetail" class="fade-in"></div>
-
-<!-- 市场情绪 -->
-<div class="section"><h2>四、市场情绪</h2></div>
-<div class="sentiment-grid" id="sentimentGrid"></div>
-
-<!-- AH对比 -->
-<div class="section"><h2>五、AH股对比</h2></div>
-<div class="ah-grid" id="ahCompare"></div>
-
-<!-- 核心洞察 -->
-<div class="section"><h2>六、核心洞察</h2></div>
-<div class="insight" id="insightBox"></div>
-
-<!-- 风险提示 -->
-<div class="section"><h2>七、风险提示</h2></div>
-<div id="riskSection"></div>
-
-<footer>数据来源于万得 Wind 金融数据服务 · 报告生成：2026-06-15 · Powered by Cleo 🐾</footer>
+<div class="report-header">
+  <h1>市场全景 · 2026-06-15</h1>
+  <div class="meta">数据来源：Wind 万得金融数据服务 | 收盘数据</div>
 </div>
 
-<script>
-// ===== DATA =====
-const indexData = [
-  {name:'上证指数',code:'000001.SH',close:3421.23,chg:1.61,w52h:3587,w52l:2904},
-  {name:'深证成指',code:'399001.SZ',close:11258.4,chg:3.24,w52h:11800,w52l:8800},
-  {name:'创业板指',code:'399006.SZ',close:2434.56,chg:5.30,w52h:4218,w52l:1620},
-  {name:'科创50',code:'000688.SH',close:1087.34,chg:-2.79,w52h:1280,w52l:720},
-  {name:'沪深300',code:'000300.SH',close:4038.12,chg:2.39,w52h:4250,w52l:3100},
-  {name:'中证500',code:'000905.SH',close:6182.45,chg:3.71,w52h:6500,w52l:4500},
-  {name:'中证1000',code:'000852.SH',close:6949.87,chg:3.88,w52h:7300,w52l:4800},
-  {name:'恒生指数',code:'HSI.HI',close:24123,chg:0.50,w52h:25000,w52l:16000},
-  {name:'恒生科技',code:'HSTECH.HI',close:5438,chg:1.28,w52h:5800,w52l:3200},
-  {name:'国企指数',code:'HSCEI.HI',close:8732,chg:0.82,w52h:9200,w52l:5600}
-];
+<hr>
+<h2>一、核心指数概览</h2>
+<h3>A股主要指数</h3>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th><th>52周最高</th><th>52周最低</th></tr></thead><tbody><tr><td>上证指数</td><td>4,096.47</td><td><strong>+1.61%</strong></td><td>1.40万亿</td><td>4,258.86</td><td>3,347.65</td></tr><tr><td>深证成指</td><td>15,531.11</td><td><strong>+3.79%</strong></td><td>1.63万亿</td><td>—</td><td>—</td></tr><tr><td>创业板指</td><td>4,033.53</td><td><strong>+5.30%</strong></td><td>7,905亿</td><td>4,218.33</td><td>1,996.96</td></tr><tr><td>科创50</td><td>45.60</td><td><strong>-2.79%</strong></td><td>21.6亿</td><td>—</td><td>—</td></tr><tr><td>沪深300</td><td>4,891.71</td><td><strong>+2.39%</strong></td><td>9,142亿</td><td>—</td><td>—</td></tr><tr><td>中证500</td><td>8,406.75</td><td><strong>+3.71%</strong></td><td>6,244亿</td><td>—</td><td>—</td></tr><tr><td>中证1000</td><td>8,521.23</td><td><strong>+3.88%</strong></td><td>6,401亿</td><td>—</td><td>—</td></tr></tbody></table>
+<p><strong>沪深两市合计成交 3.03万亿</strong>，市场参与度极高。</p>
+<h3>港股主要指数</h3>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th><th>52周最高</th><th>52周最低</th></tr></thead><tbody><tr><td>恒生指数</td><td>24,842.67</td><td><strong>+0.50%</strong></td><td>2,833亿HKD</td><td>28,056</td><td>23,186</td></tr><tr><td>恒生科技</td><td>4,765.58</td><td><strong>+1.28%</strong></td><td>635亿HKD</td><td>—</td><td>—</td></tr><tr><td>国企指数</td><td>8,375.74</td><td><strong>+0.02%</strong></td><td>841亿HKD</td><td>—</td><td>—</td></tr></tbody></table>
+<hr>
+<h2>二、估值分位</h2>
+<table><thead><tr><th>指数</th><th>PE(TTM)</th><th>PE分位</th><th>PB</th><th>PB分位</th></tr></thead><tbody><tr><td>沪深300</td><td>14.42x</td><td><strong>83.1%</strong></td><td>1.44x</td><td>27.3%</td></tr><tr><td>中证500</td><td>35.50x</td><td><strong>63.2%</strong></td><td>2.47x</td><td>66.9%</td></tr></tbody></table>
+<p><strong>解读</strong>：沪深300 PE分位已至83%高位，但PB分位仅27%——说明盈利（E）扩张速度快于价格（P），估值消化良好。中证500 PE/PB均在中性偏上位置。</p>
+<hr>
+<h2>三、申万行业涨跌全景（31个一级行业）</h2>
+<h3>领涨行业 TOP10</h3>
+<table><thead><tr><th>排名</th><th>行业</th><th>涨跌幅</th></tr></thead><tbody><tr><td>1</td><td><strong>电子</strong></td><td>+6.58%</td></tr><tr><td>2</td><td><strong>通信</strong></td><td>+6.50%</td></tr><tr><td>3</td><td>建筑材料</td><td>+5.00%</td></tr><tr><td>4</td><td>有色金属</td><td>+4.92%</td></tr><tr><td>5</td><td>机械设备</td><td>+4.51%</td></tr><tr><td>6</td><td>计算机</td><td>+2.97%</td></tr><tr><td>7</td><td>基础化工</td><td>+2.87%</td></tr><tr><td>8</td><td>电力设备</td><td>+2.46%</td></tr><tr><td>9</td><td>综合</td><td>+2.33%</td></tr><tr><td>10</td><td>汽车</td><td>+2.30%</td></tr></tbody></table>
+<h3>领跌行业</h3>
+<table><thead><tr><th>排名</th><th>行业</th><th>涨跌幅</th></tr></thead><tbody><tr><td>1</td><td><strong>煤炭</strong></td><td><strong>-4.60%</strong></td></tr><tr><td>2</td><td>银行</td><td>-1.60%</td></tr><tr><td>3</td><td>食品饮料</td><td>-0.90%</td></tr><tr><td>4</td><td>家用电器</td><td>-0.62%</td></tr><tr><td>5</td><td>石油石化</td><td>-0.30%</td></tr></tbody></table>
+<p><strong>核心矛盾</strong>：科技成长（电子/通信）暴涨 vs 红利价值（煤炭/银行）暴跌——典型 risk-on 风格切换日。</p>
+<hr>
+<h2>四、热门概念板块</h2>
+<h3>涨幅 TOP10</h3>
+<table><thead><tr><th>排名</th><th>概念</th><th>涨跌幅</th></tr></thead><tbody><tr><td>1</td><td><strong>覆铜板</strong></td><td><strong>+11.96%</strong></td></tr><tr><td>2</td><td><strong>MLCC</strong></td><td><strong>+10.73%</strong></td></tr><tr><td>3</td><td>手机陶瓷外壳</td><td>+9.30%</td></tr><tr><td>4</td><td><strong>高频PCB</strong></td><td>+9.22%</td></tr><tr><td>5</td><td>电路板</td><td>+8.99%</td></tr><tr><td>6</td><td>钨矿</td><td>+8.86%</td></tr><tr><td>7</td><td><strong>光模块(CPO)</strong></td><td>+8.78%</td></tr><tr><td>8</td><td>元件精选</td><td>+8.73%</td></tr><tr><td>9</td><td>光电路交换机(OCS)</td><td>+8.60%</td></tr><tr><td>10</td><td>其他电子精选</td><td>+8.01%</td></tr></tbody></table>
+<h3>跌幅 TOP5</h3>
+<table><thead><tr><th>排名</th><th>概念</th><th>涨跌幅</th></tr></thead><tbody><tr><td>1</td><td>中煤系</td><td>-5.99%</td></tr><tr><td>2</td><td>央企煤炭</td><td>-5.34%</td></tr><tr><td>3</td><td>煤炭开采精选</td><td>-3.92%</td></tr><tr><td>4</td><td>采掘金股</td><td>-3.51%</td></tr><tr><td>5</td><td>啤酒</td><td>-2.93%</td></tr></tbody></table>
+<p><strong>今日最强主线</strong>：覆铜板 → PCB → 光模块(CPO) → OCS，完整的<strong>电子通信产业链</strong>轮动。</p>
+<hr>
+<h2>五、市场广度与情绪</h2>
+<table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>涨停家数</td><td><strong>164</strong></td></tr><tr><td>跌停家数</td><td><strong>12</strong></td></tr><tr><td>上证上涨/下跌</td><td>1,602 / 687</td></tr><tr><td>深证上涨/下跌</td><td>2,124 / 724</td></tr><tr><td>全市场涨跌比</td><td><strong>约 2.6 : 1</strong></td></tr><tr><td>两市总成交额</td><td><strong>3.03万亿</strong></td></tr></tbody></table>
+<p><strong>判断</strong>：涨停164家远超跌停12家，涨跌比2.6:1，成交额3万亿+，这是<strong>强趋势日</strong>的典型特征——并非结构性行情，而是普涨格局。</p>
+<hr>
+<h2>六、今日核心驱动因素</h2>
+<h3>1. 美伊和平协议正式达成 🔴</h3>
+<p>特朗普宣布"海峡已开放"，伊朗确认6/19瑞士签署。14条协议全文披露（永久停火+暂停制裁+3000亿重建+解冻240亿）。<br>→ <strong>直接驱动</strong>：risk-on 模式，资金从避险资产（煤炭/银行）撤出，涌入成长板块。</p>
+<h3>2. 日央行加息至1% 🔴</h3>
+<p>植田和男任内首次加息，日元走强，日股承压，部分资金流入港股和A股。<br>→ <strong>间接利好</strong>：人民币资产相对吸引力提升。</p>
+<h3>3. 中芯/华虹产能紧张+涨价10-25% 🟠</h3>
+<p>BCD/NVM平台全面紧张，半导体代工景气度直接信号。<br>→ <strong>直接催化</strong>：电子/通信板块全线暴涨。</p>
+<h3>4. 深市指数调整今日实施 🟠</h3>
+<p>9000亿ETF被动调仓，部分资金流入新纳入标的。<br>→ <strong>交易性影响</strong>：尾盘部分成分股异动。</p>
+<h3>5. 矿产法条例施行 🟠</h3>
+<p>36种算力金属列入战略性资源目录。<br>→ <strong>催化</strong>：有色金属板块+4.92%。</p>
+<hr>
+<h2>七、风格与结构分析</h2>
+<h3>风格极化程度</h3>
+<p>今日市场呈现<strong>2024年以来最极端的风格分化日之一</strong>：</p>
+<table><thead><tr><th>维度</th><th>强端</th><th>弱端</th><th>极差</th></tr></thead><tbody><tr><td>指数</td><td>创业板指+5.30%</td><td>科创50-2.79%</td><td><strong>8.09%</strong></td></tr><tr><td>行业</td><td>电子+6.58%</td><td>煤炭-4.60%</td><td><strong>11.18%</strong></td></tr><tr><td>概念</td><td>覆铜板+11.96%</td><td>中煤系-5.99%</td><td><strong>17.95%</strong></td></tr></tbody></table>
+<p><strong>核心逻辑</strong>：美伊协议→地缘风险溢价出清→资金从"避险+高股息"（煤炭/银行）→"成长+周期"（电子/通信/有色）。科创50逆势下跌可能受指数调整成分股调出影响。</p>
+<h3>大盘 vs 小盘</h3>
+<table><thead><tr><th>宽基</th><th>涨幅</th></tr></thead><tbody><tr><td>沪深300</td><td>+2.39%</td></tr><tr><td>中证500</td><td>+3.71%</td></tr><tr><td>中证1000</td><td>+3.88%</td></tr></tbody></table>
+<p>小盘（中证1000）&gt; 中盘（中证500）&gt; 大盘（沪深300），风格偏小盘成长。</p>
+<h3>创业板指位置</h3>
+<ul><li>收盘 4,033.53，距52周新高 4,218.33 仅<strong>4.4%</strong></li><li>若本周 FOMC 不出大利空，有望挑战年内新高</li></ul>
+<hr>
+<h2>八、港股结构特征</h2>
+<table><thead><tr><th>特征</th><th>观察</th></tr></thead><tbody><tr><td>恒生指数</td><td>+0.50%，涨幅远小于A股</td></tr><tr><td>恒生科技</td><td>+1.28%，科技股偏强但涨幅收敛</td></tr><tr><td>国企指数</td><td>+0.02%，几近平收</td></tr><tr><td>对比A股</td><td>A股远强于港股，内资定价权主导</td></tr></tbody></table>
+<p><strong>解读</strong>：港股涨幅远弱于A股，说明今日行情主要由<strong>内资 risk-on 驱动</strong>，而非外资全面流入。恒生科技仅+1.28% vs 创业板指+5.30%，也反映A股电子/通信弹性远大于港股科技。</p>
+<hr>
+<h2>九、风险提示</h2>
+<ul><li><strong>风格反转风险</strong>：今日极端分化后，若FOMC结果偏鹰，科技成长可能快速回吐</li><li><strong>科创50逆势下跌</strong>：需关注是否有特定成分股利空或指数调整效应</li><li><strong>北向资金数据缺失</strong>：今日Wind北向资金接口异常，无法确认外资是否参与</li><li><strong>成交额3万亿的持续性</strong>：单日放量易，持续放量难，若后续缩量则风格可能再切回红利</li><li><strong>FOMC 6/16-17</strong>：沃什首秀+可能取消点阵图，市场短期波动风险极大</li></ul>
+<hr>
+<h2>十、关键催化日历</h2>
+<table><thead><tr><th>日期</th><th>事件</th><th>重要性</th></tr></thead><tbody><tr><td>6/16-17</td><td>FOMC 议息会议（沃什首秀）</td><td>🔴</td></tr><tr><td>6/17-18</td><td>陆家嘴论坛</td><td>🟠</td></tr><tr><td>6/19</td><td>美伊瑞士签署和平协议</td><td>🔴</td></tr><tr><td>6/19-21</td><td>端午节休市</td><td>⚪</td></tr></tbody></table>
+<hr>
+<p>*数据来源于万得 Wind 金融数据服务*<br>*报告生成时间：2026-06-15 16:15*</p>
 
-const sectorData = {
-  '电子':{chg:6.58,tops:[
-    {code:'301566.SZ',name:'达利凯普',chg:20.01},{code:'300489.SZ',name:'光智科技',chg:20},
-    {code:'301176.SZ',name:'逸豪新材',chg:20},{code:'301387.SZ',name:'光大同创',chg:20},
-    {code:'688167.SH',name:'炬光科技',chg:20},{code:'688603.SH',name:'天承科技',chg:20},
-    {code:'688432.SH',name:'有研硅',chg:19.62},{code:'300408.SZ',name:'三环集团',chg:18.77},
-    {code:'688020.SH',name:'方邦股份',chg:18.64},{code:'300976.SZ',name:'达瑞电子',chg:18.36}
-  ],bots:[
-    {code:'920212.BJ',name:'智新电子',chg:-1.41},{code:'688785.SH',name:'恒运昌',chg:-1.83},
-    {code:'688371.SH',name:'菲沃泰',chg:-2.17},{code:'688268.SH',name:'华特气体',chg:-2.42},
-    {code:'688548.SH',name:'广钢气体',chg:-2.87},{code:'301275.SZ',name:'汉朔科技',chg:-3.16},
-    {code:'603991.SH',name:'领先股份',chg:-3.47},{code:'002981.SZ',name:'朝阳科技',chg:-6.45},
-    {code:'301678.SZ',name:'新恒汇',chg:-6.45},{code:'688010.SH',name:'福光股份',chg:-9.07}
-  ]},
-  '通信':{chg:5.52,tops:[
-    {code:'300548.SZ',name:'长芯博创',chg:20},{code:'300570.SZ',name:'太辰光',chg:20},
-    {code:'300620.SZ',name:'光库科技',chg:20},{code:'920045.BJ',name:'蘅东光',chg:17.58},
-    {code:'300292.SZ',name:'吴通控股',chg:14.39},{code:'301165.SZ',name:'锐捷网络',chg:14.12},
-    {code:'301191.SZ',name:'菲菱科思',chg:12.77},{code:'688313.SH',name:'仕佳光子',chg:11.71},
-    {code:'300959.SZ',name:'线上线下',chg:11.1},{code:'301314.SZ',name:'科瑞思',chg:10.09}
-  ],bots:[
-    {code:'300513.SZ',name:'恒实科技',chg:0},{code:'601728.SH',name:'中国电信',chg:0},
-    {code:'300615.SZ',name:'欣天科技',chg:-0.09},{code:'603559.SH',name:'ST通脉',chg:-0.12},
-    {code:'300628.SZ',name:'亿联网络',chg:-0.21},{code:'002583.SZ',name:'海能达',chg:-0.52},
-    {code:'600941.SH',name:'中国移动',chg:-0.94},{code:'002544.SZ',name:'普天科技',chg:-0.95},
-    {code:'300710.SZ',name:'万隆光电',chg:-1.9},{code:'688387.SH',name:'信科移动-U',chg:-2.27}
-  ]},
-  '计算机':{chg:4.91,tops:[
-    {code:'300588.SZ',name:'熙菱信息',chg:19.99},{code:'920790.BJ',name:'联迪信息',chg:18.6},
-    {code:'688168.SH',name:'安博通',chg:17.32},{code:'300096.SZ',name:'ST易联众',chg:15.27},
-    {code:'301396.SZ',name:'宏景科技',chg:15.17},{code:'300508.SZ',name:'维宏股份',chg:13.82},
-    {code:'301218.SZ',name:'华是科技',chg:12.96},{code:'300399.SZ',name:'天利科技',chg:12.29},
-    {code:'300687.SZ',name:'赛意信息',chg:12.2},{code:'920592.BJ',name:'华信永道',chg:11.22}
-  ],bots:[
-    {code:'600455.SH',name:'博通股份',chg:-2.75},{code:'688083.SH',name:'中望软件',chg:-3.49},
-    {code:'688631.SH',name:'莱斯信息',chg:-3.63},{code:'300556.SZ',name:'丝路视觉',chg:-3.89},
-    {code:'688038.SH',name:'中科通达',chg:-4.04},{code:'603528.SH',name:'多伦科技',chg:-4.35},
-    {code:'300845.SZ',name:'捷安高科',chg:-4.38},{code:'301195.SZ',name:'北路智控',chg:-4.72},
-    {code:'920116.BJ',name:'星图测控',chg:-6.12},{code:'002421.SZ',name:'达实智能',chg:-8.86}
-  ]},
-  '电力设备':{chg:4.23,tops:[
-    {code:'301217.SZ',name:'铜冠铜箔',chg:20},{code:'300870.SZ',name:'欧陆通',chg:17.29},
-    {code:'301511.SZ',name:'德福科技',chg:16.5},{code:'688598.SH',name:'金博股份',chg:16.14},
-    {code:'688388.SH',name:'嘉元科技',chg:15.41},{code:'688353.SH',name:'华盛锂电',chg:14.6},
-    {code:'688676.SH',name:'金盘科技',chg:12.87},{code:'301150.SZ',name:'中一科技',chg:12.41},
-    {code:'300093.SZ',name:'金刚光伏',chg:11.16},{code:'300316.SZ',name:'晶盛机电',chg:10.77}
-  ],bots:[]},
-  '有色金属':{chg:4.12,tops:[
-    {code:'688786.SH',name:'悦安新材',chg:13.67},{code:'300835.SZ',name:'龙磁科技',chg:11.05},
-    {code:'300811.SZ',name:'铂科新材',chg:10.9},{code:'002824.SZ',name:'和胜股份',chg:10.02},
-    {code:'000960.SZ',name:'锡业股份',chg:10.01},{code:'600362.SH',name:'江西铜业',chg:10.01},
-    {code:'603045.SH',name:'福达合金',chg:10.01},{code:'603407.SH',name:'长裕集团',chg:10.01},
-    {code:'603979.SH',name:'金诚信',chg:10.01},{code:'000657.SZ',name:'中钨高新',chg:10}
-  ],bots:[]},
-  '机械设备':{chg:3.98,tops:[
-    {code:'920126.BJ',name:'永大股份',chg:126.96},{code:'688090.SH',name:'瑞松科技',chg:20},
-    {code:'688170.SH',name:'德龙激光',chg:20},{code:'688813.SH',name:'泰金新能',chg:20},
-    {code:'688257.SH',name:'新锐股份',chg:19.99},{code:'688379.SH',name:'华光新材',chg:17.97},
-    {code:'301021.SZ',name:'英诺激光',chg:17.45},{code:'301377.SZ',name:'鼎泰高科',chg:17.45},
-    {code:'301568.SZ',name:'思泰克',chg:16.98},{code:'301312.SZ',name:'智立方',chg:16.48}
-  ],bots:[]},
-  '煤炭':{chg:-4.60,tops:[
-    {code:'600397.SH',name:'江钨装备',chg:3.06},{code:'600792.SH',name:'云煤能源',chg:1.46},
-    {code:'000571.SZ',name:'新大洲A',chg:1.15},{code:'603071.SH',name:'物产环能',chg:0.73},
-    {code:'600157.SH',name:'永泰能源',chg:0},{code:'601666.SH',name:'平煤股份',chg:-0.22},
-    {code:'600758.SH',name:'辽宁能源',chg:-0.25},{code:'600740.SH',name:'山西焦化',chg:-0.79},
-    {code:'600121.SH',name:'郑州煤电',chg:-0.89},{code:'601011.SH',name:'宝泰隆',chg:-1.03}
-  ],bots:[
-    {code:'600546.SH',name:'山煤国际',chg:-4.22},{code:'601101.SH',name:'昊华能源',chg:-5.34},
-    {code:'000983.SZ',name:'山西焦煤',chg:-5.5},{code:'601001.SH',name:'晋控煤业',chg:-5.62},
-    {code:'601088.SH',name:'中国神华',chg:-5.96},{code:'601225.SH',name:'陕西煤业',chg:-6.44},
-    {code:'601918.SH',name:'新集能源',chg:-7.14},{code:'600188.SH',name:'兖矿能源',chg:-8.15},
-    {code:'601898.SH',name:'中煤能源',chg:-8.71},{code:'600403.SH',name:'大有能源',chg:-9.93}
-  ]},
-  '银行':{chg:-3.22,tops:[
-    {code:'601187.SH',name:'厦门银行',chg:0.63},{code:'002936.SZ',name:'郑州银行',chg:0.56},
-    {code:'601528.SH',name:'瑞丰银行',chg:0.21},{code:'601128.SH',name:'常熟银行',chg:0.15},
-    {code:'001227.SZ',name:'兰州银行',chg:0},{code:'002839.SZ',name:'张家港行',chg:0},
-    {code:'600016.SH',name:'民生银行',chg:0},{code:'600908.SH',name:'无锡银行',chg:0},
-    {code:'601860.SH',name:'紫金银行',chg:0},{code:'601916.SH',name:'浙商银行',chg:0}
-  ],bots:[
-    {code:'002142.SZ',name:'宁波银行',chg:-1.83},{code:'601229.SH',name:'上海银行',chg:-1.92},
-    {code:'002948.SZ',name:'青岛银行',chg:-2},{code:'601166.SH',name:'兴业银行',chg:-2.04},
-    {code:'601988.SH',name:'中国银行',chg:-2.54},{code:'601963.SH',name:'重庆银行',chg:-2.6},
-    {code:'601398.SH',name:'工商银行',chg:-2.7},{code:'601939.SH',name:'建设银行',chg:-2.9},
-    {code:'601825.SH',name:'沪农商行',chg:-3.15},{code:'601077.SH',name:'渝农商行',chg:-3.29}
-  ]},
-  '公用事业':{chg:-2.85,tops:[],bots:[
-    {code:'600900.SH',name:'长江电力',chg:-2.51},{code:'001299.SZ',name:'美能能源',chg:-2.67},
-    {code:'600149.SH',name:'廊坊发展',chg:-3.13},{code:'601222.SH',name:'林洋能源',chg:-3.21},
-    {code:'600803.SH',name:'新奥股份',chg:-3.98},{code:'600163.SH',name:'中闽能源',chg:-4.01},
-    {code:'605090.SH',name:'九丰能源',chg:-4.1},{code:'603318.SH',name:'水发燃气',chg:-4.26},
-    {code:'920010.BJ',name:'凯添燃气',chg:-5.65},{code:'002700.SZ',name:'万憬能源',chg:-6.29}
-  ]}
-};
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
+</div>
 
-const allSectors = [
-  {name:'电子',chg:6.58},{name:'通信',chg:5.52},{name:'计算机',chg:4.91},
-  {name:'电力设备',chg:4.23},{name:'有色金属',chg:4.12},{name:'机械设备',chg:3.98},
-  {name:'国防军工',chg:3.56},{name:'传媒',chg:3.21},{name:'医药生物',chg:2.87},
-  {name:'基础化工',chg:2.34},{name:'汽车',chg:1.89},{name:'食品饮料',chg:1.12},
-  {name:'房地产',chg:0.45},{name:'交通运输',chg:-0.23},{name:'建筑装饰',chg:-0.87},
-  {name:'农林牧渔',chg:-1.34},{name:'石油石化',chg:-1.89},{name:'公用事业',chg:-2.85},
-  {name:'银行',chg:-3.22},{name:'煤炭',chg:-4.60}
-];
-
-// ===== RENDER =====
-let activeSector = '电子';
-
-function chgColor(v){return v>0?'#b8544a':v<0?'#4a8a5c':'#6b6760'}
-function chgClass(v){return v>0?'up':v<0?'down':'flat'}
-function chgText(v){return (v>0?'+':'')+v.toFixed(2)+'%'}
-
-function heatColor(v){
-  if(v>=5) return 'rgba(248,81,73,.85)';
-  if(v>=3) return 'rgba(248,81,73,.55)';
-  if(v>=1) return 'rgba(248,81,73,.3)';
-  if(v>=0) return 'rgba(139,148,158,.2)';
-  if(v>=-1) return 'rgba(63,185,80,.2)';
-  if(v>=-3) return 'rgba(63,185,80,.45)';
-  return 'rgba(63,185,80,.75)';
-}
-
-// Index cards
-function renderIndexCards(){
-  const el=document.getElementById('indexCards');
-  el.innerHTML=indexData.map(d=>{
-    const c=chgClass(d.chg);
-    return `<div class="metric-card" data-code="${d.code}">
-      <div class="metric-label">${d.name}</div>
-      <div class="metric-value ${c}">${d.close.toLocaleString()}</div>
-      <div class="metric-sub ${c}">${chgText(d.chg)}</div>
-    </div>`;
-  }).join('');
-}
-
-// Heatmap
-function renderHeatmap(){
-  const el=document.getElementById('sectorHeatmap');
-  el.innerHTML=allSectors.map(s=>`
-    <div class="heat-cell" style="background:${heatColor(s.chg)}" data-sector="${s.name}">
-      <div class="heat-name">${s.name}</div>
-      <div class="heat-val" style="color:${chgColor(s.chg)}">${chgText(s.chg)}</div>
-    </div>
-  `).join('');
-  el.querySelectorAll('.heat-cell').forEach(cell=>{
-    cell.addEventListener('click',()=>{
-      const name=cell.dataset.sector;
-      if(sectorData[name]){
-        activeSector=name;
-        renderSectorTabs();
-        renderSectorDetail();
-      }
-    });
-  });
-}
-
-// Sector tabs
-function renderSectorTabs(){
-  const el=document.getElementById('sectorTabs');
-  const sectors=Object.keys(sectorData);
-  el.innerHTML=sectors.map(s=>{
-    const d=sectorData[s];
-    const c=chgClass(d.chg);
-    const tc=d.chg>0?'up-tab':d.chg<0?'down-tab':'';
-    return `<div class="tab ${s===activeSector?'active':''} ${tc}" data-sector="${s}">${s} <span class="${c}">${chgText(d.chg)}</span></div>`;
-  }).join('');
-  el.querySelectorAll('.tab').forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      activeSector=tab.dataset.sector;
-      renderSectorTabs();
-      renderSectorDetail();
-    });
-  });
-}
-
-// Sector detail
-function renderSectorDetail(){
-  const el=document.getElementById('sectorDetail');
-  const d=sectorData[activeSector];
-  if(!d){el.innerHTML='<div style="color:#6b6760;padding:12px">暂无个股数据</div>';return}
-  
-  let html='<div class="rank-grid">';
-  
-  // Gainers
-  html+='<div class="rank-panel"><div class="rank-title gainers">🔴 涨幅前10</div><table class="rank-table"><tr><th>#</th><th>名称</th><th>代码</th><th style="text-align:right">涨跌幅</th></tr>';
-  d.tops.forEach((s,i)=>{
-    html+=`<tr><td class="rank-num">${i+1}</td><td>${s.name}</td><td class="rank-code">${s.code}</td><td style="text-align:right" class="up">${chgText(s.chg)}</td></tr>`;
-  });
-  html+='</table></div>';
-  
-  // Losers
-  html+='<div class="rank-panel"><div class="rank-title losers">🟢 跌幅前10</div><table class="rank-table"><tr><th>#</th><th>名称</th><th>代码</th><th style="text-align:right">涨跌幅</th></tr>';
-  if(d.bots.length){
-    d.bots.forEach((s,i)=>{
-      html+=`<tr><td class="rank-num">${i+1}</td><td>${s.name}</td><td class="rank-code">${s.code}</td><td style="text-align:right" class="down">${chgText(s.chg)}</td></tr>`;
-    });
-  } else {
-    html+='<tr><td colspan="4" style="text-align:center;color:#9a958c;padding:20px">全线上涨，无跌股</td></tr>';
-  }
-  html+='</table></div>';
-  
-  html+='</div>';
-  el.innerHTML=html;
-  el.className='fade-in';
-}
-
-// Sentiment
-function renderSentiment(){
-  const el=document.getElementById('sentimentGrid');
-  const items=[
-    {label:'涨停家数',val:'164',color:'#b8544a'},
-    {label:'跌停家数',val:'12',color:'#4a8a5c'},
-    {label:'涨跌比',val:'2.6:1',color:'#a8813c'},
-    {label:'成交额',val:'3.03万亿',color:'#3a6b96'},
-    {label:'沪深300 PE分位',val:'83%',color:'#a8813c'},
-    {label:'中证500 PE分位',val:'63%',color:'#6b6760'}
-  ];
-  el.innerHTML=items.map(i=>`<div class="sent-card"><div class="sent-label">${i.label}</div><div class="sent-val" style="color:${i.color}">${i.val}</div></div>`).join('');
-}
-
-// AH compare
-function renderAH(){
-  const el=document.getElementById('ahCompare');
-  const aStocks=[
-    {name:'上证指数',chg:1.61},{name:'创业板指',chg:5.30},{name:'沪深300',chg:2.39}
-  ];
-  const hStocks=[
-    {name:'恒生指数',chg:0.50},{name:'恒生科技',chg:1.28},{name:'国企指数',chg:0.82}
-  ];
-  let html=`<div class="ah-card"><div class="ah-title">🇨🇳 A股</div>`;
-  aStocks.forEach(s=>{html+=`<div class="ah-row"><span>${s.name}</span><span class="up">${chgText(s.chg)}</span></div>`});
-  html+=`</div><div class="ah-card"><div class="ah-title">🇭🇰 港股</div>`;
-  hStocks.forEach(s=>{html+=`<div class="ah-row"><span>${s.name}</span><span class="up">${chgText(s.chg)}</span></div>`});
-  html+='</div>';
-  el.innerHTML=html;
-}
-
-// Insight
-function renderInsight(){
-  document.getElementById('insightBox').innerHTML=`
-    <strong>今日核心驱动：</strong>美伊和平协议正式达成 → risk-on 全面启动<br>
-    <strong>风格判断：</strong>小盘 > 中盘 > 大盘，成长 > 价值，科技暴涨 + 红利暴跌，风格极化程度近年罕见<br>
-    <strong>行业极差 11.18%</strong>（电子+6.58% vs 煤炭-4.60%），<strong>概念极差 17.95%</strong>（覆铜板+11.96% vs 中煤系-5.99%）<br>
-    <strong>创业板指距52周新高仅4.4%</strong>，科创50逆势-2.79%（指数调整效应？）<br>
-    <strong>A股远强于港股</strong>：内资主导 risk-on，外资参与有限
-  `;
-}
-
-// Risk
-function renderRisk(){
-  document.getElementById('riskSection').innerHTML=`
-    <div class="risk-box"><h4>1. 风格反转风险</h4><p>FOMC 6/16-17 沃什首秀 + 可能取消点阵图，若偏鹰则科技暴涨快速回吐</p></div>
-    <div class="risk-box"><h4>2. 均值回归压力</h4><p>今日风格极化程度罕见，行业极差11.18%后往往伴随均值回归</p></div>
-    <div class="risk-box"><h4>3. 科创50异动</h4><p>科创50逆势-2.79%，需关注是否有特定成分股利空或指数调整效应</p></div>
-  `;
-}
-
-// Init
-renderIndexCards();
-renderHeatmap();
-renderSectorTabs();
-renderSectorDetail();
-renderSentiment();
-renderAH();
-renderInsight();
-renderRisk();
-</script>
 </body>
 </html>

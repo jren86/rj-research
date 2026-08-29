@@ -1,442 +1,501 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日AI全球新闻 | 2026-06-05</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-06-05</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
-  --bg-primary: #faf9f7;
-  --bg-card: #f4f2ef;
-  --bg-card-hover: #ffffff;
-  --text-primary: #e8e8f0;
-  --text-secondary: #a0a0b8;
-  --text-muted: #6b6b80;
-  --accent-red: #ff4757;
-  --accent-green: #2ed573;
-  --accent-blue: #5b7fff;
-  --accent-orange: #ffa502;
-  --accent-purple: #b36bff;
-  --accent-cyan: #00d2d3;
-  --border-color: #f4f2ef;
-  --tag-bg: rgba(91,127,255,0.15);
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
   padding: 16px;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
+  font-size: 15px;
 }
-.header {
-  text-align: center;
-  padding: 24px 0 20px;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 24px;
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
 }
-.header h1 {
-  font-size: 1.5em;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 6px;
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
 }
-.header .date { color: var(--text-muted); font-size: 0.85em; }
-.section { margin-bottom: 28px; }
-.section-title {
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
   font-size: 1.15em;
-  font-weight: 700;
-  margin-bottom: 14px;
-  padding-left: 12px;
-  border-left: 3px solid var(--accent-blue);
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
 }
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
 .card {
-  background: var(--bg-card);
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 14px;
-  border: 1px solid var(--border-color);
-  transition: background 0.2s;
-}
-.card:hover { background: var(--bg-card-hover); }
-.card-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.card-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 28px;
-  height: 28px;
+  background: var(--card-alt);
   border-radius: 8px;
-  background: var(--accent-blue);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.85em;
-  flex-shrink: 0;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
 }
-.card-num.red { background: var(--accent-red); }
-.card-num.green { background: var(--accent-green); }
-.card-num.orange { background: var(--accent-orange); }
-.card-num.purple { background: var(--accent-purple); }
-.card-num.cyan { background: var(--accent-cyan); }
-.card-title {
-  font-size: 1.05em;
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
   font-weight: 600;
-  line-height: 1.4;
 }
-.card-body { color: var(--text-secondary); font-size: 0.92em; }
-.card-body p { margin-bottom: 8px; }
-.card-body strong { color: var(--text-primary); }
-.card-body ul { padding-left: 18px; margin: 6px 0; }
-.card-body li { margin-bottom: 4px; }
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.78em;
-  font-weight: 600;
   margin-right: 4px;
-  margin-bottom: 4px;
 }
-.tag-red { background: rgba(255,71,87,0.2); color: var(--accent-red); }
-.tag-green { background: rgba(46,213,115,0.2); color: var(--accent-green); }
-.tag-blue { background: rgba(91,127,255,0.2); color: var(--accent-blue); }
-.tag-orange { background: rgba(255,165,2,0.2); color: var(--accent-orange); }
-.tag-purple { background: rgba(179,107,255,0.2); color: var(--accent-purple); }
-.tag-cyan { background: rgba(0,210,211,0.2); color: var(--accent-cyan); }
-.insight {
-  background: rgba(91,127,255,0.08);
-  border-left: 3px solid var(--accent-blue);
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
   padding: 10px 14px;
-  border-radius: 0 8px 8px 0;
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: var(--accent-blue);
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
 }
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
   margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
   font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
 }
-.data-table th {
-  background: rgba(91,127,255,0.15);
-  padding: 8px 10px;
-  text-align: left;
-  color: var(--accent-blue);
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
   font-weight: 600;
-  border-bottom: 1px solid var(--border-color);
 }
-.data-table td {
-  padding: 7px 10px;
-  border-bottom: 1px solid rgba(42,42,62,0.6);
-  color: var(--text-secondary);
-}
-.data-table td:first-child { color: var(--text-primary); font-weight: 500; }
-.trend-section {
-  background: linear-gradient(135deg, rgba(179,107,255,0.1), rgba(91,127,255,0.08));
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 20px;
-}
-.trend-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.trend-num {
-  min-width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--accent-purple);
-  color: #fff;
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 0.75em;
-  font-weight: 700;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
   flex-shrink: 0;
 }
-.trend-text { color: var(--text-secondary); font-size: 0.92em; }
-.trend-text strong { color: var(--text-primary); }
-.footer {
-  text-align: center;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-color);
-  color: var(--text-muted);
-  font-size: 0.78em;
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
 }
-@media (max-width: 480px) {
-  body { padding: 10px; }
-  .card { padding: 14px; }
-  .header h1 { font-size: 1.25em; }
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
 }
-</style>
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>🤖 每日AI全球新闻</h1>
-  <div class="date">📅 2026年6月5日 星期五 | 编辑：Cleo 🐾</div>
+<div class="report-header">
+  <h1>每日AI新闻 · 2026-06-05</h1>
+  <div class="meta">📅 2026年6月5日 星期五 | 编辑：Cleo 🐾</div>
 </div>
 
-<!-- 🔥 头条 -->
-<div class="section">
-  <div class="section-title">🔥 今日头条</div>
+<hr>
+<h2>🔥 今日头条</h2>
+<h3>1. 特朗普签署「缩水版」AI行政令：自愿30天安全测试窗口</h3>
+<p><strong>6月2日（当地时间），美国总统特朗普正式签署AI监管行政命令，要求OpenAI、谷歌、Anthropic等AI企业在公开发布最新模型前，须向政府开放最长30天的网络安全测试窗口。这标志着美国AI「完全放任」时代的终结。</strong></p>
+<p><strong>📋 行政令核心内容</strong></p>
+<ul><li><strong>自愿合作机制</strong>：AI公司在前沿模型发布前，可向联邦政府提交模型进行基准测试，评估「高级网络能力」</li><li><strong>30天窗口期</strong>：企业计划公开发布模型前30天内，需向政府开放访问权限（原草案要求90天，经多轮博弈折中为30天）</li><li><strong>网络安全信息中心</strong>：要求财政部长贝森特牵头组建，统筹金融、医疗、应急服务等关键基础设施领域的AI安全审查</li><li><strong>多部门协同</strong>：财政部、国防部、商务部、国土安全部共同参与监管</li></ul>
+<p><strong>⚡ 博弈过程</strong></p>
+<ul><li>原版草案要求90天评测期，遭科技企业集体抵制</li><li>企业方主张压缩至14天，最终折中至30天</li><li>白宫前AI事务主管David Sacks推动「轻度监管」路线，阻止了更严厉的版本</li><li>特朗普坚持「拒绝用繁重监管扼杀创新」，但承认AI伴随安全隐患</li></ul>
+<p><strong>🔬 直接诱因</strong></p>
+<ul><li>Anthropic的Mythos模型可主动探测并暴露银行、政务、医疗核心系统漏洞</li><li>该模型被暂缓全面上线，仅向少数合作方限量内测</li><li>此事件加速了政府监管政策的出台</li></ul>
+<blockquote>📌 <strong>核心判断</strong>：美国AI监管从「零约束」转向「自愿前置审查」，30天窗口虽为自愿性质，但大厂实质上将不得不参与——不参与意味着政治风险。欧盟AI Act将于8月2日全面执法，全球AI监管趋同化态势明显。</blockquote>
+<hr>
+<h3>2. 美国AI三巨头罕见联手：通过「前沿模型论坛」共享信息遏制中国企业</h3>
+<p><strong>据彭博社报道，OpenAI、Anthropic及Alphabet旗下谷歌已开始合作，通过「前沿模型论坛」（Frontier Model Forum）共享信息，试图遏制中国竞争对手从美国先进AI模型中提取结果。</strong></p>
+<p><strong>🔗 合作背景与机制</strong></p>
+<ul><li>三家本是竞争对手，此次因共同利益罕见联手</li><li>通过前沿模型论坛共享「模型蒸馏防护」等技术情报</li><li>目标：防止中国企业利用美国模型输出训练自有竞品</li><li>折射中美AI领域日趋激烈的科技博弈</li></ul>
+<p><strong>🌍 行业影响</strong></p>
+<ul><li>从「芯片禁运」升级到「模型级封锁」，美国对华AI遏制进入第二阶段</li><li>此举可能加速中国AI企业对自主模型的投入和依赖</li><li>对全球AI开源生态的「美国优先」定位构成挑战</li></ul>
+<blockquote>📌 <strong>核心判断</strong>：美国AI遏制战略从硬件（芯片出口管制）延伸到软件（模型输出防护），三巨头联手标志「模型级封锁」成为新博弈维度。中国AI自主化进程面临新的外部压力。</blockquote>
+<hr>
+<h3>3. NVIDIA Cosmos 3开源：全模态物理AI世界基础模型</h3>
+<p><strong>英伟达正式开源Cosmos 3，这是一套面向物理AI的全模态世界基础模型（World Foundation Model），支持机器人、自动驾驶、智能基础设施等场景。</strong></p>
+<p><strong>🏗️ 核心架构</strong></p>
+<ul><li><strong>Mixture-of-Transformers（MoT）统一架构</strong>：推理器（Reasoner）+ 生成器（Generator）双模式</li><li><strong>推理模式</strong>：文本/视觉输入 → 文本输出，用于世界理解、空间定位、物理推理、任务规划</li><li><strong>生成模式</strong>：文本/视觉/声音/动作输入 → 视觉/声音/动作输出，用于世界生成、未来预测、合成数据</li></ul>
+<p><strong>📊 模型家族</strong></p>
+<table><thead><tr><th>模型</th><th>参数量</th><th>用途</th></tr></thead><tbody><tr><td>Cosmos3-Nano</td><td>16B</td><td>轻量全模态世界模型</td></tr><tr><td>Cosmos3-Super</td><td>64B</td><td>前沿级全模态世界模型</td></tr><tr><td>Cosmos3-Super-Text2Image</td><td>64B</td><td>高保真文本转图像</td></tr><tr><td>Cosmos3-Super-Image2Video</td><td>64B</td><td>时序一致图像转视频</td></tr><tr><td>Cosmos3-Nano-Policy-DROID</td><td>16B</td><td>机器人操作控制策略</td></tr></tbody></table>
+<p><strong>🔧 关键特性</strong></p>
+<ul><li>原生支持语言、图像、视频、音频、动作序列联合处理</li><li>开源协议：OpenMDW-1.1（商业许可需单独联系）</li><li>支持Diffusers/Transformers/vLLM-Omni/NIM多种部署路径</li><li>配套工具链：Cosmos Framework（训练部署）、Cosmos Curator（数据管理）、Cosmos Evaluator（效果评估）</li></ul>
+<blockquote>📌 <strong>核心判断</strong>：Cosmos 3是英伟达押注「物理AI」的战略级开源项目，将世界模型从学术概念推向工程化落地，对机器人和自动驾驶行业影响深远。</blockquote>
+<hr>
+<h2>🧠 端侧AI &amp; 大模型</h2>
+<h3>4. Google AI Edge Gallery登陆Mac：16GB内存跑12B多模态模型</h3>
+<p><strong>谷歌AI Edge Gallery正式登陆macOS平台，Mac用户仅需16GB内存即可在本地离线运行120亿参数的多模态大模型Gemma 4 12B。</strong></p>
+<ul><li><strong>首批模型</strong>：Gemma-4-12B-it、Gemma-4-E2B-it、Gemma-4-E4B-it、Gemma-3n-E2B-it、Gemma-3n-E4B-it</li><li><strong>核心能力</strong>：本地处理文本、视觉和音频多模态输入，支持代码编写和逻辑分析</li><li><strong>配套工具</strong>：同步推出AI Edge Eloquent离线语音听写工具，支持自定义词汇表，所有处理在本地完成</li><li><strong>战略意义</strong>：端侧AI的「16GB门槛时代」正式到来，轻薄本变身为离线智能体</li></ul>
+<h3>5. NVIDIA联合清华发布Gamma-World：多智能体世界模型</h3>
+<ul><li>由00后清华博士团队联合NVIDIA、多伦多大学推出</li><li>创新点：单纯形旋转智能体编码 + 稀疏枢纽注意力，解决传统模型对称性缺失和算力爆炸问题</li><li>核心突破：多玩家可共享同一个世界模型，世界模型从「单智能体」走向「多智能体联机」</li></ul>
+<hr>
+<h2>📱 AI产品 &amp; 应用落地</h2>
+<h3>6. 月之暗面Kimi Work开启内测：面向知识工作者的本地Agent</h3>
+<ul><li><strong>产品定位</strong>：通用型本地AI Agent工具，面向知识工作者</li><li><strong>核心能力</strong>：多智能体协作、定时任务执行、技能安装与调用</li><li><strong>差异化</strong>：继承Kimi Agent优势，深度集成垂直行业数据库和浏览器方案</li><li><strong>战略意义</strong>：AI Agent从云端走向本地化，办公场景成兵家必争之地</li></ul>
+<h3>7. 微信互联联合多厂商推出A2A助手：AI可直接控制微信</h3>
+<ul><li><strong>合作方</strong>：华为、小米、荣耀、OPPO等多家手机厂商</li><li><strong>技术机制</strong>：基于A2A（Agent to Agent）协作，将微信高频沟通服务融入手机原生系统</li><li><strong>核心功能</strong>：通过手机端AI直接操控微信发消息、转账、查联系人等</li><li><strong>安全机制</strong>：双重授权，保障数据安全与隐私</li><li><strong>行业意义</strong>：推动智能体生态从「孤岛」走向「端云协同」</li></ul>
+<h3>8. 快手App上线AI购物助手 &amp; 豆包宣布付费专业版</h3>
+<p><strong>快手AI购物助手</strong></p>
+<ul><li>开辟独立入口，可分析商品评价、完成竞品对比</li><li>提升选购决策效率，补齐快手货架电商智能导购短板</li></ul>
+<p><strong>豆包付费专业版</strong></p>
+<ul><li>覆盖软件开发、数据分析等六大垂直生产力场景</li><li>采用「双轨并行」模式：基础免费 + 专业版有免费额度</li><li>官方明确辟谣「降质促费」传闻</li></ul>
+<h3>9. 中兴通讯×腾讯：AI云电脑搭载原生WorkBuddy</h3>
+<ul><li>双方战略合作，推出搭载腾讯原生AI助手WorkBuddy的AI云电脑</li><li>「软硬一体化」深度融合，提升智能办公与多模态交互能力</li><li>公布后中兴通讯AH股双双走高</li></ul>
+<h3>10. 红魔游戏平板5 Pro深度集成豆包大模型</h3>
+<ul><li>首发185Hz刷新率，搭载高通骁龙8 Elite Gen5处理器</li><li>深度集成豆包大模型，提供游戏攻略查询、对局数据分析等AI服务</li><li>80W快充 + 旁路充电，解决边玩边充过热问题</li></ul>
+<hr>
+<h2>💰 行业 &amp; 商业化</h2>
+<h3>11. OpenAI和Anthropic竞相推进上市计划</h3>
+<ul><li>据法国《回声报》报道，OpenAI和Anthropic正在竞相推进IPO</li><li>SpaceX上市受到密切关注，若成功将为AI公司上市铺路</li><li>Anthropic估值已达9650亿美元，距万亿美元仅一步之遥</li></ul>
+<hr>
+<h2>📊 关键数据速览</h2>
+<table><thead><tr><th>指标</th><th>数据</th><th>来源</th></tr></thead><tbody><tr><td>美国AI行政令审查窗口</td><td>30天（原草案90天）</td><td>白宫/财联社</td></tr><tr><td>Cosmos 3最大模型参数量</td><td>64B（Super系列）</td><td>NVIDIA GitHub</td></tr><tr><td>Cosmos 3 GitHub Star</td><td>9,000+</td><td>GitHub</td></tr><tr><td>Gemma 4 12B本地运行要求</td><td>16GB内存</td><td>Google官方</td></tr><tr><td>AI Edge Gallery首批模型数</td><td>5款</td><td>Google官方</td></tr><tr><td>前沿模型论坛参与方</td><td>OpenAI、Anthropic、Google</td><td>Bloomberg</td></tr></tbody></table>
+<hr>
+<h2>🔮 趋势判断</h2>
+<ul><li><strong>美国AI监管进入「自愿前置审查」时代</strong>：从零约束到30天窗口，政策拐点已至。自愿框架短期内不会实质阻碍创新，但标志着「完全放任」阶段落幕</li><li><strong>中美AI博弈升级到「模型级封锁」</strong>：从芯片禁运到模型输出防护，三巨头联手标志新博弈维度。中国AI自主化面临更大外部压力</li><li><strong>端侧AI进入「16GB门槛时代」</strong>：Google AI Edge Gallery让普通Mac跑12B多模态模型，端侧AI从实验走向实用</li><li><strong>AI Agent从云端走向本地化</strong>：Kimi Work开启内测，本地Agent成为新战场，办公场景是首要切入点</li><li><strong>物理AI成英伟达下一个战略方向</strong>：Cosmos 3开源 + Gamma-World多智能体，世界模型从学术走向工程化</li></ul>
+<hr>
+<p>*数据截至 2026-06-05 07:30 CST | 数据来源：WebSearch (8次), WebFetch (5次), Bloomberg, 白宫公告, NVIDIA GitHub*</p>
 
-  <!-- Card 1: 特朗普AI行政令 -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num red">1</div>
-      <div class="card-title">特朗普签署「缩水版」AI行政令：自愿30天安全测试窗口</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-red">AI监管</span>
-      <span class="tag tag-blue">30天窗口</span>
-      <span class="tag tag-orange">博弈折中</span>
-      <p>6月2日，美国总统特朗普签署AI监管行政令，要求OpenAI、谷歌、Anthropic等在公开发布最新模型前，须向政府开放最长<strong>30天网络安全测试窗口</strong>。这标志着美国AI「完全放任」时代的终结。</p>
-
-      <p><strong>📋 核心内容</strong></p>
-      <ul>
-        <li><strong>自愿合作机制</strong>：AI公司在前沿模型发布前可向联邦政府提交基准测试</li>
-        <li><strong>30天窗口期</strong>（原草案90天，经多轮博弈折中）</li>
-        <li><strong>网络安全信息中心</strong>：财长贝森特牵头，覆盖金融、医疗、应急等关键基础设施</li>
-        <li><strong>多部门协同</strong>：财政部、国防部、商务部、国土安全部共同参与</li>
-      </ul>
-
-      <p><strong>⚡ 博弈过程</strong></p>
-      <ul>
-        <li>原版草案90天评测期遭科技企业集体抵制</li>
-        <li>企业方主张14天，最终折中至30天</li>
-        <li>白宫前AI事务主管David Sacks推动「轻度监管」路线</li>
-      </ul>
-
-      <p><strong>🔬 直接诱因</strong></p>
-      <ul>
-        <li>Anthropic的Mythos模型可主动探测银行、政务、医疗核心系统漏洞</li>
-        <li>该模型被暂缓全面上线，仅限量内测</li>
-      </ul>
-
-      <div class="insight">📌 核心判断：美国AI监管从「零约束」转向「自愿前置审查」，大厂实质上将不得不参与。欧盟AI Act 8月2日全面执法，全球AI监管趋同化态势明显。</div>
-    </div>
-  </div>
-
-  <!-- Card 2: 美国AI三巨头联手 -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num orange">2</div>
-      <div class="card-title">美国AI三巨头罕见联手：通过「前沿模型论坛」遏制中国企业</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-red">中美博弈</span>
-      <span class="tag tag-purple">模型封锁</span>
-      <span class="tag tag-blue">Bloomberg</span>
-      <p>据Bloomberg报道，<strong>OpenAI、Anthropic及谷歌</strong>已通过「前沿模型论坛」共享信息，试图遏制中国竞争对手从美国先进AI模型中提取结果。</p>
-      <ul>
-        <li>三家本是竞争对手，因共同利益罕见联手</li>
-        <li>共享「模型蒸馏防护」等技术情报</li>
-        <li>从「芯片禁运」升级到「模型级封锁」，美国对华AI遏制进入第二阶段</li>
-        <li>可能加速中国AI企业对自主模型的投入</li>
-      </ul>
-      <div class="insight">📌 美国AI遏制从硬件延伸到软件，三巨头联手标志「模型级封锁」成为新博弈维度。</div>
-    </div>
-  </div>
-
-  <!-- Card 3: NVIDIA Cosmos 3 -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num green">3</div>
-      <div class="card-title">NVIDIA Cosmos 3开源：全模态物理AI世界基础模型</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-green">开源</span>
-      <span class="tag tag-purple">物理AI</span>
-      <span class="tag tag-cyan">MoT架构</span>
-      <p>英伟达正式开源Cosmos 3，面向物理AI的全模态世界基础模型，支持机器人、自动驾驶等场景。</p>
-
-      <table class="data-table">
-        <tr><th>模型</th><th>参数量</th><th>用途</th></tr>
-        <tr><td>Cosmos3-Nano</td><td>16B</td><td>轻量全模态世界模型</td></tr>
-        <tr><td>Cosmos3-Super</td><td>64B</td><td>前沿级全模态世界模型</td></tr>
-        <tr><td>Cosmos3-Super-Text2Image</td><td>64B</td><td>高保真文本转图像</td></tr>
-        <tr><td>Cosmos3-Super-Image2Video</td><td>64B</td><td>时序一致图像转视频</td></tr>
-        <tr><td>Cosmos3-Nano-Policy-DROID</td><td>16B</td><td>机器人操作控制策略</td></tr>
-      </table>
-
-      <p><strong>核心特性</strong></p>
-      <ul>
-        <li>Mixture-of-Transformers统一架构，推理器+生成器双模式</li>
-        <li>原生支持语言、图像、视频、音频、动作联合处理</li>
-        <li>开源协议OpenMDW-1.1，配套完整工具链（Framework/Curator/Evaluator）</li>
-      </ul>
-
-      <div class="insight">📌 Cosmos 3是英伟达押注「物理AI」的战略级开源项目，将世界模型从学术概念推向工程化落地。</div>
-    </div>
-  </div>
-</div>
-
-<!-- 🧠 端侧AI -->
-<div class="section">
-  <div class="section-title">🧠 端侧AI & 大模型</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num purple">4</div>
-      <div class="card-title">Google AI Edge Gallery登陆Mac：16GB内存跑12B多模态模型</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-blue">Google</span>
-      <span class="tag tag-green">端侧AI</span>
-      <span class="tag tag-cyan">Gemma 4</span>
-      <p>谷歌AI Edge Gallery正式登陆macOS，仅<strong>16GB内存</strong>即可本地离线运行Gemma 4 12B多模态模型。</p>
-      <ul>
-        <li>首批5款模型：Gemma-4-12B-it、Gemma-4-E2B-it、Gemma-4-E4B-it、Gemma-3n-E2B-it、Gemma-3n-E4B-it</li>
-        <li>支持本地处理文本、视觉、音频多模态输入</li>
-        <li>同步推出<strong>AI Edge Eloquent</strong>离线语音听写工具，支持自定义词汇表</li>
-        <li>所有处理本地完成，数据不上传云端</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num cyan">5</div>
-      <div class="card-title">NVIDIA联合清华发布Gamma-World：多智能体世界模型</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-purple">清华</span>
-      <span class="tag tag-green">世界模型</span>
-      <p>00后清华博士团队联合NVIDIA、多伦多大学推出。<strong>核心创新</strong>：单纯形旋转智能体编码 + 稀疏枢纽注意力，解决对称性缺失和算力爆炸。多玩家可共享同一世界模型。</p>
-    </div>
-  </div>
-</div>
-
-<!-- 📱 AI产品 -->
-<div class="section">
-  <div class="section-title">📱 AI产品 & 应用落地</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num blue">6</div>
-      <div class="card-title">月之暗面Kimi Work开启内测：面向知识工作者的本地Agent</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-blue">Kimi</span>
-      <span class="tag tag-purple">本地Agent</span>
-      <p>月之暗面推出通用型本地AI Agent产品，支持<strong>多智能体协作、定时任务执行、技能安装调用</strong>，深度集成垂直行业数据库和浏览器方案。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num green">7</div>
-      <div class="card-title">微信互联联合多厂商推出A2A助手：AI可直接控制微信</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-green">微信</span>
-      <span class="tag tag-orange">A2A</span>
-      <span class="tag tag-blue">华为/小米/OPPO</span>
-      <p>微信与华为、小米、荣耀、OPPO等合作，基于<strong>A2A（Agent to Agent）</strong>协作机制，用户可通过手机AI直接操控微信发消息、转账、查联系人。采用双重授权保障安全。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num orange">8</div>
-      <div class="card-title">快手AI购物助手上线 & 豆包宣布付费专业版</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-orange">快手</span>
-      <span class="tag tag-blue">豆包</span>
-      <p><strong>快手</strong>：AI购物助手独立入口，可分析评价、竞品对比，补齐智能导购短板。</p>
-      <p><strong>豆包</strong>：推出付费专业版，覆盖开发、分析等六大场景。基础免费 + 专业版有免费额度。官方辟谣「降质促费」传闻。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num cyan">9</div>
-      <div class="card-title">中兴×腾讯AI云电脑 & 红魔平板集成豆包大模型</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-cyan">WorkBuddy</span>
-      <span class="tag tag-red">豆包</span>
-      <p><strong>中兴通讯×腾讯</strong>：推出搭载腾讯原生AI助手WorkBuddy的AI云电脑，AH股双双走高。</p>
-      <p><strong>红魔游戏平板5 Pro</strong>：首发185Hz刷新率，骁龙8 Elite Gen5，深度集成豆包大模型提供游戏AI服务。</p>
-    </div>
-  </div>
-</div>
-
-<!-- 💰 行业 -->
-<div class="section">
-  <div class="section-title">💰 行业 & 商业化</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num red">10</div>
-      <div class="card-title">OpenAI和Anthropic竞相推进上市计划</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-red">IPO</span>
-      <span class="tag tag-green">$9,650亿</span>
-      <p>据法国《回声报》报道，OpenAI和Anthropic正在竞相推进IPO。SpaceX上市受到密切关注，若成功将为AI公司上市铺路。Anthropic估值已达9650亿美元，距万亿美元仅一步之遥。</p>
-    </div>
-  </div>
-</div>
-
-<!-- 关键数据 -->
-<div class="section">
-  <div class="section-title">📊 关键数据速览</div>
-  <div class="card">
-    <table class="data-table">
-      <tr><th>指标</th><th>数据</th></tr>
-      <tr><td>美国AI行政令审查窗口</td><td>30天（原草案90天）</td></tr>
-      <tr><td>Cosmos 3最大模型参数</td><td>64B（Super系列）</td></tr>
-      <tr><td>Cosmos 3 GitHub Star</td><td>9,000+</td></tr>
-      <tr><td>Gemma 4 12B本地要求</td><td>16GB内存</td></tr>
-      <tr><td>AI Edge Gallery首批模型</td><td>5款</td></tr>
-      <tr><td>前沿模型论坛参与方</td><td>OpenAI、Anthropic、Google</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- 趋势判断 -->
-<div class="section">
-  <div class="section-title">🔮 趋势判断</div>
-  <div class="trend-section">
-    <div class="trend-item">
-      <div class="trend-num">1</div>
-      <div class="trend-text"><strong>美国AI监管进入「自愿前置审查」时代</strong> — 从零约束到30天窗口，政策拐点已至，大厂实质上将不得不参与</div>
-    </div>
-    <div class="trend-item">
-      <div class="trend-num">2</div>
-      <div class="trend-text"><strong>中美AI博弈升级到「模型级封锁」</strong> — 从芯片禁运到模型输出防护，三巨头联手标志新博弈维度</div>
-    </div>
-    <div class="trend-item">
-      <div class="trend-num">3</div>
-      <div class="trend-text"><strong>端侧AI进入「16GB门槛时代」</strong> — Google AI Edge Gallery让普通Mac跑12B多模态模型，端侧AI从实验走向实用</div>
-    </div>
-    <div class="trend-item">
-      <div class="trend-num">4</div>
-      <div class="trend-text"><strong>AI Agent从云端走向本地化</strong> — Kimi Work开启内测，办公场景成Agent新战场</div>
-    </div>
-    <div class="trend-item">
-      <div class="trend-num">5</div>
-      <div class="trend-text"><strong>物理AI成英伟达下一个战略方向</strong> — Cosmos 3开源 + Gamma-World多智能体，世界模型从学术走向工程化</div>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  数据截至 2026-06-05 07:30 CST | 数据来源：WebSearch (8次), WebFetch (5次), Bloomberg, 白宫公告, NVIDIA GitHub
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

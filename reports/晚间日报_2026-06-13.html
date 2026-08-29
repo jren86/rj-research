@@ -1,277 +1,506 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>晚间投研日报 | 2026-06-13</title>
-<style>
-  :root {
-    --bg: #faf9f7;
-    --card: #f4f2ef;
-    --border: #f4f2ef;
-    --text: #e0e0e0;
-    --muted: #8b8fa3;
-    --red: #b8544a;
-    --green: #4a8a5c;
-    --accent: #6366f1;
-    --accent-light: #818cf8;
-    --fire: #f97316;
-    --warning: #eab308;
-    --danger: #b8544a;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    padding: 16px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .header {
-    text-align: center;
-    padding: 24px 0 16px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 20px;
-  }
-  .header h1 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-  .header .date { font-size: 13px; color: var(--muted); }
-  h2 { font-size: 17px; font-weight: 700; color: var(--accent-light); margin: 24px 0 12px; padding-left: 10px; border-left: 3px solid var(--accent); }
-  h3 { font-size: 15px; font-weight: 600; color: #fff; margin: 16px 0 8px; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 14px; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th { background: rgba(99,102,241,0.15); color: var(--accent-light); padding: 8px 10px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
-  td { padding: 7px 10px; border-bottom: 1px solid rgba(42,45,58,0.6); }
-  tr:last-child td { border-bottom: none; }
-  .up { color: var(--red); font-weight: 600; }
-  .down { color: var(--green); font-weight: 600; }
-  .tag-fire { background: rgba(249,115,22,0.15); color: var(--fire); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
-  .tag-green { background: rgba(34,197,94,0.15); color: var(--green); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
-  .tag-yellow { background: rgba(234,179,8,0.15); color: var(--warning); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
-  .tag-red { background: rgba(239,68,68,0.15); color: var(--danger); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
-  .tag-gray { background: rgba(139,143,163,0.15); color: var(--muted); padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
-  .highlight-box { background: rgba(249,115,22,0.08); border-left: 3px solid var(--fire); padding: 12px 14px; border-radius: 0 8px 8px 0; margin-bottom: 12px; }
-  .highlight-box p { font-size: 13px; margin: 4px 0; }
-  .highlight-box-blue { background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent); padding: 12px 14px; border-radius: 0 8px 8px 0; margin-bottom: 12px; }
-  .highlight-box-blue p { font-size: 13px; margin: 4px 0; }
-  .stat-row { display: flex; gap: 12px; margin: 10px 0; flex-wrap: wrap; }
-  .stat-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; flex: 1; min-width: 120px; text-align: center; }
-  .stat-item .label { font-size: 11px; color: var(--muted); }
-  .stat-item .value { font-size: 18px; font-weight: 700; margin-top: 2px; }
-  .bullet { margin: 4px 0 4px 18px; font-size: 13px; color: var(--text); line-height: 1.6; }
-  .source { font-size: 11px; color: var(--muted); text-align: center; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border); }
-  @media (max-width: 480px) {
-    body { padding: 10px; }
-    .stat-item { min-width: 90px; }
-    .stat-item .value { font-size: 15px; }
-    table { font-size: 12px; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间日报 · 2026-06-13</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>🔦 晚间投研日报</h1>
-  <div class="date">2026年6月13日 周六 | 聚焦周末增量信息</div>
+<div class="report-header">
+  <h1>晚间日报 · 2026-06-13</h1>
+  <div class="meta"><strong>报告定位</strong>：聚焦6月12日（周五）盘后至6月13日周末重大增量信息，不含基础交易数据。 · <strong>数据来源</strong>：NeoData Financial Search（宏观/个股/美股行情）、WebSearch（周末事件补充） · <strong>制作时间</strong>：2026-06-13 18:00 CST</div>
 </div>
 
-<!-- 宏观焦点 -->
+<hr>
 <h2>一、🔴 宏观焦点</h2>
+<h3>🔥🔥🔥 美伊协议进入最后冲刺：80-85% 概率签署，但伊方内部分歧加剧</h3>
+<ul><li>美国高级官员周五表示，对数日内签署谅解备忘录有 <strong>80%-85%</strong> 把握，但"还没到100%"。</li><li>伊朗外长阿拉格齐表示，谅解备忘录将以<strong>远程电子方式</strong>签署，"可能在未来几天内发生"；并称协议"前所未有地接近"。</li><li>巴基斯坦总理夏巴兹确认：美伊已就协议最终文本达成一致，巴基斯坦正与双方合作敲定后续步骤。</li><li><strong>4架美军C-17运输机飞抵德国</strong>，为副总统万斯赴日内瓦出席签署仪式做准备——后勤部署信号强烈。</li><li>协议将命名为<strong>"伊斯兰堡谅解备忘录"</strong>（Islamabad MOU）。</li><li><strong>⚠️ 伊方内部分裂</strong>：伊朗法尔斯通讯社称"周日签署是无稽之谈"；保守派消息称最高领袖之子穆杰塔巴不会同意；伊朗迈赫尔通讯社泄露14点草案（含解除制裁、$3000亿重建、30天解除海上封锁等），特朗普怒斥"与事实完全不符"。</li><li>以色列防长暗示未来可能再次动武阻止伊朗拥核。</li></ul>
+<blockquote><strong>影响路径</strong>：若协议落地 → 霍尔木兹海峡重开 → 油价加速下行（本周已跌6.9%）→ 全球通胀预期回落 → 风险资产利好。但伊方内部分歧意味着签署时间仍有不确定性，本周关注G7峰会期间（6/15-17）是否成为签约窗口。</blockquote>
+<h3>🔥🔥 SpaceX 史上最大 IPO 收官：首日收涨 19.22%，市值 $2.1万亿</h3>
+<ul><li>收盘价 <strong>$160.95</strong>（+19.22%），盘中最高 $176.52（+30.7%），市值突破 <strong>$2.1万亿</strong>，跃升美股第6位。</li><li>成交量 <strong>5.22亿股</strong>，成交额约 <strong>850亿美元</strong>；仅 <strong>4.2%</strong> 股份流通，供需严重失衡。</li><li>马斯克成为全球首位万亿美元富豪；SpaceX有望创造约4400名百万富翁。</li><li>基本面：2025年营收186.7亿美元（+33%），净亏损49.4亿美元；星链为唯一盈利业务，AI部门Q1运营亏损24.7亿美元。</li><li>与谷歌月租9.2亿美元AI算力协议；与Anthropic月租12.5亿美元至2029年、总金额逾400亿美元。</li><li><strong>A股映射</strong>：通宇通讯、信维通信已验证供应SpaceX；天银机电、超捷股份、迈为股份、西部材料具备潜力（东吴证券）。</li></ul>
+<h3>🔥🔥 G7 峰会 6/15-17 前瞻：AI+中东议题双聚焦</h3>
+<ul><li>法国埃维昂莱班举行，AI为<strong>核心议题</strong>。OpenAI 奥特曼受邀出席，软银承诺5年450亿欧元在法建AI基础设施。</li><li>中东4国（埃及、沙特、卡塔尔、阿联酋）受邀参加伊朗/能源议题会议——<strong>美伊协议可能在G7期间签约</strong>。</li><li>可能不发联合公报（2019、2025均未发），内部分歧加剧。</li></ul>
+<h3>🔥 美联储 6/17-18 FOMC 前瞻：沃什"首秀"，三大加息信号待验证</h3>
+<ul><li><strong>新任主席沃什首次主持议息会议</strong>，市场预计维持利率不变（概率98.5%）。</li><li><strong>三大观察维度</strong>：</li><li><strong>是否删除"宽松倾向"措辞</strong>——前克利夫兰联储主席梅斯特称"最直接且相对无痛"的信号</li><li><strong>点阵图是否出现加息预期</strong>——3月无人标注加息，新版或现转变</li><li><strong>风险分布图是否向通胀端倾斜</strong></li><li>多位官员放鹰：卡什卡利（通胀5年超目标）、库克（已做好加息准备）、城堡证券警告可能需加息。</li><li>法巴银行成为首家将12月加息写入年度预测的大型银行。</li><li>野村证券基准预测"按兵不动"，但加息风险略高于降息（25% vs 更低）。</li></ul>
+<h3>🔥 中国 6/15 MLF 续作：量价信号检验政策定力</h3>
+<ul><li>6月15日 09:20 公布MLF中标利率及操作规模，前值尚未公布。</li><li>央行5月MLF净投放1000亿 + 国债净买入500亿，7天逆回购利率维持1.40%。</li><li>中金预计下半年延续"适度宽松"基调，但降准降息必要性不大，结构性工具为政策重心。</li></ul>
+<hr>
+<h2>二、全球市场概览（6/12周五收盘）</h2>
+<h3>美股三大指数全线收涨</h3>
+<table><thead><tr><th>指数</th><th>收盘</th><th>当日涨跌幅</th><th>本周涨跌幅</th></tr></thead><tbody><tr><td>道琼斯</td><td>51,202.26</td><td>+0.70%</td><td>+0.66%</td></tr><tr><td>标普500</td><td>7,431.46</td><td>+0.50%</td><td>+0.65%</td></tr><tr><td>纳斯达克</td><td>25,888.84</td><td>+0.31%</td><td>+0.70%</td></tr></tbody></table>
+<ul><li>芯片股延续反弹：ARM +11%，英特尔 +6%，费城半导体指数 +1.52%。</li><li>银行股集体上涨：摩根大通 +2.3%，高盛 +2.64%。</li><li>油价暴跌：WTI $84.29（周跌6.9%），布伦特 $86.76（周跌6.8%）。</li><li>黄金反弹：COMEX $4,239.90（日+3.06%，周-2.87%），脱离熊市低点。</li></ul>
+<h3>A股/港股（6/12周五）</h3>
+<ul><li>A股放量上攻重返4000点，超3900家上涨，成交3.2万亿。</li><li>港股恒指 +1.93%，创新药+互联网双引擎。</li></ul>
+<hr>
+<h2>三、重点个股增量信息</h2>
+<h3>🔋 宁德时代（sz300750）</h3>
+<p><strong>增量要点：</strong></p>
+<ul><li><strong>富临精工签署股票认购补充协议</strong>：宁德时代拟出资不超过 <strong>31.755亿元</strong>认购富临精工A股股票（8,998-23,315万股），产业链纵深绑定持续加码。</li><li><strong>新宙邦3年30万吨电解液大单</strong>：2026-2028年分别采购5/10/15万吨，违约赔偿2500万元——供应链锁定量产保障能力。</li><li><strong>中信证券看多锂电</strong>：电芯价格0.35元/Wh以上，较去年6月+20%；行业进入上行周期，高端品仍紧俏。</li></ul>
+<blockquote><strong>点评</strong>：产业链纵深布局（富临精工+新宙邦）与行业景气上行共振，短期枧下窝注销利空已消化，中长期逻辑仍是全球电池龙头+能源生态闭环。</blockquote>
+<hr>
+<h3>📺 京东方 A（sz000725）</h3>
+<p><strong>增量要点：</strong></p>
+<ul><li><strong>回购注销即将落地</strong>：5-10亿元回购A股股份并全部注销，农行9亿元专项贷款承诺函已获批；调整后回购价格上限5.94元/股。</li><li><strong>本周主力净流出69.04亿元</strong>，为全市场流出最多——"易中天"光模块板块遭猛烈抛售。</li><li>玻璃基载板通线 + 股东回报规划（每年现金分红≥35%+回购注销≥15亿），但市场仍在等待良率/量产信号。</li></ul>
+<blockquote><strong>点评</strong>：回购注销+分红规划彰显长期信心，但本周69亿主力流出表明短期资金面仍承压。需关注玻璃基载板客户测试进展及良率数据。</blockquote>
+<hr>
+<h3>🏭 工业富联（sh601138）</h3>
+<p><strong>增量要点：</strong></p>
+<ul><li>本周主力净流出超 <strong>33亿元</strong>，受"易中天"板块整体拖累。</li><li>富士康子公司拟斥资 <strong>15亿欧元收购奥地利公司</strong>，扩展欧洲AI基础设施布局。</li><li>SpaceX上市利好AI基础设施叙事——SpaceX与谷歌/Anthropic的AI算力租赁协议验证算力需求持续性。</li></ul>
+<blockquote><strong>点评</strong>：短期资金面偏弱，但AI算力景气基本面未改。15亿欧元欧洲收购 + SpaceX验证算力需求，中线逻辑仍硬。</blockquote>
+<hr>
+<h3>💊 信达生物（hk01801）</h3>
+<p><strong>增量要点：</strong></p>
+<ul><li>CSCO指南I级推荐（信迪利单抗N01新辅助治疗MSI-H/dMMR结肠癌）——最高级别临床背书。</li><li>辉瑞105亿美元合作+IBI363数据+IBI343胃癌III期达终点（NMPA受理上市申请获优先审评），三重逻辑叠加。</li><li>创新药板块整体反弹（6/12信达+4.80%），受美伊局势缓和+降息预期降温后的防御性资金回流推动。</li></ul>
+<blockquote><strong>点评</strong>：指南推荐+三线药物管线推进，临床催化剂密集期。短期受板块情绪带动，中期看IBI363全球注册进展。</blockquote>
+<hr>
+<h3>🔬 芯碁微装（sh688630）</h3>
+<p><strong>增量要点：</strong></p>
+<ul><li><strong>H股IPO聆讯通过</strong>（6/10），全球发售进程推进；6/9董事会批准全球发售。</li><li>格隆汇深度覆盖：公司全球直写光刻设备排名第4（9.4%份额），创始人程卓女士60岁掌舵，产能利用率100.2%。</li><li>盘中再创438.88新高后回落，近一年+194%，PE 149x。</li></ul>
+<blockquote><strong>点评</strong>：H股上市打开国际融资渠道+WFE超级周期双催化，但估值已不便宜，短期高位波动加剧。</blockquote>
+<hr>
+<h3>🔧 长川科技（sz300604）</h3>
+<p><strong>增量要点：</strong></p>
+<ul><li>本周+7.93%，6/12回吐部分涨幅（-4.17%），属正常调整。</li><li>半导体设备ETF重仓+国产替代逻辑未变。</li><li>六氟化钨价格暴涨232.7%（523→1670-1810元/kg），韩国供应商计划2026年再涨70-90%——半导体材料景气扩散信号。</li></ul>
+<blockquote><strong>点评</strong>：短期调整不影响中线逻辑。六氟化钨涨价反映半导体材料景气向产业链上游扩散。</blockquote>
+<hr>
+<h3>🔬 精智达（sh688627）</h3>
+<p><strong>增量要点：</strong></p>
+<ul><li><strong>VC股东减持至5%阈值</strong>：源创力清源及其一致行动人持股比例由5.99%降至5.00%，4/9-6/10集中竞价减持92.7万股。</li><li>存储测试业务同比+151%，盘中创462新高后回落。</li></ul>
+<blockquote><strong>点评</strong>：VC减持5%是常见退出节奏，不构成基本面变化。长鑫HBM扩产40亿测试需求是中期硬支撑。</blockquote>
+<hr>
+<h3>🔋 容百科技（sh688005）</h3>
+<p><strong>增量要点：</strong></p>
+<ul><li>短期缺乏独立催化剂，走势跟随锂电板块。</li><li>钠电2027年30万吨产能规划+宁德9月首批交付，中期逻辑不变。</li><li>中信证券看好锂电中游盈利修复：正极/电解液等涉锂环节修复明显。</li></ul>
+<blockquote><strong>点评</strong>：等待钠电量产催化，Q1已连续盈利（+175%），基本面拐点确认中。</blockquote>
+<hr>
+<h2>四、下周核心变量</h2>
+<table><thead><tr><th>事件</th><th>时间</th><th>影响方向</th><th>关注度</th></tr></thead><tbody><tr><td><strong>美伊协议签署</strong></td><td>未来数日（G7期间概率高）</td><td>落地→油价下行+风险偏好提振；利好航空/化工/消费</td><td>🔥🔥🔥</td></tr><tr><td><strong>G7峰会</strong></td><td>6/15-17（法国埃维昂）</td><td>AI监管+中东议题，美伊或借势签约</td><td>🔥🔥🔥</td></tr><tr><td><strong>中国MLF续作</strong></td><td>6/15 09:20</td><td>量价信号检验政策定力</td><td>🔥🔥</td></tr><tr><td><strong>美联储FOMC</strong></td><td>6/17-18</td><td>加息概率低但关注三大信号（删除宽松倾向/点阵图/风险分布）</td><td>🔥🔥🔥</td></tr><tr><td><strong>SpaceX第二日交易</strong></td><td>6/15（周一美股）</td><td>流通股仅4.2%，波动可能加剧</td><td>🔥</td></tr><tr><td><strong>A股指数调仓生效</strong></td><td>6/12已生效</td><td>硬科技被动资金流入持续</td><td>🟡</td></tr></tbody></table>
+<h3>本周市场特征总结</h3>
+<ul><li><strong>油价是核心变量</strong>：WTI周跌6.9%、布伦特周跌6.8%，美伊和谈预期持续压制能源板块。</li><li><strong>SpaceX重构全球科技估值锚</strong>：$2.1万亿市值=AI+航天+卫星三线叙事，A股映射标的（通宇通讯/信维通信/天银机电）下周或有情绪脉冲。</li><li><strong>A股风格切换进行中</strong>：高位科技（光模块/面板）遭主力猛烈抛售（京东方-69亿、新易盛-66亿、中际旭创-57亿），算力（海光+27亿）和关键矿产（天华新能+25亿）获资金涌入。</li><li><strong>FOMC+G7双重考验在即</strong>：6/15-18四天密集事件窗口，市场波动率预计上升。</li></ul>
+<hr>
+<blockquote>📌 <strong>免责声明</strong>：本报告基于公开信息整理，不构成投资建议。数据来源：NeoData Financial Search、WeStock Data、公开媒体报道。<br>📌 报告网页版：https://rj-research.pages.dev</blockquote>
 
-<div class="highlight-box">
-  <p><span class="tag-fire">🔥🔥🔥</span> <strong>美伊协议进入最后冲刺：80-85% 概率签署</strong></p>
-  <p style="margin-left:8px;">美方高官：对数日内签署谅解备忘录有 80%-85% 把握</p>
-  <p style="margin-left:8px;">伊朗外长：将以远程电子方式签署，"可能在未来几天内发生"</p>
-  <p style="margin-left:8px;">巴基斯坦总理确认：美伊已就协议最终文本达成一致</p>
-  <p style="margin-left:8px;">4架美军 C-17 飞抵德国，为万斯赴日内瓦签约做准备</p>
-  <p style="margin-left:8px; color: var(--warning);">⚠️ 伊方内部分裂：法尔斯通讯社称"周日签署是无稽之谈"；保守派称最高领袖之子不会同意</p>
-  <p style="margin-left:8px; color: var(--danger);">特朗普怒斥伊媒泄露草案"与事实完全不符"；以色列防长暗示或再动武</p>
-</div>
-
-<div class="card" style="background: rgba(99,102,241,0.06); border-color: rgba(99,102,241,0.3);">
-  <h3 style="color: var(--accent-light);">美伊协议14点谅解备忘录草案（伊朗迈赫尔通讯社泄露，未经官方确认）</h3>
-  <div style="font-size:12px; color:var(--muted); line-height:1.7; margin-top:6px;">
-    ① 所有战线立即永久停火 ② 美国不干涉伊朗内政 ③ 30天内解除海上封锁 ④ 美军从伊朗周边撤出 ⑤ 霍尔木兹海峡30天内重开 ⑥ 暂停伊朗石油制裁 ⑦ $3000亿重建计划 ⑧ 60天谈判最终协议 ⑨ 伊朗不制造核武器 ⑩ 谈判期间不增兵/新制裁 ⑪ 解冻$240亿资产 ⑫ 建立监督机制 ⑬ 联合国安理会确认 ⑭ 导弹计划及代理人问题排除在议程外
-  </div>
-</div>
-
-<div class="highlight-box">
-  <p><span class="tag-fire">🔥🔥🔥</span> <strong>SpaceX IPO 收官：首日收涨 19.22%，市值 $2.1万亿</strong></p>
-  <p style="margin-left:8px;">收盘 $160.95（盘中最高 $176.52，+30.7%），成交额约 $850亿</p>
-  <p style="margin-left:8px;">仅 4.2% 股份流通 → 供需严重失衡，马斯克成首位万亿富豪</p>
-  <p style="margin-left:8px;">基本面：2025营收186.7亿（+33%），净亏49.4亿；星链唯一盈利，AI部门Q1亏24.7亿</p>
-  <p style="margin-left:8px;">AI算力大单：谷歌月租$9.2亿 + Anthropic月租$12.5亿（至2029年，总额>$400亿）</p>
-  <p style="margin-left:8px; color: var(--accent-light);">A股映射：通宇通讯/信维通信已验证供应；天银机电/超捷股份/迈为股份/西部材料具备潜力</p>
-</div>
-
-<div class="highlight-box-blue">
-  <p><span class="tag-fire">🔥🔥</span> <strong>G7 峰会 6/15-17 前瞻：AI+中东议题双聚焦</strong></p>
-  <p style="margin-left:8px;">法国埃维昂举行，AI为核心议题；OpenAI奥特曼受邀，软银承诺5年€450亿在法建AI基础设施</p>
-  <p style="margin-left:8px;">中东4国受邀参加伊朗/能源议题 → 美伊协议可能在G7期间签约</p>
-  <p style="margin-left:8px;">可能不发联合公报（2019/2025均未发），内部分歧加剧</p>
-</div>
-
-<div class="highlight-box-blue">
-  <p><span class="tag-fire">🔥🔥</span> <strong>美联储 6/17-18 FOMC：沃什"首秀"，三大加息信号</strong></p>
-  <p style="margin-left:8px;">市场预计维持利率不变（概率98.5%），但关注三大信号：</p>
-  <p style="margin-left:8px;">① 删除"宽松倾向"措辞 ② 点阵图出现加息预期 ③ 风险分布图向通胀端倾斜</p>
-  <p style="margin-left:8px;">卡什卡利/库克/城堡证券均警告可能需加息；法巴银行首家将12月加息写入年度预测</p>
-</div>
-
-<div class="highlight-box-blue">
-  <p><span class="tag-fire">🔥</span> <strong>中国 6/15 MLF 续作</strong></p>
-  <p style="margin-left:8px;">6月15日 09:20 公布中标利率及操作规模；央行5月MLF净投放1000亿+国债净买入500亿</p>
-  <p style="margin-left:8px;">中金：下半年延续"适度宽松"，但降准降息必要性不大，结构性工具为重心</p>
-</div>
-
-<!-- 全球市场 -->
-<h2>二、全球市场概览（6/12 周五收盘）</h2>
-
-<h3>美股三大指数</h3>
-<div class="card">
-  <table>
-    <tr><th>指数</th><th>收盘</th><th>当日</th><th>本周</th></tr>
-    <tr><td>道琼斯</td><td>51,202.26</td><td class="up">+0.70%</td><td class="up">+0.66%</td></tr>
-    <tr><td>标普500</td><td>7,431.46</td><td class="up">+0.50%</td><td class="up">+0.65%</td></tr>
-    <tr><td>纳斯达克</td><td>25,888.84</td><td class="up">+0.31%</td><td class="up">+0.70%</td></tr>
-  </table>
-</div>
-
-<div class="stat-row">
-  <div class="stat-item">
-    <div class="label">WTI 原油</div>
-    <div class="value down">$84.29</div>
-    <div class="label" style="margin-top:2px;">周跌 6.9%</div>
-  </div>
-  <div class="stat-item">
-    <div class="label">COMEX 黄金</div>
-    <div class="value up">$4,239.90</div>
-    <div class="label" style="margin-top:2px;">日+3.1% 周-2.9%</div>
-  </div>
-  <div class="stat-item">
-    <div class="label">费城半导体</div>
-    <div class="value up">+1.52%</div>
-    <div class="label" style="margin-top:2px;">ARM+11% 英特尔+6%</div>
-  </div>
-</div>
-
-<!-- 持仓个股 -->
-<h2>三、重点个股增量</h2>
-
-<div class="card">
-  <table>
-    <tr><th>标的</th><th>周末增量</th><th>判断</th></tr>
-    <tr>
-      <td><strong>🔋 宁德时代</strong><br>300750.SZ</td>
-      <td>
-        富临精工签署补充协议：宁德拟出资≤31.755亿元认购股票<br>
-        新宙邦3年30万吨电解液大单（5/10/15万吨）<br>
-        中信看多锂电：电芯0.35元/Wh以上，较去年+20%
-      </td>
-      <td><span class="tag-green">🟢 产业纵深加码</span></td>
-    </tr>
-    <tr>
-      <td><strong>📺 京东方A</strong><br>000725.SZ</td>
-      <td>
-        回购注销即将落地：5-10亿元回购全部注销<br>
-        农行9亿元专项贷款承诺函已获批<br>
-        ⚠️ 本周主力净流出69.04亿元（全市场最多）
-      </td>
-      <td><span class="tag-yellow">🟡 短期承压</span><br><span style="font-size:11px;">回购托底信号</span></td>
-    </tr>
-    <tr>
-      <td><strong>🏭 工业富联</strong><br>601138.SH</td>
-      <td>
-        本周主力净流出33亿+<br>
-        富士康15亿欧元收购奥地利公司→欧洲AI基建<br>
-        SpaceX验证AI算力需求持续性
-      </td>
-      <td><span class="tag-yellow">🟡 资金偏弱</span><br><span style="font-size:11px;">基本面仍硬</span></td>
-    </tr>
-    <tr>
-      <td><strong>💊 信达生物</strong><br>01801.HK</td>
-      <td>
-        CSCO指南I级推荐（信迪利单抗N01）<br>
-        辉瑞105亿合作+IBI363+IBI343三重逻辑叠加<br>
-        创新药板块整体反弹+4.80%
-      </td>
-      <td><span class="tag-green">🟢 催化剂密集</span></td>
-    </tr>
-    <tr>
-      <td><strong>🔬 芯碁微装</strong><br>688630.SH</td>
-      <td>
-        H股IPO聆讯6/10通过<br>
-        格隆汇深度：全球直写光刻第4（9.4%份额）<br>
-        产能利用率100.2%，近一年+194%
-      </td>
-      <td><span class="tag-yellow">🟡 高位波动</span><br><span style="font-size:11px;">PE 149x</span></td>
-    </tr>
-    <tr>
-      <td><strong>🔧 长川科技</strong><br>300604.SZ</td>
-      <td>
-        本周+7.93%，6/12正常回调-4.17%<br>
-        六氟化钨价格暴涨232.7%（半导体材料景气扩散信号）
-      </td>
-      <td><span class="tag-green">🟢 产业景气扩散</span></td>
-    </tr>
-    <tr>
-      <td><strong>🔬 精智达</strong><br>688627.SH</td>
-      <td>
-        VC股东减持至5%阈值（源创力清源5.99%→5.00%）<br>
-        存储测试业务同比+151%
-      </td>
-      <td><span class="tag-gray">⚪ 常规退出</span></td>
-    </tr>
-    <tr>
-      <td><strong>🔋 容百科技</strong><br>688005.SH</td>
-      <td>
-        短期缺乏独立催化剂<br>
-        钠电2027年30万吨产能+中信看好中游盈利修复
-      </td>
-      <td><span class="tag-gray">⚪ 等待催化</span></td>
-    </tr>
-  </table>
-</div>
-
-<!-- 产业动态 -->
-<h2>四、产业动态</h2>
-
-<div class="card">
-  <h3>🔥 六氟化钨价格暴涨 232.7%：半导体材料景气扩散</h3>
-  <p style="font-size:13px; margin-top:6px;">5N级六氟化钨价格从523元/kg暴涨至1,670-1,810元/kg。韩国SK Specialty/Foosung通知三星/SK海力士2026年再涨70-90%。国内仅中船特气（2000吨/年）和中巨芯（600吨/年）能生产5N+级产品。中巨芯6日翻倍。</p>
-</div>
-
-<div class="card">
-  <h3>🔥 SpaceX 供应链映射</h3>
-  <p style="font-size:13px; margin-top:6px;">东吴证券研报：已验证A股供应商为<strong>通宇通讯、信维通信</strong>；康斯特2016-2024年间有较小金额订单。潜力供应商：天银机电、超捷股份、迈为股份、西部材料。</p>
-</div>
-
-<!-- 下周展望 -->
-<h2>五、下周核心变量</h2>
-
-<div class="card">
-  <table>
-    <tr><th>事件</th><th>时间</th><th>影响方向</th><th>关注度</th></tr>
-    <tr><td><strong>美伊协议签署</strong></td><td>未来数日（G7期间概率高）</td><td>落地→油价下行+风险偏好提振<br>利好航空/化工/消费，偏空能源</td><td>🔥🔥🔥</td></tr>
-    <tr><td><strong>G7 峰会</strong></td><td>6/15-17</td><td>AI监管+中东议题<br>美伊或借势签约</td><td>🔥🔥🔥</td></tr>
-    <tr><td><strong>中国 MLF 续作</strong></td><td>6/15 09:20</td><td>量价信号检验政策定力</td><td>🔥🔥</td></tr>
-    <tr><td><strong>美联储 FOMC</strong></td><td>6/17-18</td><td>三大信号：删除宽松倾向/点阵图/风险分布</td><td>🔥🔥🔥</td></tr>
-    <tr><td><strong>SpaceX 第二日交易</strong></td><td>6/15 周一美股</td><td>流通股仅4.2%，波动可能加剧</td><td>🔥</td></tr>
-  </table>
-</div>
-
-<div class="highlight-box-blue" style="margin-top:16px;">
-  <p><strong>本周市场特征总结</strong></p>
-  <p style="margin-left:8px;">🛢️ <strong>油价是核心变量</strong>：WTI周跌6.9%，美伊和谈预期持续压制能源板块</p>
-  <p style="margin-left:8px;">🚀 <strong>SpaceX重构全球科技估值锚</strong>：$2.1万亿=AI+航天+卫星三线叙事</p>
-  <p style="margin-left:8px;">📊 <strong>A股风格切换进行中</strong>：高位科技遭主力抛售（京东方-69亿、新易盛-66亿），算力+关键矿产获资金涌入</p>
-  <p style="margin-left:8px;">📅 <strong>FOMC+G7双重考验</strong>：6/15-18四天密集事件窗口，波动率预计上升</p>
-</div>
-
-<div class="source">
-  📌 免责声明：本报告基于公开信息整理，不构成投资建议。数据来源：NeoData Financial Search、WeStock Data、公开媒体报道。<br>
-  📌 报告网页版：<a href="https://rj-research.pages.dev" style="color:var(--accent-light);">rj-research.pages.dev</a>
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

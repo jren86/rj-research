@@ -1,653 +1,503 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>每日国家队增减持动向 | 2026-06-01</title>
-<style>
-  :root {
-    --bg-primary: #faf9f7;
-    --bg-secondary: #f4f2ef;
-    --bg-card: #ffffff;
-    --border: #cfc9c1;
-    --text-primary: #2c2a28;
-    --text-secondary: #6b6760;
-    --text-muted: #6b6760;
-    --red: #f23645;
-    --red-bg: rgba(242, 54, 69, 0.1);
-    --green: #00c853;
-    --green-bg: rgba(0, 200, 83, 0.1);
-    --blue: #3a6b96;
-    --blue-bg: rgba(88, 166, 255, 0.1);
-    --yellow: #a8813c;
-    --yellow-bg: rgba(210, 153, 34, 0.1);
-    --orange: #f0883e;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.7;
-    font-size: 15px;
-    -webkit-font-smoothing: antialiased;
-  }
-  .container { max-width: 720px; margin: 0 auto; padding: 16px; }
-  
-  /* Header */
-  .header {
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 16px;
-  }
-  .header h1 {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 4px;
-  }
-  .header .subtitle {
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
-  .header .date-badge {
-    display: inline-block;
-    background: var(--blue-bg);
-    color: var(--blue);
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: 8px;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日国家队增减持动向 · 2026-06-01</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
 
-  /* Conclusion Banner */
-  .conclusion {
-    background: linear-gradient(135deg, #1e272e 0%, #ffffff 100%);
-    border: 1px solid var(--yellow);
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 16px;
-  }
-  .conclusion .label {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--yellow);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-  }
-  .conclusion p {
-    font-size: 14px;
-    color: var(--text-primary);
-    line-height: 1.6;
-  }
-  .conclusion strong {
-    color: var(--yellow);
-  }
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
 
-  /* Section */
-  .section {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .section-title .num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--blue-bg);
-    color: var(--blue);
-    font-size: 12px;
-    font-weight: 700;
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* Table */
-  .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 8px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    min-width: 520px;
-  }
-  th {
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-    font-weight: 600;
-    padding: 8px 10px;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-    white-space: nowrap;
-    font-size: 12px;
-  }
-  td {
-    padding: 8px 10px;
-    border-bottom: 1px solid rgba(48, 54, 61, 0.5);
-    color: var(--text-primary);
-    vertical-align: top;
-  }
-  tr:last-child td { border-bottom: none; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
 
-  /* Signal tags */
-  .tag-strong {
-    display: inline-block;
-    background: var(--red-bg);
-    color: var(--red);
-    padding: 1px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-  }
-  .tag-medium {
-    display: inline-block;
-    background: var(--orange);
-    color: #fff;
-    padding: 1px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    background: rgba(240, 136, 62, 0.15);
-    color: var(--orange);
-  }
-  .tag-weak {
-    display: inline-block;
-    background: var(--yellow-bg);
-    color: var(--yellow);
-    padding: 1px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-  }
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
 
-  /* Price colors */
-  .up { color: var(--red); }
-  .down { color: var(--green); }
-  .neutral { color: var(--text-secondary); }
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
 
-  /* Info box */
-  .info-box {
-    background: var(--bg-secondary);
-    border-left: 3px solid var(--blue);
-    padding: 10px 12px;
-    margin: 8px 0;
-    border-radius: 0 6px 6px 0;
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
-  .info-box strong { color: var(--text-primary); }
-  .warn-box {
-    background: var(--bg-secondary);
-    border-left: 3px solid var(--yellow);
-    padding: 10px 12px;
-    margin: 8px 0;
-    border-radius: 0 6px 6px 0;
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
-  .warn-box strong { color: var(--yellow); }
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
 
-  /* Watchlist */
-  .watch-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(48, 54, 61, 0.3);
-  }
-  .watch-item:last-child { border-bottom: none; }
-  .watch-num {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--blue-bg);
-    color: var(--blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-  }
-  .watch-text { font-size: 13px; line-height: 1.5; }
-  .watch-text strong { color: var(--text-primary); }
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
 
-  /* Signal table */
-  .signal-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(48, 54, 61, 0.3);
-    gap: 8px;
-  }
-  .signal-row:last-child { border-bottom: none; }
-  .signal-desc { flex: 1; font-size: 13px; }
-  .signal-desc .evidence { display: block; font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
-  .signal-badge {
-    flex-shrink: 0;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .signal-high { background: var(--green-bg); color: var(--green); }
-  .signal-mid { background: var(--yellow-bg); color: var(--yellow); }
-  .signal-low { background: var(--red-bg); color: var(--red); }
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
 
-  /* Grid */
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-  .grid-item {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-  }
-  .grid-item .label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
-  .grid-item .value { font-size: 16px; font-weight: 700; }
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
 
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 20px 0 30px;
-    font-size: 12px;
-    color: var(--text-muted);
-  }
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
 
-  /* Responsive */
-  @media (max-width: 480px) {
-    .container { padding: 10px; }
-    .header { padding: 14px; }
-    .header h1 { font-size: 17px; }
-    .section { padding: 12px; }
-    table { font-size: 12px; min-width: 400px; }
-    th, td { padding: 6px 8px; }
-    .grid-2 { grid-template-columns: 1fr; }
-  }
-</style>
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
-<div class="container">
 
-  <!-- Header -->
-  <div class="header">
-    <h1>每日国家队增减持动向</h1>
-    <div class="subtitle">2026年6月1日（周一）· 收盘简报</div>
-    <span class="date-badge">📡 数据截至 6/1 19:00</span>
-  </div>
-
-  <!-- Conclusion -->
-  <div class="conclusion">
-    <div class="label">📌 一句话结论</div>
-    <p><strong>今日未发现国家队明确增持信号。</strong> 中央汇金自2026年以来已累计减持宽基ETF约75%-90%（沪深300ETF减七成，上证50/中证1000ETF减九成），减持高峰期已过；5月29日宽基ETF首次转为净流入，但今日无明确增持公告或托底行为。市场呈现"高低切"格局——3776只个股上涨但三大指数收跌，煤炭板块领涨5.85%，科技/半导体遭抛售。</p>
-  </div>
-
-  <!-- Section 2: 已确认增减持事件 -->
-  <div class="section">
-    <div class="section-title"><span class="num">2</span> 已确认增减持事件</div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>日期</th><th>主体</th><th>标的</th><th>行为</th><th>金额/比例</th><th>信号</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2026年初至今</td>
-            <td>中央汇金</td>
-            <td>沪深300ETF(4只)</td>
-            <td class="down">减持</td>
-            <td>约7成+<br>9792亿→~2938亿</td>
-            <td><span class="tag-strong">强确认</span></td>
-          </tr>
-          <tr>
-            <td>2026年初至今</td>
-            <td>中央汇金</td>
-            <td>上证50/中证1000ETF</td>
-            <td class="down">减持</td>
-            <td>约9成+<br>1510亿→~150亿</td>
-            <td><span class="tag-strong">强确认</span></td>
-          </tr>
-          <tr>
-            <td>2026年初至今</td>
-            <td>中央汇金</td>
-            <td>11只宽基ETF合计</td>
-            <td class="down">减持</td>
-            <td>1.54万亿→3,252亿</td>
-            <td><span class="tag-strong">强确认</span></td>
-          </tr>
-          <tr>
-            <td>2026年Q1-5月</td>
-            <td>中证金</td>
-            <td>兴业银行</td>
-            <td class="down">清仓退出</td>
-            <td>6.22亿股全部退出</td>
-            <td><span class="tag-strong">强确认</span></td>
-          </tr>
-          <tr>
-            <td>2026年Q1</td>
-            <td>养老基金</td>
-            <td>中集集团等</td>
-            <td class="up">增持新进</td>
-            <td>中集3908万股</td>
-            <td><span class="tag-medium">中等确认</span></td>
-          </tr>
-          <tr>
-            <td>2026年Q1</td>
-            <td>社保基金</td>
-            <td>保利发展等地产</td>
-            <td class="up">增持新进</td>
-            <td>保利8685万股</td>
-            <td><span class="tag-medium">中等确认</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="info-box"><strong>⚠️ 说明：</strong> 今日（6/1）未发现已确认的国家队直接增持/减持公告。上述事件为年初至今累积变化及最新季报数据，存在1-2个月披露滞后。</div>
-  </div>
-
-  <!-- Section 1: 指数快照 -->
-  <div class="section">
-    <div class="section-title"><span class="num">1</span> 今日指数快照</div>
-    <div class="grid-2">
-      <div class="grid-item">
-        <div class="label">上证指数</div>
-        <div class="value down">4,057.74 <span style="font-size:13px">-0.27%</span></div>
-      </div>
-      <div class="grid-item">
-        <div class="label">沪深300</div>
-        <div class="value down">4,844.26 <span style="font-size:13px">-0.98%</span></div>
-      </div>
-      <div class="grid-item">
-        <div class="label">科创50</div>
-        <div class="value down">1,663.69 <span style="font-size:13px">-5.00%</span></div>
-      </div>
-      <div class="grid-item">
-        <div class="label">上证50</div>
-        <div class="value down">2,893.72 <span style="font-size:13px">-0.94%</span></div>
-      </div>
-      <div class="grid-item">
-        <div class="label">创业板指</div>
-        <div class="value down">3,950.94 <span style="font-size:13px">-2.15%</span></div>
-      </div>
-      <div class="grid-item">
-        <div class="label">两市成交</div>
-        <div class="value neutral">2.88万亿 <span style="font-size:13px;color:var(--green)">-4,415亿</span></div>
-      </div>
-    </div>
-    <div style="margin-top:10px;font-size:13px;color:var(--text-secondary)">
-      <span class="up">↑</span> 煤炭+5.85% 能源设备+3.57% 石油化工+3.55% ｜
-      <span class="down">↓</span> 通信设备-4.03% 电子元器件-2.88% 建材-2.61%
-      <br>
-      个股：<span class="up">3,776只上涨</span> ｜ 1,682只下跌 ｜ 166只涨停
-    </div>
-  </div>
-
-  <!-- Section 3: ETF与宽基资金 -->
-  <div class="section">
-    <div class="section-title"><span class="num">3</span> ETF与宽基资金信号</div>
-    
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>ETF</th><th>代码</th><th>涨跌幅</th><th>成交额</th><th>状态</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>沪深300ETF华泰柏瑞</td>
-            <td style="font-size:12px;color:var(--text-muted)">510300</td>
-            <td class="down">-1.12%</td>
-            <td>24.4亿</td>
-            <td style="color:var(--text-muted)">正常</td>
-          </tr>
-          <tr>
-            <td>上证50ETF华夏</td>
-            <td style="font-size:12px;color:var(--text-muted)">510050</td>
-            <td class="down">-0.97%</td>
-            <td>23.8亿</td>
-            <td style="color:var(--text-muted)">正常</td>
-          </tr>
-          <tr>
-            <td>煤炭ETF国泰</td>
-            <td style="font-size:12px;color:var(--text-muted)">515220</td>
-            <td class="up">+4%<br><span style="font-size:11px;color:var(--text-muted)">盘中</span></td>
-            <td>7.6亿</td>
-            <td style="color:var(--text-muted)">份额+3.57%</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="warn-box">
-      <strong>🔴 年初至今累计：</strong> 15个宽基ETF净流出约1.4万亿元<br>
-      第一波高峰（1-2月）：8975亿 ｜ 第二波（4-5月）：3963亿<br>
-      <strong style="color:var(--green)">🟢 5月29日首次转为净流入</strong>
-    </div>
-
-    <div class="info-box">
-      <strong>汇金持仓剩余估算：</strong><br>
-      沪深300ETF剩余 ~2,938亿元（减七成）<br>
-      上证50/中证1000ETF剩余 ~150亿元以下（减九成）<br>
-      11只宽基合计 ~3,252亿元（从1.54万亿下降）
-    </div>
-
-    <div class="info-box">
-      <strong>近一年ETF净赎回排名：</strong><br>
-      ① 510300华泰柏瑞沪深300ETF：3,191.94亿元<br>
-      ② 510310易方达沪深300ETF：2,154.14亿元
-    </div>
-  </div>
-
-  <!-- Section 4: 股东持仓 -->
-  <div class="section">
-    <div class="section-title"><span class="num">4</span> 股东持仓变化</div>
-    <div class="info-box">数据来自2026年一季报披露，存在滞后，不代表今日交易行为</div>
-    
-    <div style="margin-bottom:8px">
-      <div style="font-size:14px;font-weight:700;margin-bottom:6px">📊 严格口径：中央汇金/证金</div>
-      <table>
-        <thead><tr><th>标的</th><th>变化</th><th>主体</th></tr></thead>
-        <tbody>
-          <tr><td>兴业银行</td><td class="down">清仓退出</td><td>中证金</td></tr>
-          <tr><td>国有大型银行</td><td>继续持有</td><td>中央汇金/汇金资管</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div style="margin-bottom:8px">
-      <div style="font-size:14px;font-weight:700;margin-bottom:6px">📊 扩展口径：社保/养老基金</div>
-      <table>
-        <thead><tr><th>标的</th><th>变化</th><th>主体</th><th>数量</th></tr></thead>
-        <tbody>
-          <tr><td>保利发展</td><td class="up">新进第5大股东</td><td>社保413组合</td><td>8,685万股</td></tr>
-          <tr><td>华发股份</td><td class="up">加仓</td><td>社保基金</td><td>1.19亿股</td></tr>
-          <tr><td>中集集团</td><td class="up">新进第5大股东</td><td>养老基金一五零二二</td><td>3,908万股</td></tr>
-          <tr><td>海容冷链</td><td class="up">新进第2大股东</td><td>养老基金八零一</td><td>1,570万股</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div>
-      <div style="font-size:14px;font-weight:700;margin-bottom:6px">📊 行业增持Top 5</div>
-      <table>
-        <thead><tr><th>行业</th><th>属性</th></tr></thead>
-        <tbody>
-          <tr><td>煤炭开采</td><td>周期/高股息（居首）</td></tr>
-          <tr><td style="color:var(--blue)">通用设备</td><td style="color:var(--blue)">科技</td></tr>
-          <tr><td style="color:var(--blue)">玻璃玻纤</td><td style="color:var(--blue)">科技</td></tr>
-          <tr><td>特钢</td><td>材料</td></tr>
-          <tr><td style="color:var(--blue)">医疗器械</td><td style="color:var(--blue)">科技</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="warn-box" style="margin-top:10px">
-      <strong>今日盘面验证：</strong> 社保重仓股中24只逆势暴涨，9只涨停（晋控煤业、潞安环能、兖矿能源等），集中在煤炭/能源板块，与社保一季度增持方向一致。
-    </div>
-  </div>
-
-  <!-- Section 5: 疑似托底/调仓信号 -->
-  <div class="section">
-    <div class="section-title"><span class="num">5</span> 疑似托底/调仓信号</div>
-    
-    <div class="signal-row">
-      <div class="signal-desc">
-        <strong>宽基ETF无异常放量</strong>
-        <span class="evidence">510300成交24.4亿，510050成交23.8亿，均属正常水平</span>
-      </div>
-      <span class="signal-badge signal-high">确认无异常</span>
-    </div>
-    <div class="signal-row">
-      <div class="signal-desc">
-        <strong>两市缩量4,415亿</strong>
-        <span class="evidence">总成交2.88万亿，较前一交易日明显缩量</span>
-      </div>
-      <span class="signal-badge signal-high">无增量资金</span>
-    </div>
-    <div class="signal-row">
-      <div class="signal-desc">
-        <strong>科创50暴跌5%无护盘</strong>
-        <span class="evidence">半导体/CPO板块暴跌，未见权重股逆势拉升</span>
-      </div>
-      <span class="signal-badge signal-high">国家队未干预</span>
-    </div>
-    <div class="signal-row">
-      <div class="signal-desc">
-        <strong>煤炭板块大涨5.85%</strong>
-        <span class="evidence">煤炭ETF近20日流入17亿，份额+3.57%</span>
-      </div>
-      <span class="signal-badge signal-mid">推断:风格切换</span>
-    </div>
-    <div class="signal-row">
-      <div class="signal-desc">
-        <strong>上证50跌0.94%，银行承压</strong>
-        <span class="evidence">权重股下跌，大金融板块整体转弱</span>
-      </div>
-      <span class="signal-badge signal-high">汇金减持滞后影响</span>
-    </div>
-    <div class="signal-row">
-      <div class="signal-desc">
-        <strong>3776涨/1682跌的结构性分化</strong>
-        <span class="evidence">中小盘强于大盘，低位股补涨</span>
-      </div>
-      <span class="signal-badge signal-mid">推断:存量高低切</span>
-    </div>
-    <div class="signal-row">
-      <div class="signal-desc">
-        <strong>5月29日ETF首转净流入</strong>
-        <span class="evidence">15个宽基ETF终止连续净流出</span>
-      </div>
-      <span class="signal-badge signal-mid">推断:减持尾声后回补</span>
-    </div>
-  </div>
-
-  <!-- Section 6: 风格与板块 -->
-  <div class="section">
-    <div class="section-title"><span class="num">6</span> 指向的市场风格和板块</div>
-    <table>
-      <thead><tr><th>方向</th><th>状态</th><th>依据</th></tr></thead>
-      <tbody>
-        <tr><td>稳指数</td><td class="down">❌</td><td>上证50/沪深300均收跌</td></tr>
-        <tr><td>托宽基</td><td class="down">❌</td><td>宽基ETF成交正常</td></tr>
-        <tr><td>稳金融地产</td><td class="down">⚠️ 反向</td><td>银行因汇金减持承压</td></tr>
-        <tr><td>扶科技成长</td><td class="down">⚠️ 反向</td><td>科创50暴跌5%</td></tr>
-        <tr><td>支持央国企</td><td class="up">✅</td><td>煤炭/能源大涨</td></tr>
-        <tr><td>周期/价值回归</td><td class="up">✅ 进行中</td><td>煤炭+5.85%</td></tr>
-      </tbody>
-    </table>
-    <div class="info-box" style="margin-top:8px">
-      <strong>核心观察：</strong> 上证50/沪深300（汇金减持压力方向）｜ 510300/510050（份额企稳关键）<br>
-      行业：煤炭、银行、半导体 ｜ 个股：兴业银行、招商银行
-    </div>
-  </div>
-
-  <!-- Section 7: 风险与反证 -->
-  <div class="section">
-    <div class="section-title"><span class="num">7</span> 风险与反证</div>
-    <div class="warn-box">
-      <strong>① 汇金减持数据存在时滞。</strong> 测算基于2025年末持仓数据+ETF份额变化推算，非官方披露实时数据。<br>
-      <strong>② 5月29日净流入体量未知。</strong> 无法判断是汇金停止减持、保险入场还是散户回补。<br>
-      <strong>③ 另一解读：</strong> 今日缩量+3700+个股上涨，可能是减持压力释放后的积极信号。<br>
-      <strong>④ 中证金退出不等于全线撤退。</strong> 兴业银行清仓是11年持有后的策略性退出，不代表整体方向。<br>
-      <strong>⑤ 一季度数据严重滞后。</strong> 距今已2个月，不等于当前持仓。<br>
-      <strong>⑥ 煤炭大涨可能只是短期轮动。</strong> 迎峰度夏+高股息偏好，非国家队方向。
-    </div>
-  </div>
-
-  <!-- Section 8: 明日观察清单 -->
-  <div class="section">
-    <div class="section-title"><span class="num">8</span> 明日观察清单</div>
-    <div class="watch-item">
-      <span class="watch-num">1</span>
-      <div class="watch-text"><strong>510300/510050等核心宽基ETF份额变化</strong> — 是否持续净流出收窄或企稳，汇金减持是否结束。</div>
-    </div>
-    <div class="watch-item">
-      <span class="watch-num">2</span>
-      <div class="watch-text"><strong>两市成交额变化</strong> — 继续缩量→存量博弈延续；放量反弹→或触发增量入场。</div>
-    </div>
-    <div class="watch-item">
-      <span class="watch-num">3</span>
-      <div class="watch-text"><strong>银行板块表现</strong> — 汇金减持ETF最大间接冲击对象，银行企稳与否是压力消退信号。</div>
-    </div>
-    <div class="watch-item">
-      <span class="watch-num">4</span>
-      <div class="watch-text"><strong>煤炭/能源板块持续性</strong> — 短期轮动还是中期趋势。</div>
-    </div>
-    <div class="watch-item">
-      <span class="watch-num">5</span>
-      <div class="watch-text"><strong>公告关键词监控</strong> — "汇金""国新投资""中国诚通""增持""举牌"等。</div>
-    </div>
-  </div>
-
-  <!-- Section 9: 数据来源 -->
-  <div class="section">
-    <div class="section-title"><span class="num">9</span> 数据来源与限制</div>
-    <div style="font-size:13px;line-height:1.8">
-      <strong>✅ 已使用：</strong><br>
-      • Wind金融终端（行情/研报/新闻/ETF数据）— 实时/当日<br>
-      • 万得财经新闻 — 5月国家队相关报道<br>
-      • 兴业银行股东大会披露 — 中证金清仓实锤<br>
-      • 财经杂志/新浪财经 — 国家队一季度持仓全景<br>
-      • WebSearch补充验证 — 5月23日/24日彭博报道等<br><br>
-      <strong style="color:var(--yellow)">⚠️ 限制：</strong><br>
-      • ETF份额数据在Wind行情快照中部分返回INVALID，基于公开研报估算<br>
-      • 一季度持仓截至于3月31日，滞后约2个月<br>
-      • 汇金减持估算假设90%份额减少来自汇金，存在偏差<br>
-      • 今日无已确认的国家队直接增持/减持公告
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    报告生成时间：2026-06-01 19:07 GMT+8<br>
-    数据来源于万得Wind金融数据服务、公开新闻及公告<br>
-    via WB
-  </div>
-
+<div class="report-header">
+  <h1>每日国家队增减持动向 · 2026-06-01</h1>
+  <div class="meta"></div>
 </div>
+
+<hr>
+<h2>【1. 今日一句话结论】</h2>
+<p><strong>今日未发现国家队明确增持信号。</strong> 中央汇金自2026年以来已累计减持宽基ETF约75%-90%（沪深300ETF减七成，上证50/中证1000ETF减九成），减持高峰期已过；5月29日宽基ETF首次转为净流入，但今日汇金/证金等主体无明确增持公告或托底行为。市场呈现"高低切"格局（3700+个股上涨但三大指数收跌），煤炭板块领涨，科技/半导体遭抛售。</p>
+<hr>
+<h2>【2. 已确认增减持事件】</h2>
+<table><thead><tr><th>日期</th><th>主体</th><th>标的</th><th>行为</th><th>金额/数量/比例</th><th>来源</th><th>信号强度</th></tr></thead><tbody><tr><td>2026年初至今</td><td>中央汇金</td><td>沪深300ETF（4只）</td><td>减持</td><td>减持比例超七成，2025年末持有规模9792亿元→当前估算约2938亿元</td><td>国信证券研报（6月1日）/Wind数据</td><td><strong>强确认</strong></td></tr><tr><td>2026年初至今</td><td>中央汇金</td><td>上证50ETF/中证1000ETF</td><td>减持</td><td>减持比例超九成，2025年末持有规模1510亿元→当前估算约150亿元以下</td><td>国信证券研报（6月1日）/Wind数据</td><td><strong>强确认</strong></td></tr><tr><td>2026年初至今</td><td>中央汇金</td><td>11只宽基ETF合计</td><td>减持</td><td>2025年末持有总市值1.54万亿元→当前估算约3252亿元</td><td>国信证券研报（6月1日）/Wind数据</td><td><strong>强确认</strong></td></tr><tr><td>2026年Q1-5月</td><td>中证金</td><td>兴业银行</td><td>清仓退出</td><td>此前持有6.22亿股（持股比率近3%），现已全部退出</td><td>兴业银行股东大会/一季报</td><td><strong>强确认</strong></td></tr><tr><td>2026年Q1</td><td>基本养老保险基金</td><td>中集集团、海容冷链等</td><td>增持新进</td><td>中集集团3908万股（第五大股东）、海容冷链1570万股（第二大股东）</td><td>Wind/财经杂志5月11日报道</td><td><strong>中等确认</strong></td></tr><tr><td>2026年Q1</td><td>社保基金</td><td>保利发展、华发股份等地产龙头</td><td>增持新进</td><td>保利发展8685万股（第五大股东）、华发股份1.19亿股</td><td>Wind/财经新闻6月1日</td><td><strong>中等确认</strong></td></tr></tbody></table>
+<p><strong>补充说明：</strong> 今日（6月1日）未发现已确认的国家队直接增减持公告。上述事件为年初至今的累积变化及最新季报披露数据，存在1-2个月的披露滞后。</p>
+<hr>
+<h2>【3. ETF与宽基资金信号】</h2>
+<h3>3.1 主要宽基ETF今日表现</h3>
+<table><thead><tr><th>ETF名称</th><th>代码</th><th>涨跌幅</th><th>成交额（亿元）</th><th>最新规模（亿元）</th><th>备注</th></tr></thead><tbody><tr><td>沪深300ETF华泰柏瑞</td><td>510300.SH</td><td><strong>-1.12%</strong></td><td>24.4</td><td>1,374</td><td>场内份额约279.56亿份</td></tr><tr><td>上证50ETF华夏</td><td>510050.SH</td><td><strong>-0.97%</strong></td><td>23.8</td><td>—</td><td>—</td></tr><tr><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>两市总成交</td><td>—</td><td>—</td><td><strong>28,800</strong>（缩量4,415亿）</td><td>—</td><td>科创50暴跌5%，成交活跃</td></tr></tbody></table>
+<h3>3.2 宽基ETF资金流向关键信号</h3>
+<p><strong>（1）年初至今累计：</strong> 15个指数挂钩宽基ETF合计净流出约<strong>1.4万亿元</strong>（截至5月29日）。</p>
+<ul><li>第一波高峰（1月15日-2月2日）：13个交易日净流出8,975亿元</li><li>第二波高峰（4月9日-5月28日）：净流出3,963亿元</li><li><strong>5月29日首次转为净流入</strong></li></ul>
+<p><strong>（2）汇金减持进度：</strong></p>
+<ul><li>沪深300ETF：减持比例超七成，剩余估算约2,938亿元</li><li>上证50ETF/中证1000ETF：减持比例超九成</li><li>11只宽基ETF合计：从1.54万亿→3,252亿元</li></ul>
+<p><strong>（3）今日信号判断：</strong></p>
+<ul><li>沪深300ETF(510300)成交额24.4亿元，属于<strong>正常水平，无异常放量</strong></li><li>上证50ETF(510050)成交额23.8亿元，亦为 <strong>正常水平</strong></li><li>两市成交缩量4,415亿元至2.88万亿，<strong>无明显托底买盘迹象</strong></li><li>煤炭ETF(515220)份额单周增长3.57%至93.99亿份，近20日净流入超17亿元——属于<strong>行业主题ETF的结构性流入，非国家队行为</strong></li></ul>
+<p><strong>（4）近一年ETF赎回排名：</strong></p>
+<ul><li>510300华泰柏瑞沪深300ETF：净赎回3,191.94亿元（居全市场第一）</li><li>510310易方达沪深300ETF：净赎回2,154.14亿元（居第二）</li></ul>
+<p><strong>结论：</strong> 今日宽基ETF<strong>无明显国家队买入信号</strong>。汇金减持高峰期已过，但今日两市缩量且宽基ETF成交正常，未观察到新托底资金入场。</p>
+<hr>
+<h2>【4. 股东持仓变化】</h2>
+<p>（以下数据来自2026年一季报披露，存在滞后，<strong>不代表今日交易行为</strong>）</p>
+<h3>4.1 严格口径：中央汇金/证金</h3>
+<table><thead><tr><th>标的</th><th>变化</th><th>主体</th><th>报告期</th><th>备注</th></tr></thead><tbody><tr><td>兴业银行</td><td><strong>清仓退出</strong></td><td>中证金</td><td>2026Q1</td><td>此前持有6.22亿股，全部退出</td></tr><tr><td>银行股整体</td><td>汇金减持传导</td><td>中央汇金</td><td>2026Q1</td><td>通过宽基ETF减持间接影响银行持仓</td></tr><tr><td>国有大型银行</td><td>继续持有（未减持）</td><td>中央汇金/汇金资管</td><td>2026Q1</td><td>持股市值3.42万亿元，未见直接减持公告</td></tr></tbody></table>
+<h3>4.2 扩展口径：社保基金/养老基金</h3>
+<table><thead><tr><th>标的</th><th>变化</th><th>主体</th><th>数量</th><th>报告期</th></tr></thead><tbody><tr><td>保利发展</td><td><strong>新进</strong>（第五大股东）</td><td>社保基金413组合</td><td>8,685万股</td><td>2026Q1</td></tr><tr><td>华发股份</td><td><strong>加仓</strong></td><td>社保基金</td><td>1.19亿股</td><td>2026Q1</td></tr><tr><td>中集集团</td><td><strong>新进</strong>（第五大股东）</td><td>基本养老保险基金一五零二二组合</td><td>3,908万股</td><td>2026Q1</td></tr><tr><td>海容冷链</td><td><strong>新进</strong>（第二大股东）</td><td>基本养老保险基金八零一组合</td><td>1,570万股</td><td>2026Q1</td></tr><tr><td>中国巨石</td><td><strong>加仓</strong></td><td>社保基金</td><td>—</td><td>2026Q1</td></tr><tr><td>旗滨集团</td><td><strong>加仓</strong></td><td>社保基金</td><td>—</td><td>2026Q1</td></tr></tbody></table>
+<h3>4.3 国家队一季度行业增持Top 5</h3>
+<table><thead><tr><th>行业</th><th>增持数量</th><th>属性</th></tr></thead><tbody><tr><td>煤炭开采</td><td>居首（超5,600万股）</td><td>周期/高股息</td></tr><tr><td>通用设备</td><td>第二（超5,600万股）</td><td><strong>科技领域</strong></td></tr><tr><td>玻璃玻纤</td><td>第三（超5,600万股）</td><td><strong>科技领域</strong></td></tr><tr><td>特钢</td><td>第四（超5,600万股）</td><td>材料</td></tr><tr><td>医疗器械</td><td>第五（超5,600万股）</td><td><strong>科技领域</strong></td></tr></tbody></table>
+<h3>4.4 今日盘面验证：社保重仓股表现</h3>
+<p>6月1日社保基金重仓股中<strong>24只逆势暴涨</strong>，其中9只涨停（晋控煤业、潞安环能、兖矿能源、中粮糖业等），集中在<strong>煤炭、能源</strong>板块——与社保一季度增持煤炭开采行业的方向一致。</p>
+<hr>
+<h2>【5. 疑似托底/调仓信号】</h2>
+<table><thead><tr><th>信号</th><th>证据</th><th>可信度</th><th>归属判断</th></tr></thead><tbody><tr><td>今日无宽基ETF异常放量</td><td>510300成交24.4亿，510050成交23.8亿，均属正常水平</td><td><strong>高（确认无异常）</strong></td><td>不属于国家队行为</td></tr><tr><td>两市缩量4,415亿</td><td>总成交2.88万亿，较前一交易日明显缩量</td><td><strong>高</strong></td><td>无增量托底资金</td></tr><tr><td>科创50暴跌5%无护盘</td><td>半导体/CPO板块暴跌，未见权重股逆势拉升</td><td><strong>高</strong></td><td>国家队未入场干预</td></tr><tr><td>煤炭板块大涨5.85%</td><td>兖矿能源等多股涨停，煤炭ETF近20日流入17亿</td><td><strong>中等</strong></td><td>推断为机构/资金风格切换，非国家队直接干预</td></tr><tr><td>上证50跌0.94%</td><td>银行/权重股下跌，大金融板块承压</td><td><strong>高</strong></td><td>汇金减持ETF的滞后影响</td></tr><tr><td>3776涨/1682跌的结构</td><td>中小盘强于大盘，低位股补涨</td><td><strong>中等</strong></td><td>推断为存量资金高低切</td></tr><tr><td>5月29日ETF首转净流入</td><td>15个宽基ETF终止连续净流出</td><td><strong>中等</strong></td><td>推断：汇金减持接近尾声后，市场自发资金回补</td></tr></tbody></table>
+<p><strong>综合判断：</strong> 今日<strong>无明显国家队托底行为</strong>。市场呈现典型的"存量高低切换"——资金从科技（半导体/CPO）撤出，转向煤炭/能源等高股息周期板块。汇金减持的脚步仍在，但冲击已显著边际递减。</p>
+<hr>
+<h2>【6. 指向的市场风格和板块】</h2>
+<table><thead><tr><th>方向</th><th>当前状态</th><th>判断依据</th></tr></thead><tbody><tr><td>稳指数</td><td>❌ 不适用</td><td>上证50/沪深300均收跌，权重股无护盘</td></tr><tr><td>托宽基</td><td>❌ 不适用</td><td>宽基ETF成交正常，无异常放量</td></tr><tr><td>稳金融地产</td><td>⚠️ 反向</td><td>银行股因汇金减持承压，兴业银行清仓</td></tr><tr><td>扶科技成长</td><td>⚠️ 反向</td><td>科创50暴跌5%，科技股遭抛售</td></tr><tr><td>支持央国企</td><td>✅ 结构性</td><td>煤炭、能源等央国企大涨，高股息逻辑</td></tr><tr><td>周期/价值回归</td><td>✅ 正在发生</td><td>煤炭大涨5.85%，资金从成长切向价值</td></tr></tbody></table>
+<p><strong>最相关的观察对象：</strong></p>
+<ul><li><strong>指数：</strong> 上证50、沪深300（代表汇金减持压力方向）</li><li><strong>ETF：</strong> 510300、510050（汇金持仓核心标的，关注份额变化是否企稳）</li><li><strong>行业：</strong> 煤炭、银行、半导体</li><li><strong>个股：</strong> 兴业银行（中证金清仓标杆）、招商银行/宁波银行（银行股标杆）</li></ul>
+<hr>
+<h2>【7. 风险与反证】</h2>
+<ul><li><strong>汇金减持数据存在时滞：</strong> 当前最详细的减持测算来自国信证券6月1日研报，基于2025年末持仓数据和ETF份额变化推算，并非官方披露的实时数据。实际减持节奏可能更快或更慢。</li></ul>
+<ul><li><strong>5月29日净流入体量未知：</strong> 虽确认15个宽基ETF首次转为净流入，但未公布具体金额，无法判断是汇金停止减持、保险资金入场还是散户回补。</li></ul>
+<ul><li><strong>今日缩量可解释为减持冲击消退的正向信号：</strong> 另一种解读是——汇金不再大量卖出，市场反而因抛压减少而"轻装上阵"，3700+个股上涨正是对减持压力释放的积极反应。</li></ul>
+<ul><li><strong>中证金退出不等于全市场退出：</strong> 中证金在兴业银行的清仓可能是个案（持有11年后的策略性退出），不代表证金公司整体撤退。</li></ul>
+<ul><li><strong>一季度持仓数据严重滞后：</strong> 2026Q1数据截至3月31日，距今已2个月，不能直接等同于当前持仓。</li></ul>
+<ul><li><strong>今日煤炭大涨可能只是短期轮动：</strong> 迎峰度夏的季节性因素+高股息资金的短期偏好，不一定代表国家队方向的持续。</li></ul>
+<hr>
+<h2>【8. 明日观察清单】</h2>
+<ul><li><strong>510300/510050等核心宽基ETF份额变化</strong> — 是否继续呈净流出收窄或企稳态势，是判断汇金减持是否结束的关键。</li></ul>
+<ul><li><strong>两市成交额变化</strong> — 若明日继续缩量且指数走弱，说明存量博弈格局延续；若放量反弹，可能触发增量资金入场。</li></ul>
+<ul><li><strong>银行板块表现</strong> — 汇金减持ETF的最大间接冲击对象是银行股（权重最高），银行能否企稳是减持压力消退的信号。</li></ul>
+<ul><li><strong>煤炭/能源板块持续性</strong> — 观察资金风格切换是短期轮动还是中期趋势。</li></ul>
+<ul><li><strong>公告关键词监控</strong> — 关注"汇金"、"国新投资"、"中国诚通"、"增持"、"举牌"等关键词出现在上市公司公告中。</li></ul>
+<hr>
+<h2>【9. 数据来源与限制】</h2>
+<h3>数据来源</h3>
+<table><thead><tr><th>来源</th><th>使用内容</th><th>时效性</th></tr></thead><tbody><tr><td><strong>Wind金融终端（wind-mcp-skill）</strong></td><td>国信证券研报、今日行情数据、财经新闻快讯、ETF行情数据</td><td>实时/当日</td></tr><tr><td><strong>万得财经新闻</strong></td><td>5月11日/14日/18日/22日/24日/29日/31日国家队相关报道</td><td>历史</td></tr><tr><td><strong>WebSearch/百家号</strong></td><td>5月23日/24日国家队减持ETF报道，6月1日ETF份额数据</td><td>补充验证</td></tr><tr><td><strong>兴业银行股东大会披露</strong></td><td>中证金清仓实锤</td><td>5月26日</td></tr><tr><td><strong>财经杂志/新浪财经</strong></td><td>国家队一季度持仓全景</td><td>5月11日</td></tr></tbody></table>
+<h3>限制说明</h3>
+<ul><li><strong>ETF份额数据</strong>（基金最新份额）在Wind行情快照指标中返回INVALID，当前报告中的份额变化基于已公开的研报估算和新闻披露，非实时API数据。</li><li><strong>国家队一季度持仓数据</strong>（第4节）基于上市公司一季报前十大股东披露，截至于2026年3月31日，存在约2个月披露滞后，不能代表当前持仓。</li><li><strong>中央汇金减持估算</strong>来自国信证券研报（6月1日发布），假设年初以来减少份额中90%来自汇金减持，与实际值可能存在偏差。</li><li><strong>社保基金重仓股今日表现</strong>（第4.4节）来自财经文章整理，数据未经Wind二次验证，仅供参考。</li><li>今日未发现已确认的国家队直接增持/减持公告，所有关于"国家队行为方向"的判断均为基于公开数据的<strong>推断</strong>。</li></ul>
+<hr>
+<p>*报告生成时间：2026-06-01 19:07 GMT+8*<br>*数据来源于万得Wind金融数据服务、公开新闻及公告*</p>
+
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
+</div>
+
 </body>
 </html>

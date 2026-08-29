@@ -1,507 +1,561 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>每日AI新闻 - 2026年6月12日</title>
-<style>
-  :root {
-    --bg: #faf9f7;
-    --bg-card: #f4f2ef;
-    --bg-highlight: #ffffff;
-    --border: #cfc9c1;
-    --text: #2c2a28;
-    --text-secondary: #6b6760;
-    --text-muted: #6b6760;
-    --red: #b8544a;
-    --red-bg: rgba(248,81,73,0.12);
-    --green: #4a8a5c;
-    --green-bg: rgba(63,185,80,0.12);
-    --orange: #a8813c;
-    --orange-bg: rgba(210,153,29,0.12);
-    --blue: #3a6b96;
-    --blue-bg: rgba(88,166,255,0.12);
-    --purple: #7d6b8f;
-    --purple-bg: rgba(188,140,255,0.12);
-    --radius: 10px;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-  }
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 16px 40px;
-  }
-  .header {
-    text-align: center;
-    padding: 28px 16px 20px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 20px;
-  }
-  .header h1 {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: -0.3px;
-    margin-bottom: 4px;
-  }
-  .header .date {
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
-  .header .meta {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 6px;
-  }
-  /* Category title */
-  .cat-title {
-    font-size: 16px;
-    font-weight: 700;
-    padding: 10px 0;
-    margin: 24px 0 10px;
-    border-bottom: 2px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .cat-title .icon { font-size: 20px; }
-  /* Card */
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px;
-    margin-bottom: 14px;
-  }
-  .card:hover { border-color: var(--text-secondary); }
-  .card-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--blue);
-    margin-bottom: 8px;
-    line-height: 1.4;
-  }
-  .card-title .num {
-    display: inline-block;
-    background: var(--blue-bg);
-    color: var(--blue);
-    font-size: 11px;
-    font-weight: 600;
-    padding: 1px 7px;
-    border-radius: 4px;
-    margin-right: 6px;
-    vertical-align: middle;
-  }
-  .card-summary {
-    font-size: 13.5px;
-    color: var(--text);
-    margin-bottom: 10px;
-    line-height: 1.65;
-  }
-  .card-points {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 10px;
-  }
-  .card-points li {
-    font-size: 13px;
-    color: var(--text-secondary);
-    padding: 3px 0 3px 16px;
-    position: relative;
-    line-height: 1.55;
-  }
-  .card-points li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--blue);
-    font-weight: bold;
-  }
-  .card-impact {
-    background: var(--bg-highlight);
-    border-left: 3px solid var(--purple);
-    padding: 8px 12px;
-    border-radius: 0 6px 6px 0;
-    font-size: 12.5px;
-    color: var(--purple);
-    margin-bottom: 8px;
-    line-height: 1.5;
-  }
-  .card-impact .impact-label {
-    font-weight: 600;
-    margin-right: 4px;
-  }
-  .card-source {
-    font-size: 11px;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .card-source .src-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--text-muted);
-  }
-  /* Highlight numbers */
-  .hl-green { color: var(--green); font-weight: 600; }
-  .hl-red { color: var(--red); font-weight: 600; }
-  .hl-orange { color: var(--orange); font-weight: 600; }
-  .hl-blue { color: var(--blue); font-weight: 600; }
-  .hl-bold { font-weight: 700; }
-  /* Key data inline */
-  .kv-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 14px;
-    margin-bottom: 10px;
-    font-size: 12.5px;
-  }
-  .kv-item {
-    color: var(--text-secondary);
-  }
-  .kv-item span {
-    color: var(--text);
-    font-weight: 600;
-  }
-  /* Takeaway section */
-  .takeaway-section {
-    background: linear-gradient(135deg, #f4f2ef 0%, #f4f2ef 100%);
-    border: 1px solid var(--orange);
-    border-radius: var(--radius);
-    padding: 20px 18px;
-    margin: 30px 0 20px;
-  }
-  .takeaway-section h2 {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--orange);
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .takeaway-section ol {
-    padding-left: 20px;
-    margin: 0;
-  }
-  .takeaway-section li {
-    font-size: 13.5px;
-    color: var(--text);
-    padding: 6px 0;
-    line-height: 1.6;
-  }
-  .takeaway-section li::marker {
-    color: var(--orange);
-    font-weight: 700;
-  }
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 16px;
-    font-size: 11px;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border);
-    margin-top: 20px;
-  }
-  /* Mobile fine-tuning */
-  @media (max-width: 480px) {
-    .container { padding: 0 12px 32px; }
-    .header { padding: 22px 12px 16px; }
-    .header h1 { font-size: 20px; }
-    .card { padding: 14px; }
-    .card-title { font-size: 14px; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-06-12</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>📰 每日 AI 全球新闻</h1>
-  <div class="date">2026年6月12日 · 周五</div>
-  <div class="meta">覆盖 6月11日 ~ 6月12日 · 20+ 媒体源 · 16 条核心报道</div>
+<div class="report-header">
+  <h1>每日AI新闻 · 2026-06-12</h1>
+  <div class="meta"><strong>日期</strong>：2026年6月12日（周五） · <strong>覆盖范围</strong>：过去24小时（6月11日 ~ 6月12日） · <strong>数据来源</strong>：ThirdRuntime、AI Toolly、zglg.work、TechCrunch、Bloomberg、The Verge 等 20+ 媒体源</div>
 </div>
 
-<div class="container">
+<hr>
+<h2>🔥 重大发布</h2>
+<h3>1. SpaceX 今日登陆纳斯达克，史上最大 IPO 诞生</h3>
+<p><strong>摘要</strong>：埃隆·马斯克旗下 SpaceX 计划于今日（6月12日）在纳斯达克挂牌上市，股票代码 <strong>SPCX</strong>。发行价 <strong>$135/股</strong>，发行 5.556 亿股，募资额 <strong>$750 亿</strong>（承销商另有 $112 亿超额配售权），公司估值达 <strong>$1.77 万亿</strong>，将成为美国史上最大规模 IPO。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>定价策略：采用非传统"爱买不买"固定价格，绕过传统簿记区间设定</li><li>2025 年营收 $187 亿，运营亏损扩大至 $19 亿；2026 Q1 营收 $47 亿</li><li>马斯克个人持有 <strong>82% 以上投票权</strong>，散户已在抛售其他 AI 股换取 SpaceX 仓位</li><li>IPO 核心叙事：<strong>太空 + AI</strong> 双引擎，AI1 数据中心卫星（翼展 70 米，峰值算力 150kW）及 100 万颗轨道 AI 卫星网络计划</li><li>配套布局：与特斯拉合资 Terafab 工厂制造 AI 卫星芯片，德州 Gigasat 工厂（超 1100 万平方英尺）生产太阳能电池板</li></ul>
+<p><strong>影响</strong>：SpaceX 上市将彻底重塑全球科技 IPO 格局，AI 硬件 + 太空算力叙事打开全新估值维度，散户与机构资金正大规模重新配置。</p>
+<p>📅 <strong>来源</strong>：SEC 招股文件、智通财经、新浪财经、澎湃新闻 | 2026-06-12</p>
+<hr>
+<h3>2. OpenAI 收购 Ona、考虑大幅降价，与 Anthropic 全面开战</h3>
+<p><strong>摘要</strong>：OpenAI 同时释放两项重大信号——<strong>收购云平台 Ona</strong> 以增强 Codex 编程智能体的长时运行能力，以及<strong>考虑大幅削减订阅价格</strong>与 Anthropic 竞争。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li><strong>收购 Ona</strong>：云端开发环境初创公司，提供安全、预配置的 Agent 运行沙箱，使 Codex 可在用户控制的基础设施上持续执行跨设备长时任务</li><li><strong>降价计划</strong>：OpenAI 正评估对 ChatGPT 和 API 进行实质性价格下调，应对 Anthropic Claude 的价格竞争</li><li><strong>GPT-5.6 前瞻</strong>：本月可能发布 GPT-5.6，相比 GPT-5.5 有"实质性提升"</li><li><strong>Oracle 集成</strong>：OpenAI 模型和 Codex 同步上线 Oracle 云，企业可在现有安全治理框架下部署 AI</li></ul>
+<p><strong>影响</strong>：OpenAI 收购 + 降价双管齐下，标志着从技术竞争转向生态 + 价格全面战争。云厂商间的 AI 部署争夺也同步升级。</p>
+<p>📅 <strong>来源</strong>：CNBC、Bloomberg、MSN、Android Authority | 2026-06-11</p>
+<hr>
+<h3>3. 贝索斯 Prometheus AI 融资 $120 亿，估值 $410 亿</h3>
+<p><strong>摘要</strong>：杰夫·贝索斯新创立的 AI 公司 <strong>Prometheus</strong> 完成 $120 亿巨额融资，估值达 $410 亿，聚焦"AI 建造实物"（AI that builds things）。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>贝索斯公开表示 AI 将带来"黄金时代"，而非大规模失业</li><li>该轮融资规模仅次于 SpaceX IPO，刷新 AI 初创单轮融资纪录</li><li>Prometheus 定位物理世界 AI 应用——从建筑施工到制造业，AI 进入原子世界</li><li>贝索斯同步驳斥 AI 替代恐慌："相机发明后画家并没有消失，AI 同理"</li></ul>
+<p><strong>影响</strong>：贝索斯亲自下场物理 AI，标志着 AI 投资从软件转向软硬结合。与 SpaceX 太空 + AI 叙事呼应，科技巨头正将 AI 竞争延伸到实体世界。</p>
+<p>📅 <strong>来源</strong>：Bloomberg、CNBC、Semafor、Financial Times | 2026-06-11</p>
+<hr>
+<h2>🔬 研究与开源</h2>
+<h3>4. 美团 LongCat 系列密集开源：多模态、数字人、定理证明全线出击</h3>
+<p><strong>摘要</strong>：美团技术团队同日发布超 5 个开源项目，覆盖多模态 AI、数字人视频、数学定理证明、推理基准，打出罕见的技术密度。</p>
+<p><strong>核心发布</strong>：</p>
+<ul><li><strong>LongCat-Next</strong>：原生多模态模型，视觉和语音作为架构基础组件，面向物理世界 AI 交互</li><li><strong>LongCat-Video-Avatar 1.5</strong>：商用水准数字人视频模型，唇形同步、长视频稳定性、多人交互全面升级</li><li><strong>LongCat-Flash-Prover</strong>：数学形式化定理证明专用模型，从"猜答案"转向"严谨证明"</li><li><strong>LongCat-AudioDiT</strong>：零样本 TTS 语音克隆，直接波形潜在空间扩散，消除传统级联误差</li><li><strong>General 365</strong>：推理能力评估基准，主流 26 款模型最高准确率仅 62.8%（Gemini 3 Pro），多数不及格</li><li><strong>LARYBench</strong>：具身动作表示基准，被定位为具身智能领域的"ImageNet"</li><li>6 篇论文入选 ACL 2026，涵盖 LLM 评估、推理、生成式推荐</li></ul>
+<p><strong>影响</strong>：美团一日之内释放覆盖多模态、具身智能、形式化推理的完整技术矩阵，从外卖平台向 AI 基础研究重镇的转型信号强烈。</p>
+<p>📅 <strong>来源</strong>：美团技术团队官方博客 | 2026-06-11</p>
+<hr>
+<h3>5. 谷歌 DeepMind 发布 DiffusionGemma：文本生成速度提升 4 倍</h3>
+<p><strong>摘要</strong>：谷歌 DeepMind 发布 <strong>DiffusionGemma</strong>，将扩散模型引入文本生成，速度达此前 Gemma 版本的 4 倍。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>采用扩散方法<strong>并行生成整块文本</strong>，区别于传统自回归模型逐 token 输出</li><li>英伟达同步在 RTX GPU、DGX Spark 全硬件生态完成优化</li><li>Gemma 4 系列同步上线 Amazon Bedrock</li><li>代价：扩散生成在长文本连贯性上存在部分取舍</li></ul>
+<p><strong>影响</strong>：文本生成的"延迟墙"正在被打破，扩散范式为实时 AI 应用打开新可能。</p>
+<p>📅 <strong>来源</strong>：DeepMind 官方博客、NVIDIA Newsroom | 2026-06-11</p>
+<hr>
+<h3>6. 阶跃星辰 Step 3.7 Flash 登顶全球速度榜</h3>
+<p><strong>摘要</strong>：阶跃星辰发布并开源 <strong>Step 3.7 Flash</strong>，在 Artificial Analysis 榜单<strong>速度、性价比、端到端</strong>三项指标均排名全球第一。</p>
+<p><strong>关键数据</strong>：</p>
+<ul><li>实测输出速度最高 <strong>416 tokens/s</strong></li><li>单任务成本约为 Claude Opus 4.6 的 <strong>1/9</strong></li><li>编程能力达到 Claude 的 <strong>97%</strong></li><li>OpenRouter Trending 冲至全球第二</li><li>稀疏 MoE 架构，专为生产级 Agent 打造</li></ul>
+<p><strong>影响</strong>：国产模型在全球性价比榜单上实现统治级表现，Flash 模型赛道成为国产模型的独特竞争优势。</p>
+<p>📅 <strong>来源</strong>：阶跃星辰官方、Artificial Analysis | 2026-06-10</p>
+<hr>
+<h2>💰 产业与投融资</h2>
+<h3>7. KKR 联手英伟达成立 $100 亿 AI 基础设施公司</h3>
+<p><strong>摘要</strong>：私募巨头 KKR 与英伟达、能源公司 Vistra 联合成立 AI 基础设施公司，初始投资规模 <strong>$100 亿</strong>，专注为数据中心提供电力和算力一体化解决方案。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>KKR 警告 AI 生产力繁荣将持续，但将出现 19 世纪以来未见的"极端趋势"</li><li>Apollo 全球管理公司已开始对所有软件投资进行 AI 替代风险评估</li><li>科威特宣布投入 $100 亿布局 AI 基建，加入全球竞赛</li></ul>
+<p><strong>影响</strong>：AI 投资正从软件层下沉到电力和算力基础设施层，传统私募巨头大规模入场标志着 AI 基建进入机构化投资时代。</p>
+<p>📅 <strong>来源</strong>：WSJ Tech、Bloomberg、CNBC | 2026-06-11</p>
+<hr>
+<h3>8. 亚马逊获 $175 亿银行贷款，CoreWeave 首发欧洲垃圾债</h3>
+<p><strong>摘要</strong>：AI 基础设施融资渠道日趋多元化——亚马逊在债券发行后再获 <strong>$175 亿</strong>银行贷款，CoreWeave 首次发行欧洲垃圾债打开全球化融资通道。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>亚马逊明确资金用途为 AI 基础设施持续投入</li><li>CoreWeave 垃圾债标志着 AI 算力公司融资从股权走向债务市场</li><li>甲骨文财报不及预期股价下跌，但 AI 芯片和电力股仍被看好</li></ul>
+<p><strong>影响</strong>：AI 军备竞赛的融资工具箱已从 VC/PE 扩展至银行贷款、垃圾债、主权基金，行业资本密集度进入全新阶段。</p>
+<p>📅 <strong>来源</strong>：TechCrunch、Bloomberg | 2026-06-11</p>
+<hr>
+<h3>9. 阿里钉钉负责人因 AI 战略分歧离职</h3>
+<p><strong>摘要</strong>：阿里巴巴旗下企业协作平台钉钉（DingTalk）负责人因 <strong>AI 战略方向分歧</strong>离职。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>分歧核心：钉钉应聚焦企业效率还是全面 AI 化转型</li><li>阿里云 AI 收入年化已破 ¥358 亿，钉钉是其企业 AI 落地核心入口</li><li>该事件折射中国大厂内部的 AI 路线之争——渐进还是激进</li></ul>
+<p><strong>影响</strong>：中国大厂在 AI 战略上的内部博弈正从幕后走向台前，组织架构调整将直接影响 AI 产品落地节奏。</p>
+<p>📅 <strong>来源</strong>：Bloomberg | 2026-06-11</p>
+<hr>
+<h2>🛠️ 工具与应用</h2>
+<h3>10. 微信 AI 智能体平台开放，美团滴滴携程首批接入</h3>
+<p><strong>摘要</strong>：微信宣布开放平台能力，允许开发者授权接入微信 AI 生态，智能体可直接调取小程序完成交易和服务。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li><strong>美团、携程、同程、滴滴</strong>作为首批内测应用，已与微信团队联合开发测试</li><li>开放模式：第三方 AI 智能体可在微信生态内完成"对话→决策→支付"全流程闭环</li><li>千问同步推出高考志愿填报 Agent，定位辅助决策而非替代专家</li><li>超级 App 向 Agent 平台转型加速，AI 流量入口之争从搜索延伸至生活服务场景</li></ul>
+<p><strong>影响</strong>：微信作为中国最大超级 App（月活 13 亿+）开放 AI 智能体，将彻底改变 C 端 AI 应用的分发和变现模式。</p>
+<p>📅 <strong>来源</strong>：zglg.work、微信官方 | 2026-06-10</p>
+<hr>
+<h3>11. Anthropic Claude Cowork 上线 Windows + YOLO 模式</h3>
+<p><strong>摘要</strong>：Anthropic 正式发布 <strong>Windows 版 Claude Cowork</strong>，Claude Code Desktop 同步新增 <strong>YOLO 模式</strong>，允许智能体无需逐条确认即可自动执行代码修改。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>Windows 版补全了此前仅 Mac 可用的 Claude Cowork 生态</li><li>YOLO 模式：Agent 可自主执行代码修改、文件操作、命令运行，无需人工每次批准</li><li>同步发布 2026 Agent 编程趋势报告，系统分析 AI Agent 软件开发生态</li><li>Claude App 更新语音模式，支持自然语音交互</li></ul>
+<p><strong>影响</strong>：Agent 编程从辅助走向自主执行，YOLO 模式是开发者信任 Agent 的标志性一步，但也带来安全与可控性的新挑战。</p>
+<p>📅 <strong>来源</strong>：Anthropic 官方、zglg.work | 2026-06-10</p>
+<hr>
+<h3>12. 华为云发布 Agentic Infra 新范式，10 万卡集群就绪</h3>
+<p><strong>摘要</strong>：华为云在 INSPIRE 创想者大会上提出 <strong>Agentic Infra 新范式</strong>，发布支持 10 万卡、200 EFLOPS 的智算集群及完整工具链。</p>
+<p><strong>核心发布</strong>：</p>
+<ul><li><strong>AICS 灵衢智算集群</strong>：10 万卡规模，200 EFLOPS 算力</li><li><strong>AMS Agentic 记忆存储</strong>、<strong>CCE Volcano Next 引擎</strong></li><li><strong>AgentSphere</strong> 弹性沙箱、<strong>ModelArts Next</strong> 平台</li><li><strong>智果 AgentArts</strong> 企业级智能体平台，开源版本 openJiuwen 同源度超 90%</li></ul>
+<p><strong>影响</strong>：华为云以"Agent 就绪"为核心理念重构基础设施，10 万卡集群规模标志着中国 AI 算力进入超大规模时代。</p>
+<p>📅 <strong>来源</strong>：华为云 INSPIRE 大会 | 2026-06-10</p>
+<hr>
+<h3>13. Coinbase + Visa：AI 智能体自主交易和支付时代来临</h3>
+<p><strong>摘要</strong>：加密货币交易所 <strong>Coinbase</strong> 推出可自主交易、购买付费研究报告的 AI 智能体；<strong>Visa</strong> 同步将其支付网络接入 ChatGPT，AI 智能体可在无人工审批下完成购物支付。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>Coinbase Agent：可自主管理交易、支付、订阅 premium 研究报告</li><li>Visa × ChatGPT：打通支付网络与 AI 对话，实现"AI 帮用户花钱"闭环</li><li>安全争议：Fortune 批评 Visa 让 AI 不经人类批准自主支付的设想"并非好主意"</li><li>DoorDash 同步推出 AI 聊天机器人，用户可通过文字 + 照片点餐</li></ul>
+<p><strong>影响</strong>：AI Agent 正从"信息输出"进化为"价值流转"——能够自主花钱的 AI 将彻底改变商业交易范式，但也引发支付安全和责任归属的重大讨论。</p>
+<p>📅 <strong>来源</strong>：TechCrunch、Bloomberg、Fortune、CNBC | 2026-06-11</p>
+<hr>
+<h2>🌍 政策与伦理</h2>
+<h3>14. Anthropic 主动提议对自身征税，补偿 AI 替代的岗位</h3>
+<p><strong>摘要</strong>：Anthropic 提出史无前例的自律方案——<strong>主动提议对自身征税</strong>，用于补偿其 AI 产品替代人类岗位带来的失业损失。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>CEO Dario Amodei 呼吁在 AI 时代优先保障劳动者权益</li><li>Anthropic 同时推出"Claude 军团"计划，免费教非营利组织高效使用 AI</li><li>宣布 AI 将明确告知用户因国家安全因素被拒绝或降级的请求</li><li>同期为 Claude Fable 模型不可见护栏机制道歉，承认过于激进且误报率高</li><li>微软总裁 Brad Smith 发布 3100 字长文谈 AI 与人类尊严，称毕业生抗议是"行业的强烈警钟"</li></ul>
+<p><strong>影响</strong>：Anthropic 的自我征税提案前所未有的激进，将"AI 公司是否应为失业买单"从伦理讨论推向制度设计层面。</p>
+<p>📅 <strong>来源</strong>：Fortune、Semafor、The Verge、Seattle Times | 2026-06-11</p>
+<hr>
+<h3>15. xAI 前工程师起诉：因质疑 Grok 安全被解雇</h3>
+<p><strong>摘要</strong>：xAI 前工程师正式起诉 xAI 和 SpaceX，称自己在 SpaceX IPO 前几天因提出 <strong>Grok AI 安全问题</strong>被报复性解雇。</p>
+<p><strong>关键信息</strong>：</p>
+<ul><li>解雇时间点敏感：恰在 SpaceX 历史性 IPO 前数日</li><li>指控核心：公司压制内部 AI 安全 whistleblower，优先保护上市进程</li><li>案件涉及 SpaceX 和 xAI 的关联属性——员工在两家马斯克公司间的身份模糊地带</li><li>此前 OpenAI、Anthropic、DeepMind 刚联名致信美国会，敦促立法防范 AI 生物武器风险</li></ul>
+<p><strong>影响</strong>：SpaceX 上市当日爆出关联 AI 公司安全 whistleblower 诉讼，为史上最大 IPO 蒙上阴影，AI 安全与企业利益的冲突再次聚焦。</p>
+<p>📅 <strong>来源</strong>：TechCrunch、Seattle Times | 2026-06-11</p>
+<hr>
+<h3>16. 多起诉讼指向 AI 责任边界</h3>
+<p><strong>摘要</strong>：多起针对 AI 公司的法律诉讼在 6 月 11 日集中爆发，推动 AI 产品责任边界的法律界定。</p>
+<p><strong>关键事件</strong>：</p>
+<ul><li>母亲起诉 OpenAI，称其"故意设计缺陷"导致女儿死亡</li><li>第二位家长对 OpenAI 提起过失致死诉讼</li><li>独立音乐人起诉谷歌：未经授权使用 YouTube 内容训练 Lyria 3 音乐 AI</li><li>德国法院就谷歌 AI 产品责任归属作出判决</li><li>多名律师因提交 AI 生成的虚假法庭文件面临处罚</li></ul>
+<p><strong>影响</strong>：AI 责任诉讼进入密集爆发期，从产品安全、版权侵权到职业伦理，监管和司法体系正被迫加速应对。</p>
+<p>📅 <strong>来源</strong>：cNet、The Verge、Engadget、Semafor | 2026-06-11</p>
+<hr>
+<h2>🎯 今日要点</h2>
+<ul><li><strong>SpaceX 今日上市</strong>：$1.77 万亿估值、$750 亿募资，史上最大 IPO 重塑全球科技投资格局，"太空 + AI"成为新叙事范式</li><li><strong>AI 智能体进入交易闭环时代</strong>：Coinbase × Visa × 微信三大生态同时打通 AI 支付能力，AI 从信息输出进化为价值流转</li><li><strong>中国 AI 开源生态爆发</strong>：美团 LongCat 系列一日 7 箭齐发，阶跃星辰 Step 3.7 Flash 登顶全球速度榜，国产模型在性价比和开源生态上构筑独特优势</li><li><strong>AI 安全与上市冲突激化</strong>：SpaceX IPO 当日爆出 xAI whistleblower 诉讼，Anthropic 自我征税提案挑战行业底线</li><li><strong>基础设施竞赛白热化</strong>：KKR + NVIDIA $100 亿、亚马逊 $175 亿贷款、科威特 $100 亿——主权基金与私募巨头全面进场</li></ul>
+<hr>
+<p><strong>生成时间</strong>：2026-06-12 07:25 CST<br><strong>下次更新</strong>：明日同一时间</p>
 
-<!-- ===== 重大发布 ===== -->
-<div class="cat-title"><span class="icon">🔥</span> 重大发布</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">1</span>SpaceX 今日登陆纳斯达克，史上最大 IPO 诞生</div>
-  <div class="card-summary">
-    马斯克旗下 SpaceX 定于今日（6月12日）在纳斯达克挂牌，股票代码 <span class="hl-blue">SPCX</span>。发行价 <span class="hl-green">$135/股</span>，募资 <span class="hl-green">$750亿</span>，估值 <span class="hl-green">$1.77万亿</span>，为美国史上最大规模 IPO。
-  </div>
-  <div class="kv-row">
-    <div class="kv-item">📊 发行价：<span>$135/股</span></div>
-    <div class="kv-item">💰 募资：<span>$750亿</span></div>
-    <div class="kv-item">🏷️ 估值：<span>$1.77万亿</span></div>
-    <div class="kv-item">🗳️ 马斯克投票权：<span>82%+</span></div>
-  </div>
-  <ul class="card-points">
-    <li>2025 营收 $187亿，2026 Q1 营收 $47亿；运营亏损仍在扩大</li>
-    <li>IPO 叙事核心：太空+AI 双引擎——AI1 数据中心卫星（翼展 70m，峰值算力 150kW）+ 100万颗轨道 AI 卫星网络</li>
-    <li>配套布局：Terafab 芯片工厂（特斯拉合资）+ Gigasat 太阳能电池板工厂（>1100万平方英尺）</li>
-    <li>承销商额外配售权 $112亿；散户正在抛售 AI 概念股换取 SpaceX 仓位</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>重塑全球科技 IPO 格局，"太空+AI"叙事打开全新估值维度。</div>
-  <div class="card-source"><span>📅 SEC招股文件 · 智通财经 · 新浪财经 · 澎湃新闻</span><span class="src-dot"></span>2026-06-12</div>
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
-<div class="card">
-  <div class="card-title"><span class="num">2</span>OpenAI 收购 Ona + 考虑降价，与 Anthropic 全面开战</div>
-  <div class="card-summary">
-    OpenAI 双线出击——<span class="hl-blue">收购云平台 Ona</span> 增强 Codex 长时 Agent 运行能力，同时<span class="hl-red">考虑大幅削减订阅价格</span>应对 Anthropic 竞争。
-  </div>
-  <ul class="card-points">
-    <li>Ona：安全预配置云端环境，使 Codex 可在用户控制的基础设施上跨设备持续执行长时任务</li>
-    <li>价格战：OpenAI 正评估对 ChatGPT 和 API 进行实质性价格下调</li>
-    <li>GPT-5.6 本月可能发布，相比 GPT-5.5"实质性提升"</li>
-    <li>OpenAI 模型和 Codex 同步上线 Oracle 云，企业可在现有安全框架下部署</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>从技术竞争转向生态+价格全面战争，云厂商间的 AI 部署争夺同步升级。</div>
-  <div class="card-source"><span>📅 CNBC · Bloomberg · MSN · Android Authority</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">3</span>贝索斯 Prometheus AI 融资 $120亿，估值 $410亿</div>
-  <div class="card-summary">
-    贝索斯新创 AI 公司 <span class="hl-blue">Prometheus</span> 完成 <span class="hl-green">$120亿</span> 融资，估值达 <span class="hl-green">$410亿</span>，聚焦"AI 建造实物"。
-  </div>
-  <ul class="card-points">
-    <li>刷新 AI 初创单轮融资纪录，仅次于 SpaceX IPO 募资规模</li>
-    <li>贝索斯："AI 将带来黄金时代，相机发明后画家没有消失"</li>
-    <li>定位物理世界 AI——从建筑施工到制造业，AI 进入原子世界</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>AI 投资从软件转向软硬结合，与 SpaceX 太空+AI 叙事呼应。</div>
-  <div class="card-source"><span>📅 Bloomberg · CNBC · Semafor · Financial Times</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<!-- ===== 研究与开源 ===== -->
-<div class="cat-title"><span class="icon">🔬</span> 研究与开源</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">4</span>美团 LongCat 系列密集开源：多模态、数字人、定理证明全线出击</div>
-  <div class="card-summary">
-    美团技术团队同日发布超 <span class="hl-green">5个开源项目</span>，覆盖多模态 AI、数字人视频、数学定理证明、推理基准，打出罕见的技术密度。
-  </div>
-  <ul class="card-points">
-    <li><span class="hl-blue">LongCat-Next</span>：原生多模态模型，视觉+语音作为架构基础，面向物理世界 AI 交互</li>
-    <li><span class="hl-blue">LongCat-Video-Avatar 1.5</span>：商用水准数字人，唇形同步、长视频稳定、多人交互全面升级</li>
-    <li><span class="hl-blue">LongCat-Flash-Prover</span>：数学形式化定理证明专用模型，从"猜答案"→"严谨证明"</li>
-    <li><span class="hl-blue">LongCat-AudioDiT</span>：零样本 TTS 语音克隆，直接波形潜在空间扩散</li>
-    <li><span class="hl-blue">General 365 基准</span>：26款主流模型最高准确率仅 62.8%（Gemini 3 Pro），多数不及格</li>
-    <li>6篇论文入选 ACL 2026，涵盖 LLM 评估、推理、生成式推荐</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>美团一日释放完整 AI 技术矩阵，从外卖平台向 AI 基础研究重镇的转型信号强烈。</div>
-  <div class="card-source"><span>📅 美团技术团队官方博客</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">5</span>谷歌 DiffusionGemma：文本生成速度 4 倍提升</div>
-  <div class="card-summary">
-    DeepMind 发布 <span class="hl-blue">DiffusionGemma</span>，将扩散模型引入文本生成，速度达此前版本的 <span class="hl-green">4倍</span>。
-  </div>
-  <ul class="card-points">
-    <li>并行生成整块文本，区别于传统自回归逐 token 输出</li>
-    <li>英伟达全硬件生态同步优化（RTX GPU、DGX Spark）</li>
-    <li>Gemma 4 系列同步上线 Amazon Bedrock</li>
-    <li>代价：长文本连贯性存在部分取舍</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>文本生成"延迟墙"被打破，扩散范式为实时 AI 应用打开新可能。</div>
-  <div class="card-source"><span>📅 DeepMind官方博客 · NVIDIA Newsroom</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">6</span>阶跃星辰 Step 3.7 Flash 登顶全球速度榜</div>
-  <div class="card-summary">
-    <span class="hl-blue">Step 3.7 Flash</span> 在 Artificial Analysis 榜单速度、性价比、端到端三项指标均排名<span class="hl-green">全球第一</span>。
-  </div>
-  <div class="kv-row">
-    <div class="kv-item">⚡ 速度：<span>416 tokens/s</span></div>
-    <div class="kv-item">💵 成本：<span>Claude的 1/9</span></div>
-    <div class="kv-item">💻 编程：<span>Claude的 97%</span></div>
-  </div>
-  <ul class="card-points">
-    <li>稀疏 MoE 架构，专为生产级 Agent 打造</li>
-    <li>OpenRouter Trending 冲至全球第二</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>国产模型在全球性价比榜单统治级表现，Flash 赛道成中国独特优势。</div>
-  <div class="card-source"><span>📅 阶跃星辰官方 · Artificial Analysis</span><span class="src-dot"></span>2026-06-10</div>
-</div>
-
-<!-- ===== 产业与投融资 ===== -->
-<div class="cat-title"><span class="icon">💰</span> 产业与投融资</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">7</span>KKR 联手英伟达成立 $100亿 AI 基础设施公司</div>
-  <div class="card-summary">
-    私募巨头 KKR 与英伟达、Vistra 联合成立 AI 基础设施公司，初始投资 <span class="hl-green">$100亿</span>。
-  </div>
-  <ul class="card-points">
-    <li>专注数据中心电力+算力一体化解决方案</li>
-    <li>KKR 警告将出现 19世纪以来未见的"极端趋势"</li>
-    <li>Apollo 已开始对所有软件投资进行 AI 替代风险评估</li>
-    <li>科威特宣布投入 $100亿布局 AI 基建</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>AI 投资从软件层下沉到电力+算力层，传统私募大规模进场。</div>
-  <div class="card-source"><span>📅 WSJ Tech · Bloomberg · CNBC</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">8</span>亚马逊获 $175亿贷款，CoreWeave 首发欧洲垃圾债</div>
-  <div class="card-summary">
-    AI 基础设施融资渠道多元化——亚马逊获 <span class="hl-green">$175亿</span> 银行贷款，CoreWeave 首次发行欧洲垃圾债。
-  </div>
-  <ul class="card-points">
-    <li>亚马逊明确资金用途为 AI 基础设施持续投入</li>
-    <li>CoreWeave 垃圾债标志 AI 算力公司融资从股权走向债务市场</li>
-    <li>甲骨文财报不及预期股价下跌，但 AI 芯片和电力股仍被看好</li>
-  </ul>
-  <div class="card-source"><span>📅 TechCrunch · Bloomberg</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">9</span>阿里钉钉负责人因 AI 战略分歧离职</div>
-  <div class="card-summary">
-    阿里钉钉负责人因 <span class="hl-red">AI 战略方向分歧</span> 离职——核心争议在"聚焦企业效率"vs"全面 AI 化转型"。
-  </div>
-  <ul class="card-points">
-    <li>阿里云 AI 收入年化已破 ¥358亿，钉钉是企业 AI 落地核心入口</li>
-    <li>折射中国大厂内部 AI 路线之争——渐进还是激进</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>大厂 AI 战略内部博弈走向台前，组织架构调整直接影响 AI 产品落地节奏。</div>
-  <div class="card-source"><span>📅 Bloomberg</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<!-- ===== 工具与应用 ===== -->
-<div class="cat-title"><span class="icon">🛠️</span> 工具与应用</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">10</span>微信 AI 智能体平台开放，美团滴滴携程首批接入</div>
-  <div class="card-summary">
-    微信宣布开放平台能力，<span class="hl-blue">美团、携程、同程、滴滴</span> 首批内测——第三方 AI 智能体可在微信生态完成"对话→决策→支付"全流程闭环。
-  </div>
-  <ul class="card-points">
-    <li>超级 App（月活 13亿+）向 Agent 平台转型，AI 流量入口从搜索延伸至生活服务</li>
-    <li>千问同步推出高考志愿填报 Agent，定位辅助决策</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>微信开放 AI 智能体将彻底改变 C 端 AI 应用的分发和变现模式。</div>
-  <div class="card-source"><span>📅 zglg.work · 微信官方</span><span class="src-dot"></span>2026-06-10</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">11</span>Anthropic Claude Cowork 上线 Windows + YOLO 模式</div>
-  <div class="card-summary">
-    Anthropic 发布 <span class="hl-blue">Windows 版 Claude Cowork</span>，Claude Code Desktop 新增 <span class="hl-red">YOLO 模式</span>——Agent 无需逐条确认即可自动执行代码修改。
-  </div>
-  <ul class="card-points">
-    <li>YOLO 模式：自主执行代码修改、文件操作、命令运行</li>
-    <li>同步发布 2026 Agent 编程趋势报告 + Claude App 语音模式</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>Agent 编程从辅助走向自主执行，是开发者信任 Agent 的标志性一步。</div>
-  <div class="card-source"><span>📅 Anthropic官方 · zglg.work</span><span class="src-dot"></span>2026-06-10</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">12</span>华为云发布 Agentic Infra 新范式，10万卡集群就绪</div>
-  <div class="card-summary">
-    华为云提出 Agentic Infra 新范式，发布 <span class="hl-green">10万卡、200 EFLOPS</span> 智算集群及完整工具链。
-  </div>
-  <ul class="card-points">
-    <li>AICS 灵衢智算集群 + AMS Agentic 记忆存储 + AgentSphere 弹性沙箱</li>
-    <li>智果 AgentArts 企业级平台，开源版 openJiuwen 同源度 >90%</li>
-  </ul>
-  <div class="card-source"><span>📅 华为云 INSPIRE大会</span><span class="src-dot"></span>2026-06-10</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">13</span>Coinbase + Visa：AI 智能体自主交易和支付时代来临</div>
-  <div class="card-summary">
-    Coinbase 推出可自主交易的 AI 智能体；Visa 将支付网络接入 ChatGPT——<span class="hl-green">AI 实现从信息输出到价值流转的跨越</span>。
-  </div>
-  <ul class="card-points">
-    <li>Coinbase Agent：自主管理交易、支付、订阅 premium 研究报告</li>
-    <li>Visa × ChatGPT：AI 可在无人工审批下完成购物支付</li>
-    <li>Fortune 批评："未经人类批准自主支付并非好主意"</li>
-    <li>DoorDash 同步推出 AI 聊天机器人，文字+照片点餐</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>AI Agent 从"信息输出"进化为"价值流转"，将彻底改变商业交易范式。</div>
-  <div class="card-source"><span>📅 TechCrunch · Bloomberg · Fortune · CNBC</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<!-- ===== 政策与伦理 ===== -->
-<div class="cat-title"><span class="icon">🌍</span> 政策与伦理</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">14</span>Anthropic 主动提议对自身征税，补偿 AI 替代岗位</div>
-  <div class="card-summary">
-    Anthropic 提出史无前例的自律方案——主动提议对自身征税，补偿 AI 替代的失业损失。CEO Amodei 呼吁在 AI 时代优先保障劳动者权益。
-  </div>
-  <ul class="card-points">
-    <li>同步推出 "Claude 军团" 计划，免费教非营利组织高效使用 AI</li>
-    <li>宣布 AI 将明确告知用户因国家安全因素被拒绝/降级的请求</li>
-    <li>为 Claude Fable 不可见护栏机制道歉，承认过于激进且误报率高</li>
-    <li>微软总裁 Brad Smith 发 3100 字长文谈 AI 与人类尊严</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>"AI公司是否应为失业买单"从伦理讨论推向制度设计层面。</div>
-  <div class="card-source"><span>📅 Fortune · Semafor · The Verge · Seattle Times</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">15</span>xAI 前工程师起诉：因质疑 Grok 安全被解雇</div>
-  <div class="card-summary">
-    xAI 前工程师在 SpaceX IPO 前数日因提出 <span class="hl-red">Grok AI 安全问题</span> 被报复性解雇，正式起诉 xAI 和 SpaceX。
-  </div>
-  <ul class="card-points">
-    <li>解雇时间点敏感：恰在 SpaceX 史上最大 IPO 前</li>
-    <li>指控核心：公司压制内部 AI 安全 whistleblower</li>
-    <li>涉及 SpaceX 和 xAI 关联属性下的员工身份模糊</li>
-  </ul>
-  <div class="card-impact"><span class="impact-label">💡 影响：</span>SpaceX 上市当日爆出关联 AI 公司安全诉讼，为史上最大 IPO 蒙上阴影。</div>
-  <div class="card-source"><span>📅 TechCrunch · Seattle Times</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<div class="card">
-  <div class="card-title"><span class="num">16</span>多起诉讼密集爆发，AI 责任边界进入法律界定期</div>
-  <div class="card-summary">
-    母亲起诉 OpenAI"故意设计缺陷"致女儿死亡、音乐人起诉谷歌未经授权训练 Lyria 3、德国法院就 AI 责任作出判决——AI 产品责任进入密集诉讼期。
-  </div>
-  <ul class="card-points">
-    <li>第二位家长对 OpenAI 提起过失致死诉讼</li>
-    <li>独立音乐人指控谷歌未经授权使用 YouTube 内容训练 Lyria 3</li>
-    <li>多名律师因提交 AI 生成的虚假法庭文件面临处罚</li>
-  </ul>
-  <div class="card-source"><span>📅 cNet · The Verge · Engadget · Semafor</span><span class="src-dot"></span>2026-06-11</div>
-</div>
-
-<!-- Key Takeaways -->
-<div class="takeaway-section">
-  <h2>🎯 今日要点</h2>
-  <ol>
-    <li><span class="hl-bold">SpaceX 今日上市</span>：$1.77万亿估值、$750亿募资，史上最大 IPO 重塑全球科技投资格局，"太空+AI"成为新叙事范式</li>
-    <li><span class="hl-bold">AI 智能体进入交易闭环时代</span>：Coinbase × Visa × 微信三大生态同时打通 AI 支付能力，AI 从信息输出进化为价值流转</li>
-    <li><span class="hl-bold">中国 AI 开源生态爆发</span>：美团 LongCat 系列一日 7 箭齐发，阶跃星辰登顶全球速度榜，国产模型在性价比和开源生态上构筑独特优势</li>
-    <li><span class="hl-bold">AI 安全与上市冲突激化</span>：SpaceX IPO 当日爆出 xAI whistleblower 诉讼，Anthropic 自我征税提案挑战行业底线</li>
-    <li><span class="hl-bold">基础设施竞赛白热化</span>：KKR+NVIDIA $100亿、亚马逊 $175亿贷款、科威特 $100亿——主权基金与私募巨头全面进场</li>
-  </ol>
-</div>
-
-<div class="footer">
-  📡 生成时间：2026-06-12 07:25 CST · 下次更新：明日同一时间<br>
-  📊 数据来源：ThirdRuntime · AI Toolly · zglg.work · TechCrunch · Bloomberg · The Verge · CNBC · Fortune 等 20+ 媒体源
-</div>
-
-</div>
 </body>
 </html>

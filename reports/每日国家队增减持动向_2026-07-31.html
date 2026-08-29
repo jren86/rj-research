@@ -5,398 +5,504 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>每日国家队增减持动向 · 2026-07-31</title>
   <style>
-    :root {
-      --bg: #faf9f7;
-      --card: #f4f2ef;
-      --border: #cfc9c1;
-      --text: #2c2a28;
-      --text2: #6b6760;
-      --red: #b8544a;
-      --green: #4a8a5c;
-      --orange: #a8813c;
-      --blue: #3a6b96;
-      --purple: #7d6b8f;
-      --yellow: #9a8447;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      padding: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
-    .report-header {
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-    .report-header h1 {
-      font-size: 1.4em;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .report-header .meta {
-      font-size: 0.82em;
-      color: var(--text2);
-    }
-    h2 {
-      font-size: 1.15em;
-      margin: 22px 0 10px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-      color: var(--blue);
-    }
-    h3 {
-      font-size: 1em;
-      margin: 14px 0 8px;
-      color: var(--text);
-    }
-    .card {
-      background: var(--card);
-      border-radius: 8px;
-      padding: 12px 14px;
-      margin: 10px 0;
-      border: 1px solid var(--border);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 8px 0;
-      font-size: 0.85em;
-    }
-    th {
-      background: var(--card);
-      padding: 6px 8px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-      color: var(--text2);
-      font-weight: 600;
-    }
-    td {
-      padding: 6px 8px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-    tr:hover {
-      background: rgba(88, 166, 255, 0.05);
-    }
-    .tag {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.78em;
-      margin-right: 4px;
-    }
-    .tag-red {
-      background: rgba(248, 81, 73, 0.15);
-      color: var(--red);
-    }
-    .tag-green {
-      background: rgba(63, 185, 80, 0.15);
-      color: var(--green);
-    }
-    .tag-orange {
-      background: rgba(210, 153, 34, 0.15);
-      color: var(--orange);
-    }
-    .tag-blue {
-      background: rgba(88, 166, 255, 0.15);
-      color: var(--blue);
-    }
-    .tag-purple {
-      background: rgba(188, 140, 255, 0.15);
-      color: var(--purple);
-    }
-    .highlight {
-      padding: 10px 14px;
-      border-radius: 6px;
-      margin: 8px 0;
-    }
-    .highlight-red {
-      background: rgba(248, 81, 73, 0.08);
-      border-left: 3px solid var(--red);
-    }
-    .highlight-orange {
-      background: rgba(210, 153, 34, 0.08);
-      border-left: 3px solid var(--orange);
-    }
-    .highlight-blue {
-      background: rgba(88, 166, 255, 0.08);
-      border-left: 3px solid var(--blue);
-    }
-    .highlight-green {
-      background: rgba(63, 185, 80, 0.08);
-      border-left: 3px solid var(--green);
-    }
-    ul.bullet {
-      margin: 6px 0 6px 18px;
-      font-size: 0.92em;
-    }
-    ul.bullet li {
-      margin: 4px 0;
-      line-height: 1.6;
-    }
-    .red { color: var(--red); }
-    .green { color: var(--green); }
-    .orange { color: var(--orange); }
-    .blue { color: var(--blue); }
-    .purple { color: var(--purple); }
-    .yellow { color: var(--yellow); }
-    .source-link {
-      display: block;
-      font-size: 0.78em;
-      color: var(--text2);
-      margin: 4px 0 8px 0;
-      word-break: break-all;
-    }
-    .source-link a {
-      color: var(--blue);
-      text-decoration: none;
-    }
-    .source-link a:hover {
-      text-decoration: underline;
-    }
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 16px 0;
-    }
-    .report-footer {
-      text-align: center;
-      color: var(--text2);
-      font-size: 0.75em;
-      margin-top: 24px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
-    @media (max-width: 640px) {
-      body { padding: 10px; }
-      h1 { font-size: 1.2em; }
-      h2 { font-size: 1.05em; }
-      table { font-size: 0.8em; }
-    }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>每日国家队增减持动向</h1>
-  <div class="meta">2026年7月31日（周五） · 数据来源：Wind 万得金融终端</div>
+  <h1>每日国家队增减持动向 · 2026-07-31</h1>
+  <div class="meta"><strong>日期：2026年7月31日（周五）</strong> | 数据来源：Wind 万得金融终端</div>
 </div>
 
-<!-- 一、市场概览 -->
+<hr>
 <h2>一、市场概览</h2>
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
-<tr><td>上证指数</td><td>3,832.26</td><td class="red">🔴 +0.72%</td></tr>
-<tr><td>沪深300</td><td>4,588.20</td><td class="red">🔴 +0.85%</td></tr>
-<tr><td>科创50</td><td>1,635.96</td><td class="red">🔴 +2.99%</td></tr>
-<tr><td>创业板指</td><td>3,343.96</td><td class="red">🔴 +3.06%</td></tr>
-</table>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>上证指数</td><td>3,832.26</td><td>🔴 +0.72%</td></tr><tr><td>沪深300</td><td>4,588.20</td><td>🔴 +0.85%</td></tr><tr><td>科创50</td><td>1,635.96</td><td>🔴 +2.99%</td></tr><tr><td>创业板指</td><td>3,343.96</td><td>🔴 +3.06%</td></tr></tbody></table>
 <p>今日A股全面反弹，双创板块领涨。科创50反弹近3%，创业板指涨超3%。政治局7月30日会议释放政策加码信号，叠加监管层密集维稳，市场情绪有所修复。</p>
-<div class="source-link">🔗 <a href="#">来源：Wind 万得金融终端</a></div>
-
-<!-- 二、ETF 资金流数据 -->
+<p>🔗 [来源：Wind 万得金融终端]</p>
+<hr>
 <h2>二、ETF 资金流数据</h2>
-
 <h3>2.1 7月全月概览</h3>
-<div class="highlight highlight-red">
-  <p>📊 <strong>7月A股ETF累计净流入突破5,000亿元，再度刷新单月纪录。</strong></p>
-</div>
-<table>
-<tr><th>维度</th><th>数据</th></tr>
-<tr><td>宽基ETF 7月净流入</td><td>超3,200亿元</td></tr>
-<tr><td>行业主题ETF 7月净流入</td><td>超1,700亿元</td></tr>
-<tr><td>科创50相关ETF 7月净流入</td><td>超700亿元</td></tr>
-<tr><td>创业板相关ETF 7月净流入</td><td>超500亿元</td></tr>
-<tr><td>半导体材料设备相关ETF 7月净流入</td><td>超300亿元</td></tr>
-<tr><td>沪深300/中证A500/中证1000 ETF</td><td>各超400亿元</td></tr>
-<tr><td>深市ETF 7月累计净申购</td><td>1,446.97亿元</td></tr>
-</table>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=9100F63B2D98">来源：Wind 万得金融终端</a></div>
-
+<p>📊 <strong>7月A股ETF累计净流入突破5,000亿元，再度刷新单月纪录。</strong></p>
+<table><thead><tr><th>维度</th><th>数据</th></tr></thead><tbody><tr><td>宽基ETF 7月净流入</td><td>超3,200亿元</td></tr><tr><td>行业主题ETF 7月净流入</td><td>超1,700亿元</td></tr><tr><td>科创50相关ETF 7月净流入</td><td>超700亿元</td></tr><tr><td>创业板相关ETF 7月净流入</td><td>超500亿元</td></tr><tr><td>半导体材料设备相关ETF 7月净流入</td><td>超300亿元</td></tr><tr><td>沪深300/中证A500/中证1000 ETF</td><td>各超400亿元</td></tr><tr><td>深市ETF 7月累计净申购</td><td>1,446.97亿元</td></tr></tbody></table>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=9100F63B2D98" target="_blank">来源：Wind 万得金融终端</a></p>
 <h3>2.2 7月30日单日ETF资金流</h3>
-<div class="highlight highlight-blue">
-  <p>📊 7月30日A股ETF再度吸引超400亿元抄底资金流入。</p>
-</div>
-<table>
-<tr><th>排名</th><th>ETF名称</th><th>净流入（亿元）</th><th>份额变动（亿份）</th></tr>
-<tr><td>1</td><td>创业板ETF易方达</td><td class="red">63.87</td><td>+19.48</td></tr>
-<tr><td>2</td><td>科创50ETF华夏</td><td class="red">58.21</td><td>+34.26</td></tr>
-<tr><td>3</td><td>A500ETF华泰柏瑞</td><td class="red">31.29</td><td>+24.93</td></tr>
-<tr><td>4</td><td>科创半导体ETF华夏</td><td class="red">26.40</td><td>—</td></tr>
-<tr><td>5</td><td>沪深300ETF华泰柏瑞</td><td class="red">24.67</td><td>—</td></tr>
-</table>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=90848B7DCB08">来源：Wind 万得金融终端</a></div>
-
+<p>📊 <strong>7月30日A股ETF再度吸引超400亿元抄底资金流入。</strong></p>
+<p><strong>净流入TOP 5（单日）：</strong></p>
+<table><thead><tr><th>排名</th><th>ETF名称</th><th>净流入（亿元）</th><th>份额变动（亿份）</th></tr></thead><tbody><tr><td>1</td><td>创业板ETF易方达</td><td>63.87</td><td>+19.48</td></tr><tr><td>2</td><td>科创50ETF华夏</td><td>58.21</td><td>+34.26</td></tr><tr><td>3</td><td>A500ETF华泰柏瑞</td><td>31.29</td><td>+24.93</td></tr><tr><td>4</td><td>科创半导体ETF华夏</td><td>26.40</td><td>—</td></tr><tr><td>5</td><td>沪深300ETF华泰柏瑞</td><td>24.67</td><td>—</td></tr></tbody></table>
+<p><strong>净流出TOP 3（单日）：</strong></p>
+<table><thead><tr><th>排名</th><th>ETF名称</th><th>净流出（亿元）</th></tr></thead><tbody><tr><td>1</td><td>中证500ETF南方</td><td>-18.17</td></tr><tr><td>2</td><td>上证红利ETF华泰柏瑞</td><td>-7.50</td></tr><tr><td>3</td><td>AAA科创债ETF嘉实</td><td>-7.40</td></tr></tbody></table>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=90848B7DCB08" target="_blank">来源：Wind 万得金融终端</a></p>
 <h3>2.3 近5日ETF资金流</h3>
-<table>
-<tr><th>排名</th><th>ETF名称</th><th>近5日净流入（亿元）</th></tr>
-<tr><td>1</td><td>创业板ETF易方达</td><td class="red">181.06</td></tr>
-<tr><td>2</td><td>科创50ETF华夏</td><td class="red">135.28</td></tr>
-<tr><td>3</td><td>沪深300ETF华泰柏瑞</td><td class="red">114.29</td></tr>
-<tr><td>4</td><td>科创半导体ETF华夏</td><td class="red">88.45</td></tr>
-<tr><td>5</td><td>半导体设备ETF国泰</td><td class="red">30.51</td></tr>
-</table>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=EBAA35F630A2">来源：Wind 万得金融终端</a></div>
-
+<table><thead><tr><th>排名</th><th>ETF名称</th><th>近5日净流入（亿元）</th></tr></thead><tbody><tr><td>1</td><td>创业板ETF易方达</td><td>181.06</td></tr><tr><td>2</td><td>科创50ETF华夏</td><td>135.28</td></tr><tr><td>3</td><td>沪深300ETF华泰柏瑞</td><td>114.29</td></tr><tr><td>4</td><td>科创半导体ETF华夏</td><td>88.45</td></tr><tr><td>5</td><td>半导体设备ETF国泰</td><td>30.51</td></tr></tbody></table>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=EBAA35F630A2" target="_blank">来源：Wind 万得金融终端</a></p>
 <h3>2.4 宽基ETF成交额</h3>
-<div class="highlight highlight-blue">
-  <p>📊 7月29日宽基ETF连续第二日成交突破千亿元（1,097.33亿元），23只产品成交额超10亿元。</p>
-</div>
-<table>
-<tr><th>ETF</th><th>成交额（亿元）</th></tr>
-<tr><td>科创50ETF华夏</td><td>129.59</td></tr>
-<tr><td>创业板ETF易方达</td><td>124.46</td></tr>
-<tr><td>中证1000ETF南方</td><td>80.83</td></tr>
-<tr><td>沪深300ETF华泰柏瑞</td><td>69.88</td></tr>
-<tr><td>中证500ETF南方</td><td>超50亿</td></tr>
-<tr><td>A500ETF华泰柏瑞</td><td>超50亿</td></tr>
-</table>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=37B0BE4D873C">来源：Wind 万得金融终端</a></div>
-
-<h3>2.5 汇金重点持仓ETF追踪</h3>
-<div class="highlight highlight-orange">
-  <p>📊 汇金重点持仓ETF 7月以来累计净流入 <strong>1,762亿元</strong>（兴证策略测算）。分方向来看，双创净流入居前，其次为中证1000、沪深300、中证500。</p>
-</div>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=73F4B0F7761C">来源：兴证策略张启尧团队</a></div>
-
-<!-- 三、大股东持股变动 -->
+<p>📊 <strong>7月29日宽基ETF连续第二日成交突破千亿元（1,097.33亿元），23只产品成交额超10亿元。</strong></p>
+<table><thead><tr><th>ETF</th><th>成交额（亿元）</th></tr></thead><tbody><tr><td>科创50ETF华夏</td><td>129.59</td></tr><tr><td>创业板ETF易方达</td><td>124.46</td></tr><tr><td>中证1000ETF南方</td><td>80.83</td></tr><tr><td>沪深300ETF华泰柏瑞</td><td>69.88</td></tr><tr><td>中证500ETF南方</td><td>超50亿</td></tr><tr><td>A500ETF华泰柏瑞</td><td>超50亿</td></tr></tbody></table>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=37B0BE4D873C" target="_blank">来源：Wind 万得金融终端</a></p>
+<h3>2.5 汇金重点持仓ETF追踪（兴证策略）</h3>
+<p>📊 <strong>汇金重点持仓ETF 7月以来累计净流入1,762亿元。</strong></p>
+<p>分方向来看，双创净流入居前，其次为中证1000、沪深300、中证500。</p>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=73F4B0F7761C" target="_blank">来源：兴证策略张启尧团队</a></p>
+<hr>
 <h2>三、大股东持股变动</h2>
-
 <h3>3.1 国家队动向总览</h3>
-<div class="highlight highlight-red">
-  <p>🔴 <strong>政治局7月30日会议强调</strong>：宏观政策要发力提效，加快财政支出和债券资金使用进度，综合运用并适时调整货币政策工具，及时谋划出台务实管用的增量政策。</p>
-</div>
-<div class="highlight highlight-blue">
-  <p>🔴 <strong>监管层密集释放稳市信号</strong>：证监会近期连续召开投资者、上市公司、行业机构、专家学者系列座谈会，提出"综合施策全力维护市场平稳运行，提升资本市场韧性"。</p>
-</div>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=3D8DB73A56EC">来源：Wind 万得金融终端</a></div>
-
+<p>🔴 <strong>政治局7月30日会议强调</strong>：宏观政策要发力提效，加快财政支出和债券资金使用进度，综合运用并适时调整货币政策工具，及时谋划出台务实管用的增量政策。</p>
+<p>🔴 <strong>监管层密集释放稳市信号</strong>：证监会近期连续召开投资者、上市公司、行业机构、专家学者系列座谈会，提出"综合施策全力维护市场平稳运行，提升资本市场韧性"。</p>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=3D8DB73A56EC" target="_blank">来源：Wind 万得金融终端</a></p>
 <h3>3.2 中国国新 &amp; 中国诚通</h3>
-<table>
-<tr><th>主体</th><th>动作</th><th>金额/规模</th></tr>
-<tr><td>中国国新</td><td>使用股票回购增持专项再贷款及配套资金增持央企股票及科技ETF</td><td>超500亿元</td></tr>
-<tr><td>中国诚通</td><td>增持央企、科技企业股票及ETF，明确持续加码</td><td>近100亿元</td></tr>
-<tr><td><strong>合计</strong></td><td>—</td><td><strong>近600亿元</strong></td></tr>
-</table>
-
-<div class="card">
-  <p>📊 本轮国家队增持呈现<strong>"三层结构"</strong>：</p>
-  <ol style="margin-left:18px;font-size:0.92em;">
-    <li><strong>大盘压舱石</strong>（上证指数 + 沪深300）</li>
-    <li><strong>科技成长主战场</strong>（科创50 + 科创芯片 + 创业板指 + 创业板50）</li>
-    <li><strong>中小市值流动性托底</strong>（中证500 + 中证1000）</li>
-  </ol>
-</div>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=F3E65C1AC3D3">来源：Wind 万得金融终端</a></div>
-
+<table><thead><tr><th>主体</th><th>动作</th><th>金额/规模</th></tr></thead><tbody><tr><td>中国国新</td><td>使用股票回购增持专项再贷款及配套资金增持央企股票及科技ETF</td><td>超500亿元</td></tr><tr><td>中国诚通</td><td>增持央企、科技企业股票及ETF，明确持续加码</td><td>近100亿元</td></tr><tr><td>合计</td><td>—</td><td>近600亿元</td></tr></tbody></table>
+<p>📊 本轮国家队增持呈现 <strong>"三层结构"</strong>：</p>
+<ul><li><strong>大盘压舱石</strong>（上证指数 + 沪深300）</li><li><strong>科技成长主战场</strong>（科创50 + 科创芯片 + 创业板指 + 创业板50）</li><li><strong>中小市值流动性托底</strong>（中证500 + 中证1000）</li></ul>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=F3E65C1AC3D3" target="_blank">来源：Wind 万得金融终端</a></p>
 <h3>3.3 社保基金 &amp; 养老基金二季度调仓</h3>
-<table>
-<tr><th>股票</th><th>代码</th><th>操作主体</th><th>方向</th><th>变动情况</th><th>日期</th></tr>
-<tr><td>萤石网络</td><td>688475</td><td>两只社保组合</td><td><span class="tag tag-red">重仓持有</span></td><td>近千万股，市值超2.6亿</td><td>二季度</td></tr>
-<tr><td>富春股份</td><td>300299</td><td>社保基金</td><td><span class="tag tag-red">新进</span></td><td>二季度全新建仓</td><td>二季度</td></tr>
-<tr><td>众鑫股份</td><td>603091</td><td>社保基金</td><td><span class="tag tag-red">增持</span></td><td>+17.9万股（环比+25%）</td><td>二季度</td></tr>
-<tr><td>柳工</td><td>000528</td><td>社保107组合</td><td><span class="tag tag-red">新进</span></td><td>+1,157.62万股（第六大）</td><td>截至7/20</td></tr>
-<tr><td>柳工</td><td>000528</td><td>社保413组合</td><td><span class="tag tag-green">减持</span></td><td>-615.24万股</td><td>截至7/20</td></tr>
-<tr><td>诺思格</td><td>301333</td><td>社保413组合</td><td><span class="tag tag-red">增持</span></td><td>+71.37万股，持股4.87%</td><td>截至7/20</td></tr>
-<tr><td>星宇股份</td><td>601799</td><td>社保401组合</td><td><span class="tag tag-red">新进</span></td><td>147.39万股</td><td>截至7/27</td></tr>
-<tr><td>星宇股份</td><td>601799</td><td>养老15022组合</td><td><span class="tag tag-red">新进</span></td><td>133.83万股</td><td>截至7/27</td></tr>
-<tr><td>圆通速递</td><td>600233</td><td>社保113组合</td><td><span class="tag tag-red">增持</span></td><td>+819.75万股</td><td>截至7/20</td></tr>
-<tr><td>圆通速递</td><td>600233</td><td>养老802组合</td><td><span class="tag tag-red">增持</span></td><td>+650.01万股</td><td>截至7/20</td></tr>
-<tr><td>道通科技</td><td>688208</td><td>养老1205组合</td><td><span class="tag tag-red">增持</span></td><td>+184.84万股</td><td>截至7/15</td></tr>
-<tr><td>道通科技</td><td>688208</td><td>社保17042组合</td><td><span class="tag tag-red">增持</span></td><td>+92.04万股</td><td>截至7/15</td></tr>
-<tr><td>顺络电子</td><td>002138</td><td>人寿保险</td><td><span class="tag tag-red">增持</span></td><td>+41.24万股</td><td>截至6/30</td></tr>
-<tr><td>卓易信息</td><td>688258</td><td>社保418组合</td><td><span class="tag tag-green">减持</span></td><td>-13.18万股</td><td>截至7/22</td></tr>
-<tr><td>海泰新光</td><td>688677</td><td>社保113组合</td><td><span class="tag tag-green">减持</span></td><td>-303.45万股</td><td>截至7/15</td></tr>
-<tr><td>海泰新光</td><td>688677</td><td>社保116组合</td><td><span class="tag tag-red">新进</span></td><td>144.46万股</td><td>截至7/15</td></tr>
-</table>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=6DA7A29E191C">来源：Wind 万得金融终端</a></div>
-
-<!-- 四、知名交易 -->
+<p>📊 <strong>社保基金最新持仓动向：</strong></p>
+<table><thead><tr><th>股票</th><th>代码</th><th>操作主体</th><th>方向</th><th>变动情况</th><th>日期</th></tr></thead><tbody><tr><td>萤石网络</td><td>688475</td><td>两只社保组合</td><td>🔴 重仓持有</td><td>近千万股，市值超2.6亿</td><td>二季度</td></tr><tr><td>富春股份</td><td>300299</td><td>社保基金</td><td>🔴 新进</td><td>二季度全新建仓</td><td>二季度</td></tr><tr><td>众鑫股份</td><td>603091</td><td>社保基金</td><td>🔴 增持</td><td>+17.9万股（环比+25%）</td><td>二季度</td></tr><tr><td>柳工</td><td>000528</td><td>社保107组合</td><td>🔴 新进</td><td>+1,157.62万股（第六大）</td><td>截至7/20</td></tr><tr><td>柳工</td><td>000528</td><td>社保413组合</td><td>🟢 减持</td><td>-615.24万股</td><td>截至7/20</td></tr><tr><td>诺思格</td><td>301333</td><td>社保413组合</td><td>🔴 增持</td><td>+71.37万股，持股4.87%</td><td>截至7/20</td></tr><tr><td>星宇股份</td><td>601799</td><td>社保401组合</td><td>🔴 新进</td><td>147.39万股</td><td>截至7/27</td></tr><tr><td>星宇股份</td><td>601799</td><td>养老15022组合</td><td>🔴 新进</td><td>133.83万股</td><td>截至7/27</td></tr><tr><td>圆通速递</td><td>600233</td><td>社保113组合</td><td>🔴 增持</td><td>+819.75万股</td><td>截至7/20</td></tr><tr><td>圆通速递</td><td>600233</td><td>养老802组合</td><td>🔴 增持</td><td>+650.01万股</td><td>截至7/20</td></tr><tr><td>道通科技</td><td>688208</td><td>养老1205组合</td><td>🔴 增持</td><td>+184.84万股</td><td>截至7/15</td></tr><tr><td>道通科技</td><td>688208</td><td>社保17042组合</td><td>🔴 增持</td><td>+92.04万股</td><td>截至7/15</td></tr><tr><td>顺络电子</td><td>002138</td><td>人寿保险</td><td>🔴 增持</td><td>+41.24万股</td><td>截至6/30</td></tr><tr><td>卓易信息</td><td>688258</td><td>社保418组合</td><td>🟢 减持</td><td>-13.18万股</td><td>截至7/22</td></tr><tr><td>海泰新光</td><td>688677</td><td>社保113组合</td><td>🟢 减持</td><td>-303.45万股</td><td>截至7/15</td></tr><tr><td>海泰新光</td><td>688677</td><td>社保116组合</td><td>🔴 新进</td><td>144.46万股</td><td>截至7/15</td></tr></tbody></table>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=6DA7A29E191C" target="_blank">来源：Wind 万得金融终端</a></p>
+<hr>
 <h2>四、知名交易</h2>
-
 <h3>4.1 增持 &amp; 回购</h3>
-<div class="highlight highlight-red">
-  <p>📊 <strong>7月增持回购总体数据：</strong></p>
-  <ul class="bullet">
-    <li>净增持公司数（7月）：<strong>201家</strong></li>
-    <li>股票回购公司数（7月）：<strong>超430家</strong></li>
-    <li>回购总规模（7月）：<strong>204.61亿元</strong></li>
-    <li>7/20以来披露增持计划：<strong>54家</strong>（国有控股20家）</li>
-  </ul>
-</div>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=D62018339C7A">来源：Wind 万得金融终端</a></div>
-
-<p><strong>本周重点增持/回购公告：</strong></p>
-<table>
-<tr><th>公司</th><th>类型</th><th>规模</th><th>亮点</th></tr>
-<tr><td>ST际华</td><td>公司回购+控股股东增持</td><td>回购2-4亿；增持1-2亿</td><td>央企市值管理，回购注销</td></tr>
-<tr><td>北方股份</td><td>减持计划届满</td><td>—</td><td>特沃上海未实施大宗/竞价减持</td></tr>
-</table>
-
+<p>📊 <strong>7月增持回购总体数据：</strong></p>
+<table><thead><tr><th>维度</th><th>数据</th></tr></thead><tbody><tr><td>净增持公司数（7月）</td><td>201家</td></tr><tr><td>股票回购公司数（7月）</td><td>超430家</td></tr><tr><td>回购总规模（7月）</td><td>204.61亿元</td></tr><tr><td>7/20以来披露增持计划</td><td>54家（国有控股20家，央企7家+地方国企13家）</td></tr></tbody></table>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=D62018339C7A" target="_blank">来源：Wind 万得金融终端</a></p>
+<p>📊 <strong>本周重点增持/回购公告：</strong></p>
+<table><thead><tr><th>公司</th><th>类型</th><th>规模</th><th>亮点</th></tr></thead><tbody><tr><td>ST际华</td><td>公司回购+控股股东增持</td><td>回购2-4亿；增持1-2亿</td><td>央企市值管理，回购注销</td></tr><tr><td>北方股份</td><td>减持计划届满</td><td>特沃上海未实施大宗/竞价减持</td><td>仅协议转让895万股</td></tr></tbody></table>
 <h3>4.2 险资动向</h3>
-<div class="highlight highlight-orange">
-  <p>🔴 <strong>五大险企集体发声</strong>：中国平安、中国太保等头部险企表态维护资本市场稳定，发挥"耐心资本"优势。中国人寿单日净买入超百亿。</p>
-</div>
-<div class="highlight highlight-blue">
-  <p>🔴 <strong>券商中期分红预热</strong>：超21家上市券商发布中报预喜，头部券商净利润有望突破百亿。7月已有18家上市券商发布权益分派实施公告。</p>
-</div>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=FAD02F9308C6">来源：Wind 万得金融终端</a></div>
-
+<p>🔴 <strong>五大险企集体发声</strong>：中国平安、中国太保等头部险企表态维护资本市场稳定，发挥"耐心资本"优势。中国人寿单日净买入超百亿。</p>
+<p>🔴 <strong>券商中期分红预热</strong>：超21家上市券商发布中报预喜，头部券商净利润有望突破百亿。7月已有18家上市券商发布权益分派实施公告。</p>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=FAD02F9308C6" target="_blank">来源：Wind 万得金融终端</a></p>
 <h3>4.3 外部环境</h3>
-<table>
-<tr><th>指数</th><th>7月涨跌幅</th></tr>
-<tr><td>纳斯达克</td><td class="green">🟢 -6.76%</td></tr>
-<tr><td>日经225</td><td class="green">🟢 -11.70%</td></tr>
-<tr><td>韩国KOSPI</td><td class="green">🟢 -34.01%</td></tr>
-<tr><td>费城半导体</td><td class="green">🟢 -26.67%</td></tr>
-</table>
-<div class="highlight highlight-orange">
-  <p>⚠️ 全球科技股7月大幅回调，韩国KOSPI创纪录暴跌（7/29二次熔断），费城半导体指数跌超26%。外部波动加剧，但A股ETF持续逆势吸金，估值洼地效应显现。</p>
-</div>
-<div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&show=wft&code=D62018339C7A">来源：Wind 万得金融终端</a></div>
-
-<!-- 五、汇总统计 -->
+<table><thead><tr><th>指数</th><th>7月涨跌幅</th></tr></thead><tbody><tr><td>纳斯达克</td><td>🟢 -6.76%</td></tr><tr><td>日经225</td><td>🟢 -11.70%</td></tr><tr><td>韩国KOSPI</td><td>🟢 -34.01%</td></tr><tr><td>费城半导体</td><td>🟢 -26.67%</td></tr></tbody></table>
+<p>⚠️ 全球科技股7月大幅回调，韩国KOSPI创纪录暴跌（7/29二次熔断），费城半导体指数跌超26%。外部波动加剧，但A股ETF持续逆势吸金，估值洼地效应显现。</p>
+<p>🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=D62018339C7A" target="_blank">来源：Wind 万得金融终端</a></p>
+<hr>
 <h2>五、汇总统计</h2>
-<table>
-<tr><th>指标</th><th>数值</th><th>趋势</th></tr>
-<tr><td>7月全市场ETF净流入</td><td>突破5,000亿元</td><td class="red">🔴 创单月历史新高</td></tr>
-<tr><td>宽基ETF 7月净流入</td><td>超3,200亿元</td><td class="red">🔴 年内首个净流入月</td></tr>
-<tr><td>汇金重点持仓ETF 7月净流入</td><td>1,762亿元</td><td class="red">🔴 增量资金持续</td></tr>
-<tr><td>国新+诚通增持规模</td><td>近600亿元</td><td class="red">🔴 多层级协同格局</td></tr>
-<tr><td>7月上市公司回购规模</td><td>204.61亿元</td><td class="red">🔴 产业资本积极</td></tr>
-<tr><td>社保养老二季度调仓</td><td>新进/增持为主</td><td class="red">🔴 长线资金布局</td></tr>
-</table>
-
-<h3>💡 关键洞察</h3>
-
-<div class="card">
-  <p><strong>1. 政策底 + 资金底共振</strong></p>
-  <p style="color:var(--text2);font-size:0.92em;">政治局7/30会议释放增量政策信号，叠加国新诚通近600亿增持、五大险企集体发声，政策维稳从"汇金单核"升级为"多层级协同"格局。</p>
-</div>
-
-<div class="card">
-  <p><strong>2. ETF资金7月创纪录</strong></p>
-  <p style="color:var(--text2);font-size:0.92em;">A股ETF单月吸金突破5,000亿，宽基ETF净流入超3,200亿为年内首次转正。双创板块（科创50、创业板）为最大吸金方向。</p>
-</div>
-
-<div class="card">
-  <p><strong>3. 社保养老二季度积极调仓</strong></p>
-  <p style="color:var(--text2);font-size:0.92em;">萤石网络、富春股份、众鑫股份、柳工、星宇股份等获新进/增持，方向集中于智能制造、医药、智能家居等产业升级领域。</p>
-</div>
-
-<div class="card">
-  <p><strong>4. 外部风险仍需警惕</strong></p>
-  <p style="color:var(--text2);font-size:0.92em;">韩国KOSPI月跌34%、费城半导体跌27%，全球科技股调整尚未企稳。但A股估值洼地效应+政策托底，资金越跌越买态势明确。</p>
-</div>
+<table><thead><tr><th>指标</th><th>数值</th><th>趋势</th></tr></thead><tbody><tr><td>7月全市场ETF净流入</td><td>突破5,000亿元</td><td>🔴 创单月历史新高</td></tr><tr><td>宽基ETF 7月净流入</td><td>超3,200亿元</td><td>🔴 年内首个净流入月</td></tr><tr><td>汇金重点持仓ETF 7月净流入</td><td>1,762亿元</td><td>🔴 增量资金持续</td></tr><tr><td>国新+诚通增持规模</td><td>近600亿元</td><td>🔴 多层级协同格局</td></tr><tr><td>7月上市公司回购规模</td><td>204.61亿元</td><td>🔴 产业资本积极</td></tr><tr><td>社保养老二季度调仓</td><td>新进/增持为主</td><td>🔴 长线资金布局</td></tr></tbody></table>
+<p>💡 <strong>关键洞察</strong>：</p>
+<ul><li><strong>政策底 + 资金底共振</strong>：政治局7/30会议释放增量政策信号，叠加国新诚通近600亿增持、五大险企集体发声，政策维稳从"汇金单核"升级为"多层级协同"格局。</li></ul>
+<ul><li><strong>ETF资金7月创纪录</strong>：A股ETF单月吸金突破5,000亿，宽基ETF净流入超3,200亿为年内首次转正。双创板块（科创50、创业板）为最大吸金方向。</li></ul>
+<ul><li><strong>社保养老二季度积极调仓</strong>：萤石网络、富春股份、众鑫股份、柳工、星宇股份等获新进/增持，方向集中于智能制造、医药、智能家居等产业升级领域。</li></ul>
+<ul><li><strong>外部风险仍需警惕</strong>：韩国KOSPI月跌34%、费城半导体跌27%，全球科技股调整尚未企稳。但A股估值洼地效应+政策托底，资金越跌越买态势明确。</li></ul>
+<hr>
+<p>数据来源于万得 Wind 金融数据服务 · My Research Central · via WB</p>
 
 <div class="report-footer">
-  数据来源于万得 Wind 金融数据服务 · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

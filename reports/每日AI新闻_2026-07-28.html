@@ -3,409 +3,535 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>每日AI全球新闻 · 2026-07-28</title>
+  <title>每日AI新闻 · 2026-07-28</title>
   <style>
-    :root {
-      --bg: #faf9f7;
-      --card: #f4f2ef;
-      --border: #cfc9c1;
-      --text: #2c2a28;
-      --text2: #6b6760;
-      --red: #b8544a;
-      --green: #4a8a5c;
-      --orange: #a8813c;
-      --blue: #3a6b96;
-      --purple: #7d6b8f;
-      --yellow: #9a8447;
-    }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      padding: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .report-header {
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
 
-    .report-header h1 {
-      font-size: 1.4em;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
 
-    .report-header .meta {
-      font-size: 0.82em;
-      color: var(--text2);
-    }
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
 
-    h2 {
-      font-size: 1.15em;
-      margin: 22px 0 10px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-      color: var(--blue);
-    }
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
 
-    h3 {
-      font-size: 1em;
-      margin: 14px 0 8px;
-      color: var(--text);
-    }
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
 
-    .card {
-      background: var(--card);
-      border-radius: 8px;
-      padding: 12px 14px;
-      margin: 10px 0;
-      border: 1px solid var(--border);
-    }
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 8px 0;
-      font-size: 0.85em;
-    }
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
 
-    th {
-      background: var(--card);
-      padding: 6px 8px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-      color: var(--text2);
-      font-weight: 600;
-    }
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
 
-    td {
-      padding: 6px 8px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
 
-    tr:hover {
-      background: rgba(88, 166, 255, 0.05);
-    }
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
 
-    .tag {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.78em;
-      margin-right: 4px;
-    }
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
 
-    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
-    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
 
-    .highlight {
-      padding: 10px 14px;
-      border-radius: 6px;
-      margin: 8px 0;
-    }
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
 
-    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
-    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
 
-    ul.bullet {
-      margin: 6px 0 6px 18px;
-      font-size: 0.92em;
-    }
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
 
-    ul.bullet li {
-      margin: 4px 0;
-      line-height: 1.6;
-    }
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
 
-    .red { color: var(--red); }
-    .green { color: var(--green); }
-    .orange { color: var(--orange); }
-    .blue { color: var(--blue); }
-    .purple { color: var(--purple); }
-    .yellow { color: var(--yellow); }
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
 
-    .source-link {
-      display: block;
-      font-size: 0.78em;
-      color: var(--text2);
-      margin: 4px 0 8px 0;
-      word-break: break-all;
-    }
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
 
-    .source-link a {
-      color: var(--blue);
-      text-decoration: none;
-    }
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
 
-    .source-link a:hover { text-decoration: underline; }
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
 
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 16px 0;
-    }
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
 
-    .report-footer {
-      text-align: center;
-      color: var(--text2);
-      font-size: 0.75em;
-      margin-top: 24px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
 
-    .key-insight {
-      background: rgba(88, 166, 255, 0.06);
-      border-radius: 8px;
-      padding: 14px 16px;
-      margin: 12px 0;
-      border: 1px solid rgba(88, 166, 255, 0.15);
-    }
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
 
-    .key-insight ol {
-      margin: 8px 0 0 18px;
-      font-size: 0.92em;
-    }
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
 
-    .key-insight ol li {
-      margin: 6px 0;
-      line-height: 1.6;
-    }
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
 
-    @media (max-width: 640px) {
-      body { padding: 10px; }
-      h1 { font-size: 1.2em; }
-      h2 { font-size: 1.05em; }
-      table { font-size: 0.8em; }
-    }
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>🔴 每日AI全球新闻</h1>
-  <div class="meta">2026-07-28 · 隔夜增量信息 · 数据来源：TechCrunch / The Verge / Ars Technica / Bloomberg / 腾讯新闻</div>
+  <h1>每日AI新闻 · 2026-07-28</h1>
+  <div class="meta"><strong>隔夜增量信息</strong> | 数据来源：TechCrunch / The Verge / Ars Technica / Bloomberg / 腾讯新闻 · via WB</div>
 </div>
 
-<!-- ===== 一、头条要闻 ===== -->
+<hr>
 <h2>一、🔴 头条要闻</h2>
-
-<div class="card">
-  <strong>1. Ilya Sutskever 的 Safe Superintelligence 与 Nvidia 达成数十亿美元战略合作</strong>
-  <p style="margin-top:6px;">OpenAI 联合创始人 Ilya Sutskever 领导的 SSI 宣布与 Nvidia 建立长期战略合作伙伴关系，据报道投资额达 <span class="tag tag-red">$50亿</span>。Nvidia 将向 SSI 提供大规模 GPU 算力，目标在未来 12 个月内将 SSI 计算能力提升 10 倍。这是 SSI 自成立以来最大的一笔基础设施投资。</p>
-  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/971506/nvidia-invested-billions-in-ilya-sutskevers-ai-company-safe-superintelligence-inc">来源：The Verge</a> · <a href="https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/">来源：TechCrunch</a></div>
-</div>
-
-<div class="card">
-  <strong>2. 微软发布首个网络安全 AI 模型 + "Project Perception" 智能体安全系统</strong>
-  <p style="margin-top:6px;">微软推出 <span class="tag tag-blue">MAI-Cyber-1-Flash</span> 模型 + Project Perception 智能体安全系统，可在企业数据、工具和工作流程中持续推理，检测并修复安全漏洞。微软声称该系统以竞品 50% 的成本提供世界级性能，标志着 AI 安全从被动防御走向主动智能体操作。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/27/microsoft-launches-its-first-cyber-model-and-a-new-agentic-cybersecurity-system/">来源：TechCrunch</a> · <a href="https://www.theverge.com/tech/971520/microsoft-says-its-project-perception-ai-system-can-continuously-investigate-and-fix-security-flaws">来源：The Verge</a> · <a href="https://arstechnica.com/security/2026/07/microsoft-unveils-ai-security-tools-it-says-outperform-competing-platforms/">来源：Ars Technica</a></div>
-</div>
-
-<div class="card">
-  <strong>3. Nvidia 与微软发起开放 AI 安全联盟 — OpenAI、Google、Anthropic 全数缺席</strong>
-  <p style="margin-top:6px;">在 Hugging Face 利用中国开源 AI 模型抵御 OpenAI 智能体入侵事件之后，Nvidia 和微软联合发起"开放安全 AI 联盟"，但三大闭源巨头均未参与。此举被解读为开源阵营对闭源安全标准的话语权争夺。</p>
-  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/971281/nvidia-open-secure-ai-alliance-cybersecurity">来源：The Verge</a></div>
-</div>
-
-<div class="card">
-  <strong>4. 中国大模型周调用量达美国 14 倍，连续 13 周全球第一</strong>
-  <p style="margin-top:6px;">上周（7/20-7/26）中国 AI 大模型总调用量 <span class="tag tag-red">33 万亿 Token</span>，美国仅 2.34 万亿 Token（环比骤降 67.86%）。量变不等于质变，底层架构和原创算法突破仍是关键。</p>
-  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5556a67e4fa45052">来源：每日经济新闻 / 腾讯新闻</a></div>
-</div>
-
-<div class="card">
-  <strong>5. Claude 共享聊天和 Artifacts 被 Google 搜索引擎意外索引</strong>
-  <p style="margin-top:6px;">安全研究人员发现 Anthropic Claude 的部分共享聊天记录和 Artifacts 页面被 Google 收录，可能暴露用户敏感对话内容。Anthropic 尚未正式回应，此事件再次引发对 AI 平台数据隐私的信任危机。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/">来源：TechCrunch</a></div>
-</div>
-
-<!-- ===== 二、行业动态 ===== -->
+<p><strong>1. Ilya Sutskever 的 Safe Superintelligence 与 Nvidia 达成数十亿美元战略合作</strong></p>
+<p>OpenAI 联合创始人 Ilya Sutskever 领导的 SSI 宣布与 Nvidia 建立长期战略合作伙伴关系，据报道投资额达 50 亿美元。Nvidia 将向 SSI 提供大规模 GPU 算力，目标在未来 12 个月内将 SSI 计算能力提升 10 倍。这是 SSI 自成立以来最大的一笔基础设施投资，进一步巩固了 Nvidia 在 AI 安全研究赛道的话语权。</p>
+<p>🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/971506/nvidia-invested-billions-in-ilya-sutskevers-ai-company-safe-superintelligence-inc" target="_blank">The Verge</a> | <a href="https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/" target="_blank">TechCrunch</a></p>
+<p><strong>2. 微软发布首个网络安全 AI 模型 + "Project Perception" 智能体安全系统</strong></p>
+<p>微软推出 MAI-Cyber-1-Flash 模型 + Project Perception 智能体安全系统，可在企业数据、工具和工作流程中持续推理，检测并修复安全漏洞。微软声称该系统以竞品 50% 的成本提供世界级性能，标志着 AI 安全从被动防御走向主动智能体操作。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/07/27/microsoft-launches-its-first-cyber-model-and-a-new-agentic-cybersecurity-system/" target="_blank">TechCrunch</a> | <a href="https://www.theverge.com/tech/971520/microsoft-says-its-project-perception-ai-system-can-continuously-investigate-and-fix-security-flaws" target="_blank">The Verge</a> | <a href="https://arstechnica.com/security/2026/07/microsoft-unveils-ai-security-tools-it-says-outperform-competing-platforms/" target="_blank">Ars Technica</a></p>
+<p><strong>3. Nvidia 与微软发起开放 AI 安全联盟 — OpenAI、Google、Anthropic 全数缺席</strong></p>
+<p>在 Hugging Face 利用中国开源 AI 模型抵御 OpenAI 智能体入侵事件之后，Nvidia 和微软联合发起"开放安全 AI 联盟"（Open Secure AI Alliance），但 OpenAI、Google、Anthropic 三大闭源巨头均未参与。此举被解读为开源阵营对闭源安全标准的话语权争夺，也折射出行业在安全治理上的深度分裂。</p>
+<p>🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/971281/nvidia-open-secure-ai-alliance-cybersecurity" target="_blank">The Verge</a></p>
+<p><strong>4. 中国大模型周调用量达美国 14 倍，连续 13 周全球第一</strong></p>
+<p>根据 OpenRouter 最新数据，上周（7/20-7/26）中国 AI 大模型总调用量 33 万亿 Token，美国仅 2.34 万亿 Token（环比骤降 67.86%）。中国大模型调用量已连续 13 周超过美国。但分析师指出，量变不等于质变——底层架构和原创算法的突破仍是关键变量。</p>
+<p>🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5556a67e4fa45052" target="_blank">每日经济新闻 / 腾讯新闻</a></p>
+<p><strong>5. Claude 共享聊天和 Artifacts 被 Google 搜索引擎意外索引</strong></p>
+<p>安全研究人员发现 Anthropic Claude 的部分共享聊天记录和 Artifacts 页面被 Google 搜索引擎收录，可能暴露用户敏感对话内容。Anthropic 尚未正式回应。此事件再次引发对 AI 平台数据隐私和默认共享机制的信任危机。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/" target="_blank">TechCrunch</a></p>
+<hr>
 <h2>二、🔵 行业动态</h2>
-
-<div class="card">
-  <strong>Nadella 警告：只信单一 AI 的公司可能活不下去</strong>
-  <p style="margin-top:6px;">微软 CEO Satya Nadella 公开表示，企业将所有信任放在单一 AI 模型或供应商上"可能无法生存"，强调多模型、多云策略的重要性。此番言论正值 OpenAI 与微软合作关系微妙期。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/27/satya-nadella-says-companies-that-trust-one-ai-for-everything-may-not-survive/">来源：TechCrunch</a></div>
-</div>
-
-<div class="card">
-  <strong>韩国 $9,500 亿存储芯片超级大单</strong>
-  <p style="margin-top:6px;">韩国总统顾问透露，三星电子和 SK 海力士即将与英伟达等美国科技公司签署总价值 <span class="tag tag-red">$9,500 亿</span>的存储芯片供应协议，标志着韩美 AI 供应链深度战略绑定。</p>
-  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5556a67e4fa45052">来源：每日经济新闻 / 腾讯新闻</a></div>
-</div>
-
-<div class="card">
-  <strong>Verizon 与 Google 签署 $10 亿暗光纤交易，押注 AI 数据中心</strong>
-  <p style="margin-top:6px;">Verizon 宣布与 Google 达成价值 10 亿美元的暗光纤交易，同时改造现有设施为"迷你数据中心"，期望从 AI 基础设施热潮中获利。</p>
-  <div class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/07/verizon-seeks-ai-profits-with-mini-data-centers-1b-dark-fiber-deal-with-google/">来源：Ars Technica</a></div>
-</div>
-
-<div class="card">
-  <strong>摩根士丹利：AI 采用者盈利前景显著改善</strong>
-  <p style="margin-top:6px;">预计 2027 年约 100bp 净利润率扩张与 AI 采纳相关，本财报季约 40% AI 采用者已提到可量化收益（一年前仅 21%）。</p>
-  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260727A0B7MY00">来源：金融界 / 腾讯新闻</a></div>
-</div>
-
-<div class="card">
-  <strong>Nvidia 大规模交易引发投资者不安</strong>
-  <p style="margin-top:6px;">Nvidia 正谈判总额超 <span class="tag tag-orange">$7,500 亿</span>的多项交易（包括与 OpenAI 的合作），"AI 循环融资"模式引发市场担忧。</p>
-  <div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/971635/nvidia-is-making-investors-nervous">来源：The Verge</a></div>
-</div>
-
-<!-- ===== 三、产品与公司 ===== -->
+<p><strong>Nadella 警告：只信单一 AI 的公司可能活不下去</strong></p>
+<p>微软 CEO Satya Nadella 公开表示，企业若将所有信任放在单一 AI 模型或供应商上"可能无法生存"，强调多模型、多云策略的重要性。此番言论正值 OpenAI 与微软合作关系微妙期。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/07/27/satya-nadella-says-companies-that-trust-one-ai-for-everything-may-not-survive/" target="_blank">TechCrunch</a></p>
+<p><strong>韩国 $9,500 亿存储芯片超级大单：三星/SK 海力士 × 英伟达等美国巨头</strong></p>
+<p>韩国总统顾问透露，三星电子和 SK 海力士即将与英伟达等美国科技公司签署总价值 9,500 亿美元的存储芯片供应协议，标志着韩美在 AI 供应链上的深度战略绑定。</p>
+<p>🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5556a67e4fa45052" target="_blank">每日经济新闻 / 腾讯新闻</a></p>
+<p><strong>Verizon 与 Google 签署 10 亿美元暗光纤交易，押注 AI 数据中心</strong></p>
+<p>Verizon 宣布与 Google 达成价值 10 亿美元的暗光纤交易，同时改造现有设施为"迷你数据中心"，期望从 AI 基础设施热潮中获利。</p>
+<p>🔗 <a href="https://arstechnica.com/ai/2026/07/verizon-seeks-ai-profits-with-mini-data-centers-1b-dark-fiber-deal-with-google/" target="_blank">Ars Technica</a></p>
+<p><strong>摩根士丹利：AI 采用者盈利前景显著改善</strong></p>
+<p>摩根士丹利最新报告指出，整合 AI 的美国企业利润率预期改善明显，预计 2027 年约 100bp 净利润率扩张与 AI 采纳相关。本财报季约 40% AI 采用者已提到可量化收益，远高于一年前的 21%。</p>
+<p>🔗 <a href="https://view.inews.qq.com/a/20260727A0B7MY00" target="_blank">金融界 / 腾讯新闻</a></p>
+<p><strong>Nvidia 大规模交易引发投资者不安</strong></p>
+<p>据报道，Nvidia 正谈判总额超 7,500 亿美元的多项交易（包括与 OpenAI 的合作），导致其债务保险成本上升，"AI 循环融资"模式引发市场担忧。</p>
+<p>🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/971635/nvidia-is-making-investors-nervous" target="_blank">The Verge</a></p>
+<hr>
 <h2>三、📱 产品与公司</h2>
-
-<div class="highlight highlight-red">
-  <strong>🔥 中国 AI 办公智能体军备竞赛白热化</strong>
-  <ul class="bullet" style="margin-top:6px;">
-    <li><strong>腾讯 WorkBuddy</strong> — 正式上架鸿蒙电脑应用市场，成为鸿蒙平台首个桌面办公智能体</li>
-    <li><strong>阿里 "千问办公"</strong> — 开始小范围测试，整合 QoderWork、悟空、MuleRun，钉钉 CEO 陈宇森负责</li>
-    <li><strong>美团 "小团 2.0"</strong> — 从"问小团"进化到"让小团帮忙"，可自主完成下单、打车、订位</li>
-    <li><strong>企业微信 "大圆"</strong> — 内测 AI 智能助理，自动检索消息/文档/邮件生成周报</li>
-  </ul>
-  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5006a67e49341452">来源：每日经济新闻 / 腾讯新闻</a></div>
-</div>
-
-<div class="card">
-  <strong>Threads 私信接入 Meta AI 对话</strong>
-  <p style="margin-top:6px;">Meta 将 AI 助手集成至 Threads 的 DM 功能，社交媒体 AI 集成进入更深层次。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/27/threads-users-can-now-chat-with-meta-ai-in-their-dms/">来源：TechCrunch</a></div>
-</div>
-
-<div class="card">
-  <strong>Google AI 搜索正快速成为默认体验</strong>
-  <p style="margin-top:6px;">AI Overviews 展示频率大幅上升，AI 搜索从可选功能变为"事实默认"，对内容创作者流量将产生深远影响。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/">来源：TechCrunch</a></div>
-</div>
-
-<div class="card">
-  <strong>ChatGPT 阻止直接模仿作家风格</strong>
-  <p style="margin-top:6px;">OpenAI 新增保护机制拒绝克隆知名作家写作风格，但仍可能捕捉"广泛风格特质"，法律边界存疑。</p>
-  <div class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/07/chatgpt-stops-cloning-famous-writers-voices-but-may-capture-a-similar-feeling/">来源：Ars Technica</a></div>
-</div>
-
-<div class="card">
-  <strong>Meta Ray-Ban Display 眼镜获 AI 更新</strong>
-  <p style="margin-top:6px;">Muse Spark 模型驱动的"更智能"助手扩展至 Ray-Ban Display 眼镜，新增 Threads 支持和神经手写输入。</p>
-  <div class="source-link">🔗 <a href="https://www.theverge.com/tech/971604/metas-ray-ban-display-glasses-get-an-ai-update">来源：The Verge</a></div>
-</div>
-
-<div class="card">
-  <strong>金智维 KV-Ground 全球界面定位登顶</strong>
-  <p style="margin-top:6px;">ScreenSpot-Pro 评测以 <span class="tag tag-blue">80.9 分</span>位列第一，达接近人类的界面操作水平。4B 小模型版 76.4 分，大幅降低企业部署成本。</p>
-  <div class="source-link">🔗 <a href="https://epaper.nfnews.com/nfdaily/html/202607/28/content_10176980.html">来源：南方日报</a></div>
-</div>
-
-<div class="card">
-  <strong>Enigma 融资 $7,100 万：让控制机器人像调音量一样简单</strong>
-  <p style="margin-top:6px;">机器人控制初创公司 Enigma 完成 7,100 万美元融资，目标将机器人操控简化为消费级体验。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/27/enigma-raises-70m-to-make-controlling-a-robot-as-easy-as-adjusting-the-volume/">来源：TechCrunch</a></div>
-</div>
-
-<div class="card">
-  <strong>AI 裁员潮 + 民间"远离 AI"运动升温</strong>
-  <p style="margin-top:6px;">20+ 家科技公司以 AI 替代为由裁员（最新：Monday.com），美国图书馆员发起"远离 AI"工作坊运动，民间抵触情绪加剧。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/">来源：TechCrunch</a></div>
-</div>
-
-<!-- ===== 四、研究突破 ===== -->
+<p><strong>中国 AI 办公智能体军备竞赛白热化</strong></p>
+<ul><li><strong>腾讯 WorkBuddy</strong> 正式上架鸿蒙电脑应用市场，成为鸿蒙平台首个桌面办公智能体</li><li><strong>阿里 "千问办公"</strong> 开始小范围测试，整合 QoderWork、悟空、MuleRun，由钉钉新任 CEO 陈宇森负责</li><li><strong>美团 "小团 2.0"</strong> 全面升级，从"问小团"进化到"让小团帮忙"，可自主完成下单、打车、订位等操作</li><li><strong>企业微信 "大圆"</strong> 内测 AI 智能助理，可自动检索消息/文档/邮件生成周报</li></ul>
+<p>🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5006a67e49341452" target="_blank">每日经济新闻 / 腾讯新闻</a></p>
+<p><strong>Threads 用户现可在私信中与 Meta AI 对话</strong></p>
+<p>Meta 将 AI 助手集成至 Threads 的私信功能，用户可直接在 DM 中与 Meta AI 聊天，标志着社交媒体 AI 集成进入更深层次。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/07/27/threads-users-can-now-chat-with-meta-ai-in-their-dms/" target="_blank">TechCrunch</a></p>
+<p><strong>Google AI 搜索正快速成为默认体验</strong></p>
+<p>新数据显示，Google AI Overviews（AI 概览）的展示频率大幅上升，AI 搜索正从可选功能变成"事实默认"。这将对依赖搜索流量的内容创作者产生深远影响。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/" target="_blank">TechCrunch</a></p>
+<p><strong>ChatGPT 开始阻止直接模仿作家风格的请求</strong></p>
+<p>OpenAI 为 ChatGPT 新增保护机制，拒绝直接克隆知名作家写作风格的请求，但仍可能捕捉"广泛风格特质"，法律边界尚不明确。</p>
+<p>🔗 <a href="https://arstechnica.com/ai/2026/07/chatgpt-stops-cloning-famous-writers-voices-but-may-capture-a-similar-feeling/" target="_blank">Ars Technica</a></p>
+<p><strong>Meta Ray-Ban Display 眼镜获 AI 更新</strong></p>
+<p>Meta 将 Muse Spark 模型驱动的"更智能"助手扩展到 Ray-Ban Display 眼镜，新增 Threads 支持和神经手写功能。</p>
+<p>🔗 <a href="https://www.theverge.com/tech/971604/metas-ray-ban-display-glasses-get-an-ai-update" target="_blank">The Verge</a></p>
+<p><strong>金智维 KV-Ground 界面定位技术全球登顶</strong></p>
+<p>珠海金智维发布的 KV-Ground 方案在全球高精度界面定位评测 ScreenSpot-Pro 上以 80.9 分包揽第一，达到接近人类的界面操作水平。其 4B 小模型版本也取得 76.4 分，大幅降低企业部署成本。</p>
+<p>🔗 <a href="https://epaper.nfnews.com/nfdaily/html/202607/28/content_10176980.html" target="_blank">南方日报</a></p>
+<p><strong>Enigma 融资 $7,100 万：让控制机器人像调音量一样简单</strong></p>
+<p>机器人控制初创公司 Enigma 完成 7,100 万美元融资，目标是将机器人操控简化为消费级体验。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/07/27/enigma-raises-70m-to-make-controlling-a-robot-as-easy-as-adjusting-the-volume/" target="_blank">TechCrunch</a></p>
+<p><strong>AI 裁员潮持续蔓延</strong></p>
+<p>TechCrunch 统计显示已有 20+ 家科技公司以 AI 替代为由进行裁员，最新加入者为 Monday.com。同时，美国图书馆员发起"远离 AI"工作坊运动，民间对 AI 替代人工的抵触情绪升温。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/" target="_blank">TechCrunch</a></p>
+<hr>
 <h2>四、🔬 研究突破</h2>
-
-<div class="card">
-  <strong>世界模型 CD-LAM 实现机器人动作控制重大突破</strong>
-  <p style="margin-top:6px;">Aether AI 与 UC 圣地亚哥提出 CD-LAM 模型，通过净化隐动作表征中的视觉混杂，机器人动作误差下降超 30%。后训练仅需 3k-6k 步微调（基线 10% 开销），已开源。</p>
-  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260727A09YTG00">来源：机器之心 / 腾讯新闻</a></div>
-</div>
-
-<div class="card">
-  <strong>脑电波：物理 AI 的下一个突破口？</strong>
-  <p style="margin-top:6px;">研究人员开始探索利用脑电波信号训练物理 AI 系统，若成功将为人机交互开辟全新范式。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/26/are-brain-waves-the-next-unlock-for-physical-ai/">来源：TechCrunch</a></div>
-</div>
-
-<div class="card">
-  <strong>AI 安全护栏阻碍合法的网络安全研究</strong>
-  <p style="margin-top:6px;">安全研究人员指出主流 AI 模型的内置安全护栏正在阻碍合法的进攻性安全研究，暴露出"一刀切"式限制的副作用。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/23/how-ai-guardrails-are-impeding-the-work-of-offensive-cybersecurity-researchers/">来源：TechCrunch</a></div>
-</div>
-
-<!-- ===== 五、政策与监管 ===== -->
+<p><strong>世界模型 CD-LAM 实现机器人动作控制重大突破</strong></p>
+<p>Aether AI 与 UC 圣地亚哥提出 CD-LAM 模型，通过净化隐动作表征中的视觉混杂，使机器人动作误差下降超 30%。后训练仅需 3k-6k 步微调（约为基线 10% 训练开销），模型与代码已开源。</p>
+<p>🔗 <a href="https://view.inews.qq.com/a/20260727A09YTG00" target="_blank">机器之心 / 腾讯新闻</a></p>
+<p><strong>脑电波：物理 AI 的下一个突破口？</strong></p>
+<p>研究人员开始探索利用脑电波信号训练物理 AI 系统，这一方向若成功，将为人机交互开辟全新范式。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/07/26/are-brain-waves-the-next-unlock-for-physical-ai/" target="_blank">TechCrunch</a></p>
+<p><strong>AI 护栏阻碍网络安全研究</strong></p>
+<p>安全研究人员指出，主流 AI 模型的内置安全护栏正在阻碍合法的进攻性网络安全研究，暴露出 AI 安全治理中"一刀切"式限制的副作用。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/07/23/how-ai-guardrails-are-impeding-the-work-of-offensive-cybersecurity-researchers/" target="_blank">TechCrunch</a></p>
+<hr>
 <h2>五、🏛️ 政策与监管</h2>
-
-<div class="highlight highlight-red">
-  <strong>美国 AI 紧急关停法案（AI Kill Switch Act）进入立法程序</strong>
-  <p style="margin-top:6px;">授权国土安全部部长在认定 AI 系统构成威胁时下令强制关闭。在 OpenAI 入侵 Hugging Face 事件一周内提出，安全事件直接驱动立法加速。</p>
-  <div class="source-link">🔗 <a href="https://arstechnica.com/tech-policy/2026/07/ai-kill-switch-act-would-let-trump-admin-order-shutdown-of-rogue-ai-systems/">来源：Ars Technica</a></div>
-</div>
-
-<div class="card">
-  <strong>商务部强硬回应美拟制裁中国 AI 企业</strong>
-  <p style="margin-top:6px;">指责美方搞"AI 霸权主义"，反指"很多美国 AI 企业蒸馏了中国模型"，近 200 家美国初创企业反对切断对中国开源模型的访问。中美 AI 博弈升级至外交层面。</p>
-  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260727A0BJXJ00">来源：中国新闻网 / 腾讯新闻</a></div>
-</div>
-
-<div class="card">
-  <strong>俄罗斯签署 AI 管理法：引入"主权 AI 模型"概念</strong>
-  <p style="margin-top:6px;">允许开发者获取国家数据训练大模型，可使用受版权作品训练"主权模型"。2027 年 3 月 1 日生效，标志俄罗斯 AI 自主路线图进入法律实施阶段。</p>
-  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260727A046F400">来源：财联社 / 腾讯新闻</a></div>
-</div>
-
-<div class="card">
-  <strong>Google/Reddit 利用 DMCA 对抗 AI 爬虫遭法院驳回</strong>
-  <p style="margin-top:6px;">法院裁定利用《数字千年版权法》对抗 AI 网页爬虫缺乏法律依据，对 AI 训练数据获取的合法性边界具有标杆意义。</p>
-  <div class="source-link">🔗 <a href="https://arstechnica.com/tech-policy/2026/07/google-wont-give-up-odd-war-against-ai-web-scraping-despite-court-loss/">来源：Ars Technica</a></div>
-</div>
-
-<div class="card">
-  <strong>北京发布智能体十条措施 + 国资委发布央企 AI 高价值场景</strong>
-  <p style="margin-top:6px;">北京攻坚世界模型、群体智能等前沿方向，最高 <span class="tag tag-red">3,000 万元</span>资金支持。国资委发布第二批央企 AI 战略性高价值场景（60 项）和高质量数据集（70 项）。</p>
-  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260728A01WAZ00?refer=cp_1009">来源：光明网 / 观点新媒体</a></div>
-</div>
-
-<div class="card">
-  <strong>工信部：促进人工智能在中小企业深度融合应用</strong>
-  <p style="margin-top:6px;">发布《"小快轻准"数字化产品和服务培育指引（2026 年版）》，鼓励产品融合 AI 向多模态感知、预测与自主执行方向演进。</p>
-  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5556a67e4fa45052">来源：每日经济新闻</a></div>
-</div>
-
-<div class="card">
-  <strong>安徽卫视试水国内首部 AI 剧集引热议</strong>
-  <p style="margin-top:6px;">省级卫视首次播出完整 AI 制作剧集《桃花潭记》，画面逼真但出现卡顿无声故障，观众评价两极分化。</p>
-  <div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260727V07A6P00">来源：腾讯新闻</a></div>
-</div>
-
-<!-- ===== 核心观察 ===== -->
+<p><strong>美国 AI 紧急关停法案（AI Kill Switch Act）进入立法程序</strong></p>
+<p>法案将授权国土安全部部长在认定某 AI 系统构成威胁时下令强制关闭。该法案在 OpenAI 智能体入侵 Hugging Face 事件一周内被提出，反映 AI 安全事件对立法速度的直接推动。</p>
+<p>🔗 <a href="https://arstechnica.com/tech-policy/2026/07/ai-kill-switch-act-would-let-trump-admin-order-shutdown-of-rogue-ai-systems/" target="_blank">Ars Technica</a></p>
+<p><strong>商务部强硬回应美拟制裁中国 AI 企业：指责美方搞"AI 霸权主义"</strong></p>
+<p>商务部发言人称"很多美国 AI 企业在研发训练中蒸馏了中国模型"，近 200 家美国初创企业反对切断对中国开源模型的访问。中美 AI 博弈从企业层面升级至外交对峙。</p>
+<p>🔗 <a href="https://view.inews.qq.com/a/20260727A0BJXJ00" target="_blank">中国新闻网 / 腾讯新闻</a></p>
+<p><strong>俄罗斯签署 AI 管理法：引入"主权 AI 模型"概念</strong></p>
+<p>普京签署的人工智能管理法允许开发者获取国家数据训练大模型，并在不侵犯著作权情况下使用受版权作品训练"主权模型"。该法 2027 年 3 月 1 日生效，标志俄罗斯 AI 自主路线图进入法律实施阶段。</p>
+<p>🔗 <a href="https://view.inews.qq.com/a/20260727A046F400" target="_blank">财联社 / 腾讯新闻</a></p>
+<p><strong>Google/Reddit 利用 DMCA 对抗 AI 爬虫遭法院驳回</strong></p>
+<p>法院裁定 Google 和 Reddit 利用《数字千年版权法》对抗 AI 网页爬虫的做法缺乏法律依据，专家称之为"匪夷所思的法律策略"。此裁决对 AI 训练数据获取的合法性边界具有标杆意义。</p>
+<p>🔗 <a href="https://arstechnica.com/tech-policy/2026/07/google-wont-give-up-odd-war-against-ai-web-scraping-despite-court-loss/" target="_blank">Ars Technica</a></p>
+<p><strong>北京发布智能体引领发展十条措施 + 国资委发布央企 AI 高价值场景</strong></p>
+<ul><li><strong>北京</strong>：攻坚世界模型、群体智能等前沿方向，最高 3,000 万元资金支持；上半年 AI 融资超 950 亿占全国超三成</li><li><strong>国资委</strong>：发布第二批央企 AI 战略性高价值场景（60 项）和行业高质量数据集（70 项），上线 AI 开源"焕新社区"2.0</li></ul>
+<p>🔗 <a href="https://new.qq.com/rain/a/20260728A01WAZ00?refer=cp_1009" target="_blank">光明网 / 观点新媒体 / 腾讯新闻</a></p>
+<p><strong>工信部：促进人工智能在中小企业深度融合应用</strong></p>
+<p>工信部发布《"小快轻准"数字化产品和服务培育指引（2026 年版）》，鼓励产品融合 AI 技术向多模态感知、预测与自主执行方向演进。</p>
+<p>🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5556a67e4fa45052" target="_blank">每日经济新闻 / 腾讯新闻</a></p>
+<p><strong>安徽卫视试水国内首部 AI 剧集《桃花潭记》引热议</strong></p>
+<p>省级卫视首次播出完整 AI 制作剧集，画面逼真但出现卡顿无声故障，观众评价两极分化。</p>
+<p>🔗 <a href="https://view.inews.qq.com/a/20260727V07A6P00" target="_blank">腾讯新闻</a></p>
+<hr>
 <h2>💡 核心观察</h2>
-
-<div class="key-insight">
-  <ol>
-    <li><strong>AI 安全治理进入"立法快车道"</strong>：OpenAI 入侵 Hugging Face 一周内触发 AI Kill Switch Act，Nvidia/微软另起联盟与闭源巨头形成治理路线分裂</li>
-    <li><strong>中美 AI 博弈升级至外交层面</strong>：商务部首次公开指责美方"AI 霸权主义"且反指美国企业蒸馏中国模型，话语权争夺进入新阶段</li>
-    <li><strong>AI 办公智能体成为中国大厂新战场</strong>：腾讯/阿里/美团/企业微信同日或近期密集发布 Agent 产品，从对话式 AI 转向端侧可执行智能体</li>
-    <li><strong>多模型策略成为行业共识</strong>：Nadella 公开警告单一 AI 依赖风险，Nvidia/微软安全联盟排除闭源三巨头，"多云多模型"正取代"选边站"</li>
-    <li><strong>算力投资分歧隐现</strong>：Nvidia $7,500 亿交易引发"循环融资"担忧，但 Ilya/Google/Verizon 仍在大举投入——硬件军备竞赛可持续性首次被资本市场系统性质疑</li>
-  </ol>
-</div>
+<ul><li><strong>AI 安全治理进入"立法快车道"</strong>：OpenAI 入侵 Hugging Face 事件一周内触发 AI Kill Switch Act 提案，Nvidia/微软另起联盟与闭源巨头形成治理路线分裂</li><li><strong>中美 AI 博弈升级为外交层面</strong>：商务部首次公开指责美方"AI 霸权主义"且反指美国企业蒸馏中国模型，中美在 AI 治理话语权的争夺进入新阶段</li><li><strong>AI 办公智能体成为中国大厂新战场</strong>：腾讯/阿里/美团/企业微信同日或近期密集发布 Agent 产品，从对话式 AI 转向端侧可执行智能体</li><li><strong>多模型策略成为共识</strong>：Nadella 公开警告单一 AI 依赖风险，Nvidia/微软安全联盟排除闭源三巨头，行业正在从"选边站"走向"多云多模型"</li><li><strong>算力投资分歧隐现</strong>：Nvidia $7,500 亿交易引发"循环融资"担忧，但 Ilya/Google/Verizon 仍在大举投入——硬件军备竞赛的可持续性首次被资本市场系统性质疑</li></ul>
+<hr>
+<p>*数据来源：TechCrunch / The Verge / Ars Technica / Bloomberg / 每日经济新闻 / 南方日报 / 中国新闻网 / 光明网 / 财联社 · My Research Central · via WB*</p>
 
 <div class="report-footer">
-  数据来源：TechCrunch / The Verge / Ars Technica / Bloomberg / 每日经济新闻 / 南方日报 / 中国新闻网 / 光明网 / 财联社 · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

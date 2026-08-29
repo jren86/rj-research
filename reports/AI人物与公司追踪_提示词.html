@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI人物与公司追踪 · 提示词</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>AI人物与公司追踪 · 提示词</h1>
+  <div class="meta">## 核心目标 · 定期追踪三大主题的最新动态，去重整合后以看板形式推送飞书群。<strong>所有引用必须附带具体来源链接。</strong></div>
+</div>
+
+<hr>
+<h2>追踪主题</h2>
+<h3>主题一：腾讯 AI 研发进展与相关新闻</h3>
+<p><strong>追踪维度：</strong></p>
+<ul><li><strong>大模型与基础研究</strong></li><li>混元大模型版本迭代、性能基准测试结果（MMLU / C-Eval / HumanEval 等）</li><li>多模态能力进展（文生图、文生视频、图生3D 等）</li><li>开源动态（模型权重、技术报告、GitHub 仓库更新）</li></ul>
+<ul><li><strong>产品与应用落地</strong></li><li>腾讯元宝 / 腾讯混元助手 功能更新</li><li>腾讯云 AI 服务（TI-ONE / 大模型 API）新能力</li><li>微信 / QQ / 企业微信中的 AI 集成（如微信 AI 搜索、视频号 AI 能力）</li><li>游戏 AI（NPC 智能体、AI 生成内容）进展</li><li>腾讯文档 / 腾讯会议 AI 功能更新</li></ul>
+<ul><li><strong>组织与投资</strong></li><li>AI 相关组织架构调整、团队设立/合并</li><li>AI 领域投资/收购（国内及海外标的）</li><li>与高校/研究机构的合作项目</li></ul>
+<ul><li><strong>行业合作与竞争</strong></li><li>与字节（豆包）、阿里（通义）、百度（文心）的竞争动态</li><li>与 DeepSeek 等独立实验室的关系（竞争/合作）</li><li>参与 AI 行业标准制定、政策参与</li></ul>
+<hr>
+<h3>主题二：姚順雨团队动态</h3>
+<p><strong>背景：</strong> 姚順雨（Shunyu Yao），原普林斯顿大学博士，ReAct / Tree of Thoughts 等核心论文一作/共一。2024 年起加入腾讯，具体团队归属和产出是核心追踪点。</p>
+<p><strong>追踪维度：</strong></p>
+<ul><li><strong>学术产出</strong></li><li>新论文（arXiv / OpenReview / 顶会接收）：关注 ReAct、agent、reasoning、tool use 方向</li><li>技术博客 / 开源项目（GitHub）</li><li>合作者网络变化（与 Percy Liang、Chelsea Finn 等人的持续合作）</li></ul>
+<ul><li><strong>产品与项目</strong></li><li>团队负责的具体产品或项目代号</li><li>功能发布与版本迭代</li><li>与腾讯内部业务线的整合（如元宝、混元、微信搜索）</li></ul>
+<ul><li><strong>公开发言与动态</strong></li><li>学术会议演讲（NeurIPS / ICML / ACL / EMNLP 等）</li><li>行业会议分享（WAIC、世界人工智能大会等）</li><li>媒体采访 / 播客 / 技术沙龙</li><li>社交媒体动态（Twitter/X、知乎、即刻等）</li></ul>
+<ul><li><strong>团队与招聘</strong></li><li>团队规模变化、核心成员加入/离开</li><li>招聘岗位方向（判断团队技术路线）</li><li>实习生/博士生培养情况</li></ul>
+<hr>
+<h3>主题三：WorkBuddy 团队与汪晟杰动态</h3>
+<p><strong>背景：</strong> 汪晟杰（Shengjie Wang），WorkBuddy（原 ClawdBot）核心成员/负责人。追踪其及背后团队的最新公开动态。</p>
+<p><strong>追踪维度：</strong></p>
+<ul><li><strong>产品与发布</strong></li><li>WorkBuddy 版本更新、新功能发布</li><li>官方公告 / Release Notes</li><li>定价策略变化、商业化进展</li></ul>
+<ul><li><strong>汪晟杰个人动态</strong></li><li>公开发言（技术会议、直播、沙龙）</li><li>文章/博客/社交媒体发言（Twitter/X、即刻、知乎、微博）</li><li>接受采访/播客</li><li>GitHub 开源贡献</li></ul>
+<ul><li><strong>团队与组织</strong></li><li>团队招聘信息（判断产品方向）</li><li>团队成员公开发言</li><li>公司/组织背景变化</li></ul>
+<ul><li><strong>社区与生态</strong></li><li>开发者社区动态（GitHub Issues / Discord / 微信群讨论亮点）</li><li>竞品对比（Cursor、Copilot、Claude Code 等）</li><li>媒体报道与评测</li></ul>
+<hr>
+<h2>搜索执行流程（四阶段）</h2>
+<h3>Phase 1：金融与结构化信息（mx-finance-search）</h3>
+<p>```<br>搜索词 1：腾讯 混元大模型 更新 发布<br>搜索词 2：腾讯 AI 投资 收购 合作<br>搜索词 3：腾讯 元宝 功能 更新<br>搜索词 4：腾讯控股 AI 战略 研发 进展<br>搜索词 5：AI agent 大模型 行业 动态<br>```</p>
+<h3>Phase 2：新闻与公众号（tencent-news + wechat-article-search）</h3>
+<p><strong>tencent-news / tencent-yuanbao-standard-search：</strong><br>```</p>
+<ul><li>腾讯 AI 大模型 最新进展</li><li>姚順雨 腾讯 agent</li><li>汪晟杰 WorkBuddy</li><li>混元大模型 版本更新</li></ul>
+<p>```</p>
+<p><strong>wechat-article-search（公众号，质量优先）：</strong><br>```</p>
+<ul><li>腾讯 混元 AI 进展</li><li>姚順雨 ReAct agent</li><li>WorkBuddy AI编程 评测</li><li>汪晟杰 腾讯 AI</li><li>腾讯大模型 战略</li></ul>
+<p>```</p>
+<h3>Phase 3：多平台深度搜索（WebSearch）</h3>
+<p><strong>主题一（腾讯 AI）：</strong><br>```</p>
+<ul><li>Tencent Hunyuan LLM latest update 2026</li><li>腾讯混元大模型 最新进展 2026</li><li>Tencent AI investment 2026</li><li>腾讯元宝 新功能 2026</li></ul>
+<p>```</p>
+<p><strong>主题二（姚順雨）：</strong><br>```</p>
+<ul><li>Shunyu Yao Tencent latest paper 2026</li><li>姚順雨 腾讯 最新</li><li>ReAct agent Tencent update</li><li>Shunyu Yao talk interview 2026</li><li>姚順雨 论文 2026</li></ul>
+<p>```</p>
+<p><strong>主题三（汪晟杰 / WorkBuddy）：</strong><br>```</p>
+<ul><li>WorkBuddy update release 2026</li><li>汪晟杰 腾讯 WorkBuddy</li><li>WorkBuddy AI coding tool latest</li><li>ClawdBot WorkBuddy update</li><li>汪晟杰 演讲 采访</li></ul>
+<p>```</p>
+<h3>Phase 4：社交媒体与垂直平台补充</h3>
+<table><thead><tr><th>平台</th><th>搜索方式</th><th>目标内容</th></tr></thead><tbody><tr><td><strong>GitHub</strong></td><td>WebSearch <code>site:github.com WorkBuddy</code> <code>site:github.com Tencent Hunyuan</code></td><td>仓库更新、Release Notes</td></tr><tr><td><strong>arXiv</strong></td><td>WebSearch <code>site:arxiv.org Shunyu Yao</code> <code>site:arxiv.org Tencent LLM</code></td><td>最新论文</td></tr><tr><td><strong>Bilibili</strong></td><td>WebSearch <code>site:bilibili.com 姚順雨</code> <code>site:bilibili.com 汪晟杰</code> <code>site:bilibili.com 腾讯AI</code></td><td>演讲视频、技术分享</td></tr><tr><td><strong>小宇宙</strong></td><td>WebSearch <code>site:xiaoyuzhoufm.com 腾讯AI</code> <code>site:xiaoyuzhoufm.com WorkBuddy</code></td><td>播客内容</td></tr><tr><td><strong>微博</strong></td><td>WebSearch <code>site:weibo.com 汪晟杰</code> <code>site:weibo.com 腾讯AI</code></td><td>个人动态</td></tr><tr><td><strong>知乎</strong></td><td>WebSearch <code>site:zhihu.com 姚順雨</code> <code>site:zhihu.com WorkBuddy</code></td><td>技术讨论</td></tr><tr><td><strong>即刻</strong></td><td>WebSearch <code>site:okjk.com 汪晟杰</code></td><td>个人动态</td></tr></tbody></table>
+<hr>
+<h2>信息去重与整合</h2>
+<ul><li>三主题分别去重，不同来源的同一信息合并为一条，保留最完整/最权威的来源</li><li>标注信息首发来源和转载来源（优先引用首发）</li><li>区分：官方公告 &gt; 一手采访 &gt; 媒体解读 &gt; 自媒体猜测</li><li>没有增量信息时标注「本周期无增量」，不凑数</li></ul>
+<hr>
+<h2>技术内容白话解释原则</h2>
+<p>用户为技术小白。当追踪到的内容涉及学术论文、产品技术细节、行业术语等专业内容时，<strong>必须在摘要中加入通俗解释</strong>。具体要求：</p>
+<h3>解释格式（每条含技术内容的信息必须包含）</h3>
+<p>在摘要末尾附加「💬 白话解读」段落，回答三个问题：</p>
+<p>```<br>💬 白话解读：</p>
+<ul><li>这是什么？（一句话说清楚这个东西是干什么的）</li><li>为什么重要？（对行业/产品/用户意味着什么）</li><li>与我何干？（对投资判断、技术趋势认知有什么参考价值）</li></ul>
+<p>```</p>
+<h3>常见术语的白话翻译指南</h3>
+<table><thead><tr><th>术语</th><th>白话翻译</th></tr></thead><tbody><tr><td>LLM / 大语言模型</td><td>能理解和生成文字的超大规模 AI 程序，ChatGPT 就属于这一类</td></tr><tr><td>Agent / 智能体</td><td>能自主完成多步骤任务的 AI，不只是聊天，还能操作工具、执行计划</td></tr><tr><td>Reasoning / 推理</td><td>AI「思考」的能力——不是死记硬背，而是真正理解问题并一步步推导答案</td></tr><tr><td>多模态</td><td>AI 不仅能处理文字，还能理解图片、音频、视频等多种信息形式</td></tr><tr><td>Benchmark / 基准测试</td><td>一套标准化的考试题，用来衡量不同 AI 模型谁更聪明</td></tr><tr><td>API</td><td>程序之间的接口——你可以把它理解成 AI 能力的「插座」，其他软件插上就能用</td></tr><tr><td>开源 / Open Source</td><td>把代码公开，任何人都能免费使用和修改</td></tr><tr><td>Token</td><td>AI 处理文本的最小单位，大约 1-2 个汉字或一个英文单词算一个 token</td></tr><tr><td>Fine-tuning / 微调</td><td>在已有模型基础上用特定数据「补课」，让它更擅长某个领域</td></tr><tr><td>RLHF</td><td>让人类给 AI 的答案打分，然后训练 AI 越来越会回答——相当于请老师批改作业</td></tr><tr><td>Transformer</td><td>2017 年发明的一种 AI 架构，几乎是所有现代大模型的基石</td></tr><tr><td>GPU</td><td>图形处理器，因为擅长并行计算，成了训练 AI 的核心硬件</td></tr></tbody></table>
+<h3>论文解读要求</h3>
+<p>当追踪到新论文时，摘要中必须包含：</p>
+<ul><li>论文试图解决什么问题？（一句话）</li><li>用了什么方法？（打比方说明，不要列公式）</li><li>比以前的方法好在哪里？（具体数字或定性描述）</li><li>对腾讯/行业意味着什么？</li></ul>
+<h3>示例</h3>
+<p>❌ <strong>差：</strong></p>
+<blockquote>姚順雨团队发布新论文，提出基于 hierarchical planning 的 multi-agent 协作框架，在 WebArena 基准上达到 SOTA 性能。</blockquote>
+<p>✅ <strong>好：</strong></p>
+<blockquote>姚順雨团队发布新论文，提出一种让多个 AI 分工协作完成任务的新方法。<br><br>💬 白话解读：<br>- <strong>这是什么？</strong> 让多个 AI 像团队一样分工——有的当「领导」制定计划，有的当「员工」执行具体步骤，而不是靠一个 AI 单打独斗。<br>- <strong>为什么重要？</strong> 测试成绩达到目前最高水平，说明「AI 团队协作」这条路走得通，未来 AI 可能不是更聪明，而是更会合作。<br>- <strong>与我何干？</strong> 如果这个方法落地到产品，意味着腾讯的 AI 助手（如元宝）能处理更复杂的长任务——比如自动帮你做一份完整的研究报告，而不仅仅是回答问题。</blockquote>
+<hr>
+<h2>看板输出结构</h2>
+<h3>看板总览（顶部 Sticky）</h3>
+<p>```<br>📊 追踪周期：YYYY-MM-DD ~ YYYY-MM-DD<br>📌 总信号数：N 条（腾讯AI: X / 姚順雨: Y / WorkBuddy: Z）<br>🔥 本周关注：最值得注意的 1-2 条重点动态<br>```</p>
+<h3>栏目一：腾讯 AI 研发进展</h3>
+<table><thead><tr><th>项目</th><th>内容模板</th></tr></thead><tbody><tr><td>🏷️ 分类</td><td>[大模型] / [产品] / [组织] / [投资] / [合作]</td></tr><tr><td>📰 标题</td><td>一句话概括</td></tr><tr><td>📝 摘要</td><td>2-3 句关键信息（含时间、人物、具体数据）</td></tr><tr><td>🔗 来源</td><td>来源名称 + 可点击链接</td></tr><tr><td>🏅 权威性</td><td>🟢 官方公告 / 🟡 正规媒体 / 🟠 自媒体</td></tr></tbody></table>
+<h3>栏目二：姚順雨团队动态</h3>
+<table><thead><tr><th>项目</th><th>内容模板</th></tr></thead><tbody><tr><td>🏷️ 分类</td><td>[论文] / [产品] / [演讲] / [采访] / [团队]</td></tr><tr><td>📰 标题</td><td>一句话概括</td></tr><tr><td>📝 摘要</td><td>核心发现 / 观点摘要</td></tr><tr><td>🔗 来源</td><td>来源名称 + 可点击链接（论文附 arXiv ID）</td></tr><tr><td>💡 信号解读</td><td>此项代表的团队方向/技术路线信号</td></tr></tbody></table>
+<h3>栏目三：WorkBuddy 与汪晟杰动态</h3>
+<table><thead><tr><th>项目</th><th>内容模板</th></tr></thead><tbody><tr><td>🏷️ 分类</td><td>[产品] / [个人] / [团队] / [社区]</td></tr><tr><td>📰 标题</td><td>一句话概括</td></tr><tr><td>📝 摘要</td><td>关键信息</td></tr><tr><td>🔗 来源</td><td>来源名称 + 可点击链接</td></tr><tr><td>📎 关联</td><td>对 WorkBuddy 产品方向/竞争力的启示</td></tr></tbody></table>
+<hr>
+<h2>飞书推送格式</h2>
+<p>以飞书卡片消息（<code>interactive</code>）形式推送，使用 <strong>三栏卡片</strong> 结构：</p>
+<p>```bash<br>WEBHOOK=$(cat /Users/jren/WorkBuddy/Claw/.workbuddy/feishu_webhook.txt | tr -d '\n\r')</p>
+<p>curl -s -X POST "$WEBHOOK" \<br>  -H "Content-Type: application/json" \<br>  -d '{<br>    "msg_type": "interactive",<br>    "card": {<br>      "header": {<br>        "title": {<br>          "tag": "plain_text",<br>          "content": "🔍 AI 人物与公司追踪 · YYYY-MM-DD"<br>        }<br>      },<br>      "elements": [<br>        {<br>          "tag": "div",<br>          "text": {<br>            "tag": "lark_md",<br>            "content": "📊 <strong>追踪周期：</strong>YYYY-MM-DD\n📌 <strong>总信号：</strong>N 条（腾讯AI: X / 姚順雨: Y / WorkBuddy: Z） via WB"<br>          }<br>        },<br>        {<br>          "tag": "hr"<br>        },<br>        {<br>          "tag": "div",<br>          "text": {<br>            "tag": "lark_md",<br>            "content": "<strong>🔵 腾讯 AI 研发进展</strong>\n\n1️⃣ <strong>[标题]</strong>\n摘要信息……\n🔗 <a href="链接" target="_blank">来源名称</a>\n\n2️⃣ <strong>[标题]</strong>\n摘要信息……\n🔗 <a href="链接" target="_blank">来源名称</a> via WB"<br>          }<br>        },<br>        {<br>          "tag": "hr"<br>        },<br>        {<br>          "tag": "div",<br>          "text": {<br>            "tag": "lark_md",<br>            "content": "<strong>🟢 姚順雨团队动态</strong>\n\n1️⃣ <strong>[标题]</strong>\n摘要信息……\n🔗 <a href="链接" target="_blank">来源名称</a>\n\n2️⃣ <strong>[标题]</strong>\n摘要信息……\n🔗 <a href="链接" target="_blank">来源名称</a> via WB"<br>          }<br>        },<br>        {<br>          "tag": "hr"<br>        },<br>        {<br>          "tag": "div",<br>          "text": {<br>            "tag": "lark_md",<br>            "content": "<strong>🟣 WorkBuddy &amp; 汪晟杰动态</strong>\n\n1️⃣ <strong>[标题]</strong>\n摘要信息……\n🔗 <a href="链接" target="_blank">来源名称</a>\n\n2️⃣ <strong>[标题]</strong>\n摘要信息……\n🔗 <a href="链接" target="_blank">来源名称</a> via WB"<br>          }<br>        },<br>        {<br>          "tag": "hr"<br>        },<br>        {<br>          "tag": "note",<br>          "elements": [<br>            {<br>              "tag": "plain_text",<br>              "content": "每条卡片内容中已包含 via WB 关键词 | 完整报告保存于本地 /Users/jren/WorkBuddy/Claw/reports/"<br>            }<br>          ]<br>        }<br>      ]<br>    }<br>  }'<br>```</p>
+<blockquote>YYYY-MM-DD 替换为当天日期；每个卡片模块的 <code>content</code> 中必须至少包含一次 <code>via WB</code> 关键词。</blockquote>
+<hr>
+<h2>本地存储</h2>
+<p>生成后保存 MD 文件到：<br>```<br>/Users/jren/WorkBuddy/Claw/reports/AI人物与公司追踪_YYYY-MM-DD.md<br>```</p>
+<hr>
+<h2>输出规范</h2>
+<table><thead><tr><th>规范项</th><th>要求</th></tr></thead><tbody><tr><td>语言</td><td>中文</td></tr><tr><td>增量优先</td><td>聚焦本周期内的新信息，不重复旧闻</td></tr><tr><td>白话解释</td><td>学术/技术内容必须附加「💬 白话解读」段落，用非技术人员能理解的语言解释是什么、为什么重要、与我何干</td></tr><tr><td>来源链接</td><td><strong>每条信息必须附带可点击的具体 URL</strong>，不得省略</td></tr><tr><td>链接类型</td><td>论文链接附 arXiv ID；公众号文章附微信链接；播客附小宇宙链接</td></tr><tr><td>权威标注</td><td>官方公告 &gt; 一手采访 &gt; 媒体解读 &gt; 自媒体猜测</td></tr><tr><td>去重</td><td>同主题内多源报道合并，标注所有来源</td></tr><tr><td>不凑数</td><td>无增量时直接标注「本周期无增量」，不填充无关内容</td></tr><tr><td>飞书关键词</td><td>推送消息中必须包含 <code>via WB</code>，否则飞书拒绝推送</td></tr></tbody></table>
+
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
+</div>
+
+</body>
+</html>

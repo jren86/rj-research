@@ -1,283 +1,488 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>晚间投研日报 · 2026-06-01</title>
-<style>
-  :root {
-    --bg: #faf9f7;
-    --card-bg: #f4f2ef;
-    --border: #f4f2ef;
-    --text: #e8eaf0;
-    --text-secondary: #8b8fa8;
-    --up: #e74c3c;
-    --down: #2ecc71;
-    --accent: #5b7cfa;
-    --accent-light: #7b9cff;
-    --warning: #f39c12;
-    --positive: #2ecc71;
-    --neutral: #8b8fa8;
-    --negative: #e74c3c;
-    --tag-bg: rgba(91,124,250,0.12);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
-    line-height: 1.7;
-    padding: 16px;
-    -webkit-font-smoothing: antialiased;
-  }
-  .container { max-width: 800px; margin: 0 auto; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间日报 · 2026-06-01</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
 
-  .header {
-    background: linear-gradient(135deg, #f4f2ef 0%, #2d1f4e 100%);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px 20px;
-    margin-bottom: 16px;
-  }
-  .header h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
-  .header .sub { font-size: 12px; color: var(--text-secondary); }
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
 
-  .summary-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 12px;
-  }
-  .summary-card .row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 13px; }
-  .summary-card .label { color: var(--text-secondary); }
-  .summary-card .val.up { color: var(--up); font-weight: 600; }
-  .summary-card .val.down { color: var(--down); font-weight: 600; }
-  .summary-card .val.neutral { color: var(--neutral); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  .section {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px;
-    margin-bottom: 12px;
-  }
-  .section h2 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-    color: var(--accent-light);
-  }
-  .section h3 {
-    font-size: 13px;
-    font-weight: 600;
-    margin: 12px 0 6px;
-    color: #c4c8dc;
-  }
-  .section p, .section li { font-size: 13px; margin-bottom: 5px; }
-  .section ul { padding-left: 16px; }
-  .section li { margin-bottom: 3px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-    margin-bottom: 8px;
-  }
-  th {
-    background: rgba(91,124,250,0.1);
-    color: var(--accent-light);
-    padding: 6px 8px;
-    text-align: left;
-    font-weight: 600;
-    border-bottom: 1px solid var(--border);
-  }
-  td {
-    padding: 6px 8px;
-    border-bottom: 1px solid rgba(42,45,66,0.5);
-    color: var(--text);
-  }
-  tr:last-child td { border-bottom: none; }
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
 
-  .tag { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; }
-  .tag-fire { background: rgba(231,76,60,0.2); color: #e74c3c; }
-  .tag-new { background: rgba(46,204,113,0.15); color: #2ecc71; }
-  .tag-info { background: rgba(91,124,250,0.15); color: #7b9cff; }
-  .tag-warn { background: rgba(243,156,18,0.15); color: #f39c12; }
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
 
-  .stock-box {
-    background: rgba(0,0,0,0.2);
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 8px;
-    border-left: 3px solid var(--accent);
-  }
-  .stock-box .name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-  .stock-box .code { font-size: 11px; color: var(--text-secondary); }
-  .stock-box .detail { font-size: 12px; margin-top: 4px; }
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
 
-  .footer {
-    text-align: center;
-    font-size: 11px;
-    color: var(--text-secondary);
-    padding: 20px 0;
-    border-top: 1px solid var(--border);
-    margin-top: 16px;
-  }
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
 
-  @media (max-width: 600px) {
-    body { padding: 10px; }
-    .section { padding: 12px; }
-    table { font-size: 11px; }
-    th, td { padding: 4px 6px; }
-  }
-</style>
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
-<div class="container">
 
-  <!-- Header -->
-  <div class="header">
-    <h1>📊 晚间投研日报</h1>
-    <div class="sub">2026年6月1日 · 聚焦当日增量信息</div>
-  </div>
-
-  <!-- Macro section -->
-  <div class="section">
-    <h2>一、宏观回顾及前瞻</h2>
-
-    <h3>央行公开市场操作</h3>
-    <table>
-      <tr><th>日期</th><th>操作</th><th>投放</th><th>到期</th><th>净额</th></tr>
-      <tr>
-        <td>6月1日</td><td>7天逆回购（1.4%）</td>
-        <td style="color:var(--down);">110亿</td><td>2,580亿</td>
-        <td style="color:var(--negative);font-weight:600;">净回笼2,470亿</td>
-      </tr>
-      <tr><td>本周到期</td><td colspan="4">7天逆回购9,089亿 + 3个月买断式逆回购8,000亿 = <strong style="color:var(--warning);">合计17,089亿到期</strong></td></tr>
-    </table>
-    <p style="font-size:12px;color:var(--text-secondary);margin-top:4px;">💡 DR007约1.39%，围绕1.4%政策利率窄幅波动。跨月后压力缓解，央行呵护态度明确。</p>
-  </div>
-
-  <!-- Market section -->
-  <div class="section">
-    <h2>二、市场数据回顾</h2>
-
-    <h3>A股主要指数</h3>
-    <table>
-      <tr><th>指数</th><th style="text-align:right;">收盘</th><th style="text-align:right;">涨跌幅</th></tr>
-      <tr><td>上证指数</td><td style="text-align:right;">4,057.74</td><td style="text-align:right;color:var(--down);">-0.27%</td></tr>
-      <tr><td>深证成指</td><td style="text-align:right;">15,340.36</td><td style="text-align:right;color:var(--down);">-1.51%</td></tr>
-      <tr><td>创业板指</td><td style="text-align:right;">3,950.94</td><td style="text-align:right;color:var(--down);">-2.15%</td></tr>
-      <tr><td>科创50</td><td style="text-align:right;">—</td><td style="text-align:right;color:var(--negative);font-weight:600;">-5.00%</td></tr>
-      <tr><td>北证50</td><td style="text-align:right;">—</td><td style="text-align:right;color:var(--positive);">+0.45%</td></tr>
-    </table>
-    <p style="font-size:12px;margin-top:4px;">📉 成交额 <strong>2.9万亿</strong>（缩量4,444亿） · 3,776家涨 / 1,682家跌</p>
-
-    <h3>行业轮动</h3>
-    <table>
-      <tr><th>方向</th><th>表现</th></tr>
-      <tr><td><span class="tag tag-fire">领涨</span></td><td>煤炭 +5.85%（晋控煤业/潞安环能/兖矿能源等涨停）</td></tr>
-      <tr><td><span class="tag tag-warn">领跌</span></td><td>半导体近40股跌停、CPO/光通信集体回调</td></tr>
-      <tr><td>主力资金</td><td>传媒、煤炭、软件开发净流入；半导体半日净流出121亿</td></tr>
-    </table>
-    <p style="font-size:12px;color:var(--text-secondary);margin-top:4px;">💡 风格：价值强、科技弱 · 中小盘强于大盘 · 存量高低切</p>
-  </div>
-
-  <!-- Holdings section -->
-  <div class="section">
-    <h2>三、持仓个股增量信息</h2>
-
-    <div class="stock-box">
-      <div class="name">长川科技 <span class="code">300604</span> <span class="tag tag-new">除权登记日 6/3</span></div>
-      <div class="detail">
-        • 2025年权益分派：每10股派1元，<strong>明日（6/3）股权登记日</strong>，6/4除权除息<br>
-        • 国金电子周报（6/1）推半导体先进封装设备，间接利好测试设备方向
-      </div>
-    </div>
-
-    <div class="stock-box" style="border-left-color:var(--neutral);">
-      <div class="name">精智达 <span class="code">688627</span></div>
-      <div class="detail"><span style="color:var(--text-secondary);">本日无重要增量信息（定增方案存量信息）</span></div>
-    </div>
-
-    <div class="stock-box" style="border-left-color:var(--neutral);">
-      <div class="name">宁德时代 <span class="code">300750</span></div>
-      <div class="detail"><span style="color:var(--text-secondary);">本日无增量事件（Q4钠电量产为存量信息）</span></div>
-    </div>
-
-    <div class="stock-box" style="border-left-color:var(--neutral);">
-      <div class="name">工业富联 <span class="code">601138</span></div>
-      <div class="detail"><span style="color:var(--text-secondary);">本日无增量事件（戴尔订单为5/30存量信息）</span></div>
-    </div>
-
-    <div class="stock-box" style="border-left-color:var(--neutral);">
-      <div class="name">容百科技 <span class="code">688005</span></div>
-      <div class="detail"><span style="color:var(--text-secondary);">本日无增量事件（钠电/固态多线布局为存量信息）</span></div>
-    </div>
-
-    <div class="stock-box" style="border-left-color:var(--accent);">
-      <div class="name">京东方A <span class="code">000725</span> <span class="tag tag-info">华鑫证券新研报</span></div>
-      <div class="detail">
-        • <strong>华鑫证券6月1日研报：</strong>业绩稳中有升，拓展延伸新业务增长点<br>
-        • 东吴证券周报：玻璃基板导入，AI先进封装材料升级<br>
-        • 回购比例已达2%（5月公告）<br>
-        • ⚠️ 今日盘中放量上涨（成交182.97亿），系资金行为非基本面增量
-      </div>
-    </div>
-
-    <div class="stock-box" style="border-left-color:var(--neutral);">
-      <div class="name">芯碁微装 <span class="code">688630</span></div>
-      <div class="detail"><span style="color:var(--text-secondary);">本日无增量事件</span></div>
-    </div>
-
-    <div class="stock-box" style="border-left-color:var(--up);">
-      <div class="name">信达生物 <span class="code">01801.HK</span> <span class="tag tag-fire">105亿美元合作</span></div>
-      <div class="detail">
-        • <strong>5/29 与辉瑞达成全球战略合作</strong>：12个肿瘤早期项目（ADC+多特异性抗体）<br>
-        • 交易总额105亿美元（首付6.5亿+里程碑98.5亿），刷新国内创新药出海纪录<br>
-        • 国金证券5/31研报：信达牵手辉瑞，加速迈向全球创新药企<br>
-        • 后续催化：合作细节披露、首个临床项目推进里程碑
-      </div>
-    </div>
-  </div>
-
-  <!-- Theme section: Big Fund -->
-  <div class="section" style="border:1px solid rgba(231,76,60,0.3);">
-    <h2 style="color:#e74c3c;">⚠️ 四、主题扩展：大基金减持冲击</h2>
-    <p style="font-size:13px;">6月1日市场核心矛盾：大基金集中减持半导体导致板块暴跌（近40股跌停），间接影响半导体设备股情绪。</p>
-    <table>
-      <tr><th>事件</th><th>明细</th></tr>
-      <tr><td><span class="tag tag-warn">减持</span> 中芯国际H股</td><td>持股降至7.99%（跌破8%关口）</td></tr>
-      <tr><td><span class="tag tag-warn">减持</span> 沪硅产业</td><td>减持超3,300万股</td></tr>
-      <tr><td><span class="tag tag-warn">减持</span> 德邦科技</td><td>持股比例明显下调</td></tr>
-      <tr><td>大基金三期</td><td><span style="color:var(--positive);font-weight:600;">70%资金投设备材料</span> → 中长期利好长川/精智达/芯碁微装</td></tr>
-    </table>
-    <p style="font-size:12px;color:var(--text-secondary);margin-top:4px;">详见《国家队增减持日报_2026-06-01》完整分析</p>
-  </div>
-
-  <!-- Tomorrow focus -->
-  <div class="section">
-    <h2>明日关注</h2>
-    <table>
-      <tr><th>类别</th><th>关注点</th></tr>
-      <tr><td>📅 宏观</td><td>央行本周17,089亿到期续作情况；资金面DR007变化</td></tr>
-      <tr><td>📅 个股</td><td>长川科技6/3除权除息登记日；京东方回购进展</td></tr>
-      <tr><td>📅 市场</td><td>半导体能否止跌；煤炭持续性；科创50是否企稳</td></tr>
-      <tr><td>📅 指数调整</td><td><strong>6/12沪深300调整</strong>：被动建仓vs ETF份额萎缩的多空对决</td></tr>
-    </table>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    📊 晚间投研日报 · 2026-06-01<br>
-    数据来源：新浪财经 / 东方财富 / 同花顺 / WebSearch<br>
-    ⚠️ 知识库连接器（IMA / ZSXQ）未连接，未覆盖知识库内容<br>
-    via WB
-  </div>
-
+<div class="report-header">
+  <h1>晚间日报 · 2026-06-01</h1>
+  <div class="meta"></div>
 </div>
+
+<hr>
+<h2>一、宏观回顾及前瞻</h2>
+<h3>1.1 央行公开市场操作</h3>
+<table><thead><tr><th>日期</th><th>操作</th><th>投放</th><th>到期</th><th>净投放/回笼</th></tr></thead><tbody><tr><td>6月1日</td><td>7天逆回购（利率1.4%）</td><td>110亿</td><td>2,580亿</td><td><strong>净回笼2,470亿</strong></td></tr><tr><td>5月29日</td><td>7天逆回购</td><td>—</td><td>—</td><td>净投放（未找到明细）</td></tr><tr><td>5月25日</td><td>7天逆回购</td><td>2,580亿</td><td>—</td><td>单日净投放3,570亿</td></tr></tbody></table>
+<p><strong>本周到期（6月1日-5日）：</strong> 7天逆回购到期9,089亿 + 3个月期买断式逆回购到期8,000亿元 = <strong>合计17,089亿元到期</strong></p>
+<p><strong>资金面判断：</strong> 跨月后资金面压力有所缓解，但本周到期量大，央行维持流动性适度宽松的态度明确。DR007当前约1.39%附近，围绕1.4%政策利率窄幅波动。</p>
+<h3>1.2 全球宏观要点</h3>
+<ul><li><strong>国内：</strong> 6月1日A股震荡走弱，三大指数悉数收跌，风格切换明显——价值强、科技弱</li><li><strong>海外：</strong> 关注6月议息会议前的经济数据窗口期，尚未有明显增量信息</li></ul>
+<hr>
+<h2>二、市场数据回顾</h2>
+<h3>2.1 A股主要指数</h3>
+<table><thead><tr><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td><strong>上证指数</strong></td><td>4,057.74</td><td><strong>-0.27%</strong></td><td>权重股承压</td></tr><tr><td><strong>深证成指</strong></td><td>15,340.36</td><td><strong>-1.51%</strong></td><td>科技拖累</td></tr><tr><td><strong>创业板指</strong></td><td>3,950.94</td><td><strong>-2.15%</strong></td><td>新能源/医药调整</td></tr><tr><td><strong>科创50</strong></td><td>—</td><td><strong>-5.00%</strong></td><td>半导体暴跌，近40股跌停</td></tr><tr><td><strong>北证50</strong></td><td>—</td><td><strong>+0.45%</strong></td><td>逆市飘红</td></tr></tbody></table>
+<p><strong>成交量：</strong> 沪深合计成交约 <strong>2.9万亿元</strong>，较前一交易日缩量约 <strong>4,444亿元</strong></p>
+<p><strong>涨跌家数：</strong> 约3,776家上涨、1,682家下跌——<strong>中小盘强于大盘，低位股补涨明显</strong></p>
+<h3>2.2 行业板块轮动</h3>
+<table><thead><tr><th>方向</th><th>表现</th></tr></thead><tbody><tr><td><strong>领涨</strong></td><td>煤炭板块爆发（+5.85%），AI应用概念、石油、燃气、食品加工活跃</td></tr><tr><td><strong>领跌</strong></td><td>半导体（近40股跌停）、CPO/光通信、存储芯片、PCB、通信线缆集体回调</td></tr><tr><td><strong>主力资金</strong></td><td>传媒、煤炭、软件开发净流入居前；半导体净流出121亿（半日数据）</td></tr></tbody></table>
+<h3>2.3 港股/外围</h3>
+<ul><li>今日无港股收盘增量数据</li></ul>
+<hr>
+<h2>三、持仓个股当日增量信息</h2>
+<h3>3.1 长川科技 (300604)</h3>
+<table><thead><tr><th>类别</th><th>内容</th></tr></thead><tbody><tr><td>📄 <strong>公告</strong></td><td>2025年权益分派：每10股派1元，<strong>股权登记日为6月3日（明日）</strong>，除权除息日为6月4日</td></tr><tr><td>📊 <strong>研报</strong></td><td>国金电子发布周观点（6月1日）：AI产业链缺货涨价物料蔓延，PCB大厂扩产；东吴机械周观点推荐半导体先进封装设备——<strong>间接利好测试设备方向</strong></td></tr><tr><td>🎯 <strong>催化剂</strong></td><td>6月3日除权除息，关注除权后填权走势</td></tr><tr><td><strong>本日无增量事件</strong></td><td>—</td></tr></tbody></table>
+<h3>3.2 精智达 (688627)</h3>
+<table><thead><tr><th>类别</th><th>内容</th></tr></thead><tbody><tr><td>📄 <strong>公告</strong></td><td>定增方案已修订，募资上限降至28.57亿元（存量信息，5月29日前公告）</td></tr><tr><td>📊 <strong>研报</strong></td><td>无新研报覆盖</td></tr><tr><td><strong>本日无增量事件</strong></td><td>— 仅有存量信息，无需重复</td></tr></tbody></table>
+<h3>3.3 宁德时代 (300750)</h3>
+<table><thead><tr><th>类别</th><th>内容</th></tr></thead><tbody><tr><td>📊 <strong>行业动态</strong></td><td>宁德时代官宣2026年Q4钠电池量产，与海博思创签订3年60GWh钠电合作（<strong>存量信息，5月已公告</strong>）</td></tr><tr><td><strong>本日无增量事件</strong></td><td>— 今日无新公告/新研报</td></tr></tbody></table>
+<h3>3.4 工业富联 (601138)</h3>
+<table><thead><tr><th>类别</th><th>内容</th></tr></thead><tbody><tr><td>📊 <strong>行业动态</strong></td><td>戴尔Q1 AI服务器收入161亿美元（+757%），积压订单513亿美元（<strong>存量信息，5月30日反馈</strong>）</td></tr><tr><td><strong>本日无增量事件</strong></td><td>— 今日无新公告/新研报</td></tr></tbody></table>
+<h3>3.5 容百科技 (688005)</h3>
+<table><thead><tr><th>类别</th><th>内容</th></tr></thead><tbody><tr><td>📊 <strong>行业动态</strong></td><td>容百科技钠电事业部副总卢骋：未来十年钠电规模或突破1,000GWh；在建电芯产能增速已超过正极材料增速，预计未来两年出现正极材料供给紧缺（<strong>5月13日旧信息</strong>）</td></tr><tr><td><strong>本日无增量事件</strong></td><td>— 仅有存量信息</td></tr></tbody></table>
+<h3>3.6 京东方A (000725)</h3>
+<table><thead><tr><th>类别</th><th>内容</th></tr></thead><tbody><tr><td>📄 <strong>公告</strong></td><td>回购公司股份比例达到2%（5月12日公告）；5月26日投资者关系活动记录表</td></tr><tr><td>📊 <strong>研报</strong></td><td><strong>华鑫证券6月1日研报：</strong> 京东方业绩稳中有升，拓展延伸新业务增长点；东吴证券AI先进封装周报提及玻璃基板导入</td></tr><tr><td><strong>本日增量</strong></td><td>⚠️ 今日盘面放量上涨（成交182.97亿），系6月1日盘中异动，但非基本面增量</td></tr></tbody></table>
+<h3>3.7 芯碁微装 (688630)</h3>
+<table><thead><tr><th>类别</th><th>内容</th></tr></thead><tbody><tr><td><strong>本日无增量事件</strong></td><td>— 今日无新公告、新研报覆盖</td></tr></tbody></table>
+<h3>3.8 信达生物 (01801.HK)</h3>
+<table><thead><tr><th>类别</th><th>内容</th></tr></thead><tbody><tr><td>🔥 <strong>重磅合作</strong></td><td><strong>5月29日与辉瑞达成全球战略合作</strong>，涉及12个肿瘤早期源头创新项目（ADC及多特异性抗体），交易总额 <strong>105亿美元</strong>（首付款6.5亿+里程碑98.5亿），刷新国内创新药出海授权纪录</td></tr><tr><td>📊 <strong>研报</strong></td><td><strong>国金证券5月31日研报：</strong> 信达牵手辉瑞落地新BD，加速迈向全球创新药企</td></tr><tr><td>🎯 <strong>后续催化剂</strong></td><td>合作细节披露、首个临床项目推进里程碑</td></tr><tr><td><strong>本日无新增事件</strong></td><td>— 合作为5月29日事件，今日无新进展</td></tr></tbody></table>
+<hr>
+<h2>四、主题扩展：大基金动与半导体链</h2>
+<p>6月1日的市场核心矛盾不在持仓内部，而在外部冲击——<strong>大基金集中减持半导体</strong>导致板块暴跌，间接但系统地影响了持仓中的半导体设备股（长川、精智达、芯碁微装）的情绪面。</p>
+<p>详见《国家队增减持日报_2026-06-01》完整分析，摘要如下：</p>
+<table><thead><tr><th>事件</th><th>影响</th></tr></thead><tbody><tr><td>🛠️ <strong>大基金减持中芯国际H股</strong></td><td>持股降至7.99%（跌破8%），引发板块恐慌</td></tr><tr><td>🛠️ <strong>大基金减持沪硅产业</strong></td><td>减持超3,300万股</td></tr><tr><td>🛠️ <strong>大基金减持德邦科技</strong></td><td>持股比例明显下调</td></tr><tr><td>💰 <strong>大基金三期70%投设备材料</strong></td><td><strong>中长期利好</strong>长川科技、精智达、芯碁微装</td></tr></tbody></table>
+<hr>
+<h2>五、知识库增量</h2>
+<blockquote>⚠️ IMA知识库连接器和zsxq MCP连接器当前均未连接，本日无法通过知识库获取增量信息。以上数据均来自公开搜索。</blockquote>
+<hr>
+<h2>六、明日重点关注</h2>
+<table><thead><tr><th>类别</th><th>关注点</th></tr></thead><tbody><tr><td>📅 <strong>宏观</strong></td><td>央行本周17,089亿到期续作情况；资金面DR007变化</td></tr><tr><td>📅 <strong>个股</strong></td><td>长川科技6月3日除权除息登记日</td></tr><tr><td>📅 <strong>市场</strong></td><td>半导体板块能否止跌；煤炭板块是否持续领涨</td></tr><tr><td>📅 <strong>大基金</strong></td><td>大基金减持情绪是否持续扩散到测试设备板块（长川/精智达）</td></tr><tr><td>📅 <strong>指数调整</strong></td><td>6月12日沪深300指数调整——被动资金vs ETF份额萎缩的多空对决</td></tr></tbody></table>
+<hr>
+<p>*报告生成时间：2026-06-01 21:28 GMT+8*<br>*数据来源：新浪财经/东方财富/同花顺、WebSearch公开数据*<br>*⚠️ 知识库连接器（IMA/ZSXQ）未连接，本日未覆盖知识库内容*</p>
+
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
+</div>
+
 </body>
 </html>

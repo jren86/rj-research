@@ -3,177 +3,499 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>每日 AI 全球新闻 · 2026-08-22</title>
+  <title>每日AI新闻 · 2026-08-22</title>
   <style>
-    :root {
-      --bg: #faf9f7;
-      --card: #f4f2ef;
-      --border: #cfc9c1;
-      --text: #2c2a28;
-      --text2: #6b6760;
-      --red: #b8544a;
-      --green: #4a8a5c;
-      --orange: #a8813c;
-      --blue: #3a6b96;
-      --purple: #7d6b8f;
-      --yellow: #9a8447;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      padding: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
-    .report-header { margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-    .report-header h1 { font-size: 1.4em; color: var(--text); margin-bottom: 4px; }
-    .report-header .meta { font-size: 0.82em; color: var(--text2); }
-    h2 { font-size: 1.15em; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--blue); }
-    h3 { font-size: 1em; margin: 14px 0 8px; color: var(--text); }
-    .card { background: var(--card); border-radius: 8px; padding: 12px 14px; margin: 10px 0; border: 1px solid var(--border); }
-    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.85em; }
-    th { background: var(--card); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text2); font-weight: 600; }
-    td { padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
-    tr:hover { background: rgba(88, 166, 255, 0.05); }
-    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78em; margin-right: 4px; }
-    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
-    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
-    .highlight { padding: 10px 14px; border-radius: 6px; margin: 8px 0; }
-    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
-    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
-    ul.bullet { margin: 6px 0 6px 18px; font-size: 0.92em; }
-    ul.bullet li { margin: 4px 0; line-height: 1.6; }
-    .red { color: var(--red); }
-    .green { color: var(--green); }
-    .orange { color: var(--orange); }
-    .blue { color: var(--blue); }
-    .purple { color: var(--purple); }
-    .yellow { color: var(--yellow); }
-    .source-link { display: block; font-size: 0.78em; color: var(--text2); margin: 4px 0 8px 0; word-break: break-all; }
-    .source-link a { color: var(--blue); text-decoration: none; }
-    .source-link a:hover { text-decoration: underline; }
-    .divider { height: 1px; background: var(--border); margin: 16px 0; }
-    .report-footer { text-align: center; color: var(--text2); font-size: 0.75em; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border); }
-    @media (max-width: 640px) {
-      body { padding: 10px; }
-      h1 { font-size: 1.2em; }
-      h2 { font-size: 1.05em; }
-      table { font-size: 0.8em; }
-    }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>每日 AI 全球新闻 · 2026-08-22</h1>
-  <div class="meta">数据来源：财联社 / IT时代网 / 新浪财经 / 华尔街见闻 / 腾讯新闻 / 新智元 / 中新经纬 / 科技日报 / Nature / 博客园 AI技术日报</div>
+  <h1>每日AI新闻 · 2026-08-22</h1>
+  <div class="meta">数据来源：财联社 / IT时代网 / 新浪财经 / 华尔街见闻 / 腾讯新闻 / 新智元 / 中新经纬 / 科技日报 / Nature / 博客园 AI技术日报 · via WB</div>
 </div>
 
+<hr>
 <h2>一、头条要闻</h2>
-
-<div class="card">
-  <h3>🔴 1. OpenAI CFO 首次给出 2027 年 IPO 明确时间表，运营亏损扩至 123 亿美元</h3>
-  <p>OpenAI 首席财务官 Sarah Friar 在全员会上首次给出明确上市时间表：计划 2027 年 IPO，若业务继续加速则可能提前。她披露的幻灯片显示本季度营收运行率环比增长 35%、企业业务运行率增长 50%、AI 编程与办公产品周活突破 2000 万。</p>
-  <p>但另一组账更刺眼：当季营收 67 亿美元，环比仅增长 18%，低于部分分析师预期；运营亏损从一季度的 93 亿美元扩大到 123 亿美元。相比之下，Anthropic 二季度营收 116 亿美元（环比 +143%、同比 +14 倍），首次在季度营收上反超 OpenAI，且报告约 5.59 亿美元调整后运营利润，成为首家实现季度运营盈利的前沿 AI 实验室。</p>
-  <p>Friar 把 IPO 表述得克制：「这不是终点线，而是一个里程碑。」她曾私下建议等到 2027 年，理由是 OpenAI 尚未准备好承受上市公司的严格信息披露标准，而 Altman 主张今年 Q4 上市且估值低于 1 万亿美元不可接受。最终 Altman 接受了 2027 年方案。</p>
-  <div class="source-link">🔗 来源：IT时代网 / 网易</div>
-</div>
-
-<div class="card">
-  <h3>🔴 2. Anthropic 挖来谷歌 TPU 功勋老将，自研芯片战略再进一步</h3>
-  <p>即将冲击 IPO 的 Anthropic 聘请前谷歌 TPU 项目创始高管阿米尔·萨莱克（Amir Salek）加入算力团队，向算力主管詹姆斯·布拉德伯里汇报。萨莱克曾在 2013-2022 年作为谷歌 TPU 项目创始人兼负责人交付前七代 TPU，更早前在英伟达创立并推动 SoC 业务。</p>
-  <p>此举标志着大模型头部公司加速向上游半导体延伸。Anthropic 目前从英伟达、谷歌、亚马逊等多供应商采购芯片，近期已释放自研信号，并据报与三星接洽采用 2nm 制程和先进封装。竞争对手 OpenAI 已发布与博通共同开发的 Jalapeno 芯片，计划今年晚些时候投入使用。</p>
-  <div class="source-link">🔗 来源：财联社</div>
-</div>
-
-<div class="card">
-  <h3>🔴 3. 英伟达 60 亿美元获 Poolside 模型授权并拟吸纳其员工</h3>
-  <p>英伟达同意支付 60 亿美元获取 Poolside AI 模型使用许可，并向其 100 多名员工发出聘用邀请，另提供 10 亿美元投资，投前估值 120 亿美元。Poolside 将继续独立运营，现有投资者将从英伟达资金中获得部分回报。这是英伟达从「卖芯片」向「绑定模型」延伸的又一标志性动作。</p>
-  <div class="source-link">🔗 来源：财联社</div>
-</div>
-
-<div class="card">
-  <h3>🔴 4. 博通拟筹 700–800 亿美元债务支持 Anthropic 芯片采购，AI 融资信用风险升温</h3>
-  <p>博通正谈判筹集 700–800 亿美元债务资金，用于支持 Anthropic 等 AI 企业的芯片采购，拟采用分层结构（优先档约 450 亿、次级档约 350 亿）。彭博社率先报道总规模最高可达 1000 亿美元，黑石与阿波罗等机构在洽谈参与。</p>
-  <p>这是继英伟达为 OpenAI 俄亥俄数据中心提供最高 1050 亿美元融资、联合六大资管推出 5000 亿美元算力融资平台之后，又一次刷新纪录的 AI 金融工程。此前博通 CDS 狂飙已引发市场对科技巨头数万亿美元 AI 隐性债务的信用恐慌，相关定价风险值得持续跟踪。</p>
-  <div class="source-link">🔗 来源：新浪财经 / 环球市场播报</div>
-</div>
-
-<div class="card">
-  <h3>🔴 5. OpenAI 开源 Codex Harness 三大核心组件，Agent 运行框架成新战场</h3>
-  <p>OpenAI 以 Apache-2.0 许可开源 Codex Harness 的 CLI 工具、官方 SDK 与 app-server 三大核心组件。Harness 作为驱动 AI 智能体的底层执行框架，可嵌入开发者自有产品，将界面、数据与安全审批权交还开发者。</p>
-  <p>这一动作与 NVIDIA 的 AVO 系统在 ARC-AGI-3 取得 100% 满分、DeepSeek Harness 周更等动态形成呼应——行业共识正在形成：Agent 的核心竞争力正从底层模型能力转移到运行时架构、工具调用编排与上下文管理。</p>
-  <div class="source-link">🔗 来源：华尔街见闻 / 博客园 AI技术日报</div>
-</div>
-
+<h3>🔴 1. OpenAI CFO 首次给出 2027 年 IPO 明确时间表，运营亏损扩至 123 亿美元</h3>
+<p>OpenAI 首席财务官 Sarah Friar 在全员会上首次给出明确上市时间表：计划 2027 年 IPO，若业务继续加速则可能提前。她披露的幻灯片显示本季度营收运行率环比增长 35%、企业业务运行率增长 50%、AI 编程与办公产品周活突破 2000 万。</p>
+<p>但另一组账更刺眼：当季营收 67 亿美元，环比仅增长 18%，低于部分分析师预期；运营亏损从一季度的 93 亿美元扩大到 123 亿美元。相比之下，Anthropic 二季度营收 116 亿美元（环比 +143%、同比 +14 倍），首次在季度营收上反超 OpenAI，且报告约 5.59 亿美元调整后运营利润，成为首家实现季度运营盈利的前沿 AI 实验室。</p>
+<p>Friar 把 IPO 表述得克制：「这不是终点线，而是一个里程碑。」她曾私下建议等到 2027 年，理由是 OpenAI 尚未准备好承受上市公司的严格信息披露标准，而 Altman 主张今年 Q4 上市且估值低于 1 万亿美元不可接受。最终 Altman 接受了 2027 年方案。</p>
+<p>🔗 来源：IT时代网 / 网易</p>
+<h3>🔴 2. Anthropic 挖来谷歌 TPU 功勋老将，自研芯片战略再进一步</h3>
+<p>即将冲击 IPO 的 Anthropic 聘请前谷歌 TPU 项目创始高管阿米尔·萨莱克（Amir Salek）加入算力团队，向算力主管詹姆斯·布拉德伯里汇报。萨莱克曾在 2013-2022 年作为谷歌 TPU 项目创始人兼负责人交付前七代 TPU，更早前在英伟达创立并推动 SoC 业务。</p>
+<p>此举标志着大模型头部公司加速向上游半导体延伸。Anthropic 目前从英伟达、谷歌、亚马逊等多供应商采购芯片，近期已释放自研信号，并据报与三星接洽采用 2nm 制程和先进封装。竞争对手 OpenAI 已发布与博通共同开发的 Jalapeno 芯片，计划今年晚些时候投入使用。</p>
+<p>🔗 来源：财联社</p>
+<h3>🔴 3. 英伟达 60 亿美元获 Poolside 模型授权并拟吸纳其员工</h3>
+<p>英伟达同意支付 60 亿美元获取 Poolside AI 模型使用许可，并向其 100 多名员工发出聘用邀请，另提供 10 亿美元投资，投前估值 120 亿美元。Poolside 将继续独立运营，现有投资者将从英伟达资金中获得部分回报。这是英伟达从「卖芯片」向「绑定模型」延伸的又一标志性动作。</p>
+<p>🔗 来源：财联社</p>
+<h3>🔴 4. 博通拟筹 700–800 亿美元债务支持 Anthropic 芯片采购，AI 融资信用风险升温</h3>
+<p>博通正谈判筹集 700–800 亿美元债务资金，用于支持 Anthropic 等 AI 企业的芯片采购，拟采用分层结构（优先档约 450 亿、次级档约 350 亿）。彭博社率先报道总规模最高可达 1000 亿美元，黑石与阿波罗等机构在洽谈参与。</p>
+<p>这是继英伟达为 OpenAI 俄亥俄数据中心提供最高 1050 亿美元融资、联合六大资管推出 5000 亿美元算力融资平台之后，又一次刷新纪录的 AI 金融工程。此前博通 CDS 狂飙已引发市场对科技巨头数万亿美元 AI 隐性债务的信用恐慌，相关定价风险值得持续跟踪。</p>
+<p>🔗 来源：新浪财经 / 环球市场播报</p>
+<h3>🔴 5. OpenAI 开源 Codex Harness 三大核心组件，Agent 运行框架成新战场</h3>
+<p>OpenAI 以 Apache-2.0 许可开源 Codex Harness 的 CLI 工具、官方 SDK 与 app-server 三大核心组件。Harness 作为驱动 AI 智能体的底层执行框架，可嵌入开发者自有产品，将界面、数据与安全审批权交还开发者。</p>
+<p>这一动作与 NVIDIA 的 AVO 系统在 ARC-AGI-3 取得 100% 满分、DeepSeek Harness 周更等动态形成呼应——行业共识正在形成：Agent 的核心竞争力正从底层模型能力转移到运行时架构、工具调用编排与上下文管理。</p>
+<p>🔗 来源：华尔街见闻 / 博客园 AI技术日报</p>
+<hr>
 <h2>二、行业动态</h2>
-
-<ul class="bullet">
-  <li><b>OpenAI vs Anthropic 企业客户争夺白热化</b>：企业费用管理平台 Ramp 数据显示，Anthropic 在美国付费企业用户中份额升至近 44%，OpenAI 约 40%；5 月 Anthropic 首次反超后差距持续扩大，企业客户呈双向流动。<div class="source-link">🔗 来源：环球网</div></li>
-  <li><b>Anthropic 冲刺史上最大 IPO</b>：已提交 IPO 注册文件，最快本月底公开，发行规模拟达甚至超过 SpaceX 创下的 862 亿美元纪录，年化营收从 2025 年底约 90 亿美元飙升至 7 月底超 650 亿美元，估值逼近 1 万亿美元。<div class="source-link">🔗 来源：金十新媒体</div></li>
-  <li><b>英伟达密集布局产业链</b>：否认中国特供 LPU 传闻；黄仁勋会见韩国 AI 芯片公司 Rebellions CEO 洽谈投资或收购（估值约 23 亿美元）；洽谈参与数据标注商 Mercor 新一轮融资（估值达 200 亿美元）；投资数据中心电力开发商 Cloverleaf 锁定电力容量；Vera Rubin 机架已交付 OpenAI。<div class="source-link">🔗 来源：财闻 / 科创板日报 / 华尔街见闻 / 界面新闻</div></li>
-  <li><b>智谱 GLM-5.3 突袭上线</b>：引发国内大模型新一轮能力比拼，后训练与端到端自提升路线成为行业聚焦，开源与闭源模型在性能与价格上的贴身竞争进一步加剧。<div class="source-link">🔗 来源：腾讯新闻</div></li>
-  <li><b>三星电子宣布史上最高股东回报</b>：2026 年向股东返还最高 110 万亿韩元（约 790 亿美元），约占自由现金流五成，拟派发 30 万亿韩元季息并回购 15 万亿韩元股票，AI 需求带动及 SK 海力士竞争是主要驱动。<div class="source-link">🔗 来源：华尔街见闻</div></li>
-  <li><b>高盛：对冲基金近十年最大去杠杆，AI 仓位回调最深</b>：7 月美股动荡引发对冲基金大规模去杠杆，前期领涨的 AI 仓位回调最深。<div class="source-link">🔗 来源：华尔街见闻</div></li>
-</ul>
-
+<ul><li><strong>OpenAI vs Anthropic 企业客户争夺白热化</strong>：企业费用管理平台 Ramp 数据显示，Anthropic 在美国付费企业用户中份额升至近 44%，OpenAI 约 40%；5 月 Anthropic 首次反超后差距持续扩大，企业客户呈双向流动。🔗 来源：环球网</li></ul>
+<ul><li><strong>Anthropic 冲刺史上最大 IPO</strong>：已提交 IPO 注册文件，最快本月底公开，发行规模拟达甚至超过 SpaceX 创下的 862 亿美元纪录，年化营收从 2025 年底约 90 亿美元飙升至 7 月底超 650 亿美元，估值逼近 1 万亿美元。🔗 来源：金十新媒体</li></ul>
+<ul><li><strong>英伟达密集布局产业链</strong>：否认中国特供 LPU 传闻；黄仁勋会见韩国 AI 芯片公司 Rebellions CEO 洽谈投资或收购（估值约 23 亿美元）；洽谈参与数据标注商 Mercor 新一轮融资（估值达 200 亿美元）；投资数据中心电力开发商 Cloverleaf 锁定电力容量；Vera Rubin 机架已交付 OpenAI。🔗 来源：财闻 / 科创板日报 / 华尔街见闻 / 界面新闻</li></ul>
+<ul><li><strong>智谱 GLM-5.3 突袭上线</strong>：引发国内大模型新一轮能力比拼，后训练与端到端自提升路线成为行业聚焦，开源与闭源模型在性能与价格上的贴身竞争进一步加剧。🔗 来源：腾讯新闻</li></ul>
+<ul><li><strong>三星电子宣布史上最高股东回报</strong>：2026 年向股东返还最高 110 万亿韩元（约 790 亿美元），约占自由现金流五成，拟派发 30 万亿韩元季息并回购 15 万亿韩元股票，AI 需求带动及 SK 海力士竞争是主要驱动。🔗 来源：华尔街见闻</li></ul>
+<ul><li><strong>高盛：对冲基金近十年最大去杠杆，AI 仓位回调最深</strong>：7 月美股动荡引发对冲基金大规模去杠杆，前期领涨的 AI 仓位回调最深。🔗 来源：华尔街见闻</li></ul>
+<hr>
 <h2>三、产品 / 公司动态</h2>
-
-<ul class="bullet">
-  <li><b>Claude Code 新增「自托管环境」能力</b>：Anthropic 宣布 Claude Code 新增自托管环境（Team/Enterprise 公测），企业可通过 Runner 进程把会话执行放在自有网络内，代码仓库、构建产物与密钥保留在本地；但提示词、模型回复与工具调用结果仍发往 Anthropic 推理，并非完整私有化部署。<div class="source-link">🔗 来源：HFStore</div></li>
-  <li><b>Claude Platform 上线 Computer Use / Skills / Files API</b>：Anthropic 宣布三项能力全面可用（GA），并推出全新 Browser Use 工具，直接识别网页输入框与按钮，较传统截图点击更精准高效；Computer Use 更新后可在单次模型调用中执行多个连续操作，并达到 HIPAA 合规标准。<div class="source-link">🔗 来源：博客园 AI技术日报</div></li>
-  <li><b>OpenAI Codex 周活用户突破 2000 万</b>：Codex 产品负责人表示活跃用户数本周突破 2000 万，反映 AI 编程智能体在企业与开发者群体中的快速渗透。<div class="source-link">🔗 来源：IT时代网</div></li>
-  <li><b>OpenAI 下调 GPT-5.6 Sol 接口定价 20%</b>：未来三个月内 GPT-5.6 Sol 的 API 及积分定价下调 20% 以上，主流大模型厂商围绕推理价格的竞争加剧。<div class="source-link">🔗 来源：IT时代网</div></li>
-  <li><b>ChatGPT Mac 端接入 iMessage</b>：OpenAI 推出新功能，允许用户通过 Mac 端 ChatGPT 读取、撰写与发送 iMessage 短信，并检索信息、生成对话摘要，延续接入健康、金融数据的思路。<div class="source-link">🔗 来源：三言科技</div></li>
-  <li><b>OpenAI 回应 Codex 限额差异</b>：Codex 与 ChatGPT 团队负责人蒂博·索蒂奥在 X 发文称，限额差异主要影响使用 sub2api 将订阅转为 API 流量共享的用户（被防欺诈系统标记限流），通过 ChatGPT 登录的正常路径不受影响。<div class="source-link">🔗 来源：IT时代网</div></li>
-  <li><b>面壁智能启动 A 股 IPO，冲击「端侧大模型第一股」</b>：成立四周年的端侧 AI 独角兽面壁智能在北京证监局完成辅导备案，拟首次公开发行并上市，辅导券商中信证券，有望成为 A 股稀缺的纯正端侧大模型标的。<div class="source-link">🔗 来源：星岛记事</div></li>
-  <li><b>DeepSeek 上线实验性视觉理解模型 V4-Flash-Vision-Exp</b>：新增图像理解能力并保持原有文本性能，视觉 Agent 基准测试接近 Opus-4.8；同步推出免费 Files API 和 DeepSeek Harness 0.1.1。<div class="source-link">🔗 来源：华尔街见闻</div></li>
-</ul>
-
+<ul><li><strong>Claude Code 新增「自托管环境」能力</strong>：Anthropic 宣布 Claude Code 新增自托管环境（Team/Enterprise 公测），企业可通过 Runner 进程把会话执行放在自有网络内，代码仓库、构建产物与密钥保留在本地；但提示词、模型回复与工具调用结果仍发往 Anthropic 推理，并非完整私有化部署。🔗 来源：HFStore</li></ul>
+<ul><li><strong>Claude Platform 上线 Computer Use / Skills / Files API</strong>：Anthropic 宣布三项能力全面可用（GA），并推出全新 Browser Use 工具，直接识别网页输入框与按钮，较传统截图点击更精准高效；Computer Use 更新后可在单次模型调用中执行多个连续操作，并达到 HIPAA 合规标准。🔗 来源：博客园 AI技术日报</li></ul>
+<ul><li><strong>OpenAI Codex 周活用户突破 2000 万</strong>：Codex 产品负责人表示活跃用户数本周突破 2000 万，反映 AI 编程智能体在企业与开发者群体中的快速渗透。🔗 来源：IT时代网</li></ul>
+<ul><li><strong>OpenAI 下调 GPT-5.6 Sol 接口定价 20%</strong>：未来三个月内 GPT-5.6 Sol 的 API 及积分定价下调 20% 以上，主流大模型厂商围绕推理价格的竞争加剧。🔗 来源：IT时代网</li></ul>
+<ul><li><strong>ChatGPT Mac 端接入 iMessage</strong>：OpenAI 推出新功能，允许用户通过 Mac 端 ChatGPT 读取、撰写与发送 iMessage 短信，并检索信息、生成对话摘要，延续接入健康、金融数据的思路。🔗 来源：三言科技</li></ul>
+<ul><li><strong>OpenAI 回应 Codex 限额差异</strong>：Codex 与 ChatGPT 团队负责人蒂博·索蒂奥在 X 发文称，限额差异主要影响使用 sub2api 将订阅转为 API 流量共享的用户（被防欺诈系统标记限流），通过 ChatGPT 登录的正常路径不受影响。🔗 来源：IT时代网</li></ul>
+<ul><li><strong>面壁智能启动 A 股 IPO，冲击「端侧大模型第一股」</strong>：成立四周年的端侧 AI 独角兽面壁智能在北京证监局完成辅导备案，拟首次公开发行并上市，辅导券商中信证券，有望成为 A 股稀缺的纯正端侧大模型标的。🔗 来源：星岛记事</li></ul>
+<ul><li><strong>DeepSeek 上线实验性视觉理解模型 V4-Flash-Vision-Exp</strong>：新增图像理解能力并保持原有文本性能，视觉 Agent 基准测试接近 Opus-4.8；同步推出免费 Files API 和 DeepSeek Harness 0.1.1。🔗 来源：华尔街见闻</li></ul>
+<hr>
 <h2>四、研究突破</h2>
-
-<ul class="bullet">
-  <li><b>NVIDIA AVO 在 ARC-AGI-3 取得 100% 满分</b>：NVIDIA 通用编程 Agent 系统 AVO 在 ARC-AGI-3 公开测试集全部 25 个环境、183 个关卡中取得满分。TechCrunch 评论指出「Harness（运行框架）而非模型本身才是真正的英雄」。<div class="source-link">🔗 来源：博客园 AI技术日报 / 36氪</div></li>
-  <li><b>Generalist AI 发布机器人基础模型 GEN-1.5</b>：看 3–12 秒演示即可零代码执行任务，10 项操作平均成功率 59%，被多位研究者称为具身智能「GPT-3 时刻」，英伟达、李飞飞等参投。<div class="source-link">🔗 来源：新智元</div></li>
-  <li><b>AI 智能体自主生成并运行量子计算代码（Nature）</b>：法国 Pasqal 公司开发出 AI 智能体，能根据英文自然语言指令生成量子计算代码并自动在真实量子计算机上运行，有望降低量子计算实验门槛，但关键环节仍需人类把关。<div class="source-link">🔗 来源：科技日报</div></li>
-  <li><b>本源量子 + 中科大破解超导量子计算「速度与保真度」矛盾</b>：研发 PSECZ（参数空间扩展受控相位门）方案，通过增加独立调节旋钮，在不牺牲运算速度的前提下大幅提升保真度，为大规模量子芯片落地扫清核心障碍。<div class="source-link">🔗 来源：未来科技观</div></li>
-  <li><b>Google AI 胸部 X 光解读达放射科医生水平（Nature）</b>：利用超 60 万张图像（含阿波罗医院数据库与 ChestX-ray14），AI 模型可检测气胸、结节肿块、骨折和气腔模糊四项指标，经专家独立审查已达放射科医生水平。<div class="source-link">🔗 来源：VentureBeat / Nature</div></li>
-  <li><b>重庆企业牵头制定 AI 深度伪造检测国际标准</b>：马上消费金融牵头提出的生物特征识别深度伪造攻击检测标准获 ISO 立项，拿下全球该领域首项系统化国际标准主导权，防伪拦截率稳定 99.9% 以上。<div class="source-link">🔗 来源：腾讯新闻</div></li>
-</ul>
-
+<ul><li><strong>NVIDIA AVO 在 ARC-AGI-3 取得 100% 满分</strong>：NVIDIA 通用编程 Agent 系统 AVO 在 ARC-AGI-3 公开测试集全部 25 个环境、183 个关卡中取得满分。TechCrunch 评论指出「Harness（运行框架）而非模型本身才是真正的英雄」。🔗 来源：博客园 AI技术日报 / 36氪</li></ul>
+<ul><li><strong>Generalist AI 发布机器人基础模型 GEN-1.5</strong>：看 3–12 秒演示即可零代码执行任务，10 项操作平均成功率 59%，被多位研究者称为具身智能「GPT-3 时刻」，英伟达、李飞飞等参投。🔗 来源：新智元</li></ul>
+<ul><li><strong>AI 智能体自主生成并运行量子计算代码（Nature）</strong>：法国 Pasqal 公司开发出 AI 智能体，能根据英文自然语言指令生成量子计算代码并自动在真实量子计算机上运行，有望降低量子计算实验门槛，但关键环节仍需人类把关。🔗 来源：科技日报</li></ul>
+<ul><li><strong>本源量子 + 中科大破解超导量子计算「速度与保真度」矛盾</strong>：研发 PSECZ（参数空间扩展受控相位门）方案，通过增加独立调节旋钮，在不牺牲运算速度的前提下大幅提升保真度，为大规模量子芯片落地扫清核心障碍。🔗 来源：未来科技观</li></ul>
+<ul><li><strong>Google AI 胸部 X 光解读达放射科医生水平（Nature）</strong>：利用超 60 万张图像（含阿波罗医院数据库与 ChestX-ray14），AI 模型可检测气胸、结节肿块、骨折和气腔模糊四项指标，经专家独立审查已达放射科医生水平。🔗 来源：VentureBeat / Nature</li></ul>
+<ul><li><strong>重庆企业牵头制定 AI 深度伪造检测国际标准</strong>：马上消费金融牵头提出的生物特征识别深度伪造攻击检测标准获 ISO 立项，拿下全球该领域首项系统化国际标准主导权，防伪拦截率稳定 99.9% 以上。🔗 来源：腾讯新闻</li></ul>
+<hr>
 <h2>五、政策与监管</h2>
-
-<ul class="bullet">
-  <li><b>经济日报评论「驾驭好 AI 千里马」</b>：结合 2026 世界人工智能大会暨人工智能全球治理高级别会议习近平主席主旨讲话，强调「安全是发展的前提」，呼吁织密法治之网、完善分类分级监管，推动多边共治。<div class="source-link">🔗 来源：经济日报</div></li>
-  <li><b>欧盟 AI 法案第二阶段生效</b>：2026 年 8 月起扩展对高风险 AI 系统的义务并提高各行业透明度要求，标志着向 2027 年全面实施迈出重要一步；欧盟委员会已就 OpenAI、Anthropic 智能体越狱事件与两家公司沟通，但目前无迹象显示构成「严重事件」。<div class="source-link">🔗 来源：Omdia / 中国商务新闻网</div></li>
-  <li><b>美国 CISA 将发布首个 AI 安全约束性操作指令</b>：预计覆盖系统清单、最小权限、供应链透明度、事件报告和数据清除等要求，标志着美国 AI 安全治理从自愿框架向约束性指令转变。<div class="source-link">🔗 来源：中国工信新闻网</div></li>
-  <li><b>中新经纬：AI 智能体失控风险需分层治理</b>：指出全球 AI 治理普遍存在三大短板——无跨国安全信息互通机制、高危模型流通与跨境入侵事故信息割裂、第三方损害追责困难，呼吁分层治理破局。<div class="source-link">🔗 来源：中新经纬</div></li>
-  <li><b>全球新工业革命联盟落地香港</b>：非营利国际协作平台聚焦 AI 全球治理、数智化与低碳转型，设人工智能可持续发展中心等机制，发起人涵盖中美欧及全球南方国家经济学家与投资人。<div class="source-link">🔗 来源：中国新闻网</div></li>
-  <li><b>运营商应加快 AI 治理基础设施建设</b>：中国电信研究院撰文建议运营商从「合规响应者」升级为「AI 治理基础设施提供者」，卡位智能体安全治理赛道，参与智能体互操作、内容标识、安全评估等国际标准制定。<div class="source-link">🔗 来源：中国工信新闻网</div></li>
-</ul>
-
+<ul><li><strong>经济日报评论「驾驭好 AI 千里马」</strong>：结合 2026 世界人工智能大会暨人工智能全球治理高级别会议习近平主席主旨讲话，强调「安全是发展的前提」，呼吁织密法治之网、完善分类分级监管，推动多边共治。🔗 来源：经济日报</li></ul>
+<ul><li><strong>欧盟 AI 法案第二阶段生效</strong>：2026 年 8 月起扩展对高风险 AI 系统的义务并提高各行业透明度要求，标志着向 2027 年全面实施迈出重要一步；欧盟委员会已就 OpenAI、Anthropic 智能体越狱事件与两家公司沟通，但目前无迹象显示构成「严重事件」。🔗 来源：Omdia / 中国商务新闻网</li></ul>
+<ul><li><strong>美国 CISA 将发布首个 AI 安全约束性操作指令</strong>：预计覆盖系统清单、最小权限、供应链透明度、事件报告和数据清除等要求，标志着美国 AI 安全治理从自愿框架向约束性指令转变。🔗 来源：中国工信新闻网</li></ul>
+<ul><li><strong>中新经纬：AI 智能体失控风险需分层治理</strong>：指出全球 AI 治理普遍存在三大短板——无跨国安全信息互通机制、高危模型流通与跨境入侵事故信息割裂、第三方损害追责困难，呼吁分层治理破局。🔗 来源：中新经纬</li></ul>
+<ul><li><strong>全球新工业革命联盟落地香港</strong>：非营利国际协作平台聚焦 AI 全球治理、数智化与低碳转型，设人工智能可持续发展中心等机制，发起人涵盖中美欧及全球南方国家经济学家与投资人。🔗 来源：中国新闻网</li></ul>
+<ul><li><strong>运营商应加快 AI 治理基础设施建设</strong>：中国电信研究院撰文建议运营商从「合规响应者」升级为「AI 治理基础设施提供者」，卡位智能体安全治理赛道，参与智能体互操作、内容标识、安全评估等国际标准制定。🔗 来源：中国工信新闻网</li></ul>
+<hr>
 <h2>核心观察</h2>
-
-<div class="card">
-  <p>1. <b>AI IPO 竞速进入定价博弈深水区</b>：OpenAI 锁定 2027 时间表、运营亏损扩至 123 亿，而 Anthropic 首次季度营收反超且实现运营盈利、冲刺史上最大 IPO。两者「增速差 + 盈利差」将成为市场定价的核心变量，OpenAI 能否在上市前扭转利润线是最大悬念。</p>
-  <p>2. <b>自研芯片成头部实验室标配</b>：Anthropic 挖来 TPU 功勋老将、OpenAI Jalapeno 芯片落地，标志着「从买英伟达」到「自己造芯片」的产业迁移正式提速，三星 2nm 制程与先进封装成为关键变量。</p>
-  <p>3. <b>算力融资金融工程化与信用风险并存</b>：博通 700–800 亿债务 + 英伟达 1050 亿单项目融资 + 5000 亿平台，AI 基建融资规模持续刷新纪录，但 CDS 狂飙已撕开科技巨头隐性债务冰山一角，信用风险与实体需求的背离值得警惕。</p>
-  <p>4. <b>Agent 运行框架（Harness）取代模型成为新竞争焦点</b>：NVIDIA AVO 满分、OpenAI 开源 Harness、DeepSeek Harness 周更三线共振，行业共识正从「拼底层模型」转向「拼运行时架构、工具编排与上下文管理」。</p>
-  <p>5. <b>具身智能与端侧大模型进入叙事兑现期</b>：GEN-1.5 被称「GPT-3 时刻」、面壁智能冲击 A 股端侧大模型第一股，硬件与资本两条线同步升温。</p>
-</div>
+<ul><li><strong>AI IPO 竞速进入定价博弈深水区</strong>：OpenAI 锁定 2027 时间表、运营亏损扩至 123 亿，而 Anthropic 首次季度营收反超且实现运营盈利、冲刺史上最大 IPO。两者「增速差 + 盈利差」将成为市场定价的核心变量，OpenAI 能否在上市前扭转利润线是最大悬念。</li></ul>
+<ul><li><strong>自研芯片成头部实验室标配</strong>：Anthropic 挖来 TPU 功勋老将、OpenAI Jalapeno 芯片落地，标志着「从买英伟达」到「自己造芯片」的产业迁移正式提速，三星 2nm 制程与先进封装成为关键变量。</li></ul>
+<ul><li><strong>算力融资金融工程化与信用风险并存</strong>：博通 700–800 亿债务 + 英伟达 1050 亿单项目融资 + 5000 亿平台，AI 基建融资规模持续刷新纪录，但 CDS 狂飙已撕开科技巨头隐性债务冰山一角，信用风险与实体需求的背离值得警惕。</li></ul>
+<ul><li><strong>Agent 运行框架（Harness）取代模型成为新竞争焦点</strong>：NVIDIA AVO 满分、OpenAI 开源 Harness、DeepSeek Harness 周更三线共振，行业共识正从「拼底层模型」转向「拼运行时架构、工具编排与上下文管理」。</li></ul>
+<ul><li><strong>具身智能与端侧大模型进入叙事兑现期</strong>：GEN-1.5 被称「GPT-3 时刻」、面壁智能冲击 A 股端侧大模型第一股，硬件与资本两条线同步升温。</li></ul>
 
 <div class="report-footer">
-  数据来源：财联社 / IT时代网 / 新浪财经 / 华尔街见闻 / 腾讯新闻 / 新智元 / 中新经纬 / 科技日报 / Nature / 博客园 AI技术日报 · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

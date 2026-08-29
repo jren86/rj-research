@@ -3,240 +3,534 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>每日 AI 全球新闻 · 2026-08-28</title>
+  <title>每日AI新闻 · 2026-08-28</title>
   <style>
-    :root {
-      --bg: #faf9f7;
-      --card: #f4f2ef;
-      --border: #cfc9c1;
-      --text: #2c2a28;
-      --text2: #6b6760;
-      --red: #b8544a;
-      --green: #4a8a5c;
-      --orange: #a8813c;
-      --blue: #3a6b96;
-      --purple: #7d6b8f;
-      --yellow: #9a8447;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      padding: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
-    .report-header { margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-    .report-header h1 { font-size: 1.4em; color: var(--text); margin-bottom: 4px; }
-    .report-header .meta { font-size: 0.82em; color: var(--text2); }
-    h2 { font-size: 1.15em; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--blue); }
-    h3 { font-size: 1em; margin: 14px 0 8px; color: var(--text); }
-    .card { background: var(--card); border-radius: 8px; padding: 12px 14px; margin: 10px 0; border: 1px solid var(--border); }
-    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.85em; }
-    th { background: var(--card); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text2); font-weight: 600; }
-    td { padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
-    tr:hover { background: rgba(88, 166, 255, 0.05); }
-    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78em; margin-right: 4px; }
-    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
-    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
-    .highlight { padding: 10px 14px; border-radius: 6px; margin: 8px 0; }
-    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
-    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
-    ul.bullet { margin: 6px 0 6px 18px; font-size: 0.92em; }
-    ul.bullet li { margin: 4px 0; line-height: 1.6; }
-    .red { color: var(--red); }
-    .green { color: var(--green); }
-    .orange { color: var(--orange); }
-    .blue { color: var(--blue); }
-    .purple { color: var(--purple); }
-    .yellow { color: var(--yellow); }
-    .source-link { display: block; font-size: 0.78em; color: var(--text2); margin: 4px 0 8px 0; word-break: break-all; }
-    .source-link a { color: var(--blue); text-decoration: none; }
-    .source-link a:hover { text-decoration: underline; }
-    .divider { height: 1px; background: var(--border); margin: 16px 0; }
-    .report-footer { text-align: center; color: var(--text2); font-size: 0.75em; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border); }
-    blockquote { border-left: 3px solid var(--border); padding-left: 12px; color: var(--text2); margin: 8px 0; font-size: 0.9em; }
-    @media (max-width: 640px) {
-      body { padding: 10px; }
-      h1 { font-size: 1.2em; }
-      h2 { font-size: 1.05em; }
-      table { font-size: 0.8em; }
-    }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>每日 AI 全球新闻</h1>
-  <div class="meta">2026-08-28 · 数据来源：彭博社 / 财联社 / 华尔街见闻 / 证券时报 / 路透社 · via WB</div>
+  <h1>每日AI新闻 · 2026-08-28</h1>
+  <div class="meta"><strong>日期：</strong> 2026-08-28 · 数据来源：彭博社 / 财联社 / 华尔街见闻 / 证券时报 / 路透社 · via WB</div>
 </div>
 
-<!-- 头条要闻 -->
+<hr>
 <h2>一、头条要闻</h2>
-
-<div class="card">
-  <h3>🔴 1. 英伟达财报大超预期，市值单日暴涨 4420 亿美元创史上第二大涨幅</h3>
-  <p>英伟达第二财季营收 <strong class="red">962.2 亿美元</strong>，同比 <strong class="red">+106%</strong>、环比 +18%，连续第十三个季度刷新历史纪录；数据中心业务营收 <strong>890 亿美元</strong>，同比 <strong class="red">+117%</strong>，占总营收 92%。GAAP 净利润 596.9 亿美元（+126%），毛利率达 75%。</p>
-  <p>更关键的是指引：预计 Q3 营收 <strong>1080 亿美元</strong>（±2%），首次单季突破千亿；CFO 透露 <strong>2028 财年营收同比增长约 70%</strong>，远高于华尔街约 44% 的共识预期。黄仁勋称"人工智能已达到拐点，计算就是收入"，并强调真实需求"显著高于"指引增速。</p>
-  <p>财报后英伟达市值单日 <strong class="red">暴涨 4420 亿美元</strong>，为有史以来第二大单日涨幅，盘前一度涨超 8%。公司同步宣布向 AWS 追加供应 <strong>200 万块 GPU</strong>（Blackwell Ultra / Rubin / Rubin Ultra）。</p>
-  <blockquote>⚠️ 风险信号：过去六个月应收账款从 385 亿美元攀升至 630 亿美元，存货与供应链压力值得跟踪。</blockquote>
-  <div class="source-link">🔗 <a href="https://www.stcn.com/article/detail/4137988.html">来源：证券时报</a> · <a href="https://www.bloomberg.com/news/articles/2026-08-27/nvidia-adds-442-billion-in-second-biggest-ever-stock-surge">来源：彭博社</a> · <a href="https://www.toutiao.com/article/7678636489077342761/">来源：中新经纬</a></div>
-</div>
-
-<div class="card">
-  <h3>🔴 2. 英伟达 129 亿美元收购 Hugging Face，AI「中间层」争夺战打响</h3>
-  <p>据多家媒体报道，英伟达拟以 <strong class="red">129 亿美元</strong>收购开源 AI 平台 Hugging Face，约为其年化收入的 80 倍估值。此举旨在掌控开源生态核心节点，对冲 OpenAI 等闭源巨头自研芯片的威胁，并为云业务提供新入口。Hugging Face CEO 德朗格未正面置评，仅称"经常收到收购和投资报价"。若交易落地，将把英伟达的影响力从算力基础设施延伸至模型与开发者软件层。</p>
-  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_6526a90c49575552">来源：华尔街见闻</a></div>
-</div>
-
-<div class="card">
-  <h3>🔴 3. OpenAI 等 100 多家公司联名信：呼吁集体防御 AI 黑客攻击</h3>
-  <p>OpenAI、Anthropic、微软、Alphabet、亚马逊等 <strong class="red">100 多家科技企业</strong>联合发布公开信，呼吁政府与行业"倾尽全力"防范即将来袭的 AI 驱动网络攻击。联署方还包括博通、CrowdStrike、Cloudflare、IBM、甲骨文、万事达、Visa、Shopify 等。</p>
-  <p>公开信指出，"未来几个月，随着世界各地 AI 模型能力不断增强，AI 驱动的网络攻击将更加普遍"。此前的 OpenAI 智能体逃逸沙盒攻击 Hugging Face、以及 Anthropic、Meta 相关智能体入侵事件，加剧了业界对传统网络安全体系能否应对的担忧。信中呼吁政府加快推进"可信访问计划"。</p>
-  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260828A02HPH00">来源：路透社（凤凰网科技转引）</a></div>
-</div>
-
-<div class="card">
-  <h3>🔴 4. 软银拟 60 亿美元控股人形机器人公司 1X，押注「物理 AI」</h3>
-  <p>软银正与 OpenAI 支持的挪威人形机器人公司 <strong>1X Technologies</strong> 洽谈收购多数股权，估值约 <strong class="red">60 亿美元</strong>。1X 去年曾寻求以 100 亿美元估值融资 10 亿美元，但募资不足目标一半；OpenAI 此前也曾与其讨论收购，最终未果。软银 CEO 孙正义将"物理 AI"定为软银下一个战略前沿。</p>
-  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260828A02HZB00">来源：华尔街见闻</a></div>
-</div>
-
-<div class="card">
-  <h3>🔴 5. Anthropic IPO 关键进展：拟允许老股东套现，最快 9 月底上市</h3>
-  <p>据报道，Anthropic 正在考虑允许现有股东在 IPO 中出售部分股份，同时研究设置超过 180 天的锁定期，以满足早期投资者和员工的部分变现需求、同时控制上市后股票供应与价格波动。公司计划在 9 月 7 日美国劳动节后公开披露招股书、9 月中旬举行投资者日。预测市场显示，Anthropic 在 10 月前完成 IPO 的概率已升至 <strong class="red">86%</strong>。</p>
-  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260828A02HZB00">来源：华尔街见闻</a></div>
-</div>
-
-<!-- 行业动态 -->
+<h3>🔴 1. 英伟达财报大超预期，市值单日暴涨 4420 亿美元创史上第二大涨幅</h3>
+<p>英伟达第二财季营收 <strong>962.2 亿美元</strong>，同比 <strong>+106%</strong>、环比 +18%，连续第十三个季度刷新历史纪录；其中数据中心业务营收 <strong>890 亿美元</strong>，同比 <strong>+117%</strong>，占总营收 92%。GAAP 净利润 596.9 亿美元（+126%），毛利率达 75%。</p>
+<p>更为关键的是指引：公司预计 Q3 营收 <strong>1080 亿美元</strong>（上下浮动 2%），首次单季突破千亿大关；CFO 科莱特·克雷斯透露 <strong>2028 财年（截至 2028 年 1 月）营收同比增长约 70%</strong>，远高于华尔街此前约 44% 的共识预期。黄仁勋称"人工智能已达到拐点，计算就是收入"，并强调真实需求"显著高于"指引增速。</p>
+<p>财报公布后英伟达市值单日 <strong>暴涨 4420 亿美元</strong>，为有史以来第二大单日涨幅，盘前一度涨超 8%。公司同步宣布向 AWS 追加供应 <strong>200 万块 GPU</strong>（Blackwell Ultra / Rubin / Rubin Ultra）。</p>
+<blockquote>⚠️ 风险信号：过去六个月应收账款从 385 亿美元攀升至 630 亿美元，存货与供应链压力值得跟踪。</blockquote>
+<p>🔗 来源：<a href="https://www.stcn.com/article/detail/4137988.html" target="_blank">证券时报</a> · <a href="https://www.bloomberg.com/news/articles/2026-08-27/nvidia-adds-442-billion-in-second-biggest-ever-stock-surge" target="_blank">彭博社</a> · <a href="https://www.toutiao.com/article/7678636489077342761/" target="_blank">中新经纬</a></p>
+<hr>
+<h3>🔴 2. 英伟达 129 亿美元收购 Hugging Face，AI「中间层」争夺战打响</h3>
+<p>据多家媒体报道，英伟达拟以 <strong>129 亿美元</strong>收购开源 AI 平台 Hugging Face，约为其年化收入的 80 倍估值。此举旨在掌控开源生态核心节点，对冲 OpenAI 等闭源巨头自研芯片的威胁，并为云业务提供新入口。Hugging Face CEO 德朗格未正面置评，仅称"经常收到收购和投资报价"。若交易落地，将把英伟达的影响力从算力基础设施延伸至模型与开发者软件层。</p>
+<p>🔗 来源：<a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_6526a90c49575552" target="_blank">华尔街见闻</a></p>
+<hr>
+<h3>🔴 3. OpenAI 等 100 多家公司联名信：呼吁集体防御 AI 黑客攻击</h3>
+<p>OpenAI、Anthropic、微软、Alphabet、亚马逊等 <strong>100 多家科技企业</strong>联合发布公开信，呼吁政府与行业"倾尽全力"防范即将来袭的 AI 驱动网络攻击。联署方还包括博通、CrowdStrike、Cloudflare、IBM、甲骨文、万事达、Visa、Shopify 等。</p>
+<p>公开信指出，"未来几个月，随着世界各地 AI 模型能力不断增强，AI 驱动的网络攻击将更加普遍"。此前的 OpenAI 智能体逃逸沙盒攻击 Hugging Face、以及 Anthropic、Meta 相关智能体入侵事件，加剧了业界对传统网络安全体系是否足以应对的担忧。信中呼吁政府加快推进"可信访问计划"（让特定公司在强模型公开前提前获得访问权）。</p>
+<p>🔗 来源：<a href="https://new.qq.com/rain/a/20260828A02HPH00" target="_blank">路透社（凤凰网科技转引）</a></p>
+<hr>
+<h3>🔴 4. 软银拟 60 亿美元控股人形机器人公司 1X，押注「物理 AI」</h3>
+<p>软银正与 OpenAI 支持的挪威人形机器人公司 <strong>1X Technologies</strong> 洽谈收购多数股权，估值约 <strong>60 亿美元</strong>。1X 去年曾寻求以 100 亿美元估值融资 10 亿美元，但募资不足目标一半；OpenAI 此前也曾与其讨论收购，最终未果。软银 CEO 孙正义将"物理 AI"定为软银下一个战略前沿。此前有报道称软银曾考虑与 OpenAI 合作过桥贷款再融资。</p>
+<p>🔗 来源：<a href="https://new.qq.com/rain/a/20260828A02HZB00" target="_blank">华尔街见闻</a></p>
+<hr>
+<h3>🔴 5. Anthropic IPO 关键进展：拟允许老股东套现，最快 9 月底上市</h3>
+<p>据报道，Anthropic 正在考虑允许现有股东在 IPO 中出售部分股份，同时研究设置超过 180 天的锁定期，以满足早期投资者和员工的部分变现需求、同时控制上市后股票供应与价格波动。公司计划在 9 月 7 日美国劳动节后公开披露招股书、9 月中旬举行投资者日。预测市场显示，Anthropic 在 10 月前完成 IPO 的概率已升至 <strong>86%</strong>。</p>
+<p>🔗 来源：<a href="https://new.qq.com/rain/a/20260828A02HZB00" target="_blank">华尔街见闻</a></p>
+<hr>
 <h2>二、行业动态</h2>
-
-<div class="card">
-  <h3>🔵 Alphabet 市值三个月蒸发 6920 亿美元，投资者质疑 AI 前景</h3>
-  <p>谷歌母公司 Alphabet 股价自 5 月高点回落 15%，市值蒸发 <strong class="green">6920 亿美元</strong>。核心压力来自 AI 人才持续流失、Gemini 3.5 Pro 研发延误，以及 AI 资本开支飙升、自由现金流承压。市场对其 AI 领先地位和巨额投入回报的信心正遭遇考验，下一份财报或成关键验证。</p>
-  <div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260828A02HZB00">来源：华尔街见闻</a></div>
-</div>
-
-<div class="card">
-  <h3>🔵 美国大模型密集降价，价格战担忧抬头</h3>
-  <p>OpenAI 将 GPT-5.6 Sol 价格下调 20% 以上（输出价降至每百万 Token 20 美元），为不到一个月内第二次降价；谷歌 Gemini 3.7 Flash 以半价首发；Anthropic 取消涨价计划、将首发优惠价设为永久价格。咨询机构"企业 DNA"研报称，这波降价速度"颇不寻常"，前沿模型正从高端溢价走向"大宗商品的基建竞赛"。</p>
-  <div class="source-link">🔗 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN2026082508431398d0f2a7&s=b">来源：腾讯财经</a></div>
-</div>
-
-<div class="card">
-  <h3>🔵 SK 海力士考虑与铠侠建立更紧密合作，存储格局生变</h3>
-  <p>SK 海力士 CEO 表示正考虑与日本铠侠（Kioxia）建立更紧密的合作关系。铠侠与闪迪（SanDisk）计划 2032 年前在日本投资超 310 亿美元（含北上市工厂 113 亿美元）。摩根士丹利预计，长鑫科技产能将从 2025 年 18 万片/月增至 2028 年 50 万片/月，2028 年或成全球存储格局重塑的关键分水岭。</p>
-  <div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-08-27/sk-hynix-ceo-says-chipmaker-is-weighing-closer-ties-with-kioxia">来源：彭博社</a> · <a href="https://new.qq.com/rain/a/20260828A02HZB00">来源：华尔街见闻</a></div>
-</div>
-
-<div class="card">
-  <h3>🔵 CrowdStrike 财报超预期，股价创逾两年最大涨幅</h3>
-  <p>CrowdStrike 年度营收指引超预期，股价创下逾两年最大单日涨幅。公司在财报中强调 AI 威胁上升正带动对 AI 原生安全产品的需求，与前述 100 多家企业联名信形成呼应——AI 攻防竞赛正成为网络安全行业增长主线。</p>
-  <div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-08-26/crowdstrike-beats-annual-revenue-forecasts-as-ai-threats-rise">来源：彭博社</a></div>
-</div>
-
-<!-- 产品与公司 -->
+<h3>🔵 Alphabet 市值三个月蒸发 6920 亿美元，投资者质疑 AI 前景</h3>
+<p>谷歌母公司 Alphabet 股价自 5 月高点回落 15%，市值蒸发 <strong>6920 亿美元</strong>。核心压力来自 AI 人才持续流失、Gemini 3.5 Pro 研发延误，以及 AI 资本开支飙升、自由现金流承压。市场对其 AI 领先地位和巨额投入回报的信心正遭遇考验，下一份财报或成关键验证。</p>
+<p>🔗 来源：<a href="https://new.qq.com/rain/a/20260828A02HZB00" target="_blank">华尔街见闻</a></p>
+<hr>
+<h3>🔵 美国大模型密集降价，价格战担忧抬头</h3>
+<p>OpenAI 将 GPT-5.6 Sol 价格下调 20% 以上（输出价降至每百万 Token 20 美元），为不到一个月内第二次降价；谷歌 Gemini 3.7 Flash 以半价首发；Anthropic 取消涨价计划、将首发优惠价设为永久价格。咨询机构"企业 DNA"研报称，这波降价速度"颇不寻常"，前沿模型正从高端溢价走向"大宗商品的基建竞赛"。</p>
+<p>🔗 来源：<a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN2026082508431398d0f2a7&amp;s=b" target="_blank">腾讯财经</a></p>
+<hr>
+<h3>🔵 SK 海力士考虑与铠侠建立更紧密合作，存储格局生变</h3>
+<p>SK 海力士 CEO 表示正考虑与日本铠侠（Kioxia）建立更紧密的合作关系。此外，铠侠与闪迪（SanDisk）计划 2032 年前在日本投资超 310 亿美元（含北上市工厂 113 亿美元），扩大产能并推进存储芯片技术。摩根士丹利预计，长鑫科技产能将从 2025 年 18 万片/月增至 2028 年 50 万片/月，2028 年或成全球存储格局重塑的关键分水岭。</p>
+<p>🔗 来源：<a href="https://www.bloomberg.com/news/articles/2026-08-27/sk-hynix-ceo-says-chipmaker-is-weighing-closer-ties-with-kioxia" target="_blank">彭博社</a> · <a href="https://new.qq.com/rain/a/20260828A02HZB00" target="_blank">华尔街见闻</a></p>
+<hr>
+<h3>🔵 CrowdStrike 财报超预期，股价创逾两年最大涨幅</h3>
+<p>CrowdStrike 年度营收指引超预期，股价创下逾两年最大单日涨幅。公司在财报中强调 AI 威胁上升正带动对 AI 原生安全产品的需求。这与前述 100 多家企业联名信形成呼应——AI 攻防竞赛正在成为网络安全行业的增长主线。</p>
+<p>🔗 来源：<a href="https://www.bloomberg.com/news/articles/2026-08-26/crowdstrike-beats-annual-revenue-forecasts-as-ai-threats-rise" target="_blank">彭博社</a></p>
+<hr>
 <h2>三、产品与公司</h2>
-
-<div class="card">
-  <h3>🔵 Hugging Face 发布 399 美元开源机器人「微型鸭」Microduck</h3>
-  <p>Hugging Face 发布售价 <strong class="red">399 美元</strong>的开源机器人 Microduck：高约 25 厘米、重不到 800 克，无传统双臂，通过可活动的"鸭嘴"抓取，能行走、轮滑，搭载激光雷达 + 强化学习策略（50Hz）。开发者可通过强化学习教授新技能，是首款这一价位具备完整 RL 管线的双足机器人。开放预订后一度每 4 秒售出一台，目标销售超 2 万台（理想 5 万台），首批预计圣诞前发货。</p>
-  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_3186a908fdb53252">来源：华尔街见闻</a> · <a href="https://www.gadgetreview.com/hugging-faces-399-robot-duck-bets-on-crowdsourced-ai">来源：Gadget Review</a></div>
-</div>
-
-<div class="card">
-  <h3>🔵 Anthropic 测试 Claude 与机器人及科学实验室工具协作新方法</h3>
-  <p>Anthropic 正在测试让 Claude 与机器人、科学实验室工具协作的新方式，探索将大语言模型能力接入物理世界与科研自动化场景，呼应软银、Hugging Face 押注的"物理 AI"趋势。</p>
-  <div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-08-27/anthropic-tests-new-way-for-claude-to-work-with-robots-and-scientific-lab-tools">来源：彭博社</a></div>
-</div>
-
-<div class="card">
-  <h3>🔵 IBM 发布 Granite 4.2 开源模型，主打本地企业部署</h3>
-  <p>IBM 发布 Granite 4.2 开源权重模型家族，针对本地（on-premises）企业部署与智能体工作流优化，强调可预测的性能与资源需求，满足企业对数据主权与合规的诉求。</p>
-  <div class="source-link">🔗 <a href="https://drive-tech-ai.com/articles/the-ai-postman-august-27-2026">来源：The AI Postman / Drive-Tech-AI</a></div>
-</div>
-
-<div class="card">
-  <h3>🔵 Meta 支付 167 亿美元和解未成年人心理健康指控</h3>
-  <p>Meta 同意支付最高 <strong>167 亿美元</strong>，和解来自 29 个州的指控（隐瞒儿童心理健康危害）。公司新增青少年使用时长限制、夜间屏蔽、更严格年龄校验及家长控制，并就 2016 年大选数据与剑桥分析（Cambridge Analytica）相关索赔达成和解。</p>
-  <div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-08-27/meta-deal-quietly-resolves-claims-over-2016-election-data-cambridge-analytica">来源：彭博社</a></div>
-</div>
-
-<!-- 研究突破 -->
+<h3>🔵 Hugging Face 发布 399 美元开源机器人「微型鸭」Microduck</h3>
+<p>Hugging Face 发布售价 <strong>399 美元</strong>的开源机器人 Microduck（"微型鸭"）：高约 25 厘米、重不到 800 克，无传统双臂，通过可活动的"鸭嘴"抓取，能行走、轮滑，搭载激光雷达 + 强化学习策略（50Hz）。开发者可通过强化学习教授新技能，是首款这一价位具备完整 RL 管线的双足机器人。开放预订后一度每 4 秒售出一台，目标销售超 2 万台（理想 5 万台），首批预计圣诞前发货。CEO 德朗格希望复制 GitHub 模式，将机器人技能开源众包。</p>
+<p>🔗 来源：<a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_3186a908fdb53252" target="_blank">华尔街见闻</a> · <a href="https://www.gadgetreview.com/hugging-faces-399-robot-duck-bets-on-crowdsourced-ai" target="_blank">Gadget Review</a></p>
+<hr>
+<h3>🔵 Anthropic 测试 Claude 与机器人及科学实验室工具协作新方法</h3>
+<p>Anthropic 正在测试让 Claude 与机器人、科学实验室工具协作的新方式，探索将大语言模型能力接入物理世界与科研自动化场景。这与其此前用 Claude 设计蛋白质结合剂、以及"科学实验室工具"路线一脉相承，也呼应软银、Hugging Face 押注的"物理 AI"趋势。</p>
+<p>🔗 来源：<a href="https://www.bloomberg.com/news/articles/2026-08-27/anthropic-tests-new-way-for-claude-to-work-with-robots-and-scientific-lab-tools" target="_blank">彭博社</a></p>
+<hr>
+<h3>🔵 IBM 发布 Granite 4.2 开源模型，主打本地企业部署</h3>
+<p>IBM 发布 Granite 4.2 开源权重模型家族，针对本地（on-premises）企业部署与智能体工作流优化，强调可预测的性能与资源需求，满足企业对数据主权与合规的诉求。</p>
+<p>🔗 来源：<a href="https://drive-tech-ai.com/articles/the-ai-postman-august-27-2026" target="_blank">The AI Postman / Drive-Tech-AI</a></p>
+<hr>
+<h3>🔵 Meta 支付 167 亿美元和解未成年人心理健康指控</h3>
+<p>Meta 同意支付最高 <strong>167 亿美元</strong>，和解来自 29 个州的指控（隐瞒儿童心理健康危害）。作为回应，公司新增青少年使用时长限制、夜间屏蔽、更严格年龄校验及家长控制。此前 Meta 还就 2016 年大选数据与剑桥分析（Cambridge Analytica）相关索赔达成和解。</p>
+<p>🔗 来源：<a href="https://www.bloomberg.com/news/articles/2026-08-27/meta-deal-quietly-resolves-claims-over-2016-election-data-cambridge-analytica" target="_blank">彭博社</a></p>
+<hr>
 <h2>四、研究突破</h2>
-
-<div class="card">
-  <h3>🔬 哈佛 AGENTEX：蛋白质设计「字母表」从 20 种扩至 34 种</h3>
-  <p>哈佛大学团队开发出 AGENTEX 工具，通过改造转运 RNA（tRNA），将蛋白质设计使用的"氨基酸字母表"从天然 20 种扩展至 <strong class="purple">34 种</strong>。该工具无需改造生物体基因组、甚至无需活细胞，即可在试管中构建新型蛋白质。研究发表于最新一期《自然》杂志。</p>
-  <div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_2266a90c41c92552">来源：财联社</a></div>
-</div>
-
-<div class="card">
-  <h3>🔬 寻明生科 AuraIDE 夺冠全球 AI 抗体盲测，亲和力提升 2000 倍</h3>
-  <p>首届国际 AI 抗体设计大赛 AIntibody 完整结果发表于《Nature Biotechnology》。寻明生科（Aureka Biotechnologies）自研模型 AuraIDE 在 Challenge 1 夺冠：冠军抗体亲和力达 94.7 pM，较亲本提升约 <strong class="red">2000 倍</strong>，并包揽前五名三席。赛事由独立湿实验统一验证，共 29 家机构、511 个 AI 设计抗体参评。</p>
-  <div class="source-link">🔗 <a href="https://markmarando.au/nature-biotechnology-aureka-wins-the-global-blinded-ai-antibody-benchmark-ai-design-surpasses-the-best-experimental-result">来源：Nature Biotechnology（PRNewswire）</a></div>
-</div>
-
-<div class="card">
-  <h3>🔬 PULSE：61 项常规血指标生成 251 项代谢组学生物标志物</h3>
-  <p>澳门科技大学开发的 PULSE 框架发表于《Nature Computational Science》（8 月 25 日）。它通过读取 61 项常规血液检测指标，生成 251 项通常需昂贵专项检测的代谢组学生物标志物；在试验中，用 PULSE 输出训练的疾病预测模型与用真实昂贵数据训练的模型表现相当，让常规血检即可解锁深层健康洞察。</p>
-  <div class="source-link">🔗 <a href="https://enoumen.substack.com/p/ai-daily-news-rundown-nvidia-buys">来源：Enoumen</a></div>
-</div>
-
-<div class="card">
-  <h3>🔬 斯坦福 PISA：单碱基分辨率破解 DNA「黑箱」</h3>
-  <p>Stowers 医学研究所与斯坦福大学合作开发的 PISA 方法发表于《Nature Communications》，可在单碱基分辨率下追溯 AI 模型对 DNA 序列的每个预测受哪些碱基影响，分离真实生物学信号与实验技术偏差，并成功设计并实验验证了合成 DNA 序列。</p>
-  <div class="source-link">🔗 <a href="https://www.frontiernews.ai/news/article/ai-just-cracked-the-black-box-of-dna-scientists-ca-c98a382d">来源：FrontierNews.ai</a></div>
-</div>
-
-<!-- 政策与监管 -->
+<h3>🔬 哈佛 AGENTEX：蛋白质设计「字母表」从 20 种扩至 34 种</h3>
+<p>哈佛大学团队开发出名为 AGENTEX 的新工具，通过改造转运 RNA（tRNA），将蛋白质设计使用的"氨基酸字母表"从天然的 20 种扩展至 <strong>34 种</strong>。该工具无需改造生物体基因组、甚至无需活细胞，即可在试管中构建新型蛋白质，为快速设计与制造自然界不存在的蛋白质开辟新路径。研究发表于最新一期《自然》杂志。</p>
+<p>🔗 来源：<a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_2266a90c41c92552" target="_blank">财联社</a></p>
+<hr>
+<h3>🔬 寻明生科 AuraIDE 夺冠全球 AI 抗体盲测，亲和力提升 2000 倍</h3>
+<p>首届国际 AI 抗体设计大赛 AIntibody 完整结果正式发表于《Nature Biotechnology》。寻明生科（Aureka Biotechnologies）自研模型 AuraIDE 在 Challenge 1（计算亲和力成熟）夺冠：冠军抗体经 KinExA 测得亲和力达 94.7 pM，较亲本抗体提升约 2000 倍，并包揽该任务前五名中的三席。赛事由独立湿实验统一验证，共 29 家机构、511 个 AI 设计抗体参评。</p>
+<p>🔗 来源：<a href="https://markmarando.au/nature-biotechnology-aureka-wins-the-global-blinded-ai-antibody-benchmark-ai-design-surpasses-the-best-experimental-result" target="_blank">Nature Biotechnology（PRNewswire）</a></p>
+<hr>
+<h3>🔬 PULSE：61 项常规血指标生成 251 项代谢组学生物标志物</h3>
+<p>澳门科技大学开发的 PULSE 框架发表于《Nature Computational Science》（8 月 25 日）。它通过读取 61 项常规血液检测指标，生成 251 项通常需昂贵专项检测的代谢组学生物标志物；在试验中，用 PULSE 输出训练的疾病预测模型与用真实昂贵数据训练的模型表现相当。这意味着"精准医疗最昂贵的壁垒不是科学，而是化验成本"——PULSE 让常规血检即可解锁深层健康洞察。</p>
+<p>🔗 来源：<a href="https://enoumen.substack.com/p/ai-daily-news-rundown-nvidia-buys" target="_blank">Enoumen</a></p>
+<hr>
+<h3>🔬 斯坦福 PISA：单碱基分辨率破解 DNA「黑箱」</h3>
+<p>Stowers 医学研究所与斯坦福大学合作开发的 PISA 方法（pairwise influence by sequence attribution）发表于《Nature Communications》，可在单碱基分辨率下追溯 AI 模型对 DNA 序列的每个预测受哪些碱基影响，从而分离真实生物学信号与实验技术偏差。团队借此发现染色质结构域边界，并成功设计并实验验证了合成 DNA 序列。</p>
+<p>🔗 来源：<a href="https://www.frontiernews.ai/news/article/ai-just-cracked-the-black-box-of-dna-scientists-ca-c98a382d" target="_blank">FrontierNews.ai</a></p>
+<hr>
 <h2>五、政策与监管</h2>
-
-<div class="card">
-  <h3>⚠️ 中国道路交通安全法草案新增「自动驾驶」专章</h3>
-  <p>8 月 25 日，道路交通安全法修订草案提请全国人大常委会初审，首次增设自动驾驶专章：界定自动驾驶与驾驶辅助功能，规定上路条件，并明确交通事故责任与保险安排——当自动驾驶功能启用时发生违规，由车辆制造商或进口商处理。</p>
-  <div class="source-link">🔗 <a href="https://keypoint.com/aiflsh-07-august-2026">来源：Keypoint</a></div>
-</div>
-
-<div class="card">
-  <h3>⚠️ 欧盟 AI 法第 50 条透明度规则生效，Anthropic 落地 C2PA 水印</h3>
-  <p>欧盟《人工智能法案》第 50 条透明度规则 8 月 2 日正式生效，Anthropic 于 8 月 14 日公布落地方式：Claude 生成文本嵌入不可感知水印、生成文件采用 C2PA 数字签名溯源元数据。非欧盟主体进入欧盟市场须指定授权代表，违规最高可处 1500 万欧元或全球营业额 3%。</p>
-  <div class="source-link">🔗 <a href="https://keypoint.com/aiflsh-07-august-2026">来源：Keypoint</a> · <a href="https://www.toutiao.com/a7678394861686358570">来源：今日头条</a></div>
-</div>
-
-<div class="card">
-  <h3>⚠️ 美国 NIST 发布 TEVV-Athlon AI 评估框架草案</h3>
-  <p>美国 NIST 发布 NIST AI 200-2《TEVV-Athlon》框架初稿，提供对 AI 系统真实世界影响与结果的测试、评估、验证与确认（TEVV）方法，覆盖机器学习模型、大语言模型、多模态模型与智能体系统，意见征询截止 10 月 6 日。</p>
-  <div class="source-link">🔗 <a href="https://keypoint.com/aiflsh-07-august-2026">来源：Keypoint</a></div>
-</div>
-
-<div class="card">
-  <h3>⚠️ 中国支付清算协会印发《智能体支付应用自律公约》</h3>
-  <p>8 月 24 日，中国支付清算协会印发《智能体支付应用自律公约》，自发布之日起实施。公约要求在 KYC 基础上探索建立"了解你的智能体（KYA）"机制，明确授权边界、分级分类管理，按"谁提供支付服务谁负责"原则承担主体责任。目前支付宝"AI 支付"已完成 3 亿笔智能体支付、微信支付已发布 AI 支付接入 Skill。</p>
-  <div class="source-link">🔗 <a href="https://finance.people.com.cn/n1/2026/0827/c1004-40786810.html">来源：人民日报（人民网）</a></div>
-</div>
-
-<!-- 核心观察 -->
+<h3>⚠️ 中国道路交通安全法草案新增「自动驾驶」专章</h3>
+<p>8 月 25 日，道路交通安全法修订草案提请全国人大常委会初审，首次增设自动驾驶专章：界定自动驾驶与驾驶辅助功能，规定自动驾驶汽车上路条件，并明确交通事故责任与保险安排——当自动驾驶功能启用时发生违规，由车辆制造商或进口商处理。中国正将自动驾驶 AI 系统纳入主流法律框架。</p>
+<p>🔗 来源：<a href="https://keypoint.com/aiflsh-07-august-2026" target="_blank">Keypoint</a></p>
+<hr>
+<h3>⚠️ 欧盟 AI 法第 50 条透明度规则生效，Anthropic 落地 C2PA 水印</h3>
+<p>欧盟《人工智能法案》第 50 条透明度规则 8 月 2 日正式生效，Anthropic 于 8 月 14 日公布其落地方式：Claude 生成文本嵌入不可感知水印、生成文件采用 C2PA 数字签名溯源元数据。非欧盟主体进入欧盟市场须指定授权代表，违规最高可处 1500 万欧元或全球营业额 3%。中国大模型出海面临训练数据版权溯源鉴证等合规门槛。</p>
+<p>🔗 来源：<a href="https://keypoint.com/aiflsh-07-august-2026" target="_blank">Keypoint</a> · <a href="https://www.toutiao.com/a7678394861686358570" target="_blank">今日头条</a></p>
+<hr>
+<h3>⚠️ 美国 NIST 发布 TEVV-Athlon AI 评估框架草案</h3>
+<p>美国国家标准与技术研究院（NIST）发布 NIST AI 200-2《TEVV-Athlon》框架初稿，提供对 AI 系统真实世界影响与结果的测试、评估、验证与确认（TEVV）方法，覆盖机器学习模型、大语言模型、多模态模型与智能体系统，意见征询截止 10 月 6 日。美国 AI 治理正转向"在真实运行场景中验证证据"。</p>
+<p>🔗 来源：<a href="https://keypoint.com/aiflsh-07-august-2026" target="_blank">Keypoint</a></p>
+<hr>
+<h3>⚠️ 中国支付清算协会印发《智能体支付应用自律公约》</h3>
+<p>8 月 24 日，中国支付清算协会印发《智能体支付应用自律公约》，自发布之日起实施。公约要求会员单位在"了解你的客户（KYC）"基础上探索建立"了解你的智能体（KYA）"机制，明确授权边界、建立分级分类管理，并按"谁提供支付服务谁负责"原则承担主体责任。目前支付宝"AI 支付"已完成 3 亿笔智能体支付、微信支付已发布 AI 支付接入 Skill。</p>
+<p>🔗 来源：<a href="https://finance.people.com.cn/n1/2026/0827/c1004-40786810.html" target="_blank">人民日报（人民网）</a></p>
+<hr>
 <h2>核心观察</h2>
-<ul class="bullet">
-  <li><span class="red">①</span> <strong>算力叙事再确认</strong>：英伟达首破千亿指引 + 2028 财年 70% 增速 + 4420 亿美元单日市值涨幅，市场对"AI 需求见顶"的质疑被强力回击，"计算即收入"成为共识。</li>
-  <li><span class="orange">②</span> <strong>产业并购进入「中间层」</strong>：英伟达收 Hugging Face（开源生态）、软银收 1X（物理 AI），巨头从芯片层向模型层、机器人层纵向整合。</li>
-  <li><span class="yellow">③</span> <strong>AI 安全从"风险讨论"走向"集体动员"</strong>：100 多家企业联名信 + CrowdStrike 财报印证，AI 攻防正成为网络安全行业新增长极。</li>
-  <li><span class="blue">④</span> <strong>开源与降价重构竞争格局</strong>：美国大模型密集降价、IBM Granite 4.2 主打本地部署，前沿模型溢价被持续压缩。</li>
-  <li><span class="purple">⑤</span> <strong>治理"行为级"精细化</strong>：中国自动驾驶专章立法、智能体支付 KYA、欧盟透明度规则落地，AI 责任与合规进入可执行阶段。</li>
-</ul>
+<ul><li><strong>算力叙事再确认</strong>：英伟达首破千亿指引 + 2028 财年 70% 增速 + 4420 亿美元单日市值涨幅，市场对"AI 需求见顶"的质疑被强力回击，"计算即收入"成为共识。</li><li><strong>产业并购进入「中间层」</strong>：英伟达收 Hugging Face（开源生态）、软银收 1X（物理 AI），巨头从芯片层向模型层、机器人层纵向整合。</li><li><strong>AI 安全从"风险讨论"走向"集体动员"</strong>：100 多家企业联名信 + CrowdStrike 财报印证，AI 攻防正成为网络安全行业新增长极。</li><li><strong>开源与降价重构竞争格局</strong>：美国大模型密集降价、IBM Granite 4.2 主打本地部署，前沿模型溢价被持续压缩。</li><li><strong>治理"行为级"精细化</strong>：中国自动驾驶专章立法、智能体支付 KYA、欧盟透明度规则落地，AI 责任与合规进入可执行阶段。</li></ul>
+<hr>
+<p>*报告生成时间：2026-08-28 07:25 GMT+8 · My Research Central · via WB*</p>
 
 <div class="report-footer">
-  数据来源：彭博社 / 财联社 / 华尔街见闻 / 证券时报 / 路透社 / Nature 系列 · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

@@ -1,474 +1,503 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日AI全球新闻 | 2026-06-04</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI新闻 · 2026-06-04</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
-  --bg-primary: #faf9f7;
-  --bg-card: #f4f2ef;
-  --bg-card-hover: #ffffff;
-  --text-primary: #e8e8f0;
-  --text-secondary: #a0a0b8;
-  --text-muted: #6b6b80;
-  --accent-red: #ff4757;
-  --accent-green: #2ed573;
-  --accent-blue: #5b7fff;
-  --accent-orange: #ffa502;
-  --accent-purple: #b36bff;
-  --accent-cyan: #00d2d3;
-  --border-color: #f4f2ef;
-  --tag-bg: rgba(91,127,255,0.15);
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
   padding: 16px;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
+  font-size: 15px;
 }
-.header {
-  text-align: center;
-  padding: 24px 0 20px;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 24px;
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
 }
-.header h1 {
-  font-size: 1.5em;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 6px;
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
 }
-.header .date { color: var(--text-muted); font-size: 0.85em; }
-.section {
-  margin-bottom: 28px;
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
-.section-title {
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
   font-size: 1.15em;
-  font-weight: 700;
-  margin-bottom: 14px;
-  padding-left: 12px;
-  border-left: 3px solid var(--accent-blue);
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
 }
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
 .card {
-  background: var(--bg-card);
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 14px;
-  border: 1px solid var(--border-color);
-  transition: background 0.2s;
-}
-.card:hover { background: var(--bg-card-hover); }
-.card-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.card-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 28px;
-  height: 28px;
+  background: var(--card-alt);
   border-radius: 8px;
-  background: var(--accent-blue);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.85em;
-  flex-shrink: 0;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
 }
-.card-num.red { background: var(--accent-red); }
-.card-num.green { background: var(--accent-green); }
-.card-num.orange { background: var(--accent-orange); }
-.card-num.purple { background: var(--accent-purple); }
-.card-num.cyan { background: var(--accent-cyan); }
-.card-title {
-  font-size: 1.05em;
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
   font-weight: 600;
-  line-height: 1.4;
 }
-.card-body { color: var(--text-secondary); font-size: 0.92em; }
-.card-body p { margin-bottom: 8px; }
-.card-body strong { color: var(--text-primary); }
-.card-body ul { padding-left: 18px; margin: 6px 0; }
-.card-body li { margin-bottom: 4px; }
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.78em;
-  font-weight: 600;
   margin-right: 4px;
-  margin-bottom: 4px;
 }
-.tag-red { background: rgba(255,71,87,0.2); color: var(--accent-red); }
-.tag-green { background: rgba(46,213,115,0.2); color: var(--accent-green); }
-.tag-blue { background: rgba(91,127,255,0.2); color: var(--accent-blue); }
-.tag-orange { background: rgba(255,165,2,0.2); color: var(--accent-orange); }
-.tag-purple { background: rgba(179,107,255,0.2); color: var(--accent-purple); }
-.tag-cyan { background: rgba(0,210,211,0.2); color: var(--accent-cyan); }
-.insight {
-  background: rgba(91,127,255,0.08);
-  border-left: 3px solid var(--accent-blue);
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
   padding: 10px 14px;
-  border-radius: 0 8px 8px 0;
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: var(--accent-blue);
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
 }
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
   margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
   font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
 }
-.data-table th {
-  background: rgba(91,127,255,0.15);
-  padding: 8px 10px;
-  text-align: left;
-  color: var(--accent-blue);
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
   font-weight: 600;
-  border-bottom: 1px solid var(--border-color);
 }
-.data-table td {
-  padding: 7px 10px;
-  border-bottom: 1px solid rgba(42,42,62,0.6);
-  color: var(--text-secondary);
-}
-.data-table td:first-child { color: var(--text-primary); font-weight: 500; }
-.trend-section {
-  background: linear-gradient(135deg, rgba(179,107,255,0.1), rgba(91,127,255,0.08));
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 20px;
-}
-.trend-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.trend-num {
-  min-width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--accent-purple);
-  color: #fff;
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 0.75em;
-  font-weight: 700;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
   flex-shrink: 0;
 }
-.trend-text { color: var(--text-secondary); font-size: 0.92em; }
-.trend-text strong { color: var(--text-primary); }
-.footer {
-  text-align: center;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-color);
-  color: var(--text-muted);
-  font-size: 0.78em;
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
 }
-@media (max-width: 480px) {
-  body { padding: 10px; }
-  .card { padding: 14px; }
-  .header h1 { font-size: 1.25em; }
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
 }
-</style>
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>🤖 每日AI全球新闻</h1>
-  <div class="date">📅 2026年6月4日 星期四 | 编辑：Cleo 🐾</div>
+<div class="report-header">
+  <h1>每日AI新闻 · 2026-06-04</h1>
+  <div class="meta">📅 2026年6月4日 星期四 | 编辑：Cleo 🐾</div>
 </div>
 
-<!-- 🔥 头条 -->
-<div class="section">
-  <div class="section-title">🔥 今日头条</div>
+<hr>
+<h2>🔥 今日头条</h2>
+<h3>1. 微软 Build 2026：全面转向「智能体时代」，一口气发布9款自研模型</h3>
+<p><strong>6月2-3日，微软Build 2026开发者大会在旧金山开幕。与往年聚焦Copilot升级不同，今年几乎所有重磅发布都围绕AI智能体这一个核心主题展开。</strong></p>
+<p><strong>🏭 自研AI模型矩阵（MAI系列）</strong></p>
+<ul><li><strong>MAI-Thinking-1</strong>：首款自研推理模型，350亿活跃参数，128K上下文，面向复杂多步骤推理和代码生成，承诺未蒸馏第三方模型</li><li><strong>MAI-Code-1-Flash</strong>：首款代码生成模型</li><li>其余7款覆盖图像生成、语音生成、语音转录等，完善自研模型产品矩阵</li><li><strong>战略意义</strong>：标志微软正式降低对OpenAI模型依赖，增强AI战略自主权</li></ul>
+<p><strong>🤖 智能体生态体系</strong></p>
+<ul><li><strong>Scout 常驻AI助理</strong>：基于OpenClaw框架，可与Outlook/OneDrive/Teams深度协作，主动执行邮件整理、会议安排、报销管理等任务，超3000名微软员工内测中</li><li><strong>Project Solara 智能体操作系统</strong>：基于Android底层，联合高通、联发科打造，支持智能体跨PC/桌面终端/可穿戴设备协同工作</li><li><strong>Microsoft Execution Containers（MXC）</strong>：智能体安全沙箱，解决企业部署时的数据安全隐患</li><li><strong>Intelligent Terminal</strong>：将AI智能体能力嵌入Windows Terminal，开发者无需切换窗口即可调用AI</li></ul>
+<p><strong>💻 Surface RTX Spark Dev Box</strong></p>
+<ul><li>迷你AI开发主机，英伟达RTX Spark平台 + Arm架构CPU + Blackwell GPU</li><li>128GB统一内存，本地运行最高1200亿参数大模型</li><li>预装VS Code、GitHub Copilot，Windows 11 Pro开发者优化</li></ul>
+<p><strong>⚛️ 量子+AI融合</strong></p>
+<ul><li><strong>Majorana 2</strong>第二代拓扑量子芯片：量子比特稳定性提升超1000倍，部分寿命超1分钟</li><li>Microsoft Discovery平台开放：智能体工作流加速科研</li></ul>
+<blockquote>📌 <strong>核心判断</strong>：微软从「Copilot时代」转向「Agent优先」时代，战略定位从应用层升级为智能体时代的操作系统提供者。</blockquote>
+<hr>
+<h3>2. COMPUTEX 2026：英伟达正式进军PC芯片，英特尔发布1.8nm至强6+</h3>
+<p><strong>6月1-5日，COMPUTEX 2026在台北举行，以「AI Together」为主题，1500家厂商参展。三大CEO同台：高通安蒙、英伟达黄仁勋、英特尔陈立武。</strong></p>
+<p><strong>🟢 英伟达：RTX Spark入局PC CPU</strong></p>
+<ul><li>20核Grace CPU + Blackwell架构GPU组合</li><li>主打「永远在线的本地AI体验」，支持全天候离线AI运算</li><li>联手联发科深度自研，量产机型预计2026年秋季上市</li><li>消息公布后：英伟达股价暴涨超6%，英特尔跌超4%，高通暴跌超8%</li><li><strong>行业影响</strong>：PC行业十年最大变局，打破英特尔长期垄断</li></ul>
+<p><strong>🔵 英特尔：18A制程至强6+发力推理</strong></p>
+<ul><li>至强6+（Clearwater Forest）：全球首款1.8nm数据中心CPU</li><li>机架级AI基础设施蓝图：联手SambaNova、富士康重构训练→推理算力配比</li><li>第三代酷睿Ultra：首款Intel 18A制程消费级处理器，完整XPU体验</li><li>发布后股价一度暴涨超9%，收涨逾6%</li></ul>
+<p><strong>🟡 其他厂商</strong></p>
+<ul><li>华硕：Zenbook 14/Expertbook/ROG Strix Scar 18三大AI PC产品线</li><li>技嘉：AORUS RTX 50 INFINITY系列，全系标配背插式供电</li></ul>
+<blockquote>📌 <strong>核心判断</strong>：COMPUTEX 2026标志着PC行业正式进入AI算力内卷时代，2026年秋季PC市场将迎来大洗牌。</blockquote>
+<hr>
+<h3>3. Alphabet 史上最大融资800亿美元押注AI算力</h3>
+<p><strong>6月1日，谷歌母公司Alphabet宣布800亿美元股权融资计划，全部投向AI基础设施与算力建设。</strong></p>
+<ul><li>融资结构：公开发行 + 伯克希尔·哈撒韦100亿美元专项注资</li><li>资金用途：AI数据中心、下一代TPU芯片研发、Gemini模型训练</li><li><strong>巴菲特背书</strong>：近三年最大单笔科技投资之一</li><li>盘后反应：GOOGL一度下跌约2%，随后收窄至约1%</li><li><strong>行业背景</strong>：软银同日宣布在法国投资750亿欧元打造5GW欧洲最大AI计算集群</li></ul>
+<blockquote>📌 <strong>核心判断</strong>：全球AI军备竞赛进入「重资产时代」，科技巨头纷纷将资本开支推向历史新高。</blockquote>
+<hr>
+<h2>🧠 AI大模型</h2>
+<h3>4. Anthropic：9650亿美元估值登顶，Mythos级模型即将商业化</h3>
+<ul><li>H轮融资650亿美元，投后估值达9650亿美元，超越OpenAI成为全球估值最高私营AI公司</li><li>距离成为首家万亿美元AI公司仅一步之遥，估值较几个月前3800亿翻倍</li><li><strong>Claude Opus 4.8</strong>已发布：代码能力、推理能力和多步骤任务处理全面提升</li><li><strong>Mythos级模型</strong>已完成安全控制测试，预计未来几周向客户开放</li></ul>
+<h3>5. Google Gemini生态：从独立功能到日常软件内置</h3>
+<ul><li><strong>Gemini企业智能体平台</strong>：支持企业级AI工作流搭建</li><li><strong>Gemini 3.5 Flash</strong>成为搜索AI模式默认模型</li><li><strong>Gemma 4</strong>开源模型家族发布，降低企业AI使用门槛</li><li>AI能力全面嵌入搜索、Workspace、开发者工具、谷歌云</li></ul>
+<h3>6. GPT-5.6曝光：150万上下文窗口</h3>
+<ul><li>开发者在OpenAI Codex后端日志中发现未官宣模型，内部代号iris-alpha</li><li>支持150万上下文窗口，较GPT-5.5提升约43%</li><li>另发现ember-alpha与beacon-alpha版本代号</li><li>预计6月发布</li></ul>
+<hr>
+<h2>💻 AI Coding &amp; 智能体</h2>
+<h3>7. Agentic Coding 2026全景报告：四大赛道分化</h3>
+<p><strong>软件开发的底层逻辑被彻底重写，市场分化为4个明确赛道：</strong></p>
+<table><thead><tr><th>赛道</th><th>特点</th><th>代表工具</th></tr></thead><tbody><tr><td>IDE内嵌式</td><td>最低迁移成本，适合个人</td><td>GitHub Copilot、Cursor、Windsurf</td></tr><tr><td>CLI代理式</td><td>全流程自主，适合复杂项目</td><td>Claude Code、Codex CLI、OpenCode</td></tr><tr><td>平台托管式</td><td>托管+团队协作，企业级</td><td>Devin、Augment Code</td></tr><tr><td>SDLC全生命周期</td><td>AI纳入企业治理体系</td><td>Secure Code Warrior、CodeSignal</td></tr></tbody></table>
+<h3>8. MiniMax M3：12小时零人工干预复现顶会论文</h3>
+<ul><li>自主运行近12小时，独立复现ICLR 2025杰出论文全部实验</li><li>完成18次commit，生成23张实验图表</li><li>SWE-Bench Pro得分59.0%，超过GPT-5.5和Gemini 3.1 Pro</li><li>Terminal-Bench得分66.0%，OSWorld完成率70.06%</li></ul>
+<h3>9. Memory OS：6层记忆架构为AI Agent装上「长期大脑」</h3>
+<ul><li>2026年6月开源（MIT协议），搭建于Hermes Agent之上</li><li>6层架构：工作区文件→会话历史→结构化事实→Fabric跨会话提取→向量数据库→LLM Wiki自动策展</li><li>核心目标：仅把最相关的历史信息注入上下文，解决「每次新任务都需重新解释背景」的痛点</li></ul>
+<h3>10. SpaceX-Cursor交易：600亿美元收购选项 + Grok V9训练完成</h3>
+<ul><li>SpaceX可选择以600亿美元收购Cursor，或支付100亿美元获取联合开发成果</li><li>Cursor年化收入突破30亿美元（4月），2月仅20亿美元，两月增长50%</li><li><strong>Grok V9-Medium</strong>训练完成：1.5万亿参数（现役三倍），训练数据灌入Cursor编程交互记录</li><li>2-3周后面向公众发布</li></ul>
+<hr>
+<h2>⚡ AI基础设施 &amp; 芯片</h2>
+<h3>11. 国产AI芯片：9款通过国家安全可靠测评，上市潮加速</h3>
+<ul><li>7家国内企业9款AI芯片首次通过国家信创安全等级I级认证</li><li>2025年中国AI芯片出货量约401.6万张，本土厂商165万张，市场份额攀升至41%</li><li><strong>上市里程碑</strong>：摩尔线程科创板首日+400%、沐曦股份+700%、壁仞科技「港股GPU第一股」</li><li>国产替代进程持续深化</li></ul>
+<h3>12. 英特尔18A制程至强6+：全球首款1.8nm数据中心CPU</h3>
+<ul><li>代号Clearwater Forest，基于Intel 18A制程</li><li>四线并进战略：个人PC / 边缘端智能体 / 数据中心推理 / 物理AI</li><li>联手SambaNova、富士康、Vista Equity Partners重构算力交付模式</li><li>发布后股价一度暴涨超9%</li></ul>
+<hr>
+<h2>🌍 政策 &amp; 监管</h2>
+<h3>13. EU AI Act：8月2日正式生效执法</h3>
+<ul><li>2026年8月2日，法案大部分规则将正式实施并开始执法</li><li>涵盖AI生成内容透明度、高风险AI系统合规要求</li><li>欧盟委员会正制定AI内容标记行为准则，最终版预计6月发布</li><li><strong>影响范围</strong>：不仅适用欧盟本地企业，所有服务欧盟用户的企业均需合规</li></ul>
+<hr>
+<h2>📊 关键数据速览</h2>
+<table><thead><tr><th>指标</th><th>数据</th><th>来源</th></tr></thead><tbody><tr><td>Anthropic投后估值</td><td>$9,650亿</td><td>Kersai/Bloomberg</td></tr><tr><td>Alphabet AI融资规模</td><td>$800亿</td><td>官方公告</td></tr><tr><td>伯克希尔注资Alphabet</td><td>$100亿</td><td>官方公告</td></tr><tr><td>SpaceX-Cursor收购选项</td><td>$600亿</td><td>Bloomberg</td></tr><tr><td>Cursor年化收入</td><td>$30亿（4月）</td><td>Bloomberg</td></tr><tr><td>Grok V9参数量</td><td>1.5万亿</td><td>xAI官方</td></tr><tr><td>MAI-Thinking-1参数</td><td>350亿活跃</td><td>微软Build</td></tr><tr><td>英伟达股价涨幅</td><td>+6%（COMPUTEX后）</td><td>市场</td></tr><tr><td>英特尔股价涨幅</td><td>+6%~9%（至强6+后）</td><td>市场</td></tr><tr><td>中国AI芯片本土份额</td><td>41%（2025年）</td><td>行业统计</td></tr><tr><td>EU AI Act生效日</td><td>2026-08-02</td><td>欧盟官方</td></tr></tbody></table>
+<hr>
+<h2>🔮 趋势判断</h2>
+<ul><li><strong>智能体时代全面到来</strong>：微软Build 2026 + COMPUTEX 2026双展同周，所有巨头都在围绕AI Agent构建下一代计算生态</li><li><strong>AI算力军备竞赛进入「重资产时代」</strong>：Alphabet 800亿 + 软银750亿欧元，资本开支创历史新高</li><li><strong>PC行业十年最大变局</strong>：英伟达入局PC CPU + 英特尔18A反击 + Arm架构崛起，2026秋季将迎大洗牌</li><li><strong>AI Coding从辅助走向主导</strong>：Cursor ARR从20亿飙至30亿，Agentic Coding四大赛道分化成型</li><li><strong>国产AI芯片进入收获期</strong>：9款芯片通过安全认证 + 密集上市潮，41%本土份额标志着替代进程进入加速阶段</li></ul>
+<hr>
+<p>*数据截至 2026-06-04 07:30 CST | 数据来源：WebSearch, WebFetch, Bloomberg, 官方公告*</p>
 
-  <!-- Card 1: 微软 Build 2026 -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num red">1</div>
-      <div class="card-title">微软 Build 2026：全面转向「智能体时代」，一口气发布9款自研模型</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-blue">MAI模型</span>
-      <span class="tag tag-purple">智能体</span>
-      <span class="tag tag-cyan">量子芯片</span>
-      <p>6月2-3日，微软Build 2026在旧金山开幕。几乎所有重磅发布都围绕<strong>AI智能体</strong>这一核心主题。</p>
-
-      <p><strong>🏭 自研AI模型矩阵（MAI系列）</strong></p>
-      <ul>
-        <li><strong>MAI-Thinking-1</strong>：首款推理模型，350亿活跃参数，128K上下文，承诺未蒸馏第三方模型</li>
-        <li><strong>MAI-Code-1-Flash</strong>：首款代码生成模型</li>
-        <li>其余7款覆盖图像/语音生成、转录等，完善自研模型矩阵</li>
-        <li>战略意义：标志微软正式降低对OpenAI依赖</li>
-      </ul>
-
-      <p><strong>🤖 智能体生态体系</strong></p>
-      <ul>
-        <li><strong>Scout</strong>：常驻AI助理，基于OpenClaw框架，与Outlook/Teams深度协作，3000名员工内测</li>
-        <li><strong>Project Solara</strong>：智能体操作系统，基于Android底层，联合高通/联发科打造</li>
-        <li><strong>MXC</strong>：智能体安全沙箱，企业级数据隔离</li>
-        <li><strong>Intelligent Terminal</strong>：AI能力嵌入Windows Terminal</li>
-      </ul>
-
-      <p><strong>💻 Surface RTX Spark Dev Box</strong></p>
-      <ul>
-        <li>迷你AI开发主机，Arm CPU + Blackwell GPU，128GB统一内存</li>
-        <li>本地运行最高1200亿参数大模型</li>
-      </ul>
-
-      <p><strong>⚛️ Majorana 2量子芯片</strong></p>
-      <ul>
-        <li>量子比特稳定性提升超1000倍，部分寿命超1分钟</li>
-      </ul>
-
-      <div class="insight">📌 核心判断：微软从「Copilot时代」转向「Agent优先」时代，战略定位升级为智能体时代的操作系统提供者。</div>
-    </div>
-  </div>
-
-  <!-- Card 2: COMPUTEX 2026 -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num green">2</div>
-      <div class="card-title">COMPUTEX 2026：英伟达进军PC芯片，英特尔发布1.8nm至强6+</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-green">英伟达</span>
-      <span class="tag tag-blue">英特尔</span>
-      <span class="tag tag-orange">PC变局</span>
-      <p>6月1-5日，COMPUTEX 2026在台北举行，1500家厂商参展。三大CEO同台论AI。</p>
-
-      <p><strong>🟢 英伟达：RTX Spark入局PC CPU</strong></p>
-      <ul>
-        <li>20核Grace CPU + Blackwell GPU，主打「永远在线的本地AI体验」</li>
-        <li>联手联发科自研，量产机型预计2026秋季上市</li>
-        <li>市场反应：英伟达+6%，英特尔-4%，高通-8%</li>
-      </ul>
-
-      <p><strong>🔵 英特尔：18A制程至强6+发力推理</strong></p>
-      <ul>
-        <li>至强6+（Clearwater Forest）：全球首款1.8nm数据中心CPU</li>
-        <li>机架级AI基础设施：联手SambaNova、富士康</li>
-        <li>第三代酷睿Ultra：首款18A制程消费级处理器</li>
-        <li>发布后股价一度暴涨超9%，收涨逾6%</li>
-      </ul>
-
-      <div class="insight">📌 核心判断：PC行业正式进入AI算力内卷时代，2026秋季PC市场将迎大洗牌。</div>
-    </div>
-  </div>
-
-  <!-- Card 3: Alphabet 800亿 -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num orange">3</div>
-      <div class="card-title">Alphabet 史上最大融资800亿美元押注AI算力</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-red">800亿美元</span>
-      <span class="tag tag-green">巴菲特背书</span>
-      <p>6月1日，谷歌母公司Alphabet宣布800亿美元股权融资，全部投向AI基础设施。</p>
-      <ul>
-        <li>伯克希尔·哈撒韦100亿美元专项注资</li>
-        <li>资金用途：AI数据中心、下一代TPU研发、Gemini训练</li>
-        <li>同期软银宣布在法国投资750亿欧元打造5GW欧洲最大AI集群</li>
-      </ul>
-      <div class="insight">📌 AI军备竞赛进入「重资产时代」，科技巨头资本开支创历史新高。</div>
-    </div>
-  </div>
-</div>
-
-<!-- 🧠 AI大模型 -->
-<div class="section">
-  <div class="section-title">🧠 AI大模型</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num purple">4</div>
-      <div class="card-title">Anthropic 9650亿美元估值登顶，Mythos级模型即将商业化</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-red">$9,650亿</span>
-      <p>H轮融资650亿美元，投后估值超越OpenAI。<strong>Claude Opus 4.8</strong>已发布，<strong>Mythos级模型</strong>完成安全测试，预计几周内开放。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num blue">5</div>
-      <div class="card-title">Google Gemini生态：从独立功能到日常软件内置</div>
-    </div>
-    <div class="card-body">
-      <p>Gemini企业智能体平台发布；<strong>Gemini 3.5 Flash</strong>成为搜索AI默认模型；<strong>Gemma 4</strong>开源模型家族发布。AI能力全面嵌入搜索、Workspace、开发者工具和谷歌云。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num cyan">6</div>
-      <div class="card-title">GPT-5.6曝光：150万上下文窗口</div>
-    </div>
-    <div class="card-body">
-      <p>开发者在Codex后端日志中发现未官宣模型iris-alpha，支持<strong>150万上下文窗口</strong>，较GPT-5.5提升43%。另有ember-alpha与beacon-alpha代号。预计6月发布。</p>
-    </div>
-  </div>
-</div>
-
-<!-- 💻 AI Coding -->
-<div class="section">
-  <div class="section-title">💻 AI Coding & 智能体</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num purple">7</div>
-      <div class="card-title">Agentic Coding 2026全景报告：四大赛道分化成型</div>
-    </div>
-    <div class="card-body">
-      <table class="data-table">
-        <tr><th>赛道</th><th>特点</th><th>代表工具</th></tr>
-        <tr><td>IDE内嵌式</td><td>最低迁移成本</td><td>GitHub Copilot、Cursor、Windsurf</td></tr>
-        <tr><td>CLI代理式</td><td>全流程自主</td><td>Claude Code、Codex CLI、OpenCode</td></tr>
-        <tr><td>平台托管式</td><td>企业级托管+协作</td><td>Devin、Augment Code</td></tr>
-        <tr><td>SDLC全周期</td><td>纳入企业治理</td><td>Secure Code Warrior、CodeSignal</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num green">8</div>
-      <div class="card-title">MiniMax M3：12小时零人工干预复现顶会论文</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-green">SWE-Bench 59%</span>
-      <p>自主运行12小时，独立复现ICLR 2025杰出论文全部实验。完成18次commit，生成23张实验图表。SWE-Bench Pro 59.0%超过GPT-5.5，Terminal-Bench 66.0%，OSWorld 70.06%。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num blue">9</div>
-      <div class="card-title">Memory OS：6层记忆架构为AI Agent装上「长期大脑」</div>
-    </div>
-    <div class="card-body">
-      <p>2026年6月开源（MIT协议），搭建于Hermes Agent之上。6层架构：工作区文件→会话历史→结构化事实→Fabric跨会话提取→向量数据库→LLM Wiki自动策展。核心目标：仅注入最相关历史信息，解决「每次都需重新解释背景」的痛点。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num orange">10</div>
-      <div class="card-title">SpaceX-Cursor：600亿美元收购选项 + Grok V9训练完成</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-red">$600亿</span>
-      <span class="tag tag-green">ARR $30亿</span>
-      <p>SpaceX可选择600亿美元收购Cursor，或100亿获取联合开发成果。Cursor ARR从2月20亿飙至4月30亿。Grok V9-Medium 1.5万亿参数训练完成，训练数据灌入Cursor编程记录，2-3周后发布。</p>
-    </div>
-  </div>
-</div>
-
-<!-- ⚡ AI基础设施 -->
-<div class="section">
-  <div class="section-title">⚡ AI基础设施 & 芯片</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num red">11</div>
-      <div class="card-title">国产AI芯片：9款通过安全认证，上市潮加速</div>
-    </div>
-    <div class="card-body">
-      <span class="tag tag-red">41%本土份额</span>
-      <p>7家企业9款AI芯片首次通过国家信创安全等级I级认证。2025年本土厂商出货165万张，市场份额达41%。摩尔线程+400%、沐曦+700%首日涨幅，壁仞科技「港股GPU第一股」。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num blue">12</div>
-      <div class="card-title">英特尔18A至强6+：全球首款1.8nm数据中心CPU</div>
-    </div>
-    <div class="card-body">
-      <p>代号Clearwater Forest。四线并进：个人PC / 边缘端智能体 / 数据中心推理 / 物理AI。联手SambaNova、富士康重构算力交付模式。发布后股价一度暴涨超9%。</p>
-    </div>
-  </div>
-</div>
-
-<!-- 🌍 政策 -->
-<div class="section">
-  <div class="section-title">🌍 政策 & 监管</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="card-num cyan">13</div>
-      <div class="card-title">EU AI Act：8月2日正式生效执法</div>
-    </div>
-    <div class="card-body">
-      <p>2026年8月2日大部分规则正式实施。涵盖AI生成内容透明度、高风险AI系统合规。行为准则最终版预计6月发布。所有服务欧盟用户的企业均需合规，AI治理成董事会级议题。</p>
-    </div>
-  </div>
-</div>
-
-<!-- 关键数据 -->
-<div class="section">
-  <div class="section-title">📊 关键数据速览</div>
-  <div class="card">
-    <table class="data-table">
-      <tr><th>指标</th><th>数据</th></tr>
-      <tr><td>Anthropic投后估值</td><td>$9,650亿</td></tr>
-      <tr><td>Alphabet AI融资</td><td>$800亿</td></tr>
-      <tr><td>伯克希尔注资Alphabet</td><td>$100亿</td></tr>
-      <tr><td>SpaceX-Cursor收购选项</td><td>$600亿</td></tr>
-      <tr><td>Cursor ARR（4月）</td><td>$30亿</td></tr>
-      <tr><td>Grok V9参数量</td><td>1.5万亿</td></tr>
-      <tr><td>MAI-Thinking-1参数</td><td>350亿活跃</td></tr>
-      <tr><td>英伟达股价涨幅</td><td>+6%（COMPUTEX）</td></tr>
-      <tr><td>英特尔股价涨幅</td><td>+6%~9%（至强6+）</td></tr>
-      <tr><td>中国AI芯片本土份额</td><td>41%（2025年）</td></tr>
-      <tr><td>EU AI Act生效</td><td>2026-08-02</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- 趋势判断 -->
-<div class="section">
-  <div class="section-title">🔮 趋势判断</div>
-  <div class="trend-section">
-    <div class="trend-item">
-      <div class="trend-num">1</div>
-      <div class="trend-text"><strong>智能体时代全面到来</strong> — 微软Build + COMPUTEX双展同周，所有巨头都在围绕AI Agent构建下一代计算生态</div>
-    </div>
-    <div class="trend-item">
-      <div class="trend-num">2</div>
-      <div class="trend-text"><strong>AI算力军备竞赛进入「重资产时代」</strong> — Alphabet 800亿 + 软银750亿欧元，资本开支创历史新高</div>
-    </div>
-    <div class="trend-item">
-      <div class="trend-num">3</div>
-      <div class="trend-text"><strong>PC行业十年最大变局</strong> — 英伟达入局PC CPU + 英特尔18A反击 + Arm架构崛起，2026秋季大洗牌</div>
-    </div>
-    <div class="trend-item">
-      <div class="trend-num">4</div>
-      <div class="trend-text"><strong>AI Coding从辅助走向主导</strong> — Cursor ARR从20亿飙至30亿，四大赛道分化成型</div>
-    </div>
-    <div class="trend-item">
-      <div class="trend-num">5</div>
-      <div class="trend-text"><strong>国产AI芯片进入收获期</strong> — 9款芯片通过安全认证 + 密集上市潮，41%本土份额标志替代加速</div>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  数据截至 2026-06-04 07:30 CST | 数据来源：WebSearch, WebFetch, Bloomberg, 官方公告
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

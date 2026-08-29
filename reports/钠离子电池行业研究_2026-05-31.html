@@ -1,515 +1,517 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>钠离子电池行业深度研究 · 2026-05-31</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>钠离子电池行业研究 · 2026-05-31</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
   --bg: #faf9f7;
   --card: #f4f2ef;
-  --card2: #ffffff;
-  --border: #cfc9c1;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
   --text: #2c2a28;
   --text2: #6b6760;
   --red: #b8544a;
   --green: #4a8a5c;
-  --blue: #3a6b96;
   --orange: #a8813c;
+  --blue: #3a6b96;
   --purple: #7d6b8f;
-  --cyan: #39d2c0;
+  --yellow: #9a8447;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  line-height: 1.7;
-  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
   padding: 16px;
-  max-width: 900px;
+  max-width: 820px;
   margin: 0 auto;
+  font-size: 15px;
 }
-h1 {
-  font-size: 1.6em;
-  text-align: center;
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
   margin-bottom: 4px;
-  background: linear-gradient(135deg, var(--cyan), var(--blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
-.subtitle {
-  text-align: center;
+
+.report-header .meta {
+  font-size: 0.82em;
   color: var(--text2);
-  font-size: 0.85em;
-  margin-bottom: 24px;
 }
+
+/* ── Section headers ── */
 h2 {
-  font-size: 1.25em;
-  margin: 28px 0 14px;
-  padding: 8px 14px;
-  background: linear-gradient(90deg, rgba(88,166,255,0.15), transparent);
-  border-left: 3px solid var(--blue);
-  border-radius: 0 6px 6px 0;
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
 }
+
 h3 {
-  font-size: 1.05em;
-  margin: 18px 0 10px;
-  color: var(--cyan);
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
 }
+
+/* ── Cards ── */
 .card {
-  background: var(--card);
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px;
-  margin: 12px 0;
 }
-.card2 {
-  background: var(--card2);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px;
-  margin: 12px 0;
-}
-.highlight-box {
-  background: linear-gradient(135deg, rgba(57,210,192,0.1), rgba(58,107,150,0.08));
-  border: 1px solid rgba(57,210,192,0.3);
-  border-radius: 10px;
-  padding: 16px;
-  margin: 14px 0;
-}
-.warn-box {
-  background: rgba(248,81,73,0.08);
-  border: 1px solid rgba(248,81,73,0.3);
-  border-radius: 10px;
-  padding: 14px;
-  margin: 14px 0;
-}
+
+/* ── Tables ── */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 10px 0;
+  margin: 18px 0;
   font-size: 0.88em;
+  background: var(--card-alt);
 }
+
 th {
-  background: rgba(88,166,255,0.12);
-  color: var(--blue);
-  padding: 8px 10px;
+  background: var(--card);
+  padding: 10px 12px;
   text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
   font-weight: 600;
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
 }
+
 td {
-  padding: 7px 10px;
-  border-bottom: 1px solid rgba(48,54,61,0.5);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
   vertical-align: top;
 }
-tr:hover td { background: rgba(88,166,255,0.04); }
-.red { color: var(--red); }
-.green { color: var(--green); }
-.blue { color: var(--blue); }
-.orange { color: var(--orange); }
-.purple { color: var(--purple); }
-.cyan { color: var(--cyan); }
-.bold { font-weight: 700; }
-.mono { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; }
-.up::after { content: ' ▲'; color: var(--red); font-size: 0.75em; }
-.down::after { content: ' ▼'; color: var(--green); font-size: 0.75em; }
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.78em;
-  font-weight: 600;
-  margin: 2px;
+  margin-right: 4px;
 }
-.tag-red { background: rgba(248,81,73,0.15); color: var(--red); }
-.tag-green { background: rgba(63,185,80,0.15); color: var(--green); }
-.tag-blue { background: rgba(88,166,255,0.15); color: var(--blue); }
-.tag-orange { background: rgba(210,153,34,0.15); color: var(--orange); }
-.tag-purple { background: rgba(188,140,255,0.15); color: var(--purple); }
-.star { color: #f0c040; }
-.timeline {
-  position: relative;
-  padding-left: 28px;
-  margin: 14px 0;
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
 }
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 8px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--border);
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
 }
-.timeline-item {
-  position: relative;
-  margin-bottom: 14px;
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
 }
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -24px;
-  top: 6px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--blue);
-  border: 2px solid var(--bg);
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
 }
-.timeline-item.hot::before { background: var(--red); }
-.timeline-item.warn::before { background: var(--orange); }
-.timeline-date { color: var(--text2); font-size: 0.82em; }
-.strategy-box {
-  background: linear-gradient(135deg, rgba(188,140,255,0.08), rgba(88,166,255,0.08));
-  border: 1px solid rgba(188,140,255,0.25);
-  border-radius: 10px;
-  padding: 16px;
-  margin: 14px 0;
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
 }
-ul, ol { padding-left: 20px; margin: 8px 0; }
-li { margin: 4px 0; }
-p { margin: 8px 0; }
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
 .divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-  margin: 24px 0;
+  background: var(--border);
+  margin: 16px 0;
 }
-.footer {
+
+/* ── Footer ── */
+.report-footer {
   text-align: center;
   color: var(--text2);
-  font-size: 0.78em;
-  margin-top: 30px;
-  padding-top: 16px;
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
   border-top: 1px solid var(--border);
 }
-</style>
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
 
-<h1>🔋 钠离子电池行业深度研究</h1>
-<div class="subtitle">2026年5月31日 · Cleo 🐾 · 银河证券 / 东吴证券 / 东莞证券 / 财联社 / CIBF展会调研</div>
-
-<div class="highlight-box">
-<p class="bold cyan" style="font-size:1.1em;">核心结论</p>
-<p>2026年是钠离子电池<span class="bold red">规模化应用元年</span>，行业正从"0→1"迈入"1→N"加速渗透期。宁德时代5月30日在"2026装备强国论坛"明确表态<span class="bold">年内规模化量产</span>，较4月Q4时间表更进一步。碳酸锂重回20万元/吨，钠电经济性加速兑现。</p>
+<div class="report-header">
+  <h1>钠离子电池行业研究 · 2026-05-31</h1>
+  <div class="meta"><strong>报告日期：</strong> 2026年5月31日 · <strong>分析师：</strong> Cleo 🐾 · <strong>信息来源：</strong> 银河证券、东吴证券、东莞证券、财联社、新浪财经、证券日报、雪球、CIBF展会调研纪要</div>
 </div>
 
-<!-- ===== 一、产业阶段 ===== -->
-<h2>一、行业阶段：从"备胎"到"新主力"</h2>
-
-<div class="card">
-<table>
-<tr><th>阶段</th><th>时间</th><th>标志性事件</th></tr>
-<tr><td><span class="tag tag-blue">概念验证期</span></td><td>2021-2023</td><td>宁德时代首次发布钠电计划；中科海钠全球首条1GWh产线</td></tr>
-<tr><td><span class="tag tag-orange">示范应用期</span></td><td>2024-2025</td><td>全球最大钠电储能系统投运；首款钠电乘用车交付；2025年产量3.45GWh（+96%）</td></tr>
-<tr><td><span class="tag tag-red">规模化元年</span></td><td>2026</td><td>宁德时代/比亚迪等龙头量产信号集中释放；投产29GWh，在建173GWh，规划>300GWh</td></tr>
-</table>
-</div>
-
-<h3>技术路线收敛定型</h3>
-<div class="card">
-<table>
-<tr><th>环节</th><th>主流路线</th><th>应用场景</th><th>关键特点</th></tr>
-<tr><td class="bold">正极</td><td>层状氧化物</td><td>动力电池</td><td>能量密度175Wh/kg</td></tr>
-<tr><td></td><td>聚阴离子(NFPP)</td><td>储能</td><td>循环寿命超万次</td></tr>
-<tr><td class="bold">负极</td><td>硬碳（唯一主流）</td><td>全场景</td><td>技术壁垒最高，最卡脖子</td></tr>
-<tr><td class="bold">集流体</td><td>正负极均用铝箔</td><td>全场景</td><td>用量是锂电池2倍</td></tr>
-<tr><td class="bold">电解液</td><td>六氟磷酸钠</td><td>全场景</td><td>产线可与锂电平移</td></tr>
-</table>
-</div>
-
-<h3>龙头企业量产进展</h3>
-<div class="card">
-<table>
-<tr><th>企业</th><th>核心进展</th><th>技术路线</th></tr>
-<tr><td class="bold">宁德时代</td><td>Q4规模化量产，累计研发投入近百亿，"钠新II"续航400-600km</td><td>多体系并行</td></tr>
-<tr><td class="bold">比亚迪</td><td>第三代钠电技术平台，万次循环突破，商用车叉车已推出</td><td>高稳定聚阴离子</td></tr>
-<tr><td class="bold">亿纬锂能</td><td>钠能总部2025.12动工，规划2GWh</td><td>—</td></tr>
-<tr><td class="bold">维科技术</td><td>聚阴离子路线龙头，已建成2GWh量产线</td><td>聚阴离子</td></tr>
-<tr><td class="bold">传艺科技</td><td>一期4.5GWh已投产，首家钠电直营店</td><td>全产业链</td></tr>
-<tr><td class="bold">国轩高科</td><td>拓展新能源汽车、特种装备多元领域</td><td>全场景布局</td></tr>
-</table>
-</div>
-
-<!-- ===== 二、催化剂 ===== -->
-<h2>二、近期催化剂与事件日历</h2>
-
-<h3>已落地催化剂（近2个月）</h3>
-<div class="card">
-<table>
-<tr><th>时间</th><th>事件</th><th>影响</th></tr>
-<tr><td>5/30</td><td>宁德时代吴凯宣布年内规模化量产</td><td><span class="star">★★★★★</span></td></tr>
-<tr><td>5/25</td><td>银河证券"钠电行业2026年有望迎来产业奇点"</td><td><span class="star">★★★★</span></td></tr>
-<tr><td>5/23</td><td>某央企释放12GWh钠电储能需求，产能不足错失</td><td><span class="star">★★★★</span></td></tr>
-<tr><td>5/15</td><td>CIBF国际电池展会钠电产业链集中亮相</td><td><span class="star">★★★</span></td></tr>
-<tr><td>5/13</td><td>碳酸锂价格重回20万元/吨，年内涨幅>65%</td><td><span class="star">★★★★</span></td></tr>
-<tr><td>4/21</td><td>宁德时代"极域之约"超级科技日，钠新电池Q4量产</td><td><span class="star">★★★★★</span></td></tr>
-</table>
-</div>
-
-<h3>未来催化剂日历</h3>
-<div class="card">
-<div class="timeline">
-<div class="timeline-item hot"><span class="bold">2026年6月</span> · 长安汽车全球首款钠电量产乘用车年中上市 <span class="tag tag-red">标志性事件</span></div>
-<div class="timeline-item"><span class="bold">2026年7月</span> · 宁德时代钠电首搭江淮商用车量产</div>
-<div class="timeline-item"><span class="bold">2026年Q3</span> · 容百科技仙桃6000吨NFPP中试线调试完成 <span class="tag tag-blue">产能突破</span></div>
-<div class="timeline-item hot"><span class="bold">2026年Q4</span> · 宁德时代钠电池规模化量产供应 <span class="tag tag-red">最大催化剂</span></div>
-<div class="timeline-item"><span class="bold">2026年底</span> · 宁德时代乘用车换电体系搭载钠电</div>
-<div class="timeline-item warn"><span class="bold">2027年H1</span> · 钠电成本有望降至0.3元/Wh以下 <span class="tag tag-orange">性价比拐点</span></div>
-</div>
-</div>
-
-<!-- ===== 三、投资逻辑 ===== -->
-<h2>三、核心投资逻辑</h2>
-
-<div class="card2">
-<h3 style="margin-top:0">3.1 成本替代逻辑</h3>
-<table>
-<tr><th>维度</th><th>锂电池</th><th>钠电池</th><th>结论</th></tr>
-<tr><td>核心资源</td><td>锂（75%集中于美洲）</td><td>钠（地壳丰度锂400+倍，中国100%自给）</td><td class="green bold">资源安全</td></tr>
-<tr><td>集流体</td><td>正极铝+负极铜</td><td>正负极均用铝箔</td><td class="green bold">摆脱铜束缚</td></tr>
-<tr><td>当前成本</td><td>LFP 0.36元/Wh</td><td>0.41元/Wh（规模化前）</td><td class="orange">接近持平</td></tr>
-<tr><td>2026年目标</td><td>锂价上行压力</td><td>0.40元/Wh以下</td><td class="green bold">逼近LFP</td></tr>
-<tr><td>2027年目标</td><td>—</td><td>0.30元/Wh以下</td><td class="red bold">全面超越</td></tr>
-</table>
-</div>
-
-<div class="card2">
-<h3 style="margin-top:0">3.2 场景替代逻辑</h3>
-<table>
-<tr><th>场景</th><th>替代对象</th><th>钠电核心优势</th><th>放量节奏</th></tr>
-<tr><td class="bold">大型储能</td><td>LFP储能</td><td>宽温域、高安全、超万次循环</td><td><span class="tag tag-red">最先放量</span> 占7成</td></tr>
-<tr><td class="bold">两轮车</td><td>铅酸电池</td><td>低成本+高性能</td><td><span class="tag tag-orange">快速渗透</span></td></tr>
-<tr><td class="bold">中低端乘用车</td><td>LFP电池</td><td>-40℃容量保持率>90%，5C快充</td><td><span class="tag tag-blue">2026H2起量</span></td></tr>
-<tr><td class="bold">启停电源</td><td>铅酸电池</td><td>低温性能优异</td><td><span class="tag tag-blue">细分放量</span></td></tr>
-</table>
-</div>
-
-<div class="warn-box">
-<p class="bold" style="color:var(--red);">⚠️ 产业链核心瓶颈：硬碳负极</p>
-<p>硬碳负极是<strong>最卡脖子环节</strong>。生物质基依赖进口椰壳炭，批次差异大；煤基路线结构缺陷多。无负极技术是长期方向，但钠沉积不均匀、SEI界面不稳定问题仍悬而未决。5月25日新浪财经报道：钠电硬碳负极正面临"量产拷问"。</p>
-</div>
-
-<!-- ===== 四、出货量预测 ===== -->
-<h2>四、出货量预测与板块表现</h2>
-
-<div class="card">
-<table>
-<tr><th>年份</th><th>出货量(GWh)</th><th>同比增速</th></tr>
-<tr><td>2025</td><td>3.45</td><td>+96%</td></tr>
-<tr><td class="bold">2026E</td><td class="bold red" style="font-size:1.1em;">25</td><td class="red bold">+188%</td></tr>
-<tr><td class="bold">2027E</td><td class="bold red" style="font-size:1.1em;">92</td><td class="red bold">+263%</td></tr>
-<tr><td>2028E</td><td>221</td><td class="red">+140%</td></tr>
-<tr><td>2030E</td><td class="bold" style="font-size:1.1em;">600+</td><td>—</td></tr>
-</table>
-<p style="font-size:0.82em;color:var(--text2);">数据来源：银河证券、东吴证券</p>
-</div>
-
-<div class="card2">
-<p><strong>板块整体表现：</strong>钠电概念指数2026年以来涨幅<span class="red bold">+17.63%</span>，大幅跑赢上证指数。但5月持续回调（5日-5.31%，20日-3.98%），5月29日主力净流出30.6亿元，短期资金获利了结。</p>
-</div>
-
-<!-- ===== 五、标的 ===== -->
-<h2>五、二级市场核心标的</h2>
-
-<h3>🔴 第一梯队：确定性最高</h3>
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>最新价</th><th>年初至今</th><th>PE</th><th>核心逻辑</th><th>风险</th></tr>
-<tr>
-<td class="bold">宁德时代</td>
-<td class="mono">300750.SZ</td>
-<td>424.0</td>
-<td class="red">+2.0%</td>
-<td>24.84</td>
-<td>钠电绝对龙头，Q4量产</td>
-<td>钠电占比小</td>
-</tr>
-<tr>
-<td class="bold">鼎胜新材</td>
-<td class="mono">603876.SH</td>
-<td>26.45</td>
-<td class="red bold">+76.22%</td>
-<td>39.55</td>
-<td>铝箔龙头，用量翻倍</td>
-<td>涨幅大，估值贵</td>
-</tr>
-<tr>
-<td class="bold">容百科技</td>
-<td class="mono">688005.SH</td>
-<td>31.00</td>
-<td class="green">-12.43%</td>
-<td>亏损</td>
-<td>宁德正极第一供应商</td>
-<td>亏损，中试线调试中</td>
-</tr>
-</table>
-</div>
-
-<h3>🟡 第二梯队：弹性较大</h3>
-<div class="card">
-<table>
-<tr><th>标的</th><th>代码</th><th>最新价</th><th>年初至今</th><th>PE</th><th>核心逻辑</th><th>风险</th></tr>
-<tr>
-<td class="bold">振华新材</td>
-<td class="mono">688707.SH</td>
-<td>14.46</td>
-<td class="red">+4.40%</td>
-<td>亏损</td>
-<td>聚阴离子正极百吨级出货</td>
-<td>20日-16.46%</td>
-</tr>
-<tr>
-<td class="bold">维科技术</td>
-<td class="mono">600152.SH</td>
-<td>11.40</td>
-<td class="red bold">+56.16%</td>
-<td>亏损</td>
-<td>聚阴离子龙头，2GWh量产</td>
-<td>波动大，20日-27.34%</td>
-</tr>
-<tr>
-<td class="bold">传艺科技</td>
-<td class="mono">002866.SZ</td>
-<td>19.86</td>
-<td class="red">+10.64%</td>
-<td>92.60</td>
-<td>4.5GWh投产，直营店</td>
-<td>估值贵，扩产被叫停</td>
-</tr>
-</table>
-</div>
-
-<h3>🟢 第三梯队：间接受益</h3>
-<div class="card2">
-<table>
-<tr><th>标的</th><th>代码</th><th>核心逻辑</th></tr>
-<tr><td>璞泰来</td><td class="mono">603659.SH</td><td>硬碳负极技术领先，东吴重点推荐</td></tr>
-<tr><td>贝特瑞</td><td class="mono">835185.BJ</td><td>硬碳负极龙头，比容量350mAh/g</td></tr>
-<tr><td>多氟多</td><td class="mono">002407.SZ</td><td>六氟磷酸钠已量产，2025年扭亏</td></tr>
-<tr><td>天赐材料</td><td class="mono">002709.SZ</td><td>电解液龙头，六氟磷酸钠+NaFSI</td></tr>
-<tr><td>比亚迪</td><td class="mono">002594.SZ</td><td>第三代钠电技术平台，万次循环</td></tr>
-<tr><td>万顺新材</td><td class="mono">300057.SZ</td><td>铝箔集流体第二梯队</td></tr>
-</table>
-</div>
-
-<h3>5月29日资金流向</h3>
-<div class="card">
-<table>
-<tr><th>标的</th><th>主力净流入</th><th>特征</th></tr>
-<tr><td>容百科技</td><td class="green bold">-1.02亿</td><td>流出最大，机构分歧</td></tr>
-<tr><td>维科技术</td><td class="green">-0.40亿</td><td>散户接盘明显</td></tr>
-<tr><td>鼎胜新材</td><td class="green">-0.39亿</td><td>龙虎榜机构买卖对峙</td></tr>
-<tr><td>振华新材</td><td class="green">-0.12亿</td><td>量能萎缩</td></tr>
-<tr><td>传艺科技</td><td class="green">-0.09亿</td><td>相对较小</td></tr>
-</table>
-<p style="font-size:0.82em;color:var(--orange);">⚠️ 短期风险：板块4月冲高后5月回调，主力资金离场，短期不宜追高</p>
-</div>
-
-<!-- ===== 六、关键指标 ===== -->
+<hr>
+<h2>一、核心结论</h2>
+<p><strong>2026年是钠离子电池规模化应用元年，行业正从"0→1"迈入"1→N"的加速渗透期。</strong> 宁德时代5月30日在"2026装备强国论坛"上明确表态年内规模化量产，较4月"超级科技日"公布的Q4时间表更进一步。碳酸锂价格重回20万元/吨高位，钠电经济性加速兑现，产业链各环节进入实质放量阶段。</p>
+<h3>关键判断</h3>
+<table><thead><tr><th>维度</th><th>核心观点</th></tr></thead><tbody><tr><td><strong>产业阶段</strong></td><td>从概念验证进入规模化应用元年（0→1→1→N拐点）</td></tr><tr><td><strong>最大催化剂</strong></td><td>宁德时代Q4规模化量产 + 碳酸锂价格高企</td></tr><tr><td><strong>核心瓶颈</strong></td><td>硬碳负极产业化（原料依赖进口、一致性控制）</td></tr><tr><td><strong>最先放量场景</strong></td><td>储能（7成份额）&gt; 两轮车 &gt; 中低端乘用车</td></tr><tr><td><strong>出货量预测</strong></td><td>2026年25GWh → 2027年92GWh → 2030年600GWh+</td></tr></tbody></table>
+<hr>
+<h2>二、行业发展现状：从"备胎"到"新主力"</h2>
+<h3>2.1 产业阶段定位</h3>
+<p>钠离子电池历经多年技术沉淀，2026年正式确立为<strong>商业化元年</strong>：</p>
+<ul><li><strong>2021-2023年：</strong> 概念验证期。宁德时代首次发布钠电计划，中科海钠与华阳股份联合打造全球首条1GWh产线</li><li><strong>2024-2025年：</strong> 示范应用期。全球最大钠电储能系统投运，首款钠电乘用车"花仙子"批量交付，2025年中国钠电产量3.45GWh（同比+96%）</li><li><strong>2026年：规模化应用元年。</strong> 宁德时代、比亚迪等龙头集中释放量产信号，国内投产年产能达29GWh，在建173GWh，规划超300GWh</li></ul>
+<h3>2.2 技术路线收敛定型</h3>
+<p>钠电池技术路线已基本收敛，不再是百花齐放的探索阶段：</p>
+<table><thead><tr><th>核心环节</th><th>主流技术路线</th><th>应用场景</th><th>关键特点</th></tr></thead><tbody><tr><td><strong>正极</strong></td><td>层状氧化物</td><td>动力电池</td><td>能量密度高（175Wh/kg）</td></tr><tr><td><strong>正极</strong></td><td>聚阴离子(NFPP)</td><td>储能</td><td>循环寿命长（超万次）</td></tr><tr><td><strong>负极</strong></td><td>硬碳</td><td>全场景</td><td>唯一主流方案，技术壁垒最高</td></tr><tr><td><strong>集流体</strong></td><td>正负极均用铝箔</td><td>全场景</td><td>用量是锂电池2倍</td></tr><tr><td><strong>电解液</strong></td><td>六氟磷酸钠</td><td>全场景</td><td>产线可与锂电平移</td></tr></tbody></table>
+<h3>2.3 龙头企业量产进展</h3>
+<table><thead><tr><th>企业</th><th>核心进展</th><th>技术路线</th></tr></thead><tbody><tr><td><strong>宁德时代</strong></td><td>Q4规模化量产，累计研发投入近百亿元，第二代"钠新II"续航400-600km</td><td>多体系并行</td></tr><tr><td><strong>比亚迪</strong></td><td>第三代钠电技术平台开发中，万次循环突破，商用车叉车已推出</td><td>高稳定聚阴离子</td></tr><tr><td><strong>亿纬锂能</strong></td><td>钠能总部项目2025年12月动工，规划2GWh产能</td><td>—</td></tr><tr><td><strong>国轩高科</strong></td><td>钠电逐步拓展至新能源汽车、特种装备等多元领域</td><td>全场景布局</td></tr><tr><td><strong>欣旺达</strong></td><td>钠电平台产品开发完成，设计冻结，随时可量产</td><td>储能钠电量产启动</td></tr><tr><td><strong>维科技术</strong></td><td>聚阴离子路线龙头，已建成2GWh量产线</td><td>聚阴离子</td></tr><tr><td><strong>传艺科技</strong></td><td>一期4.5GWh项目已投产，首家钠电直营店开业</td><td>全产业链</td></tr></tbody></table>
+<hr>
+<h2>三、近期核心催化剂</h2>
+<h3>3.1 已落地催化剂（过去2个月）</h3>
+<table><thead><tr><th>时间</th><th>事件</th><th>影响级别</th></tr></thead><tbody><tr><td>5月30日</td><td>宁德时代吴凯在"2026装备强国论坛"宣布年内规模化量产</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>5月25日</td><td>银河证券发布研报"钠离子电池行业2026年有望迎来产业奇点"</td><td>⭐⭐⭐⭐</td></tr><tr><td>5月23日</td><td>财联社报道某央企释放12GWh钠电储能需求，但多因产能不足错失订单</td><td>⭐⭐⭐⭐</td></tr><tr><td>5月15日</td><td>CIBF国际电池展会，钠电产业链集中亮相</td><td>⭐⭐⭐</td></tr><tr><td>5月13日</td><td>碳酸锂价格重回20万元/吨，年内涨幅超65%</td><td>⭐⭐⭐⭐</td></tr><tr><td>4月21日</td><td>宁德时代"极域之约"超级科技日，宣布钠新电池Q4量产</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>4月7日</td><td>我国钠离子电池取得重大突破，开发出具有自保护功能的电解质</td><td>⭐⭐⭐</td></tr></tbody></table>
+<h3>3.2 未来催化剂日历</h3>
+<table><thead><tr><th>时间</th><th>预期事件</th><th>潜在影响</th></tr></thead><tbody><tr><td>2026年6月</td><td>长安汽车全球首款钠电量产乘用车年中上市</td><td>首款钠电乘用车落地，标志性事件</td></tr><tr><td>2026年7月</td><td>宁德时代钠电首搭江淮汽车商用车量产</td><td>商用车钠电首次规模化应用</td></tr><tr><td>2026年Q3</td><td>容百科技仙桃6000吨NFPP中试线调试完成</td><td>正极材料产能突破</td></tr><tr><td>2026年Q4</td><td>宁德时代钠电池规模化量产供应</td><td>行业最大催化剂</td></tr><tr><td>2026年底</td><td>宁德时代乘用车换电体系搭载钠电</td><td>换电场景放量</td></tr><tr><td>2027年H1</td><td>钠电成本有望降至0.3元/Wh以下</td><td>性价比全面超越LFP</td></tr></tbody></table>
+<hr>
+<h2>四、核心投资逻辑</h2>
+<h3>4.1 成本替代逻辑</h3>
+<ul><li><strong>资源安全：</strong> 钠地壳丰度是锂的400+倍，中国可实现100%自给，规避锂资源75%集中于美洲的供应链风险</li><li><strong>铜资源解脱：</strong> 钠电正负极均用铝箔，彻底摆脱铜资源束缚，铜价长期上行趋势下优势放大</li><li><strong>成本曲线：</strong> 2026年钠电成本预计降至0.40元/Wh以下，逼近LFP的0.36元/Wh；锂价高企（碳酸锂20万+/吨）下已接近持平，未来有望下探0.3元/Wh</li></ul>
+<h3>4.2 场景替代逻辑</h3>
+<table><thead><tr><th>应用场景</th><th>替代对象</th><th>钠电优势</th><th>放量节奏</th></tr></thead><tbody><tr><td><strong>大型储能</strong></td><td>LFP储能</td><td>宽温域、高安全、高放电功率、超万次循环</td><td>最先放量（7成份额）</td></tr><tr><td><strong>两轮车</strong></td><td>铅酸电池</td><td>低成本+高性能，新国标驱动车型切换</td><td>快速渗透</td></tr><tr><td><strong>中低端乘用车</strong></td><td>LFP电池</td><td>极寒-40℃容量保持率超90%，5C快充</td><td>2026年下半年起量</td></tr><tr><td><strong>启停电源</strong></td><td>铅酸电池</td><td>低温性能优异</td><td>细分放量</td></tr><tr><td><strong>商用车/特种车</strong></td><td>LFP电池</td><td>北方高寒地区专用</td><td>差异化场景</td></tr></tbody></table>
+<h3>4.3 产业链瓶颈——硬碳负极</h3>
+<p>硬碳负极是<strong>最卡脖子环节</strong>，没有之一：</p>
+<ul><li><strong>生物质基</strong>（主流）：依赖进口椰壳炭，批次差异大、树脂原料成本高</li><li><strong>煤基</strong>：结构缺陷多、杂质多、储钠性能不足</li><li><strong>长期方向</strong>：无负极技术可大幅提升能量密度，但钠沉积不均匀、SEI界面不稳定等问题仍未解决</li><li><strong>5月25日新浪财经报道</strong>：钠电硬碳负极正面临"量产拷问"，宁德时代、国轩高科等加码负极交付</li></ul>
+<hr>
+<h2>五、二级市场标的梳理</h2>
+<h3>5.1 板块整体表现</h3>
+<ul><li>钠离子电池概念指数（8841440.WI）：2026年以来涨幅<strong>+17.63%</strong>，大幅跑赢上证指数</li><li>5月29日收盘1,512.43点，近期有所回调（5日-5.31%，20日-3.98%）</li><li>PE(TTM) 34.09，PB 3.40，流通市值4,531亿元，总市值5,557亿元</li><li>5月29日主力净流出30.6亿元，短期资金有获利了结迹象</li></ul>
+<h3>5.2 核心标的分层</h3>
+<h4>🔴 第一梯队：确定性最高（产业卡位+订单验证）</h4>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新价</th><th>年初至今</th><th>PE(TTM)</th><th>核心逻辑</th><th>风险</th></tr></thead><tbody><tr><td><strong>宁德时代</strong></td><td>300750.SZ</td><td>424.0</td><td>+2.0%</td><td>24.84</td><td>钠电绝对龙头，Q4量产，研发投入百亿</td><td>钠电业务占比小，估值锚定锂电</td></tr><tr><td><strong>鼎胜新材</strong></td><td>603876.SH</td><td>26.45</td><td><strong>+76.22%</strong></td><td>39.55</td><td>铝箔绝对龙头，用量翻倍逻辑，格局最优</td><td>年内涨幅大，估值已不便宜</td></tr><tr><td><strong>容百科技</strong></td><td>688005.SH</td><td>31.00</td><td>-12.43%</td><td>亏损</td><td>宁德时代钠电正极粉料第一供应商</td><td>亏损中，NFPP中试线调试中</td></tr></tbody></table>
+<h4>🟡 第二梯队：弹性较大（技术突破+产能落地中）</h4>
+<table><thead><tr><th>标的</th><th>代码</th><th>最新价</th><th>年初至今</th><th>PE(TTM)</th><th>核心逻辑</th><th>风险</th></tr></thead><tbody><tr><td><strong>振华新材</strong></td><td>688707.SH</td><td>14.46</td><td>+4.40%</td><td>亏损</td><td>聚阴离子正极百吨级出货，部分装车</td><td>亏损，20日跌幅-16.46%</td></tr><tr><td><strong>维科技术</strong></td><td>600152.SH</td><td>11.40</td><td><strong>+56.16%</strong></td><td>亏损</td><td>聚阴离子路线龙头，2GWh量产线</td><td>亏损，20日跌幅-27.34%，波动大</td></tr><tr><td><strong>传艺科技</strong></td><td>002866.SZ</td><td>19.86</td><td>+10.64%</td><td>92.60</td><td>4.5GWh已投产，钠电直营店开业</td><td>估值贵，扩产再融资曾被叫停</td></tr></tbody></table>
+<h4>🟢 第三梯队：间接受益（材料端/锂电巨头钠电业务占比较小）</h4>
+<table><thead><tr><th>标的</th><th>代码</th><th>核心逻辑</th></tr></thead><tbody><tr><td><strong>璞泰来</strong></td><td>603659.SH</td><td>硬碳负极技术领先，东吴证券重点推荐</td></tr><tr><td><strong>贝特瑞</strong></td><td>835185.BJ</td><td>硬碳负极龙头，比容量350mAh/g</td></tr><tr><td><strong>多氟多</strong></td><td>002407.SZ</td><td>六氟磷酸钠已商业化量产，2025年扭亏</td></tr><tr><td><strong>天赐材料</strong></td><td>002709.SZ</td><td>电解液龙头，六氟磷酸钠+NaFSI产能布局</td></tr><tr><td><strong>比亚迪</strong></td><td>002594.SZ</td><td>第三代钠电技术平台，万次循环突破</td></tr><tr><td><strong>万顺新材</strong></td><td>300057.SZ</td><td>铝箔集流体第二梯队</td></tr></tbody></table>
+<h3>5.3 资金面观察</h3>
+<p>5月29日核心标的主力资金全部净流出：</p>
+<table><thead><tr><th>标的</th><th>主力净流入</th><th>特征</th></tr></thead><tbody><tr><td>容百科技</td><td>-1.02亿</td><td>流出最大，机构分歧明显</td></tr><tr><td>维科技术</td><td>-0.40亿</td><td>散户接盘明显</td></tr><tr><td>鼎胜新材</td><td>-0.39亿</td><td>5月12日龙虎榜机构买卖对峙</td></tr><tr><td>振华新材</td><td>-0.12亿</td><td>量能萎缩</td></tr><tr><td>传艺科技</td><td>-0.09亿</td><td>相对较小</td></tr></tbody></table>
+<blockquote>⚠️ <strong>短期风险提示：</strong> 板块4月冲高后5月持续回调，龙头标的5日跌幅普遍在-5%至-13%区间，主力资金离场迹象明显，短期不宜追高。</blockquote>
+<hr>
 <h2>六、关键跟踪指标</h2>
-
-<div class="card2">
-<h3 style="margin-top:0;color:var(--cyan)">高频指标（周度/月度）</h3>
-<table>
-<tr><th>指标</th><th>当前值</th><th>阈值</th><th>意义</th></tr>
-<tr><td>碳酸锂价格</td><td class="red bold">~20万/吨</td><td>>15万=利好钠电</td><td>钠电经济性核心驱动</td></tr>
-<tr><td>铜价</td><td>12.2万/吨</td><td>上行=利好钠电</td><td>钠电用铝不用铜</td></tr>
-<tr><td>钠电月度出货量</td><td>—</td><td>环比增长</td><td>产业化进度验证</td></tr>
-<tr><td>硬碳负极价格</td><td>—</td><td>下降=降本加速</td><td>核心瓶颈环节</td></tr>
-</table>
-</div>
-
-<div class="card2">
-<h3 style="margin-top:0;color:var(--cyan)">中频指标（季度）</h3>
-<table>
-<tr><th>指标</th><th>意义</th></tr>
-<tr><td>宁德时代/比亚迪钠电装机量</td><td>龙头量产进度验证</td></tr>
-<tr><td>钠电概念股业绩兑现度</td><td>主题→业绩切换关键</td></tr>
-<tr><td>正极材料产能（NFPP/层状氧化物）</td><td>产能瓶颈解除时点</td></tr>
-<tr><td>硬碳负极国产化率</td><td>核心瓶颈突破进度</td></tr>
-</table>
-</div>
-
-<!-- ===== 七、策略 ===== -->
+<h3>6.1 高频指标（周度/月度跟踪）</h3>
+<table><thead><tr><th>指标</th><th>当前值</th><th>阈值</th><th>意义</th></tr></thead><tbody><tr><td>碳酸锂价格</td><td>~20万元/吨</td><td>&gt;15万=利好钠电</td><td>钠电经济性核心驱动</td></tr><tr><td>铜价</td><td>12.2万元/吨</td><td>上行=利好钠电</td><td>钠电用铝不用铜</td></tr><tr><td>钠电出货量（月度）</td><td>—</td><td>逐月环比增长</td><td>产业化进度验证</td></tr><tr><td>硬碳负极价格</td><td>—</td><td>下降=降本加速</td><td>核心瓶颈环节</td></tr></tbody></table>
+<h3>6.2 中频指标（季度跟踪）</h3>
+<table><thead><tr><th>指标</th><th>意义</th></tr></thead><tbody><tr><td>宁德时代/比亚迪钠电装机量</td><td>龙头量产进度验证</td></tr><tr><td>钠电概念股业绩兑现度</td><td>主题→业绩切换关键</td></tr><tr><td>正极材料产能（层状氧化物/NFPP）</td><td>产能瓶颈解除时点</td></tr><tr><td>硬碳负极国产化率</td><td>核心瓶颈突破进度</td></tr></tbody></table>
+<h3>6.3 低频指标（年度/里程碑）</h3>
+<table><thead><tr><th>指标</th><th>目标</th></tr></thead><tbody><tr><td>钠电成本/Wh</td><td>2026年&lt;0.40元 → 2027年&lt;0.30元</td></tr><tr><td>全球钠电出货量</td><td>2026年25GWh → 2030年600GWh+</td></tr><tr><td>首款钠电乘用车销量</td><td>长安车型上市后月销数据</td></tr><tr><td>无负极技术量产时点</td><td>长期颠覆性变量</td></tr></tbody></table>
+<hr>
 <h2>七、投资节奏与策略建议</h2>
-
-<div class="strategy-box">
-<p class="bold purple">阶段定位：题材浪后期 → 预期浪早期</p>
-<div style="margin:10px 0;padding:10px;background:rgba(0,0,0,0.2);border-radius:8px;font-size:0.9em;">
-<p>📈 <strong>2026年4月：</strong>题材浪爆发（板块+17.63%）</p>
-<p>📉 <strong>2026年5月：</strong>短期回调消化估值（5日-5.31%）</p>
-<p>🚀 <strong>2026年Q3：</strong>预期浪启动（首款乘用车+中试线完成）</p>
-<p>⚡ <strong>2026年Q4：</strong>业绩浪前兆（宁德量产交付，订单兑现）</p>
-<p>💰 <strong>2027年：</strong>业绩浪（25→92GWh，成本降至0.3元/Wh）</p>
-</div>
-</div>
-
-<div class="card">
-<h3 style="margin-top:0;color:var(--cyan)">保守视角 vs 激进视角</h3>
-<table>
-<tr><th style="width:15%"></th><th>保守视角</th><th>激进视角</th></tr>
-<tr><td class="bold orange">产业化</td><td>硬碳负极、正极产能瓶颈未解</td><td>宁德Q4量产是最大确定性事件</td></tr>
-<tr><td class="bold orange">业绩</td><td>多数概念股仍亏损，兑现需时间</td><td>储能端已放量，60GWh大单落地</td></tr>
-<tr><td class="bold orange">估值</td><td>PE 34x偏高，4月冲高后回调未结束</td><td>2027年出货量+263%，增速极快</td></tr>
-<tr><td class="bold orange">需求</td><td>首款乘用车尚未上市，终端验证不足</td><td>锂价20万+铜价12万，成本优势临界点</td></tr>
-</table>
-</div>
-
-<div class="strategy-box">
-<p class="bold cyan">🎯 综合策略建议</p>
-<table>
-<tr><th>时间窗口</th><th>操作建议</th><th>核心逻辑</th></tr>
-<tr><td class="bold">当前（5月底-6月）</td><td><span class="tag tag-orange">观望为主</span>，逢回调轻仓试探</td><td>板块短期回调，等6月首款乘用车上市验证</td></tr>
-<tr><td class="bold">6-8月</td><td><span class="tag tag-blue">逐步加仓</span></td><td>长安钠电乘用车上市+中试线完成=催化剂密集</td></tr>
-<tr><td class="bold">Q3末-Q4</td><td><span class="tag tag-red">核心仓位</span></td><td>宁德量产倒计时，订单/出货数据验证</td></tr>
-<tr><td class="bold">2027年</td><td><span class="tag tag-green">业绩兑现期</span>，去弱留强</td><td>92GWh出货验证，成本降至0.3元/Wh</td></tr>
-</table>
-</div>
-
-<div class="card2">
-<p class="bold cyan">标的优先级</p>
-<p><strong>确定性排序：</strong></p>
-<ol>
-<li><strong>鼎胜新材</strong> — 铝箔龙头，用量翻倍逻辑，格局最优 ⚠️ 年内+76%需等回调</li>
-<li><strong>宁德时代</strong> — 钠电龙头，但钠电占比小，更多是锂电龙头配置</li>
-<li><strong>容百科技</strong> — 宁德正极第一供应商，NFPP中试线落地在即</li>
-</ol>
-<p><strong>弹性排序：</strong></p>
-<ol>
-<li><strong>维科技术</strong> — 聚阴离子龙头，波动极大，适合做波段</li>
-<li><strong>振华新材</strong> — 正极核心标的，百吨级出货已验证</li>
-<li><strong>传艺科技</strong> — 全产业链4.5GWh投产，但PE 92x贵</li>
-</ol>
-<p><strong>材料端补充：</strong>璞泰来/贝特瑞（硬碳负极）、多氟多（六氟磷酸钠已量产，2025年扭亏）</p>
-</div>
-
-<!-- ===== 八、风险 ===== -->
+<h3>7.1 阶段划分与节奏</h3>
+<p>```<br>当前阶段：题材浪后期 → 预期浪早期<br>├── 2026年4月超级科技日：题材浪爆发（板块+17.63%）<br>├── 2026年5月：短期回调消化估值（5日-5.31%）<br>├── 2026年Q3：预期浪启动（首款乘用车上市+中试线调试完成）<br>├── 2026年Q4：业绩浪前兆（宁德时代量产交付，订单兑现）<br>└── 2027年：业绩浪（出货量从25GWh→92GWh，成本降至0.3元/Wh）<br>```</p>
+<h3>7.2 策略框架</h3>
+<h4>保守视角</h4>
+<ul><li>钠电产业仍处于"1→N"早期，硬碳负极、正极材料产能不足等瓶颈尚未解决</li><li>多数概念股仍亏损（容百科技、振华新材、维科技术），业绩兑现需要时间</li><li>4月冲高后5月回调，短期估值仍偏贵（PE 34x），板块PE高于锂电</li><li>首款乘用车尚未正式上市，终端需求验证不足</li><li>碳酸锂价格若大幅回落，钠电经济性逻辑将受冲击</li></ul>
+<h4>激进视角</h4>
+<ul><li>宁德时代Q4量产是行业最大确定性事件，龙头示范效应将拉动全产业链</li><li>碳酸锂20万+/吨 + 铜价12万+/吨，钠电成本优势已接近临界点</li><li>储能端已率先放量（7成份额），60GWh大单落地验证真实需求</li><li>铝箔环节（鼎胜新材）格局最优，用量翻倍逻辑确定性最高</li><li>2027年出货量预计增长263%，增速极快</li></ul>
+<h4>🎯 综合策略建议</h4>
+<table><thead><tr><th>时间窗口</th><th>操作建议</th><th>核心逻辑</th></tr></thead><tbody><tr><td><strong>当前（5月底-6月）</strong></td><td>观望为主，逢回调轻仓试探</td><td>板块短期回调，等6月首款乘用车上市验证</td></tr><tr><td><strong>6-8月</strong></td><td>关注预期浪启动信号，逐步加仓</td><td>长安钠电乘用车上市+中试线完成=催化剂密集</td></tr><tr><td><strong>Q3末-Q4</strong></td><td>核心仓位配置期</td><td>宁德时代量产倒计时，订单/出货数据验证</td></tr><tr><td><strong>2027年</strong></td><td>业绩兑现期，去弱留强</td><td>92GWh出货量验证，成本降至0.3元/Wh</td></tr></tbody></table>
+<h3>7.3 标的优先级</h3>
+<p><strong>确定性排序（优先配置）：</strong></p>
+<ul><li><strong>鼎胜新材</strong> — 铝箔绝对龙头，钠电"翻倍用量"逻辑，格局最优，但年内涨幅76%需等回调</li><li><strong>宁德时代</strong> — 钠电龙头，但钠电业务占比小，更多是锂电龙头配置</li><li><strong>容百科技</strong> — 宁德时代正极第一供应商，NFPP中试线落地在即，但当前亏损</li></ul>
+<p><strong>弹性排序（择时配置）：</strong></p>
+<ul><li><strong>维科技术</strong> — 聚阴离子路线龙头，但波动极大（20日-27%），适合做波段</li><li><strong>振华新材</strong> — 正极材料核心标的，聚阴离子百吨级出货已验证</li><li><strong>传艺科技</strong> — 全产业链布局+4.5GWh投产，但估值贵(PE 92x)且扩产曾被叫停</li></ul>
+<p><strong>材料端补充：</strong></p>
+<ul><li><strong>璞泰来/贝特瑞</strong> — 硬碳负极龙头的长期逻辑，但短期受制于硬碳产业化瓶颈</li><li><strong>多氟多</strong> — 六氟磷酸钠已量产，2025年扭亏为盈，是确定性较高的材料标的</li></ul>
+<hr>
 <h2>八、风险提示</h2>
-<div class="warn-box">
-<ol>
-<li><strong>产业化进度不及预期</strong>：硬碳负极交付压力、正极产能不足可能导致量产推迟</li>
-<li><strong>碳酸锂价格大幅下跌</strong>：若锂价跌破15万/吨，钠电经济性逻辑将被削弱</li>
-<li><strong>技术路线变化风险</strong>：无负极等新技术路线可能颠覆现有产业链格局</li>
-<li><strong>短期估值回调风险</strong>：4月冲高后5月已回调，部分标的年内涨幅仍超50%</li>
-<li><strong>产能过剩风险</strong>：规划超300GWh，若需求不及预期可能出现产能过剩</li>
-</ol>
-</div>
+<ul><li><strong>产业化进度不及预期</strong>：硬碳负极交付压力、正极材料产能不足可能导致量产推迟</li><li><strong>碳酸锂价格大幅下跌</strong>：若锂价跌破15万元/吨，钠电经济性逻辑将被削弱</li><li><strong>技术路线变化风险</strong>：无负极等新技术路线可能颠覆现有产业链格局</li><li><strong>短期估值回调风险</strong>：4月冲高后5月已回调，部分标的年内涨幅仍超50%</li><li><strong>产能过剩风险</strong>：规划超300GWh，若需求不及预期可能出现产能过剩</li></ul>
+<hr>
+<h2>附录：数据来源</h2>
+<table><thead><tr><th>来源</th><th>内容</th></tr></thead><tbody><tr><td>银河证券</td><td>钠离子电池行业2026年有望迎来产业奇点（2026/5/25）</td></tr><tr><td>东吴证券</td><td>五条主线布局钠电产业链，技术路线收敛定型</td></tr><tr><td>东莞证券</td><td>2026年钠电成本有望降至0.40元/Wh以下</td></tr><tr><td>中信证券</td><td>钠电开启大规模商用元年，储能端更有潜力</td></tr><tr><td>财联社</td><td>某央企12GWh钠电储能需求因产能不足错失订单</td></tr><tr><td>证券日报</td><td>钠电产业化进展：2025年产量3.45GWh，同比+96%</td></tr><tr><td>新浪财经</td><td>钠电硬碳负极接受量产拷问</td></tr><tr><td>CIBF展会</td><td>2026年5月15日钠电产业链调研纪要</td></tr><tr><td>起点研究院</td><td>2026全球钠电技术应用行业白皮书</td></tr><tr><td>NeoData金融数据</td><td>钠离子电池概念板块行情、个股资金流向</td></tr></tbody></table>
+<hr>
+<p>*本报告仅供研究参考，不构成投资建议。股市有风险，投资需谨慎。*</p>
 
-<div class="divider"></div>
-
-<div class="card2">
-<p class="bold blue">数据来源</p>
-<p style="font-size:0.85em;">
-银河证券（2026/5/25）· 东吴证券（五条主线布局） · 东莞证券（成本分析） · 中信证券（商用元年） · 财联社（产能不足报道） · 证券日报（产业化进展） · 新浪财经（硬碳负极） · CIBF展会调研纪要（2026/5/15） · 起点研究院（白皮书） · NeoData金融数据
-</p>
-</div>
-
-<div class="footer">
-<p>本报告仅供研究参考，不构成投资建议。股市有风险，投资需谨慎。</p>
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

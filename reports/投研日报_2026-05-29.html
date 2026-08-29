@@ -5,146 +5,422 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>投研日报 2026.05.29</title>
 <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
   --bg: #faf9f7;
-  --card-bg: #f4f2ef;
-  --border: #f4f2ef;
-  --text: #e1e4ed;
-  --text-secondary: #8b8fa3;
-  --red: #dc2626;
-  --red-bg: rgba(220,38,38,0.1);
-  --green: #16a34a;
-  --green-bg: rgba(22,163,74,0.1);
-  --blue: #3b82f6;
-  --gold: #f59e0b;
-  --purple: #8b5cf6;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", sans-serif;
-  line-height: 1.7;
-  padding: 24px;
-  max-width: 960px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
   margin: 0 auto;
+  font-size: 15px;
 }
-.header {
-  text-align: center;
-  padding: 32px 0 24px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 28px;
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
 }
-.header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
-.header .date { color: var(--text-secondary); font-size: 13px; margin-bottom: 12px; }
-.header .tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-.header .tags span {
-  background: var(--border);
-  color: var(--text-secondary);
-  padding: 3px 12px;
-  border-radius: 12px;
-  font-size: 12px;
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
 }
-.section-header {
-  display: flex; align-items: center; gap: 8px;
-  margin: 36px 0 18px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--border);
-}
-.section-header h2 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
+
+/* ── Header ── */
+.report-header {
   margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
-.block { margin-bottom: 20px; }
-.block:last-child { margin-bottom: 0; }
-h3 { font-size: 15px; font-weight: 600; margin-bottom: 10px; color: var(--text); }
-p { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; }
-.highlight {
-  background: var(--red-bg);
-  border-left: 3px solid var(--red);
-  padding: 12px 16px;
-  margin: 12px 0;
-  border-radius: 0 8px 8px 0;
-  font-size: 14px;
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
 }
-.highlight.blue { background: rgba(59,130,246,0.1); border-left-color: var(--blue); }
-.highlight.gold { background: rgba(245,158,11,0.1); border-left-color: var(--gold); }
-.highlight.green { background: rgba(22,163,74,0.1); border-left-color: var(--green); }
-.highlight strong { color: var(--text); font-weight: 600; }
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
 table {
-  width: 100%; border-collapse: collapse; margin: 12px 0;
-  font-size: 13px;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
 }
-thead th {
-  background: var(--bg); color: var(--text-secondary); font-weight: 500;
-  padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border);
-  font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
 }
-tbody td {
-  padding: 8px 12px; border-bottom: 1px solid var(--border); color: var(--text);
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
 }
-tbody tr:last-child td { border-bottom: none; }
-.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "SF Mono", monospace; font-size: 13px; }
-.up { color: var(--red); }
-.down { color: var(--green); }
-.divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
-.metrics {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px; margin: 16px 0;
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
 }
-.metric {
-  background: var(--bg); border-radius: 8px; padding: 14px;
-  text-align: center;
-}
-.metric .label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
-.metric .value { font-size: 22px; font-weight: 700; margin: 4px 0; }
-.metric .sub { font-size: 12px; color: var(--text-secondary); }
-.info-box {
-  background: rgba(139,143,163,0.08);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px 18px;
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-top: 12px;
-}
-.info-box strong { color: var(--text); }
-ul { margin: 8px 0 8px 20px; font-size: 14px; color: var(--text-secondary); }
-ul li { margin-bottom: 4px; }
-.footer {
-  text-align: center; padding: 32px 0 16px;
-  color: var(--text-secondary); font-size: 12px;
-  border-top: 1px solid var(--border); margin-top: 36px;
-}
-.risk-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 12px; margin: 14px 0;
-}
-.risk-item {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px;
-}
-.risk-item .label { font-size: 11px; color: var(--text-secondary); letter-spacing: 0.5px; }
-.risk-item .val { font-size: 14px; color: var(--text); margin-top: 4px; font-weight: 500; }
-.badge {
+
+/* ── Tags ── */
+.tag {
   display: inline-block;
   padding: 2px 8px;
   border-radius: 4px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 0.78em;
   margin-right: 4px;
 }
-.badge.red { background: var(--red-bg); color: var(--red); }
-.badge.blue { background: rgba(59,130,246,0.15); color: var(--blue); }
-.badge.green { background: var(--green-bg); color: var(--green); }
-.badge.gold { background: rgba(245,158,11,0.15); color: var(--gold); }
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
 </style>
 </head>
 <body>

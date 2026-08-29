@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>每日AI全球新闻 · 2026-06-27</title>
+  <title>每日AI新闻 · 2026-06-27</title>
   <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
 :root {
   --bg: #faf9f7;
   --card: #f4f2ef;
-  --border: #cfc9c1;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
   --text: #2c2a28;
   --text2: #6b6760;
   --red: #b8544a;
@@ -25,13 +33,28 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  line-height: 1.7;
+  line-height: 1.85;
   padding: 16px;
   max-width: 820px;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 15px;
 }
 
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
 .report-header {
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -49,9 +72,10 @@ body {
   color: var(--text2);
 }
 
+/* ── Section headers ── */
 h2 {
   font-size: 1.15em;
-  margin: 22px 0 10px;
+  margin: 32px 0 14px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--border);
   color: var(--blue);
@@ -59,44 +83,48 @@ h2 {
 
 h3 {
   font-size: 1em;
-  margin: 14px 0 8px;
+  margin: 24px 0 10px;
   color: var(--text);
 }
 
+/* ── Cards ── */
 .card {
-  background: var(--card);
+  background: var(--card-alt);
   border-radius: 8px;
   padding: 12px 14px;
   margin: 10px 0;
   border: 1px solid var(--border);
 }
 
+/* ── Tables ── */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 8px 0;
-  font-size: 0.85em;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
 }
 
 th {
   background: var(--card);
-  padding: 6px 8px;
+  padding: 10px 12px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   color: var(--text2);
   font-weight: 600;
 }
 
 td {
-  padding: 6px 8px;
+  padding: 10px 12px;
   border-bottom: 1px solid var(--border);
   vertical-align: top;
 }
 
 tr:hover {
-  background: rgba(88, 166, 255, 0.05);
+  background: rgba(58, 107, 150, 0.05);
 }
 
+/* ── Tags ── */
 .tag {
   display: inline-block;
   padding: 2px 8px;
@@ -106,71 +134,112 @@ tr:hover {
 }
 
 .tag-red {
-  background: rgba(248, 81, 73, 0.15);
+  background: rgba(184, 84, 74, 0.12);
   color: var(--red);
 }
 
 .tag-green {
-  background: rgba(63, 185, 80, 0.15);
+  background: rgba(74, 138, 92, 0.12);
   color: var(--green);
 }
 
 .tag-orange {
-  background: rgba(210, 153, 34, 0.15);
+  background: rgba(168, 129, 60, 0.14);
   color: var(--orange);
 }
 
 .tag-blue {
-  background: rgba(88, 166, 255, 0.15);
+  background: rgba(58, 107, 150, 0.12);
   color: var(--blue);
 }
 
 .tag-purple {
-  background: rgba(188, 140, 255, 0.15);
+  background: rgba(125, 107, 143, 0.14);
   color: var(--purple);
 }
 
 .tag-yellow {
-  background: rgba(227, 179, 65, 0.15);
+  background: rgba(154, 132, 71, 0.14);
   color: var(--yellow);
 }
 
+/* ── Highlights ── */
 .highlight {
   padding: 10px 14px;
   border-radius: 6px;
   margin: 8px 0;
+  background: var(--card-alt);
 }
 
 .highlight-red {
-  background: rgba(248, 81, 73, 0.08);
+  background: rgba(184, 84, 74, 0.06);
   border-left: 3px solid var(--red);
 }
 
 .highlight-orange {
-  background: rgba(210, 153, 34, 0.08);
+  background: rgba(168, 129, 60, 0.07);
   border-left: 3px solid var(--orange);
 }
 
 .highlight-blue {
-  background: rgba(88, 166, 255, 0.08);
+  background: rgba(58, 107, 150, 0.06);
   border-left: 3px solid var(--blue);
 }
 
 .highlight-green {
-  background: rgba(63, 185, 80, 0.08);
+  background: rgba(74, 138, 92, 0.06);
   border-left: 3px solid var(--green);
 }
 
+/* ── Bullet lists ── */
 ul.bullet {
-  margin: 6px 0 6px 18px;
+  margin: 10px 0 14px 22px;
   font-size: 0.92em;
 }
 
 ul.bullet li {
-  margin: 4px 0;
-  line-height: 1.6;
+  margin: 9px 0;
+  line-height: 1.8;
 }
 
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
 .red { color: var(--red); }
 .green { color: var(--green); }
 .orange { color: var(--orange); }
@@ -178,6 +247,7 @@ ul.bullet li {
 .purple { color: var(--purple); }
 .yellow { color: var(--yellow); }
 
+/* ── Source links ── */
 .source-link {
   display: block;
   font-size: 0.78em;
@@ -187,7 +257,7 @@ ul.bullet li {
 }
 
 .source-link a {
-  color: var(--blue);
+  color: #2d5f8a;
   text-decoration: none;
 }
 
@@ -195,12 +265,14 @@ ul.bullet li {
   text-decoration: underline;
 }
 
+/* ── Divider ── */
 .divider {
   height: 1px;
   background: var(--border);
   margin: 16px 0;
 }
 
+/* ── Footer ── */
 .report-footer {
   text-align: center;
   color: var(--text2);
@@ -210,156 +282,234 @@ ul.bullet li {
   border-top: 1px solid var(--border);
 }
 
+/* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 10px; }
   h1 { font-size: 1.2em; }
   h2 { font-size: 1.05em; }
   table { font-size: 0.8em; }
 }
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>每日AI全球新闻</h1>
-  <div class="meta">2026年6月27日 · 隔夜增量信息摘要 · My Research Central · via WB</div>
+  <h1>每日AI新闻 · 2026-06-27</h1>
+  <div class="meta">隔夜增量信息摘要 · My Research Central · via WB</div>
 </div>
 
-<!-- 一、头条新闻 -->
+<hr>
 <h2>一、🔴 头条新闻</h2>
-
-<div class="card">
-  <h3>🔴 1. 白宫要求OpenAI分阶段发布GPT-5.6 — 首次引入"客户逐一审批"机制</h3>
-  <p>OpenAI于6月26日正式公布GPT-5.6阵容（<span class="tag tag-red">Sol旗舰</span><span class="tag tag-blue">Terra均衡</span><span class="tag tag-green">Luna轻量</span>），但仅向"一小群受信任伙伴"开放。白宫要求OpenAI在预览期内<strong>"逐客户审批"访问权限</strong>，CEO Sam Altman在内部会议上透露，若审批顺利，数周后才有望更广泛发布。</p>
-  <p>GPT-5.6 Sol定价<span class="red">$5/$30</span>每百万输入/输出Token，推理模式引入"ultra"子代理协调，编码基准略优于Claude Mythos 5但仅用1/3输出Token。OpenAI博客明确表态："我们<strong>不认为此类政府介入应成为长期默认模式</strong>。"</p>
-  <p>前白宫AI顾问Dean Ball（即将加盟OpenAI）指出，特朗普AI行政令已从"自愿提交审查"演变为<strong>"事实上的强制许可制度"</strong>，可能无限期推迟模型发布、损害AI军备竞赛优势并危及数千亿美元基础设施投资回报。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/">来源：TechCrunch — OpenAI limits GPT-5.6 rollout</a></div>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/">来源：TechCrunch — White House asking OpenAI to slow roll</a></div>
-</div>
-
-<div class="card">
-  <h3>🔴 2. Google一周流失4名AI研究员至Anthropic — AlphaFold核心团队整体迁移</h3>
-  <p>继John Jumper获诺奖后加盟Anthropic，本周<strong>Jonas Adler</strong>（AI编码）、<strong>Alexander Pritzel</strong>（预训练）、<strong>Arthur Conmy</strong>（Gemini 2.5/AI安全）全部确认转投Anthropic。此前Noam Shazeer已宣布加盟OpenAI。</p>
-  <p>Alphabet两日市值蒸发<span class="red">$2700亿+</span>。深层原因：Pre-IPO股权诱惑、算力资源政治（Shazeer项目算力被转走）、AlphaFold团队"跟着诺贝尔奖领队走"。SignalFire数据显示DeepMind工程师转投Anthropic的概率是反向的<strong>11倍</strong>。</p>
-  <p>Google回应：扩编AI编码突击队至"中训练"领域；<strong>Gemini 3.5 Pro推迟至7月</strong>。Anthropic将于<strong>6月30日</strong>举办"AI for Science"直播活动。</p>
-  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-26-2026">来源：AIToolsRecap — Google Loses 4 Researchers</a></div>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/">来源：TechCrunch — AI researchers continue to leave Google</a></div>
-</div>
-
-<div class="card">
-  <h3>🔴 3. Anthropic Claude在付费消费者市场加速追赶ChatGPT</h3>
-  <p>Indagari信用卡交易分析（2800万美国消费者样本）显示：Claude付费用户和收入月月增长，自2026年1月以来增长约<span class="green">75%</span>。DataCamp数据显示Claude课程需求暴增<span class="green">18倍</span>，自费消费者对Claude课程的需求已超ChatGPT <strong>3:1</strong>。"Claude"已成为DataCamp搜索量最高的词，超过"AI"本身。</p>
-  <p>Sensor Tower数据印证Claude全平台增长强劲，尽管ChatGPT体量仍遥遥领先。Anthropic和OpenAI均在IPO前夕，消费者市场数据对估值定价意义重大。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/">来源：TechCrunch — Claude winning over paid consumers</a></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- 二、行业动态 -->
+<h3>🔴 1. 白宫要求OpenAI分阶段发布GPT-5.6 — 首次引入"客户逐一审批"机制</h3>
+<p>OpenAI于6月26日正式公布GPT-5.6阵容（Sol旗舰/Terra均衡/Luna轻量），但仅向"一小群受信任伙伴"开放。白宫要求OpenAI在预览期内"逐客户审批"访问权限，CEO Sam Altman在内部会议上透露，若审批顺利，数周后才有望更广泛发布。</p>
+<p>GPT-5.6 Sol定价$5/$30每百万输入/输出Token，推理模式引入"ultra"子代理协调，编码基准略优于Claude Mythos 5但仅用1/3输出Token。OpenAI博客明确表态："我们不认为此类政府介入应成为长期默认模式。"</p>
+<p>前白宫AI顾问Dean Ball（即将加盟OpenAI）指出，特朗普AI行政令已从"自愿提交审查"演变为"事实上的强制许可制度"，可能无限期推迟模型发布、损害AI军备竞赛优势并危及数千亿美元基础设施投资回报。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/" target="_blank">TechCrunch: OpenAI limits GPT-5.6 rollout after government request</a>  <br>🔗 <a href="https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/" target="_blank">TechCrunch: White House asking OpenAI to slow roll GPT-5.6</a></p>
+<hr>
+<h3>🔴 2. Google一周流失4名AI研究员至Anthropic — AlphaFold核心团队整体迁移</h3>
+<p>继John Jumper获诺奖后加盟Anthropic，本周Jonas Adler（AI编码）、Alexander Pritzel（预训练）、Arthur Conmy（Gemini 2.5/AI安全）全部确认转投Anthropic。此前Noam Shazeer已宣布加盟OpenAI。</p>
+<p>Alphabet两日市值蒸发$2700亿+。深层原因：Pre-IPO股权诱惑、算力资源政治（Shazeer项目算力被转走）、AlphaFold团队"跟着诺贝尔奖领队走"。SignalFire数据显示DeepMind工程师转投Anthropic的概率是反向的11倍。</p>
+<p>Google回应：扩编AI编码突击队至"中训练"领域；Gemini 3.5 Pro推迟至7月（"最终调整"）。DeepMind CEO Demis Hassabis在戛纳表示"所有前沿实验室之间人才流动正常，我们拥有行业最大最广的研究团队"。</p>
+<p>Anthropic将于6月30日举办"AI for Science"直播活动，正是IPO前的重要亮相节点。</p>
+<p>🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-26-2026" target="_blank">AIToolsRecap: Google Loses 4 Researchers to Anthropic</a>  <br>🔗 <a href="https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/" target="_blank">TechCrunch: AI researchers continue to leave Google</a>  <br>🔗 <a href="https://www.anthropic.com/events/the-briefing-ai-for-science-virtual-event" target="_blank">Anthropic: AI for Science Briefing June 30</a></p>
+<hr>
+<h3>🔴 3. Anthropic Claude在付费消费者市场加速追赶ChatGPT</h3>
+<p>Indagari信用卡交易分析（2800万美国消费者样本）显示：Claude付费用户和收入月月增长，自2026年1月以来增长约75%。DataCamp数据显示Claude课程需求暴增18倍，自费消费者对Claude课程的需求已超ChatGPT 3:1。"Claude"已成为DataCamp搜索量最高的词，超过"AI"本身。</p>
+<p>Sensor Tower数据印证Claude全平台增长强劲，尽管ChatGPT体量仍遥遥领先。Anthropic和OpenAI均在IPO前夕，消费者市场数据对估值定价意义重大。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/" target="_blank">TechCrunch: Claude winning over paid consumers</a></p>
+<hr>
 <h2>二、🔵 行业动态</h2>
-
-<div class="card">
-  <h3>🔵 4. 亚马逊追加$130亿印度AI基础设施投资</h3>
-  <p>亚马逊CEO Andy Jassy与印度总理莫迪会面后宣布，AWS将在孟买和海得拉巴扩大数据中心容量，印度累计承诺投资达<strong>$480亿</strong>。此前微软承诺$175亿、Google承诺$150亿，叠加AirTrunk $300亿等投资者涌入，印度已成全球AI基础设施争夺最激烈的市场。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/amazon-ups-india-bet-with-fresh-13b-ai-infrastructure-investment/">来源：TechCrunch — Amazon $13B India AI</a></div>
-</div>
-
-<div class="card">
-  <h3>🔵 5. OpenAI挖走Uber印度总裁 — 印度市场成战略重心</h3>
-  <p>Prabhjeet Singh将担任OpenAI首任印度董事总经理，9月入职。印度是OpenAI第二大市场，18-24岁用户占ChatGPT印度使用量近50%。Anthropic亦已开设班加罗尔办公室并任命前微软印度MD领衔。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/26/openai-poaches-uber-india-chief-to-lead-its-biggest-market-outside-the-u-s/">来源：TechCrunch — OpenAI poaches Uber India chief</a></div>
-</div>
-
-<div class="card">
-  <h3>🔵 6. General Intuition $3.2亿融资估值$23亿 — 游戏数据训练真实世界AI代理</h3>
-  <p>利用姊妹公司Medal.tv数十亿小时游戏操作数据（含玩家按键记录），训练能泛化至机器人操控的AI模型。同一AI模型同时操控Fortnite和四足机器人自主导航——仅需8分钟真实世界微调。Khosla Ventures领投，Jeff Bezos、Eric Schmidt参投。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/">来源：TechCrunch — General Intuition $2.3B bet</a></div>
-</div>
-
-<div class="card">
-  <h3>🔵 7. 算力竞赛三线推进：Jalapeño进度更新 / Sail $8000万 / Unconventional AI千倍能效</h3>
-  <p><span class="tag tag-purple">Jalapeño</span> 工程样片已在目标频率稳定运行，详细报告"数月内"公布，Broadcom称成本降50%。</p>
-  <p><span class="tag tag-blue">Sail</span> Kleiner Perkins领投$8000万估值$4.5亿，软件层优化现有芯片推理效率。</p>
-  <p><span class="tag tag-yellow">Unconventional AI</span> Databricks前AI负责人Naveen Rao用振荡器架构重建计算，首发Un-0图像模型，宣称可达1000倍能效提升。</p>
-  <div class="source-link">🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-26-2026">来源：AIToolsRecap — Jalapeño update</a></div>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/">来源：TechCrunch — Unconventional AI 1000x power cut</a></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- 三、产品与公司 -->
+<h3>🔵 4. 亚马逊追加$130亿印度AI基础设施投资</h3>
+<p>亚马逊CEO Andy Jassy与印度总理莫迪会面后宣布，AWS将在孟买和海得拉巴扩大数据中心容量，印度累计承诺投资达$480亿。此前微软承诺$175亿、Google承诺$150亿，叠加AirTrunk $300亿、加拿大养老基金等投资者涌入，印度已成全球AI基础设施争夺最激烈的市场之一。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/06/25/amazon-ups-india-bet-with-fresh-13b-ai-infrastructure-investment/" target="_blank">TechCrunch: Amazon $13B India AI investment</a></p>
+<hr>
+<h3>🔵 5. OpenAI挖走Uber印度总裁Prabhjeet Singh — 印度市场成战略重心</h3>
+<p>Singh将担任OpenAI首任印度董事总经理，9月入职，向亚太区MD Kiran Mani汇报。负责消费者增长、企业采纳、合作伙伴关系、监管沟通和运营。印度是OpenAI第二大市场，18-24岁用户占ChatGPT印度使用量近50%。Anthropic亦已开设班加罗尔办公室并任命前微软印度MD领衔。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/06/26/openai-poaches-uber-india-chief-to-lead-its-biggest-market-outside-the-u-s/" target="_blank">TechCrunch: OpenAI poaches Uber India chief</a></p>
+<hr>
+<h3>🔵 6. General Intuition $3.2亿融资估值$23亿 — 电子游戏数据训练真实世界AI代理</h3>
+<p>由Pim de Witte创立的General Intuition利用其兄弟公司Medal.tv的数十亿小时游戏操作数据（含玩家按键记录），训练能泛化至机器人操控的AI模型。现场演示中，同一AI模型同时操控Fortnite游戏和四足机器人自主导航——仅需8分钟真实世界微调。Khosla Ventures领投，Jeff Bezos、Eric Schmidt参投。Vinod Khosla称其为"代际级公司"而非并购标的。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/" target="_blank">TechCrunch: General Intuition $2.3B bet</a></p>
+<hr>
+<h3>🔵 7. 算力竞赛白热化：OpenAI Jalapeño芯片进度更新、Sail $8000万融资、Unconventional AI挑战千倍能效</h3>
+<p><strong>Jalapeño</strong>：OpenAI确认工程样片已在目标频率稳定运行GPT-5.3-Codex-Spark，详细性能报告"数月内"公布。Broadcom CEO Hock Tan称相比GPU成本降50%，AVGO股价年初至今涨10%。</p>
+<p><strong>Sail</strong>：Kleiner Perkins领投$4500万估值$4.5亿，软件层面优化现有AI芯片推理效率，定位非超大规模企业的"通用解法"。</p>
+<p><strong>Unconventional AI</strong>：Databricks前AI负责人Naveen Rao用振荡器架构重建计算，首发Un-0图像模型，宣称最终可达1000倍能效提升。Rao断言："AI扩展的根本瓶颈是能源，这是绕不过去的。"</p>
+<p>🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-26-2026" target="_blank">AIToolsRecap: Jalapeño update</a>  <br>🔗 <a href="https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/" target="_blank">TechCrunch: Databricks former AI chief 1000x power cut</a></p>
+<hr>
 <h2>三、📄 产品与公司</h2>
-
-<div class="card">
-  <h3>8. Adobe收购Topaz Labs — AI视频图像增强整合进Firefly</h3>
-  <p>Topaz Labs拥有Emmy获奖的Astra视频AI超分和Wonder图像增强模型，擅长在消费级GPU上运行大型视频模型。整合后将作为Firefly AI应用及Creative Cloud套件的一部分，交易2026下半年完成。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/adobe-acquires-image-and-video-enhancement-tool-maker-topaz-labs/">来源：TechCrunch — Adobe acquires Topaz Labs</a></div>
-</div>
-
-<div class="card">
-  <h3>9. Patronus AI $5000万B轮 — "数字世界"对AI代理进行压力测试</h3>
-  <p>由前Meta AI研究员创立，构建模拟数字环境通过强化学习让AI代理在10小时/10天/10周级别任务中反复测试。营收<span class="green">15倍</span>年增长，Greenfield Partners领投，目前已服务几乎所有前沿AI实验室。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/">来源：TechCrunch — Patronus AI $50M</a></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- 四、研究突破 -->
+<h3>8. Adobe收购Topaz Labs — AI视频图像增强整合进Firefly</h3>
+<p>Topaz Labs拥有Emmy获奖的Astra视频AI超分和Wonder图像增强模型，擅长在消费级GPU上运行大型视频模型。整合后将作为Firefly AI应用及Creative Cloud套件的一部分，支持降噪、锐化、档案修复等专业工作流。交易2026下半年完成。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/06/25/adobe-acquires-image-and-video-enhancement-tool-maker-topaz-labs/" target="_blank">TechCrunch: Adobe acquires Topaz Labs</a></p>
+<hr>
+<h3>9. Patronus AI $5000万B轮 — "数字世界"对AI代理进行压力测试</h3>
+<p>由前Meta AI研究员创立，构建模拟数字环境（"数字世界模型"），通过强化学习让AI代理在10小时/10天/10周级别任务中被反复测试。营收15倍年增长，Greenfield Partners领投，Lightspeed/Datadog/三星参投。目前已服务几乎所有前沿AI实验室。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/" target="_blank">TechCrunch: Patronus AI $50M</a></p>
+<hr>
+<h3>10. Netris $1500万A轮 a16z领投 — AI"新云"加速部署</h3>
+<p>帮助AI新云服务商（neoclouds）更快上线GPU集群。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/06/25/netris-raises-15m-series-a-from-a16z-to-help-ai-neoclouds-go-live-faster/" target="_blank">TechCrunch: Netris $15M Series A</a></p>
+<hr>
 <h2>四、🔬 研究突破</h2>
-
-<div class="card">
-  <h3>10. arXiv周度亮点（6月22-28日）</h3>
-  
-  <p><strong>🤖 智能体系统</strong></p>
-  <ul class="bullet">
-    <li><strong>《The Hitchhiker's Guide to Agentic AI》</strong>（6/26）— 首部全栈自主AI从业者手册：从Transformer架构到MCP协议、多智能体协作</li>
-    <li><strong>《Plans Don't Persist》</strong>（6/26）— 揭示长程Agent计划信号在仅1步动作-观测循环后衰减4.1倍，上下文管理是Agent可靠性的命门</li>
-  </ul>
-
-  <p style="margin-top:10px;"><strong>🧠 模型基础与安全</strong></p>
-  <ul class="bullet">
-    <li><strong>《Do Thinking Tokens Help with Safety?》</strong>（6/26）— 挑战"深思=更安全"认知：模型最终拒绝/合规结果在生成思考Token前已高度可预测</li>
-  </ul>
-
-  <p style="margin-top:10px;"><strong>🎮 具身智能与视觉</strong></p>
-  <ul class="bullet">
-    <li><strong>《World Value Models for Robotic Manipulation》</strong>（6/25）— 利用世界模型时序建模实现机器人价值估计</li>
-    <li><strong>《MVTrack4Gen》</strong>（6/26）— 多视角点跟踪作为几何监督的4D视频生成</li>
-  </ul>
-
-  <p style="margin-top:10px;"><strong>💻 开发工具</strong></p>
-  <ul class="bullet">
-    <li><strong>《Autodata》</strong>（6/26）— AI智能体充当"数据科学家"，自主构建高质量合成训练数据</li>
-  </ul>
-
-  <div class="source-link">🔗 <a href="https://arxiv.deeppaper.ai/papers/weekly">来源：arXiv Deep Paper Weekly (Jun 22-28)</a></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- 五、政策与监管 -->
+<h3>11. arXiv周度亮点（6月22-28日）</h3>
+<p><strong>🤖 智能体系统</strong></p>
+<ul><li><strong>《The Hitchhiker's Guide to Agentic AI》</strong>（6/26）— 首部全栈自主AI从业者手册：从Transformer架构到MCP协议、多智能体协作，覆盖理论+实现指导+代码示例。</li><li><strong>《Plans Don't Persist》</strong>（6/26）— 揭示长程Agent计划信号在仅1步动作-观测循环后衰减4.1倍，上下文管理是Agent可靠性的命门。</li></ul>
+<p><strong>🧠 模型基础与安全</strong></p>
+<ul><li><strong>《Do Thinking Tokens Help with Safety?》</strong>（6/26）— 挑战"深思=更安全"的普遍认知：对GPT-OSS/Qwen/Olmo/Phi测试表明，模型最终拒绝/合规结果在生成思考Token前已高度可预测。</li></ul>
+<p><strong>🎮 具身智能与视觉</strong></p>
+<ul><li><strong>《World Value Models for Robotic Manipulation》</strong>（6/25）— 利用世界模型时序建模优势实现机器人价值估计，支持从大规模混合质量数据扩展策略学习。</li><li><strong>《MVTrack4Gen》</strong>（6/26）— 多视角点跟踪作为几何监督的4D视频生成方案。</li></ul>
+<p><strong>💻 开发工具</strong></p>
+<ul><li><strong>《Autodata》</strong>（6/26）— AI智能体充当"数据科学家"，自主构建高质量合成训练数据，在科研/法律/数学推理任务上显著优于传统方法。</li></ul>
+<p>🔗 <a href="https://arxiv.deeppaper.ai/papers/weekly" target="_blank">arXiv Deep Paper Weekly: Jun 22-28</a></p>
+<hr>
 <h2>五、⚖️ 政策与监管</h2>
-
-<div class="card">
-  <h3>11. 中国6月18日"三箭齐发" — AI政策从框架进入制度落地期</h3>
-  <p>6月18日盘后三个政策同日落地：</p>
-  <ul class="bullet">
-    <li><strong>八部门《AI+消费》17条</strong>：AI手机/电脑/家电/穿戴、人形机器人、脑机接口全面纳入消费供给清单</li>
-    <li><strong>七部门《平台经济大中小企业协同发展》</strong>：打造"全国统一算力电网"、提升Token普惠服务</li>
-    <li><strong>金融监管总局《银行业保险业AI安全应用指导意见》</strong>：32条意见全面规范金融AI</li>
-  </ul>
-  <p>政策三层逻辑：<span class="blue">①算力基础设施先行</span> → <span class="orange">②应用场景驱动</span> → <span class="red">③安全底线兜底</span>。</p>
-  <div class="source-link">🔗 <a href="https://aizxs.com/ai-news/9132.html">来源：AI智库 — 2026上半年AI政策组合拳</a></div>
-</div>
-
-<div class="card">
-  <h3>12. 美国AI模型发布审查机制引发"事实上的强制许可"争论</h3>
-  <p>特朗普6月初签署的AI行政令要求前沿AI公司自愿提交新模型供政府审查（最长30天），但Fable 5/Mythos禁令及GPT-5.6逐客户审批的实践已实质上形成强制许可制度。同时，欧洲正对华盛顿芯片战提出异议，德国和荷兰在出口管制对ASML等设备商的冲击上与美方出现分歧。</p>
-  <div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/24/europe-is-pushing-back-on-washingtons-chip-war/">来源：TechCrunch — Europe pushing back on chip war</a></div>
-</div>
+<h3>12. 中国6月18日"三箭齐发" — AI政策从框架进入制度落地期</h3>
+<p>6月18日盘后三个政策同日落地，被市场称为"科技产业里程碑式利好"：</p>
+<ul><li><strong>八部门《AI+消费》17条</strong>：AI手机/电脑/家电/穿戴/汽车、人形机器人、脑机接口全面纳入消费供给清单。商务部解读核心症结为"有产品无市场"+"有需求无供给"两类结构性堵点。</li><li><strong>七部门《平台经济大中小企业协同发展》</strong>：打造"全国统一算力电网"、提升Token普惠服务、探索通用/专用模型协同。</li><li><strong>金融监管总局《银行业保险业AI安全应用指导意见》</strong>：32条意见从治理架构、数据治理、算力建设到风险管理全面规范金融AI。</li></ul>
+<p>政策三层逻辑：（1）算力基础设施先行→（2）应用场景驱动→（3）安全底线兜底。</p>
+<p>🔗 <a href="https://aizxs.com/ai-news/9132.html" target="_blank">AI智库: 2026上半年AI政策组合拳</a></p>
+<hr>
+<h3>13. 美国AI模型发布审查机制引发"事实上的强制许可"争论</h3>
+<p>特朗普6月初签署的AI行政令要求前沿AI公司自愿提交新模型供政府审查（最长30天），但Fable 5/Mythos禁令及GPT-5.6逐客户审批的实践已实质上形成强制许可制度。Dean Ball警告：缺乏明确安全标准可能导致无限期延迟，既利好中国AI竞赛，又危及AI基础设施投资回报。</p>
+<p>同时，欧洲正对华盛顿芯片战提出异议，德国和荷兰在出口管制对ASML等设备商的冲击上与美方出现分歧。</p>
+<p>🔗 <a href="https://techcrunch.com/2026/06/24/europe-is-pushing-back-on-washingtons-chip-war/" target="_blank">TechCrunch: Europe pushing back on chip war</a></p>
+<hr>
+<p>*数据来源：TechCrunch · AIToolsRecap · arXiv Deep Paper · AI智库 · Anthropic · OpenAI · via WB*</p>
 
 <div class="report-footer">
-  数据来源：TechCrunch · AIToolsRecap · arXiv Deep Paper · AI智库 · Anthropic · OpenAI · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

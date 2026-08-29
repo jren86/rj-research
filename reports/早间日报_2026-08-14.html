@@ -3,241 +3,488 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>早间投研日报 · 2026-08-14</title>
+  <title>早间日报 · 2026-08-14</title>
   <style>
-    :root {
-      --bg: #faf9f7;
-      --card: #f4f2ef;
-      --border: #cfc9c1;
-      --text: #2c2a28;
-      --text2: #6b6760;
-      --red: #b8544a;
-      --green: #4a8a5c;
-      --orange: #a8813c;
-      --blue: #3a6b96;
-      --purple: #7d6b8f;
-      --yellow: #9a8447;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      padding: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
-    .report-header { margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-    .report-header h1 { font-size: 1.4em; color: var(--text); margin-bottom: 4px; }
-    .report-header .meta { font-size: 0.82em; color: var(--text2); }
-    h2 { font-size: 1.15em; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--blue); }
-    h3 { font-size: 1em; margin: 14px 0 8px; color: var(--text); }
-    .card { background: var(--card); border-radius: 8px; padding: 12px 14px; margin: 10px 0; border: 1px solid var(--border); }
-    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.85em; }
-    th { background: var(--card); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text2); font-weight: 600; }
-    td { padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
-    tr:hover { background: rgba(88, 166, 255, 0.05); }
-    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78em; margin-right: 4px; }
-    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
-    .highlight { padding: 10px 14px; border-radius: 6px; margin: 8px 0; }
-    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
-    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
-    ul.bullet { margin: 6px 0 6px 18px; font-size: 0.92em; }
-    ul.bullet li { margin: 4px 0; line-height: 1.6; }
-    .red { color: var(--red); }
-    .green { color: var(--green); }
-    .orange { color: var(--orange); }
-    .blue { color: var(--blue); }
-    .purple { color: var(--purple); }
-    .yellow { color: var(--yellow); }
-    .source-link { display: block; font-size: 0.78em; color: var(--text2); margin: 4px 0 8px 0; word-break: break-all; }
-    .source-link a { color: var(--blue); text-decoration: none; }
-    .source-link a:hover { text-decoration: underline; }
-    .divider { height: 1px; background: var(--border); margin: 16px 0; }
-    .report-footer { text-align: center; color: var(--text2); font-size: 0.75em; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border); }
-    @media (max-width: 640px) {
-      body { padding: 10px; }
-      h1 { font-size: 1.2em; }
-      h2 { font-size: 1.05em; }
-      table { font-size: 0.8em; }
-    }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>早间投研日报</h1>
-  <div class="meta">2026-08-14（周五）· 数据截止 08-13 收盘 + 隔夜增量 · 数据来源：Wind 万得金融终端</div>
+  <h1>早间日报 · 2026-08-14</h1>
+  <div class="meta">数据截止：2026-08-13 收盘 + 隔夜增量 | 数据来源：Wind 万得金融终端（结构化 API）</div>
 </div>
 
+<hr>
 <h2>一、催化剂日历</h2>
-<table>
-  <tr><th>时间</th><th>事件</th><th>关联标的</th></tr>
-  <tr><td><span class="tag tag-red">08-13 已发生</span></td><td>联想集团 2026/27 财年 Q1 财报：营收 1834 亿(+43%)、经调整净利 73 亿(+176%)</td><td>联想集团</td></tr>
-  <tr><td><span class="tag tag-orange">08-12 已发生</span></td><td>腾讯控股 Q2 业绩：营收 2048 亿(+11%)，算力资本开支 527.8 亿致自由现金流转负</td><td>腾讯控股</td></tr>
-  <tr><td><span class="tag tag-blue">8 月中下旬</span></td><td>A股中报密集披露期，1817 家已披露、835 家报喜</td><td>全持仓</td></tr>
-  <tr><td><span class="tag tag-orange">8 月中下旬</span></td><td>「金九银十」备库需求启动，有色板块进入持续修复阶段</td><td>紫金黄金国际</td></tr>
-  <tr><td><span class="tag tag-purple">Q3 窗口</span></td><td>政府债发行高峰，银河证券预计降息 10BP / 降准 50BP 可期</td><td>保险双雄</td></tr>
-</table>
-
+<table><thead><tr><th>时间</th><th>事件</th><th>关联标的</th></tr></thead><tbody><tr><td>🔴 08-13 已发生</td><td>联想集团 2026/27 财年 Q1 财报：营收 1834 亿(+43%)、经调整净利 73 亿(+176%)</td><td>联想集团</td></tr><tr><td>🟠 08-12 已发生</td><td>腾讯控股 Q2 业绩：营收 2048 亿(+11%)，算力资本开支 527.8 亿致自由现金流转负</td><td>腾讯控股</td></tr><tr><td>📊 8 月中下旬</td><td>A股中报密集披露期，1817 家已披露、835 家报喜</td><td>全持仓</td></tr><tr><td>🟠 8 月中下旬</td><td>「金九银十」备库需求启动，有色板块进入持续修复阶段</td><td>紫金黄金国际</td></tr><tr><td>💡 Q3 窗口</td><td>政府债发行高峰，银河证券预计降息 10BP / 降准 50BP 可期</td><td>保险双雄</td></tr></tbody></table>
+<hr>
 <h2>二、宏观</h2>
-<div class="highlight highlight-red"><b>🔴 三季度降息降准窗口临近</b><br>
-银河证券解读央行《2026 年 Q2 货币政策执行报告》指出，7 月 PPI 见顶后央行降息空间将再度打开；当前超储率偏低、银行净息差承压，叠加 Q3 政府债发行高峰，货币政策将配合财政协同发力。<b>三季度是观察降息、降准的重要窗口，降息 10BP、降准 50BP 可期</b>；8000 亿元新型政策性金融工具有望在三季度加快落地。</div>
-
-<div class="highlight highlight-orange"><b>🟠 货币政策「降准优先于降息」基调延续</b><br>
-央行下半年工作会议定调「实施好适度宽松的货币政策」，删除「灵活高效运用降准降息」表述，代之以「综合运用并适时调整货币政策工具」。市场解读为工具进入「待命」状态，降准可能性大于降息（存款准备金率年内或有 25–50bp 下降空间）。</div>
-
-<div class="highlight highlight-blue"><b>🔵 美联储维持利率不变，9 月加息预期升温</b><br>
-美联储 7 月维持联邦基金利率 3.50%–3.75% 不变（年内连续第五次按兵不动），但内部对通胀前景分歧，三位官员投票支持加息 25bp，市场预测 9 月加息概率约 67%。</div>
-
+<p><strong>🔴 三季度降息降准窗口临近</strong><br>银河证券解读央行《2026 年 Q2 货币政策执行报告》指出，7 月 PPI 见顶后央行降息空间将再度打开；当前超储率偏低、银行净息差承压，叠加 Q3 政府债发行高峰，货币政策将配合财政协同发力。<strong>三季度是观察降息、降准的重要窗口，降息 10BP、降准 50BP 可期</strong>；8000 亿元新型政策性金融工具有望在三季度加快落地。</p>
+<p><strong>🟠 货币政策「降准优先于降息」基调延续</strong><br>央行下半年工作会议定调「实施好适度宽松的货币政策」，删除「灵活高效运用降准降息」表述，代之以「综合运用并适时调整货币政策工具」。市场解读为工具进入「待命」状态，降准可能性大于降息（存款准备金率年内或有 25–50bp 下降空间）。</p>
+<p><strong>🔵 美联储维持利率不变，9 月加息预期升温</strong><br>美联储 7 月维持联邦基金利率 3.50%–3.75% 不变（年内连续第五次按兵不动），但内部对通胀前景分歧，三位官员投票支持加息 25bp，市场预测 9 月加息概率约 67%。</p>
+<hr>
 <h2>三、市场概览（2026-08-13 收盘）</h2>
 <h3>A 股主要指数</h3>
-<table>
-  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
-  <tr><td>上证指数</td><td>3926.96</td><td class="green">-0.50%</td></tr>
-  <tr><td>深证成指</td><td>14289.44</td><td class="green">-0.87%</td></tr>
-  <tr><td>创业板指</td><td>3586.04</td><td class="green">-0.45%</td></tr>
-  <tr><td>科创50</td><td>1717.75</td><td class="green">-1.11%</td></tr>
-  <tr><td>沪深300</td><td>4663.95</td><td class="green">-0.57%</td></tr>
-</table>
-<p>A 股 8/13 全线收跌，科创50 领跌 -1.11%，科技成长延续调整。</p>
-
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>上证指数</td><td>3926.96</td><td>🟢 -0.50%</td></tr><tr><td>深证成指</td><td>14289.44</td><td>🟢 -0.87%</td></tr><tr><td>创业板指</td><td>3586.04</td><td>🟢 -0.45%</td></tr><tr><td>科创50</td><td>1717.75</td><td>🟢 -1.11%</td></tr><tr><td>沪深300</td><td>4663.95</td><td>🟢 -0.57%</td></tr></tbody></table>
+<blockquote>A 股 8/13 全线收跌，科创50 领跌 -1.11%，科技成长延续调整。</blockquote>
 <h3>港股主要指数</h3>
-<table>
-  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
-  <tr><td>恒生指数</td><td>25396.51</td><td class="green">-0.17%</td></tr>
-  <tr><td>恒生科技指数</td><td>4792.39</td><td class="red">+0.33%</td></tr>
-</table>
-
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>恒生指数</td><td>25396.51</td><td>🟢 -0.17%</td></tr><tr><td>恒生科技指数</td><td>4792.39</td><td>🔴 +0.33%</td></tr></tbody></table>
 <h3>美股主要指数（隔夜）</h3>
-<table>
-  <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
-  <tr><td>标普500</td><td>7798.99</td><td class="red">+0.65%</td></tr>
-  <tr><td>纳斯达克</td><td>26803.03</td><td class="red">+0.81%</td></tr>
-</table>
-<p>隔夜美股走强，纳指 +0.81% 领涨，AI 核心资产情绪修复。</p>
-
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>标普500</td><td>7798.99</td><td>🔴 +0.65%</td></tr><tr><td>纳斯达克</td><td>26803.03</td><td>🔴 +0.81%</td></tr></tbody></table>
+<blockquote>隔夜美股走强，纳指 +0.81% 领涨，AI 核心资产情绪修复。</blockquote>
+<hr>
 <h2>四、策略观点</h2>
-<h3>券商 8 月金股 TOP5（全市场 35 家券商，去重 253 只）</h3>
-<table>
-  <tr><th>排名</th><th>标的</th><th>推荐次数</th></tr>
-  <tr><td>1</td><td>宁德时代 ⭐</td><td>11 次</td></tr>
-  <tr><td>2</td><td>药明康德</td><td>10 次</td></tr>
-  <tr><td>3</td><td>中际旭创</td><td>9 次</td></tr>
-  <tr><td>4</td><td>美的集团</td><td>7 次</td></tr>
-  <tr><td>5</td><td>紫金矿业</td><td>6 次</td></tr>
-</table>
-<p>新进金股热度：金山办公(5)、三环集团(3)、招商轮船(3)、安克创新(3)。科技板块金股推荐次数较 7 月显著回落，风格转向价值。</p>
-
-<div class="highlight highlight-blue"><b>💡 策略共识</b>
-<ul class="bullet">
-  <li><b>中信证券</b>：调整基本结束，8 月修复可期，增配能化/有色/非银/创新药。</li>
-  <li><b>招商证券</b>：8 月仍处盈利驱动上行第三阶段，科技高增方向完成「叙事→财报」验证。</li>
-  <li><b>中国银河</b>：建议哑铃型策略，AI 从普涨转向业绩筛选 + 红利资产配置价值凸显。</li>
-  <li><b>方正证券</b>：超跌反弹窗口期到来，关注科技超跌反弹、HALO 资产、非银金融。</li>
-</ul>
-</div>
-
+<p><strong>🟠 券商 8 月金股 TOP5（全市场 35 家券商，去重 253 只）</strong></p>
+<table><thead><tr><th>排名</th><th>标的</th><th>推荐次数</th></tr></thead><tbody><tr><td>1</td><td>宁德时代 ⭐</td><td>11 次</td></tr><tr><td>2</td><td>药明康德</td><td>10 次</td></tr><tr><td>3</td><td>中际旭创</td><td>9 次</td></tr><tr><td>4</td><td>美的集团</td><td>7 次</td></tr><tr><td>5</td><td>紫金矿业</td><td>6 次</td></tr></tbody></table>
+<blockquote>新进金股热度：金山办公(5)、三环集团(3)、招商轮船(3)、安克创新(3)。科技板块金股推荐次数较 7 月显著回落，风格转向价值。</blockquote>
+<p><strong>💡 策略共识</strong></p>
+<ul><li><strong>中信证券</strong>：调整基本结束，8 月修复可期，增配能化/有色/非银/创新药。</li><li><strong>招商证券</strong>：8 月仍处盈利驱动上行第三阶段，科技高增方向完成「叙事→财报」验证。</li><li><strong>中国银河</strong>：建议哑铃型策略，AI 从普涨转向业绩筛选 + 红利资产配置价值凸显。</li><li><strong>方正证券</strong>：超跌反弹窗口期到来，关注科技超跌反弹、HALO 资产、非银金融。</li></ul>
+<hr>
 <h2>五、持仓个股监控（国泰海通组合 24 只）</h2>
 <h3>A 股（14 只）· 2026-08-13 收盘</h3>
-<table>
-  <tr><th>股票</th><th>代码</th><th>收盘价(元)</th><th>涨跌幅</th><th>主题</th></tr>
-  <tr><td>宁德时代</td><td>300750</td><td>396.30</td><td class="red">+0.60%</td><td>新能源/电动车</td></tr>
-  <tr><td>恒瑞医药</td><td>600276</td><td>53.76</td><td class="green">-1.10%</td><td>创新药械</td></tr>
-  <tr><td>新和成</td><td>002001</td><td>28.26</td><td class="green"><b>-7.83%</b></td><td>化工/材料</td></tr>
-  <tr><td>京东方A</td><td>000725</td><td>5.86</td><td class="green">-1.18%</td><td>AI设备&材料</td></tr>
-  <tr><td>长川科技</td><td>300604</td><td>281.69</td><td class="green">-1.89%</td><td>AI设备&材料</td></tr>
-  <tr><td>巨化股份</td><td>600160</td><td>41.32</td><td class="red">+0.29%</td><td>化工/材料</td></tr>
-  <tr><td>中恒电气</td><td>002364</td><td>43.00</td><td class="red"><b>+3.39%</b></td><td>AI设备&材料</td></tr>
-  <tr><td>亨通光电</td><td>600487</td><td>57.25</td><td class="green">-3.46%</td><td>AI设备&材料</td></tr>
-  <tr><td>中国太保</td><td>601601</td><td>30.43</td><td class="green">-0.16%</td><td>保险</td></tr>
-  <tr><td>惠泰医疗</td><td>688617</td><td>217.50</td><td class="red">+0.69%</td><td>创新药械</td></tr>
-  <tr><td>中国人寿</td><td>601628</td><td>37.46</td><td class="red">+0.35%</td><td>保险</td></tr>
-  <tr><td>应流股份</td><td>603308</td><td>48.40</td><td>0.00%</td><td>AI设备&材料</td></tr>
-  <tr><td>东方钽业</td><td>000962</td><td>52.96</td><td class="green">-3.71%</td><td>AI设备&材料</td></tr>
-  <tr><td>N长鑫</td><td>688825</td><td>52.88</td><td class="green">-1.20%</td><td>AI设备&材料</td></tr>
-</table>
-
+<table><thead><tr><th>股票</th><th>代码</th><th>收盘价(元)</th><th>涨跌幅</th><th>主题</th></tr></thead><tbody><tr><td>宁德时代</td><td>300750</td><td>396.30</td><td>🔴 +0.60%</td><td>新能源/电动车</td></tr><tr><td>恒瑞医药</td><td>600276</td><td>53.76</td><td>🟢 -1.10%</td><td>创新药械</td></tr><tr><td>新和成</td><td>002001</td><td>28.26</td><td>🟢 <strong>-7.83%</strong></td><td>化工/材料</td></tr><tr><td>京东方A</td><td>000725</td><td>5.86</td><td>🟢 -1.18%</td><td>AI设备&amp;材料</td></tr><tr><td>长川科技</td><td>300604</td><td>281.69</td><td>🟢 -1.89%</td><td>AI设备&amp;材料</td></tr><tr><td>巨化股份</td><td>600160</td><td>41.32</td><td>🔴 +0.29%</td><td>化工/材料</td></tr><tr><td>中恒电气</td><td>002364</td><td>43.00</td><td>🔴 <strong>+3.39%</strong></td><td>AI设备&amp;材料</td></tr><tr><td>亨通光电</td><td>600487</td><td>57.25</td><td>🟢 -3.46%</td><td>AI设备&amp;材料</td></tr><tr><td>中国太保</td><td>601601</td><td>30.43</td><td>🟢 -0.16%</td><td>保险</td></tr><tr><td>惠泰医疗</td><td>688617</td><td>217.50</td><td>🔴 +0.69%</td><td>创新药械</td></tr><tr><td>中国人寿</td><td>601628</td><td>37.46</td><td>🔴 +0.35%</td><td>保险</td></tr><tr><td>应流股份</td><td>603308</td><td>48.40</td><td>⚪ 0.00%</td><td>AI设备&amp;材料</td></tr><tr><td>东方钽业</td><td>000962</td><td>52.96</td><td>🟢 -3.71%</td><td>AI设备&amp;材料</td></tr><tr><td>N长鑫</td><td>688825</td><td>52.88</td><td>🟢 -1.20%</td><td>AI设备&amp;材料</td></tr></tbody></table>
 <h3>港股（10 只）· 2026-08-13 收盘</h3>
-<table>
-  <tr><th>股票</th><th>代码</th><th>收盘价(港元)</th><th>涨跌幅</th><th>主题</th></tr>
-  <tr><td>腾讯控股</td><td>00700</td><td>441.00</td><td class="green"><b>-4.46%</b></td><td>AI应用</td></tr>
-  <tr><td>康方生物</td><td>09926</td><td>103.60</td><td class="red">+1.47%</td><td>创新药械</td></tr>
-  <tr><td>泡泡玛特</td><td>09992</td><td>154.20</td><td class="red">+2.12%</td><td>传媒/娱乐</td></tr>
-  <tr><td>联想集团</td><td>00992</td><td>34.90</td><td class="red"><b>+20.18%</b></td><td>AI设备&材料</td></tr>
-  <tr><td>紫金黄金国际</td><td>02259</td><td>128.20</td><td class="green">-5.46%</td><td>能源/有色</td></tr>
-  <tr><td>英矽智能</td><td>03696</td><td>46.38</td><td class="red">+0.83%</td><td>创新药械</td></tr>
-  <tr><td>大族数控</td><td>03200</td><td>111.30</td><td class="red">+2.96%</td><td>AI设备&材料</td></tr>
-  <tr><td>长飞光纤光缆</td><td>06869</td><td>129.60</td><td class="green">-1.37%</td><td>AI设备&材料</td></tr>
-  <tr><td>万科企业</td><td>02202</td><td>2.455</td><td class="green">-2.96%</td><td>地产/基建</td></tr>
-  <tr><td>兆威机电</td><td>02692</td><td>46.50</td><td class="green">-1.11%</td><td>新能源/电动车</td></tr>
-</table>
-
+<table><thead><tr><th>股票</th><th>代码</th><th>收盘价(港元)</th><th>涨跌幅</th><th>主题</th></tr></thead><tbody><tr><td>腾讯控股</td><td>00700</td><td>441.00</td><td>🟢 <strong>-4.46%</strong></td><td>AI应用</td></tr><tr><td>康方生物</td><td>09926</td><td>103.60</td><td>🔴 +1.47%</td><td>创新药械</td></tr><tr><td>泡泡玛特</td><td>09992</td><td>154.20</td><td>🔴 +2.12%</td><td>传媒/娱乐</td></tr><tr><td>联想集团</td><td>00992</td><td>34.90</td><td>🔴 <strong>+20.18%</strong></td><td>AI设备&amp;材料</td></tr><tr><td>紫金黄金国际</td><td>02259</td><td>128.20</td><td>🟢 -5.46%</td><td>能源/有色</td></tr><tr><td>英矽智能</td><td>03696</td><td>46.38</td><td>🔴 +0.83%</td><td>创新药械</td></tr><tr><td>大族数控</td><td>03200</td><td>111.30</td><td>🔴 +2.96%</td><td>AI设备&amp;材料</td></tr><tr><td>长飞光纤光缆</td><td>06869</td><td>129.60</td><td>🟢 -1.37%</td><td>AI设备&amp;材料</td></tr><tr><td>万科企业</td><td>02202</td><td>2.455</td><td>🟢 -2.96%</td><td>地产/基建</td></tr><tr><td>兆威机电</td><td>02692</td><td>46.50</td><td>🟢 -1.11%</td><td>新能源/电动车</td></tr></tbody></table>
+<hr>
 <h3>🔴 持仓重大增量</h3>
-
-<div class="highlight highlight-red"><b>1. 联想集团(00992.HK) 单日 +20.18%，创历史新高</b><br>
-8/13 午间披露 2026/27 财年 Q1 业绩：营收 1834 亿元(+43%)创单季历史新高；经调整净利润 73 亿元(+176%)首次突破 10 亿美元；AI 相关业务收入 634 亿元(+60%)占营收 35%。AI 服务器储备订单从 1400 亿扩大至 <b>3600 亿元</b>，ISG 营收同比 +98%、运营利润率 9.1%。公司预计本财年营收突破 1000 亿美元，提前两年实现目标。多家券商维持/首次覆盖买入：东吴目标价 39.6 港元、天风 31.6 港元、中泰/长江/国联民生均看多。年初至今累涨 291%。</div>
-
-<div class="highlight highlight-orange"><b>2. 腾讯控股(00700.HK) -4.46%，Q2 业绩后回调</b><br>
-8/12 披露 Q2 业绩：营收 2047.85 亿(+11%)，归母净利 560.22 亿(+0.7%)，非国际准则净利 684.15 亿(+9%)。营销服务 +22%、金科企服 +9%。但算力采购大幅推高资本开支至 <b>527.8 亿元，自由现金流转负</b>，引发市场对 AI 投入回报周期的担忧。上半年累计回购 244 亿港元注销 5003 万股。微信合并月活 14.39 亿稳定。</div>
-
-<div class="highlight highlight-green"><b>3. 新和成(002001.SZ) -7.83%，领跌持仓</b><br>
-Wind 未返回当日明确利空。结合历史：维生素价格自去年 Q3 见顶后持续回落（VA 从 175 元/kg 回落至 95 元/kg 区间），叠加年内涨幅较高后的获利回吐，构成主要压制。公司基本面仍稳健（2025 年净利 67.64 亿创新高，蛋氨酸量价齐升）。</div>
-
-<div class="highlight highlight-red"><b>4. 中恒电气(002364.SZ) +3.39%，领涨 A 股持仓</b><br>
-HVDC 数据中心电源主线，受益 AI 算力基建电力需求，持续受资金关注。</div>
-
-<div class="highlight highlight-blue"><b>5. 光通信景气持续验证（持仓相关）</b><br>
-长飞光纤 2026 年中报预告净利同比 +711%–914%（算力数据中心加速建设 + 行业供需改善）；中国移动启动 2026–2027 年普通光缆集采 216.18 万皮长公里（今年最大规模）；日本藤仓 DC 光缆提价 30%，光纤涨价已成行业共识。</div>
-
-<div class="highlight highlight-orange"><b>6. 有色持仓分化</b><br>
-铜价创历史新高（伦铜重返 14000 美元/吨）、黄金突破 4200 美元，紫金矿业获国信/中银看好。但紫金黄金国际(02259.HK) 8/13 回调 -5.46%，属前期涨幅回吐。</div>
-
+<p><strong>1. 联想集团(00992.HK) 单日 +20.18%，创历史新高</strong><br>8/13 午间披露 2026/27 财年 Q1 业绩：营收 1834 亿元(+43%)创单季历史新高；经调整净利润 73 亿元(+176%)首次突破 10 亿美元；AI 相关业务收入 634 亿元(+60%)占营收 35%。AI 服务器储备订单从 1400 亿扩大至 <strong>3600 亿元</strong>，ISG 营收同比 +98%、运营利润率 9.1%。公司预计本财年营收突破 1000 亿美元，提前两年实现目标。多家券商维持/首次覆盖买入：东吴目标价 39.6 港元、天风 31.6 港元、中泰/长江/国联民生均看多。年初至今累涨 291%。</p>
+<p><strong>2. 腾讯控股(00700.HK) -4.46%，Q2 业绩后回调</strong><br>8/12 披露 Q2 业绩：营收 2047.85 亿(+11%)，归母净利 560.22 亿(+0.7%)，非国际准则净利 684.15 亿(+9%)。营销服务 +22%、金科企服 +9%、增值服务 +984 亿。但算力采购大幅推高资本开支至 <strong>527.8 亿元，自由现金流转负</strong>，引发市场对 AI 投入回报周期的担忧。上半年累计回购 244 亿港元注销 5003 万股。微信合并月活 14.39 亿稳定。</p>
+<p><strong>3. 新和成(002001.SZ) -7.83%，领跌持仓</strong><br>Wind 未返回当日明确利空。结合历史：维生素价格自去年 Q3 见顶后持续回落（VA 从 175 元/kg 回落至 95 元/kg 区间），叠加年内涨幅较高后的获利回吐，构成主要压制。公司基本面仍稳健（2025 年净利 67.64 亿创新高，蛋氨酸量价齐升）。</p>
+<p><strong>4. 中恒电气(002364.SZ) +3.39%，领涨 A 股持仓</strong><br>HVDC 数据中心电源主线，受益 AI 算力基建电力需求，持续受资金关注。</p>
+<p><strong>5. 光通信景气持续验证（持仓相关）</strong><br>长飞光纤 2026 年中报预告净利同比 +711%–914%（算力数据中心加速建设 + 行业供需改善）；中国移动启动 2026–2027 年普通光缆集采 216.18 万皮长公里（今年最大规模）；日本藤仓 DC 光缆提价 30%，光纤涨价已成行业共识。</p>
+<p><strong>6. 有色持仓分化</strong><br>铜价创历史新高（伦铜重返 14000 美元/吨）、黄金突破 4200 美元，紫金矿业获国信/中银看好。但紫金黄金国际(02259.HK) 8/13 回调 -5.46%，属前期涨幅回吐。</p>
+<hr>
 <h2>六、知识星球（调研纪要）</h2>
-<p style="font-size:0.85em;color:var(--text2);">搜索范围：水木调研纪要-2.0、调研纪要更新 | 关键词：强推/上调/重视/重点推荐/买入/增持</p>
-
+<blockquote>搜索范围：水木调研纪要-2.0、调研纪要更新 | 关键词：强推/上调/重视/重点推荐/买入/增持</blockquote>
 <h3>🔴 强推/上调信号</h3>
-<table>
-  <tr><th>日期</th><th>主题</th><th>信号</th></tr>
-  <tr><td>08-11</td><td>行云科技：B300 涨价，拿卡渠道稳定，继续强推</td><td><span class="tag tag-red">强推</span></td></tr>
-  <tr><td>08-10</td><td>高盛大幅上调预测，PCB 概念股梳理</td><td><span class="tag tag-orange">上调</span></td></tr>
-  <tr><td>08-07</td><td>华锐精密：废钨资源价值重估（美国禁令收紧废钨供给）</td><td><span class="tag tag-red">强推</span></td></tr>
-  <tr><td>08-07</td><td>宁德时代：匈牙利工厂进度符合预期，电芯首期 30-40GWh</td><td><span class="tag tag-blue">关注</span></td></tr>
-  <tr><td>08-06</td><td>六家科技巨头资本开支指引汇总：全部上调，仅微软下调</td><td><span class="tag tag-orange">上调</span></td></tr>
-  <tr><td>08-02</td><td>广发建筑：重视核电批复 & 工业模块方向</td><td><span class="tag tag-purple">重视</span></td></tr>
-  <tr><td>07-30</td><td>影视板块：安徽卫视上线 AI 影视剧，继续坚定强推</td><td><span class="tag tag-red">强推</span></td></tr>
-  <tr><td>07-24</td><td>广发通信：27 年可插拔光模块需求更新（800G 维持 1.3 亿支）</td><td><span class="tag tag-orange">上调</span></td></tr>
-</table>
-
-<div class="highlight highlight-blue"><b>💡 星球共识</b>
-<ul class="bullet">
-  <li><b>算力租赁</b>：A100 折旧放宽至 9 年，理论上 B300 未来可用 10 年，继续看好算力租赁板块（08-12）。</li>
-  <li><b>洁净室</b>：长鑫科技上市在即，继续强推柏诚股份、深桑达 A。</li>
-  <li><b>存储/PCB</b>：高盛大幅上调闪迪目标价 1200→2200 美元、AMD 450→640 美元，PCB/存储链条景气验证。</li>
-</ul>
-</div>
-
+<table><thead><tr><th>日期</th><th>主题</th><th>信号</th></tr></thead><tbody><tr><td>08-11</td><td>行云科技：B300 涨价，拿卡渠道稳定，继续强推</td><td>强推</td></tr><tr><td>08-10</td><td>高盛大幅上调预测，PCB 概念股梳理</td><td>上调</td></tr><tr><td>08-07</td><td>华锐精密：废钨资源价值重估（美国禁令收紧废钨供给）</td><td>强推</td></tr><tr><td>08-07</td><td>宁德时代：匈牙利工厂进度符合预期，电芯首期 30-40GWh</td><td>关注</td></tr><tr><td>08-06</td><td>六家科技巨头资本开支指引汇总：全部上调，仅微软下调</td><td>上调</td></tr><tr><td>08-02</td><td>广发建筑：重视核电批复 &amp; 工业模块方向</td><td>重视</td></tr><tr><td>07-30</td><td>影视板块：安徽卫视上线 AI 影视剧，继续坚定强推</td><td>强推</td></tr><tr><td>07-24</td><td>广发通信：27 年可插拔光模块需求更新（800G 维持 1.3 亿支）</td><td>上调</td></tr></tbody></table>
+<h3>💡 星球共识</h3>
+<ul><li><strong>算力租赁</strong>：A100 折旧放宽至 9 年，理论上 B300 未来可用 10 年，继续看好算力租赁板块（08-12）。</li><li><strong>洁净室</strong>：长鑫科技上市在即，继续强推柏诚股份、深桑达 A。</li><li><strong>存储/PCB</strong>：高盛大幅上调闪迪目标价 1200→2200 美元、AMD 450→640 美元，PCB/存储链条景气验证。</li></ul>
+<hr>
 <h2>七、数据溯源</h2>
-<table>
-  <tr><th>板块</th><th>数据源</th><th>方式</th></tr>
-  <tr><td>A股/港股/美股指数行情</td><td>Wind MCP index_data.get_index_price_indicators</td><td>结构化 API</td></tr>
-  <tr><td>持仓 24 只个股行情</td><td>Wind MCP stock_data.get_stock_price_indicators</td><td>结构化 API</td></tr>
-  <tr><td>新闻/宏观/策略</td><td>Wind MCP financial_docs.get_financial_news</td><td>结构化 API</td></tr>
-  <tr><td>调研纪要</td><td>zsxq-cli topic +search（水木调研纪要-2.0 / 调研纪要更新）</td><td>CLI 全文搜索</td></tr>
-  <tr><td>大宗商品</td><td>本期跳过（Wind 不覆盖商品期货）</td><td>—</td></tr>
-</table>
-<p style="font-size:0.82em;color:var(--text2);">所有数值型数据均来自 Wind MCP 结构化 API，未使用搜索引擎或新闻文本价格。数据来源于万得 Wind 金融数据服务。</p>
+<table><thead><tr><th>板块</th><th>数据源</th><th>方式</th></tr></thead><tbody><tr><td>A股/港股/美股指数行情</td><td>Wind MCP <code>index_data.get_index_price_indicators</code></td><td>结构化 API</td></tr><tr><td>持仓 24 只个股行情</td><td>Wind MCP <code>stock_data.get_stock_price_indicators</code></td><td>结构化 API</td></tr><tr><td>联想/腾讯/新和成/宏观/策略/光通信/有色/创新药新闻</td><td>Wind MCP <code>financial_docs.get_financial_news</code></td><td>结构化 API</td></tr><tr><td>调研纪要</td><td>zsxq-cli <code>topic +search</code>（水木调研纪要-2.0 / 调研纪要更新）</td><td>CLI 全文搜索</td></tr><tr><td>大宗商品</td><td>本期跳过（Wind 不覆盖商品期货）</td><td>—</td></tr></tbody></table>
+<blockquote>所有数值型数据均来自 Wind MCP 结构化 API，未使用搜索引擎或新闻文本价格。数据来源于万得 Wind 金融数据服务。</blockquote>
+<hr>
+<p>*报告生成：Cleo 🐾 · My Research Central · via WB*</p>
 
 <div class="report-footer">
-  数据来源：Wind 万得金融终端 · 知识星球（zsxq）· My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

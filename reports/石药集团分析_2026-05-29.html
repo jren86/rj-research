@@ -1,667 +1,505 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>石药集团（01093.HK）深度投资分析</title>
-<style>
-  :root {
-    --bg-primary: #faf9f7;
-    --bg-secondary: #f4f2ef;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f4f2ef;
-    --border-color: #cfc9c1;
-    --text-primary: #2c2a28;
-    --text-secondary: #6b6760;
-    --text-muted: #6b6760;
-    --accent-red: #b8544a;
-    --accent-green: #4a8a5c;
-    --accent-blue: #3a6b96;
-    --accent-yellow: #a8813c;
-    --accent-purple: #7d6b8f;
-    --accent-orange: #f0883e;
-    --accent-cyan: #39d2c0;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.7;
-    font-size: 15px;
-    -webkit-font-smoothing: antialiased;
-  }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px 16px;
-  }
-  /* Header */
-  .header {
-    text-align: center;
-    padding: 30px 20px;
-    background: linear-gradient(135deg, #1a1e2e 0%, #faf9f7 50%, #ffffff 100%);
-    border-radius: 16px;
-    margin-bottom: 24px;
-    border: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-  }
-  .header::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(248,81,73,0.06) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .header h1 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    position: relative;
-  }
-  .header .subtitle {
-    color: var(--text-secondary);
-    font-size: 14px;
-  }
-  .header .price-box {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-top: 16px;
-    background: rgba(248,81,73,0.12);
-    padding: 12px 24px;
-    border-radius: 12px;
-    border: 1px solid rgba(248,81,73,0.2);
-  }
-  .header .price {
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--accent-red);
-  }
-  .header .change {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--accent-red);
-  }
-  /* Verdict Card */
-  .verdict-card {
-    background: var(--bg-card);
-    border-radius: 14px;
-    padding: 24px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-  }
-  .verdict-card h2 {
-    font-size: 18px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .verdict-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .verdict-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 14px;
-    background: var(--bg-secondary);
-    border-radius: 10px;
-    font-size: 14px;
-  }
-  .verdict-item .label {
-    color: var(--text-secondary);
-  }
-  .verdict-item .value {
-    font-weight: 600;
-  }
-  .verdict-item .value.bull { color: var(--accent-red); }
-  .verdict-item .value.bear { color: var(--accent-green); }
-  .verdict-item .value.neutral { color: var(--accent-yellow); }
-  /* Trade Box */
-  .trade-box {
-    background: var(--bg-card);
-    border-radius: 14px;
-    padding: 24px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(248,81,73,0.3);
-    box-shadow: 0 0 20px rgba(248,81,73,0.05);
-  }
-  .trade-box h2 {
-    font-size: 18px;
-    margin-bottom: 16px;
-    color: var(--accent-red);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .trade-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-  .trade-item {
-    padding: 12px;
-    background: var(--bg-secondary);
-    border-radius: 10px;
-    text-align: center;
-  }
-  .trade-item .label {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-  }
-  .trade-item .value {
-    font-size: 16px;
-    font-weight: 700;
-  }
-  .trade-item .value.up { color: var(--accent-red); }
-  .trade-item .value.down { color: var(--accent-green); }
-  .trade-item .value.highlight { color: var(--accent-cyan); }
-  /* Section */
-  .section {
-    background: var(--bg-card);
-    border-radius: 14px;
-    padding: 24px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-  }
-  .section h2 {
-    font-size: 18px;
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  /* Data Table */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-  .data-table th {
-    text-align: left;
-    padding: 8px 10px;
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-    font-weight: 600;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid var(--border-color);
-  }
-  .data-table td {
-    padding: 8px 10px;
-    border-bottom: 1px solid rgba(48,54,61,0.5);
-  }
-  .data-table tr:last-child td { border-bottom: none; }
-  .data-table .up { color: var(--accent-red); font-weight: 600; }
-  .data-table .down { color: var(--accent-green); font-weight: 600; }
-  .data-table .highlight { color: var(--accent-cyan); font-weight: 600; }
-  .data-table .warning { color: var(--accent-yellow); }
-  /* Bull/Bear Cards */
-  .debate-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  @media (max-width: 600px) {
-    .debate-container { grid-template-columns: 1fr; }
-  }
-  .bull-card, .bear-card {
-    border-radius: 12px;
-    padding: 18px;
-    font-size: 13px;
-  }
-  .bull-card {
-    background: rgba(248,81,73,0.08);
-    border: 1px solid rgba(248,81,73,0.2);
-  }
-  .bear-card {
-    background: rgba(63,185,80,0.08);
-    border: 1px solid rgba(63,185,80,0.2);
-  }
-  .bull-card h3 { color: var(--accent-red); margin-bottom: 12px; }
-  .bear-card h3 { color: var(--accent-green); margin-bottom: 12px; }
-  .point-item {
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.03);
-    display: flex;
-    gap: 8px;
-  }
-  .point-item:last-child { border-bottom: none; }
-  .point-num {
-    font-weight: 700;
-    min-width: 20px;
-    font-size: 12px;
-  }
-  .bull-card .point-num { color: var(--accent-red); }
-  .bear-card .point-num { color: var(--accent-green); }
-  /* Risk Matrix */
-  .risk-item {
-    display: flex;
-    align-items: center;
-    padding: 10px 12px;
-    background: var(--bg-secondary);
-    border-radius: 8px;
-    margin-bottom: 8px;
-    font-size: 13px;
-    gap: 10px;
-  }
-  .risk-item:last-child { margin-bottom: 0; }
-  .risk-tag {
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-  .risk-high { background: rgba(248,81,73,0.15); color: var(--accent-red); }
-  .risk-medium { background: rgba(210,153,34,0.15); color: var(--accent-yellow); }
-  .risk-low { background: rgba(63,185,80,0.15); color: var(--accent-green); }
-  /* Catalyst Timeline */
-  .timeline-item {
-    display: flex;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(48,54,61,0.3);
-    font-size: 13px;
-  }
-  .timeline-item:last-child { border-bottom: none; }
-  .timeline-date {
-    min-width: 90px;
-    color: var(--accent-blue);
-    font-weight: 600;
-    font-size: 12px;
-  }
-  .timeline-impact {
-    font-size: 11px;
-    white-space: nowrap;
-  }
-  .impact-high { color: var(--accent-red); }
-  .impact-medium { color: var(--accent-yellow); }
-  /* Strategy Table */
-  .strategy-row {
-    display: flex;
-    align-items: center;
-    padding: 10px 14px;
-    background: var(--bg-secondary);
-    border-radius: 8px;
-    margin-bottom: 8px;
-    font-size: 13px;
-    gap: 10px;
-  }
-  .strategy-row:last-child { margin-bottom: 0; }
-  .strategy-icon { font-size: 16px; }
-  .strategy-range {
-    min-width: 100px;
-    font-weight: 600;
-    color: var(--accent-cyan);
-  }
-  .strategy-action { flex: 1; }
-  .strategy-pos {
-    color: var(--text-muted);
-    font-size: 12px;
-  }
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 20px;
-    color: var(--text-muted);
-    font-size: 12px;
-    border-top: 1px solid var(--border-color);
-    margin-top: 10px;
-  }
-  /* Key Insight Box */
-  .insight-box {
-    background: linear-gradient(135deg, rgba(58,107,150,0.08) 0%, rgba(188,140,255,0.08) 100%);
-    border: 1px solid rgba(88,166,255,0.2);
-    border-radius: 12px;
-    padding: 18px;
-    margin: 16px 0;
-    font-size: 14px;
-    line-height: 1.8;
-  }
-  .insight-box strong {
-    color: var(--accent-blue);
-  }
-  /* Responsive */
-  @media (max-width: 600px) {
-    .container { padding: 12px; }
-    .header h1 { font-size: 22px; }
-    .header .price { font-size: 28px; }
-    .trade-grid { grid-template-columns: 1fr 1fr; }
-    .section { padding: 16px; }
-    .data-table { font-size: 12px; }
-    .data-table th, .data-table td { padding: 6px 8px; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>石药集团分析 · 2026-05-29</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
-<div class="container">
 
-  <!-- Header -->
-  <div class="header">
-    <h1>🏛️ 石药集团（01093.HK）</h1>
-    <div class="subtitle">深度投资分析 · 2026年5月29日</div>
-    <div class="price-box">
-      <span class="price">7.50</span>
-      <span class="change">+7.76% 📈</span>
-    </div>
-  </div>
-
-  <!-- Core Verdict -->
-  <div class="verdict-card">
-    <h2>🎯 核心结论</h2>
-    <div class="verdict-grid">
-      <div class="verdict-item">
-        <span class="label">短期（1-3月）</span>
-        <span class="value bull">⭐⭐⭐ 偏多</span>
-      </div>
-      <div class="verdict-item">
-        <span class="label">中期（3-12月）</span>
-        <span class="value bull">⭐⭐⭐⭐ 看好</span>
-      </div>
-      <div class="verdict-item">
-        <span class="label">长期（1-3年）</span>
-        <span class="value bull">⭐⭐⭐⭐⭐ 强烈看好</span>
-      </div>
-      <div class="verdict-item">
-        <span class="label">交易建议</span>
-        <span class="value" style="color:var(--accent-cyan)">逢低布局，分批建仓</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Trade Box -->
-  <div class="trade-box">
-    <h2>📈 交易建议</h2>
-    <div class="trade-grid">
-      <div class="trade-item">
-        <div class="label">入场区间</div>
-        <div class="value highlight">7.00 - 7.80</div>
-      </div>
-      <div class="trade-item">
-        <div class="label">止损位</div>
-        <div class="value down">6.30 (-16%)</div>
-      </div>
-      <div class="trade-item">
-        <div class="label">第一目标</div>
-        <div class="value up">9.50 (+27%)</div>
-      </div>
-      <div class="trade-item">
-        <div class="label">第二目标</div>
-        <div class="value up">12.00 (+60%)</div>
-      </div>
-      <div class="trade-item" style="grid-column: span 2;">
-        <div class="label">建议仓位</div>
-        <div class="value highlight">3-5%（中等 conviction）</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Key Market Data -->
-  <div class="section">
-    <h2>📊 行情数据</h2>
-    <table class="data-table">
-      <tr><th>指标</th><th>数值</th><th>备注</th></tr>
-      <tr><td>最新价</td><td class="up">7.50 港元</td><td>日涨幅 +7.76%</td></tr>
-      <tr><td>当日最高/最低</td><td>7.52 / 6.94</td><td>低开强势拉回</td></tr>
-      <tr><td>总市值</td><td>85.5 亿港元</td><td>小盘医药股</td></tr>
-      <tr><td>YTD涨跌幅</td><td class="down">-11.76%</td><td>从8.43跌至7.50</td></tr>
-      <tr><td>52周最高</td><td>10.96 港元（1/30）</td><td>距高点 -31.6%</td></tr>
-      <tr><td>52周最低</td><td>6.64 港元（5/27）</td><td>刚触及低点后反弹</td></tr>
-      <tr><td>换手率</td><td class="highlight">2.04%</td><td>放量上涨</td></tr>
-      <tr><td>股息率</td><td>~5.6%</td><td>分红支付率77%</td></tr>
-    </table>
-  </div>
-
-  <!-- Technical Indicators -->
-  <div class="section">
-    <h2>📐 技术指标</h2>
-    <table class="data-table">
-      <tr><th>指标</th><th>数值</th><th>信号</th></tr>
-      <tr><td>MACD</td><td>DIF: -0.399 / DEA: -0.372</td><td>死叉→即将金叉 ✅</td></tr>
-      <tr><td>KDJ</td><td class="up">K: 38.2 / D: 25.5 / J: 63.7</td><td>低位金叉 ✅</td></tr>
-      <tr><td>RSI</td><td>RSI6: 50.1 / RSI12: 41.7</td><td>中性偏弱</td></tr>
-      <tr><td>布林带</td><td>上8.76 / 中7.82 / 下6.89</td><td>接近中轨</td></tr>
-      <tr><td>SAR</td><td class="down">7.821</td><td>当前价在SAR下方 ⚠️</td></tr>
-    </table>
-  </div>
-
-  <!-- Financial Data -->
-  <div class="section">
-    <h2>💰 财务数据</h2>
-    <table class="data-table">
-      <tr><th>指标</th><th>2025年报</th><th>同比</th><th>2026Q1</th><th>同比</th></tr>
-      <tr><td>营收</td><td>260.06 亿</td><td class="down">-10.35%</td><td>64.65 亿</td><td class="down">-7.8%</td></tr>
-      <tr><td>归母净利润</td><td>38.82 亿</td><td class="down">-10.3%</td><td>8.60 亿</td><td class="down" style="font-size:15px">-41.8%</td></tr>
-      <tr><td>毛利率</td><td>65.59%</td><td class="down">-4.38pct</td><td>—</td><td>—</td></tr>
-      <tr><td>ROE</td><td>11.86%</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td>自由现金流</td><td class="highlight">38.72 亿</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td>资产负债率</td><td>26.01%</td><td>—</td><td>—</td><td>—</td></tr>
-    </table>
-    <div class="insight-box">
-      <strong>关键拆解：</strong>2026Q1归母净利润同比-41.8%，但剔除BD授权收入后，<strong>内生成药收入同比+6.2%</strong>（已恢复正增长）。神经系统+22%、心血管+31%是增长引擎。授权费收入-80%是确认节奏问题，不是业务恶化。
-    </div>
-  </div>
-
-  <!-- Catalysts -->
-  <div class="section">
-    <h2>🔥 核心催化剂</h2>
-    
-    <div style="background:rgba(248,81,73,0.1);border:1px solid rgba(248,81,73,0.25);border-radius:12px;padding:16px;margin-bottom:16px;">
-      <div style="font-size:15px;font-weight:700;color:var(--accent-red);margin-bottom:8px;">🏆 阿斯利康12亿美元首付款到账（5月29日确认）</div>
-      <table class="data-table" style="margin:0;">
-        <tr><td>交易性质</td><td>长效多肽平台授权（8个项目）</td></tr>
-        <tr><td>首付款</td><td class="up" style="font-size:15px">12亿美元（~93.6亿港元）</td></tr>
-        <tr><td>里程碑款</td><td>最高173亿美元</td></tr>
-        <tr><td>总交易额</td><td class="highlight">185亿美元</td></tr>
-        <tr><td>历史意义</td><td>中国药企史上最大对外授权交易</td></tr>
-      </table>
-    </div>
-
-    <div style="font-weight:600;margin-bottom:10px;">SYS6010（EGFR ADC）催化时间线</div>
-    <div class="timeline-item">
-      <span class="timeline-date">✅ 已获</span>
-      <span>CDE突破性疗法认定（食管鳞癌）</span>
-      <span class="timeline-impact impact-high">⭐⭐⭐⭐⭐</span>
-    </div>
-    <div class="timeline-item">
-      <span class="timeline-date">2026年6月</span>
-      <span>ASCO数据读出</span>
-      <span class="timeline-impact impact-high">⭐⭐⭐⭐⭐</span>
-    </div>
-    <div class="timeline-item">
-      <span class="timeline-date">2026年H2</span>
-      <span>递交NDA上市申请</span>
-      <span class="timeline-impact impact-high">⭐⭐⭐⭐</span>
-    </div>
-    <div class="timeline-item">
-      <span class="timeline-date">✅ 已获</span>
-      <span>FDA快速通道资格（3项）</span>
-      <span class="timeline-impact impact-medium">⭐⭐⭐</span>
-    </div>
-  </div>
-
-  <!-- Fund Flow -->
-  <div class="section">
-    <h2>💸 资金流向</h2>
-    <table class="data-table">
-      <tr><th>维度</th><th>数据</th><th>解读</th></tr>
-      <tr><td>主力净流入</td><td class="up">+1.19 亿港元</td><td>当日主力积极买入</td></tr>
-      <tr><td>散户净流入</td><td>+2.40 亿港元</td><td>散户跟风</td></tr>
-      <tr><td>南下持股比例</td><td>26.52%</td><td>仍在减持通道</td></tr>
-      <tr><td>南下季度变动</td><td class="down">减持4.59亿股（~37.8亿港元）</td><td>⚠️ 季度持续净流出</td></tr>
-      <tr><td>当日南下净流出</td><td class="down">-1.58 亿港元</td><td>短期南下仍在卖</td></tr>
-    </table>
-  </div>
-
-  <!-- Institution Ratings -->
-  <div class="section">
-    <h2>🏛️ 机构评级</h2>
-    <div style="text-align:center;padding:16px;background:var(--bg-secondary);border-radius:12px;margin-bottom:14px;">
-      <div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">20家机构目标均价</div>
-      <div style="font-size:32px;font-weight:800;color:var(--accent-red);">11.85 港元</div>
-      <div style="font-size:14px;color:var(--accent-red);">+58% 上行空间</div>
-    </div>
-    <table class="data-table">
-      <tr><th>项目</th><th>数据</th></tr>
-      <tr><td>最高/最低目标价</td><td>19.36 / 6.00 港元</td></tr>
-      <tr><td>买入/增持</td><td class="up">68%</td></tr>
-      <tr><td>持有</td><td class="warning">18%</td></tr>
-      <tr><td>减持/卖出</td><td class="down">14%</td></tr>
-      <tr><td>中金/国泰君安</td><td class="up">"跑赢行业"，目标价12港元</td></tr>
-      <tr><td>招商证券（香港）</td><td class="down">下调至中性，目标价9.3港元</td></tr>
-    </table>
-  </div>
-
-  <!-- Bull vs Bear Debate -->
-  <div class="section">
-    <h2>⚔️ 多空辩论</h2>
-    <div class="debate-container">
-      <div class="bull-card">
-        <h3>🟢 多方 Bull Case</h3>
-        <div class="point-item"><span class="point-num">1.</span><span>阿斯利康12亿美元首付款大幅增厚利润</span></div>
-        <div class="point-item"><span class="point-num">2.</span><span>SYS6010 ADC催化密集（ASCO+NDA）</span></div>
-        <div class="point-item"><span class="point-num">3.</span><span>估值极度便宜（2026E PE 9-10x）</span></div>
-        <div class="point-item"><span class="point-num">4.</span><span>成药Q3触底，内生收入+6.2%</span></div>
-        <div class="point-item"><span class="point-num">5.</span><span>GLP-1+siRNA管线打开长期空间</span></div>
-        <div class="point-item"><span class="point-num">6.</span><span>股息率5.6%，下行有托底</span></div>
-      </div>
-      <div class="bear-card">
-        <h3>🔴 空方 Bear Case</h3>
-        <div class="point-item"><span class="point-num">1.</span><span>Q1归母净利润-41.8%，业绩断崖</span></div>
-        <div class="point-item"><span class="point-num">2.</span><span>集采持续侵蚀毛利率（-4.38pct）</span></div>
-        <div class="point-item"><span class="point-num">3.</span><span>南下资金季度减持37.8亿港元</span></div>
-        <div class="point-item"><span class="point-num">4.</span><span>BD收入确认节奏不可控</span></div>
-        <div class="point-item"><span class="point-num">5.</span><span>ADC赛道竞争白热化</span></div>
-        <div class="point-item"><span class="point-num">6.</span><span>SAR偏空，中期趋势仍向下</span></div>
-      </div>
-    </div>
-    <div class="insight-box" style="margin-top:16px;">
-      <strong>裁决：谨慎买入 🟡</strong><br>
-      石药正处于"旧引擎熄火、新引擎点火"的转型期。7.50港元已充分定价悲观预期，阿斯利康首付款将是利润拐点。但Q1业绩断崖提醒转型尚未完成，需控制仓位。
-    </div>
-  </div>
-
-  <!-- Risk Assessment -->
-  <div class="section">
-    <h2>🎲 风险评估</h2>
-    <div class="risk-item">
-      <span class="risk-tag risk-medium">中</span>
-      <span>集采持续扩大</span>
-      <span style="margin-left:auto;color:var(--text-muted);font-size:12px;">关注新一轮集采名单</span>
-    </div>
-    <div class="risk-item">
-      <span class="risk-tag risk-medium">中</span>
-      <span>SYS6010临床失败风险</span>
-      <span style="margin-left:auto;color:var(--text-muted);font-size:12px;">ASCO数据是关键验证点</span>
-    </div>
-    <div class="risk-item">
-      <span class="risk-tag risk-medium">中</span>
-      <span>BD里程碑款不达预期</span>
-      <span style="margin-left:auto;color:var(--text-muted);font-size:12px;">首付款已锁定部分安全</span>
-    </div>
-    <div class="risk-item">
-      <span class="risk-tag risk-low">低</span>
-      <span>南下资金持续流出</span>
-      <span style="margin-left:auto;color:var(--text-muted);font-size:12px;">流出斜率已在放缓</span>
-    </div>
-    <div class="risk-item">
-      <span class="risk-tag risk-medium">中</span>
-      <span>港股系统性风险</span>
-      <span style="margin-left:auto;color:var(--text-muted);font-size:12px;">控制总仓位</span>
-    </div>
-  </div>
-
-  <!-- Valuation -->
-  <div class="section">
-    <h2>💎 估值分析</h2>
-    <div style="font-weight:600;margin-bottom:10px;">PE估值法</div>
-    <table class="data-table">
-      <tr><th>场景</th><th>2026E EPS</th><th>PE倍数</th><th>目标价</th></tr>
-      <tr><td>悲观</td><td>0.62 港元</td><td>10x</td><td class="down">6.20 港元</td></tr>
-      <tr><td>中性</td><td>0.85 港元</td><td>14x</td><td class="up">11.90 港元</td></tr>
-      <tr><td>乐观</td><td>1.05 港元</td><td>18x</td><td class="up">18.90 港元</td></tr>
-    </table>
-    <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">* 2026E EPS考虑阿斯利康首付款增厚后约0.85港元/股</div>
-  </div>
-
-  <!-- Strategy -->
-  <div class="section">
-    <h2>📋 操作策略</h2>
-    <div class="strategy-row">
-      <span class="strategy-icon">🟢</span>
-      <span class="strategy-range">7.00-7.80</span>
-      <span class="strategy-action">首批买入</span>
-      <span class="strategy-pos">仓位 1.5%</span>
-    </div>
-    <div class="strategy-row">
-      <span class="strategy-icon">🟢</span>
-      <span class="strategy-range">6.50-7.00</span>
-      <span class="strategy-action">回调加仓</span>
-      <span class="strategy-pos">仓位 1.5%</span>
-    </div>
-    <div class="strategy-row">
-      <span class="strategy-icon">🟡</span>
-      <span class="strategy-range">7.80-8.50</span>
-      <span class="strategy-action">持有不动</span>
-      <span class="strategy-pos">—</span>
-    </div>
-    <div class="strategy-row">
-      <span class="strategy-icon">🔴</span>
-      <span class="strategy-range" style="color:var(--accent-green)">跌破6.30</span>
-      <span class="strategy-action">止损离场</span>
-      <span class="strategy-pos">清仓</span>
-    </div>
-    <div class="strategy-row">
-      <span class="strategy-icon">🎯</span>
-      <span class="strategy-range" style="color:var(--accent-red)">9.50</span>
-      <span class="strategy-action">减仓1/3</span>
-      <span class="strategy-pos">—</span>
-    </div>
-    <div class="strategy-row">
-      <span class="strategy-icon">🎯</span>
-      <span class="strategy-range" style="color:var(--accent-red)">12.00</span>
-      <span class="strategy-action">减仓1/2</span>
-      <span class="strategy-pos">—</span>
-    </div>
-  </div>
-
-  <!-- Key Verification Points -->
-  <div class="section">
-    <h2>🔍 关键验证节点</h2>
-    <div class="risk-item" style="background:rgba(58,107,150,0.08);border:1px solid rgba(88,166,255,0.2);">
-      <span style="color:var(--accent-blue);font-weight:600;">6月ASCO</span>
-      <span>SYS6010数据若积极，加仓至5%</span>
-    </div>
-    <div class="risk-item" style="background:rgba(58,107,150,0.08);border:1px solid rgba(88,166,255,0.2);">
-      <span style="color:var(--accent-blue);font-weight:600;">Q2财报</span>
-      <span>验证阿斯利康首付款利润确认</span>
-    </div>
-    <div class="risk-item" style="background:rgba(58,107,150,0.08);border:1px solid rgba(88,166,255,0.2);">
-      <span style="color:var(--accent-blue);font-weight:600;">南下资金拐点</span>
-      <span>若净流出转净流入，信心增强</span>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <p>⚠️ 本分析仅供投资参考，不构成投资建议。投资有风险，入市需谨慎。</p>
-    <p style="margin-top:6px;">分析工具：neodata-financial-search + westock-data + trading-analysis</p>
-    <p style="margin-top:4px;">生成时间：2026-05-29 18:00 CST</p>
-  </div>
-
+<div class="report-header">
+  <h1>石药集团分析 · 2026-05-29</h1>
+  <div class="meta">📅 分析日期：2026年5月29日 | 💰 最新价：7.50 港元 | 📊 日涨幅：+7.76%</div>
 </div>
+
+<hr>
+<h2>🎯 核心结论</h2>
+<table><thead><tr><th>维度</th><th>评级</th><th>说明</th></tr></thead><tbody><tr><td><strong>短期（1-3月）</strong></td><td>⭐⭐⭐ 偏多</td><td>阿斯利康首付款到账+SYS6010催化密集，技术面超跌反弹</td></tr><tr><td><strong>中期（3-12月）</strong></td><td>⭐⭐⭐⭐ 看好</td><td>BD收入兑现+创新管线上市，估值从9x向15x修复</td></tr><tr><td><strong>长期（1-3年）</strong></td><td>⭐⭐⭐⭐⭐ 强烈看好</td><td>ADC平台+GLP-1+siRNA三大新引擎，中国Big Pharma转型标杆</td></tr></tbody></table>
+<h3>🏷️ 交易建议：<strong>逢低布局，分批建仓</strong></h3>
+<table><thead><tr><th>项目</th><th>建议</th></tr></thead><tbody><tr><td><strong>操作方向</strong></td><td>📈 买入</td></tr><tr><td><strong>入场区间</strong></td><td>7.00 - 7.80 港元</td></tr><tr><td><strong>第一目标</strong></td><td>9.50 港元（+27%）</td></tr><tr><td><strong>第二目标</strong></td><td>12.00 港元（+60%）</td></tr><tr><td><strong>止损位</strong></td><td>6.30 港元（-16%）</td></tr><tr><td><strong>建议仓位</strong></td><td>3-5%（中等 conviction）</td></tr></tbody></table>
+<hr>
+<h2>📊 关键数据快照</h2>
+<h3>行情数据（2026年5月29日收盘）</h3>
+<table><thead><tr><th>指标</th><th>数值</th><th>备注</th></tr></thead><tbody><tr><td>最新价</td><td><strong>7.50 港元</strong></td><td>日涨幅 +7.76%</td></tr><tr><td>当日最高</td><td>7.52 港元</td><td>接近日内高点收盘</td></tr><tr><td>当日最低</td><td>6.94 港元</td><td>早盘低开后强势拉回</td></tr><tr><td>总市值</td><td>85.5 亿港元</td><td>小盘医药股</td></tr><tr><td>YTD涨跌幅</td><td>-11.76%</td><td>从8.43跌至7.50</td></tr><tr><td>52周最高</td><td>10.96 港元（1/30）</td><td>距高点 -31.6%</td></tr><tr><td>52周最低</td><td>6.64 港元（5/27）</td><td>刚触及低点后反弹</td></tr><tr><td>换手率</td><td>2.04%</td><td>放量上涨</td></tr><tr><td>股息率</td><td>~5.6%</td><td>分红支付率77%</td></tr></tbody></table>
+<h3>技术指标</h3>
+<table><thead><tr><th>指标</th><th>数值</th><th>信号</th></tr></thead><tbody><tr><td>MACD</td><td>DIF: -0.399, DEA: -0.372</td><td>死叉但即将金叉 ✅</td></tr><tr><td>KDJ</td><td>K: 38.2, D: 25.5, J: 63.7</td><td><strong>低位金叉</strong> ✅</td></tr><tr><td>RSI</td><td>RSI6: 50.1, RSI12: 41.7</td><td>中性偏弱，尚未超买</td></tr><tr><td>布林带</td><td>上轨8.76/中轨7.82/下轨6.89</td><td>接近中轨，有上行空间</td></tr><tr><td>SAR</td><td>7.821</td><td>当前价在SAR下方 ⚠️</td></tr></tbody></table>
+<h3>财务数据（2025年报 + 2026Q1）</h3>
+<table><thead><tr><th>指标</th><th>2025年报</th><th>同比</th><th>2026Q1</th><th>同比</th></tr></thead><tbody><tr><td>营收</td><td>260.06 亿</td><td>-10.35%</td><td>64.65 亿</td><td>-7.8%</td></tr><tr><td>归母净利润</td><td>38.82 亿</td><td>-10.3%</td><td>8.60 亿</td><td><strong>-41.8%</strong></td></tr><tr><td>毛利率</td><td>65.59%</td><td>-4.38pct</td><td>—</td><td>—</td></tr><tr><td>净利率</td><td>14.91%</td><td>—</td><td>13.3%</td><td>—</td></tr><tr><td>ROE</td><td>11.86%</td><td>—</td><td>—</td><td>—</td></tr><tr><td>自由现金流</td><td>38.72 亿</td><td>—</td><td>—</td><td>—</td></tr><tr><td>资产负债率</td><td>26.01%</td><td>—</td><td>—</td><td>—</td></tr><tr><td>流动比率</td><td>2.19</td><td>—</td><td>—</td><td>—</td></tr></tbody></table>
+<hr>
+<h2>🔥 核心催化剂</h2>
+<h3>1. 阿斯利康12亿美元首付款到账（5月29日确认）</h3>
+<table><thead><tr><th>项目</th><th>详情</th></tr></thead><tbody><tr><td>交易性质</td><td>长效多肽平台授权（8个项目）</td></tr><tr><td>首付款</td><td><strong>12亿美元</strong>（约93.6亿港元）</td></tr><tr><td>里程碑款</td><td>最高173亿美元</td></tr><tr><td>总交易额</td><td><strong>185亿美元</strong></td></tr><tr><td>历史意义</td><td>🏆 <strong>中国药企史上最大对外授权交易</strong></td></tr><tr><td>利润影响</td><td>首付款一项可增厚2026年利润约60-80亿港元</td></tr></tbody></table>
+<h3>2. SYS6010（EGFR ADC）催化密集</h3>
+<table><thead><tr><th>催化剂</th><th>时间</th><th>影响</th></tr></thead><tbody><tr><td>CDE突破性疗法认定（食管鳞癌）</td><td>✅ 已获</td><td>加速审批</td></tr><tr><td>2026 ASCO数据读出</td><td>2026年6月</td><td>核心催化剂</td></tr><tr><td>递交NDA上市申请</td><td>2026年下半年</td><td>价值兑现</td></tr><tr><td>FDA快速通道资格（3项）</td><td>✅ 已获</td><td>打开全球市场</td></tr></tbody></table>
+<h3>3. GLP-1系列进展</h3>
+<table><thead><tr><th>管线</th><th>进展</th><th>潜力</th></tr></thead><tbody><tr><td>TG103（肥胖适应症）</td><td>3期完成入组</td><td>千亿级减重市场</td></tr><tr><td>司美格鲁肽</td><td>3期完成入组</td><td>仿制药首发优势</td></tr><tr><td>口服GLP-1</td><td>临床推进中</td><td>差异化竞争</td></tr></tbody></table>
+<h3>4. siRNA平台</h3>
+<table><thead><tr><th>管线</th><th>阶段</th><th>备注</th></tr></thead><tbody><tr><td>PCSK9</td><td>III期</td><td>降脂赛道</td></tr><tr><td>Lp(a)</td><td>I期</td><td>罕见高脂血症</td></tr><tr><td>AGT</td><td>I期</td><td>高血压</td></tr><tr><td>C5</td><td>I期</td><td>补体介导疾病</td></tr></tbody></table>
+<hr>
+<h2>💰 资金流向</h2>
+<table><thead><tr><th>维度</th><th>数据</th><th>解读</th></tr></thead><tbody><tr><td>主力净流入</td><td>+1.19 亿港元</td><td>当日主力积极买入</td></tr><tr><td>散户净流入</td><td>+2.40 亿港元</td><td>散户跟风</td></tr><tr><td>南下持股比例</td><td>26.52%</td><td>仍在减持通道中</td></tr><tr><td>南下季度变动</td><td>减持4.59亿股（~37.8亿港元）</td><td>⚠️ 季度持续净流出</td></tr><tr><td>当日南下净流出</td><td>-1.58 亿港元</td><td>短期南下仍在卖</td></tr></tbody></table>
+<hr>
+<h2>🏛️ 机构评级</h2>
+<table><thead><tr><th>项目</th><th>数据</th></tr></thead><tbody><tr><td>覆盖机构</td><td>20家</td></tr><tr><td>目标均价</td><td><strong>11.85 港元</strong>（+58%上行空间）</td></tr><tr><td>最高目标价</td><td>19.36 港元</td></tr><tr><td>最低目标价</td><td>6.00 港元</td></tr><tr><td>买入/增持</td><td>68%</td></tr><tr><td>持有</td><td>18%</td></tr><tr><td>减持/卖出</td><td>14%</td></tr><tr><td>中金/国泰君安</td><td>"跑赢行业"，目标价12港元</td></tr><tr><td>招商证券（香港）</td><td>下调至中性，目标价9.3港元</td></tr></tbody></table>
+<hr>
+<h2>👥 股东结构</h2>
+<table><thead><tr><th>股东</th><th>持股比例</th><th>备注</th></tr></thead><tbody><tr><td>蔡东晨（创始人）</td><td>25.73%</td><td>实控人，稳定</td></tr><tr><td>Common Success</td><td>6.38%</td><td>关联方</td></tr><tr><td>中国环球资产</td><td>4.99%</td><td>国资背景</td></tr><tr><td>贝莱德</td><td>4.64%</td><td>国际长线</td></tr><tr><td>瑞银</td><td>3.27%</td><td>—</td></tr><tr><td>先锋</td><td>2.42%</td><td>被动指数</td></tr><tr><td>挪威主权基金</td><td>1.79%</td><td>ESG偏好</td></tr><tr><td>机构持仓</td><td>35.09%（264家）</td><td>Q2回升</td></tr></tbody></table>
+<hr>
+<h2>⚔️ 多空辩论</h2>
+<h3>🟢 多方（Bull Case）</h3>
+<table><thead><tr><th>#</th><th>论点</th><th>权重</th><th>置信度</th></tr></thead><tbody><tr><td>1</td><td>阿斯利康12亿美元首付款大幅增厚利润</td><td>⭐⭐⭐⭐⭐</td><td>高</td></tr><tr><td>2</td><td>SYS6010 ADC数据催化密集（ASCO+NDA）</td><td>⭐⭐⭐⭐⭐</td><td>中高</td></tr><tr><td>3</td><td>估值极度便宜（2026E PE 9-10x）</td><td>⭐⭐⭐⭐</td><td>高</td></tr><tr><td>4</td><td>成药业务Q3触底，内生收入+6.2%</td><td>⭐⭐⭐⭐</td><td>中</td></tr><tr><td>5</td><td>GLP-1+siRNA管线打开长期空间</td><td>⭐⭐⭐</td><td>中</td></tr><tr><td>6</td><td>股息率5.6%，下行有托底</td><td>⭐⭐⭐</td><td>高</td></tr></tbody></table>
+<h3>🔴 空方（Bear Case）</h3>
+<table><thead><tr><th>#</th><th>论点</th><th>权重</th><th>置信度</th></tr></thead><tbody><tr><td>1</td><td>Q1归母净利润-41.8%，业绩断崖下跌</td><td>⭐⭐⭐⭐⭐</td><td>高</td></tr><tr><td>2</td><td>集采持续侵蚀毛利率（-4.38pct）</td><td>⭐⭐⭐⭐</td><td>高</td></tr><tr><td>3</td><td>南下资金季度减持37.8亿港元</td><td>⭐⭐⭐</td><td>高</td></tr><tr><td>4</td><td>BD收入确认节奏不可控（授权费-80%）</td><td>⭐⭐⭐</td><td>中</td></tr><tr><td>5</td><td>ADC赛道竞争白热化</td><td>⭐⭐⭐</td><td>中</td></tr><tr><td>6</td><td>SAR偏空，中期趋势仍向下</td><td>⭐⭐</td><td>中</td></tr></tbody></table>
+<h3>⚖️ 辩论裁决</h3>
+<p><strong>石药正处于"旧引擎熄火、新引擎点火"的关键转型期。</strong></p>
+<ul><li>✅ 旧引擎（成药+集采）：已在Q3触底，但恢复缓慢</li><li>🔥 新引擎（BD授权+ADC+GLP-1+siRNA）：阿斯利康交易是分水岭</li><li>🎯 当前7.50港元已充分定价悲观预期，阿斯利康首付款将是利润拐点</li></ul>
+<p><strong>裁决：谨慎买入</strong> 🟡 —— 估值安全垫足够，催化剂密集，但需验证业绩拐点</p>
+<hr>
+<h2>🎲 风险评估矩阵</h2>
+<table><thead><tr><th>风险类型</th><th>概率</th><th>影响</th><th>综合评级</th><th>应对策略</th></tr></thead><tbody><tr><td>集采持续扩大</td><td>🟡 中</td><td>🟡 中</td><td>⚠️ 中等</td><td>关注新一轮集采名单</td></tr><tr><td>SYS6010临床失败</td><td>🔵 低</td><td>🔴 高</td><td>⚠️ 中等</td><td>ASCO数据是关键验证点</td></tr><tr><td>BD里程碑款不达预期</td><td>🟡 中</td><td>🟡 中</td><td>⚠️ 中等</td><td>首付款已锁定的部分安全</td></tr><tr><td>GLP-1竞争失利</td><td>🟡 中</td><td>🟡 中</td><td>⚠️ 中等</td><td>减重市场足够大，关注差异化</td></tr><tr><td>南下资金持续流出</td><td>🟡 中</td><td>🔵 低</td><td>✅ 低</td><td>流出斜率已在放缓</td></tr><tr><td>港股系统性风险</td><td>🔵 低</td><td>🟡 中</td><td>⚠️ 中等</td><td>控制总仓位</td></tr><tr><td>汇率风险（港元/人民币）</td><td>🔵 低</td><td>🔵 低</td><td>✅ 低</td><td>联系汇率制</td></tr></tbody></table>
+<hr>
+<h2>💎 估值分析</h2>
+<h3>PE估值法</h3>
+<table><thead><tr><th>场景</th><th>2026E EPS</th><th>PE倍数</th><th>目标价</th></tr></thead><tbody><tr><td>悲观</td><td>0.62 港元</td><td>10x</td><td>6.20 港元</td></tr><tr><td>中性</td><td>0.85 港元</td><td>14x</td><td>11.90 港元</td></tr><tr><td>乐观</td><td>1.05 港元</td><td>18x</td><td>18.90 港元</td></tr></tbody></table>
+<blockquote>注：2026E EPS考虑阿斯利康首付款增厚后约0.85港元/股</blockquote>
+<h3>SOTP分部估值</h3>
+<table><thead><tr><th>业务板块</th><th>估值方法</th><th>估值（亿港元）</th></tr></thead><tbody><tr><td>成药业务</td><td>10x PE</td><td>~400</td></tr><tr><td>创新药管线</td><td>DCF/rNPV</td><td>~150-250</td></tr><tr><td>BD授权收入</td><td>一次性确认</td><td>~90（首付款）</td></tr><tr><td>GLP-1+siRNA平台</td><td>期权价值</td><td>~50-100</td></tr><tr><td><strong>合计</strong></td><td></td><td><strong>~690-840</strong></td></tr><tr><td><strong>每股</strong></td><td></td><td><strong>6.05-7.37 港元</strong></td></tr></tbody></table>
+<blockquote>⚠️ 注意：SOTP估值尚未充分反映阿斯利康里程碑款和SYS6010上市后的价值，实际价值中枢应在8-12港元</blockquote>
+<hr>
+<h2>📅 催化剂日历</h2>
+<table><thead><tr><th>时间</th><th>事件</th><th>影响等级</th></tr></thead><tbody><tr><td>2026年6月</td><td>ASCO 2026：SYS6010数据读出</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>2026年Q2-Q3</td><td>阿斯利康首付款利润确认</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>2026年H2</td><td>SYS6010递交NDA</td><td>⭐⭐⭐⭐</td></tr><tr><td>2026年H2</td><td>TG103（肥胖）3期数据</td><td>⭐⭐⭐⭐</td></tr><tr><td>2026年</td><td>新一轮集采名单</td><td>⭐⭐⭐（风险）</td></tr><tr><td>2027年</td><td>GLP-1仿制药上市</td><td>⭐⭐⭐</td></tr><tr><td>2027年</td><td>siRNA PCSK9 III期数据</td><td>⭐⭐⭐</td></tr></tbody></table>
+<hr>
+<h2>📋 操作策略</h2>
+<table><thead><tr><th>阶段</th><th>价格区间</th><th>操作</th><th>仓位</th></tr></thead><tbody><tr><td>🟢 建仓</td><td>7.00-7.80</td><td>首批买入</td><td>1.5%</td></tr><tr><td>🟢 加仓</td><td>6.50-7.00（回调时）</td><td>第二批</td><td>1.5%</td></tr><tr><td>🟡 观望</td><td>7.80-8.50</td><td>持有不动</td><td>—</td></tr><tr><td>🔴 减仓</td><td>跌破6.30</td><td>止损离场</td><td>清仓</td></tr><tr><td>🎯 目标1</td><td>9.50</td><td>减仓1/3</td><td>—</td></tr><tr><td>🎯 目标2</td><td>12.00</td><td>减仓1/2</td><td>—</td></tr></tbody></table>
+<h3>关键验证节点</h3>
+<ul><li><strong>6月ASCO数据</strong> → 若SYS6010数据积极，加仓至5%</li><li><strong>Q2财报</strong> → 验证阿斯利康首付款利润确认情况</li><li><strong>南下资金拐点</strong> → 若南下从净流出转净流入，信心增强</li></ul>
+<hr>
+<h2>⚠️ 免责声明</h2>
+<p>本分析仅供投资参考，不构成投资建议。投资有风险，入市需谨慎。作者可能持有或计划持有相关标的。</p>
+<hr>
+<p>*分析工具：neodata-financial-search + westock-data + trading-analysis*<br>*生成时间：2026-05-29 18:00 CST*</p>
+
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
+</div>
+
 </body>
 </html>

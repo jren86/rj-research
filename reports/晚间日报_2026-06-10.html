@@ -1,245 +1,496 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>晚间投研日报 | 2026-06-10</title>
-<style>
-  :root {
-    --bg: #faf9f7;
-    --card: #f4f2ef;
-    --border: #cfc9c1;
-    --text: #2c2a28;
-    --text-dim: #6b6760;
-    --accent: #3a6b96;
-    --red: #b8544a;
-    --green: #4a8a5c;
-    --orange: #a8813c;
-    --purple: #7d6b8f;
-    --highlight: #1f6feb;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif; line-height:1.7; padding:16px; max-width:800px; margin:0 auto; }
-  h1 { font-size:1.6em; color:#fff; border-bottom:2px solid var(--accent); padding-bottom:10px; margin-bottom:20px; }
-  h2 { font-size:1.25em; color:#fff; margin:24px 0 12px; padding-left:10px; border-left:4px solid var(--accent); }
-  h3 { font-size:1.05em; color:var(--accent); margin:16px 0 8px; }
-  .meta { color:var(--text-dim); font-size:0.85em; margin-bottom:20px; }
-  .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px; margin-bottom:16px; }
-  .card.hot { border-color:var(--red); }
-  .tag { display:inline-block; font-size:0.75em; padding:2px 8px; border-radius:4px; font-weight:600; margin-right:6px; }
-  .tag-fire { background:rgba(248,81,73,0.2); color:var(--red); }
-  .tag-new { background:rgba(88,166,255,0.2); color:var(--accent); }
-  .tag-warn { background:rgba(210,153,34,0.2); color:var(--orange); }
-  table { width:100%; border-collapse:collapse; margin:10px 0; font-size:0.9em; }
-  th { background:rgba(58,107,150,0.08); color:var(--accent); text-align:left; padding:8px 10px; border-bottom:1px solid var(--border); }
-  td { padding:6px 10px; border-bottom:1px solid var(--border); }
-  .up { color:var(--red); font-weight:600; }
-  .down { color:var(--green); font-weight:600; }
-  .flat { color:var(--text-dim); }
-  ul { padding-left:20px; }
-  li { margin:4px 0; }
-  .footer { margin-top:30px; padding-top:12px; border-top:1px solid var(--border); color:var(--text-dim); font-size:0.78em; text-align:center; }
-  .section-divider { height:1px; background:linear-gradient(90deg,transparent,var(--border),transparent); margin:24px 0; }
-  .highlight-box { background:rgba(31,111,235,0.08); border:1px solid rgba(31,111,235,0.3); border-radius:8px; padding:12px 16px; margin:10px 0; }
-  .stock-header { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; }
-  .stock-name { font-size:1.1em; color:#fff; font-weight:600; }
-  .stock-change { font-size:1.1em; font-weight:700; }
-  .stock-code { color:var(--text-dim); font-size:0.85em; }
-  @media(max-width:600px) {
-    body { padding:10px; }
-    h1 { font-size:1.3em; }
-    table { font-size:0.8em; }
-    td,th { padding:5px 6px; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间日报 · 2026-06-10</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
 </head>
 <body>
 
-<h1>🌙 晚间投研日报 | 2026-06-10（周三）</h1>
-<div class="meta">生成时间：2026-06-10 18:00 | 聚焦增量信息，不含交易数据</div>
+<div class="report-header">
+  <h1>晚间日报 · 2026-06-10</h1>
+  <div class="meta"></div>
+</div>
 
-<!-- 宏观 -->
+<hr>
 <h2>🌍 宏观与国际</h2>
-
-<div class="card hot">
-<h3><span class="tag tag-fire">🔥🔥🔥</span> SemiAnalysis 研报引爆 CPO 全线暴跌</h3>
+<h3>🔥🔥🔥 SemiAnalysis 研报引爆 CPO 全线暴跌，英伟达紧急辟谣</h3>
 <p>海外研究机构 SemiAnalysis 发布重磅报告，认为 <strong>CPO 规模量产将推迟至 2028-2029 年</strong>（市场此前预期 2027 年全面放量），<strong>800VDC 高压供电方案同步延后至 2028 年</strong>。三大瓶颈：光引擎互连良率偏低（单芯片 32 个光引擎综合良率仅 19%）、ASIC 共封装集成难度高、成本经济性不足。</p>
-<ul>
-<li><strong>美股反应</strong>：AAOI -17%、Coherent -11%、Lumentum -8%、康宁 -7%</li>
-<li><strong>A 股反应</strong>：CPO 指数 -3.23%，光通信板块全线下挫</li>
-<li><strong>英伟达反驳</strong>：网络高级副总裁 Gilad Shainer 公开表示下半年 CPO 量产交付计划不变</li>
-<li><strong>市场争论</strong>：看空方认为良率是真实瓶颈；看多方认为延期反而利好可插拔模块和 NPO，"钱不会消失，只是换了口袋"</li>
-</ul>
-</div>
-
-<div class="card hot">
-<h3><span class="tag tag-fire">🔥🔥</span> 美伊谈判"重大进展"，地缘风险边际缓和</h3>
-<p>新华社援引美媒报道，美伊通过巴基斯坦斡旋的谈判出现"重大进展"，美国在浓缩铀处置问题上的立场有变——不再要求伊朗将高丰度浓缩铀外运，改为与国际原子能机构合作稀释。</p>
-<ul>
-<li>美国副总统万斯表示"非常接近"与伊朗达成协议</li>
-<li>美国能源部下调年末商业原油库存预期至 4.19 亿桶（比上月预测少 1200 万桶）</li>
-<li>若美伊达成协议，伊朗原油回归将缓解供给约束，油价中枢可能下移</li>
-</ul>
-</div>
-
-<div class="card">
-<h3><span class="tag tag-fire">🔥</span> 美联储加息预期持续发酵</h3>
-<ul>
-<li>5 月非农 +17.2 万远超预期后，市场定价年内加息 25bp 概率升至 65%</li>
-<li>七成经济学家预计 2026 年美联储利率维持在 3.50%-3.75% 不变</li>
-<li>10 年期美债收益率维持 4.5% 附近，全球科技板块估值承压</li>
-</ul>
-</div>
-
-<div class="card">
-<h3><span class="tag tag-new">观点</span> 申万宏源赵伟：AI 全产业链景气周期尚未终结</h3>
-<ul>
-<li>当前国内经济走"价格修复型结构性复苏"——企业利润率修复而非总需求抬升</li>
-<li>AI 全产业链景气周期尚未终结，持续拉动出口高增</li>
-<li>人民币步入中长期升值阶段将加速产业优胜劣汰</li>
-<li>中性预判 2026 年美联储全年既不加也不降息</li>
-</ul>
-</div>
-
-<!-- 市场概览 -->
-<div class="section-divider"></div>
+<ul><li><strong>美股反应</strong>：AAOI -17%、Coherent -11%、Lumentum -8%、康宁 -7%</li><li><strong>A 股反应</strong>：CPO 指数 -3.23%，光通信板块全线下挫</li><li><strong>英伟达反驳</strong>：网络高级副总裁 Gilad Shainer 公开表示下半年 CPO 量产交付计划不变，Spectrum-X CPO 交换机按规划推进</li><li><strong>市场争论</strong>：看空方认为良率与可靠性是真实瓶颈；看多方认为 CPO 延期反而利好可插拔模块和 NPO，"钱不会消失，只是换了口袋"</li></ul>
+<h3>🔥🔥 美伊谈判"重大进展"，地缘风险边际缓和</h3>
+<p>新华社援引美媒报道，美伊通过巴基斯坦斡旋的谈判出现"重大进展"，美国在浓缩铀处置问题上的立场有变——不再要求伊朗将高丰度浓缩铀外运，改为与国际原子能机构合作稀释。美国副总统万斯表示"非常接近"与伊朗达成协议。</p>
+<ul><li>美国能源部下调年末商业原油库存预期至 4.19 亿桶（比上月预测少 1200 万桶）</li><li>若美伊达成协议，伊朗原油回归将缓解供给约束，油价中枢可能下移</li></ul>
+<h3>🔥 美联储加息预期持续发酵</h3>
+<ul><li>美国 5 月非农 +17.2 万远超预期后，市场定价年内加息 25bp 概率升至 65%</li><li>七成经济学家预计 2026 年美联储利率维持在 3.50%-3.75% 不变</li><li>央视报道"美联储或将于 6 月再次加息"——加息叙事进一步强化</li><li>10 年期美债收益率维持 4.5% 附近，全球科技板块估值承压</li></ul>
+<h3>申万宏源赵伟：AI 全产业链景气周期尚未终结</h3>
+<p>申万宏源首席经济学家赵伟在财联社《首席说》节目中指出：</p>
+<ul><li>当前国内经济走"价格修复型结构性复苏"，非典型复苏——企业利润率修复而非总需求抬升</li><li>AI 全产业链景气周期尚未终结，持续拉动出口高增</li><li>人民币步入中长期升值阶段将加速产业优胜劣汰</li><li>中性预判 2026 年美联储全年既不加也不降息</li></ul>
+<hr>
 <h2>📊 市场概览</h2>
-
-<div class="card">
-<table>
-<tr><th>指数</th><th>收盘</th><th>当日</th></tr>
-<tr><td>上证指数</td><td>3,993</td><td class="down">-0.42%</td></tr>
-<tr><td>深证成指</td><td>14,954</td><td class="down">-2.06%</td></tr>
-<tr><td>创业板指</td><td>3,855</td><td class="down">-2.70%</td></tr>
-<tr><td>科创 50</td><td>1,652</td><td class="down">-0.65%</td></tr>
-<tr><td>恒生指数</td><td>24,408</td><td class="down">-0.64%</td></tr>
-<tr><td>恒生科技</td><td>4,725</td><td class="down">-0.94%</td></tr>
-</table>
-<ul>
-<li>沪指再度失守 4000 点，全市场近 3900 股下跌</li>
-<li>成交额 2.64 万亿，较前一交易日缩量 226 亿</li>
-<li>大金融（保险/银行/券商）逆市上扬；煤炭/电力/有色/汽车下挫</li>
-</ul>
-</div>
-
-<!-- 持仓个股 -->
-<div class="section-divider"></div>
+<table><thead><tr><th>指数</th><th>收盘</th><th>当日</th></tr></thead><tbody><tr><td>上证指数</td><td>3,993</td><td>-0.42%</td></tr><tr><td>深证成指</td><td>14,954</td><td>-2.06%</td></tr><tr><td>创业板指</td><td>3,855</td><td>-2.70%</td></tr><tr><td>科创 50</td><td>1,652</td><td>-0.65%</td></tr><tr><td>恒生指数</td><td>24,408</td><td>-0.64%</td></tr><tr><td>恒生科技</td><td>4,725</td><td>-0.94%</td></tr></tbody></table>
+<ul><li>沪指再度失守 4000 点，全市场近 3900 股下跌</li><li>成交额 2.64 万亿，较前一交易日缩量 226 亿</li><li>大金融（保险/银行/券商）逆市上扬，煤炭/电力/有色/汽车下挫</li><li>华龙证券：局部高估及获利资金兑现是调整关键原因，当前市场估值总体合理</li></ul>
+<hr>
 <h2>🎯 持仓个股增量</h2>
-
-<div class="card hot">
-<div class="stock-header">
-<span><span class="stock-name">工业富联</span> <span class="stock-code">601138</span></span>
-<span class="stock-change down">-4.83%</span>
-</div>
-<p style="color:var(--text-dim);margin:4px 0 8px;">机构目标价 90.42 元（+27%）</p>
-
-<h3><span class="tag tag-fire">🔥🔥🔥</span> CPO 风波直接冲击</h3>
-<p>作为 CPO 概念龙头之一，SemiAnalysis 研报引发板块恐慌，盘中最低 70.25 元。但公司上月在调研纪要中明确表示"CPO 全光交换机样机已启动生产，开始出货，多地区工厂同步布局产能"。</p>
-
-<h3><span class="tag tag-fire">🔥</span> 股东会分红方案通过（6/9）</h3>
-<p>2025 年度每 10 股派 6.5 元（含税），分红率 55.12%，分红总额 194.51 亿元，连续四年超百亿，累计分红突破 631 亿元。</p>
-
-<div class="highlight-box">
-<strong>业绩底色</strong>：Q1 营收 2510.78 亿（+56.52%），归母净利 105.95 亿（+102.55%），连续三季净利破百亿。<br>
-<strong>机构观点</strong>：44 家机构预测 2026 年 EPS 3.01 元，净利 +69%。但基金持仓环比减持——持股比例 0.82%（-0.64pct），基金数 -131 只。
-</div>
-</div>
-
-<div class="card hot">
-<div class="stock-header">
-<span><span class="stock-name">京东方 A</span> <span class="stock-code">000725</span></span>
-<span class="stock-change down">-7.52%</span>
-</div>
-<p style="color:var(--text-dim);margin:4px 0 8px;">换手 9.13% | 20 日 +42.55%</p>
-
-<h3><span class="tag tag-fire">🔥🔥</span> 子公司终止北交所 IPO</h3>
-<p>控股子公司京东方能源科技撤回北交所上市申请。能源科技 2022-2024 年营收从 6.42 亿增至 10.12 亿，经营稳健。公司称"资源集中于核心主业，子公司无需独立上市融资"——但市场解读为负面，叠加 CPO 玻璃基板概念退潮，股价一度跌 8%。</p>
-
-<h3><span class="tag tag-warn">⚠️</span> 深度质疑文章发酵</h3>
-<p>"京东方被吹得越来越玄乎了"一文广泛传播：</p>
-<ul>
-<li>玻璃基封装载板、光互连、钙钛矿三项新业务<strong>量产营收均为零</strong></li>
-<li>2025 年净利 58.6 亿 vs 2021 年超级周期 259.6 亿，差距明显</li>
-<li>总负债约 2272 亿，利息支出超 32 亿，大规模扩产资金来源不明</li>
-<li>成都 B16 工厂 8.6 代 OLED 年中投产是明确增量</li>
-<li>"2028 年再看"——从可能性到量产出货之间尚远</li>
-</ul>
-</div>
-
-<div class="card">
-<div class="stock-header">
-<span><span class="stock-name">信达生物</span> <span class="stock-code">01801.HK</span></span>
-<span class="stock-change up">+1.64%</span>
-</div>
-<p style="color:var(--text-dim);margin:4px 0 8px;">逆市上涨 | 成交 10.22 亿港元</p>
-
-<h3><span class="tag tag-fire">🔥</span> 港股医药逆势走强</h3>
-<p>药品板块 +2.25%，信达生物逆势收红。辉瑞 105 亿美元合作持续发酵，中金维持跑赢行业评级，目标价 118.3 港元（+59%）。6 月 31 家机构 97% 买入/增持。IBI363 一线 NSCLC cORR 81.8%/DCR 100%，即将开启头对头 III 期。IBI343 胃癌 III 期达主要终点，NMPA 优先审评。</p>
-</div>
-
-<div class="card">
-<div class="stock-header">
-<span><span class="stock-name">宁德时代</span> <span class="stock-code">300750</span></span>
-<span class="stock-change down">-2.75%</span>
-</div>
-<p style="color:var(--text-dim);margin:4px 0 8px;">AH 溢价 45.44% | 机构目标价 555.39 元（+43%）</p>
-
-<h3><span class="tag tag-fire">🔥</span> 枧下窝锂矿用地手续注销</h3>
-<p>江西省自然资源厅注销宜春时代枧下窝锂矿用地预审意见书。专家解读：项目进度可能延缓 15-30 个工作日，但不代表放弃——企业可重新申报。碳酸锂主力 6/9 +3.45%，6/10 盘中再涨 2.36%。</p>
-
-<h3><span class="tag tag-new">中标</span> 河北 400MW/1.6GWh 储能项目</h3>
-<p>以 8.77 亿元（0.548 元/Wh）中标河北交投康保构网型独立储能电站第一候选人。</p>
-</div>
-
-<div class="card">
-<div class="stock-header">
-<span><span class="stock-name">长川科技</span> <span class="stock-code">300604</span></span>
-<span class="stock-change up">+6.59%</span>
-</div>
-<p style="color:var(--text-dim);margin:4px 0 8px;">逆势大涨 | 主力净流入 3.8 亿</p>
-<p>在电子板块 -2.23% 背景下逆势走强，半导体设备 ETF 重仓。16 家机构预测 2026 年 EPS 3.49 元，净利 +66.32%。Q1 基金加仓明显——持股比例 10.71%（+2.50pct）。</p>
-</div>
-
-<div class="card">
-<div class="stock-header">
-<span><span class="stock-name">芯碁微装</span> <span class="stock-code">688630</span></span>
-<span class="stock-change down">-4.98%</span>
-</div>
-<p>受 CPO/半导体回调拖累，近 24h 无独立新增公告。H 股上市推进中，mSAP 受益逻辑未变。年初至今 +186%，高位获利回吐。</p>
-</div>
-
-<div class="card">
-<div class="stock-header">
-<span><span class="stock-name">精智达</span> <span class="stock-code">688627</span></span>
-<span class="stock-change down">-1.39%</span>
-</div>
-<p>相对抗跌，5 日涨幅 +13.36%。长鑫 HBM 扩产 40 亿测试需求逻辑仍在。</p>
-</div>
-
-<div class="card">
-<div class="stock-header">
-<span><span class="stock-name">容百科技</span> <span class="stock-code">688005</span></span>
-<span class="stock-change down">-3.05%</span>
-</div>
-<p>电池板块整体走弱。钠电产能 2026 年 2.8 万吨→2027 年 30 万吨逻辑不变。Q1 扭亏确认（+175%）。</p>
-</div>
-
-<!-- 关键信号 -->
-<div class="section-divider"></div>
+<h3>🔥🔥🔥 工业富联（601138） -4.83% | 机构目标价 90.42 元</h3>
+<p><strong>CPO 风波直接冲击</strong>：作为 CPO 概念龙头之一，SemiAnalysis 研报引发板块恐慌，工业富联盘中最低 70.25 元。但公司上月在调研纪要中明确表示"CPO 全光交换机样机已启动生产，开始出货，多地区工厂同步布局产能，明年有望进一步扩张规模"。</p>
+<p><strong>股东会分红方案通过</strong>（6/9）：2025 年度每 10 股派 6.5 元（含税），分红率 55.12%，分红总额 194.51 亿元，连续四年超百亿，累计分红突破 631 亿元。</p>
+<p><strong>业绩底色</strong>：Q1 营收 2510.78 亿（+56.52%），归母净利 105.95 亿（+102.55%），连续三季净利破百亿。</p>
+<p><strong>机构观点</strong>：44 家机构预测 2026 年 EPS 3.01 元，净利润 +69%，综合目标价 90.42 元（较现价 +27%）。5 月 4 家机构全部买入/增持。但基金持仓环比减持——最新持股比例 0.82%（-0.64pct），基金数 -131 只。</p>
+<hr>
+<h3>🔥🔥 京东方 A（000725） -7.52% | 换手 9.13%</h3>
+<p><strong>子公司终止北交所 IPO</strong>：控股子公司京东方能源科技撤回北交所上市申请。能源科技 2022-2024 年营收从 6.42 亿增至 10.12 亿，净利 1.07-1.42 亿，经营稳健。公司称"集团资源集中于核心主业，子公司无需通过独立上市融资"——但市场解读为负面信号，叠加 CPO 玻璃基板概念退潮，股价一度跌 8%。</p>
+<p><strong>深度质疑文章发酵</strong>："京东方被吹得越来越玄乎了"一文在市场广泛传播，核心观点：</p>
+<ul><li>玻璃基封装载板、光互连、钙钛矿三项新业务量产营收均为零</li><li>2025 年净利 58.6 亿 vs 2021 年超级周期 259.6 亿，差距明显</li><li>总负债约 2272 亿，利息支出超 32 亿，大规模扩产资金来源不明</li><li>成都 B16 工厂 8.6 代 OLED 年中投产是明确增量</li><li>"2028 年再看"——从可能性到量产出货之间尚远</li></ul>
+<p><strong>估值</strong>：当前 PE 37.54x，20 日涨幅 +42.55%，获利回吐压力显著。</p>
+<hr>
+<h3>🔥 信达生物（01801.HK） +1.64% | 逆市上涨</h3>
+<p><strong>港股医药板块中逆势走强</strong>：药品板块 +2.25%，信达生物 +1.64% 成交 10.22 亿港元，振幅 5.54%。</p>
+<p><strong>辉瑞合作持续发酵</strong>：105 亿美元合作在研报中持续被覆盖，中金维持跑赢行业评级，目标价 118.3 港元（+59% 上行空间）。6 月 31 家机构 97% 买入/增持。</p>
+<p><strong>IBI363 一线 NSCLC</strong>：ASCO 数据 cORR 81.8%，DCR 100%，即将开启头对头 Keynote 方案 III 期。</p>
+<p><strong>IBI343 胃癌 III 期达主要终点</strong>：NMPA 受理上市申请获优先审评。</p>
+<p><strong>机构目标价</strong>：24 家机构均价 119.40 港元，最高 158.68 港元。</p>
+<hr>
+<h3>🔥 宁德时代（300750） -2.75% | AH 溢价 45.44%</h3>
+<p><strong>枧下窝锂矿用地手续注销</strong>：江西省自然资源厅公告注销宜春时代（宁德间接控股子公司）枧下窝锂矿建设项目用地预审与选址意见书。专家解读：项目进度可能延缓 15-30 个工作日，但不代表放弃——企业可重新申报。碳酸锂主力合约 6/9 单日 +3.45%，6/10 盘中再涨 2.36%。</p>
+<p><strong>河北 400MW/1.6GWh 储能中标</strong>：宁德时代以 8.77 亿元（0.548 元/Wh）中标河北交投康保构网型独立储能电站项目第一候选人，阳光电源、远景分列二三。</p>
+<p><strong>机构观点</strong>：65 家机构预测 2026 年 EPS 20.57 元，净利 +31.82%，综合目标价 555.39 元（+43%）。Q1 基金加仓——最新持股比例 4.47%（+0.18pct）。</p>
+<hr>
+<h3>🔥 长川科技（300604） +6.59% | 逆势大涨</h3>
+<p><strong>半导体设备逆势走强</strong>：在电子板块整体 -2.23% 的背景下，长川科技 +6.59%，主力净流入 3.8 亿元，换手 7.42%，成交 81.9 亿。半导体设备 ETF（国泰）重仓该股。</p>
+<p><strong>机构观点</strong>：16 家机构预测 2026 年 EPS 3.49 元，净利 +66.32%，目标价 232.62 元。Q1 基金加仓——持股比例 10.71%（+2.50pct），基金数 +64 只。</p>
+<hr>
+<h3>芯碁微装（688630） -4.98% | 受 CPO/半导体回调拖累</h3>
+<ul><li>近 24h 无独立新增公告或研报</li><li>H 股上市事宜推进中，mSAP 产业化受益逻辑未变</li><li>年初至今 +186%，20 日 +34.6%，高位获利回吐明显</li></ul>
+<h3>精智达（688627） -1.39% | 相对抗跌</h3>
+<ul><li>近 24h 无独立新增公告或研报</li><li>5 日涨幅 +13.36%，今日回调幅度小于板块平均</li><li>长鑫 HBM 扩产 40 亿测试需求逻辑仍在</li></ul>
+<h3>容百科技（688005） -3.05% | 电池板块整体走弱</h3>
+<ul><li>近 24h 无独立新增公告或研报</li><li>钠电产能 2026 年 2.8 万吨 → 2027 年 30 万吨的逻辑不变</li><li>Q1 归母净利 1160 万，同比 +175%，扭亏确认</li></ul>
+<hr>
 <h2>📌 关键信号</h2>
+<ul><li><strong>CPO 路线之争升级</strong>：SemiAnalysis vs 英伟达高管直接对峙，短期影响情绪但中长期技术方向不变，关注 NPO 替代路线及可插拔模块受益逻辑</li><li><strong>美伊缓和信号</strong>：谈判"重大进展"+ 万斯"非常接近"表态，若达成协议将缓解油价上行压力，利于全球风险偏好修复</li><li><strong>加息叙事强化</strong>：非农超预期 → 加息概率 65% → 全球科技估值承压，A 股高估值板块首当其冲</li><li><strong>A股分化加剧</strong>：沪指仅 -0.42% 但创业板 -2.70%、近 3900 股下跌，金融护盘 + 科技杀跌格局延续</li><li><strong>京东方 A 质疑发酵</strong>：新业务量产营收为零、负债 2272 亿、玻璃基封装 2-3 年无业绩贡献——需要重新审视预期</li></ul>
+<hr>
+<p>*数据来源：NeoData Financial Search、WebSearch | 生成时间：2026-06-10 18:00*</p>
 
-<div class="card">
-<ol>
-<li><strong>CPO 路线之争升级</strong>：SemiAnalysis vs 英伟达高管直接对峙，短期影响情绪但中长期技术方向不变，关注 NPO 替代路线及可插拔模块受益逻辑</li>
-<li><strong>美伊缓和信号</strong>：谈判"重大进展"+ 万斯"非常接近"表态，若达成协议将缓解油价上行压力，利于全球风险偏好修复</li>
-<li><strong>加息叙事强化</strong>：非农超预期→加息概率 65%→全球科技估值承压，A 股高估值板块首当其冲</li>
-<li><strong>A 股分化加剧</strong>：沪指仅 -0.42% 但创业板 -2.70%、近 3900 股下跌，金融护盘+科技杀跌格局延续</li>
-<li><strong>京东方 A 质疑发酵</strong>：新业务量产营收为零、负债 2272 亿、玻璃基封装 2-3 年无业绩贡献——需要重新审视预期</li>
-</ol>
-</div>
-
-<div class="footer">
-数据来源：NeoData Financial Search、WebSearch | 生成时间：2026-06-10 18:00
+<div class="report-footer">
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>

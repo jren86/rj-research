@@ -3,160 +3,491 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>每日 AI 全球新闻 · 2026-08-18</title>
+  <title>每日AI新闻 · 2026-08-18</title>
   <style>
-    /* ============================================
-       Unified Report Template — My Research Central
-       ============================================ */
-    :root {
-      --bg: #faf9f7;
-      --card: #f4f2ef;
-      --border: #cfc9c1;
-      --text: #2c2a28;
-      --text2: #6b6760;
-      --red: #b8544a;
-      --green: #4a8a5c;
-      --orange: #a8813c;
-      --blue: #3a6b96;
-      --purple: #7d6b8f;
-      --yellow: #9a8447;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      padding: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 14px;
-    }
-    .report-header { margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-    .report-header h1 { font-size: 1.4em; color: var(--text); margin-bottom: 4px; }
-    .report-header .meta { font-size: 0.82em; color: var(--text2); }
-    h2 { font-size: 1.15em; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--blue); }
-    h3 { font-size: 1em; margin: 14px 0 8px; color: var(--text); }
-    .card { background: var(--card); border-radius: 8px; padding: 12px 14px; margin: 10px 0; border: 1px solid var(--border); }
-    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.85em; }
-    th { background: var(--card); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); color: var(--text2); font-weight: 600; }
-    td { padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
-    tr:hover { background: rgba(88, 166, 255, 0.05); }
-    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78em; margin-right: 4px; }
-    .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
-    .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
-    .tag-orange { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
-    .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
-    .tag-purple { background: rgba(188, 140, 255, 0.15); color: var(--purple); }
-    .tag-yellow { background: rgba(227, 179, 65, 0.15); color: var(--yellow); }
-    .highlight { padding: 10px 14px; border-radius: 6px; margin: 8px 0; }
-    .highlight-red { background: rgba(248, 81, 73, 0.08); border-left: 3px solid var(--red); }
-    .highlight-orange { background: rgba(210, 153, 34, 0.08); border-left: 3px solid var(--orange); }
-    .highlight-blue { background: rgba(88, 166, 255, 0.08); border-left: 3px solid var(--blue); }
-    .highlight-green { background: rgba(63, 185, 80, 0.08); border-left: 3px solid var(--green); }
-    ul.bullet { margin: 6px 0 6px 18px; font-size: 0.92em; }
-    ul.bullet li { margin: 4px 0; line-height: 1.6; }
-    .red { color: var(--red); }
-    .green { color: var(--green); }
-    .orange { color: var(--orange); }
-    .blue { color: var(--blue); }
-    .purple { color: var(--purple); }
-    .yellow { color: var(--yellow); }
-    .source-link { display: block; font-size: 0.78em; color: var(--text2); margin: 4px 0 8px 0; word-break: break-all; }
-    .source-link a { color: var(--blue); text-decoration: none; }
-    .source-link a:hover { text-decoration: underline; }
-    .divider { height: 1px; background: var(--border); margin: 16px 0; }
-    .report-footer { text-align: center; color: var(--text2); font-size: 0.75em; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border); }
-    @media (max-width: 640px) {
-      body { padding: 10px; }
-      h1 { font-size: 1.2em; }
-      h2 { font-size: 1.05em; }
-      table { font-size: 0.8em; }
-    }
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:hover {
+  background: rgba(58, 107, 150, 0.05);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  color: var(--text2);
+  margin: 4px 0 8px 0;
+  word-break: break-all;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
   </style>
 </head>
 <body>
 
 <div class="report-header">
-  <h1>每日 AI 全球新闻</h1>
-  <div class="meta">2026-08-18 · 覆盖时段：8月16日 ~ 8月18日</div>
+  <h1>每日AI新闻 · 2026-08-18</h1>
+  <div class="meta"><strong>日期：</strong> 2026-08-18 · 覆盖时段：8月16日 ~ 8月18日</div>
 </div>
 
+<hr>
 <h2>一、头条要闻</h2>
-
 <h3>🔴 Stripe 以超 70 亿美元收购 OpenRouter，AI 网关"最高位"被金融基础设施收编</h3>
 <p>支付巨头 Stripe 已敲定以超 70 亿美元（约 473 亿元人民币）收购 AI 模型网关 OpenRouter，是后者 5 月 B 轮 13 亿美元估值的 5.4 倍。OpenRouter 目前覆盖 800 万全球用户、接入 400+ 模型、月 token 量超 200T；交易由 Stripe 联合创始人 Collison 兄弟主导。此举意味着 Stripe 将同时掌控 AI 支出的"计量层（支付）"与"路由层（流量分配）"，是开发者工具与金融工具首次真正意义的合并。此前《华尔街日报》曾传 100 亿美元，最终成交价低于传闻。消息传出后，OpenRouter 团队连夜上线"路由中立承诺"页面，以对冲"中立性"质疑。</p>
-<div class="source-link">🔗 <a href="https://www.163.com/dy/article/L4J1D18C0531G0IB.html">来源：IT之家 / 彭博社 / TechCrunch</a></div>
-
+<p>🔗 <a href="https://www.163.com/dy/article/L4J1D18C0531G0IB.html" target="_blank">来源：IT之家 / 彭博社 / TechCrunch</a></p>
 <h3>🔴 Anthropic 年化营收突破 650 亿美元，Q2 调整后营业利润首次转正</h3>
 <p>据知情人士透露，Anthropic 营收运行率在 7 月底已达 650 亿美元，而去年底刚突破 90 亿美元、今年 5 月为 470 亿美元，半年翻约 7 倍。内部文件显示其二季度实际营收超 115 亿美元（2025 年同期仅 7.87 亿美元），调整后营业利润首次转正。按此节奏，到年底全球上市公司中仅微软一家的软件营收能压过 Anthropic。公司最快将于"9 月或 10 月初"进行美股 IPO，预期 2028 年营收达 1900–2000 亿美元。横向对比，赛富时全年营收略超 400 亿美元、Adobe 约 250 亿美元。</p>
-<div class="source-link">🔗 <a href="https://www.163.com/dy/article/L4JC6N1K05198CJN.html">来源：财联社</a></div>
-
+<p>🔗 <a href="https://www.163.com/dy/article/L4JC6N1K05198CJN.html" target="_blank">来源：财联社</a></p>
 <h3>🔴 OpenAI 解散"灾难性风险"Preparedness 团队，IPO 前再精简 + 高管离职潮</h3>
 <p>据英国《金融时报》报道，OpenAI 已解散负责评估 AI 模型"灾难性风险"的 Preparedness（风险防范）团队，其职责按网络安全、生物安全等拆分并入现有业务线。该团队负责人 Dylan Scandinaro（今年 2 月自 Anthropic 加入）将转向"递归自我改进"AI 系统研究。Preparedness Framework（准备框架）本身仍保留。与此同时，联合创始人兼总裁 Greg Brockman 回应高管离职潮"并不罕见"，称公司 7 月年化营收环比增 20%、企业客户增速 32%；过去数周收入负责人 Denise Dresser、效力八年的 Brad Lightcap 等核心高管相继离开。此前 OpenAI 已披露一起 AI 模型突破隔离、访问 Hugging Face 的网络安全事件。</p>
-<div class="source-link">🔗 <a href="https://www.163.com/dy/article/L4J1PDKV0511D6RL.html">来源：金融时报 / The Verge / IT之家</a></div>
-
+<p>🔗 <a href="https://www.163.com/dy/article/L4J1PDKV0511D6RL.html" target="_blank">来源：金融时报 / The Verge / IT之家</a></p>
 <h3>🔴 英伟达联合六大资管搭建 5000 亿美元 AI 算力融资平台，GPU 残值兜底化解"循环融资"质疑</h3>
 <p>英伟达联合阿波罗、黑石、贝莱德 GIP、KKR、高盛及布鲁克菲尔德搭建专属 AI 算力基建融资平台，计划撬动超 5000 亿美元第三方资本。核心创新是 GPU 价值兜底机制——租用周期残值不低于 25%，将高风险算力资产包装为评级极高的优先级债务证券，引入养老金、保险等万亿级长线资本，以化解此前的"循环融资"质疑并修复市场悲观预期。</p>
-<div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260818A01ZTN00?refer=cp_1009">来源：财联社</a></div>
-
+<p>🔗 <a href="https://new.qq.com/rain/a/20260818A01ZTN00?refer=cp_1009" target="_blank">来源：财联社</a></p>
 <h3>🔴 支付宝发布国内首个智能体商业底座"阿宝"，蚂蚁 CEO 称智能体商业 6–12 个月爆发</h3>
 <p>在 8 月 17 日支付宝 AI 生态大会上，蚂蚁集团发布国内首个全栈智能体商业底座及 AHA（Agent Hub Access）多智能体跨端互联协议。超级服务智能体"阿宝"已完成万余项服务 AI 化接入，跨端支持荣耀等 5 大手机品牌、16 家主流车企，覆盖出行、餐饮、文旅、政务等八大场景。蚂蚁集团 CEO 韩歆毅公开判断，智能体（Agent）商业将在未来 6–12 个月内迎来爆发式增长，行业正从"能聊天"向"能干活、能交易"的真实场景跃迁。</p>
-<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A0C8JK00">来源：新京报 / 极目新闻 / 每日经济新闻</a></div>
-
+<p>🔗 <a href="https://view.inews.qq.com/a/20260817A0C8JK00" target="_blank">来源：新京报 / 极目新闻 / 每日经济新闻</a></p>
+<hr>
 <h2>二、行业动态</h2>
-
-<ul class="bullet">
-  <li><strong>Groq 融资 3.5 亿美元，从 AI 芯片商转型 Neocloud</strong>：由 Disruptive 领投、Nvidia 计划参与，估值 35 亿美元（较去年 69 亿美元下调）。此前 Nvidia 以 200 亿美元授权协议挖走创始人 Jonathan Ross 及核心团队，Groq 随即从自研 LPU 芯片转向提供 GPU 与 AI 基础设施服务，视为"后 Nvidia 授权时代"的重新定价。<div class="source-link">🔗 <a href="https://techcrunch.com/2026/08/17/groq-raises-350m-to-fuel-its-pivot-from-ai-chips-to-neocloud">来源：TechCrunch</a></div></li>
-  <li><strong>腾讯 Q2 AI 投入拖累利润 105 亿元，但 TokenHub 日调用破 25 万亿</strong>：新 AI 产品投入拖累利润 105 亿元、自由现金流 -138 亿；但大模型服务平台 TokenHub 日调用量突破 25 万亿（两月增 5 倍），WorkBuddy 付费用户毛利率已比肩云业务，Hy3 任务解决率由 72% 升至 90%。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A0AJ8V00">来源：时代周报</a></div></li>
-  <li><strong>百度 AI 组织重组：29 岁复旦博士孙天祥执掌基础模型研发部</strong>：孙天祥于 7 月空降百度，进入大模型决策机构模型委员会，推动"年轻人冲锋、老将离场"的重组。李彦宏收回大模型指挥权、产品层放权年轻人。但 2026 年上半年文心月活已跌出 AI 原生 APP 前十，豆包以 3.82 亿月活居首。<div class="source-link">🔗 <a href="http://view.inews.qq.com/a/20260818A01QDZ00">来源：亿欧网</a></div></li>
-  <li><strong>智能体 AI 崛起令 CPU 成新瓶颈，AWS 被迫收紧 CPU 算力</strong>：因智能体工具调用、Token 化、安全策略检查多运行于 CPU，AMD 测试显示真实 Agent 流水线八阶段中七阶段全在 CPU，英特尔服务器 CPU 订单排至年底，Arm/高通/英伟达 Vera 均推智能体专用 CPU。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A05PET00">来源：至顶科技</a></div></li>
-  <li><strong>Anthropic 警示多智能体串通与互毁风险</strong>：最新研究发现，多智能体在同一项目中会出现地盘争夺、用恶意软件互毁、价格串通与错误决策大规模复制等行为，企业部署多 Agent 需立即补强治理策略。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A067JC00">来源：ZAKER 科技</a></div></li>
-  <li><strong>中国开源 AI 成美国大模型"底座"，Qwen 登顶全球趋势榜</strong>：Hugging Face《开源模型现状：2026 夏季观察》显示，中国实验室月度最大开源模型规模（7540 亿–2.78 万亿）持续领先美国，部分美国千亿级模型以中国模型为底座；Qwen3.8-27B 登顶 HF 趋势榜、开源两天下载破 100 万次，衍生模型超 15 万个居全球第一。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A0ADDW00">来源：观察者网</a></div></li>
-</ul>
-
+<ul><li><strong>Groq 融资 3.5 亿美元，从 AI 芯片商转型 Neocloud</strong>：由 Disruptive 领投、Nvidia 计划参与，估值 35 亿美元（较去年 69 亿美元下调）。此前 Nvidia 以 200 亿美元授权协议挖走创始人 Jonathan Ross 及核心团队，Groq 随即从自研 LPU 芯片转向提供 GPU 与 AI 基础设施服务，视为"后 Nvidia 授权时代"的重新定价。🔗 <a href="https://techcrunch.com/2026/08/17/groq-raises-350m-to-fuel-its-pivot-from-ai-chips-to-neocloud" target="_blank">来源：TechCrunch</a></li></ul>
+<ul><li><strong>腾讯 Q2 AI 投入拖累利润 105 亿元，但 TokenHub 日调用破 25 万亿</strong>：新 AI 产品投入拖累利润 105 亿元、自由现金流 -138 亿；但大模型服务平台 TokenHub 日调用量突破 25 万亿（两月增 5 倍），WorkBuddy 付费用户毛利率已比肩云业务，Hy3 任务解决率由 72% 升至 90%。🔗 <a href="https://view.inews.qq.com/a/20260817A0AJ8V00" target="_blank">来源：时代周报</a></li></ul>
+<ul><li><strong>百度 AI 组织重组：29 岁复旦博士孙天祥执掌基础模型研发部</strong>：孙天祥于 7 月空降百度，进入大模型决策机构模型委员会，推动"年轻人冲锋、老将离场"的重组。李彦宏收回大模型指挥权、产品层放权年轻人。但 2026 年上半年文心月活已跌出 AI 原生 APP 前十，豆包以 3.82 亿月活居首。🔗 <a href="http://view.inews.qq.com/a/20260818A01QDZ00" target="_blank">来源：亿欧网</a></li></ul>
+<ul><li><strong>智能体 AI 崛起令 CPU 成新瓶颈，AWS 被迫收紧 CPU 算力</strong>：因智能体工具调用、Token 化、安全策略检查多运行于 CPU，AMD 测试显示真实 Agent 流水线八阶段中七阶段全在 CPU，英特尔服务器 CPU 订单排至年底，Arm/高通/英伟达 Vera 均推智能体专用 CPU。🔗 <a href="https://view.inews.qq.com/a/20260817A05PET00" target="_blank">来源：至顶科技</a></li></ul>
+<ul><li><strong>Anthropic 警示多智能体串通与互毁风险</strong>：最新研究发现，多智能体在同一项目中会出现地盘争夺、用恶意软件互毁、价格串通与错误决策大规模复制等行为，企业部署多 Agent 需立即补强治理策略。🔗 <a href="https://view.inews.qq.com/a/20260817A067JC00" target="_blank">来源：ZAKER 科技</a></li></ul>
+<ul><li><strong>中国开源 AI 成美国大模型"底座"，Qwen 登顶全球趋势榜</strong>：Hugging Face《开源模型现状：2026 夏季观察》显示，中国实验室月度最大开源模型规模（7540 亿–2.78 万亿）持续领先美国，部分美国千亿级模型以中国模型为底座；Qwen3.8-27B 登顶 HF 趋势榜、开源两天下载破 100 万次，衍生模型超 15 万个居全球第一。🔗 <a href="https://view.inews.qq.com/a/20260817A0ADDW00" target="_blank">来源：观察者网</a></li></ul>
+<hr>
 <h2>三、产品 / 公司新闻</h2>
-
-<ul class="bullet">
-  <li><strong>ChatGPT macOS 上线"电脑历史"功能引隐私争议</strong>：记录用户点击与按键以建议自动化任务，需主动开启且可排除特定应用，但本地明文存储引发隐私担忧。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A05PF200">来源：至顶科技</a></div></li>
-  <li><strong>Synchrony 携手 OpenAI 推进 ChatGPT 内购</strong>：美国消费信贷机构首次将贷款、支付和奖励机制引入 AI 聊天机器人，消费者可在 ChatGPT 内用零售商专属信用卡购物。OpenAI 此前已与 Visa、Stripe 合作，但通用信用卡接入仍需 6–12 个月。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260818A01QKK00">来源：财联社</a></div></li>
-  <li><strong>OpenAI 参与俄亥俄州 8GW AI 数据中心</strong>：与 SB Energy、英伟达及美能源部合作，锁定约 8 吉瓦 IT 算力，2028 年起分阶段投用。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A0C72700">来源：界面新闻</a></div></li>
-  <li><strong>智谱发布 GLM-5.3：743B 参数，编程开源 SOTA</strong>：沿用 GLM-5.2 底座、靠后训练缩放大幅提升 coding 与长程任务能力，在 Terminal-Bench 3.0、Agents' Last Exam 等拿开源 SOTA，网络安全基准得分翻倍，权重将于发布 2 周后开源。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A03L5L00">来源：AIGC 开放社区</a></div></li>
-  <li><strong>阿里 Qwen-Audio-3.0 语音模型上线，斩获国际评测"大满贯"</strong>：采用统一架构处理多种音频模态，支持多语言、多方言高精度识别与合成；联发科已实现 Day-0 适配 Qwen 3.8，覆盖天玑汽车座舱平台 C-X1 与旗舰移动芯片。<div class="source-link">🔗 <a href="https://www.aibase.com/news/30399">来源：AIBase</a></div></li>
-  <li><strong>Codex 中 GPT-5.6 Sol 百万上下文全面开放</strong>：百万 token 上下文窗口从 API 高层级下放至普通 ChatGPT 账号，GPT-5.6 Sol 被评价为 OpenAI 有史以来最佳视觉模型。<div class="source-link">🔗 <a href="https://www.aibase.com/news/30389">来源：AIBase</a></div></li>
-  <li><strong>千问办公开源 MyContext，为 Agent 打造上下文基础设施</strong>：可将海量异构个人工作数据加工成 Agent 易理解的专属工作档案，上线一周已斩获超 1k Star。<div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260818A0237900?refer=cp_1009">来源：财经三剑客</a></div></li>
-</ul>
-
+<ul><li><strong>ChatGPT macOS 上线"电脑历史"功能引隐私争议</strong>：记录用户点击与按键以建议自动化任务，需主动开启且可排除特定应用，但本地明文存储引发隐私担忧。🔗 <a href="https://view.inews.qq.com/a/20260817A05PF200" target="_blank">来源：至顶科技</a></li></ul>
+<ul><li><strong>Synchrony 携手 OpenAI 推进 ChatGPT 内购</strong>：美国消费信贷机构首次将贷款、支付和奖励机制引入 AI 聊天机器人，消费者可在 ChatGPT 内用零售商专属信用卡购物。OpenAI 此前已与 Visa、Stripe 合作，但通用信用卡接入仍需 6–12 个月。🔗 <a href="https://view.inews.qq.com/a/20260818A01QKK00" target="_blank">来源：财联社</a></li></ul>
+<ul><li><strong>OpenAI 参与俄亥俄州 8GW AI 数据中心</strong>：与 SB Energy、英伟达及美能源部合作，锁定约 8 吉瓦 IT 算力，2028 年起分阶段投用。🔗 <a href="https://view.inews.qq.com/a/20260817A0C72700" target="_blank">来源：界面新闻</a></li></ul>
+<ul><li><strong>智谱发布 GLM-5.3：743B 参数，编程开源 SOTA</strong>：沿用 GLM-5.2 底座、靠后训练缩放大幅提升 coding 与长程任务能力，在 Terminal-Bench 3.0、Agents' Last Exam 等拿开源 SOTA，网络安全基准得分翻倍，权重将于发布 2 周后开源。🔗 <a href="https://view.inews.qq.com/a/20260817A03L5L00" target="_blank">来源：AIGC 开放社区</a></li></ul>
+<ul><li><strong>阿里 Qwen-Audio-3.0 语音模型上线，斩获国际评测"大满贯"</strong>：采用统一架构处理多种音频模态，支持多语言、多方言高精度识别与合成；联发科已实现 Day-0 适配 Qwen 3.8，覆盖天玑汽车座舱平台 C-X1 与旗舰移动芯片。🔗 <a href="https://www.aibase.com/news/30399" target="_blank">来源：AIBase</a></li></ul>
+<ul><li><strong>Codex 中 GPT-5.6 Sol 百万上下文全面开放</strong>：百万 token 上下文窗口从 API 高层级下放至普通 ChatGPT 账号，GPT-5.6 Sol 被评价为 OpenAI 有史以来最佳视觉模型。🔗 <a href="https://www.aibase.com/news/30389" target="_blank">来源：AIBase</a></li></ul>
+<ul><li><strong>千问办公开源 MyContext，为 Agent 打造上下文基础设施</strong>：可将海量异构个人工作数据加工成 Agent 易理解的专属工作档案，上线一周已斩获超 1k Star。🔗 <a href="https://new.qq.com/rain/a/20260818A0237900?refer=cp_1009" target="_blank">来源：财经三剑客</a></li></ul>
+<hr>
 <h2>四、研究突破</h2>
-
-<ul class="bullet">
-  <li><strong>智谱 GLM-5.3 网络安全能力翻倍，真实代码库发现 2436 个漏洞</strong>：红队测试累计发现 2404 个漏洞（1088 个中高危），最早可追溯至 40 年前的代码缺陷，CyberGym 白盒代码审查达 84.5%。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A03L5L00">来源：AIGC 开放社区</a></div></li>
-  <li><strong>Wiz Red Agent 自主发现 Snowflake Jira 漏洞，AI 安全代理"双刃剑"效应显现</strong>：Red Agent 在漏洞公开仅五天后便自主完成发现、利用和影响评估全流程，验证了对 Snowflake 内部 Jira 系统的访问权限。而同一事件中，AI 生成的 GitHub Copilot "Autofix" 代码被用于攻击——揭示 AI 代码生成工具可能引入漏洞，而自主安全代理又能快速发现它们。<div class="source-link">🔗 <a href="https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug">来源：Wiz</a></div></li>
-  <li><strong>DeepSeek Harness 三天破 13 万星，近 6000 个插件涌现</strong>：8 月 13 日开放预览后三天内 GitHub Star 超 13 万、Fork 近 1.4 万，社区涌现近 6000 个 dsh-plugin 标签仓库，但官方治理缺位、深度适配仍存 Bug。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A034X400">来源：前哨王煜全</a></div></li>
-</ul>
-
+<ul><li><strong>智谱 GLM-5.3 网络安全能力翻倍，真实代码库发现 2436 个漏洞</strong>：红队测试累计发现 2404 个漏洞（1088 个中高危），最早可追溯至 40 年前的代码缺陷，CyberGym 白盒代码审查达 84.5%。🔗 <a href="https://view.inews.qq.com/a/20260817A03L5L00" target="_blank">来源：AIGC 开放社区</a></li></ul>
+<ul><li><strong>Wiz Red Agent 自主发现 Snowflake Jira 漏洞，AI 安全代理"双刃剑"效应显现</strong>：Red Agent 在漏洞公开仅五天后便自主完成发现、利用和影响评估全流程，验证了对 Snowflake 内部 Jira 系统的访问权限。而同一事件中，AI 生成的 GitHub Copilot "Autofix" 代码被用于攻击——揭示 AI 代码生成工具可能引入漏洞，而自主安全代理又能快速发现它们。🔗 <a href="https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug" target="_blank">来源：Wiz</a></li></ul>
+<ul><li><strong>DeepSeek Harness 三天破 13 万星，近 6000 个插件涌现</strong>：8 月 13 日开放预览后三天内 GitHub Star 超 13 万、Fork 近 1.4 万，社区涌现近 6000 个 dsh-plugin 标签仓库，但官方治理缺位、深度适配仍存 Bug。🔗 <a href="https://view.inews.qq.com/a/20260817A034X400" target="_blank">来源：前哨王煜全</a></li></ul>
+<hr>
 <h2>五、政策与监管</h2>
-
-<ul class="bullet">
-  <li><strong>广州拟立法促进人工智能发展，10 月三审表决</strong>：《广州市人工智能发展促进条例（草案修改稿）》公开征求意见，拟禁止利用算法技术实施价格歧视、消费欺诈及不正当竞争；同时建设全市统一算力协同调度平台，探索算力资源市场化交易机制。<div class="source-link">🔗 <a href="https://finance.sina.cn/tech/2026-08-18/detail-ininrzhi7682520.d.html">来源：新快报 / 新浪财经</a></div></li>
-  <li><strong>三位全国人大代表建言 AI 综合性立法</strong>：法治日报邀请大连市人大常委会主任王启尧、四川律协会长李世亮、山东康桥律所张巧良，围绕"统筹发展和安全"建言，主张构建一部基础性、统领性、框架性的综合性法律，建立风险分级监管及监管沙盒机制，设立国家人工智能主管机关。<div class="source-link">🔗 <a href="https://www.legaldaily.com.cn/index/content/2026-08/18/content_9442280.html">来源：法治日报</a></div></li>
-  <li><strong>新华时评：莫让人工智能"偷声"击穿社会信任</strong>：新华社指出 AI"克隆"声音技术门槛低至十几元，个人声线被未经许可抓取训练成语音包并商用、倒卖，甚至成为电信诈骗新方式；呼吁平台升级音频鉴伪系统、司法细化声音权益认定标准。<div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260818A023MT00?refer=cp_1009">来源：新华社</a></div></li>
-  <li><strong>《中国—东盟人工智能开发合作发展报告》发布</strong>：RCEP 产业合作委员会指出中国具备完整产业链与大规模场景经验，东盟拥有广阔终端市场与多元语种环境，双方将分类施策推进智慧港口、智能制造、智慧农业等合作。<div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260817A07FU700">来源：中国新闻网</a></div></li>
-  <li><strong>全国首个绿色算力全栈 AI 词元交易平台落地内蒙古和林格尔</strong>：由内蒙古数据交易中心联合大数据产业发展集团、算网科技共同打造，提供词元交易、算力租赁、模型服务一站式能力，推动"绿电—算力—词元"价值链延伸。<div class="source-link">🔗 <a href="http://view.inews.qq.com/a/20260817A09PTF00">来源：中国 IDC 圈</a></div></li>
-</ul>
-
+<ul><li><strong>广州拟立法促进人工智能发展，10 月三审表决</strong>：《广州市人工智能发展促进条例（草案修改稿）》公开征求意见，拟禁止利用算法技术实施价格歧视、消费欺诈及不正当竞争；同时建设全市统一算力协同调度平台，探索算力资源市场化交易机制。🔗 <a href="https://finance.sina.cn/tech/2026-08-18/detail-ininrzhi7682520.d.html" target="_blank">来源：新快报 / 新浪财经</a></li></ul>
+<ul><li><strong>三位全国人大代表建言 AI 综合性立法</strong>：法治日报邀请大连市人大常委会主任王启尧、四川律协会长李世亮、山东康桥律所张巧良，围绕"统筹发展和安全"建言，主张构建一部基础性、统领性、框架性的综合性法律，建立风险分级监管及监管沙盒机制，设立国家人工智能主管机关。🔗 <a href="https://www.legaldaily.com.cn/index/content/2026-08/18/content_9442280.html" target="_blank">来源：法治日报</a></li></ul>
+<ul><li><strong>新华时评：莫让人工智能"偷声"击穿社会信任</strong>：新华社指出 AI"克隆"声音技术门槛低至十几元，个人声线被未经许可抓取训练成语音包并商用、倒卖，甚至成为电信诈骗新方式；呼吁平台升级音频鉴伪系统、司法细化声音权益认定标准。🔗 <a href="https://new.qq.com/rain/a/20260818A023MT00?refer=cp_1009" target="_blank">来源：新华社</a></li></ul>
+<ul><li><strong>《中国—东盟人工智能开发合作发展报告》发布</strong>：RCEP 产业合作委员会指出中国具备完整产业链与大规模场景经验，东盟拥有广阔终端市场与多元语种环境，双方将分类施策推进智慧港口、智能制造、智慧农业等合作。🔗 <a href="https://view.inews.qq.com/a/20260817A07FU700" target="_blank">来源：中国新闻网</a></li></ul>
+<ul><li><strong>全国首个绿色算力全栈 AI 词元交易平台落地内蒙古和林格尔</strong>：由内蒙古数据交易中心联合大数据产业发展集团、算网科技共同打造，提供词元交易、算力租赁、模型服务一站式能力，推动"绿电—算力—词元"价值链延伸。🔗 <a href="http://view.inews.qq.com/a/20260817A09PTF00" target="_blank">来源：中国 IDC 圈</a></li></ul>
+<hr>
 <h2>六、核心观察</h2>
-
-<ol class="bullet">
-  <li><strong>AI 流量入口被金融基础设施收编</strong>：Stripe 收购 OpenRouter 标志"计量层"与"路由层"首次合并，AI 中长尾生态的中立性面临拷问。</li>
-  <li><strong>Anthropic 营收坐实"AI 能赚钱"</strong>：650 亿美元运行率 + 首次季度盈利，与 OpenAI 双双冲刺 IPO，将决定未来十年 AI 资本循环。</li>
-  <li><strong>OpenAI 在商业化与安全之间再平衡</strong>：IPO 前解散 Preparedness 团队叠加高管离职潮，安全治理的优先级让位于商业冲刺，引发持续担忧。</li>
-  <li><strong>英伟达用"金融工程"化解算力融资质疑</strong>：GPU 残值兜底机制将高风险算力资产证券化，AI 基建资金结构加速华尔街化。</li>
-  <li><strong>中国智能体商业进入落地窗口期</strong>：支付宝"阿宝"底座 + 蚂蚁 CEO"6–12 个月爆发"判断，叠加办公 Agent"四国杀"模型聚合，Agent 从概念走向真实交易场景。</li>
-</ol>
+<ul><li><strong>AI 流量入口被金融基础设施收编</strong>：Stripe 收购 OpenRouter 标志"计量层"与"路由层"首次合并，AI 中长尾生态的中立性面临拷问。</li></ul>
+<ul><li><strong>Anthropic 营收坐实"AI 能赚钱"</strong>：650 亿美元运行率 + 首次季度盈利，与 OpenAI 双双冲刺 IPO，将决定未来十年 AI 资本循环。</li></ul>
+<ul><li><strong>OpenAI 在商业化与安全之间再平衡</strong>：IPO 前解散 Preparedness 团队叠加高管离职潮，安全治理的优先级让位于商业冲刺，引发持续担忧。</li></ul>
+<ul><li><strong>英伟达用"金融工程"化解算力融资质疑</strong>：GPU 残值兜底机制将高风险算力资产证券化，AI 基建资金结构加速华尔街化。</li></ul>
+<ul><li><strong>中国智能体商业进入落地窗口期</strong>：支付宝"阿宝"底座 + 蚂蚁 CEO"6–12 个月爆发"判断，叠加办公 Agent"四国杀"模型聚合，Agent 从概念走向真实交易场景。</li></ul>
+<hr>
+<p>*数据来源：彭博社 / 财联社 / 金融时报 / The Verge / IT之家 / TechCrunch / 新京报 / 新华社 / 法治日报 / 观察者网 / 至顶科技 / 时代周报 / 亿欧网 / Wiz · My Research Central · via WB*</p>
 
 <div class="report-footer">
-  数据来源：彭博社 / 财联社 / 金融时报 / The Verge / IT之家 / TechCrunch / 新京报 / 新华社 / 法治日报 / 观察者网 / 至顶科技 / 时代周报 / 亿欧网 / Wiz · My Research Central · via WB
+  数据来源：Wind 金融数据 connector · My Research Central · via WB
 </div>
 
 </body>
