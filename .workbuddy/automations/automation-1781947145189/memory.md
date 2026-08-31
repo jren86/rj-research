@@ -1,3 +1,21 @@
+## 2026-08-31 09:50
+- **结果**：无需更新
+- **关键词列表**：长川科技、精智达、芯碁微装（共3个）
+- **已有数据覆盖**：全部3个关键词已在 data.json 中存在，data.json 当前共 12 个关键词（每词 10 帖，updated 2026-06-20）
+- **新关键词数**：0
+- **API 状态**：`GET /api/keywords` 返回 HTTP 500 `{"error":"KV read failed","detail":"Cannot read properties of undefined (reading 'get')"}` —— 与 08-30 一致，`env.KEYWORD_STORE` KV 绑定仍未修复。**待修复**：Cloudflare Dashboard → rj-research → Settings → Functions → KV namespace bindings，变量名必须严格为 `KEYWORD_STORE`。回退到本地文件成功。
+- **ZSXQ 搜索**：未触发（无新关键词）
+- **Git**：无数据变更；仅本 memory.md 有改动，已 commit + push 到 origin main
+
+## 2026-08-30 09:50
+- **结果**：无需更新
+- **关键词列表**：长川科技、精智达、芯碁微装（共3个）
+- **已有数据覆盖**：全部3个关键词已在 data.json 中存在，data.json 当前共 12 个关键词
+- **新关键词数**：0
+- **API 状态**：**重要变化** — `/api/keywords` 首次返回 JSON 而非 index.html，说明 Pages Function 已成功部署生效；但返回 `{"error":"KV read failed","detail":"Cannot read properties of undefined (reading 'get')"}` → `env.KEYWORD_STORE` 未绑定。**待修复**：需到 Cloudflare Dashboard 为 rj-research 项目绑定名为 `KEYWORD_STORE` 的 KV namespace（Settings → Functions → KV namespace bindings，变量名必须严格为 `KEYWORD_STORE`）。回退到本地文件成功。
+- **ZSXQ 搜索**：未触发（无新关键词）
+- **Git**：未执行（工作区干净，无变更）。**更正历史记录**：deep-track-data.json / deep-track-keywords.json / deep-track.html / functions/api/keywords.js / server.js 现均已 TRACKED（此前记录的未跟踪状态已过时）。last commit: a180cfd @ 2026-08-30 07:32
+
 ## 2026-08-29 10:03
 - **结果**：无需更新
 - **关键词列表**：长川科技、精智达、芯碁微装（共3个）
