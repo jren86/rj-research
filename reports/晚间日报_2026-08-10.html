@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -457,10 +482,12 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>📋 持仓个股监控</h2>
 <h3>A股持仓（14只）</h3>
 <table><thead><tr><th>代码</th><th>名称</th><th>收盘价</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>300750</td><td>宁德时代</td><td>393.87</td><td><span class="red">+1.86%</span></td><td>90.3亿</td></tr><tr><td>600276</td><td>恒瑞医药</td><td>54.18</td><td><span class="green">-0.81%</span></td><td>64.7亿</td></tr><tr><td>002001</td><td>新和成</td><td>31.07</td><td><span class="red">+1.57%</span></td><td>11.6亿</td></tr><tr><td>000725</td><td>京东方A</td><td>5.89</td><td><span class="green">-2.97%</span></td><td>104.7亿</td></tr><tr><td>300604</td><td>长川科技</td><td>288.08</td><td><span class="red">+1.72%</span></td><td>64.4亿</td></tr><tr><td>600160</td><td>巨化股份</td><td>44.26</td><td><span class="red">+2.24%</span></td><td>15.4亿</td></tr><tr><td>002364</td><td>中恒电气</td><td>39.37</td><td><span class="green">-1.77%</span></td><td>16.7亿</td></tr><tr><td>600487</td><td>亨通光电</td><td>59.62</td><td><span class="red">+0.17%</span></td><td>153.8亿</td></tr><tr><td>601601</td><td>中国太保</td><td>30.94</td><td><span class="green">-1.68%</span></td><td>16.1亿</td></tr><tr><td>688617</td><td>惠泰医疗</td><td>211.01</td><td><span class="red">+1.20%</span></td><td>3.1亿</td></tr><tr><td>601628</td><td>中国人寿</td><td>37.70</td><td><span class="green">-2.26%</span></td><td>14.1亿</td></tr><tr><td>603308</td><td>应流股份</td><td>48.38</td><td><span class="green">-0.29%</span></td><td>5.5亿</td></tr><tr><td>000962</td><td>东方钽业</td><td>57.45</td><td>🔴<span class="red">+4.11%</span></td><td>28.3亿</td></tr><tr><td>688825</td><td>N长鑫</td><td>51.30</td><td><span class="green">-2.25%</span></td><td>256.7亿</td></tr></tbody></table>
-<p><strong>A股小结</strong>：8涨6跌。东方钽业+4.11%领涨，巨化+2.24%跟随，宁德+1.86%企稳。京东方-2.97%/人寿-2.26%/N长鑫-2.25%跌幅居前。N长鑫MSCI纳入生效日高开低走放量256亿（获利盘兑现）。</p>
+<p class="sub-label"><strong>A股小结</strong>：</p>
+<p>8涨6跌。东方钽业+4.11%领涨，巨化+2.24%跟随，宁德+1.86%企稳。京东方-2.97%/人寿-2.26%/N长鑫-2.25%跌幅居前。N长鑫MSCI纳入生效日高开低走放量256亿（获利盘兑现）。</p>
 <h3>港股持仓（10只）</h3>
 <table><thead><tr><th>代码</th><th>名称</th><th>收盘价(HKD)</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>00700</td><td>腾讯控股</td><td>481.40</td><td><span class="red">+0.54%</span></td><td>74.4亿</td></tr><tr><td>09926</td><td>康方生物</td><td>101.50</td><td><span class="red">+1.50%</span></td><td>9.2亿</td></tr><tr><td>09992</td><td>泡泡玛特</td><td>154.40</td><td><span class="green">-2.15%</span></td><td>20.8亿</td></tr><tr><td>00992</td><td>联想集团</td><td>29.00</td><td>🔴<span class="red">+3.20%</span></td><td>33.0亿</td></tr><tr><td>02259</td><td>紫金黄金国际</td><td>144.00</td><td>🔴<span class="red">+5.03%</span></td><td>29.2亿</td></tr><tr><td>03696</td><td>英矽智能</td><td>48.48</td><td>🔴<span class="red">+6.69%</span></td><td>12.1亿</td></tr><tr><td>03200</td><td>大族数控</td><td>107.40</td><td><span class="green">-2.01%</span></td><td>2.3亿</td></tr><tr><td>06869</td><td>长飞光纤光缆</td><td>124.60</td><td><span class="red">+0.40%</span></td><td>35.7亿</td></tr><tr><td>02202</td><td>万科企业</td><td>2.515</td><td><span class="red">+0.60%</span></td><td>0.5亿</td></tr><tr><td>02692</td><td>兆威机电</td><td>46.00</td><td><span class="green">-2.99%</span></td><td>0.1亿</td></tr></tbody></table>
-<p><strong>港股小结</strong>：7涨3跌。英矽智能+6.69%暴涨（AI制药龙头β弹性），紫金黄金国际+5.03%（黄金高位+刚果催化延续），联想+3.20%（业绩预期+ISG利润率拐点）。兆威-2.99%/泡泡玛特-2.15%/大族-2.01%回调。</p>
+<p class="sub-label"><strong>港股小结</strong>：</p>
+<p>7涨3跌。英矽智能+6.69%暴涨（AI制药龙头β弹性），紫金黄金国际+5.03%（黄金高位+刚果催化延续），联想+3.20%（业绩预期+ISG利润率拐点）。兆威-2.99%/泡泡玛特-2.15%/大族-2.01%回调。</p>
 <h3>按主题分类</h3>
 <table><thead><tr><th>主题</th><th>标的</th><th>今日表现</th><th>关键动态</th></tr></thead><tbody><tr><td>🔴 <strong>创新药械</strong></td><td>康方/恒瑞/惠泰/英矽</td><td>英矽+6.69%领涨</td><td>英矽AI制药龙头β弹性；康方+1.50%稳健</td></tr><tr><td>🔵 <strong>AI设备&amp;材料</strong></td><td>联想/京东方/长川/中恒/亨通/应流/大族/长飞/东方钽业/N长鑫</td><td>东方钽业+4.11%/联想+3.20%</td><td>N长鑫MSCI纳入兑现高开低走；长飞光纤H1利润预增711-914%</td></tr><tr><td>🔵 <strong>AI应用</strong></td><td>腾讯</td><td>+0.54%</td><td>8/12 Q2业绩发布在即；南向资金近期加仓</td></tr><tr><td>🔴 <strong>新能源/电动车</strong></td><td>宁德/兆威</td><td>宁德+1.86%</td><td>宁德回购200-400亿+H1净利432.84亿+42%延续信心</td></tr><tr><td>🟢 <strong>保险</strong></td><td>中国太保/中国人寿</td><td>双双下跌</td><td>太保-1.68%/人寿-2.26%；板块高股息防御属性未改</td></tr><tr><td>🔴 <strong>化工/材料</strong></td><td>新和成/巨化</td><td>双双上涨</td><td>巨化+2.24%/新和成+1.57%；周期修复延续</td></tr><tr><td>🔴 <strong>能源/有色</strong></td><td>紫金黄金国际</td><td>+5.03%暴涨</td><td>黄金高位+刚果铜钴禁令共振</td></tr><tr><td>🟢 <strong>传媒/娱乐</strong></td><td>泡泡玛特</td><td>-2.15%</td><td>8/20中期业绩前获利盘消化</td></tr><tr><td>🟢 <strong>地产/基建</strong></td><td>万科企业</td><td>+0.60%</td><td>低位横盘；北京公积金新政效果待观察</td></tr></tbody></table>
 <h3>持仓个股增量信息</h3>
@@ -485,7 +512,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>📋 数据溯源</h2>
 <table><thead><tr><th>数据类别</th><th>来源工具</th><th>调用次数</th><th>备注</th></tr></thead><tbody><tr><td>指数行情</td><td>Wind MCP <code>stock_data.get_stock_price_indicators</code></td><td>1次（4指数批量）</td><td>上证/深证/创业板/科创50</td></tr><tr><td>恒生指数</td><td>Wind MCP <code>stock_data.get_stock_price_indicators</code></td><td>1次</td><td>HSI.HI</td></tr><tr><td>A股持仓行情</td><td>Wind MCP <code>stock_data.get_stock_price_indicators</code></td><td>2次（14只分两批）</td><td>全部14只A股持仓</td></tr><tr><td>港股持仓行情</td><td>Wind MCP <code>stock_data.get_stock_price_indicators</code></td><td>1次（10只批量）</td><td>全部10只港股</td></tr><tr><td>宏观新闻</td><td>Wind MCP <code>financial_docs.get_financial_news</code></td><td>1次</td><td>宏观/货币政策/央行/Fed/日央行</td></tr><tr><td>市场策略</td><td>Wind MCP <code>financial_docs.get_financial_news</code></td><td>1次</td><td>策略/行业轮动/A股市场</td></tr><tr><td>A股持仓新闻</td><td>Wind MCP <code>financial_docs.get_financial_news</code></td><td>2次</td><td>宁德/恒瑞/京东方/长川/巨化/中恒/亨通/太保/惠泰/人寿/应流/东方钽业/N长鑫/新和成</td></tr><tr><td>港股持仓新闻</td><td>Wind MCP <code>financial_docs.get_financial_news</code></td><td>2次</td><td>腾讯/康方/泡泡玛特/联想/紫金/英矽/大族/长飞/万科/兆威</td></tr><tr><td>券商策略</td><td>Wind MCP <code>financial_docs.get_financial_news</code></td><td>1次</td><td>中信建投/中金/华泰/天风/广发策略</td></tr><tr><td>行业板块</td><td>Wind MCP <code>financial_docs.get_financial_news</code></td><td>1次</td><td>半导体/创新药/能源/黄金/AIDC</td></tr><tr><td>WTI原油</td><td>NeoData <code>scripts/query.py --data-type api</code></td><td>1次（凭证刷新）</td><td>$79.11 +1.19%</td></tr><tr><td>COMEX黄金</td><td>NeoData <code>scripts/query.py --data-type api</code></td><td>1次</td><td>$4,401.20 +0.03%</td></tr><tr><td>布伦特原油</td><td>NeoData <code>scripts/query.py --data-type api</code></td><td>1次</td><td>结构化API未覆盖</td></tr><tr><td>知识星球</td><td>zsxq-cli <code>topic +search</code> ×2 + <code>api call get_group_topics</code> ×2</td><td>4次</td><td>水木+调研纪要更新</td></tr></tbody></table>
-<p><strong>数据质量校验</strong>：</p>
+<p class="sub-label"><strong>数据质量校验</strong>：</p>
 <ul><li>✅ 所有指数/股价数字来自 Wind MCP 结构化 API</li><li>✅ 大宗商品价格来自 NeoData <code>--data-type api</code> 结构化数据</li><li>✅ 新闻/公告文本来自 Wind <code>financial_docs</code>（2026年8月最新）</li><li>✅ 未加载 wb-finance-skill，所有金融数据路由到 Wind MCP</li><li>⚠️ 布伦特原油 NeoData 结构化 API 未覆盖</li></ul>
 <hr>
 <p>*报告生成时间：2026-08-10 18:00 CST · 数据截止交易日收盘 · My Research Central · via WB*</p>

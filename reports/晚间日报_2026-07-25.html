@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -444,7 +469,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>📊 市场概览（7/24 周五收盘）</h2>
 <h3>A股 — 全线下跌，半导体逆市抗跌</h3>
 <ul><li>沪指跌1.61%报3814.20，深成指跌2.47%，创业板跌2.65%</li><li><strong>科创50仅跌0.14%</strong>，半导体板块逆市走强</li><li>全市场超4940只下跌，25只跌停</li><li>两市成交19447亿元，较前日缩量2651亿</li><li><strong>本周（7/20-7/24）</strong>：沪指累涨+1.33%，创业板+1.52%，但个股分化剧烈（仅1479只上涨 vs 4007只下跌）</li></ul>
-<p><strong>板块表现</strong>：</p>
+<p class="sub-label"><strong>板块表现</strong>：</p>
 <ul><li>🟢 逆市：半导体、地面兵装、航海装备、银行</li><li>🔴 领跌：贵金属、医疗美容、电力、工业金属、有色金属</li><li>半导体主力资金小幅净流入，有色金属/通信设备/电力主力大幅净流出</li></ul>
 <p>🔴 <strong>中原证券研判</strong>：上证综指PE 16.00倍、创业板PE 44.50倍，处于近三年中位数上方。国新/诚通百亿增持+证监会座谈标志着稳市机制进入常态化运行。海外波动对A股边际影响逐步钝化，短线关注半导体、地面兵装、军工电子。</p>
 <h3>港股 — 恒指失守25000</h3>
@@ -453,19 +478,19 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>💡 策略观点</h2>
 <h3>7月策略共识</h3>
-<p><strong>天风证券（7/7）</strong>：</p>
+<p class="sub-label"><strong>天风证券（7/7）</strong>：</p>
 <ul><li>7月建议均衡配置大小盘风格，中长期继续看好小盘、成长风格</li><li>2026年中报潜在景气方向：证券（成交额翻倍）、电力（发电量增速持续提升）、铜（Q2涨超8%）、航运（出口+运价涨超50%）、工程机械挖机（5月+36.2%）、半导体&amp;存储（全球销售额+93.89%）</li></ul>
 <p>🔗 来源：天风证券 · 7月策略观点与金股推荐</p>
-<p><strong>7月市场研判（7/2）</strong>：</p>
+<p class="sub-label"><strong>7月市场研判（7/2）</strong>：</p>
 <ul><li>科技的"接力棒"将传向谁？科技板块波动率显著上行，参考2025年两轮AI调整经验：资金向板块内低估值轮动（新消费、创新药、商业航天、贵金属）</li><li>配置方向：除科技主线外，重点关注出口链与资源品</li><li>港股维持"杠铃策略"：防御端高股息+进攻端AI/有色</li></ul>
 <p>🔗 来源：Wind数据终端</p>
-<p><strong>华安证券（7月）</strong>：</p>
+<p class="sub-label"><strong>华安证券（7月）</strong>：</p>
 <ul><li>美联储紧缩担忧缓和，风险资产价格修复</li><li>超配美股、美元，低配美债和大宗商品</li></ul>
 <p>🔗 来源：华安策略 · 大类资产配置月报第60期</p>
-<p><strong>行业轮动策略（7/5）</strong>：</p>
+<p class="sub-label"><strong>行业轮动策略（7/5）</strong>：</p>
 <ul><li>7月建议配置：机械、煤炭、石油石化、国防军工、非银</li><li>电子、有色交易拥挤度较高，非银和食品饮料拥挤度较低</li></ul>
 <p>🔗 来源：Wind数据终端</p>
-<p><strong>基金配置策略（7/5）</strong>：</p>
+<p class="sub-label"><strong>基金配置策略（7/5）</strong>：</p>
 <ul><li>7月建议均衡配置风格，重视新兴科技和优势制造，兼顾大金融、顺周期</li><li>ETF行业轮动：电子、机床、计算机、新能源、军工、环保</li></ul>
 <p>🔗 来源：7月基金投资策略</p>
 <hr>
@@ -490,14 +515,14 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>🌐 知识星球（ZSXQ）</h2>
 <h3>水木调研纪要-2.0（7/25 今日更新）</h3>
-<p><strong>今日新发布</strong>：</p>
+<p class="sub-label"><strong>今日新发布</strong>：</p>
 <ul><li>⚠️ <strong>大摩闭门会：下半年半导体投资布局</strong>（7/24 MP3文件，需手动查看）</li><li>⚠️ <strong>纪要&amp;报告</strong>：华峰化学/美团/鹏辉能源/苏泊尔（7/24 PDF，需手动查看）</li></ul>
-<p><strong>关键词搜索历史（去重）</strong>：</p>
+<p class="sub-label"><strong>关键词搜索历史（去重）</strong>：</p>
 <ul><li><strong>申万宏源化工</strong>：电子材料持续重点推荐，"板块近期催化不断，调整即买入机会"（6/2）⭐</li><li><strong>长江机械</strong>：工程机械调整点评——"板块内外景气趋势明确，重视回调后优质资产买入机会"（5/18）</li><li><strong>申万化工</strong>：两存IPO持续推进，国内设备厂上修订单预期，存储板块行情持续（5/22、5/19）</li><li>⚠️ <strong>华辰装备</strong>：新品发布会超预期，重申强推逻辑（历史）</li></ul>
 <h3>调研纪要更新（7/25 今日更新）</h3>
-<p><strong>今日新发布研报</strong>：</p>
+<p class="sub-label"><strong>今日新发布研报</strong>：</p>
 <ul><li>⚠️ 华泰证券-航天军工周报：无人装备加速进入实战应用</li><li>⚠️ 华泰证券-通信周报：WAIC超节点为国内算力大势所趋</li><li>⚠️ 兴业证券-电子周报：台积电业绩超预期并上调资本开支，看好半导体设备材料零部件</li><li>⚠️ 中信建投-有色金属：基本面优异，工业金属跑出相对</li><li>⚠️ 中航证券-非银周报：头部券商半年报业绩预高增，券商板块配置价值凸显</li><li>⚠️ 广发证券-银行：长期利率筑底的三条线索，从金融体系到货币当局</li><li>⚠️ 兴业证券-建筑材料周报：传统建材周期大底，关注低估值板块修复</li></ul>
-<p><strong>关键词搜索历史（去重）</strong>：</p>
+<p class="sub-label"><strong>关键词搜索历史（去重）</strong>：</p>
 <ul><li><strong>申万宏源化工</strong>：电子材料持续重点推荐，"调整即买入"（6/2）</li><li><strong>长江机械</strong>：重视回调后优质资产买入机会（5/18）</li><li><strong>是德科技</strong>：AI驱动仪器行业迎高景气周期，强推AI仪器板块（5/20）</li></ul>
 <blockquote>⚠️ 标注为PDF/MP3附件的内容无法直接读取，需手动查看。上述为完整标题列表。</blockquote>
 <p>🔗 来源：ZSXQ CLI · 水木调研纪要-2.0 + 调研纪要更新</p>

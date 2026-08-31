@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -433,121 +458,133 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>🔥 重大发布与产品动态</h2>
 <h3>1. 苹果 WWDC 2026 前瞻：Gemini 驱动 Siri，库克最后一次主题演讲</h3>
-<p><strong>摘要</strong>: 苹果 WWDC 2026 将于 6 月 8 日开幕，这是蒂姆·库克卸任 CEO 前（9月1日交棒硬件主管特努斯）最后一次主题演讲。Siri 将迎来 15 年来最大变革。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>苹果 WWDC 2026 将于 6 月 8 日开幕，这是蒂姆·库克卸任 CEO 前（9月1日交棒硬件主管特努斯）最后一次主题演讲。Siri 将迎来 15 年来最大变革。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>Siri 底层将从自研模型切换至谷歌定制 1.2 万亿参数 Gemini 模型，苹果年支付约 10 亿美元授权费，这是 Gemini 除谷歌自有产品外最大规模商业部署</li><li>全新扩展系统：用户可在 ChatGPT、Gemini、Claude 之间自由选择 Apple Intelligence 驱动模型，Gemini 为默认选项，结束 OpenAI 自 iOS 18 以来在 iPhone 内的独家合作</li><li>iOS 27 / macOS 27 同步发布，新增 AI 驱动相册编辑工具，可能预告搭载 M5 芯片的 HomePad 智能家居中枢</li></ul>
-<p><strong>影响</strong>: 苹果 AI 战略从「自研优先」转向「最佳模型集成」，谷歌成为最大赢家，OpenAI 在移动端失去最重要的独占渠道。</p>
-<p>📅 <strong>来源</strong>: TechCabal / TechTimes / 36氪 / 腾讯新闻</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>苹果 AI 战略从「自研优先」转向「最佳模型集成」，谷歌成为最大赢家，OpenAI 在移动端失去最重要的独占渠道。<br>📅 <strong>来源</strong>: TechCabal / TechTimes / 36氪 / 腾讯新闻</p>
 <hr>
 <h3>2. 微软 MAI 系列 7 款自研模型全面铺开，Frontier Tuning 技术亮相</h3>
-<p><strong>摘要</strong>: 微软 Build 2026 发布 7 款自研 MAI 模型，标志从主要分销 OpenAI 能力转向自研技术路线。旗舰推理模型 MAI-Thinking-1 完全从零训练，知识产权独立。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>微软 Build 2026 发布 7 款自研 MAI 模型，标志从主要分销 OpenAI 能力转向自研技术路线。旗舰推理模型 MAI-Thinking-1 完全从零训练，知识产权独立。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>MAI-Thinking-1 在 SWE-Bench Pro 上表现优于 Claude Haiku 4.5，token 消耗仅为其 40%（微软自测数据）</li><li>Frontier Tuning 技术：企业可在合规边界内基于 AI 代理工作轨迹应用强化学习训练模型，麦肯锡采用后胜率达最高、成本降 10 倍</li><li>MAI Code One 已集成 GitHub Copilot 和 VS Code，Work IQ API 6 月 16 日上线</li><li>同步上线 Fireworks AI / Baseten / OpenRouter 等第三方平台</li></ul>
-<p><strong>影响</strong>: 微软从「OpenAI 包装商」转型为「自研模型厂商」，AI 基础设施层的竞争格局进一步碎片化。</p>
-<p>📅 <strong>来源</strong>: AI Tools Recap / 微软 Build 2026</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>微软从「OpenAI 包装商」转型为「自研模型厂商」，AI 基础设施层的竞争格局进一步碎片化。<br>📅 <strong>来源</strong>: AI Tools Recap / 微软 Build 2026</p>
 <hr>
 <h3>3. xAI 三连发：Grok for Government + Grok Build + Web 连接器</h3>
-<p><strong>摘要</strong>: 本周是 xAI 自成立以来最重大的产品推进周，同时发布政府合同、编码智能体和 Web 连接器三大产品线。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>本周是 xAI 自成立以来最重大的产品推进周，同时发布政府合同、编码智能体和 Web 连接器三大产品线。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li><strong>Grok for Government</strong>：美国总务署签署 18 个月 OneGov 协议，所有联邦机构以 $0.42/机构使用 Grok 4，含专属工程团队和机构培训，为联邦史上最长 AI 合同</li><li><strong>Grok Build</strong>：面向 SuperGrok Heavy 订阅者的终端编码智能体，支持终端规划、并行子智能体、worktree、ACP 协议，直接对标 Claude Code / Cursor</li><li><strong>Grok Web 连接器</strong>：接入 SharePoint、Outlook、Google Workspace、Notion、GitHub、Linear，支持自定义 MCP 服务器</li></ul>
-<p><strong>影响</strong>: xAI 从模型实验室转型为企业级 AI 全栈服务商，同时覆盖政府、开发者、消费者三渠道。</p>
-<p>📅 <strong>来源</strong>: Tom's Hardware / xAI 官方更新日志</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>xAI 从模型实验室转型为企业级 AI 全栈服务商，同时覆盖政府、开发者、消费者三渠道。<br>📅 <strong>来源</strong>: Tom's Hardware / xAI 官方更新日志</p>
 <hr>
 <h3>4. Claude Sonnet 4.8 泄露坐实，预计 6 月底至 7 月初发布</h3>
-<p><strong>摘要</strong>: Anthropic npm v2.1.88 源代码映射中泄露的三个未公开模型字符串（sonnet-4-8 / opus-4-7 / mythos），其中两个已被验证，Sonnet 4.8 成为唯一未官宣的模型。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Anthropic npm v2.1.88 源代码映射中泄露的三个未公开模型字符串（sonnet-4-8 / opus-4-7 / mythos），其中两个已被验证，Sonnet 4.8 成为唯一未官宣的模型。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>预计继承 Opus 4.7 视觉能力升级 + Opus 4.8 动态工作流特性 + 35% token 效率提升</li><li>售价预计维持 $3 / $15 每百万 token，将大幅提升 Max 5x / Pro 计划用户体验</li><li>Anthropic 计划 10 月 IPO，6 月 H 轮披露 470 亿美元 ARR</li></ul>
-<p><strong>影响</strong>: Sonnet 4.8 是 Anthropic IPO 前最重要的产品升级，将显著缩小中端模型与旗舰模型的距离。</p>
-<p>📅 <strong>来源</strong>: AI Tools Recap / npm 源代码映射分析</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>Sonnet 4.8 是 Anthropic IPO 前最重要的产品升级，将显著缩小中端模型与旗舰模型的距离。<br>📅 <strong>来源</strong>: AI Tools Recap / npm 源代码映射分析</p>
 <hr>
 <h2>💰 产业与投资</h2>
 <h3>5. 特朗普与桑德斯罕见共识：支持政府持有 AI 企业股权</h3>
-<p><strong>摘要</strong>: 2026 年 6 月 6 日，特朗普表态美国政府可能直接持有 OpenAI、Anthropic、xAI 等 AI 巨头股权，与桑德斯此前呼吁的「50% 公共所有权」立场趋同。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>2026 年 6 月 6 日，特朗普表态美国政府可能直接持有 OpenAI、Anthropic、xAI 等 AI 巨头股权，与桑德斯此前呼吁的「50% 公共所有权」立场趋同。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>桑德斯提出《美国 AI 主权财富基金法案》：对 OpenAI / Anthropic / xAI 征收一次性 50% 股权税（不含谷歌/Meta），放入联邦主权财富基金</li><li>公众将获得 AI 企业董事会投票权和股息分配权</li><li>奥特曼回应：不支持 50% 持股门槛，但愿合作推动公众参股大方向——平衡 IPO 推进与民粹政治风险的谈判策略</li></ul>
-<p><strong>影响</strong>: 跨党派 AI 国有化讨论正在重塑美国 AI 产业政策框架，直接影响 OpenAI 和 Anthropic 的 IPO 定价。</p>
-<p>📅 <strong>来源</strong>: Fortune / Gizmodo / Washington Times / NOTUS</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>跨党派 AI 国有化讨论正在重塑美国 AI 产业政策框架，直接影响 OpenAI 和 Anthropic 的 IPO 定价。<br>📅 <strong>来源</strong>: Fortune / Gizmodo / Washington Times / NOTUS</p>
 <hr>
 <h3>6. OpenAI IPO 进程加速：高盛/摩根士丹利敲定招股书</h3>
-<p><strong>摘要</strong>: OpenAI 正和牵头承销商敲定秘密 S-1，最早 2026 年 9 月上市，一级市场估值 $7300-8500 亿，将与 Anthropic 10 月 IPO 争夺资本。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>OpenAI 正和牵头承销商敲定秘密 S-1，最早 2026 年 9 月上市，一级市场估值 $7300-8500 亿，将与 Anthropic 10 月 IPO 争夺资本。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>财务数据：年化收入从 2023 年 $20 亿增长至 2025 年底超 $200 亿；ChatGPT 周活约 9 亿；累计融资约 $1800 亿</li><li>核心风险：2023-2029 年预计累计亏损 $140 亿，2026 Q1 运营利润率 -122%，收入增速快但成本增速更快</li><li>IPO 逻辑依赖 AI 智能体大规模实现企业 SaaS 级别回报，尚未被验证</li></ul>
-<p><strong>影响</strong>: OpenAI 与 Anthropic 将在 Q3-Q4 竞逐华尔街资本，加上 SpaceX 6 月 12 日上市，2026 年下半年将形成三大 AI 相关 IPO 争夺投资者资金的局面。</p>
-<p>📅 <strong>来源</strong>: CNBC / WSJ / FT</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>OpenAI 与 Anthropic 将在 Q3-Q4 竞逐华尔街资本，加上 SpaceX 6 月 12 日上市，2026 年下半年将形成三大 AI 相关 IPO 争夺投资者资金的局面。<br>📅 <strong>来源</strong>: CNBC / WSJ / FT</p>
 <hr>
 <h3>7. SpaceX IPO 路演完成，6 月 11 日定价、12 日上市</h3>
-<p><strong>摘要</strong>: SpaceX IPO 路演第一周已完成，定价日 6 月 11 日，将以代码 SPCX 于 6 月 12 日在纳斯达克上市，目标估值 $1.75 万亿以上，融资 $750 亿。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>SpaceX IPO 路演第一周已完成，定价日 6 月 11 日，将以代码 SPCX 于 6 月 12 日在纳斯达克上市，目标估值 $1.75 万亿以上，融资 $750 亿。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>2025 合并营收 $187 亿（含 xAI），星链 $114 亿，运营利润 $44 亿；xAI 部门消耗 $140 亿现金仅实现 $32 亿收入</li><li>30% 流通股分配给 Robinhood / 富达 / 嘉信理财，是 mega-cap IPO 常规分配比例的 3 倍</li><li>战略意图：在 OpenAI / Anthropic 争夺华尔街资本前，先锁定广泛的公众股东支持</li></ul>
-<p><strong>影响</strong>: 史上最大 IPO 即将诞生，将抽走大量机构资金，可能影响 OpenAI 和 Anthropic 后续融资节奏。</p>
-<p>📅 <strong>来源</strong>: CNBC / Financial Times</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>史上最大 IPO 即将诞生，将抽走大量机构资金，可能影响 OpenAI 和 Anthropic 后续融资节奏。<br>📅 <strong>来源</strong>: CNBC / Financial Times</p>
 <hr>
 <h3>8. Alphabet 股价连跌四周，Gemini 竞争力存疑</h3>
-<p><strong>摘要</strong>: 谷歌母公司 Alphabet 股价连续四周下跌，市场担忧 Gemini 相比 Claude Opus 4.8 和 GPT-5.5 竞争力不足，AI 基础设施资本支出需求持续上升。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>谷歌母公司 Alphabet 股价连续四周下跌，市场担忧 Gemini 相比 Claude Opus 4.8 和 GPT-5.5 竞争力不足，AI 基础设施资本支出需求持续上升。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>谷歌 2025 年承诺约 $750 亿 AI 基础设施投入，2026 年计划进一步增加</li><li>苹果 WWDC 签下 $10 亿/年 Gemini 授权协议，表面是商业胜利，但意味着谷歌最重要的新企业合作是让苹果产品更具竞争力</li><li>Apollo / 黑石 $360 亿私人信贷交易为 Anthropic 购买谷歌定制 TPU 芯片，被解读为竞争对手正在大规模使用谷歌基础设施</li></ul>
-<p><strong>影响</strong>: 谷歌面临「基础设施被对手使用、产品竞争力不足」的双重困境，苹果合作能否转化为自有产品优势是关键观察点。</p>
-<p>📅 <strong>来源</strong>: 多家财经媒体</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>谷歌面临「基础设施被对手使用、产品竞争力不足」的双重困境，苹果合作能否转化为自有产品优势是关键观察点。<br>📅 <strong>来源</strong>: 多家财经媒体</p>
 <hr>
 <h3>9. Nscale 估值 $146 亿，桑德伯格和克莱格加入董事会</h3>
-<p><strong>摘要</strong>: 挪威 AI 基础设施初创公司 Nscale（被称为「挪威星际之门」）完成新一轮融资，前 Meta 高管谢丽尔·桑德伯格和尼克·克莱格正式加入董事会。</p>
-<p>📅 <strong>来源</strong>: xix.ai</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>挪威 AI 基础设施初创公司 Nscale（被称为「挪威星际之门」）完成新一轮融资，前 Meta 高管谢丽尔·桑德伯格和尼克·克莱格正式加入董事会。<br>📅 <strong>来源</strong>: xix.ai</p>
 <hr>
 <h3>10. Runway 估值 $53 亿，视频 AI 超越语言 AI</h3>
-<p><strong>摘要</strong>: AI 视频生成公司 Runway 估值升至 53 亿美元，视频 AI 领域快速发展开始对谷歌等科技巨头形成竞争压力。</p>
-<p>📅 <strong>来源</strong>: xix.ai</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>AI 视频生成公司 Runway 估值升至 53 亿美元，视频 AI 领域快速发展开始对谷歌等科技巨头形成竞争压力。<br>📅 <strong>来源</strong>: xix.ai</p>
 <hr>
 <h2>🔬 研究与前沿</h2>
 <h3>11. OpenAI GPT-Rosalind 重大更新：生命科学 AI 更智能</h3>
-<p><strong>摘要</strong>: OpenAI 于 6 月 4 日发布 GPT-Rosalind 更新版，结合 GPT-5.5 智能体编码和工具使用能力，专为大规模生命科学研发设计。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>OpenAI 于 6 月 4 日发布 GPT-Rosalind 更新版，结合 GPT-5.5 智能体编码和工具使用能力，专为大规模生命科学研发设计。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>GeneBench 测试比 GPT-5.5 少用 31% token，准确率从 20.4% 提升至 21.6%</li><li>新增证据检索和生物信息工作流插件，强化实验设计支持</li><li>同步推出 Rosalind 生物防御计划，向大流行病防控研究人员开放访问权限</li></ul>
-<p><strong>影响</strong>: OpenAI 在垂直领域（生命科学）持续深耕，与 Anthropic Project Glasswing（网络安全）形成「AI + 关键基础设施」双赛道布局。</p>
-<p>📅 <strong>来源</strong>: OpenAI 官方研究发布</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>OpenAI 在垂直领域（生命科学）持续深耕，与 Anthropic Project Glasswing（网络安全）形成「AI + 关键基础设施」双赛道布局。<br>📅 <strong>来源</strong>: OpenAI 官方研究发布</p>
 <hr>
 <h2>🛠️ 工具与应用</h2>
 <h3>12. OpenAI Codex 覆盖全岗位：从开发者扩展至所有企业工作流</h3>
-<p><strong>摘要</strong>: OpenAI 于 6 月 3 日宣布「Codex 覆盖所有岗位、工具和工作流」，将平台从核心开发者扩展至产品经理、律师、数据分析师、运营团队。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>OpenAI 于 6 月 3 日宣布「Codex 覆盖所有岗位、工具和工作流」，将平台从核心开发者扩展至产品经理、律师、数据分析师、运营团队。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>新增 Sites（Codex 生成内部网页应用）和 Annotations（嵌入工作流的 AI 审核评论）</li><li>对接 Salesforce、Jira、Notion 等企业系统插件</li><li>与 Anthropic 自 2 月以来将 Code with Claude 从开发者工具扩展至跨职能企业自动化类似</li></ul>
-<p><strong>影响</strong>: 两家头部 AI 企业均将编码智能体定位为通用企业自动化平台，目标市场比 AI 辅助软件开发大 10 倍。</p>
-<p>📅 <strong>来源</strong>: OpenAI Codex 平台更新</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>两家头部 AI 企业均将编码智能体定位为通用企业自动化平台，目标市场比 AI 辅助软件开发大 10 倍。<br>📅 <strong>来源</strong>: OpenAI Codex 平台更新</p>
 <hr>
 <h3>13. OpenAI 模型上线 AWS：GPT 与 Claude 同台竞技</h3>
-<p><strong>摘要</strong>: OpenAI 于 6 月 2 日宣布前沿模型和 Codex 现已在亚马逊云（AWS）上线，企业客户可通过现有 AWS 基础设施同时访问 GPT-5.5 和 Claude。</p>
-<p><strong>影响</strong>: AWS 成为 AI 实验室和企业预算之间的关键中间方，议价能力大幅提升。2026 年上半年最被低估的竞争动态——AI 模型商品化加速，价值向编排层转移。</p>
-<p>📅 <strong>来源</strong>: CNBC / OpenAI 官方</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>OpenAI 于 6 月 2 日宣布前沿模型和 Codex 现已在亚马逊云（AWS）上线，企业客户可通过现有 AWS 基础设施同时访问 GPT-5.5 和 Claude。</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>AWS 成为 AI 实验室和企业预算之间的关键中间方，议价能力大幅提升。2026 年上半年最被低估的竞争动态——AI 模型商品化加速，价值向编排层转移。<br>📅 <strong>来源</strong>: CNBC / OpenAI 官方</p>
 <hr>
 <h3>14. Gmail 推出个性化 AI 收件箱和搜索 AI 概览</h3>
-<p><strong>摘要</strong>: Gmail 新增个性化 AI 收件箱管理和搜索中的 AI 概览摘要功能，提升邮件处理效率。</p>
-<p>📅 <strong>来源</strong>: xix.ai</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Gmail 新增个性化 AI 收件箱管理和搜索中的 AI 概览摘要功能，提升邮件处理效率。<br>📅 <strong>来源</strong>: xix.ai</p>
 <hr>
 <h3>15. ChatGPT 锁定模式：企业安全新功能</h3>
-<p><strong>摘要</strong>: OpenAI 推出 ChatGPT 锁定模式，开启后限制联网功能（实时浏览、深度研究、智能体模式、文件下载），面向企业用户避免数据处理时意外泄露数据。</p>
-<p>📅 <strong>来源</strong>: OpenAI ChatGPT 更新</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>OpenAI 推出 ChatGPT 锁定模式，开启后限制联网功能（实时浏览、深度研究、智能体模式、文件下载），面向企业用户避免数据处理时意外泄露数据。<br>📅 <strong>来源</strong>: OpenAI ChatGPT 更新</p>
 <hr>
 <h3>16. 开源国际象棋引擎 Maia 3 发布</h3>
-<p><strong>摘要</strong>: 专为提升人类棋艺设计的开源 AI 国际象棋引擎 Maia 3 正式发布。</p>
-<p>📅 <strong>来源</strong>: xix.ai</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>专为提升人类棋艺设计的开源 AI 国际象棋引擎 Maia 3 正式发布。<br>📅 <strong>来源</strong>: xix.ai</p>
 <hr>
 <h2>🌍 政策与伦理</h2>
 <h3>17. 欧洲 ETSI 发布新 AI 安全标准</h3>
-<p><strong>摘要</strong>: 欧洲电信标准协会（ETSI）发布新的 AI 安全标准，为企业提供合规框架指导。</p>
-<p>📅 <strong>来源</strong>: xix.ai</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>欧洲电信标准协会（ETSI）发布新的 AI 安全标准，为企业提供合规框架指导。<br>📅 <strong>来源</strong>: xix.ai</p>
 <hr>
 <h3>18. Anthropic 发出「刹车」警告：自我改进 AI 即将到来</h3>
-<p><strong>摘要</strong>: Anthropic 罕见公开警告其 AI 系统可能很快具备无人类监督的自我改进能力，呼吁行业开发「刹车」机制：在 AI 自我改进速度超出人类监控时可减缓或停止运行的技术保障。</p>
-<p><strong>关键要点</strong>:</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Anthropic 罕见公开警告其 AI 系统可能很快具备无人类监督的自我改进能力，呼吁行业开发「刹车」机制：在 AI 自我改进速度超出人类监控时可减缓或停止运行的技术保障。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>现有安全评估框架为「训练间隔数月更新」设计，而可部署中自我更新权重或架构的模型风险完全不同</li><li>与 OpenAI 同期向国会呼吁加强监管，但两家公司同时推进近万亿美元估值 IPO，舆论存在争议</li></ul>
 <p>📅 <strong>来源</strong>: Anthropic 官方安全声明</p>
 <hr>
 <h3>19. ChatGPT 成人模式再次推迟，奥特曼：优先智能</h3>
-<p><strong>摘要</strong>: OpenAI CEO 奥特曼表示 ChatGPT 成人内容模式再次延期，公司当前优先聚焦于提升模型智能水平。</p>
-<p>📅 <strong>来源</strong>: xix.ai</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>OpenAI CEO 奥特曼表示 ChatGPT 成人内容模式再次延期，公司当前优先聚焦于提升模型智能水平。<br>📅 <strong>来源</strong>: xix.ai</p>
 <hr>
 <h3>20. 短剧《红果》被指利用 AI 盗用普通人面孔</h3>
-<p><strong>摘要</strong>: 中国短剧《红果》被指控未经授权使用 AI 技术盗用普通人面部特征，涉及肖像权争议，官方暂无回应。</p>
-<p>📅 <strong>来源</strong>: xix.ai</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>中国短剧《红果》被指控未经授权使用 AI 技术盗用普通人面部特征，涉及肖像权争议，官方暂无回应。<br>📅 <strong>来源</strong>: xix.ai</p>
 <hr>
 <h2>🎯 核心要点</h2>
 <ul><li><strong>WWDC 2026 将重塑 AI 移动生态</strong>：苹果全面开放第三方模型选择（Gemini 默认，ChatGPT/Claude 可选），谷歌成最大赢家，OpenAI 失去 iPhone 独占渠道。库克卸任前最后一次主题演讲，Siri 迎来 15 年最大变革。</li></ul>
@@ -557,7 +594,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <ul><li><strong>AI 模型商品化加速</strong>：OpenAI 模型上线 AWS 与 Claude 同台，云服务商议价权大增，价值向编排层转移——这是 2026 年上半年最被低估的竞争动态。</li></ul>
 <ul><li><strong>微软 MAI 自研模型 + 英伟达 RTX Spark</strong>：AI 基础设施层从「英伟达 GPU + OpenAI API」的双寡头格局，裂变为多元竞争——微软自研芯片+模型、英伟达进军 PC CPU、AMD/英特尔/高通全面应战。</li></ul>
 <hr>
-<p><strong>生成时间</strong>: 2026-06-07 07:25 CST<br><strong>下次更新</strong>: 2026-06-08</p>
+<p class="sub-label"><strong>生成时间</strong>：</p>
+<p>2026-06-07 07:25 CST</p>
 
 <div class="report-footer">
   数据来源：Wind 金融数据 connector · My Research Central · via WB

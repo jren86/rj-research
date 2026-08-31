@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -452,8 +477,9 @@ blockquote p:last-child { margin-bottom: 0; }
 <table><thead><tr><th>指数</th><th>收盘价</th><th>涨跌幅</th></tr></thead><tbody><tr><td>恒生指数</td><td>25668.03</td><td><span class="red">+0.54%</span></td></tr><tr><td>恒生科技</td><td>4858.29</td><td><span class="red">+0.78%</span></td></tr></tbody></table>
 <h3>美股主要指数（2026-08-07 收盘）</h3>
 <table><thead><tr><th>指数</th><th>收盘价</th><th>涨跌幅</th></tr></thead><tbody><tr><td>标普500</td><td>7757.64</td><td><span class="red">+0.62%</span></td></tr><tr><td>纳斯达克100</td><td>29722.30</td><td><span class="red">+1.19%</span></td></tr></tbody></table>
-<p><strong>本周A股表现</strong>：上证+2.81%，深证+5.39%，创业板+6.55%，科创综指+10.96%。融资余额前四日净买入264.49亿元，资金情绪回暖。</p>
-<p><strong>A股8/7板块表现</strong>：</p>
+<p class="sub-label"><strong>本周A股表现</strong>：</p>
+<p>上证+2.81%，深证+5.39%，创业板+6.55%，科创综指+10.96%。融资余额前四日净买入264.49亿元，资金情绪回暖。</p>
+<p class="sub-label"><strong>A股8/7板块表现</strong>：</p>
 <ul><li>🔴 领涨：医药生物+4.77%（CRO/创新药涨停潮）、电子+3.53%（PCB/半导体材料）、建筑材料+3.33%</li><li>🟢 领跌：家用电器-0.86%、银行-0.65%、交通运输-0.64%</li></ul>
 <p>🔗 来源：Wind金融终端</p>
 <hr>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -445,7 +470,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>三、市场概览</h2>
 <h3>主要指数（2026-08-14 周五收盘）</h3>
 <table><thead><tr><th>指数</th><th>收盘点位</th><th>涨跌幅</th></tr></thead><tbody><tr><td>上证指数</td><td>3927.18</td><td>🔴 +0.01%</td></tr><tr><td>深证成指</td><td>14354.31</td><td>🔴 +0.45%</td></tr><tr><td>创业板指</td><td>3626.30</td><td>🔴 +1.12%</td></tr><tr><td>科创50</td><td>1717.68</td><td>➖ 0.00%</td></tr><tr><td>沪深300</td><td>4665.88</td><td>🔴 +0.04%</td></tr><tr><td>恒生指数</td><td>25116.85</td><td>🟢 -1.10%</td></tr><tr><td>恒生科技</td><td>4707.62</td><td>🟢 -1.77%</td></tr><tr><td>标普500</td><td>7785.76</td><td>🟢 -0.17%</td></tr><tr><td>纳斯达克</td><td>26729.16</td><td>🟢 -0.28%</td></tr></tbody></table>
-<p><strong>两市成交</strong>：A股合计成交约 2.14 万亿元（上证 9903.72 亿 + 深证 11524.71 亿），较上一交易日缩量约 4081 亿（-16%）。</p>
+<p class="sub-label"><strong>两市成交</strong>：</p>
+<p>A股合计成交约 2.14 万亿元（上证 9903.72 亿 + 深证 11524.71 亿），较上一交易日缩量约 4081 亿（-16%）。</p>
 <h3>周末增量要闻</h3>
 <ul><li>🔴 <strong>「词元贷」「算力贷」新概念</strong>：银行首次将 AI 消耗的 Token 及算力硬件（芯片/服务器/数据中心/光模块）纳入可贷款资产，类比地产时代的「开发贷+按揭贷」闭环。受益方向：算力租赁/服务商、芯片、光模块。</li><li>🔴 <strong>中际旭创 17.47 亿元受让中石科技 10.47% 股份</strong>（周四晚催化），直接刺激液冷散热及算力硬件产业链；数据中心液冷标准同步落地。</li><li>🔴 <strong>盛科通信</strong>签订以太网交换芯片重大合同，金额超去年营收 50%（8/17 公告），长期合同分期确认收入。</li><li>🟠 本周 A 股走势分歧加大：8 月前两周「超跌普反 → 轮动震荡」，上证 4 日横盘回落蓄势，周五尾盘收复 3900 关口；个股层面跌多涨少（上涨 2400 只 / 下跌 2970 只），高位投机情绪退潮。</li></ul>
 <hr>

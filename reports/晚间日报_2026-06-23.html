@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -462,7 +487,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN202606231620389870d59d&s=b">来源：腾讯自选股/新财闻</a></div></p>
 <h3>港股——恒指大跌，国指跌入技术性熊市</h3>
 <ul><li><strong>恒生指数</strong>跌1.82%，报23,290.84点，盘中创近1年新低</li><li><strong>恒生科技指数</strong>跌超3%，年内跌幅超20%领跌全球科技指数</li><li><strong>南向资金</strong>净买入超60亿港元（越跌越买）</li><li>科技、有色板块杀跌，创新药概念逆市上扬</li><li>智谱大跌超15%，MINIMAX-W跌16.46%</li><li>阿里巴巴跌破100港元创阶段新低</li></ul>
-<p><div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN20260623163952a6b2bbcf&s=b">来源：钛媒体快报</a></div><br><div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN202606231047519784640a&s=b">来源：腾讯自选股</a></div></p>
+<p><div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN20260623163952a6b2bbcf&s=b">来源：钛媒体快报</a></div><div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN202606231047519784640a&s=b">来源：腾讯自选股</a></div></p>
 <h3>中金刘刚：维持恒指中枢水平26000点</h3>
 <p>中金策略分析师刘刚发表观点，维持恒指中枢水平26000点的判断，当前港股估值已具备一定吸引力。</p>
 <p><div class="source-link">🔗 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/index?id=nesSN202606231513129870b81f&s=b">来源：智通财经</a></div></p>
@@ -555,7 +580,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p>*报告生成时间：2026-06-23 17:55 GMT+8* · *A股正常交易日·全球科技股暴跌日*</p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>  数据来源：知识星球·水木调研纪要-2.0、调研纪要更新、westock-data · My Research Central · via WB<br>
 </div>
 
 </body>

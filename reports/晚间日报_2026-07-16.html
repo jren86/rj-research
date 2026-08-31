@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -440,22 +465,26 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><strong>央行重磅发声（7/15国新办发布会）</strong></p>
 <ul><li><strong>加大逆周期和跨周期调节力度</strong>：邹澜副行长明确表示将巩固拓展经济稳中向好势头</li><li><strong>隔夜逆回购</strong>：研究逐步增加操作频率，DR001有望成为核心基准利率；隔夜利率调控机制从"临时"走向"常态化"</li><li><strong>流动性充裕</strong>：不会因单次操作量判断政策取向，关注短端利率水平而非操作量</li><li><strong>人民币汇率</strong>：对美元较上年末升值3%，CFETS指数升4.7%，上半年保持双向波动平稳</li></ul>
 <p>🔗 来源：Wind财经新闻 · 2026-07-15</p>
-<p><strong>二季度GDP增长4.3%</strong>：较一季度回落0.7个百分点，上半年累计增速4.7%。经济修复动能阶段性放缓，市场对稳增长政策加码预期升温。Q2 PPI同比回升明显、CPI温和。</p>
-<p>🔗 来源：Wind财经新闻 · 2026-07-16</p>
-<p><strong>上半年金融数据</strong>：</p>
+<p class="sub-label"><strong>二季度GDP增长4.3%</strong>：</p>
+<p>较一季度回落0.7个百分点，上半年累计增速4.7%。经济修复动能阶段性放缓，市场对稳增长政策加码预期升温。Q2 PPI同比回升明显、CPI温和。<br>🔗 来源：Wind财经新闻 · 2026-07-16</p>
+<p class="sub-label"><strong>上半年金融数据</strong>：</p>
 <ul><li>熊猫债发行超1600亿元，同比+60%</li><li>企业债券净融资2.07万亿元，同比多9167亿</li><li>贷款"降速提质"趋势明确</li></ul>
 <h3>海外</h3>
-<p><strong>美伊冲突持续</strong>：</p>
+<p class="sub-label"><strong>美伊冲突持续</strong>：</p>
 <ul><li>美军连续对伊朗实施空袭，恢复海上封锁</li><li>霍尔木兹海峡航运受阻，布伦特原油维持高位（97.7美元/桶附近）</li><li>美伊第一阶段停火备忘录已签署但局势反复，全面核协议谈判仍悬而未决</li><li>高盛：若海峡持续封锁，油价或突破120美元</li></ul>
 <p>🔗 来源：Wind财经新闻 / 华泰固收 · 2026-07-16</p>
-<p><strong>美联储沃什听证会（今明两日）</strong>：市场关注其对通胀、加息路径的最新表态。此前沃什罕见拒绝提交点阵图预测，政策路径高度依赖数据。</p>
-<p>🔗 来源：Wind财经新闻 · 2026-07-16</p>
-<p><strong>台积电Q2业绩创新高</strong>：营收同比+68%，先进制程持续满载，AI/HPC需求推动全年营收指引上调。</p>
+<p class="sub-label"><strong>美联储沃什听证会（今明两日）</strong>：</p>
+<p>市场关注其对通胀、加息路径的最新表态。此前沃什罕见拒绝提交点阵图预测，政策路径高度依赖数据。<br>🔗 来源：Wind财经新闻 · 2026-07-16</p>
+<p class="sub-label"><strong>台积电Q2业绩创新高</strong>：</p>
+<p>营收同比+68%，先进制程持续满载，AI/HPC需求推动全年营收指引上调。</p>
 <hr>
 <h2>📊 市场概览</h2>
 <h3>A股收盘（7/16）</h3>
 <table><thead><tr><th>指数</th><th>收盘价</th><th>涨跌幅</th></tr></thead><tbody><tr><td>上证指数</td><td>3,882.41</td><td><span style="color:#3fb950">-1.85%</span></td></tr><tr><td>深证成指</td><td>14,XXX</td><td><span style="color:#3fb950">-1.97%</span></td></tr><tr><td>创业板指</td><td>3,XXX</td><td><span style="color:#3fb950">-2.95%</span></td></tr><tr><td>科创50</td><td>—</td><td><span style="color:#3fb950">-4.02%</span></td></tr><tr><td>北证50</td><td>—</td><td><span style="color:#3fb950">-2.65%</span></td></tr></tbody></table>
-<p><strong>成交额</strong>：约2.40万亿元（较前日缩量）  <br><strong>主力资金</strong>：全天净流出506.09亿元  <br><strong>涨跌家数</strong>：约2900+只下跌，多数个股承压</p>
+<p class="sub-label"><strong>成交额</strong>：</p>
+<p>约2.40万亿元（较前日缩量）</p>
+<p class="sub-label"><strong>涨跌家数</strong>：</p>
+<p>约2900+只下跌，多数个股承压</p>
 <h3>板块表现</h3>
 <table><thead><tr><th>行业</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>🔵 传媒</td><td><span style="color:#f85149">+1.59%</span></td><td>暑期档票房超去年同期</td></tr><tr><td>🔵 农林牧渔</td><td><span style="color:#f85149">+1.57%</span></td><td>猪肉周期预期</td></tr><tr><td>🔵 医疗设备与服务</td><td><span style="color:#f85149">+1.51%</span></td><td>创新药/CRO逆市活跃</td></tr><tr><td>🔵 房地产</td><td><span style="color:#f85149">+1.14%</span></td><td>地产政策预期</td></tr><tr><td>🟢 半导体</td><td><span style="color:#3fb950">-5.63%</span></td><td>连续暴跌，主力净流出230亿</td></tr><tr><td>🟢 建材</td><td><span style="color:#3fb950">-4.92%</span></td><td></td></tr><tr><td>🟢 电子</td><td><span style="color:#3fb950">-4.25%</span></td><td></td></tr><tr><td>🟢 硬件设备</td><td><span style="color:#3fb950">-2.92%</span></td><td>中际旭创净流出35亿居首</td></tr></tbody></table>
 <h3>资金流向（近5日）</h3>
@@ -464,17 +493,18 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>💡 策略观点</h2>
 <h3>7月券商核心研判</h3>
-<p><strong>东方证券</strong>：沪指仍有冲高动力，本周高点约3970点。半导体走弱后医药适时崛起，医药板块涨停股达21只。散户在小单逆市买入成为市场"稳定器"。配置上以均衡应对高波动：高股息蓝筹打底，重点关注创新药主线。</p>
-<p>🔗 来源：Wind财经新闻 · 2026-07-16</p>
-<p><strong>方正证券</strong>：市场核心矛盾是"海外情绪扰动+题材内部高低切换"，非国内基本面恶化。7月"流动性驱动"向"业绩驱动"过渡期的风格再平衡特征明显。重点关注产业逻辑独立的创新药主线，对高位科技硬件保持谨慎。</p>
-<p>🔗 来源：Wind财经新闻 · 2026-07-16</p>
-<p><strong>华泰固收</strong>：科技板块波动放大，短期维持"震荡整固+内部分化"格局。AI中长期逻辑未变但需警惕高估值+拥挤度风险，建议等回落企稳后低吸。</p>
-<p>🔗 来源：Wind财经新闻 · 2026-07-16</p>
+<p class="sub-label"><strong>东方证券</strong>：</p>
+<p>沪指仍有冲高动力，本周高点约3970点。半导体走弱后医药适时崛起，医药板块涨停股达21只。散户在小单逆市买入成为市场"稳定器"。配置上以均衡应对高波动：高股息蓝筹打底，重点关注创新药主线。<br>🔗 来源：Wind财经新闻 · 2026-07-16</p>
+<p class="sub-label"><strong>方正证券</strong>：</p>
+<p>市场核心矛盾是"海外情绪扰动+题材内部高低切换"，非国内基本面恶化。7月"流动性驱动"向"业绩驱动"过渡期的风格再平衡特征明显。重点关注产业逻辑独立的创新药主线，对高位科技硬件保持谨慎。<br>🔗 来源：Wind财经新闻 · 2026-07-16</p>
+<p class="sub-label"><strong>华泰固收</strong>：</p>
+<p>科技板块波动放大，短期维持"震荡整固+内部分化"格局。AI中长期逻辑未变但需警惕高估值+拥挤度风险，建议等回落企稳后低吸。<br>🔗 来源：Wind财经新闻 · 2026-07-16</p>
 <h3>7月金股汇总</h3>
 <table><thead><tr><th>标的</th><th>推荐券商数</th><th>方向</th><th>核心逻辑</th></tr></thead><tbody><tr><td>中际旭创 ⭐</td><td>13家</td><td>AI光模块</td><td>800G/1.6T高速光模块需求，Q2财报催化</td></tr><tr><td>海光信息</td><td>10家</td><td>国产算力</td><td>国产替代+算力基建</td></tr><tr><td>中国巨石</td><td>9家</td><td>AI电子布</td><td>高端PCB供不应求至2027年</td></tr><tr><td>药明康德</td><td>8家</td><td>CXO</td><td>Q1业绩超预期，Q2持续催化</td></tr><tr><td>宁德时代</td><td>5家</td><td>新能源</td><td>全球动力电池龙头</td></tr><tr><td>巨化股份</td><td>6家</td><td>化工</td><td>氟化工涨价周期</td></tr><tr><td>广发证券</td><td>5家</td><td>券商</td><td>资管+国际业务双轮驱动</td></tr><tr><td>寒武纪</td><td>4家</td><td>AI芯片</td><td>国产AI算力核心</td></tr></tbody></table>
-<p><strong>中原证券7月金股（10只）</strong>：兆易创新、寒武纪、中科曙光、鼎龙股份、英杰电气、多氟多、宁德时代、海博思创、广发证券、完美世界</p>
-<p><strong>开源证券7月金股（10只）</strong>：万通发展、杰普特、日联科技、德业股份、药明康德、达梦数据、桐昆股份、淮北矿业、西部矿业、心动公司</p>
-<p>🔗 来源：Wind研报模块 · 2026-07</p>
+<p class="sub-label"><strong>中原证券7月金股（10只）</strong>：</p>
+<p>兆易创新、寒武纪、中科曙光、鼎龙股份、英杰电气、多氟多、宁德时代、海博思创、广发证券、完美世界</p>
+<p class="sub-label"><strong>开源证券7月金股（10只）</strong>：</p>
+<p>万通发展、杰普特、日联科技、德业股份、药明康德、达梦数据、桐昆股份、淮北矿业、西部矿业、心动公司<br>🔗 来源：Wind研报模块 · 2026-07</p>
 <hr>
 <h2>📌 持仓个股增量信息（13只）</h2>
 <h3>A股持仓（9只）</h3>

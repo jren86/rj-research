@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -478,11 +503,13 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>A股持仓（14只）</h3>
 <table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>主题</th></tr></thead><tbody><tr><td>东方钽业</td><td>000962</td><td>43.88</td><td>🔴 +6.89%</td><td>AI材料</td></tr><tr><td>长川科技</td><td>300604</td><td>259.64</td><td>🔴 +5.76%</td><td>AI设备</td></tr><tr><td>中恒电气</td><td>002364</td><td>35.48</td><td>🔴 +3.74%</td><td>AI设备</td></tr><tr><td>惠泰医疗</td><td>688617</td><td>227.40</td><td>🔴 +3.47%</td><td>创新药械</td></tr><tr><td>应流股份</td><td>603308</td><td>42.85</td><td>🔴 +3.28%</td><td>AI设备</td></tr><tr><td>京东方A</td><td>000725</td><td>5.51</td><td>🔴 +2.80%</td><td>AI材料</td></tr><tr><td>N长鑫</td><td>688825</td><td>53.97</td><td>🔴 +2.08%</td><td>AI材料</td></tr><tr><td>亨通光电</td><td>600487</td><td>47.61</td><td>🔴 +0.87%</td><td>AI设备</td></tr><tr><td>巨化股份</td><td>600160</td><td>39.52</td><td>🟢 -0.23%</td><td>化工材料</td></tr><tr><td>中国人寿</td><td>601628</td><td>39.52</td><td>🟢 -0.55%</td><td>保险</td></tr><tr><td>恒瑞医药</td><td>600276</td><td>54.08</td><td>🟢 -1.04%</td><td>创新药械</td></tr><tr><td>中国太保</td><td>601601</td><td>32.36</td><td>🟢 -1.34%</td><td>保险</td></tr><tr><td>宁德时代</td><td>300750</td><td>395.30</td><td>🟢 -1.64%</td><td>新能源</td></tr><tr><td>新和成</td><td>002001</td><td>30.01</td><td>🟢 -1.67%</td><td>化工材料</td></tr></tbody></table>
 <blockquote>数据来源：NeoData <code>--data-type api</code> / Wind MCP</blockquote>
-<p><strong>A股持仓小结</strong>：9涨5跌。东方钽业 +6.89% 领涨，长川科技 +5.76%、中恒电气 +3.74% 等 AI 设备/材料标的大涨。保险（太保-1.34%、国寿-0.55%）和新能源（宁德-1.64%）拖后腿。</p>
+<p class="sub-label"><strong>A股持仓小结</strong>：</p>
+<p>9涨5跌。东方钽业 +6.89% 领涨，长川科技 +5.76%、中恒电气 +3.74% 等 AI 设备/材料标的大涨。保险（太保-1.34%、国寿-0.55%）和新能源（宁德-1.64%）拖后腿。</p>
 <h3>港股持仓（10只）</h3>
 <table><thead><tr><th>标的</th><th>代码</th><th>收盘价(HKD)</th><th>涨跌幅</th><th>主题</th></tr></thead><tbody><tr><td>联想集团</td><td>00992</td><td>23.86</td><td>🔴 +9.75%</td><td>AI设备</td></tr><tr><td>兆威机电</td><td>02692</td><td>43.88</td><td>🔴 +9.37%</td><td>新能源/电动车</td></tr><tr><td>英矽智能</td><td>03696</td><td>45.70</td><td>🔴 +8.65%</td><td>创新药械</td></tr><tr><td>长飞光纤光缆</td><td>06869</td><td>96.75</td><td>🔴 +5.16%</td><td>AI材料</td></tr><tr><td>康方生物</td><td>09926</td><td>93.95</td><td>🔴 +0.80%</td><td>创新药械</td></tr><tr><td>腾讯控股</td><td>00700</td><td>475.20</td><td>🔴 +0.72%</td><td>AI应用</td></tr><tr><td>万科企业</td><td>02202</td><td>2.48</td><td>🔴 +0.40%</td><td>地产</td></tr><tr><td>紫金黄金国际</td><td>02259</td><td>118.20</td><td>— 0.00%</td><td>能源/有色</td></tr><tr><td>泡泡玛特</td><td>09992</td><td>162.60</td><td>🟢 -0.37%</td><td>传媒娱乐</td></tr><tr><td>大族数控</td><td>03200</td><td>⚠️ 未覆盖</td><td>—</td><td>AI设备</td></tr></tbody></table>
 <blockquote>数据来源：NeoData <code>--data-type api</code>；大族数控(03200.HK)港股数据未覆盖</blockquote>
-<p><strong>港股持仓小结</strong>：8涨1跌1未覆盖。联想集团 +9.75% 领涨，兆威机电 +9.37%、英矽智能 +8.65% 等科技/医药大涨。泡泡玛特微跌 -0.37%。</p>
+<p class="sub-label"><strong>港股持仓小结</strong>：</p>
+<p>8涨1跌1未覆盖。联想集团 +9.75% 领涨，兆威机电 +9.37%、英矽智能 +8.65% 等科技/医药大涨。泡泡玛特微跌 -0.37%。</p>
 <h3>按主题汇总</h3>
 <table><thead><tr><th>主题</th><th>标的</th><th>表现</th></tr></thead><tbody><tr><td>🔴 <strong>AI设备&amp;材料</strong></td><td>联想+9.75%、东方钽业+6.89%、长川+5.76%、长飞+5.16%、中恒+3.74%、应流+3.28%、京东方+2.80%、N长鑫+2.08%、亨通+0.87%</td><td><strong>全线大涨</strong>，AI 升级链+新材料涨价共振</td></tr><tr><td>🔴 <strong>新能源/电动车</strong></td><td>兆威+9.37%、宁德-1.64%</td><td>分化，兆威机器人概念驱动</td></tr><tr><td>🔵 <strong>创新药械</strong></td><td>英矽+8.65%、惠泰+3.47%、康方+0.80%、恒瑞-1.04%</td><td>整体偏强</td></tr><tr><td>🔵 <strong>AI应用</strong></td><td>腾讯+0.72%</td><td>温和上涨</td></tr><tr><td>🟢 <strong>保险</strong></td><td>国寿-0.55%、太保-1.34%</td><td>双双下跌</td></tr><tr><td>🟢 <strong>化工材料</strong></td><td>新和成-1.67%、巨化-0.23%</td><td>小幅走弱</td></tr><tr><td>🟠 <strong>传媒娱乐</strong></td><td>泡泡玛特-0.37%</td><td>微跌</td></tr><tr><td>🟠 <strong>能源/有色</strong></td><td>紫金黄金国际 0.00%</td><td>持平</td></tr><tr><td>🟠 <strong>地产</strong></td><td>万科+0.40%</td><td>弱势震荡</td></tr></tbody></table>
 <h3>⚠️ 超卖关注（近期跌幅较大标的）</h3>

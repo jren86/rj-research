@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -448,11 +473,11 @@ blockquote p:last-child { margin-bottom: 0; }
 <table><thead><tr><th>板块</th><th>主力净流入</th><th>备注</th></tr></thead><tbody><tr><td>电力</td><td>+55.61亿元</td><td>高股息+夏季用电旺季</td></tr><tr><td>银行</td><td>+24.49亿元</td><td>低估值防御</td></tr><tr><td>白酒</td><td>+23.98亿元</td><td>促消费预期+估值低位</td></tr><tr><td>半导体</td><td><strong>-379.3亿元</strong></td><td>高位获利了结，主力大幅流出</td></tr><tr><td>电子（整体）</td><td><strong>-618亿元</strong></td><td>科技赛道整体调整</td></tr></tbody></table>
 <blockquote>数据来源：主力资金5月29日流向统计（电子行业单日净流出超618亿元，为近期峰值）</blockquote>
 <h3>🏭 重要产业动态</h3>
-<p><strong>AI算力链</strong>：</p>
+<p class="sub-label"><strong>AI算力链</strong>：</p>
 <ul><li>戴尔（DELL）Q1 AI服务器收入161亿美元（同比+757%），积压订单<strong>513亿美元</strong>，为A股AI算力供应链（工业富联等）提供持续催化</li><li>工业富联Q1净利105.95亿元（+102.55%），AI ASIC服务器同比<strong>+3.2倍</strong></li></ul>
-<p><strong>创新药（港股）</strong>：</p>
+<p class="sub-label"><strong>创新药（港股）</strong>：</p>
 <ul><li>信达生物与辉瑞105亿美元全球战略合作（5月29日公告），为今日港股生物医药板块最大催化剂</li><li>ASCO大会持续进行，国产创新药临床数据密集读出</li></ul>
-<p><strong>半导体设备</strong>：</p>
+<p class="sub-label"><strong>半导体设备</strong>：</p>
 <ul><li>长川科技：HBM测试设备预计Q2-Q3发布，定增已获深交所审核通过</li><li>精智达：5月29日定增方案修订，募资上限降至28.57亿元</li><li>芯碁微装：Q1营收5.15亿元（+112%），二期工厂已投产，机构目标价305.25元</li></ul>
 <hr>
 <h2>三、持仓个股增量信息</h2>

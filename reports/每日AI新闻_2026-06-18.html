@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -434,16 +459,19 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>一、头条新闻 🔴</h2>
 <h3>🔴 1. G7峰会历史性时刻：三大AI CEO与G7领导人同台，AI治理进入大国协调阶段</h3>
 <p>G7埃维安峰会（6月15-17日）迎来52年来第二次私营部门正式参会——OpenAI的Sam Altman、Anthropic的Dario Amodei、Google DeepMind的Demis Hassabis与G7领导人共进工作午餐，讨论前沿AI风险、基础设施与主权问题。Mistral、Cohere、Synthesia、Black Forest Labs等欧洲AI企业负责人也出席。</p>
-<p><strong>核心成果</strong>：预计达成一揽子自愿承诺（青少年安全、前沿网络与生物风险），将成为全球事实基准。此前OpenAI已向CNBC透露预计峰会将达成"自愿承诺"。</p>
-<p><strong>背景驱动</strong>：Anthropic Mythos 5模型的发布标志"拐点"——强大的网络能力直接促使特朗普政府考虑监管；随后美国对Anthropic Fable 5/Mythos 5实施出口管制，改变了G7动态——"美国已表明愿意切断G7甚至条约盟友的某些AI能力"（大西洋理事会Emerson Brooking）。</p>
+<p class="sub-label"><strong>核心成果</strong>：</p>
+<p>预计达成一揽子自愿承诺（青少年安全、前沿网络与生物风险），将成为全球事实基准。此前OpenAI已向CNBC透露预计峰会将达成"自愿承诺"。</p>
+<p class="sub-label"><strong>背景驱动</strong>：</p>
+<p>Anthropic Mythos 5模型的发布标志"拐点"——强大的网络能力直接促使特朗普政府考虑监管；随后美国对Anthropic Fable 5/Mythos 5实施出口管制，改变了G7动态——"美国已表明愿意切断G7甚至条约盟友的某些AI能力"（大西洋理事会Emerson Brooking）。</p>
 <blockquote>💡 <strong>关键洞察</strong>：AI公司CEO获得与国家元首同台的地位，标志着科技权力向地缘政治核心层迁移。"为了让AI承诺可信，国家元首现在需要少数私营部门高管的合作甚至背书"（CFR Jessica Brandt）。</blockquote>
-<p><div class="source-link">🔗 <a href="https://www.cnbc.com/2026/06/17/g7-trump-ai-tech-leaders-openai-anthropic-google.html">来源：CNBC</a></div><br><div class="source-link">🔗 <a href="https://www.g7.utoronto.ca/evaluations/2026evian/kirton-ai-governance.html">来源：G7 Research Group</a></div><br><div class="source-link">🔗 <a href="https://www.consilium.europa.eu/en/press/press-releases/2026/06/17/g7-leaders-joint-statements-evian-france-16-17-june-2026/">来源：欧盟理事会</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.cnbc.com/2026/06/17/g7-trump-ai-tech-leaders-openai-anthropic-google.html">来源：CNBC</a></div><div class="source-link">🔗 <a href="https://www.g7.utoronto.ca/evaluations/2026evian/kirton-ai-governance.html">来源：G7 Research Group</a></div><div class="source-link">🔗 <a href="https://www.consilium.europa.eu/en/press/press-releases/2026/06/17/g7-leaders-joint-statements-evian-france-16-17-june-2026/">来源：欧盟理事会</a></div></p>
 <hr>
 <h3>🔴 2. SpaceX 600亿美元收购Cursor——全球AI编程赛道最大并购</h3>
 <p>SpaceX签署最终合并协议，以约600亿美元全股票方式收购AI编程工具Cursor母公司Anysphere，预计2026年Q3完成。这是继6月12日SpaceX完成史上最大IPO（募资$860亿，估值$1.7万亿→$2.7万亿）后的首个重大战略动作。</p>
-<p><strong>战略逻辑</strong>：SpaceX在IPO路演中向投资者展示的$28万亿TAM中，AI相关市场约$26万亿（基础设施$2.4万亿 + 企业应用$22.7万亿）。Cursor的AI编程技术是兑现这些承诺的关键。此前Cursor在2025年完成Series C $9亿+后续$23亿融资，估值$29亿。</p>
-<p><strong>背景</strong>：SpaceX的AI部门（围绕xAI合并后重组）此前因深度伪造和Grok反犹输出等争议事件受挫，xAI全部11位联合创始人已于3月底前离职。</p>
-<p><div class="source-link">🔗 <a href="https://theaiinsider.tech/2026/06/16/spacex-acquires-ai-coding-startup-cursor-for-60b-as-post-ipo-valuation-surges-past-2-7t/">来源：The AI Insider</a></div><br><div class="source-link">🔗 <a href="https://www.cbsnews.com/news/spacex-cursor-60-billion-ai-acquisition/">来源：CBS News</a></div></p>
+<p class="sub-label"><strong>战略逻辑</strong>：</p>
+<p>SpaceX在IPO路演中向投资者展示的$28万亿TAM中，AI相关市场约$26万亿（基础设施$2.4万亿 + 企业应用$22.7万亿）。Cursor的AI编程技术是兑现这些承诺的关键。此前Cursor在2025年完成Series C $9亿+后续$23亿融资，估值$29亿。</p>
+<p class="sub-label"><strong>背景</strong>：</p>
+<p>SpaceX的AI部门（围绕xAI合并后重组）此前因深度伪造和Grok反犹输出等争议事件受挫，xAI全部11位联合创始人已于3月底前离职。<br><div class="source-link">🔗 <a href="https://theaiinsider.tech/2026/06/16/spacex-acquires-ai-coding-startup-cursor-for-60b-as-post-ipo-valuation-surges-past-2-7t/">来源：The AI Insider</a></div><div class="source-link">🔗 <a href="https://www.cbsnews.com/news/spacex-cursor-60-billion-ai-acquisition/">来源：CBS News</a></div></p>
 <hr>
 <h3>🔴 3. 微信支付发布"AI专属卡"——Agent消费时代正式开启</h3>
 <p>微信支付正式发布面向Agent消费的"AI专属卡"，腾讯AI办公助手WorkBuddy首发接入。用户充值后可让AI完成从团购推荐到下单支付的全流程，每次支付需用户扫码确认，资金完全独立于微信钱包。</p>
@@ -454,14 +482,15 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h3>🔴 4. OpenAI一季度消耗现金37亿美元，2025全年亏损385亿美元</h3>
 <p>审计文件显示OpenAI 2026年Q1现金消耗37亿美元（超同期57亿美元收入的一半），现金消耗与收入均同比增长两倍。截至Q1末持有超730亿美元现金及有价证券。</p>
-<p><strong>2025全年财务</strong>：营收130.7亿美元（同比增长超3倍），全年亏损385亿美元，研发支出191.8亿美元。公司正推进IPO进程。</p>
+<p class="sub-label"><strong>2025全年财务</strong>：</p>
+<p>营收130.7亿美元（同比增长超3倍），全年亏损385亿美元，研发支出191.8亿美元。公司正推进IPO进程。</p>
 <blockquote>⚠️ <strong>风险提示</strong>：巨额亏损与高速增长并存，IPO估值定价将面临"成长性 vs 盈利能力"的严峻博弈。</blockquote>
-<p><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_0606a31e24b53452">来源：财联社</a></div><br><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_9036a31e52d89552">来源：DoNews</a></div></p>
+<p><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_0606a31e24b53452">来源：财联社</a></div><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_9036a31e52d89552">来源：DoNews</a></div></p>
 <hr>
 <h3>🔴 5. 2026世界人工智能大会（WAIC）倒计时30天——3000+展品、1100+企业</h3>
 <p>2026 WAIC暨人工智能全球治理高级别会议将于7月17-20日在上海举行，主题"智能伙伴，共创未来"。展览面积超10万平方米，设世博展览馆、徐汇西岸、浦东张江三大片区，1100+企业参展，3000+展品亮相，超300款AI产品全球首发。同期中国正筹建"世界人工智能合作组织"。</p>
-<p><strong>规模亮点</strong>：140+主题论坛、1400+国际嘉宾，为历届之最。由国家发改委、工信部、外交部与上海市政府联合主办。</p>
-<p><div class="source-link">🔗 <a href="http://sh.people.com.cn/BIG5/n2/2026/0617/c134768-41613724.html">来源：人民网上海</a></div><br><div class="source-link">🔗 <a href="https://baijiahao.baidu.com/s?id=1868249699892731938&wfr=spider&for=pc">来源：界面新闻</a></div></p>
+<p class="sub-label"><strong>规模亮点</strong>：</p>
+<p>140+主题论坛、1400+国际嘉宾，为历届之最。由国家发改委、工信部、外交部与上海市政府联合主办。<br><div class="source-link">🔗 <a href="http://sh.people.com.cn/BIG5/n2/2026/0617/c134768-41613724.html">来源：人民网上海</a></div><div class="source-link">🔗 <a href="https://baijiahao.baidu.com/s?id=1868249699892731938&wfr=spider&for=pc">来源：界面新闻</a></div></p>
 <hr>
 <h2>二、行业动态 🔵</h2>
 <h3>🔵 1. 全球AI大模型总调用量连续八周增长，达44.6万亿Token</h3>
@@ -486,7 +515,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/17/google-bets-on-gemini-to-reinvent-the-smart-home-speaker/">来源：TechCrunch</a></div></p>
 <h3>📄 2. Cohere发布North Mini Code——30B MoE开源编程模型</h3>
 <p>Cohere发布面向开发者的首个模型North Mini Code：30B总参数/3B激活参数的MoE架构，支持256K上下文与64K输出，Apache 2.0开源。专为智能体编码设计，支持代码生成、智能体软件工程和终端任务。可通过Cohere Chat V2 API、Hugging Face和Model Vault部署。</p>
-<p><div class="source-link">🔗 <a href="https://www.cohere.com/">来源：Cohere 官网</a></div><br><div class="source-link">🔗 <a href="https://baike.baidu.com/item/North%20Mini%20Code/67944783">来源：百度百科</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.cohere.com/">来源：Cohere 官网</a></div><div class="source-link">🔗 <a href="https://baike.baidu.com/item/North%20Mini%20Code/67944783">来源：百度百科</a></div></p>
 <h3>📄 3. 智谱GLM-5.2在编程马拉松中逼近闭源领导者</h3>
 <p>The Decoder报道，智谱AI的GLM-5.2（6/16开源，MIT协议，1M上下文）在编程马拉松中表现逼近闭源领导者。这标志着国产开源模型在代码能力维度上的持续突破。</p>
 <p><div class="source-link">🔗 <a href="https://the-decoder.com/zhipu-ais-glm-5-2-closes-in-on-closed-source-leaders-in-coding-marathons/">来源：The Decoder</a></div></p>
@@ -498,7 +527,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="source-link">🔗 <a href="http://finance.sina.com.cn/stock/usstock/c/2026-06-18/doc-inictxki3609099.shtml">来源：新浪财经</a></div></p>
 <h3>📄 6. OpenAI联手Visa——ChatGPT AI代理支付正式落地</h3>
 <p>OpenAI与Visa扩大合作，Visa支付网络接入ChatGPT，AI代理可在用户授权后直接完成在线购物和支付。覆盖所有支持Visa付款的商户，支持消费额度、审批门槛等用户预设权限。Codex编程Agent也将可使用认证支付凭证自动购买推理算力、第三方API等资源。</p>
-<p><div class="source-link">🔗 <a href="https://xueqiu.com/2744910577/394243341">来源：雪球</a></div><br><div class="source-link">🔗 <a href="https://cloud.tencent.com/developer/news/4077117">来源：腾讯云</a></div></p>
+<p><div class="source-link">🔗 <a href="https://xueqiu.com/2744910577/394243341">来源：雪球</a></div><div class="source-link">🔗 <a href="https://cloud.tencent.com/developer/news/4077117">来源：腾讯云</a></div></p>
 <hr>
 <h2>四、研究前沿</h2>
 <h3>💡 1. OpenAI研究人员开发AI模型故障预测方法</h3>

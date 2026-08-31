@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -457,20 +482,30 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>港股（10 只，2026-08-26 收盘）</h3>
 <table><thead><tr><th>标的</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>主题</th></tr></thead><tbody><tr><td>康方生物</td><td>09926</td><td>94.20</td><td>🔴 +5.96%</td><td>创新药械</td></tr><tr><td>英矽智能</td><td>03696</td><td>47.00</td><td>🔴 +1.51%</td><td>创新药械</td></tr><tr><td>万科企业</td><td>02202</td><td>2.445</td><td>🔴 +0.82%</td><td>地产/基建</td></tr><tr><td>腾讯控股</td><td>00700</td><td>445.40</td><td>🔴 +0.77%</td><td>AI应用</td></tr><tr><td>长飞光纤光缆</td><td>06869</td><td>163.00</td><td>🔴 +0.31%</td><td>AI设备&amp;材料</td></tr><tr><td>大族数控</td><td>03200</td><td>100.50</td><td>🟢 -0.30%</td><td>AI设备&amp;材料</td></tr><tr><td>紫金黄金国际</td><td>02259</td><td>158.60</td><td>🟢 -0.56%</td><td>能源/有色</td></tr><tr><td>泡泡玛特</td><td>09992</td><td>154.30</td><td>🟢 -0.58%</td><td>传媒/娱乐</td></tr><tr><td>联想集团</td><td>00992</td><td>30.56</td><td>🟢 -0.78%</td><td>AI设备&amp;材料</td></tr><tr><td>兆威机电</td><td>02692</td><td>41.00</td><td>🟢 -3.35%</td><td>新能源/电动车</td></tr></tbody></table>
 <h3>增量信息速览</h3>
-<p><strong>🔴 康方生物 +5.96%</strong>：依沃西（PD-1/VEGF 双抗）联合化疗一线治疗晚期胆道癌 III 期（AK112-309/HARMONi-GI1）经 IDMC 期中分析达 OS 主要终点，取得统计学显著阳性，同时达 PFS/ORR 全部关键次要终点。这是依沃西继肺癌 4 项 III 期阳性后，<strong>首个消化道肿瘤领域 III 期阳性</strong>，头对头击败度伐利尤（PD-L1）金标准方案。盘中一度涨超 9%。</p>
-<p><strong>🔴 中国人寿 +2.61%（H 股涨超 5%）</strong>：保险资负管理新规正式落地 + 银保渠道价值提升，平安/兴业/开源/西部/中泰/东吴/国泰海通等多家券商密集点名，看好资产端弹性。8/28 中报发布会（预告净利 +215%~235%）。⚠️ 大理分公司被罚（1-7 月累计被罚 1125 万元，寿险机构第一）。</p>
-<p><strong>🔴 长川科技 +4.77%</strong>：半导体设备板块震荡走高，长川涨幅靠前（联合精密反包涨停、超纯应材涨超 10%）。</p>
-<p><strong>🔴 紫金黄金国际 -0.56%（但机构密集看好）</strong>：国信维持"优于大市"（H1 净利 14.51 亿美元 +178.8%），中银国际目标价由 111.34 上调至 135.36 港元。南向资金 8/21 净买入 4.4 亿港元（创逾 1 月新高）。</p>
-<p><strong>🔴 京东方 A -0.35%</strong>：DIC EXPO 2026 携 50 余项成果亮相，全球首发 RGBX 双四基色显示、COG MLED，并推进<strong>玻璃基载板 CPO / 光互连</strong>技术攻关，向光互连前沿赛道跃迁。</p>
-<p><strong>🟢 长鑫科技 -0.71%</strong>：长江存储 IPO 获受理（募 330 亿、估值 2750 亿 vs 长鑫 3.79 万亿市值）对比文刷屏；融资盘连续净偿还（8/25 净偿还 1.41 亿）。</p>
-<p><strong>🟢 宁德时代 +0.60%</strong>：宜春枧下窝锂矿复产环评进入公示，锂矿指数大涨 3.06%（西部矿业涨停等）。</p>
-<p><strong>🟢 兆威机电 -3.35%</strong>：人形机器人概念回调领跌。</p>
-<p><strong>🟢 惠泰医疗 -2.18%</strong>：医药板块整体调整。</p>
-<p><strong>其他</strong>：腾讯 8/26 耗资 3 亿港元回购 67.2 万股；泡泡玛特浦银国际点评短期收入承压（1H26 海外收入 -11%、库存周转升至 201 天）。</p>
+<p class="sub-label"><strong>🔴 康方生物 +5.96%</strong>：</p>
+<p>依沃西（PD-1/VEGF 双抗）联合化疗一线治疗晚期胆道癌 III 期（AK112-309/HARMONi-GI1）经 IDMC 期中分析达 OS 主要终点，取得统计学显著阳性，同时达 PFS/ORR 全部关键次要终点。这是依沃西继肺癌 4 项 III 期阳性后，<strong>首个消化道肿瘤领域 III 期阳性</strong>，头对头击败度伐利尤（PD-L1）金标准方案。盘中一度涨超 9%。</p>
+<p class="sub-label"><strong>🔴 中国人寿 +2.61%（H 股涨超 5%）</strong>：</p>
+<p>保险资负管理新规正式落地 + 银保渠道价值提升，平安/兴业/开源/西部/中泰/东吴/国泰海通等多家券商密集点名，看好资产端弹性。8/28 中报发布会（预告净利 +215%~235%）。⚠️ 大理分公司被罚（1-7 月累计被罚 1125 万元，寿险机构第一）。</p>
+<p class="sub-label"><strong>🔴 长川科技 +4.77%</strong>：</p>
+<p>半导体设备板块震荡走高，长川涨幅靠前（联合精密反包涨停、超纯应材涨超 10%）。</p>
+<p class="sub-label"><strong>🔴 紫金黄金国际 -0.56%（但机构密集看好）</strong>：</p>
+<p>国信维持"优于大市"（H1 净利 14.51 亿美元 +178.8%），中银国际目标价由 111.34 上调至 135.36 港元。南向资金 8/21 净买入 4.4 亿港元（创逾 1 月新高）。</p>
+<p class="sub-label"><strong>🔴 京东方 A -0.35%</strong>：</p>
+<p>DIC EXPO 2026 携 50 余项成果亮相，全球首发 RGBX 双四基色显示、COG MLED，并推进<strong>玻璃基载板 CPO / 光互连</strong>技术攻关，向光互连前沿赛道跃迁。</p>
+<p class="sub-label"><strong>🟢 长鑫科技 -0.71%</strong>：</p>
+<p>长江存储 IPO 获受理（募 330 亿、估值 2750 亿 vs 长鑫 3.79 万亿市值）对比文刷屏；融资盘连续净偿还（8/25 净偿还 1.41 亿）。</p>
+<p class="sub-label"><strong>🟢 宁德时代 +0.60%</strong>：</p>
+<p>宜春枧下窝锂矿复产环评进入公示，锂矿指数大涨 3.06%（西部矿业涨停等）。</p>
+<p class="sub-label"><strong>🟢 兆威机电 -3.35%</strong>：</p>
+<p>人形机器人概念回调领跌。</p>
+<p class="sub-label"><strong>🟢 惠泰医疗 -2.18%</strong>：</p>
+<p>医药板块整体调整。</p>
+<p class="sub-label"><strong>其他</strong>：</p>
+<p>腾讯 8/26 耗资 3 亿港元回购 67.2 万股；泡泡玛特浦银国际点评短期收入承压（1H26 海外收入 -11%、库存周转升至 201 天）。</p>
 <hr>
 <h2>六、知识星球（调研纪要）</h2>
 <blockquote>检索星球：水木调研纪要-2.0、调研纪要更新；关键词：强推/上调/重视/重点推荐/买入/增持</blockquote>
-<p><strong>调研纪要更新（当日增量，2026-08-26）</strong>：</p>
+<p class="sub-label"><strong>调研纪要更新（当日增量，2026-08-26）</strong>：</p>
 <ul><li>🔴 <strong>奥普特（国金机械）</strong>：持续推荐，明年苹果 3C 大年重磅催化 + 物理 AI 打开长期空间；深度绑定苹果，27 年创新大年，机器视觉用于 3D 打印手机中框/折叠屏铰链检测，量价齐升。</li><li>🔴 <strong>三星/SK 海力士增加 8 层 HBM4 份额</strong>：英伟达采购策略转向更宽 HBM 选项以应对热管理，HBM4E 亦或以 8 层为主，Vera Rubin 供应链生变。</li><li>🔴 <strong>长江存储 27 年扩产或翻倍</strong>：26 年扩产约 7 万片，27 年扩产片数有望翻倍；长存链首推芯源微（Track 验证即将通过）、中科飞测（明场验证）、中微公司（薄膜 Onstack）。</li><li>🔴 <strong>中兴通讯（ZX）</strong>：向 AI 系统化解决方案商进发，光互联全面布局 LRO/LPO/XPO/NPO/CPO，带宽覆盖 800G 至 3.2T。</li><li>🔴 <strong>立讯精密</strong>：业绩说明会超预期，AI 算力 + AI 端侧双轮，光模块北美大客户自动化线年内跑通、明年中产能扩张，判断 Q4 增速拐点，坚定首推。</li><li>🔵 <strong>AI Capex 信用市场</strong>：各 AI 企业 CDS 走势首次出现分化回落（甲骨文 -7.96bp、博通 +4.85bp）。</li></ul>
 <hr>
 <h2>七、数据溯源</h2>

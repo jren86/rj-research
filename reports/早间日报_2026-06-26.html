@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -446,9 +471,12 @@ blockquote p:last-child { margin-bottom: 0; }
 <p>🔗 来源：Wind 金融终端、中央政治局会议</p>
 <hr>
 <h2>📈 市场概览</h2>
-<p><strong>隔夜外围</strong>：美股科技股分化，微软领跌七巨头，但亚马逊/台积电逆势收红。纳指跌0.43%，中概金龙指数跌1.77%。<strong>但港股期货和A50期货均上涨，内外资定价逻辑出现分歧</strong>。</p>
-<p><strong>A股环境</strong>：6月25日A股分化运行，上证指数飘绿0.38%，创业板指飘红0.45%。半导体板块表现亮眼，芯片ETF盘中涨幅达3%。<strong>中芯国际A股涨6.94%带动半导体板块</strong>。机构对6月市场研判"震荡上行、高点抬升"，结构性行情延续。</p>
-<p><strong>港股环境</strong>：6/25港股科网股午后走强，腾讯控股涨超3%，百度涨2%，阿里巴巴涨1%。微信AI助手"小微"启动灰度测试成为催化。券商板块延续强势，估值修复逻辑发酵。<strong>恒科期货与金龙指数背离，内资定价韧性优于外资</strong>。</p>
+<p class="sub-label"><strong>隔夜外围</strong>：</p>
+<p>美股科技股分化，微软领跌七巨头，但亚马逊/台积电逆势收红。纳指跌0.43%，中概金龙指数跌1.77%。<strong>但港股期货和A50期货均上涨，内外资定价逻辑出现分歧</strong>。</p>
+<p class="sub-label"><strong>A股环境</strong>：</p>
+<p>6月25日A股分化运行，上证指数飘绿0.38%，创业板指飘红0.45%。半导体板块表现亮眼，芯片ETF盘中涨幅达3%。<strong>中芯国际A股涨6.94%带动半导体板块</strong>。机构对6月市场研判"震荡上行、高点抬升"，结构性行情延续。</p>
+<p class="sub-label"><strong>港股环境</strong>：</p>
+<p>6/25港股科网股午后走强，腾讯控股涨超3%，百度涨2%，阿里巴巴涨1%。微信AI助手"小微"启动灰度测试成为催化。券商板块延续强势，估值修复逻辑发酵。<strong>恒科期货与金龙指数背离，内资定价韧性优于外资</strong>。</p>
 <hr>
 <h2>💡 策略观点</h2>
 <h3>🔴 券商板块估值修复加速，PB仅1.11倍处历史低位</h3>

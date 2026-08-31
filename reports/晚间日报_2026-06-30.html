@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -442,8 +467,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><strong>解读：</strong> 制造业景气度边际改善，高技术制造业（计算机通信电子等）持续强劲，但传统行业和建筑业走弱，经济复苏结构性分化延续。</p>
 <p><div class="source-link">🔗 来源：Wind 万得 · 国家统计局 · 6月PMI数据发布</div></p>
 <h3>海外</h3>
-<p><strong>美伊多哈谈判持续</strong>：美伊双方30日在多哈会晤，讨论霍尔木兹海峡通航安全与核问题。此前双方已同意停止互袭，地缘风险阶段性缓和，但根本分歧仍存不确定性。</p>
-<p><div class="source-link">🔗 来源：Wind 万得 · 博时市场点评</div></p>
+<p class="sub-label"><strong>美伊多哈谈判持续</strong>：</p>
+<p>美伊双方30日在多哈会晤，讨论霍尔木兹海峡通航安全与核问题。此前双方已同意停止互袭，地缘风险阶段性缓和，但根本分歧仍存不确定性。<br><div class="source-link">🔗 来源：Wind 万得 · 博时市场点评</div></p>
 <hr>
 <h2>📊 市场概览（6月30日收盘 · 上半年收官）</h2>
 <p><strong>A股震荡攀升，创业板指大涨逾3%，科创50再创新高，全市场超3000只个股上涨。</strong></p>
@@ -454,8 +479,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><strong>关键特征：</strong></p>
 <ul><li><strong>上半年收官</strong>：科创50以+63.83%涨幅领跑全球主要指数，创业板+35%，深成指+19.82%，沪指+3.16%</li><li><strong>算力概念爆发</strong>：寒武纪涨超7%创历史新高，市值突破1万亿元。PCB概念持续活跃，深南电路、四会富仕等创新高</li><li><strong>光学光电子走强</strong>：京东方A盘中涨停（炸板），成交额445.57亿居两市之首，股价创18年新高。茂莱光学、天禄科技20cm涨停</li><li><strong>银行航运承压</strong>：银行板块逆势下跌，航运港口同步走弱</li></ul>
 <p><div class="source-link">🔗 来源：Wind 万得 · A股每日行情复盘 6/30</div></p>
-<p><strong>港股方面</strong>：6月29日恒指+1.57%报23,026，恒科+3.23%大反弹。港股通科技ETF上涨，美团CFO表示当前价值被低估并计划回购。今日（6/30）港股盘中也跟随A股科技板块走强。</p>
-<p><div class="source-link">🔗 来源：Wind 万得 · 港股市场数据</div></p>
+<p class="sub-label"><strong>港股方面</strong>：</p>
+<p>6月29日恒指+1.57%报23,026，恒科+3.23%大反弹。港股通科技ETF上涨，美团CFO表示当前价值被低估并计划回购。今日（6/30）港股盘中也跟随A股科技板块走强。<br><div class="source-link">🔗 来源：Wind 万得 · 港股市场数据</div></p>
 <hr>
 <h2>💡 策略观点</h2>
 <h3>中银证券 · 6月策略：短期震荡不改AI主线</h3>

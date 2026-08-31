@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -444,7 +469,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>📈 市场概览</h2>
 <h3>A股（2026-08-05 收盘）</h3>
 <table><thead><tr><th>指数</th><th>收盘价</th><th>涨跌幅</th><th>成交额（亿元）</th></tr></thead><tbody><tr><td>上证指数</td><td>3,878.43</td><td>🔴 +1.47%</td><td>12,087</td></tr><tr><td>深证成指</td><td>14,144.20</td><td>🔴 +1.86%</td><td>14,509</td></tr><tr><td>创业板指</td><td>3,535.14</td><td>🔴 +1.32%</td><td>7,205</td></tr><tr><td>🔴 科创50</td><td>1,693.67</td><td>🔴 +4.78%</td><td>1,543</td></tr><tr><td>沪深300</td><td>4,658.15</td><td>🔴 +1.24%</td><td>8,792</td></tr></tbody></table>
-<p><strong>A股综述</strong>：全线普涨，科创50大涨4.78%领跑，半导体/AI硬件板块全面爆发。两市成交放量，市场情绪高涨。</p>
+<p class="sub-label"><strong>A股综述</strong>：</p>
+<p>全线普涨，科创50大涨4.78%领跑，半导体/AI硬件板块全面爆发。两市成交放量，市场情绪高涨。</p>
 <h3>港股（2026-08-05）</h3>
 <table><thead><tr><th>指数</th><th>收盘价</th><th>涨跌幅</th><th>成交额（亿港元）</th></tr></thead><tbody><tr><td>恒生指数</td><td>25,915.82</td><td>🔴 +0.24%</td><td>2,780</td></tr><tr><td>恒生科技</td><td>4,933.07</td><td>🔴 +0.97%</td><td>687</td></tr></tbody></table>
 <h3>美股（2026-08-05 收盘）</h3>
@@ -465,10 +491,14 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>港股持仓（10只）</h3>
 <table><thead><tr><th>标的</th><th>收盘价(HKD)</th><th>涨跌幅</th><th>成交额（亿）</th><th>主题</th></tr></thead><tbody><tr><td>🔴 长飞光纤光缆</td><td>121.00</td><td>+14.58%</td><td>74.67</td><td>AI设备&amp;材料</td></tr><tr><td>🔴 紫金黄金国际</td><td>129.00</td><td>+10.16%</td><td>16.11</td><td>能源/有色</td></tr><tr><td>🔴 联想集团</td><td>26.28</td><td>+5.87%</td><td>35.28</td><td>AI设备&amp;材料</td></tr><tr><td>🔴 大族数控</td><td>108.60</td><td>+4.02%</td><td>2.93</td><td>AI设备&amp;材料</td></tr><tr><td>🔴 兆威机电</td><td>46.64</td><td>+3.37%</td><td>0.21</td><td>新能源/电动车</td></tr><tr><td>🔴 万科企业</td><td>2.51</td><td>+2.03%</td><td>0.38</td><td>地产/基建</td></tr><tr><td>🔴 康方生物</td><td>95.50</td><td>+1.76%</td><td>5.17</td><td>创新药械</td></tr><tr><td>🔴 腾讯控股</td><td>492.20</td><td>+0.94%</td><td>126.21</td><td>AI应用</td></tr><tr><td>🔴 泡泡玛特</td><td>161.40</td><td>+0.75%</td><td>10.67</td><td>传媒/娱乐</td></tr><tr><td>🟢 英矽智能</td><td>41.58</td><td>-2.03%</td><td>4.51</td><td>创新药械</td></tr></tbody></table>
 <h3>主题分析</h3>
-<p><strong>🔴 AI设备&amp;材料（最强板块）</strong>：长飞光纤光缆+14.58%领涨港股，东方钽业+9.99%涨停，长川科技+10.65%，亨通光电+8.24%。FCC禁中国光模块事件反而强化国产替代逻辑，半导体设备/光通信/光纤板块全线爆发。</p>
-<p><strong>🔴 能源/有色</strong>：紫金黄金国际+10.16%，黄金价格高位震荡叠加资源价值重估。</p>
-<p><strong>🔴 新能源/电动车</strong>：宁德时代+2.56%稳健上涨，受益于中期分红落地+AI数据中心电力需求催化。</p>
-<p><strong>⚪ 创新药械（分化）</strong>：康方生物+1.76%、恒瑞医药+0.22%小幅上涨，惠泰医疗-0.48%、英矽智能-2.03%回调。</p>
+<p class="sub-label"><strong>🔴 AI设备&amp;材料（最强板块）</strong>：</p>
+<p>长飞光纤光缆+14.58%领涨港股，东方钽业+9.99%涨停，长川科技+10.65%，亨通光电+8.24%。FCC禁中国光模块事件反而强化国产替代逻辑，半导体设备/光通信/光纤板块全线爆发。</p>
+<p class="sub-label"><strong>🔴 能源/有色</strong>：</p>
+<p>紫金黄金国际+10.16%，黄金价格高位震荡叠加资源价值重估。</p>
+<p class="sub-label"><strong>🔴 新能源/电动车</strong>：</p>
+<p>宁德时代+2.56%稳健上涨，受益于中期分红落地+AI数据中心电力需求催化。</p>
+<p class="sub-label"><strong>⚪ 创新药械（分化）</strong>：</p>
+<p>康方生物+1.76%、恒瑞医药+0.22%小幅上涨，惠泰医疗-0.48%、英矽智能-2.03%回调。</p>
 <hr>
 <h2>🗂️ 知识星球（水木调研纪要-2.0 / 调研纪要更新）</h2>
 <h3>🔴 重大增量（2026-08-05）</h3>

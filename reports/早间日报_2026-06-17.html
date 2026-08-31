@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -438,10 +463,10 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>🌍 宏观环境</h2>
 <h3>国内宏观 — 🔴 经济"供强需弱"结构强化</h3>
 <ul><li><strong>5月经济数据回顾（6/16发布）</strong>：工业+4.5%超预期，但社零-0.6%/固投-4.1%大幅低于预期。广发郭磊点评"供强需弱结构强化"，温彬呼吁"储备政策工具并择机推出"。</li><li><strong>算力网万亿投资</strong>：央视报道"算力网开启万亿级投资周期"，支撑AI等高质量发展。发改委主任郑栅洁召开民企座谈会围绕"六张网"建设听取意见。</li><li><strong>境外投资者重返中国债市</strong>：人民币资产吸引力持续凸显，境外投资者重返中国债市。</li><li><strong>前5个月工业企业销售收入增长较快</strong>：发票数据显示工业端景气延续。</li><li><strong>6/22 LPR报价</strong>：市场关注一年期/五年期LPR是否调整（前值3.00%/3.50%）。</li></ul>
-<p><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/Wind/新华社</a></div><br><div class="source-link">🔗 <a href="https://www.caixin.com">来源：财新/广发郭磊点评</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/Wind/新华社</a></div><div class="source-link">🔗 <a href="https://www.caixin.com">来源：财新/广发郭磊点评</a></div></p>
 <h3>国际宏观 — 🔴 FOMC决议前夜 + 原油暴跌</h3>
 <ul><li><strong>FOMC决议前夜</strong>：维持利率不变概率99.5%，焦点全在沃什首秀沟通基调。债券期权交易员对利率路径出现分歧。沃什长期批评前瞻指引→"取消点阵图"为最大悬念。</li><li><strong>WTI原油暴跌5.65%至$74.95/桶</strong>：跌破80美元关口，布油跌5.36%至$78.71/桶。多家投行下调油价预期。核心驱动：①美伊协议→霍尔木兹海峡重启预期；②"供强需弱"拖累需求预期。</li><li><strong>特朗普最新表态（6/16深夜）</strong>：霍尔木兹海峡周五全面重开；或近期恢复俄油制裁。</li><li><strong>美伊协议</strong>：伊朗有望获得$3000亿美元资金释放；参议院共和党人要求对协议进行表决。</li><li><strong>日本央行加息至1.0%</strong>：新华社点评"加息难解三重困局"——实际利率仍在低位+通胀上行风险持续+日元继续承压。</li></ul>
-<p><div class="source-link">🔗 <a href="https://www.bloomberg.com">来源：彭博社/Wind</a></div><br><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/FOMC前瞻</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.bloomberg.com">来源：彭博社/Wind</a></div><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/FOMC前瞻</a></div></p>
 <hr>
 <h2>📈 市场概览</h2>
 <h3>A股（6月16日收盘）</h3>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -464,10 +489,12 @@ blockquote p:last-child { margin-bottom: 0; }
 <p>🔗 <a href="https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/" target="_blank">TechCrunch: General Intuition $2.3B bet</a></p>
 <hr>
 <h3>🔵 7. 算力竞赛白热化：OpenAI Jalapeño芯片进度更新、Sail $8000万融资、Unconventional AI挑战千倍能效</h3>
-<p><strong>Jalapeño</strong>：OpenAI确认工程样片已在目标频率稳定运行GPT-5.3-Codex-Spark，详细性能报告"数月内"公布。Broadcom CEO Hock Tan称相比GPU成本降50%，AVGO股价年初至今涨10%。</p>
-<p><strong>Sail</strong>：Kleiner Perkins领投$4500万估值$4.5亿，软件层面优化现有AI芯片推理效率，定位非超大规模企业的"通用解法"。</p>
-<p><strong>Unconventional AI</strong>：Databricks前AI负责人Naveen Rao用振荡器架构重建计算，首发Un-0图像模型，宣称最终可达1000倍能效提升。Rao断言："AI扩展的根本瓶颈是能源，这是绕不过去的。"</p>
-<p>🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-26-2026" target="_blank">AIToolsRecap: Jalapeño update</a>  <br>🔗 <a href="https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/" target="_blank">TechCrunch: Databricks former AI chief 1000x power cut</a></p>
+<p class="sub-label"><strong>Jalapeño</strong>：</p>
+<p>OpenAI确认工程样片已在目标频率稳定运行GPT-5.3-Codex-Spark，详细性能报告"数月内"公布。Broadcom CEO Hock Tan称相比GPU成本降50%，AVGO股价年初至今涨10%。</p>
+<p class="sub-label"><strong>Sail</strong>：</p>
+<p>Kleiner Perkins领投$4500万估值$4.5亿，软件层面优化现有AI芯片推理效率，定位非超大规模企业的"通用解法"。</p>
+<p class="sub-label"><strong>Unconventional AI</strong>：</p>
+<p>Databricks前AI负责人Naveen Rao用振荡器架构重建计算，首发Un-0图像模型，宣称最终可达1000倍能效提升。Rao断言："AI扩展的根本瓶颈是能源，这是绕不过去的。"<br>🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-26-2026" target="_blank">AIToolsRecap: Jalapeño update</a>  <br>🔗 <a href="https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/" target="_blank">TechCrunch: Databricks former AI chief 1000x power cut</a></p>
 <hr>
 <h2>三、📄 产品与公司</h2>
 <h3>8. Adobe收购Topaz Labs — AI视频图像增强整合进Firefly</h3>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -438,10 +463,10 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>🌍 宏观环境</h2>
 <h3>国内宏观 — 🔴 5月经济数据大幅分化：工业超预期vs消费/投资严重低于预期</h3>
 <ul><li><strong>5月规模以上工业增加值同比+4.5%</strong>（超预期4.3%，前值4.1%）：</li><li>装备制造业+9.5%（比上月加快1.2pct）</li><li>高技术制造业+15.1%（比上月加快2.3pct）——3D打印+54.4%/锂电池+40%/工业机器人+27.9%</li><li>制造业+4.4%，电力燃气水+7.6%，采矿业+2.3%</li><li><strong>5月社零同比-0.6%</strong>（大幅低于预期0.0%，前值0.2%）→ 🔴 <strong>消费承压信号</strong>：</li><li>城镇社零-0.9%，乡村+1.5%；商品零售-0.7%，餐饮+0.6%</li><li>1-5月累计+1.4%，网上零售+5.9%</li><li><strong>1-5月固投同比-4.1%</strong>（大幅低于预期-2.0%，前值-1.6%）→ 🔴 <strong>投资疲弱</strong>：</li><li>房地产开发投资-16.2%仍是最大拖累（扣除房地产后固投仅-1.2%）</li><li>基础设施投资+0.6%，制造业投资-0.4%，高技术产业投资+4.5%</li><li>民间投资-7.1%（扣除房地产后-3.5%）</li><li><strong>5月城镇调查失业率5.1%</strong>（下降0.1pct），31大城市失业率5.1%（下降0.1pct）</li><li><strong>5月进出口同比+16.9%</strong>——出口+13.8%/进口+21.5%，外贸韧性持续</li><li>💡 <strong>核心结论</strong>：工业/外贸超预期但消费/投资严重低于预期→经济结构分化加剧，房地产仍是最大拖累。需求侧"弱修复"而非"已企稳"，增量政策出台预期升温。关注陆家嘴论坛6/17-18政策信号。</li></ul>
-<p><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/国家统计局</a></div><br><div class="source-link">🔗 <a href="https://www.caixin.com">来源：财新/5月经济数据解读</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/国家统计局</a></div><div class="source-link">🔗 <a href="https://www.caixin.com">来源：财新/5月经济数据解读</a></div></p>
 <h3>国际宏观 — 🔴 日本央行加息至1.0%（30年最高）+FOMC闭门首日</h3>
 <ul><li><strong>日本央行6/15-16议息</strong>：加息至1.0%几乎板上钉钉（1995年来最高）。行长植田和男因肝囊肿感染住院缺席，副行长冰见野良三主持。14:30内田真一新闻发布会。官员后续还可能继续加息——实际利率仍在低位+通胀上行风险持续。</li><li><strong>FOMC 6/16-17闭门会议</strong>：首日内部讨论，6/18凌晨2:00公布决议。按兵不动概率98.5%。<strong>关键看点</strong>：①沃什首秀新闻发布会基调——市场担忧偏鹰沟通强调通胀风险；②<strong>可能取消点阵图</strong>——沃什长期批评前瞻指引；③SEP经济预测更新。</li><li><strong>美伊和平协议</strong>：6/15特朗普正式宣布"协议完成+海峡开放"；6/15伊朗确认备忘录文本最终确定；6/19瑞士正式签署仪式。备忘录部分条款已于6/15开始执行。</li><li><strong>原油</strong>：WTI约81美元，布油创5月以来新低86.69美元/桶。风险偏好改善→航空/化工受益。</li></ul>
-<p><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/日本央行议息</a></div><br><div class="source-link">🔗 <a href="https://www.caixin.com">来源：财新/美伊协议</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/日本央行议息</a></div><div class="source-link">🔗 <a href="https://www.caixin.com">来源：财新/美伊协议</a></div></p>
 <hr>
 <h2>📈 市场概览</h2>
 <h3>A股（6月15日收盘）</h3>

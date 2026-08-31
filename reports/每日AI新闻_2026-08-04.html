@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -562,7 +587,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer"><br>  数据来源：TechCrunch · The Verge · Ars Technica · 腾讯新闻 · 央视新闻 · 财联社 · 澎湃新闻 · OpenAI 官方 · 人民邮电报 · 科技日报 · 每日经济新闻 · dev.to · Web Lifter · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>  数据来源：TechCrunch · The Verge · Ars Technica · 腾讯新闻 · 央视新闻 · 财联社 · 澎湃新闻 · OpenAI 官方 · 人民邮电报 · 科技日报 · 每日经济新闻 · dev.to · Web Lifter · My Research Central · via WB<br>
 </div>
 
 </body>

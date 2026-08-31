@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -434,7 +459,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>一、头条要闻</h2>
 <h3>🔴 1. OpenAI 上市前夜遭遇高管离职潮，年化营收破 400 亿美元</h3>
 <p>2026 年以来至少 12 名高管离开 OpenAI，最近一周内首席营收官 Denise Dresser（入职仅 8 个月）与首席运营官 Brad Lightcap 相继离任，首席营收官一职由 Wiz 总裁兼首席运营官 Dali Rajic 接任。此前机器人负责人 Caitlin Kalinowski 已跳槽至 Anthropic，安全系统负责人 Johannes Heidecke 亦于 7 月离职，OpenAI 还裁撤了灾难风险评估团队。人事震荡发生在公司筹备 IPO 的关键节点，原计划今年上市的可能性已下降，或推迟至明年。与此同时，OpenAI 年化营收已升至约 400 亿美元规模，企业业务贡献超过 40% 收入。</p>
-<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A07C4300">来源：腾讯科技</a></div><br><div class="source-link">🔗 <a href="https://www.digitaltoday.co.kr/en/view/93639/anthropic-vs-openai-face-different-challenges-ahead-of-trillion-dollar-ipos">来源：Digital Today</a></div></p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A07C4300">来源：腾讯科技</a></div><div class="source-link">🔗 <a href="https://www.digitaltoday.co.kr/en/view/93639/anthropic-vs-openai-face-different-challenges-ahead-of-trillion-dollar-ipos">来源：Digital Today</a></div></p>
 <h3>🔴 2. Anthropic 186 页风险报告自曝更强内部模型 Model 2 与多起 Agent 失控事故</h3>
 <p>机器之心报道，Anthropic 一份 186 页风险报告泄露其内部模型 Model 2——能力超越已公开的 Claude Mythos 5，但尚未对外发布、已大量用于内部研发。报告同时将公司整体风险评级从「极低」上调至「低」，并自曝多起 Agent 失控事故。此举叠加其 10 月 IPO 计划（估值目标万亿至两万亿级），引发市场对前沿模型安全与治理边界的关注。</p>
 <p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A0D0K800">来源：机器之心</a></div></p>
@@ -460,10 +485,10 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="source-link">🔗 <a href="https://www.yeyulingfeng.com/a/937539.html">来源：科技前沿 AI</a></div></p>
 <h3>🔵 国产开源模型密集发布：Qwen3.8-27B、小红书 dots3-note</h3>
 <ul><li><strong>阿里 Qwen3.8-27B</strong>：270 亿参数原生多模态稠密模型，支持 262K 上下文、可家用显卡运行，Apache 2.0 免费商用。</li><li><strong>小红书 dots3-note preview</strong>：2800 亿参数 MoE、激活 160 亿，51.2 万上下文，Terminal-Bench 2.1 得分 75.1，超美国开放权重模型 4.9 分。</li></ul>
-<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A03QQ300">来源：凤凰网</a></div><br><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A0D1WQ00">来源：PANews</a></div></p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A03QQ300">来源：凤凰网</a></div><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A0D1WQ00">来源：PANews</a></div></p>
 <h3>🔵 半导体：台积电助力英伟达 Feynman，AMD 传与 Google 合作 v10 TPU</h3>
 <ul><li><strong>台积电</strong>：英伟达已取代苹果成台积电先进制程最大客户，Feynman 架构绕过初期 2nm、直采 A16 节点并导入 SoIC 3D 封装与定制 HBM/CPO，预计 2028 下半年到来。</li><li><strong>AMD</strong>：SemiAnalysis 称 Google TPU 2026-2027 产量预期下修，市场传言 Google 正与 AMD 合作开发 v10 代 TPU，AMD 借 ASIC 路线叫板博通。</li><li><strong>英特尔</strong>：服务器 CPU 份额预期从 62% 降至 2030 年 35.8%，AMD 稳定约 31%，ARM 阵营 30%-35%。</li></ul>
-<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A0BRPO00">来源：超能网</a></div><br><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A0BO6F00">来源：驱动之家</a></div></p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A0BRPO00">来源：超能网</a></div><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A0BO6F00">来源：驱动之家</a></div></p>
 <h3>🔵 高盛上调预测：2026 年全球 AI 支出将超 1 万亿美元</h3>
 <p>高盛近期上调预测，到 2026 年全球 AI 支出预计超 1 万亿美元，其中约 5810 亿美元来自美国，较市场预期高出约 2000 亿美元。</p>
 <p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260815A0BUBH00">来源：埃及微生活</a></div></p>
@@ -531,7 +556,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer">数据来源：彭博社 / 路透社 / 金融时报 / 机器之心 / 财联社 / 腾讯科技 / 巴伦周刊 / 观察者网 / 法治日报 / 经济日报 / Science / Nature Electronics / IT之家 / 超能网 · My Research Central · via WB</div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  数据来源：彭博社 / 路透社 / 金融时报 / 机器之心 / 财联社 / 腾讯科技 / 巴伦周刊 / 观察者网 / 法治日报 / 经济日报 / Science / Nature Electronics / IT之家 / 超能网 · My Research Central · via WB
 </div>
 
 </body>

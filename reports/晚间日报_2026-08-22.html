@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -473,7 +498,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>七、数据溯源</h2>
 <table><thead><tr><th>数据板块</th><th>数据源</th><th>说明</th></tr></thead><tbody><tr><td>美股指数 / 宏观新闻</td><td>Wind MCP <code>get_financial_news</code></td><td>8/21 美股收盘、美元指数、加密货币</td></tr><tr><td>大宗商品（WTI/黄金）</td><td>NeoData 结构化 API（<code>--data-type api</code>）</td><td>期货实时行情；布伦特未覆盖</td></tr><tr><td>持仓个股增量</td><td>Wind MCP <code>get_financial_news</code></td><td>恒瑞/人寿/长飞/中恒/泡泡玛特公告与研报</td></tr><tr><td>券商策略观点</td><td>Wind MCP <code>get_financial_news</code></td><td>申万宏源/山证/8 月金股</td></tr><tr><td>调研纪要</td><td>zsxq-cli（两星球）</td><td>水木调研纪要-2.0 + 调研纪要更新</td></tr></tbody></table>
-<p><strong>合规说明</strong>：本报告所有数值型金融数据均来自 Wind MCP / NeoData 结构化 API，未加载 wb-finance-skill，未使用 WebSearch 获取金融数据。布伦特原油 NeoData 结构化 API 未覆盖，标注「暂不可用」。</p>
+<p class="sub-label"><strong>合规说明</strong>：</p>
+<p>本报告所有数值型金融数据均来自 Wind MCP / NeoData 结构化 API，未加载 wb-finance-skill，未使用 WebSearch 获取金融数据。布伦特原油 NeoData 结构化 API 未覆盖，标注「暂不可用」。</p>
 <hr>
 <p>*数据来源：Wind 万得金融终端 · NeoData Financial Search · 知识星球（zsxq） ｜ My Research Central · via WB*</p>
 

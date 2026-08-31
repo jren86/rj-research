@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -440,25 +465,29 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>二、估值分位</h2>
 <table><thead><tr><th>指数</th><th>PE(TTM)</th><th>PE分位</th><th>PB</th><th>PB分位</th></tr></thead><tbody><tr><td>沪深300</td><td>14.42x</td><td><strong>83.1%</strong></td><td>1.44x</td><td>27.3%</td></tr><tr><td>中证500</td><td>35.50x</td><td><strong>63.2%</strong></td><td>2.47x</td><td>66.9%</td></tr></tbody></table>
-<p><strong>解读</strong>：沪深300 PE分位已至83%高位，但PB分位仅27%——说明盈利（E）扩张速度快于价格（P），估值消化良好。中证500 PE/PB均在中性偏上位置。</p>
+<p class="sub-label"><strong>解读</strong>：</p>
+<p>沪深300 PE分位已至83%高位，但PB分位仅27%——说明盈利（E）扩张速度快于价格（P），估值消化良好。中证500 PE/PB均在中性偏上位置。</p>
 <hr>
 <h2>三、申万行业涨跌全景（31个一级行业）</h2>
 <h3>领涨行业 TOP10</h3>
 <table><thead><tr><th>排名</th><th>行业</th><th>涨跌幅</th></tr></thead><tbody><tr><td>1</td><td><strong>电子</strong></td><td>+6.58%</td></tr><tr><td>2</td><td><strong>通信</strong></td><td>+6.50%</td></tr><tr><td>3</td><td>建筑材料</td><td>+5.00%</td></tr><tr><td>4</td><td>有色金属</td><td>+4.92%</td></tr><tr><td>5</td><td>机械设备</td><td>+4.51%</td></tr><tr><td>6</td><td>计算机</td><td>+2.97%</td></tr><tr><td>7</td><td>基础化工</td><td>+2.87%</td></tr><tr><td>8</td><td>电力设备</td><td>+2.46%</td></tr><tr><td>9</td><td>综合</td><td>+2.33%</td></tr><tr><td>10</td><td>汽车</td><td>+2.30%</td></tr></tbody></table>
 <h3>领跌行业</h3>
 <table><thead><tr><th>排名</th><th>行业</th><th>涨跌幅</th></tr></thead><tbody><tr><td>1</td><td><strong>煤炭</strong></td><td><strong>-4.60%</strong></td></tr><tr><td>2</td><td>银行</td><td>-1.60%</td></tr><tr><td>3</td><td>食品饮料</td><td>-0.90%</td></tr><tr><td>4</td><td>家用电器</td><td>-0.62%</td></tr><tr><td>5</td><td>石油石化</td><td>-0.30%</td></tr></tbody></table>
-<p><strong>核心矛盾</strong>：科技成长（电子/通信）暴涨 vs 红利价值（煤炭/银行）暴跌——典型 risk-on 风格切换日。</p>
+<p class="sub-label"><strong>核心矛盾</strong>：</p>
+<p>科技成长（电子/通信）暴涨 vs 红利价值（煤炭/银行）暴跌——典型 risk-on 风格切换日。</p>
 <hr>
 <h2>四、热门概念板块</h2>
 <h3>涨幅 TOP10</h3>
 <table><thead><tr><th>排名</th><th>概念</th><th>涨跌幅</th></tr></thead><tbody><tr><td>1</td><td><strong>覆铜板</strong></td><td><strong>+11.96%</strong></td></tr><tr><td>2</td><td><strong>MLCC</strong></td><td><strong>+10.73%</strong></td></tr><tr><td>3</td><td>手机陶瓷外壳</td><td>+9.30%</td></tr><tr><td>4</td><td><strong>高频PCB</strong></td><td>+9.22%</td></tr><tr><td>5</td><td>电路板</td><td>+8.99%</td></tr><tr><td>6</td><td>钨矿</td><td>+8.86%</td></tr><tr><td>7</td><td><strong>光模块(CPO)</strong></td><td>+8.78%</td></tr><tr><td>8</td><td>元件精选</td><td>+8.73%</td></tr><tr><td>9</td><td>光电路交换机(OCS)</td><td>+8.60%</td></tr><tr><td>10</td><td>其他电子精选</td><td>+8.01%</td></tr></tbody></table>
 <h3>跌幅 TOP5</h3>
 <table><thead><tr><th>排名</th><th>概念</th><th>涨跌幅</th></tr></thead><tbody><tr><td>1</td><td>中煤系</td><td>-5.99%</td></tr><tr><td>2</td><td>央企煤炭</td><td>-5.34%</td></tr><tr><td>3</td><td>煤炭开采精选</td><td>-3.92%</td></tr><tr><td>4</td><td>采掘金股</td><td>-3.51%</td></tr><tr><td>5</td><td>啤酒</td><td>-2.93%</td></tr></tbody></table>
-<p><strong>今日最强主线</strong>：覆铜板 → PCB → 光模块(CPO) → OCS，完整的<strong>电子通信产业链</strong>轮动。</p>
+<p class="sub-label"><strong>今日最强主线</strong>：</p>
+<p>覆铜板 → PCB → 光模块(CPO) → OCS，完整的<strong>电子通信产业链</strong>轮动。</p>
 <hr>
 <h2>五、市场广度与情绪</h2>
 <table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>涨停家数</td><td><strong>164</strong></td></tr><tr><td>跌停家数</td><td><strong>12</strong></td></tr><tr><td>上证上涨/下跌</td><td>1,602 / 687</td></tr><tr><td>深证上涨/下跌</td><td>2,124 / 724</td></tr><tr><td>全市场涨跌比</td><td><strong>约 2.6 : 1</strong></td></tr><tr><td>两市总成交额</td><td><strong>3.03万亿</strong></td></tr></tbody></table>
-<p><strong>判断</strong>：涨停164家远超跌停12家，涨跌比2.6:1，成交额3万亿+，这是<strong>强趋势日</strong>的典型特征——并非结构性行情，而是普涨格局。</p>
+<p class="sub-label"><strong>判断</strong>：</p>
+<p>涨停164家远超跌停12家，涨跌比2.6:1，成交额3万亿+，这是<strong>强趋势日</strong>的典型特征——并非结构性行情，而是普涨格局。</p>
 <hr>
 <h2>六、今日核心驱动因素</h2>
 <h3>1. 美伊和平协议正式达成 🔴</h3>
@@ -476,7 +505,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>风格极化程度</h3>
 <p>今日市场呈现<strong>2024年以来最极端的风格分化日之一</strong>：</p>
 <table><thead><tr><th>维度</th><th>强端</th><th>弱端</th><th>极差</th></tr></thead><tbody><tr><td>指数</td><td>创业板指+5.30%</td><td>科创50-2.79%</td><td><strong>8.09%</strong></td></tr><tr><td>行业</td><td>电子+6.58%</td><td>煤炭-4.60%</td><td><strong>11.18%</strong></td></tr><tr><td>概念</td><td>覆铜板+11.96%</td><td>中煤系-5.99%</td><td><strong>17.95%</strong></td></tr></tbody></table>
-<p><strong>核心逻辑</strong>：美伊协议→地缘风险溢价出清→资金从"避险+高股息"（煤炭/银行）→"成长+周期"（电子/通信/有色）。科创50逆势下跌可能受指数调整成分股调出影响。</p>
+<p class="sub-label"><strong>核心逻辑</strong>：</p>
+<p>美伊协议→地缘风险溢价出清→资金从"避险+高股息"（煤炭/银行）→"成长+周期"（电子/通信/有色）。科创50逆势下跌可能受指数调整成分股调出影响。</p>
 <h3>大盘 vs 小盘</h3>
 <table><thead><tr><th>宽基</th><th>涨幅</th></tr></thead><tbody><tr><td>沪深300</td><td>+2.39%</td></tr><tr><td>中证500</td><td>+3.71%</td></tr><tr><td>中证1000</td><td>+3.88%</td></tr></tbody></table>
 <p>小盘（中证1000）&gt; 中盘（中证500）&gt; 大盘（沪深300），风格偏小盘成长。</p>
@@ -485,7 +515,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>八、港股结构特征</h2>
 <table><thead><tr><th>特征</th><th>观察</th></tr></thead><tbody><tr><td>恒生指数</td><td>+0.50%，涨幅远小于A股</td></tr><tr><td>恒生科技</td><td>+1.28%，科技股偏强但涨幅收敛</td></tr><tr><td>国企指数</td><td>+0.02%，几近平收</td></tr><tr><td>对比A股</td><td>A股远强于港股，内资定价权主导</td></tr></tbody></table>
-<p><strong>解读</strong>：港股涨幅远弱于A股，说明今日行情主要由<strong>内资 risk-on 驱动</strong>，而非外资全面流入。恒生科技仅+1.28% vs 创业板指+5.30%，也反映A股电子/通信弹性远大于港股科技。</p>
+<p class="sub-label"><strong>解读</strong>：</p>
+<p>港股涨幅远弱于A股，说明今日行情主要由<strong>内资 risk-on 驱动</strong>，而非外资全面流入。恒生科技仅+1.28% vs 创业板指+5.30%，也反映A股电子/通信弹性远大于港股科技。</p>
 <hr>
 <h2>九、风险提示</h2>
 <ul><li><strong>风格反转风险</strong>：今日极端分化后，若FOMC结果偏鹰，科技成长可能快速回吐</li><li><strong>科创50逆势下跌</strong>：需关注是否有特定成分股利空或指数调整效应</li><li><strong>北向资金数据缺失</strong>：今日Wind北向资金接口异常，无法确认外资是否参与</li><li><strong>成交额3万亿的持续性</strong>：单日放量易，持续放量难，若后续缩量则风格可能再切回红利</li><li><strong>FOMC 6/16-17</strong>：沃什首秀+可能取消点阵图，市场短期波动风险极大</li></ul>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -449,16 +474,16 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>三、市场概览（隔夜增量）</h2>
 <h3>美股遭遇"黑色六月" — Mag7结构性大分化</h3>
-<p><strong>核心事实（6/22-6/27 整周）</strong>：</p>
+<p class="sub-label"><strong>核心事实（6/22-6/27 整周）</strong>：</p>
 <ul><li>标普500累跌1.95% → 7354点；纳斯达克综指累跌4.6%；道指逆势+0.6%再创历史新高</li><li>罗素2000小盘指数累涨1.0%并站上3000点（首次）</li><li>Mag7单周跌幅集中在3%-8%，苹果逼近270美元关键支撑，亚马逊跌破200日均线，微软RSI降至28超卖区间</li><li>费城半导体指数（SOX）累跌7.94%；TAMAMA科技指数-6.23%收报28.35倍PE</li><li>美国5月核心PCE同比+3.4%（前值3.2%），整体PCE同比+4.1%创三年新高</li></ul>
 <h3>美银"兴登堡预兆"触发7次</h3>
 <p>浙商证券最新策略报告：<strong>截至6月下旬，兴登堡预兆近一个月内在美股累计触发7次，2026年以来累计触发超10次</strong>。四项触发条件全部满足：道指/纽交所50日均线上方；纽交所52周新高新低个股占比均超2.2%；麦克莱伦摆动指标4-6月多次处负值区间。</p>
 <ul><li><strong>历史回测</strong>：信号触发后40个交易日内纳指下跌且累计回撤超10%的概率为67%，演变为大级别调整概率33%</li><li><strong>A股适配</strong>：2000-2024年12个触发时点对中型回撤的预测有效概率高达92%</li><li><strong>结论</strong>：美股调整≠全面去风险，而是"拥挤头寸出清"，A股短期波动或加剧但中期"慢牛"格局未变</li></ul>
 <p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：浙商证券 - 美股兴登堡预兆</a></div></p>
 <h3>A股6月微观结构拥挤度创历史极值</h3>
-<p><strong>关键数据（截至6/26）</strong>：</p>
+<p class="sub-label"><strong>关键数据（截至6/26）</strong>：</p>
 <ul><li>6月前5%个股成交额占比达50.4%</li><li>6月26日单日超53.6%，为<strong>2005年以来99.76%分位</strong>（历史极值）</li><li>申万二级行业PB估值标准差达2010年以来84.7%分位</li></ul>
-<p><strong>机构主动调仓信号</strong>：</p>
+<p class="sub-label"><strong>机构主动调仓信号</strong>：</p>
 <ul><li>净买入前三指数：半导体设备(+13.5亿)、银指数(+7.66亿)、晶圆产业(+6.78亿)</li><li>净卖出前三指数：HALO(-159.55亿)、新基建(-148.23亿)、人工智能+(-139.33亿)</li></ul>
 <p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 概念指数日报 (6/23)</a></div></p>
 <h3>美联储新主席沃什鹰派信号</h3>
@@ -466,37 +491,39 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>四、策略观点（券商最新研判汇总）</h2>
 <h3>1. 东方财富陈果团队 | 外围波动上升，继续再平衡</h3>
-<p><strong>核心观点</strong>：三季度A股指数上行空间大于下行风险。结构上，建议逐步再平衡，从拥挤的科技/AI链向"碳基经济"传统行业倾斜，重点关注产业资本增持回购的相对低位品种。</p>
-<p><strong>重点方向</strong>：</p>
+<p class="sub-label"><strong>核心观点</strong>：</p>
+<p>三季度A股指数上行空间大于下行风险。结构上，建议逐步再平衡，从拥挤的科技/AI链向"碳基经济"传统行业倾斜，重点关注产业资本增持回购的相对低位品种。</p>
+<p class="sub-label"><strong>重点方向</strong>：</p>
 <ul><li>必需消费（食品）、医药（CXO）、煤炭、电力设备新能源</li><li>非银金融、新消费、互联网、半导体设备材料/国产AI链</li><li>主题：积极回购增持的蓝筹组合</li></ul>
-<p><strong>筛选结果</strong>：</p>
+<p class="sub-label"><strong>筛选结果</strong>：</p>
 <ul><li>增持回购【强预期+强现实】：医疗服务（CXO）、文娱用品、化学制品</li><li>【强预期】：调味发酵品、动物保健、摩托车、造纸、化学纤维</li><li>【强现实】：白色家电、航空机场、饮料乳品</li></ul>
 <p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：东方财富证券陈果团队 - 《外围波动上升，继续再平衡》(2026/6/28)</a></div></p>
 <h3>2. 浙商证券 | 美银"兴登堡预兆" — A股准确率92%</h3>
-<p><strong>核心观点</strong>：美股系统性调整可能性上升，投资者可适度提升防御仓位，但不必立即卖出。A股短期波动或加剧，中期维持"慢牛"行稳致远判断。</p>
-<p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：浙商证券策略报告</a></div></p>
+<p class="sub-label"><strong>核心观点</strong>：</p>
+<p>美股系统性调整可能性上升，投资者可适度提升防御仓位，但不必立即卖出。A股短期波动或加剧，中期维持"慢牛"行稳致远判断。<br><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：浙商证券策略报告</a></div></p>
 <h3>3. 国信港股&amp;海外 | 美股速览 — 半导体业绩上修但资金显著流出</h3>
-<p><strong>核心观察</strong>：</p>
+<p class="sub-label"><strong>核心观察</strong>：</p>
 <ul><li>半导体产品与设备行业<strong>EPS预期+7.3%上修</strong>（单周最快）</li><li>但<strong>资金净流出-129.6亿美元</strong>居首</li><li>资金流入：制药生物科技(+35.4亿)、软件与服务(+15.3亿)</li><li>风格切换：罗素2000价值+2.3% &gt; 大盘价值+0.3% &gt; 成长-0.1% &gt; 大盘成长-3.4%</li></ul>
 <p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：国信证券港股&amp;海外策略</a></div></p>
 <h3>4. 中国银河策略 | 金价持续回落，美联储加息预期又升温？</h3>
-<p><strong>核心观点</strong>：全球股市并非系统性风险偏好崩塌，而是高利率、通胀反弹与AI交易拥挤共同作用下的结构性再定价。A股和美股均有所回调（A股-1.55%，美股-1.95%），亚洲科技链调整幅度大（日经-2.65%、恒生-5.24%、韩国-7.08%）。</p>
-<p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：中国银河证券策略报告</a></div></p>
+<p class="sub-label"><strong>核心观点</strong>：</p>
+<p>全球股市并非系统性风险偏好崩塌，而是高利率、通胀反弹与AI交易拥挤共同作用下的结构性再定价。A股和美股均有所回调（A股-1.55%，美股-1.95%），亚洲科技链调整幅度大（日经-2.65%、恒生-5.24%、韩国-7.08%）。<br><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：中国银河证券策略报告</a></div></p>
 <h3>5. 华泰证券 | 投资先机 — 科技抱团松动，单极转向多元</h3>
-<p><strong>核心观点</strong>：A股拥挤度触顶、科技周五松动，本质是资金风格再平衡。科技作为中期主线逻辑未变但短期不宜追高，重点做好风格再平衡，多关注创新药、出海等低估值高景气方向。</p>
-<p><strong>周期精选</strong>：</p>
+<p class="sub-label"><strong>核心观点</strong>：</p>
+<p>A股拥挤度触顶、科技周五松动，本质是资金风格再平衡。科技作为中期主线逻辑未变但短期不宜追高，重点做好风格再平衡，多关注创新药、出海等低估值高景气方向。</p>
+<p class="sub-label"><strong>周期精选</strong>：</p>
 <ul><li><strong>建材（玻纤）涨价逻辑最硬</strong>——AI算力扩张拉动特种电子布需求激增，供给一两年内难以释放，叠加库存历史低位</li><li>化工关注一体化布局与技术壁垒龙头</li><li>上游有色短期受美元压制，更适合在震荡中观望</li></ul>
-<p><strong>海外策略</strong>：美股不再追高，浮盈较大的AI硬件可适度兑现，以必选消费作为低位防御。</p>
-<p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：华泰证券方思超 - 《投资先机5分钟》031期 (2026/6/28)</a></div></p>
+<p class="sub-label"><strong>海外策略</strong>：</p>
+<p>美股不再追高，浮盈较大的AI硬件可适度兑现，以必选消费作为低位防御。<br><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：华泰证券方思超 - 《投资先机5分钟》031期 (2026/6/28)</a></div></p>
 <h3>6. 国泰海通 | 继续推荐财富管理/国际业务/科创弹性头部券商</h3>
-<p><strong>核心观点</strong>：基于居民增量资金入市、国际业务爆发和科创跟投三个原因，券商盈利预计同比大幅改善且具有持续性。2026陆家嘴论坛多项政策落地（科创板第五套标准扩容至AI、创业板新型消费支持、港股回A再融资、主动ETF、商业不动产REITs、QDII新额度）对券商投融两端产生显著影响。</p>
-<p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：国泰海通证券研报</a></div></p>
+<p class="sub-label"><strong>核心观点</strong>：</p>
+<p>基于居民增量资金入市、国际业务爆发和科创跟投三个原因，券商盈利预计同比大幅改善且具有持续性。2026陆家嘴论坛多项政策落地（科创板第五套标准扩容至AI、创业板新型消费支持、港股回A再融资、主动ETF、商业不动产REITs、QDII新额度）对券商投融两端产生显著影响。<br><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：国泰海通证券研报</a></div></p>
 <h3>7. 招商证券电子首席 | 大基金一二期正常回收，三期70%加码设备材料</h3>
-<p><strong>核心观点</strong>：</p>
+<p class="sub-label"><strong>核心观点</strong>：</p>
 <ul><li>一期已进入回收期，22家有序退出（长川科技-52.39%、雅克科技-39.14%、赛微电子-29.72%）</li><li><strong>大基金三期核心投向</strong>：设备材料国产化（约70%资金）+ 先进封装与AI存储（约30%资金）</li><li>三期战略延伸至"卡脖子"环节（EDA、核心零部件）和AI芯片、具身智能前沿领域</li></ul>
 <p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：招商证券电子首席解读</a></div></p>
 <h3>8. 中信证券+广发基金"信盈·E起行"北京策略会要点</h3>
-<p><strong>下半年配置主线</strong>：</p>
+<p class="sub-label"><strong>下半年配置主线</strong>：</p>
 <ul><li>AI产业链扩张、输入型通胀、人民币汇率变动、资金结构重塑共同驱动结构性行情</li><li><strong>"组合化、工具化"配置思路</strong>应对热点轮动加速</li><li>财政关注清理拖欠企业账款、"六张网"投资；货币延续适度宽松但更侧重结构性发力</li></ul>
 <p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：中信证券+广发基金北京策略会 (2026/6/5)</a></div></p>
 <hr>
@@ -535,7 +562,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer"><br>数据来源：Wind 万得金融终端 · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>数据来源：Wind 万得金融终端 · My Research Central · via WB<br>
 </div>
 
 </body>

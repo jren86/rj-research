@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -457,12 +482,17 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>📊 市场概览</h2>
 <h3>A股收盘（7/24）</h3>
 <table><thead><tr><th>指数</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>上证指数</td><td>3,814.20</td><td><span class="green">-1.61%</span></td><td>周累计+1.33%</td></tr><tr><td>深证成指</td><td>13,774.68</td><td><span class="green">-2.47%</span></td><td>周累计+0.49%</td></tr><tr><td>创业板指</td><td>3,480.87</td><td><span class="green">-2.65%</span></td><td>周累计+1.52%</td></tr><tr><td>科创50</td><td>1,787.20</td><td><span class="green">-0.14%</span></td><td>周累计+4.19%</td></tr><tr><td>沪深300</td><td>4,649.19</td><td><span class="green">-1.67%</span></td><td>—</td></tr><tr><td>北证50</td><td>1,031.72</td><td><span class="green">-4.03%</span></td><td>—</td></tr></tbody></table>
-<p><strong>成交额</strong>：约1.93万亿元（较前日缩量2641亿）  <br><strong>涨跌家数</strong>：555只上涨 / 4,940只下跌（42涨停 / 25跌停）  <br><strong>主力资金</strong>：全天净流出417.45亿元</p>
+<p class="sub-label"><strong>成交额</strong>：</p>
+<p>约1.93万亿元（较前日缩量2641亿）</p>
+<p class="sub-label"><strong>主力资金</strong>：</p>
+<p>全天净流出417.45亿元</p>
 <h3>板块表现</h3>
 <table><thead><tr><th>板块</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>🔴 半导体</td><td><span class="red">+0.58%</span></td><td>通富微电涨停，澜起+3.63%，先进封装走强</td></tr><tr><td>🔴 国防军工</td><td><span class="red">+2.32亿净流入</span></td><td>地面兵装+2%，长城军工2连板</td></tr><tr><td>🔴 银行</td><td><span class="red">+0.30%</span></td><td>防御属性+高股息吸引避险资金</td></tr><tr><td>🔴 电信</td><td><span class="red">+0.39%</span></td><td>相对抗跌</td></tr><tr><td>🟢 贵金属</td><td><span class="green">-6.0%</span></td><td>金价回调，灵宝黄金-6%，赤峰黄金-6%</td></tr><tr><td>🟢 有色金属</td><td><span class="green">-4.6%</span></td><td>基本金属/能源金属/小金属全线回调</td></tr><tr><td>🟢 软件服务</td><td><span class="green">-4.42%</span></td><td>科技成长承压</td></tr><tr><td>🟢 医药生物</td><td><span class="green">-3.78%</span></td><td>创新药板块跟随调整</td></tr></tbody></table>
 <h3>资金流向（7/24）</h3>
-<p><strong>净流入</strong>：半导体+4.32亿、国防军工+2.32亿、工业贸易+2.12亿  <br><strong>净流出</strong>：硬件设备-140.23亿、软件服务-53.13亿、有色金属-45.22亿  <br><strong>机构资金</strong>：微幅净买+0.5亿，大户和中户为主要抛压方</p>
-<p>🔗 来源：Wind金融终端 · 2026-07-24</p>
+<p class="sub-label"><strong>净流入</strong>：</p>
+<p>半导体+4.32亿、国防军工+2.32亿、工业贸易+2.12亿</p>
+<p class="sub-label"><strong>机构资金</strong>：</p>
+<p>微幅净买+0.5亿，大户和中户为主要抛压方<br>🔗 来源：Wind金融终端 · 2026-07-24</p>
 <h3>港股收盘（7/24）</h3>
 <table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>恒生指数</td><td>24,963</td><td><span class="green">-0.98%</span></td></tr><tr><td>恒生科技</td><td>4,626</td><td><span class="green">-1.54%</span></td></tr><tr><td>恒生国企</td><td>8,271</td><td><span class="green">-0.97%</span></td></tr></tbody></table>
 <ul><li>成交额2099亿港元</li><li>阿里-4%领跌科网，腾讯-2.3%，美团-1%</li><li>中银香港+6%破顶（摩通唱好），智谱+7.6%（OpenAI事件利好）</li><li>澜起科技H股+7%（回购催化）</li></ul>
@@ -476,16 +506,19 @@ blockquote p:last-child { margin-bottom: 0; }
 <p>🔗 来源：招商证券研报 · 2026-07-24</p>
 <p><strong>中金公司</strong>（券商板块）：Q2公募持仓已在提升但历史对比仍显著低配，大财富/科创投资/境外扩表三条主线推动长期业绩增长，估值提升空间较大。</p>
 <p>🔗 来源：中金研报 · 2026-07-24</p>
-<p><strong>东方证券</strong>：指数风险可控，关注宽基修复机会。科技关注国产算力方向，同时关注券商、有色金属、银行修复。银行板块兼具稳健基本面和高股息防御属性，风格再平衡下有望迎阶段性机会。</p>
-<p>🔗 来源：东方证券研报 · 2026-07-24</p>
+<p class="sub-label"><strong>东方证券</strong>：</p>
+<p>指数风险可控，关注宽基修复机会。科技关注国产算力方向，同时关注券商、有色金属、银行修复。银行板块兼具稳健基本面和高股息防御属性，风格再平衡下有望迎阶段性机会。<br>🔗 来源：东方证券研报 · 2026-07-24</p>
 <p><strong>中信证券</strong>（下半年策略）：量化与CTA策略下半年具配置价值，主观CTA可发挥研判优势。中小盘量化超额收益显著。私募证券基金规模升至8.2万亿。</p>
 <p>🔗 来源：中信证券研报 · 2026-07-24</p>
 <h3>港股策略观点</h3>
-<p><strong>银河证券</strong>：港股处于阶段性修复窗口而非普涨反转，内外资科技板块共振推升情绪，但全球主动型长线资金尚未大规模回归。</p>
-<p><strong>东方证券</strong>：科技产业引领经济发展的信心增强，但传统行业优质公司（如本土运动品牌）被低估。</p>
-<p><strong>东吴证券</strong>：港股仍处补涨窗口期，核心驱动为美股AI科技叙事+美联储政策预期+国内催化剂。</p>
-<p><strong>国泰海通</strong>：港股红利-科技跷跷板效应下，三季度红利胜率季节性回落，科技胜率有望走强。</p>
-<p>🔗 来源：Wind财经新闻 · 2026-07-24</p>
+<p class="sub-label"><strong>银河证券</strong>：</p>
+<p>港股处于阶段性修复窗口而非普涨反转，内外资科技板块共振推升情绪，但全球主动型长线资金尚未大规模回归。</p>
+<p class="sub-label"><strong>东方证券</strong>：</p>
+<p>科技产业引领经济发展的信心增强，但传统行业优质公司（如本土运动品牌）被低估。</p>
+<p class="sub-label"><strong>东吴证券</strong>：</p>
+<p>港股仍处补涨窗口期，核心驱动为美股AI科技叙事+美联储政策预期+国内催化剂。</p>
+<p class="sub-label"><strong>国泰海通</strong>：</p>
+<p>港股红利-科技跷跷板效应下，三季度红利胜率季节性回落，科技胜率有望走强。<br>🔗 来源：Wind财经新闻 · 2026-07-24</p>
 <h3>7月金股动态</h3>
 <p>今日获券商买入评级：国城矿业（华鑫证券，H1业绩预增，钼钛锂三业务改善）、浙富控股、益生股份、容百科技、能科科技。</p>
 <p>⏳ 中信建投锂电策略：碳酸锂产量下行+部分锂盐厂检修，7月排产环比增长超5%，8月继续正增长，淡季不淡，Q4旺季可期。</p>

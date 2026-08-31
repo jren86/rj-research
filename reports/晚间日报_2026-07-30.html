@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -460,11 +485,14 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>四、策略观点</h2>
 <h3>机构核心判断</h3>
-<p><strong>华福证券</strong>：科技长牛常态是"上行斜率+周期性回调"。当前科技调整更接近高波动主线中的再平衡，并非行情终结，回撤由高拥挤/高预期/叙事扰动共同触发。</p>
-<p><strong>东方证券</strong>：A股调整更多来自热门方向微观交易结构压力而非系统性风险。建议延续均衡配置，优先关注宽基指数修复机会。</p>
-<p><strong>中国银河证券</strong>：主动偏股型基金重仓结构高度集中于科技成长，7月以来科技回调进入结构再平衡。短期均衡配置——静待科技中报景气度兑现，把握低位价值板块修复窗口。</p>
-<p><strong>浙商证券</strong>（展望8月）：板块轮动正在恢复，建议三条线索：①EPS边际改善（煤炭/证券）；②低成交量受益品种（银行/公用事业/交运/石化）；③产业趋势（电子/通信反弹机会）。</p>
-<p><strong>海通国际（张忆东）</strong>：当前调整似"危"实"机"，中国股市已逐步进入左侧布局窗口，有望领先海外市场企稳，8月开启秋季行情。建议分批布局、以时间换空间。</p>
+<p class="sub-label"><strong>华福证券</strong>：</p>
+<p>科技长牛常态是"上行斜率+周期性回调"。当前科技调整更接近高波动主线中的再平衡，并非行情终结，回撤由高拥挤/高预期/叙事扰动共同触发。</p>
+<p class="sub-label"><strong>东方证券</strong>：</p>
+<p>A股调整更多来自热门方向微观交易结构压力而非系统性风险。建议延续均衡配置，优先关注宽基指数修复机会。</p>
+<p class="sub-label"><strong>中国银河证券</strong>：</p>
+<p>主动偏股型基金重仓结构高度集中于科技成长，7月以来科技回调进入结构再平衡。短期均衡配置——静待科技中报景气度兑现，把握低位价值板块修复窗口。<br><strong>浙商证券</strong>（展望8月）：板块轮动正在恢复，建议三条线索：①EPS边际改善（煤炭/证券）；②低成交量受益品种（银行/公用事业/交运/石化）；③产业趋势（电子/通信反弹机会）。</p>
+<p class="sub-label"><strong>海通国际（张忆东）</strong>：</p>
+<p>当前调整似"危"实"机"，中国股市已逐步进入左侧布局窗口，有望领先海外市场企稳，8月开启秋季行情。建议分批布局、以时间换空间。</p>
 <h3>7月金股汇总</h3>
 <table><thead><tr><th>排名</th><th>标的</th><th>推荐次数</th><th>类别</th></tr></thead><tbody><tr><td>⭐1</td><td>中际旭创(300308)</td><td>13家</td><td>光模块/AI算力</td></tr><tr><td>2</td><td>海光信息(688041)</td><td>10家</td><td>AI芯片</td></tr><tr><td>2</td><td>中国巨石(600176)</td><td>10家</td><td>玻纤/周期</td></tr><tr><td>4</td><td>药明康德(603259)</td><td>9家</td><td>CXO/医药</td></tr><tr><td>5</td><td>巨化股份(600160)</td><td>6家</td><td>氟化工/材料</td></tr></tbody></table>
 <blockquote>7月金股涉持仓标的：⭐巨化股份（6家推荐，持仓）、宁德时代（5家推荐，持仓）</blockquote>

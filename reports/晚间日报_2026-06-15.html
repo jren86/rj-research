@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -448,7 +473,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>🔥 科技板块全面爆发，涨停潮涌现</h3>
 <p>今日涨幅领先概念板块：</p>
 <table><thead><tr><th>概念板块</th><th>涨幅</th></tr></thead><tbody><tr><td>电子布</td><td>+9.99%</td></tr><tr><td>MLCC</td><td>+9.49%</td></tr><tr><td>锗镓概念</td><td>+9.48%</td></tr><tr><td>纳米压印</td><td>+9.06%</td></tr><tr><td>博通概念</td><td>+8.68%</td></tr><tr><td>激光</td><td>+8.56%</td></tr></tbody></table>
-<p><strong>涨停代表</strong>：达利凯普、国际复材、光大同创、凌玮科技、民爆光电、铜冠铜箔、光库科技、太辰光、炬光科技、光智科技、长芯博创等大批个股20cm涨停</p>
+<p class="sub-label"><strong>涨停代表</strong>：</p>
+<p>达利凯普、国际复材、光大同创、凌玮科技、民爆光电、铜冠铜箔、光库科技、太辰光、炬光科技、光智科技、长芯博创等大批个股20cm涨停</p>
 <ul><li><strong>电子布/MLCC/PCB材料</strong>：AI算力基建拉动上游材料需求，叠加国产替代逻辑</li><li><strong>锗镓/纳米压印</strong>：半导体上游材料+先进制程概念，国产化主线持续强化</li><li><strong>博通概念/激光/光通信</strong>：海外AI硬件景气传导 + 算力互联需求</li></ul>
 <hr>
 <h2>四、重要公告</h2>
@@ -471,10 +497,12 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>五、研报观点</h2>
 <h3>🔥 多家头部券商发布2026年A股中期策略</h3>
-<p><strong>核心共识</strong>：</p>
+<p class="sub-label"><strong>核心共识</strong>：</p>
 <ul><li>推动本轮市场上行、中国资产重估的核心驱动力（国际秩序重构+产业创新趋势）未发生根本性动摇</li><li>市场整体估值合理，但局部高估值板块需警惕波动</li><li>AI主线处于景气度持续扩散而非全面泡沫化阶段</li></ul>
-<p><strong>国泰海通方奕</strong>：上修2026年全A非金融盈利增速至13.6%，中国经济从"要素驱动"向"创新驱动"跃迁</p>
-<p><strong>中金公司李求索</strong>：当下市场较以往更具备长期稳步上行条件，下半年警惕部分领域脆弱性</p>
+<p class="sub-label"><strong>国泰海通方奕</strong>：</p>
+<p>上修2026年全A非金融盈利增速至13.6%，中国经济从"要素驱动"向"创新驱动"跃迁</p>
+<p class="sub-label"><strong>中金公司李求索</strong>：</p>
+<p>当下市场较以往更具备长期稳步上行条件，下半年警惕部分领域脆弱性</p>
 <h3>🔥 十大券商最新策略汇总</h3>
 <ul><li><strong>中信证券</strong>：风格再平衡已经开始，配置需聚焦有清晰业绩逻辑的方向</li><li><strong>广发证券</strong>：市场新一轮情绪周期底部信号显现，情绪指标降至0%分位，中报季AI+储能+创新药</li><li><strong>方正证券</strong>：年内第二个重要买点到来，Q3展望偏乐观，超跌方向关注HALO资产（有色+化工+煤炭+储能）+非银金融</li><li><strong>华泰证券</strong>：AI产业趋势未放缓，短期调整提供加仓窗口，关注光通信/MLCC</li><li><strong>中信证券（锂）</strong>：锂价2026下半年仍有望走强，维持25万元/吨目标价</li><li><strong>中信建投</strong>：券商投资从"β博弈"到"α挖掘"，大财富+大投行成第二增长曲线</li></ul>
 <hr>

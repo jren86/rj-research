@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -433,122 +458,141 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>🔥 重大发布与事件</h2>
 <h3>1. NVIDIA Cosmos 3 正式发布：全球首款全模态物理 AI 模型</h3>
-<p><strong>摘要</strong>：6月5日，英伟达在 COMPUTEX 2026 与 GTC Taipei 联动大会收官日上，推出 NVIDIA Cosmos 3，定位为「全球首款完全开放的全模态物理 AI 模型」。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>6月5日，英伟达在 COMPUTEX 2026 与 GTC Taipei 联动大会收官日上，推出 NVIDIA Cosmos 3，定位为「全球首款完全开放的全模态物理 AI 模型」。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li>基于全新混合 Transformer 架构，统一打通视觉推理、世界生成、动作预测三大核心能力</li><li>同步牵头成立「全球物理 AI 开发者协作联盟」，复刻 CUDA 生态策略</li><li>A股物理AI概念板块高开：天娱数科一字涨停，凡拓数创/索辰科技高开9%，云从科技/奥比中光跟涨</li><li>标志着物理AI从「模型演示」正式进入「可被全球开发者复用的工程底座」阶段</li></ul>
-<p><strong>市场反应</strong>：英伟达股价在台北发布会后继续走强。</p>
-<p>📅 <strong>来源</strong>：钛媒体、NVIDIA GTC Taipei 2026 官方</p>
+<p class="sub-label"><strong>市场反应</strong>：</p>
+<p>英伟达股价在台北发布会后继续走强。<br>📅 <strong>来源</strong>：钛媒体、NVIDIA GTC Taipei 2026 官方</p>
 <hr>
 <h3>2. OpenAI Dreaming V3：ChatGPT 记忆系统重大升级</h3>
-<p><strong>摘要</strong>：OpenAI 在6月4日推出 Dreaming V3 架构，是 ChatGPT 自 2024 年上线以来最重要的记忆功能升级。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>OpenAI 在6月4日推出 Dreaming V3 架构，是 ChatGPT 自 2024 年上线以来最重要的记忆功能升级。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li><strong>自动记忆提取</strong>：对话结束后自动在后台处理，提取用户偏好、限制条件、进行中项目、时效性上下文，无需手动提示</li><li><strong>智能过期</strong>：自动识别行程结束等时效性信息，不再推送无关内容</li><li><strong>成本优化</strong>：记忆合成计算需求降低约5倍，免费用户也可使用增强记忆</li><li><strong>隐私争议</strong>：arXiv 研究显示 96% 的记忆是系统单方面生成，将面临 2026年8月生效的欧盟 AI 法案透明度规则审查</li></ul>
 <p>📅 <strong>来源</strong>：OpenAI 官方公告、Engadget</p>
 <hr>
 <h3>3. OpenAI Realtime Audio API 正式 GA + 3 款新音频模型</h3>
-<p><strong>摘要</strong>：OpenAI Realtime API 正式退出 beta，同步发布 3 款实时音频模型。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>OpenAI Realtime API 正式退出 beta，同步发布 3 款实时音频模型。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li><strong>GPT-Realtime-2</strong>：旗舰级，基于 GPT-5 推理能力，直接处理连续音频流（无需 ASR→文本→TTS 中转），可识别语气和打断，业内最低延迟</li><li><strong>GPT-Realtime-Translate</strong>：支持 70+ 输入语言、13 种输出语言实时语音翻译，德国电信/Vimeo 已参与测试</li><li><strong>GPT-Realtime-Whisper</strong>：流式实时转录，语音输入过程中即生成字幕</li><li><strong>定价</strong>：Realtime-2 输入/输出 $40/$80 每百万音频 token</li></ul>
 <p>📅 <strong>来源</strong>：AI ToolsRecap、OpenAI</p>
 <hr>
 <h3>4. NVIDIA Nemotron 3 Ultra 上线 AWS SageMaker JumpStart</h3>
-<p><strong>摘要</strong>：6月4日，Nemotron 3 Ultra 同步上线 Hugging Face、NVIDIA NIM 和 AWS SageMaker JumpStart。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>6月4日，Nemotron 3 Ultra 同步上线 Hugging Face、NVIDIA NIM 和 AWS SageMaker JumpStart。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li>采用混合 Transformer-Mamba 专家混合（MoE）架构</li><li>Mamba-2 状态空间层实现 120 万 token 长上下文下的恒定内存占用</li><li>NVFP4 精度优化：相比 BF16，推理吞吐量提升 5 倍，成本降低 30%（基于 Blackwell GPU 4 位浮点格式）</li><li>适合需要数百轮规划/执行的长周期智能体工作负载</li></ul>
 <p>📅 <strong>来源</strong>：AI ToolsRecap、NVIDIA</p>
 <hr>
 <h2>🔬 研究与学术</h2>
 <h3>5. 斯坦福 2026 AI 指数报告发布</h3>
-<p><strong>摘要</strong>：6月3日发布的年度权威报告揭示 AI 行业多项关键趋势。</p>
-<p><strong>关键发现</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>6月3日发布的年度权威报告揭示 AI 行业多项关键趋势。</p>
+<p class="sub-label"><strong>关键发现</strong>：</p>
 <ul><li><strong>环境代价</strong>：Grok 4 训练排放 72,816 吨 CO₂，相当于 1.7 万辆燃油车行驶一年</li><li><strong>人才流失</strong>：2017年以来全球学者移民美国数量下降 89%</li><li><strong>投资爆发</strong>：2025年全球 AI 企业投资达 5,817 亿美元，同比增长 130%</li><li><strong>就业冲击</strong>：初级软件开发岗位下降近 20%</li><li><strong>中美差距缩小</strong>：中美 AI 模型性能差距缩至 2.7%，中国通过政府引导基金累计向 AI/机器人领域投入约 $9,120 亿</li></ul>
 <p>📅 <strong>来源</strong>：Stanford HAI</p>
 <hr>
 <h3>6. 联合国支持的 AI 环境影响研究发布</h3>
-<p><strong>摘要</strong>：研究警告 AI 算力扩张带来严重环境压力。</p>
-<p><strong>关键数据</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>研究警告 AI 算力扩张带来严重环境压力。</p>
+<p class="sub-label"><strong>关键数据</strong>：</p>
 <ul><li>训练 ChatGPT-5 规模的模型所需电力可供撒哈拉以南非洲 77 万居民一年使用</li><li>到 2030 年，服务器硬件淘汰每年将产生数百万吨电子垃圾（相当于 250 座埃菲尔铁塔重量）</li></ul>
 <p>📅 <strong>来源</strong>：联合国相关研究</p>
 <hr>
 <h3>7. NeurIPS 2026：28.2% 投稿被 AI 检测判定为 100% AI 生成</h3>
-<p><strong>摘要</strong>：NeurIPS 2026 立场论文 track 发布学术出版诚信审计结果。</p>
-<p><strong>关键数据</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>NeurIPS 2026 立场论文 track 发布学术出版诚信审计结果。</p>
+<p class="sub-label"><strong>关键数据</strong>：</p>
 <ul><li>28.2% 投稿被判定为 100% AI 生成（是 2025 年的 10 倍）</li><li>178 篇直接拒稿，123 篇有条件拒稿（需提交版本历史审计轨迹证明人类创作）</li><li>学术界「AI 代写」问题首次被正式量化</li></ul>
 <p>📅 <strong>来源</strong>：NeurIPS 2026</p>
 <hr>
 <h2>💰 产业与资本</h2>
 <h3>8. Anthropic IPO 进展：9650亿美元估值，S-1 已秘密提交 SEC</h3>
-<p><strong>摘要</strong>：Anthropic 于6月1日向 SEC 秘密提交 S-1 注册声明草案，正式启动上市进程，估值 9650 亿美元超越 OpenAI（8520 亿）登顶全球 AI 公司估值王。</p>
-<p><strong>关键数据</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Anthropic 于6月1日向 SEC 秘密提交 S-1 注册声明草案，正式启动上市进程，估值 9650 亿美元超越 OpenAI（8520 亿）登顶全球 AI 公司估值王。</p>
+<p class="sub-label"><strong>关键数据</strong>：</p>
 <ul><li><strong>收入增长</strong>：年化收入 2024年12月约 $10亿 → 2026年2月 $140亿 → 2026年5月 $470亿</li><li><strong>盈利预期</strong>：预计 2026年 Q2 首次实现运营盈利，利润约 $5.59亿（领先 OpenAI 数年）</li><li><strong>成本风险</strong>：到 2029年5月每月将向 SpaceX 支付 $12.5亿计算费用，年基础设施成本 $150亿</li><li><strong>融资历程</strong>：成立至今累计融资超千亿美元，最近 H 轮 650 亿美元</li></ul>
 <p>📅 <strong>来源</strong>：新浪财经、TechCrunch、Anthropic 官方</p>
 <hr>
 <h3>9. DeepSeek 首轮外部融资约 500 亿元</h3>
-<p><strong>摘要</strong>：DeepSeek 首轮外部融资约 500 亿元人民币（≈$74 亿），投后估值 3500-4000 亿元。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>DeepSeek 首轮外部融资约 500 亿元人民币（≈$74 亿），投后估值 3500-4000 亿元。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li>腾讯拟投 100 亿元、宁德时代拟投 50 亿元领投</li><li>网易/京东处于最终谈判阶段</li><li>创始人梁文锋个人承诺出资 200 亿元</li><li>若顺利落地，将刷新中国 AI 公司单轮融资最高纪录</li></ul>
 <p>📅 <strong>来源</strong>：21世纪经济报道、网易科技</p>
 <hr>
 <h3>10. 加拿大发布「AI for All」全民 AI 国家战略</h3>
-<p><strong>摘要</strong>：6月4日，加拿大总理卡尼政府发布「AI for All」国家战略文件，正式将 AI 列为国家战略级产业政策。</p>
-<p><strong>关键措施</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>6月4日，加拿大总理卡尼政府发布「AI for All」国家战略文件，正式将 AI 列为国家战略级产业政策。</p>
+<p class="sub-label"><strong>关键措施</strong>：</p>
 <ul><li>设立 5 亿加元科技成长基金，通过主权财富基金直接入股本土 AI 公司</li><li>配套建设公共 AI 超级计算机，政府优先采购本土 AI 产品</li><li>五年目标：新增 2000 亿加元 AI 经济产出 + 25 万 AI 岗位</li><li>背景：过去近 70% 加拿大 AI 创始团队最终将总部迁往海外</li></ul>
 <p>📅 <strong>来源</strong>：财联社、Reuters</p>
 <hr>
 <h3>11. Claude Sonnet 4.8 泄露：中间版本可能即将发布</h3>
-<p><strong>摘要</strong>：Anthropic npm 包 v2.1.88 源映射中意外包含 <code>sonnet-4-8</code> 字符串，结合发布节奏推测模型可能 6 月中旬发布。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Anthropic npm 包 v2.1.88 源映射中意外包含 <code>sonnet-4-8</code> 字符串，结合发布节奏推测模型可能 6 月中旬发布。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li>同一泄露列表中 <code>opus-4-7</code> 已于 4 月 16 日正式发布，增强其他泄露字符串可信度</li><li>Anthropic 从未跳过次版本号，直接从 Sonnet 4.6 跳到 4.8 不发布 4.7 将史无前例</li><li>若定价匹配 Opus 4.8 效率提升（输入 $3/百万 token），将显著改变生产级智能体成本结构</li></ul>
 <p>📅 <strong>来源</strong>：社区推测（非官方确认）</p>
 <hr>
 <h3>12. A 股 AI 算力板块爆发：英伟达 Cosmos 3 + COMPUTEX 共振</h3>
-<p><strong>摘要</strong>：受英伟达发布与 COMPUTEX 收官共振影响，6月5日 A 股 AI 算力与光通信板块集体爆发。</p>
-<p><strong>关键数据</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>受英伟达发布与 COMPUTEX 收官共振影响，6月5日 A 股 AI 算力与光通信板块集体爆发。</p>
+<p class="sub-label"><strong>关键数据</strong>：</p>
 <ul><li>烽火通信涨停（+10.01%，¥57.22，市值 788 亿）</li><li>怡亚通涨停（+10.05%，¥7.01），AI 算力业务营收同比 +28.79%</li><li>AI 人工智能 ETF（512930）交投活跃，近 5 日总成交 1.98 亿元</li><li>2026 Q1 中国 AI 行业一级市场融资 577 起，同比 +62%；融资总额 763.80 亿元，同比 +144%</li></ul>
 <p>📅 <strong>来源</strong>：新浪财经</p>
 <hr>
 <h2>🛠️ 工具与应用</h2>
 <h3>13. AI 编码战争：微软+谷歌 vs Anthropic+OpenAI</h3>
-<p><strong>摘要</strong>：CNBC 分析指出 2026 年中期企业 AI 竞争核心战场是 AI 编码市场。</p>
-<p><strong>四极格局</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>CNBC 分析指出 2026 年中期企业 AI 竞争核心战场是 AI 编码市场。</p>
+<p class="sub-label"><strong>四极格局</strong>：</p>
 <ul><li><strong>Anthropic</strong>：Claude Code 领先，企业安全 + 智能体差异化</li><li><strong>OpenAI</strong>：Codex 从消费者转向企业</li><li><strong>谷歌</strong>：$100/月 AI 开发者订阅，Gemini 3.5 Flash + Antigravity 2.0 多并行智能体编排</li><li><strong>微软</strong>：MAI 系列 7 款自研模型 + VS Code/GitHub Copilot 原生集成</li></ul>
 <p>📅 <strong>来源</strong>：CNBC</p>
 <hr>
 <h3>14. Anthropic Glasswing 计划扩容：Claude 接入关键基础设施</h3>
-<p><strong>摘要</strong>：Project Glasswing（使用 Claude Mythos 的准机密级网络安全 AI 计划）6月2日扩大合作伙伴网络至电网、供水、医疗、通信、硬件制造领域。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Project Glasswing（使用 Claude Mythos 的准机密级网络安全 AI 计划）6月2日扩大合作伙伴网络至电网、供水、医疗、通信、硬件制造领域。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li>新合作伙伴代码库支持的系统覆盖超 1 亿人</li><li>Claude 已接入 28 个安全合规平台（CrowdStrike、Palo Alto Networks、Okta、Zscaler 等）</li><li>市场开始计入 AI 驱动代码扫描的颠覆风险</li></ul>
 <p>📅 <strong>来源</strong>：Investing.com、Anthropic</p>
 <hr>
 <h3>15. 具身智能：比亚迪/小鹏入局人形机器人</h3>
-<p><strong>摘要</strong>：「车企+机器人」成为 2026 年人形机器人产业最显著组织范式。</p>
-<p><strong>关键动态</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>「车企+机器人」成为 2026 年人形机器人产业最显著组织范式。</p>
+<p class="sub-label"><strong>关键动态</strong>：</p>
 <ul><li>比亚迪执行副总裁确认「正在开发人形机器人」</li><li>小鹏 IRON 机器人计划 Q3 正式亮相、年底高阶量产、门店试商用</li><li>星海图发布全尺寸双足「行客」、广汽发布第三代 GoMate</li><li>核心逻辑：硬件复用 + 场景复用 + 「门店=实验室」</li></ul>
 <p>📅 <strong>来源</strong>：中证报、MIT Technology Review</p>
 <hr>
 <h3>16. 类脑智能产业：市场规模 2034 年将达 $83.5 亿</h3>
-<p><strong>摘要</strong>：《类脑智能产业图谱研究报告》援引 Yole Group 数据。</p>
-<p><strong>关键数据</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>《类脑智能产业图谱研究报告》援引 Yole Group 数据。</p>
+<p class="sub-label"><strong>关键数据</strong>：</p>
 <ul><li>2024 年全球类脑智能市场 $2,800 万 → 2029E $8.22 亿 → 2034E $83.52 亿</li><li>类脑计算 CAGR 67.3%，类脑感知 CAGR ~47%</li><li>上海杨浦区已聚集 34 家类脑企业，核心企业总估值突破 100 亿元</li></ul>
 <p>📅 <strong>来源</strong>：Yole Group、新浪财经</p>
 <hr>
 <h2>🌍 政策与治理</h2>
 <h3>17. 《伟大美国 AI 法案》：269 页两党讨论草案公布</h3>
-<p><strong>摘要</strong>：6月4日，共和党众议员 Obernolte 和民主党众议员 Trahan 公布 269 页《Great American AI Act》讨论草案。</p>
-<p><strong>核心条款</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>6月4日，共和党众议员 Obernolte 和民主党众议员 Trahan 公布 269 页《Great American AI Act》讨论草案。</p>
+<p class="sub-label"><strong>核心条款</strong>：</p>
 <ul><li><strong>州法律 preempt</strong>：若通过，所有州级 AI 监管规则冻结 3 年（直指即将生效的科罗拉多 AI 法案）</li><li><strong>大型 AI 企业要求</strong>：年收入超 $5 亿企业需披露前沿 AI 框架治理、报告重大安全事件</li><li><strong>预算</strong>：商务部设立每年 $1 亿 AI 标准与创新中心</li><li><strong>刑事处罚</strong>：使用 AI 冒充政府官员</li><li><strong>争议</strong>：已有 200+ 州议员致信国会反对 preempt 条款，此前类似条款曾在参议院以 99:1 被删除</li></ul>
 <p>📅 <strong>来源</strong>：Obernolte 办公室、Roll Call、FedScoop</p>
 <hr>
 <h3>18. 科罗拉多 AI 法案 6 月 30 日生效——联邦 vs 州层面的博弈</h3>
-<p><strong>摘要</strong>：美国首个综合性州 AI 法律《科罗拉多州人工智能消费者保护法案》将于 6 月 30 日生效。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>美国首个综合性州 AI 法律《科罗拉多州人工智能消费者保护法案》将于 6 月 30 日生效。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li>要求高风险 AI 系统为居民提供保护，避免在就业/教育/金融/医疗/住房/法律领域受算法歧视</li><li>白宫 2025年12月发布行政命令针对此法案，称反歧视条款会「迫使 AI 产生虚假结果」</li><li>《伟大美国 AI 法案》的 3 年 preempt 条款被视为该行政命令的立法跟进</li><li>如果联邦法案未通过，25 天后企业需立即建立合规框架</li></ul>
 <p>📅 <strong>来源</strong>：科罗拉多州政府</p>
 <hr>
 <h2>🎯 核心要点</h2>
 <ul><li><strong>NVIDIA Cosmos 3 标志物理 AI 时代开启</strong>：英伟达以全模态物理 AI 模型 + 全球开发者联盟复刻 CUDA 生态策略，从「AI 算力提供商」升级为「物理 AI 操作系统」，A 股 AI 算力/光通信板块直接受益涨停</li><li><strong>Anthropic 从实验室走向华尔街</strong>：9650亿美元估值超越 OpenAI，年化收入 470 亿美元 + Q2 预计首次盈利，凭借 Claude Code 在企业端的统治力，正以「AI 第一股」身份重塑资本市场对 AI 商业化的认知</li><li><strong>美国 AI 监管进入「联邦 vs 州」双轨博弈</strong>：《伟大美国 AI 法案》269 页草案以 3 年 preempt 条款直指科罗拉多 AI 法案，200+ 州议员联合反对标志着 AI 监管从学术讨论进入政治角力</li></ul>
 <hr>
-<p><strong>生成时间</strong>：2026-06-06 07:34 +08:00  <br><strong>下一篇</strong>：明日 07:30 继续更新</p>
+<p class="sub-label"><strong>生成时间</strong>：</p>
+<p>2026-06-06 07:34 +08:00</p>
 
 <div class="report-footer">
   数据来源：Wind 金融数据 connector · My Research Central · via WB

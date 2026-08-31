@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -485,7 +510,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>七、数据溯源（如实披露）</h2>
 <table><thead><tr><th>数据项</th><th>来源</th><th>说明</th></tr></thead><tbody><tr><td>指数行情（上证/深证/创业板/科创50/恒生/美股三大）</td><td>Wind MCP <code>get_index_price_indicators</code></td><td>结构化 API，8/24 收盘</td></tr><tr><td>持仓行情（14 A 股 + 10 港股）</td><td>Wind MCP <code>get_stock_price_indicators</code></td><td>结构化 API，8/24 收盘</td></tr><tr><td>新闻/公告/研报文本</td><td>Wind MCP <code>get_financial_news</code></td><td>大盘/宏观/策略/持仓增量</td></tr><tr><td>WTI 原油 / COMEX 黄金</td><td>NeoData <code>--data-type api</code></td><td>结构化 API，8/24</td></tr><tr><td>布伦特原油</td><td>—</td><td>NeoData 结构化 API 未覆盖，标注暂不可用</td></tr><tr><td>调研纪要</td><td>zsxq-cli（水木调研纪要-2.0 / 调研纪要更新）</td><td>关键词 + 时间序浏览</td></tr></tbody></table>
-<p><strong>合规声明</strong>：所有数值型金融数据均来自 Wind 万得金融终端结构化 API 或 NeoData 结构化 API，未使用搜索引擎/新闻文本中的价格数字；未加载 wb-finance-skill。</p>
+<p class="sub-label"><strong>合规声明</strong>：</p>
+<p>所有数值型金融数据均来自 Wind 万得金融终端结构化 API 或 NeoData 结构化 API，未使用搜索引擎/新闻文本中的价格数字；未加载 wb-finance-skill。</p>
 <hr>
 <p>*报告由 WorkBuddy 自动生成 · My Research Central · via WB*</p>
 

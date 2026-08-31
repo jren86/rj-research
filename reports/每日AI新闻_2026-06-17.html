@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -434,8 +459,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>🔴 头条要闻</h2>
 <h3>1. G7 峰会首次迎来 OpenAI、Anthropic、Google 三大 AI CEO 同台</h3>
 <p>6 月 16 日，OpenAI CEO Sam Altman、Anthropic CEO Dario Amodei、Google DeepMind CEO Demis Hassabis 同时出席在法国 Évian-les-Bains 举行的 G7 峰会。这是 AI 行业三大巨头掌门人首次在世界七大经济体领导人面前同台亮相。法国作为 2026 年轮值主席国将 AI 置于峰会议程核心位置。</p>
-<p><strong>核心议程</strong>：前沿 AI 风险（网络/生物安全）、青少年保护、AI 出口管制国际协调。三位 CEO 此前还罕见联名致信美国国会，呼吁对合成 DNA 和 AI 相关生物威胁实施更严格监管。Amodei 出席之际，其公司正因 Fable 5 出口管制令与美国商务部陷入争端——CEO 在 G7 讨论 AI 治理的同时，旗舰模型仍被联邦指令禁用，形成极具张力的场景。</p>
-<p>🔗 <a href="https://www.ai-master.cc/news/news-4004" target="_blank">AI Master 解读</a> | 🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-16-2026" target="_blank">AIToolsRecap</a> | 🔗 <a href="https://dataconomy.com/2026/06/12/ai-leaders-openai-google-deepmind-anthropic-g7-summit/" target="_blank">DataConomy</a></p>
+<p class="sub-label"><strong>核心议程</strong>：</p>
+<p>前沿 AI 风险（网络/生物安全）、青少年保护、AI 出口管制国际协调。三位 CEO 此前还罕见联名致信美国国会，呼吁对合成 DNA 和 AI 相关生物威胁实施更严格监管。Amodei 出席之际，其公司正因 Fable 5 出口管制令与美国商务部陷入争端——CEO 在 G7 讨论 AI 治理的同时，旗舰模型仍被联邦指令禁用，形成极具张力的场景。<br>🔗 <a href="https://www.ai-master.cc/news/news-4004" target="_blank">AI Master 解读</a> | 🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-16-2026" target="_blank">AIToolsRecap</a> | 🔗 <a href="https://dataconomy.com/2026/06/12/ai-leaders-openai-google-deepmind-anthropic-g7-summit/" target="_blank">DataConomy</a></p>
 <hr>
 <h3>2. ChatGPT 月活突破 10 亿，AI 助手市场「赢家通吃」格局瓦解</h3>
 <p>ChatGPT 月活用户正式突破 10 亿，成为史上最快达到该里程碑的消费应用。这一数据是 OpenAI 9 月以 $8520 亿美元估值 IPO 最关键的营收增长证明。但更值得关注的是竞争格局：Claude 同比增长 640%，Meta AI 同比增长 973%（主要通过 WhatsApp/Instagram 集成触达）。AI 助手市场正在从单一赢家向多元化竞争演进。</p>
@@ -444,8 +469,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h3>3. Agentjacking 攻击大规模爆发：Claude Code、Cursor、Codex 同时遭劫持</h3>
 <p>一种名为「Agentjacking」的新型攻击正在活跃利用 AI 编程工具。攻击者注入伪造的 Sentry 错误报告，85% 的 AI 编程 Agent 在遇到精心构造的假错误消息后会遵循攻击者注入的指令。2388 个组织已被识别为暴露。AI Weekly 报道称，这是 2026 年系列 Prompt Injection 攻击中的最新一起——本月早些时候一个自复制蠕虫已通过 AI 编码工具感染微软 73 个内部 GitHub 仓库。</p>
-<p><strong>紧急应对措施</strong>：审计 Sentry 集成配置、审查 AI Agent 活动日志、限制 Agent 文件系统权限、将所有外部数据源视为不可信输入。</p>
-<p>🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-16-2026" target="_blank">AIToolsRecap</a></p>
+<p class="sub-label"><strong>紧急应对措施</strong>：</p>
+<p>审计 Sentry 集成配置、审查 AI Agent 活动日志、限制 Agent 文件系统权限、将所有外部数据源视为不可信输入。<br>🔗 <a href="https://aitoolsrecap.com/Blog/ai-news-june-16-2026" target="_blank">AIToolsRecap</a></p>
 <hr>
 <h3>4. DeepSeek 完成 500 亿人民币首轮融资，特殊架构锁定创始人控制权</h3>
 <p>6 月 16 日，DeepSeek 完成首轮超 $70 亿（约 ¥500 亿）融资，投后估值突破 $500 亿美元，创国内 AI 行业单轮融资新纪录。创始人梁文锋个人出资 ¥200 亿，腾讯 ¥100 亿，宁德 ¥50 亿，京东、网易、IDG 等机构参投。资金未直接注入公司主体，而是进入创始人管理的有限合伙企业——除国家人工智能产业基金外，其余投资方无投票权，且设五年锁定期。DeepSeek 估值在短短两个多月内从 $100 亿跃升至 $500 亿。</p>
@@ -511,7 +536,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer"><br>数据来源：AIToolsRecap · AITOP100 · Bloomberg · DataConomy · TechCrunch · Towards AI · Wired · The Decoder · LM Market Cap<br><br>My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>数据来源：AIToolsRecap · AITOP100 · Bloomberg · DataConomy · TechCrunch · Towards AI · Wired · The Decoder · LM Market Cap<br><br>My Research Central · via WB<br>
 </div>
 
 </body>

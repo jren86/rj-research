@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -438,43 +463,48 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>二、核心持仓增量信息</h2>
 <h3>🔥🔥🔥 工业富联（601138.SH）— 市值超越茅台，站上 A 股第八</h3>
-<p><strong>今日核心事件</strong>：工业富联盘中总市值突破 <strong>1.68 万亿元</strong>，超越贵州茅台（约 1.6 万亿），收盘市值 1.61 万亿元，位居 A 股第八位。今年以来股价累计涨超 30%。</p>
-<p><strong>基本面支撑</strong>（已知但强化市场信心）：</p>
+<p class="sub-label"><strong>今日核心事件</strong>：</p>
+<p>工业富联盘中总市值突破 <strong>1.68 万亿元</strong>，超越贵州茅台（约 1.6 万亿），收盘市值 1.61 万亿元，位居 A 股第八位。今年以来股价累计涨超 30%。<br><strong>基本面支撑</strong>（已知但强化市场信心）：</p>
 <ul><li>Q1 营收 2,510.78 亿（+56.52%），归母净利 105.95 亿（+102.55%），连续三个季度净利破百亿。</li><li>AI GPU 机柜出货量同比增长 <strong>3.8 倍</strong>，AI ASIC 服务器出货量同比增长 <strong>3.2 倍</strong>。</li><li>Q1 经营现金流 250.24 亿元（去年同期仅 12.99 亿）。</li></ul>
-<p><strong>增量催化剂</strong>：</p>
+<p class="sub-label"><strong>增量催化剂</strong>：</p>
 <ul><li>CPO 全光交换机样机正积极推进量产目标，从 Scale-out 到 Scale-up 陆续导入，产品落地持续推进。</li><li>2025 年度拟派现 129.01 亿元，分红率 55.12%（含中期分红共 194.51 亿）。</li><li>鸿海（母公司）Computex 确认扩产：2026 年资本支出同比增 30%，对 AI 服务器增长势头充满信心。</li></ul>
 <blockquote>📎 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN20260603164541a72d3226" target="_blank">界面新闻：工业富联市值超茅台</a><br>📎 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN2026060315333498534111" target="_blank">中国经营报：工业富联盘中涨超5%</a></blockquote>
 <hr>
 <h3>🔥🔥 宁德时代（300750.SZ）— 法巴下调 H 股评级，H/A 溢价争议</h3>
-<p><strong>新增信息</strong>：法国巴黎银行 <strong>下调宁德时代 H 股评级至「中性」</strong>（此前为「跑赢大市」），核心逻辑：H/A 股溢价已扩大至 <strong>55%</strong>。</p>
+<p class="sub-label"><strong>新增信息</strong>：</p>
+<p>法国巴黎银行 <strong>下调宁德时代 H 股评级至「中性」</strong>（此前为「跑赢大市」），核心逻辑：H/A 股溢价已扩大至 <strong>55%</strong>。</p>
 <ul><li>H 股连升六日，创 794.5 港元新高。</li><li>法巴认为合理溢价应为 <strong>20%-30%</strong>，当前 55% 过高，可能限制 H 股相对上升空间。</li><li>溢价归因于全球投资者对宁德时代及储能板块强烈兴趣，以及 H 股低公众持股量。</li></ul>
-<p><strong>需关注</strong>：A 股持有者不受此直接影响，但若 H 股回调可能通过情绪传导影响 A 股。</p>
+<p class="sub-label"><strong>需关注</strong>：</p>
+<p>A 股持有者不受此直接影响，但若 H 股回调可能通过情绪传导影响 A 股。</p>
 <blockquote>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN2026060315430997674515" target="_blank">法巴研报：下调宁德时代H股至中性</a></blockquote>
 <hr>
 <h3>🔥 京东方 A（000725.SZ）— 康宁合作深度剖析：远水难解近渴</h3>
-<p><strong>增量信息</strong>：康宁合作备忘录持续发酵，但今日深度分析文章（源Sight）系统剖析了京东方转型之路，提供关键增量视角：</p>
+<p class="sub-label"><strong>增量信息</strong>：</p>
+<p>康宁合作备忘录持续发酵，但今日深度分析文章（源Sight）系统剖析了京东方转型之路，提供关键增量视角：</p>
 <ul><li><strong>玻璃基封装载板</strong>：2024 年投资 9.93 亿建试验线，已向部分国内客户送样，部分客户通过概念认证，但<strong>良率未达量产水平，尚未实现量产营收</strong>。</li><li><strong>竞品对照</strong>：三星电机（计划 2027 年量产）、英特尔（改造新墨西哥工厂为首个玻璃基板量产基地）、SKC/Absolics（已向 AMD 送样）—— 京东方进度落后于国际大厂。</li><li><strong>光互连业务</strong>：依托子公司华灿光电 MicroLED 产线切入，用于 AI 服务器光模块，与康宁特种光学玻璃技术协同。</li><li><strong>成都 8.6 代 AMOLED 线</strong>：总投资 630 亿元，今年下半年投产（全球首批 8.6 代 OLED 产线），有望拉高整体盈利水平。</li><li><strong>基本面回顾</strong>：2025 年营收 2,045.9 亿（+3.13%），归母净利 58.57 亿（+10.03%），显示器件仍占营收超 80%。</li><li><strong>公司反复澄清</strong>：2-3 年内新业务无法对业绩产生重大影响，与英伟达暂未合作。</li></ul>
 <blockquote>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN20260603174028b620fb60" target="_blank">源Sight：不想赚辛苦钱，但京东方还没吃上半导体这块肉</a></blockquote>
 <hr>
 <h3>🔥🔥 信达生物（01801.HK）— 交银中金续推买入，"利好不涨"困局</h3>
-<p><strong>增量信息</strong>：</p>
+<p class="sub-label"><strong>增量信息</strong>：</p>
 <ul><li><strong>交银国际</strong>维持「买入」评级，目标价 <strong>105 港元</strong>；<strong>中金</strong>维持「跑赢行业」，目标价 <strong>118.3 港元</strong>：</li><li>IBI363 1L NSCLC：优化剂量 cORR 81.8%，DCR 100%，在所有亚组（鳞癌/腺癌、PD-L1&lt;1%/1-49%）均＞75% ORR。</li><li>I/O 耐药 NSCLC：鳞癌队列中位 PFS 改善至 10.1 个月，24 个月 PFS 率 47.8%。</li><li>公司与辉瑞 Co-Co 模式下 12 个项目覆盖 ADC 和多特异性抗体。</li><li>中金上调 2027 年收入预测 3.6% 至 230 亿元。</li></ul>
 <ul><li><strong>市场冷思考</strong>（源媒汇）：创新药百亿 BD 常态化导致「利好不涨」。</li><li>2026 年已有三笔百亿美元级交易（恒瑞×BMS 152 亿、信达×辉瑞 105 亿、石药×阿斯利康 185 亿）。</li><li>半导体赛道资金虹吸效应碾压创新药：5 月科创 50 区间涨幅一度突破 50%。</li><li>信达现金流充足（经营现金流 100 亿，现金超 170 亿），但市场担忧「远水解不了近渴」—— 早期管线到商业化需 5-8 年。</li><li>关键转折等待：海外关键临床突破或 ADC 提前兑现里程碑。</li></ul>
 <blockquote>📎 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260603144612a72cffad" target="_blank">交银国际：维持信达生物买入，目标105港元</a><br>📎 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260603133204b6209c97" target="_blank">中金：维持跑赢行业，目标118.3港元</a></blockquote>
 <hr>
 <h3>🔥 芯碁微装（688630.SH）— 股价持续创新高</h3>
-<p><strong>增量信息</strong>：</p>
+<p class="sub-label"><strong>增量信息</strong>：</p>
 <ul><li>6 月 3 日股价再创历史新高，近一个月累计 <strong>11 个交易日</strong>刷新历史纪录。</li><li>Q1 营收 5.15 亿（+112.48%），净利 1.08 亿（+108.98%），基本每股收益 0.83 元。</li><li>两融余额：10.16 亿元（融资余额 10.05 亿，近 10 日减少 7,254 万 -6.73%）。</li><li>公司累计订单已破 8 亿元创新高（前期已知），WLP 设备获头部客户量产订单。</li></ul>
 <hr>
 <h3>长川科技（300604.SZ）— 板块联动跟涨</h3>
-<p><strong>增量信息</strong>：近 3 日内无重大独立公告或研报。6 月 3 日半导体设备板块整体走强（SK 海力士扩产催化，盛美上海涨 12%），长川科技作为设备板块核心标的跟涨。前期已知：公司是国内半导体测试设备龙头，一季度业绩尚未披露。</p>
+<p class="sub-label"><strong>增量信息</strong>：</p>
+<p>近 3 日内无重大独立公告或研报。6 月 3 日半导体设备板块整体走强（SK 海力士扩产催化，盛美上海涨 12%），长川科技作为设备板块核心标的跟涨。前期已知：公司是国内半导体测试设备龙头，一季度业绩尚未披露。</p>
 <hr>
 <h3>精智达（688627.SH）— 存储产业链景气确认</h3>
-<p><strong>增量信息（间接相关）</strong>：</p>
+<p class="sub-label"><strong>增量信息（间接相关）</strong>：</p>
 <ul><li><strong>TrendForce 上修存储器价格预测</strong>：Q1 DRAM 合约价从 +55-60% 上调至 <strong>+90-95%</strong>，NAND 从 +33-38% 上调至 <strong>+55-60%</strong>，不排除进一步上修空间。</li><li>存储器价格全面上涨 → 利好存储测试设备需求（精智达主营业务）。</li><li>SK 海力士计划五年晶圆产能翻番（Computex 崔泰源确认），存储扩产周期利好上下游设备。</li></ul>
 <hr>
 <h3>容百科技（688005.SH）— 静默期</h3>
-<p><strong>增量信息</strong>：近 3 日内无重大独立公告或研报。前期已知关键信息：钠电签约宁德时代（年采购 ≥60%），硫化物固态电解质中试线 2026 年底投产，Q1 连续盈利扭亏。</p>
+<p class="sub-label"><strong>增量信息</strong>：</p>
+<p>近 3 日内无重大独立公告或研报。前期已知关键信息：钠电签约宁德时代（年采购 ≥60%），硫化物固态电解质中试线 2026 年底投产，Q1 连续盈利扭亏。</p>
 <hr>
 <h2>三、行业 / 板块重大动态</h2>
 <h3>🔥🔥🔥 全球半导体超级景气周期加速</h3>

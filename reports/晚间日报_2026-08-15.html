@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -435,17 +460,20 @@ blockquote p:last-child { margin-bottom: 0; }
 <table><thead><tr><th>日期</th><th>事件</th><th>涉及标的</th></tr></thead><tbody><tr><td>8/12（已过）</td><td>腾讯 Q2 财报：资本开支 527.8 亿（预估 321 亿），Q3 继续大幅加码算力采购</td><td>腾讯控股</td></tr><tr><td>8/13（已过）</td><td>联想 Q1 业绩超预期：营收 1834 亿(+43%)，经调整净利 10.75 亿美元(+176%)</td><td>联想集团</td></tr><tr><td>8/20</td><td>泡泡玛特中期业绩审议</td><td>泡泡玛特</td></tr><tr><td>8月底</td><td>杰克逊霍尔央行年会，美联储讲话扰动全球风险偏好</td><td>全市场</td></tr><tr><td>待定</td><td>长鑫科技 DDR6 量产进度 / 苹果采购国产 DRAM 进展（以公告为准）</td><td>N长鑫</td></tr><tr><td>待定</td><td>恒瑞医药 GLP-1/GIP 双激动剂上市</td><td>恒瑞医药</td></tr></tbody></table>
 <hr>
 <h2>二、宏观</h2>
-<p><strong>🔴 央行 Q2 货币政策执行报告（8/12 发布）</strong>：延续「适度宽松」，明确下阶段要加大逆周期调节力度、加力扩大内需。专栏聚焦完善短端利率调控机制（DR001 成调控目标利率）、设立民营企业再贷款。市场预期三季度降息降准窗口打开。</p>
-<p><strong>🟠 美国 7 月零售销售意外转负（8/14 公布）</strong>：环比负增长，消费降温给经济带来新风险，美联储加息预期再次减弱。此前 7 月 PPI 环比持平、CPI 降温已令加息预期回落。</p>
-<p><strong>🟠 地产政策（水木纪要）</strong>：继 8/7 北京放松限购后，8/12 市场传言 9 月底前将出台贷款贴息、降低公积金贷款利率等政策。但纪要判断当前地产基调仍是「防风险」而非「提振收入预期」，全国性政策或需等 10 月政治局会议。</p>
-<p>🔗 来源：Wind 金融数据服务 / 水木调研纪要-2.0</p>
+<p class="sub-label"><strong>🔴 央行 Q2 货币政策执行报告（8/12 发布）</strong>：</p>
+<p>延续「适度宽松」，明确下阶段要加大逆周期调节力度、加力扩大内需。专栏聚焦完善短端利率调控机制（DR001 成调控目标利率）、设立民营企业再贷款。市场预期三季度降息降准窗口打开。</p>
+<p class="sub-label"><strong>🟠 美国 7 月零售销售意外转负（8/14 公布）</strong>：</p>
+<p>环比负增长，消费降温给经济带来新风险，美联储加息预期再次减弱。此前 7 月 PPI 环比持平、CPI 降温已令加息预期回落。</p>
+<p class="sub-label"><strong>🟠 地产政策（水木纪要）</strong>：</p>
+<p>继 8/7 北京放松限购后，8/12 市场传言 9 月底前将出台贷款贴息、降低公积金贷款利率等政策。但纪要判断当前地产基调仍是「防风险」而非「提振收入预期」，全国性政策或需等 10 月政治局会议。<br>🔗 来源：Wind 金融数据服务 / 水木调研纪要-2.0</p>
 <hr>
 <h2>三、市场概览（隔夜美股 · 8/14 收盘）</h2>
 <p><strong>美股三大指数全线收跌，存储芯片逆势爆发</strong></p>
 <table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>道琼斯</td><td>53732.41</td><td>🟢 -0.20%</td></tr><tr><td>标普500</td><td>7785.76</td><td>🟢 -0.17%</td></tr><tr><td>纳斯达克</td><td>26729.16</td><td>🟢 -0.28%</td></tr><tr><td>费城半导体</td><td>—</td><td>🟢 -0.31%</td></tr></tbody></table>
-<p><strong>存储芯片逆势走强</strong>：闪迪 +7.39%、希捷 +5.65%、西部数据 +4.41%、美光 +2.3%、SK海力士 +0.4%。AMD +6.5% vs 博通 -6%（涨跌分化）。</p>
-<p><strong>中概股表现活跃</strong>：纳斯达克中国金龙指数 +0.61%，阿里巴巴 +1.3%、网易/腾讯音乐 +2%、华住 +3%。联想 ADR 一度涨近 19%（Q1 超预期带动）。</p>
-<p><strong>🔴 大宗商品（周五收盘，NeoData 结构化数据）</strong></p>
+<p class="sub-label"><strong>存储芯片逆势走强</strong>：</p>
+<p>闪迪 +7.39%、希捷 +5.65%、西部数据 +4.41%、美光 +2.3%、SK海力士 +0.4%。AMD +6.5% vs 博通 -6%（涨跌分化）。</p>
+<p class="sub-label"><strong>中概股表现活跃</strong>：</p>
+<p>纳斯达克中国金龙指数 +0.61%，阿里巴巴 +1.3%、网易/腾讯音乐 +2%、华住 +3%。联想 ADR 一度涨近 19%（Q1 超预期带动）。<br><strong>🔴 大宗商品（周五收盘，NeoData 结构化数据）</strong></p>
 <table><thead><tr><th>品种</th><th>最新价</th><th>涨跌幅</th></tr></thead><tbody><tr><td>WTI 原油</td><td>$82.40</td><td>🔴 +1.42%</td></tr><tr><td>COMEX 黄金</td><td>$4432.00</td><td>🔴 +0.26%</td></tr><tr><td>布伦特原油</td><td>暂不可用</td><td>NeoData 结构化 API 未覆盖</td></tr></tbody></table>
 <blockquote>注：现货黄金（Wind 新闻口径）回落至 $4350-4357 区间，与 COMEX 期货 $4432 存在口径差异，请以各自口径区分。</blockquote>
 <p>🔗 来源：Wind 金融数据服务 / NeoData 结构化 API</p>
@@ -453,7 +481,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>四、策略观点</h2>
 <p><strong>🔴 8 月券商金股集中度（Wind，截至 8/11，44 家券商 322 只金股）</strong>：</p>
 <ul><li><strong>宁德时代 15 次推荐高居榜首</strong>（持仓 ⭐），中际旭创 12 次、药明康德 11 次紧随其后</li><li>信息技术板块无论个股数量还是推荐次数均位列第一；新能源、半导体、消费龙头获大幅推荐</li><li>前期热门的 AI 算力标的出现明显降温（行业集中度回落，不再扎堆电子）</li></ul>
-<p><strong>🔵 水木纪要「本周政策观点」核心判断</strong>：</p>
+<p class="sub-label"><strong>🔵 水木纪要「本周政策观点」核心判断</strong>：</p>
 <ul><li>政策节奏与 2024 年相似（年初好于预期→Q2 失速→9 月布局新增政策），但加码空间有限，新旧转型、K 型分化仍是常态</li><li><strong>高度看好算力建设，尤其国产算力</strong>：和林格尔、长三角集群算力建设「24 小时赶工期」，国产卡一卡难求；测算 2030 年算力负荷 60-70GW、累计投资超 10 万亿元（一半是卡）；唯一瓶颈是国产卡产能</li></ul>
 <p>🔗 来源：Wind 金融数据服务 / 水木调研纪要-2.0</p>
 <hr>
@@ -488,7 +516,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>七、数据溯源</h2>
 <table><thead><tr><th>数据</th><th>来源</th><th>说明</th></tr></thead><tbody><tr><td>美股指数/存储股/中概股</td><td>Wind <code>financial_docs.get_financial_news</code></td><td>8/14 收盘数据</td></tr><tr><td>宏观（央行报告/美国零售）</td><td>Wind 新闻</td><td>8/12-8/14</td></tr><tr><td>8 月券商金股</td><td>Wind 新闻</td><td>截至 8/11，44 家券商 322 只</td></tr><tr><td>WTI 原油 $82.40 (+1.42%)</td><td>NeoData <code>--data-type api</code></td><td>8/14 17:00 收盘</td></tr><tr><td>COMEX 黄金 $4432.00 (+0.26%)</td><td>NeoData <code>--data-type api</code></td><td>8/14 17:00 收盘</td></tr><tr><td>布伦特原油</td><td>—</td><td>NeoData 结构化 API 未覆盖，标注暂不可用</td></tr><tr><td>知识星球调研纪要</td><td>zsxq-cli</td><td>水木调研纪要-2.0 / 调研纪要更新</td></tr></tbody></table>
-<p><strong>数据源合规声明</strong>：本报告未加载 wb-finance-skill；所有数值型金融数据来自 Wind MCP 结构化 API 与 NeoData 结构化 API（大宗商品），未降级到搜索引擎或新闻文本价格。本日为休市日，A股/港股无实时行情，故省略个股行情表，聚焦增量信息。</p>
+<p class="sub-label"><strong>数据源合规声明</strong>：</p>
+<p>本报告未加载 wb-finance-skill；所有数值型金融数据来自 Wind MCP 结构化 API 与 NeoData 结构化 API（大宗商品），未降级到搜索引擎或新闻文本价格。本日为休市日，A股/港股无实时行情，故省略个股行情表，聚焦增量信息。</p>
 <hr>
 <p>*数据来源：Wind 金融数据服务 · NeoData 结构化 API · 知识星球 · My Research Central · via WB*</p>
 

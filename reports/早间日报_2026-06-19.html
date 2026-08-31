@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -437,8 +462,9 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>🌐 隔夜宏观</h2>
 <h3>🔴 FOMC鹰派冲击——沃什首秀后市场首日震荡</h3>
-<p><strong>美股6/18收评</strong>：三大指数<strong>大幅反弹</strong>，纳指涨1.9%，芯片股狂欢——英特尔+10%、美光+6%、西部数据+9%、希捷+6.5%。但SpaceX两连跌（突发利空），埃森哲因AI替代担忧大跌19%。道指6/17跌500点后6/18基本收复。</p>
-<p><strong>核心逻辑</strong>：</p>
+<p class="sub-label"><strong>美股6/18收评</strong>：</p>
+<p>三大指数<strong>大幅反弹</strong>，纳指涨1.9%，芯片股狂欢——英特尔+10%、美光+6%、西部数据+9%、希捷+6.5%。但SpaceX两连跌（突发利空），埃森哲因AI替代担忧大跌19%。道指6/17跌500点后6/18基本收复。</p>
+<p class="sub-label"><strong>核心逻辑</strong>：</p>
 <ul><li>FOMC鹰派（9/18人支持加息）已被完整定价，市场注意力转向基本面——<strong>英特尔/AAPL联手造芯、HBM4E送样</strong>等科技利好对冲</li><li>四巫日（史上最大规模期权到期）成交量巨大，存在技术性波动</li><li>2Y美债收益率稳定在4.14%附近，10Y变动有限，利差收窄</li></ul>
 <p><div class="highlight highlight-red"><br>🔴 <strong>关键判断</strong>：FOMC鹰派信号已充分定价，进一步收紧空间有限（年内加息概率从40%降至15.7%）。但经济数据强劲（上周首申22.6万、Q1 GDP上修）使美联储缺乏松口理由。紧缩风险实质性下降需等经济边际走弱信号。<br></div></p>
 <h3>🔴 美伊协议正式签署生效——霍尔木兹全面重开</h3>
@@ -467,7 +493,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>国盛/天风/广发/招商</h3>
 <table><thead><tr><th>机构</th><th>核心观点</th><th>来源</th></tr></thead><tbody><tr><td><strong>西部计算机</strong></td><td>全球半导体进入扩产周期，国产设备率先受益——建议关注北方华创/中微公司/拓荆科技/华海清科/盛美上海/芯源微/长川科技 ⭐<strong>新增推荐</strong></td><td>水木调研纪要-2.0 6/18</td></tr><tr><td><strong>招银国际</strong></td><td>半导体走强难阻恒指承压，沃什首场记者会美股下跌反应过度，中长期港股估值修复逻辑未变</td><td>每日研究短评 6/18</td></tr><tr><td><strong>广发建筑</strong></td><td>洁净室观点重申——半导体扩产+AI数据中心双需求驱动</td><td>水木调研纪要 6/4</td></tr><tr><td><strong>国信期货</strong></td><td>贵金属及有色金属受美元走强压制，短期谨慎，中长期黄金仍看多</td><td>水木调研纪要 6/18</td></tr></tbody></table>
 <h3>FOMC深度解读（水木调研纪要-2.0 6/18）</h3>
-<p><strong>鹰派+改革双关键词</strong>：</p>
+<p class="sub-label"><strong>鹰派+改革双关键词</strong>：</p>
 <ul><li>点阵图9/18人支持年内加息，2Y美债+16bp，年内不加息概率从40%降至15.7%</li><li>沃什改革：取消前瞻指引、设5个工作组（沟通/资负表/数据/AI/通胀）、年底前审查所有沟通渠道</li><li><strong>对市场</strong>：会议前后短期波动加大，中期取决于沃什"实时数据决策"框架能否建立</li></ul>
 <blockquote>⚠️ zsxq中【美联储6月议息会议要点】含图片附件，需手动在APP中查看完整内容</blockquote>
 <p><div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球-水木调研纪要-2.0/调研纪要更新</a></div></p>
@@ -508,7 +534,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer"><br>  数据来源：Wind万得 · 腾讯自选股 · 知识星球（水木调研纪要-2.0/调研纪要更新） · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>  数据来源：Wind万得 · 腾讯自选股 · 知识星球（水木调研纪要-2.0/调研纪要更新） · My Research Central · via WB<br>
 </div>
 
 </body>

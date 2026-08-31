@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -441,7 +466,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>2.2 营收结构与趋势</h3>
 <p><strong>2025年报数据（来源：NeoData Financial Search / 公司年报）</strong>：</p>
 <table><thead><tr><th>维度</th><th>2025年</th><th>占比</th><th>同比</th></tr></thead><tbody><tr><td>营业总收入</td><td>75.30亿元</td><td>100%</td><td>+18.64%</td></tr><tr><td>电线电缆行业</td><td>52.42亿元</td><td>69.62%</td><td>+26.10%</td></tr><tr><td>油服行业</td><td>20.69亿元</td><td>27.47%</td><td>+5.33%</td></tr><tr><td>境外收入</td><td>54.43亿元</td><td>72.29%</td><td>+28.37%</td></tr><tr><td>境内收入</td><td>18.67亿元</td><td>24.80%</td><td>-0.71%</td></tr></tbody></table>
-<p><strong>历史业绩趋势（来源：NeoData / 公司年报）</strong>：</p>
+<p class="sub-label"><strong>历史业绩趋势（来源：NeoData / 公司年报）</strong>：</p>
 <table><thead><tr><th>年份</th><th>营收（亿元）</th><th>YoY</th><th>归母净利润（亿元）</th><th>YoY</th><th>EPS（元）</th></tr></thead><tbody><tr><td>2022</td><td>51.93</td><td>—</td><td>2.57</td><td>—</td><td>0.51</td></tr><tr><td>2023</td><td>53.64</td><td>+3.3%</td><td>3.64</td><td>+41.6%</td><td>0.71</td></tr><tr><td>2024</td><td>63.47</td><td>+18.3%</td><td>3.19</td><td>-12.3%</td><td>0.62</td></tr><tr><td>2025</td><td>75.30</td><td>+18.6%</td><td>2.86</td><td>-10.5%</td><td>0.56</td></tr><tr><td><strong>1Q26</strong></td><td><strong>21.33</strong></td><td><strong>+38.9%</strong></td><td><strong>0.65</strong></td><td><strong>+54.8%</strong></td><td>0.13</td></tr></tbody></table>
 <blockquote>⚠️ <strong>关键观察</strong>：2024-2025年呈现典型的"增收不增利"格局——营收连续两年增长18%+，但净利润连续下滑（-12.3%、-10.5%）。1Q26出现拐点信号，净利润同比转正且大幅增长54.8%，但需注意2025Q1基数极低（同比-53.8%）。</blockquote>
 <h3>2.3 盈利能力</h3>
@@ -467,7 +492,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <table><thead><tr><th>维度</th><th>详情</th></tr></thead><tbody><tr><td>北美渠道</td><td>通过KWI LLC（美国全国性电缆品牌商和分销商）覆盖市场；韩国+巴拿马工厂保障供货稳定</td></tr><tr><td>油服核心客户</td><td>哈里伯顿、贝克休斯、斯伦贝谢——全球油服三巨头均为客户</td></tr><tr><td>产品认证</td><td>拥有UL/CE/TUV等国际认证，进入壁垒高</td></tr><tr><td>新场景拓展</td><td>光伏专用线缆、数据中心专用线缆——切入AI算力基础设施主题</td></tr></tbody></table>
 <h3>4.3 电解铝一体化：向上游延伸</h3>
 <p>安哥拉年产12万吨电解铝项目2026年1月正式投产，形成"铝锭→线缆"一体化。安哥拉工业电价约0.011美元/kWh（约0.08元/度），对比国内电解铝加权平均电价约0.42元/度。</p>
-<p><strong>吨铝利润测算（来源：券商内部研报模型）</strong>：</p>
+<p class="sub-label"><strong>吨铝利润测算（来源：券商内部研报模型）</strong>：</p>
 <table><thead><tr><th>情景</th><th>吨铝利润</th><th>12万吨年化利润</th></tr></thead><tbody><tr><td>悲观</td><td>3,774元</td><td>4.53亿元</td></tr><tr><td>中性</td><td>4,751-6,336元</td><td>5.70-7.60亿元</td></tr><tr><td>乐观</td><td>6,821元</td><td>8.19亿元</td></tr></tbody></table>
 <blockquote>对比：2025年华通线缆净利润仅2.86亿元。中性假设下，电解铝项目可贡献超过一个华通的利润体量——<strong>"再造一个华通"并非空谈</strong>。</blockquote>
 <h3>4.4 铝土矿供给催化</h3>
@@ -519,12 +544,14 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>九、市场一致观点 vs 我的差异</h2>
 <h3>9.1 市场共识</h3>
 <table><thead><tr><th>机构/来源</th><th>评级</th><th>目标价</th><th>核心逻辑</th></tr></thead><tbody><tr><td><strong>中金公司</strong>（2026年4月28日）</td><td>跑赢行业</td><td><strong>49.0元</strong>（+123%上调）</td><td>电解铝带来业绩弹性，2026E/2027E净利5.55/8.36亿</td></tr><tr><td>国投证券（2024年10月）</td><td>买入-A</td><td>13.65元（已过时）</td><td>产能布局完善，成长性突出</td></tr><tr><td>券商内部研报</td><td>积极</td><td>—</td><td>"再造一个华通"，吨铝利润可观</td></tr></tbody></table>
-<p><strong>市场一致叙事</strong>："安哥拉电解铝项目彻底改变公司基本面，从低毛利的线缆厂升级为'线缆+铝业'一体化企业，利润体量将翻倍甚至翻三倍，2027年PE仅27x不贵。"</p>
+<p class="sub-label"><strong>市场一致叙事</strong>：</p>
+<p>"安哥拉电解铝项目彻底改变公司基本面，从低毛利的线缆厂升级为'线缆+铝业'一体化企业，利润体量将翻倍甚至翻三倍，2027年PE仅27x不贵。"</p>
 <h3>9.2 我的差异</h3>
 <table><thead><tr><th>维度</th><th>市场共识</th><th>我的观点</th><th>差异原因</th></tr></thead><tbody><tr><td><strong>当前买入时机</strong></td><td>现在就是买点</td><td><strong>等待验证</strong></td><td>PE已处94.79%分位，乐观预期已price-in</td></tr><tr><td><strong>安哥拉确定性</strong></td><td>投产=成功</td><td><strong>产能爬坡风险未出清</strong></td><td>从未完整季度验证，Q2数据是关键</td></tr><tr><td><strong>财务健康度</strong></td><td>项目贷款正常</td><td><strong>负债率急升+现金流极弱是红线</strong></td><td>流动比率1.0，经营现金流几乎为零</td></tr><tr><td><strong>公司治理</strong></td><td>股权激励正面</td><td><strong>家族治理+考核未达标需警惕</strong></td><td>2025年考核miss，张家控股33%</td></tr><tr><td><strong>估值方法</strong></td><td>2027E 27x PE合理</td><td><strong>27x是两年后的预期，折现后安全边际不足</strong></td><td>任何未达预期的年份都会压缩估值</td></tr><tr><td><strong>外资信号</strong></td><td>忽略</td><td>⚠️ <strong>高盛/摩根大通龙虎榜卖出是重要信号</strong></td><td>外资通常先行，比内资研报更值得参考</td></tr></tbody></table>
 <h3>9.3 核心分歧</h3>
 <p>市场把"安哥拉电解铝投产"理解为"业绩确定翻倍"，而我认为这只是"预期浪"的开始——业绩需要逐季验证。当前68x PE是对2027年才有望实现的8.36亿利润的提前透支。如果2026年实际净利润仅5-5.5亿（符合中金预期），对应PE仍在37-41x，不算特别便宜。</p>
-<p><strong>我的核心逻辑</strong>：方向正确（安哥拉确实有再造一个华通的潜力），但节奏需要把控（等待Q2产量数据确认产能爬坡顺利，再以更合理的估值介入）。</p>
+<p class="sub-label"><strong>我的核心逻辑</strong>：</p>
+<p>方向正确（安哥拉确实有再造一个华通的潜力），但节奏需要把控（等待Q2产量数据确认产能爬坡顺利，再以更合理的估值介入）。</p>
 <hr>
 <h2>十、短中长期投资研判</h2>
 <h3>10.1 市场环境与情绪面</h3>

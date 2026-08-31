@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -452,7 +477,9 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>2.2 Jeremy Grantham &amp; Edward Chancellor：极端泡沫的历史解剖</h3>
 <p>GMO 联合创始人 Jeremy Grantham 与金融历史学家 Edward Chancellor 于 2026 年 1 月 28 日联合发布了一份可能是目前最全面的 AI 泡沫分析报告。Chancellor 基于 300+ 个历史两西格玛泡沫的研究，提炼出技术狂热周期的 <strong>十大特征</strong>，并逐项与当前 AI 热潮对比：</p>
 <h4>特征一：新技术引发夸张的、看似有理的论断</h4>
-<p>Altman："修复气候、建立太空殖民地、发现所有物理学都将变得寻常"  <br>Zuckerberg：AI 将引领"人类新时代"  <br><strong>同时也伴随极端恐惧</strong>：Musk 称 AI 可能是"人类最大的危险之一"，Bengio 警告"可能导致人类灭绝"</p>
+<p>Altman："修复气候、建立太空殖民地、发现所有物理学都将变得寻常"  <br>Zuckerberg：AI 将引领"人类新时代"  </p>
+<p class="sub-label"><strong>同时也伴随极端恐惧</strong>：</p>
+<p>Musk 称 AI 可能是"人类最大的危险之一"，Bengio 警告"可能导致人类灭绝"</p>
 <blockquote>"历史上从未有过对一项技术的意见如此强烈且如此两极分化：AI 承诺将带给我们天堂或地狱。"</blockquote>
 <h4>特征二：宽松的货币和信贷环境</h4>
 <ul><li>2020-2021 零利率 + 美联储大规模购债</li><li>当前财政赤字达<strong>战时规模</strong>，支撑企业利润</li><li>利率虽有上升，但相对 GDP 增长和通胀仍处历史低位</li></ul>
@@ -468,7 +495,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <table><thead><tr><th>估值指标</th><th>当前值</th><th>历史比较</th></tr></thead><tbody><tr><td><strong>CAPE（周期调整市盈率）</strong></td><td><strong>40 倍</strong></td><td>仅低于 2000 年互联网泡沫 43.5 倍；2021 年峰值 38.6 倍</td></tr><tr><td><strong>巴菲特指标（市值/GDP）</strong></td><td><strong>历史最高</strong></td><td>超过 2000 年峰值</td></tr><tr><td><strong>市销率 &gt; 10 倍的股票占比</strong></td><td><strong>历史最高</strong></td><td>超过此前任何时期</td></tr></tbody></table>
 <p><strong>极端个股：</strong></p>
 <table><thead><tr><th>公司</th><th>估值异常</th></tr></thead><tbody><tr><td>Palantir</td><td>市销率超 <strong>100 倍</strong></td></tr><tr><td>Tesla</td><td>市盈率超 <strong>300 倍</strong>（盈利同比下降 61%，收入负增长）</td></tr><tr><td>OpenAI</td><td>从 2023 年 $300 亿 → 2026 年私募 $8,520 亿</td></tr><tr><td>Anthropic</td><td>从 2022 年 $40 亿 → 2026 年 $9,650 亿</td></tr></tbody></table>
-<p><strong>市场集中度</strong>：美国占 MSCI 世界指数 <strong>70%+</strong>，标普 500 前 30 只 AI 相关股票占市值 <strong>44%</strong>。</p>
+<p class="sub-label"><strong>市场集中度</strong>：</p>
+<p>美国占 MSCI 世界指数 <strong>70%+</strong>，标普 500 前 30 只 AI 相关股票占市值 <strong>44%</strong>。</p>
 <blockquote>"FOMO（错失恐惧）远远压倒了对损失的恐惧，成为 AI 投资者的主要驱动力。"</blockquote>
 <h4>特征七：技术不成熟</h4>
 <ul><li><strong>幻觉问题</strong>：LLM 持续产生看似合理但虚假的信息</li><li><strong>AGI 路径存疑</strong>：LeCun 认为需要全新架构；Sutskever 称"扩展的时代已经结束"；陶哲轩怀疑真正的 AGI 在当前 AI 工具范围内</li><li><strong>企业 ROI 惨淡</strong>：MIT 2025 年 7 月研究——企业 AI 试点中仅 <strong>5%</strong> 显示可衡量的收入或利润改善</li></ul>

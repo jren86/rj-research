@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -436,13 +461,14 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>📊 宏观与政策</h2>
 <table><thead><tr><th>事件</th><th>要点</th></tr></thead><tbody><tr><td>央行买断式逆回购</td><td>5000亿3个月期，到期3000亿，净投放2000亿；连续第二个月加量</td></tr><tr><td>7月服务业PMI</td><td>今日公布（盘中）</td></tr><tr><td>上半年服务贸易</td><td>进出口总额37,797.5亿元，同比+8.3%；出口+17.6%</td></tr><tr><td>物流业景气指数</td><td>7月50.4%，环比-0.2pct，新订单50.5%连续5月回升</td></tr><tr><td>L3/L4自动驾驶国标</td><td>GB 44721-2026 发布，2027年7月实施</td></tr><tr><td>新型电力系统规划</td><td>发改委/能源局印发「十五五」规划</td></tr><tr><td>集成电路布图设计保护条例</td><td>修订版发布，利好半导体知识产权保护</td></tr></tbody></table>
-<p><strong>海外宏观</strong>：</p>
+<p class="sub-label"><strong>海外宏观</strong>：</p>
 <ul><li>🔴 美伊接近达成霍尔木兹海峡短期停火协议，油价暴跌后小幅回升</li><li>美债收益率全线回落：10Y跌6bp至4.61%，2Y跌4.6bp至4.19%</li><li>厄尔尼诺持续加强，秋冬季或达峰值</li></ul>
 <hr>
 <h2>📈 市场概览</h2>
 <h3>A股指数</h3>
 <table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>3,878.43</td><td><span class="red">+1.47%</span></td><td>—</td></tr><tr><td>深证成指</td><td>14,144.20</td><td><span class="red">+1.86%</span></td><td>1.45万亿</td></tr><tr><td>创业板指</td><td>3,535.14</td><td><span class="red">+1.32%</span></td><td>7,205亿</td></tr><tr><td>科创50</td><td>1,693.67</td><td><span class="red">+4.78%</span></td><td>1,543亿</td></tr></tbody></table>
-<p><strong>盘面特征</strong>：低开高走，放量普涨。半导体/PCB/存储/光模块/TMT全线爆发，科创50大涨近5%。银行、白酒小幅回调。</p>
+<p class="sub-label"><strong>盘面特征</strong>：</p>
+<p>低开高走，放量普涨。半导体/PCB/存储/光模块/TMT全线爆发，科创50大涨近5%。银行、白酒小幅回调。</p>
 <h3>港股指数</h3>
 <table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>恒生指数</td><td>25,915.82</td><td><span class="red">+0.24%</span></td></tr><tr><td>恒生科技</td><td>4,933.07</td><td><span class="red">+0.97%</span></td></tr></tbody></table>
 <h3>大宗商品 &amp; 汇率</h3>
@@ -450,11 +476,16 @@ blockquote p:last-child { margin-bottom: 0; }
 <blockquote>💡 WTI昨日暴跌6.15%后今日小幅反弹。美伊停火协议若落地，油价仍有下行空间。</blockquote>
 <hr>
 <h2>💡 策略观点</h2>
-<p><strong>巨丰投顾</strong>：央行逆回购加量+外围大涨，A股低开高走。短期震荡整理，机器人/半导体/智能驾驶有望活跃；中线关注AI、军工、半导体、机器人等景气板块。</p>
-<p><strong>兴业证券</strong>：市场集中调整已计价相当程度悲观预期，后续存在「预期差」修复契机。中东地缘对情绪冲击最大的阶段大概率已过去。</p>
-<p><strong>申万宏源</strong>：中东最大冲击就在当下。中国维护供应链/能源安全的能力将再获验证，是叙事重回强势的契机。A股处于两阶段上涨的震荡休整期。</p>
-<p><strong>华西证券</strong>：中国政策环境更具确定性，监管明确释放稳市信号。输入性通胀对货币政策掣肘有限。</p>
-<p><strong>国信证券</strong>：美联储政策变化对A股影响偏短期。本轮始于2024年9月24日的A股上行周期未变。</p>
+<p class="sub-label"><strong>巨丰投顾</strong>：</p>
+<p>央行逆回购加量+外围大涨，A股低开高走。短期震荡整理，机器人/半导体/智能驾驶有望活跃；中线关注AI、军工、半导体、机器人等景气板块。</p>
+<p class="sub-label"><strong>兴业证券</strong>：</p>
+<p>市场集中调整已计价相当程度悲观预期，后续存在「预期差」修复契机。中东地缘对情绪冲击最大的阶段大概率已过去。</p>
+<p class="sub-label"><strong>申万宏源</strong>：</p>
+<p>中东最大冲击就在当下。中国维护供应链/能源安全的能力将再获验证，是叙事重回强势的契机。A股处于两阶段上涨的震荡休整期。</p>
+<p class="sub-label"><strong>华西证券</strong>：</p>
+<p>中国政策环境更具确定性，监管明确释放稳市信号。输入性通胀对货币政策掣肘有限。</p>
+<p class="sub-label"><strong>国信证券</strong>：</p>
+<p>美联储政策变化对A股影响偏短期。本轮始于2024年9月24日的A股上行周期未变。</p>
 <hr>
 <h2>🎯 持仓个股监控</h2>
 <h3>A股持仓（14只）</h3>

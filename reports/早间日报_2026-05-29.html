@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -446,8 +471,10 @@ blockquote p:last-child { margin-bottom: 0; }
 <blockquote>📌 科网股普跌：美团-W跌超5%，阿里/腾讯/哔哩哔哩/百度跌超2%；<strong>华虹半导体涨超11%、中芯国际涨超3%</strong>（芯片局部活跃）。创新药板块集体承压，信达生物跌4.05%。</blockquote>
 <h3>A股昨日（5月28日收盘）</h3>
 <table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>上证指数</td><td>4,098.64</td><td><strong>+0.12%</strong></td><td>2.99万亿成交额，缩量2726亿</td></tr><tr><td>深证成指</td><td>15,861.89</td><td><strong>+0.80%</strong></td><td>—</td></tr><tr><td>创业板指</td><td>4,125.07</td><td><strong>+1.96%</strong></td><td>领涨</td></tr><tr><td>北证50</td><td>—</td><td><strong>+2.55%</strong></td><td>领涨</td></tr></tbody></table>
-<p><strong>市场结构</strong>：上涨3018家 / 下跌2365家，涨跌比约1.28:1。「主板弱、中小创强」分化格局延续。</p>
-<p><strong>北向资金</strong>：5月28日成交 <strong>3835.01亿元</strong>，占两市总成交额12.92%；净买入 <strong>28.18亿元</strong>，贵州茅台获净买入4.43亿元居首，中国平安3.91亿元次之。</p>
+<p class="sub-label"><strong>市场结构</strong>：</p>
+<p>上涨3018家 / 下跌2365家，涨跌比约1.28:1。「主板弱、中小创强」分化格局延续。</p>
+<p class="sub-label"><strong>北向资金</strong>：</p>
+<p>5月28日成交 <strong>3835.01亿元</strong>，占两市总成交额12.92%；净买入 <strong>28.18亿元</strong>，贵州茅台获净买入4.43亿元居首，中国平安3.91亿元次之。</p>
 <h3>行业轮动（5月28日）</h3>
 <table><thead><tr><th>方向</th><th>板块</th></tr></thead><tbody><tr><td>🟢 领涨</td><td>煤炭开采、电力、AI算力（PCB/存储芯片/先进封装）、北证50题材</td></tr><tr><td>🔴 领跌</td><td>半导体设备、贵金属、白酒、港股创新药</td></tr></tbody></table>
 <blockquote>⚠️ <strong>风险提示</strong>：港股跨境监管升级传闻导致高杠杆灰色资金撤离，科技板块场外流动性溢价压缩；半导体板块前期涨幅较大，获利盘较重。</blockquote>

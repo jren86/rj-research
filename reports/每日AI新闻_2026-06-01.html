@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -436,127 +461,165 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>1. AI 大模型</h2>
 <h3>1.1 Anthropic Claude Code 重磅升级（5月28日）⭐</h3>
-<p><strong>事件内容</strong>：Anthropic 发布 Claude Code 史上最大版本更新，核心亮点是「自愈」功能——当遇到损坏文件或异常输入时，系统可自动检测并绕过异常点，无需重启会话即可继续运行；同时配套一键反馈功能，系统可基于失败场景自主学习优化。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>Anthropic 发布 Claude Code 史上最大版本更新，核心亮点是「自愈」功能——当遇到损坏文件或异常输入时，系统可自动检测并绕过异常点，无需重启会话即可继续运行；同时配套一键反馈功能，系统可基于失败场景自主学习优化。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>标志着 AI 编程工具从「技术展示」转向「工程可用」，稳定性成为新的竞争主轴</li><li>「自愈」能力是 AI Agent 自主性的重要里程碑，直接影响企业级场景的落地信心</li><li>Anthropic 年化收入已达 440 亿美元，超越 OpenAI（250 亿美元），此次更新进一步巩固其在企业市场的领先地位</li></ul>
-<p><strong>来源</strong>：搜狐科技 · 2026-05-28</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>搜狐科技 · 2026-05-28</p>
 <hr>
 <h3>1.2 OpenAI GPT-5.6 曝光：150万 Tokens 上下文窗口</h3>
-<p><strong>事件内容</strong>：多名开发者在 OpenAI Codex 后端日志中发现未官宣模型 <code>GPT-5.6</code>，内部代号 <code>iris-alpha</code>。该模型上下文窗口达 <strong>150万 tokens</strong>，较 GPT-5.5 提升约 43%；在输入 90万 token 时仍可流畅响应，前端界面生成能力接近商用级。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>多名开发者在 OpenAI Codex 后端日志中发现未官宣模型 <code>GPT-5.6</code>，内部代号 <code>iris-alpha</code>。该模型上下文窗口达 <strong>150万 tokens</strong>，较 GPT-5.5 提升约 43%；在输入 90万 token 时仍可流畅响应，前端界面生成能力接近商用级。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>150万 tokens 上下文意味着可一次性处理超长代码库或完整技术文档，对企业级 RAG 应用有重大意义</li><li>上下文长度竞赛重新加速，可能倒逼竞品（Claude、Gemini）跟进</li><li>预计 2026年6月正式发布，时间窗口临近</li></ul>
-<p><strong>来源</strong>：IT之家 / it168 · 2026-05-26</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>IT之家 / it168 · 2026-05-26</p>
 <hr>
 <h3>1.3 阶跃星辰 Step 3.7 Flash 开源发布 ⭐</h3>
-<p><strong>事件内容</strong>：阶跃星辰发布开源模型 <strong>Step 3.7 Flash</strong>，以 Apache 2.0 协议开放权重。核心 benchmark 成绩：</p>
-<ul><li>ClawEval-1.1：<strong>67.1 分（排名第一）</strong></li><li>SimpleVQA Search：<strong>79.2 分（排名第一）</strong></li><li>SWE-PRO：<strong>56.3 分（排名第二）</strong></li><li>V* Python：<strong>95.3 分</strong></li></ul>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>阶跃星辰发布开源模型 <strong>Step 3.7 Flash</strong>，以 Apache 2.0 协议开放权重。核心 benchmark 成绩：</p>
+<ul><li>SimpleVQA Search：<strong>79.2 分（排名第一）</strong></li><li>SWE-PRO：<strong>56.3 分（排名第二）</strong></li><li>V* Python：<strong>95.3 分</strong></li></ul>
 <p>该模型专门针对 Agent 时代的效率、可靠性、多模态执行等痛点优化。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>Apache 2.0 协议可商用，对国内企业构建 AI 产品是重大利好</li><li>在 Agent 评测（SWE-PRO）中排名第二，显示国产模型在代码执行能力上快速追赶</li><li>阶跃星辰近 25 亿美元融资即将落地，计划赴港上市，国产大模型「IPO 潮」开启</li></ul>
-<p><strong>来源</strong>：AIbase 新闻 · 2026-05-31</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>AIbase 新闻 · 2026-05-31</p>
 <hr>
 <h3>1.4 谷歌 I/O 2026：Gemini 升级为操作系统级能力</h3>
-<p><strong>事件内容</strong>：谷歌在 I/O 2026 大会上宣布将 Gemini 从插件类 AI 工具升级为操作系统级能力，植入手机、手表、汽车、Googlebook 等全安卓生态设备，支持跨设备无缝协同执行任务。同时发布 Gemini 3.5 Flash 和视频生成模型 Omni。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>谷歌在 I/O 2026 大会上宣布将 Gemini 从插件类 AI 工具升级为操作系统级能力，植入手机、手表、汽车、Googlebook 等全安卓生态设备，支持跨设备无缝协同执行任务。同时发布 Gemini 3.5 Flash 和视频生成模型 Omni。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>谷歌的打法是将 AI 能力「嵌入系统层」，与 OpenAI/Anthropic 的「应用层」路线形成差异化竞争</li><li>对安卓生态开发者来说，Gemini API 的系统级集成将大幅降低 AI 功能接入成本</li><li>「AI 操作系统」赛道正式开启，苹果、微软面临直接竞争压力</li></ul>
-<p><strong>来源</strong>：腾讯新闻 · 2026-05-20</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>腾讯新闻 · 2026-05-20</p>
 <hr>
 <h3>1.5 大模型行业进入「价值验证期」：商业化回报开始兑现 ⭐</h3>
-<p><strong>事件内容</strong>：2026年5月，全球 AI 行业正式从「技术信仰期」迈入「价值验证期」：</p>
-<ul><li><strong>阿里云</strong>2026财年第四季度云收入 416.26 亿元（同比+38%），AI 季度收入 89.71 亿元，年化突破 358 亿元，外部商业化占比首次突破 30%</li><li><strong>Anthropic</strong> 年化收入 440 亿美元，超越 OpenAI</li><li><strong>快手可灵 AI</strong> 视频生成业务年化收入达 5 亿美元，计划以 200 亿美元估值融资 20 亿美元</li><li><strong>字节豆包</strong> 推出分层付费计划，月活 3.45 亿，日均 Token 使用量突破 120 万亿</li></ul>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>2026年5月，全球 AI 行业正式从「技术信仰期」迈入「价值验证期」：</p>
+<ul><li><strong>Anthropic</strong> 年化收入 440 亿美元，超越 OpenAI</li><li><strong>快手可灵 AI</strong> 视频生成业务年化收入达 5 亿美元，计划以 200 亿美元估值融资 20 亿美元</li><li><strong>字节豆包</strong> 推出分层付费计划，月活 3.45 亿，日均 Token 使用量突破 120 万亿</li></ul>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>这是大模型行业首次出现明确的商业化回报信号，打破「烧钱无底洞」质疑</li><li>对一级市场投资逻辑有重大影响：从「押注技术」转向「押注商业化执行力」</li><li>阿里云率先宣布 AI 收入占比将在一年内外突破 50%，为行业提供了可参考的商业化路径</li></ul>
-<p><strong>来源</strong>：浙商证券 / 搜狐财经 · 2026-05</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>浙商证券 / 搜狐财经 · 2026-05</p>
 <hr>
 <h3>1.6 Meta 搁置开源 Llama，推出闭源模型 Muse Spark</h3>
-<p><strong>事件内容</strong>：Meta 在发布 1.2 万亿参数开源模型 Llama 4 Ultra 后，宣布搁置原定开源计划，转而推出闭源模型 Muse Spark，并成立 Meta Superintelligence Labs 探索商业化路径。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>Meta 在发布 1.2 万亿参数开源模型 Llama 4 Ultra 后，宣布搁置原定开源计划，转而推出闭源模型 Muse Spark，并成立 Meta Superintelligence Labs 探索商业化路径。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>「开源难盈利、闭源失生态」的两难困境在 Meta 身上充分暴露，对国内坚持开源路线的厂商（如通义、智谱）有警示意义</li><li>闭源切换时机与路径将成为行业重要观察指标</li><li>Llama 4 Ultra 多项编程、推理基准已超越 GPT-4o，技术实力不容小觑</li></ul>
-<p><strong>来源</strong>：搜狐科技 · 2026-05</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>搜狐科技 · 2026-05</p>
 <hr>
 <h3>1.7 百度文心 5.1 发布：参数压缩 2/3，成本降至 6%</h3>
-<p><strong>事件内容</strong>：百度发布文心大模型 5.1，采用「多维弹性预训练」技术，仅用同规模模型约 <strong>6% 的预训练成本</strong>即可达到领先水平，总参数压缩至原来 1/3，激活参数压缩至 1/2，在智能体评估中超越 DeepSeek-V4-Pro。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>百度发布文心大模型 5.1，采用「多维弹性预训练」技术，仅用同规模模型约 <strong>6% 的预训练成本</strong>即可达到领先水平，总参数压缩至原来 1/3，激活参数压缩至 1/2，在智能体评估中超越 DeepSeek-V4-Pro。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>「成本效率」取代「参数规模」成为新的竞争维度，对算力预算有限的企业和政府客户有重大吸引力</li><li>中信证券预测 5-6 月将迎来模型升级窗口期，长程智能体和多模态技术成为竞争焦点</li><li>文心 5.1 的压缩技术路线若可复现，将对整个行业的算力需求预测产生重大影响</li></ul>
-<p><strong>来源</strong>：中信证券研报 · 2026-05</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>中信证券研报 · 2026-05</p>
 <hr>
 <h2>2. AI Coding</h2>
 <h3>2.1 Claude Code「自愈」功能上线：AI 编程工具进入工程可靠时代 ⭐</h3>
-<p><strong>事件内容</strong>：Anthropic 于 5月28日发布的 Claude Code 重大更新，核心包括：</p>
-<ul><li><strong>自愈功能</strong>：遇到损坏文件/异常输入时自动检测并绕过，无需重启会话</li><li><strong>流式输出</strong>：实时展示 AI 处理步骤与逻辑链条，运行状态完全透明</li><li><strong>报错优化</strong>：错误提示附带故障背景解释，降低排查时间成本</li><li><strong>MCP 协议优化</strong>：显著提升本地连接可靠性</li><li><strong>全屏渲染器重构</strong>：彻底解决屏幕闪烁问题</li></ul>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>Anthropic 于 5月28日发布的 Claude Code 重大更新，核心包括：</p>
+<ul><li><strong>流式输出</strong>：实时展示 AI 处理步骤与逻辑链条，运行状态完全透明</li><li><strong>报错优化</strong>：错误提示附带故障背景解释，降低排查时间成本</li><li><strong>MCP 协议优化</strong>：显著提升本地连接可靠性</li><li><strong>全屏渲染器重构</strong>：彻底解决屏幕闪烁问题</li></ul>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>解决了 AI 编程工具「运行状态黑盒」的核心痛点，企业开发者接受度将大幅提升</li><li>「自愈」是 AI Agent 容错能力的重要突破，对长时间运行的自主编程任务（如自主重构代码库）至关重要</li><li>Anthropic 在 AI Coding 赛道正形成对 GitHub Copilot 的实质性威胁</li></ul>
-<p><strong>来源</strong>：搜狐科技 · 2026-05-28</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>搜狐科技 · 2026-05-28</p>
 <hr>
 <h3>2.2 GitHub Copilot 计费模式调整：从订阅制改为 Token 用量计费，争议巨大 ⚠️</h3>
-<p><strong>事件内容</strong>：GitHub Copilot 将其计费模式从固定订阅制（月费 $29）改为基于 <strong>Token 用量的动态计费</strong>。有用户报告月费从 $29 暴增至 <strong>$700+</strong>，引发社区强烈反弹。此事凸显了 LLM 辅助工具背后运营成本的不透明性及商业模式的可持续性挑战。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>GitHub Copilot 将其计费模式从固定订阅制（月费 $29）改为基于 <strong>Token 用量的动态计费</strong>。有用户报告月费从 $29 暴增至 <strong>$700+</strong>，引发社区强烈反弹。此事凸显了 LLM 辅助工具背后运营成本的不透明性及商业模式的可持续性挑战。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>对重度依赖 Copilot 的企业团队，成本可能失控，将推动部分用户迁移至 Claude Code / Cursor</li><li>「Token 计费」模式若成为行业标配，将对 AI 编程工具的采购决策产生深远影响</li><li>此事也暴露了当前 AI 编程工具的毛利结构：高 Token 消耗直接转化为高运营成本</li></ul>
-<p><strong>来源</strong>：Techmeme / IT之家 · 2026-05-31</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>Techmeme / IT之家 · 2026-05-31</p>
 <hr>
 <h3>2.3 AI 生成代码的技术债务问题引发行业反思 ⚠️</h3>
-<p><strong>事件内容</strong>：根据 MTR 及行业研究报告，AI 生成代码的速度与软件长期可维护性之间存在明显脱节。亚马逊和优步的数据显示，盲目增加 AI Token 使用量并不能直接转化为业务效率。当前 AI 编程智能体能力仅相当于<strong>中级初级开发人员</strong>，无法取代人类在关键架构与安全设计上的监管作用。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>根据 MTR 及行业研究报告，AI 生成代码的速度与软件长期可维护性之间存在明显脱节。亚马逊和优步的数据显示，盲目增加 AI Token 使用量并不能直接转化为业务效率。当前 AI 编程智能体能力仅相当于<strong>中级初级开发人员</strong>，无法取代人类在关键架构与安全设计上的监管作用。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>对「AI 编程替代人类」的叙事形成重要制衡，投资判断需更理性</li><li>企业引入 AI 编程工具需配套代码审核协议，否则技术债务积累将抵消效率收益</li><li>《AI Insider》指出：行业正从盲目采用转向重视严谨的代码审核协议，这对 AI 编程工具的产品设计方向有指导意义</li></ul>
-<p><strong>来源</strong>：Toolify AI 新闻 / 《AI Insider》· 2026-05-31</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>Toolify AI 新闻 / 《AI Insider》· 2026-05-31</p>
 <hr>
 <h3>2.4 Cursor vs Claude Code vs Windsurf：2026 年 AI 编程工具格局清晰化</h3>
-<p><strong>事件内容</strong>：最新横评显示：</p>
-<ul><li><strong>Cursor</strong>：全球最受欢迎，超 100 万用户、36 万付费用户；基于 VS Code 架构，2026年5月推出 Supermaven 补全引擎，补全速度领先</li><li><strong>Claude Code</strong>：SWE-bench 高分，最强自主能力；5月28日更新后稳定性大幅提升</li><li><strong>Windsurf</strong>：高性价比，适合个人开发者</li><li><strong>GitHub Copilot</strong>：受计费模式调整影响，用户流失风险上升</li></ul>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>最新横评显示：</p>
+<ul><li><strong>Claude Code</strong>：SWE-bench 高分，最强自主能力；5月28日更新后稳定性大幅提升</li><li><strong>Windsurf</strong>：高性价比，适合个人开发者</li><li><strong>GitHub Copilot</strong>：受计费模式调整影响，用户流失风险上升</li></ul>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>Cursor 的「Supermaven 补全」是区别于其他工具的核心技术壁垒，值得重点关注</li><li>Claude Code 凭借 Claude 3.7/4.0 的强推理能力，在复杂多文件重构场景优势明显</li><li>对开发者而言，2026年下半年是选择正确的 AI 编程工具的关键窗口期</li></ul>
-<p><strong>来源</strong>：YBuild.ai / 各大技术博客 · 2026-04~05</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>YBuild.ai / 各大技术博客 · 2026-04~05</p>
 <hr>
 <h3>2.5 微软计划发布自研代码专用模型，应对 Cursor/Claude Code 冲击 ⭐</h3>
-<p><strong>事件内容</strong>：微软计划在下周旧金山 Build 开发者大会上发布多款自研 AI 模型，重点推出<strong>高性价比代码专用模型</strong>，应对 Cursor、Claude Code 对 GitHub Copilot 市场份额的蚕食。同时还将推出多种参数规格的模型，完善自有 AI 体系。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>微软计划在下周旧金山 Build 开发者大会上发布多款自研 AI 模型，重点推出<strong>高性价比代码专用模型</strong>，应对 Cursor、Claude Code 对 GitHub Copilot 市场份额的蚕食。同时还将推出多种参数规格的模型，完善自有 AI 体系。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>微软是 OpenAI 最大股东，此次自研模型发布意味着微软在 AI 战略上寻求更大独立性</li><li>「代码专用模型」若性价比显著优于通用大模型，将重塑 AI 编程工具的成本结构</li><li>Build 大会（下周）是近期最重要的 AI 开发者事件，值得持续跟踪</li></ul>
-<p><strong>来源</strong>：AIbase 新闻 · 2026-05-31</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>AIbase 新闻 · 2026-05-31</p>
 <hr>
 <h3>2.6 阶跃星辰 Step 3.7 Flash 开源：Agent 时代编程能力新标杆</h3>
-<p><strong>事件内容</strong>：Step 3.7 Flash 在 SWE-PRO（Agent 代码执行 benchmark）中得分 56.3，排名第二，显示国产模型在编程 Agent 能力上快速追赶国际水平。Apache 2.0 协议允许商用，对国内 AI 编程工具开发者是重要资源。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>Step 3.7 Flash 在 SWE-PRO（Agent 代码执行 benchmark）中得分 56.3，排名第二，显示国产模型在编程 Agent 能力上快速追赶国际水平。Apache 2.0 协议允许商用，对国内 AI 编程工具开发者是重要资源。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>国产基座模型能力持续提升，国内 AI 编程工具厂商（如通义灵码、CodeGen）有了更强的底层支撑</li><li>Apache 2.0 协议消除了商用顾虑，预计将出现一批基于 Step 3.7 Flash 的国产 AI Coding 工具</li></ul>
-<p><strong>来源</strong>：阶跃星辰官方 / AIbase · 2026-05</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>阶跃星辰官方 / AIbase · 2026-05</p>
 <hr>
 <h2>3. AI 基础设施</h2>
 <h3>3.1 英伟达 Blackwell Ultra GPU 发布：AI 训练性能提升 40% ⭐</h3>
-<p><strong>事件内容</strong>：2026年5月29日，英伟达在 GTC 大会上正式发布新一代 <strong>Blackwell Ultra GPU</strong>，其 AI 训练性能较前代 B200 芯片大幅提升 <strong>40%</strong>，并针对 AI Agent 的高并发推理场景做了专门优化。TrendForce 预测 Blackwell 将占英伟达 2026 年高端 GPU 出货量的 <strong>70% 以上</strong>。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>2026年5月29日，英伟达在 GTC 大会上正式发布新一代 <strong>Blackwell Ultra GPU</strong>，其 AI 训练性能较前代 B200 芯片大幅提升 <strong>40%</strong>，并针对 AI Agent 的高并发推理场景做了专门优化。TrendForce 预测 Blackwell 将占英伟达 2026 年高端 GPU 出货量的 <strong>70% 以上</strong>。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>Blackwell Ultra 的「AI Agent 高并发优化」意味着推理成本将进一步下降，直接利好依赖大模型 API 的应用层公司</li><li>40% 的训练性能提升将加速大模型训练迭代周期，对 AI 研发型公司（如 OpenAI、Anthropic）是重要算力支撑</li><li>2026年 AI 服务器机柜需求将从 2025 年的约 2.8 万台跃升至至少 <strong>6 万台</strong>（大摩预测），产业链（液冷、PCB、电源）全面受益</li></ul>
-<p><strong>来源</strong>：RAY BYTE / 大摩研报 · 2026-05-29</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>RAY BYTE / 大摩研报 · 2026-05-29</p>
 <hr>
 <h3>3.2 英伟达 N1X/N1 芯片规格泄露：进军 AI PC 市场 ⭐</h3>
-<p><strong>事件内容</strong>：在 Computex 2026 发布前夕，英伟达即将推出的 <strong>N1X 与 N1 ArcSoC 笔记本芯片技术规格泄露</strong>。N1X 配备多达 10 个 Cortex-X925 核心和 48SM GPU，TDP 范围在 18W 至 80W 之间。微软和英伟达计划在 Computex 和 Build 2026 活动上发布首批搭载英伟达定制 SoC 的 Windows 电脑（包括 Surface 和戴尔设备）。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>在 Computex 2026 发布前夕，英伟达即将推出的 <strong>N1X 与 N1 ArcSoC 笔记本芯片技术规格泄露</strong>。N1X 配备多达 10 个 Cortex-X925 核心和 48SM GPU，TDP 范围在 18W 至 80W 之间。微软和英伟达计划在 Computex 和 Build 2026 活动上发布首批搭载英伟达定制 SoC 的 Windows 电脑（包括 Surface 和戴尔设备）。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>英伟达从数据中心 AI 硬件扩张至消费级 PC 平台，直接挑战 Intel/AMD 在 PC 芯片市场的地位</li><li>「AI PC」若因 N1X/N1 的发布而真正普及，将重构 PC 产业链，对软件开发者意味着新的端侧 AI 工作流机会</li><li>郭明錤指出：硬件成功取决于 Windows 是否能提供真正的端侧 AI 工作流，目前 PC AI 应用仍主要依赖云端 API——这是英伟达 AI PC 战略的核心风险点</li></ul>
-<p><strong>来源</strong>：IT之家 / 雪球 · 2026-05-31</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>IT之家 / 雪球 · 2026-05-31</p>
 <hr>
 <h3>3.3 中国企业 AI 基础设施投资热潮：GPU 采购规模创历史新高</h3>
-<p><strong>事件内容</strong>：2026年中国科技企业 AI 资本开支持续加码：</p>
-<ul><li><strong>字节跳动</strong>：年度资本开支预计突破 <strong>2000 亿元</strong></li><li><strong>阿里巴巴</strong>：未来 AI 相关支出将远超 <strong>3800 亿元</strong></li><li><strong>北美四大科技巨头</strong>：2026年资本开支预计达 <strong>6500 亿美元</strong></li></ul>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>2026年中国科技企业 AI 资本开支持续加码：</p>
+<ul><li><strong>阿里巴巴</strong>：未来 AI 相关支出将远超 <strong>3800 亿元</strong></li><li><strong>北美四大科技巨头</strong>：2026年资本开支预计达 <strong>6500 亿美元</strong></li></ul>
 <p>与此同时，中国企业 GPU 采购呈现「从云端训练向边缘推理」转移的趋势，制造业工厂的质检 AI 在迁移到本地后，三个月就能收回硬件成本。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>中国科技企业的 AI 资本开支强度已接近北美巨头，对国产 AI 芯片（华为昇腾、寒武纪）是重要市场机会</li><li>「边缘推理」需求的爆发将重塑 GPU 供应链，推理专用芯片（如英伟达 L 系列）需求将大幅增长</li><li>对投资者而言，AI 基础设施产业链（液冷、电力、PCB）是 2026 年最具确定性的投资机会之一</li></ul>
-<p><strong>来源</strong>：浙商证券 / 思文力得 · 2026-05</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>浙商证券 / 思文力得 · 2026-05</p>
 <hr>
 <h3>3.4 数据中心支出增长 55.8%，但算力投资回报率质疑声增大 ⚠️</h3>
-<p><strong>事件内容</strong>：招商证券引用 Gartner 数据指出，全球数据中心支出将增长 <strong>55.8%</strong>，但市场对<strong>算力投资回报率的质疑声日益增大</strong>。机构资金自 2026 年二季度起持续流出大模型板块，反映出市场对应用端落地进展的担忧。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>招商证券引用 Gartner 数据指出，全球数据中心支出将增长 <strong>55.8%</strong>，但市场对<strong>算力投资回报率的质疑声日益增大</strong>。机构资金自 2026 年二季度起持续流出大模型板块，反映出市场对应用端落地进展的担忧。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>「算力军备竞赛」的可持续性正受到资本市场质疑，对英伟达、AMD 等芯片厂商的估值逻辑有潜在影响</li><li>能够精准计算 Token 成本与业务价值转化率的企业将在竞争中占据先机——这对 AI 应用层公司的商业化能力提出了更高要求</li><li>对投资者而言，需区分「算力基础设施投资」与「AI 应用商业化回报」两条逻辑主线</li></ul>
-<p><strong>来源</strong>：招商证券 / Gartner · 2026-05</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>招商证券 / Gartner · 2026-05</p>
 <hr>
 <h3>3.5 液冷技术成为 AI 数据中心标配：大摩预测全面升级</h3>
-<p><strong>事件内容</strong>：大摩预测，2026 年 AI 硬件爆发将带动 GPU、液冷与 PCB 迎来全面升级。仅英伟达平台，AI 服务器机柜的需求就将从 2025 年的约 2.8 万台，在 2026 年跃升至至少 <strong>6 万台</strong>，实现超过一倍的增长。与此同时，AMD 的 Helios 服务器机架项目（基于 MI400 系列）也在加速推进。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>大摩预测，2026 年 AI 硬件爆发将带动 GPU、液冷与 PCB 迎来全面升级。仅英伟达平台，AI 服务器机柜的需求就将从 2025 年的约 2.8 万台，在 2026 年跃升至至少 <strong>6 万台</strong>，实现超过一倍的增长。与此同时，AMD 的 Helios 服务器机架项目（基于 MI400 系列）也在加速推进。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>液冷技术从「可选」变为「标配」，相关产业链公司（如绿色科技、英维克）有望迎来订单爆发</li><li>AI 服务器机柜需求翻倍是最明确的硬件投资机会之一，建议关注英伟达供应链（台积电、富士康、广达等）</li><li>对 A 股投资者：液冷、高密度 PCB、服务器电源是三条最相关的投资主线</li></ul>
-<p><strong>来源</strong>：大摩研报 / 搜狐财经 · 2026-05</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>大摩研报 / 搜狐财经 · 2026-05</p>
 <hr>
 <h3>3.6 谷歌 TPU 芯片通过私募信贷大规模部署：Anthropic 获 360 亿美元资金支持</h3>
-<p><strong>事件内容</strong>：阿波罗全球管理联合黑石集团计划发起约 <strong>360 亿美元债务融资</strong>，以「以租代买」模式为 Anthropic 提供资金支持，用于采购<strong>谷歌 TPU 芯片</strong>。该交易将成为史上规模最大的私募信贷交易之一。</p>
-<p><strong>值得关注的原因</strong>：</p>
+<p class="sub-label"><strong>事件内容</strong>：</p>
+<p>阿波罗全球管理联合黑石集团计划发起约 <strong>360 亿美元债务融资</strong>，以「以租代买」模式为 Anthropic 提供资金支持，用于采购<strong>谷歌 TPU 芯片</strong>。该交易将成为史上规模最大的私募信贷交易之一。</p>
+<p class="sub-label"><strong>值得关注的原因</strong>：</p>
 <ul><li>Anthropic 同时采用英伟达 GPU 和谷歌 TPU，芯片供应链多元化战略清晰，降低对单一供应商的依赖风险</li><li>「以租代买」模式降低了 AI 公司采购算力的资本开支压力，可能成为行业主流的算力获取方式</li><li>360 亿美元规模表明私募信贷市场对边际 AI 公司的支持力度空前，对 AI 创业公司是积极信号</li></ul>
-<p><strong>来源</strong>：AIbase 新闻 / 金融时报 · 2026-05</p>
+<p class="sub-label"><strong>来源</strong>：</p>
+<p>AIbase 新闻 / 金融时报 · 2026-05</p>
 <hr>
 <h2>核心要点总结</h2>
 <ul><li><strong>商业化拐点已至</strong>：阿里云 AI 收入年化突破 358 亿元、Anthropic 440 亿美元年化收入、快手可灵 5 亿美元年化收入——大模型「烧钱无底洞」叙事被打破，行业进入价值验证期。</li></ul>

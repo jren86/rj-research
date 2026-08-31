@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -442,40 +467,47 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>二、核心持仓增量信息</h2>
 <h3>🔥🔥🔥 工业富联（601138.SH）— 富士康上调 Q2 业绩预期，超预期信号</h3>
-<p><strong>核心催化剂</strong>：母公司富士康（Foxconn）6 月 5 日披露，<strong>公司二季度经营表现将大幅优于此前给出的"大幅增长"预期</strong>。</p>
+<p class="sub-label"><strong>核心催化剂</strong>：</p>
+<p>母公司富士康（Foxconn）6 月 5 日披露，<strong>公司二季度经营表现将大幅优于此前给出的"大幅增长"预期</strong>。</p>
 <ul><li>富士康为英伟达最大服务器代工厂商和苹果 iPhone 首要组装代工。此前 Q1 已给出"大幅增长"指引，此为<strong>二次上调</strong>。</li><li>AI 服务器 GPU 机柜 +3.8 倍、ASIC +3.2 倍（Q1 数据），Q2 AI 算力需求延续超强态势。</li><li>结合此前戴尔 Q1 AI 服务器收入 161 亿美元（+757%）、博通预测 2026 财年 AI 芯片 560 亿美元的产业大背景，工业富联 Q2 业绩极可能再次大超预期。</li></ul>
 <blockquote>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN20260605164644a7308eca&amp;s=b" target="_blank">富士康上调第二季度业绩预期指引</a></blockquote>
 <hr>
 <h3>🔥🔥🔥 6G 政策重磅催化 — 工信部启动部省协同试点，6G + 玻璃基板联动</h3>
-<p><strong>核心事件</strong>：工信部 6 月 4 日印发《关于组织开展 6G 创新发展部省协同试点专项行动的通知》。</p>
-<p><strong>政策要点</strong>：</p>
+<p class="sub-label"><strong>核心事件</strong>：</p>
+<p>工信部 6 月 4 日印发《关于组织开展 6G 创新发展部省协同试点专项行动的通知》。</p>
+<p class="sub-label"><strong>政策要点</strong>：</p>
 <ul><li>主要目标：<strong>到 2029 年，形成一批自主创新的 6G 技术方案</strong>。</li><li>瞄准全球新一代信息通信技术制高点，强化 6G 前沿技术布局，加强通信与人工智能、卫星互联网、无线感知等融合技术方案。</li><li>加强 6G 基站、核心网、承载网、专用仪器仪表等通信设备产业研发。</li><li>优化关联产业培育：新型终端、芯片器件、操作系统、商业航天等 6G 关联产业。</li><li>"十五五" 期间建设 50 万个 5G-A 基站及 100 万个高速无源光网络端口，向"双万兆"演进。</li><li>此前 5 月，工信部已批复 6GHz 频段 6G 试验频率使用许可。</li></ul>
-<p><strong>市场反应</strong>：6 月 5 日，A 股 6G 概念股集体拉升，武汉凡谷、特发信息、创远信科（30% 涨停）、顺络电子等涨停，中兴通讯、信维通信、光迅科技等跟涨。</p>
-<p><strong>与玻璃基板的关联</strong>：玻璃基板凭借可调 CTE、低介电损耗及高平整度优势，正成为 6G 高频通信和 CPO 光互连的关键材料。6G 通信将带来对高端封装基板的全新需求增量。券商指出，算力芯片、CPO、<strong>6G 等成长赛道有望为玻璃基板带来广阔的成长空间</strong>。</p>
+<p class="sub-label"><strong>市场反应</strong>：</p>
+<p>6 月 5 日，A 股 6G 概念股集体拉升，武汉凡谷、特发信息、创远信科（30% 涨停）、顺络电子等涨停，中兴通讯、信维通信、光迅科技等跟涨。</p>
+<p class="sub-label"><strong>与玻璃基板的关联</strong>：</p>
+<p>玻璃基板凭借可调 CTE、低介电损耗及高平整度优势，正成为 6G 高频通信和 CPO 光互连的关键材料。6G 通信将带来对高端封装基板的全新需求增量。券商指出，算力芯片、CPO、<strong>6G 等成长赛道有望为玻璃基板带来广阔的成长空间</strong>。</p>
 <blockquote>📎 <a href="https://dzswgf.mofcom.gov.cn/news/43/2026/6/1780623943478.html" target="_blank">工信部：到 2029 年形成一批自主创新的 6G 技术方案</a><br>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN2026060514310695059082&amp;s=b" target="_blank">6G 和玻璃基板具有关联性？京东方 A 一度涨停</a></blockquote>
 <hr>
 <h3>🔥🔥🔥 钠离子电池储能规模化应用 — 工信部调研交流会，产业链多点突破</h3>
-<p><strong>核心事件</strong>：6 月 4 日，工信部新闻宣传中心在上海主办"钠离子电池储能产业技术与应用调研交流活动"，与会嘉宾确认钠电储能正<strong>加快从示范验证走向规模化应用</strong>。</p>
-<p><strong>容百科技（688005.SH）核心亮点</strong>：</p>
+<p class="sub-label"><strong>核心事件</strong>：</p>
+<p>6 月 4 日，工信部新闻宣传中心在上海主办"钠离子电池储能产业技术与应用调研交流活动"，与会嘉宾确认钠电储能正<strong>加快从示范验证走向规模化应用</strong>。</p>
+<p class="sub-label"><strong>容百科技（688005.SH）核心亮点</strong>：</p>
 <ul><li>钠电事业部总经理王尊志发言：复合磷酸铁钠循环寿命超过 <strong>15,000 次</strong>，量产稳定性不断验证。</li><li>首创适配钠电工艺和设备，<strong>聚阴离子材料加工成本降低 30%-50%</strong>。</li><li>产能进展：湖北仙桃已落地 <strong>6,000 吨</strong> 聚阴离子正极产能，2026 年扩至 <strong>2.8 万吨</strong>，2027 年计划新建 <strong>30 万吨</strong> 钠电专用产线。</li></ul>
-<p><strong>宁德时代（300750.SZ）核心亮点</strong>：</p>
+<p class="sub-label"><strong>宁德时代（300750.SZ）核心亮点</strong>：</p>
 <ul><li>国内储能解决方案 CTO 林久标宣布：钠离子电池专用产线已建成投产。</li><li><strong>2026 年 9 月</strong>向客户交付首批钠离子电池储能系统，全年实现 <strong>GWh 级</strong>出货规模。</li><li>产品循环寿命达 <strong>15,000 次</strong>，系统寿命 20 年，采用"一壳双芯"平台化方案（锂钠兼容）。</li><li>已与海博思创签署为期 3 年、规模 <strong>60GWh</strong> 的钠电储能订单。</li></ul>
-<p><strong>其他产业信号</strong>：</p>
+<p class="sub-label"><strong>其他产业信号</strong>：</p>
 <ul><li>硬碳负极成本从 2024 年 6-7 万元/吨降至 2026 年 3.5-4 万元/吨，未来有望低于 2.5 万元/吨。</li><li>万华化学开辟煤基+树脂基两条硬碳路线，解决生物质原料供应限制。</li></ul>
 <blockquote>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN202606051613319505ba4f&amp;s=b" target="_blank">产业链多点突破，钠电储能加快规模化应用</a></blockquote>
 <hr>
 <h3>🔥🔥 京东方 A（000725.SZ）— 6G + 玻璃基板双概念，盘中一度涨停</h3>
-<p><strong>今日表现</strong>：京东方 A 盘中一度触及涨停，总市值超 <strong>2,400 亿元</strong>，收盘涨超 7%。连续两日涨停后（6/3、6/4），6/5 延续强势。</p>
-<p><strong>增量驱动</strong>：</p>
+<p class="sub-label"><strong>今日表现</strong>：</p>
+<p>京东方 A 盘中一度触及涨停，总市值超 <strong>2,400 亿元</strong>，收盘涨超 7%。连续两日涨停后（6/3、6/4），6/5 延续强势。</p>
+<p class="sub-label"><strong>增量驱动</strong>：</p>
 <ul><li><strong>6G 政策催化玻璃基板</strong>：工信部 6G 试点通知发布后，玻璃基板板块盘中涨超 5%。市场将 6G 高频通信需求与玻璃基封装载板做了关联定价。</li><li><strong>英特尔 33 亿美元建厂催化继续发酵</strong>：英特尔与 3DGS 在印度建玻璃芯基板厂，产业化加速信号。</li><li><strong>全球龙头加速布局</strong>：SKC 子公司 Absolics 预计 2026 年底启动全球首批玻璃基板商业化生产；台积电 CoPoS 面板级封装技术最早 2028 年量产；三星电机 2027 年量产目标。</li></ul>
 <p><strong>风险提示</strong>（公司已多次强调）：玻璃基封装载板试验线<strong>良率尚未达到量产水平</strong>，尚未实现批量生产，何时达到具有重大不确定性。泰瑞达/爱德万等设备商仍将主导高端测试——不要低估商业化进程的难度和不确定性。</p>
 <blockquote>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN2026060514310695059082&amp;s=b" target="_blank">2400 亿巨头京东方 A 再异动！6G 和玻璃基板关联性</a></blockquote>
 <hr>
 <h3>🔥🔥 精智达（688627.SH）— 深度研报：存储测试突围，精智达 vs 爱德万</h3>
 <p><strong>今日发布的行业深度研报</strong>较为罕见地系统对比了精智达与国际巨头爱德万测试：</p>
-<p><strong>精智达的核心竞争力</strong>：</p>
+<p class="sub-label"><strong>精智达的核心竞争力</strong>：</p>
 <ul><li>与<strong>长鑫存储</strong>深度战略绑定——老化修复设备份额近 <strong>90%</strong>，在长鑫 CP/FT 测试设备采购中争取约 <strong>50%</strong> 整体份额。</li><li>长鑫存储 HBM 扩产：4 万片 DRAM + 0.5 万片 HBM（8 层堆叠），对应测试设备新增需求接近 <strong>40 亿元</strong>。</li><li>产品进度：<strong>FT 成品测试机</strong>（9 Gbps）2025 年量产，<strong>CP 晶圆测试机</strong>（2.4 Gbps 第二代）2026 年量产。</li><li>关键目标：推动国产存储测试设备替代率从不足 <strong>10% → 30%</strong>。</li><li>半导体业务高增长：预计 2024-2026 年 CAGR 45-50%，毛利率从 28% 升至 32%+。</li></ul>
-<p><strong>风险提示</strong>：在最关键的 CP/FT 测试机上，仍需证明持续供货与性能复刻能力——这是与爱德万竞争中真正的"硬骨头"。爱德万在超高速率数字测试板卡中的物理设计水平（±75ps 级时序控制）仍是后进者难以短期跨越的壁垒。</p>
+<p class="sub-label"><strong>风险提示</strong>：</p>
+<p>在最关键的 CP/FT 测试机上，仍需证明持续供货与性能复刻能力——这是与爱德万竞争中真正的"硬骨头"。爱德万在超高速率数字测试板卡中的物理设计水平（±75ps 级时序控制）仍是后进者难以短期跨越的壁垒。</p>
 <blockquote>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN20260605142849a4410bcf&amp;s=b" target="_blank">存储测试突围，爱德万 vs 精智达</a></blockquote>
 <hr>
 <h3>🔥 长川科技（300604.SZ）— 随半导体重挫，跌 7.44%</h3>
@@ -503,7 +535,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>四、综合评分与行动清单</h2>
 <table><thead><tr><th>维度</th><th>评分</th><th>说明</th></tr></thead><tbody><tr><td>市场情绪</td><td>🟡</td><td>指数大跌但个股涨多跌少，结构性分化极端。放量下跌，高位筹码松动</td></tr><tr><td>科技板块</td><td>🔴</td><td>科创 50 -4.01%，CPO/半导体/AI 全面重挫。短期止盈+被动抛压+事件扰动三重压力</td></tr><tr><td>政策催化</td><td>🟢</td><td>6G 政策强催化；钠电储能政策支持明确。两条新主线崛起</td></tr><tr><td>增量信号</td><td>🟢</td><td>富士康上调 Q2 预期（工业富联）；钠电规模化应用推进加速（宁德/容百）</td></tr><tr><td>持仓综合</td><td>🟡</td><td>工业富联利好 vs 长川/芯碁随半导体回调，分化加剧</td></tr></tbody></table>
-<p><strong>行动建议</strong>：</p>
+<p class="sub-label"><strong>行动建议</strong>：</p>
 <ul><li>🔔 <strong>工业富联</strong>：富士康 Q2 二次上调是罕见超预期信号，关注下周一 A 股开盘反应——工业富联 Q1 已大幅超预期（营收 +57%/净利 +103%），Q2 或再超预期。</li><li>🔔 <strong>京东方 A</strong>：连续 3 日大涨后（6/3 涨停 +6/4 涨停 +6/5 涨 7%），公司反复强调良率风险。短期情绪驱动成分增加，注意波动管理。</li><li>🔔 <strong>宁德时代/容百科技</strong>：钠电从"概念"进入"量产交付"阶段（宁德 9 月交付），产业信号强，建议持续跟踪产能爬坡和订单落地节奏。</li><li>🔔 <strong>半导体设备（长川/精智达/芯碁）</strong>：短期半导体板块调整压力持续，注意高位回撤。精智达长鑫订单落地和 CP/FT 量产进展是中期核心变量。</li><li>🔔 <strong>6G/玻璃基板</strong>：政策催化明确，但从政策到业绩仍有较长时间差（2029 年目标），关注后续各省市配套和产业进展，警惕概念炒作。</li></ul>
 <hr>
 <blockquote>*数据来源：NeoData Financial Search、腾讯自选股、工信部官网、中证报、Wind*<br>*生成时间：2026-06-05 18:00 CST | via WB*</blockquote>

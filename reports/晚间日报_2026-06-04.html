@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -438,8 +463,9 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>二、核心持仓增量信息</h2>
 <h3>🔥🔥🔥 京东方 A（000725.SZ）— 连续涨停！玻璃基封装载板 + CPO 双概念引爆</h3>
-<p><strong>今日核心事件</strong>：京东方 A 再度涨停，封单超 <strong>457 万手</strong>（约 28 亿元），报 6.15 元/股创 <strong>5 年新高</strong>，总市值 2,278 亿元。近 4 个交易日累计涨超 <strong>20%</strong>。</p>
-<p><strong>增量催化剂</strong>：</p>
+<p class="sub-label"><strong>今日核心事件</strong>：</p>
+<p>京东方 A 再度涨停，封单超 <strong>457 万手</strong>（约 28 亿元），报 6.15 元/股创 <strong>5 年新高</strong>，总市值 2,278 亿元。近 4 个交易日累计涨超 <strong>20%</strong>。</p>
+<p class="sub-label"><strong>增量催化剂</strong>：</p>
 <ul><li><strong>6 月 3 日机构调研披露玻璃基推进</strong>：近 70 家机构参与（IDG 资本、方正证券、广发基金等），公司确认玻璃基封装载板已给部分国内客户送样，部分客户通过概念认证并进入技术测试阶段。但公司同时明确：<strong>"尚未实现批量生产，试验线良率未达量产水平，何时达到具有重大不确定性"</strong>。</li></ul>
 <ul><li><strong>6 月 3 日新增 CPO（共封装光学）概念</strong>：同花顺数据将京东方 A 纳入 CPO 概念板块，市场理解为玻璃基在光互连领域的应用延伸。光互连依托子公司华灿光电 MicroLED 产线切入，与康宁特种光学玻璃技术协同。</li></ul>
 <ul><li><strong>印度英特尔建厂催化</strong>：印度政府宣布英特尔与 3D Glass Solutions 投资约 33 亿美元建半导体基板制造厂，玻璃基板商业化进程加速。</li></ul>
@@ -448,34 +474,38 @@ blockquote p:last-child { margin-bottom: 0; }
 <blockquote>📎 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260604171544a72ee968" target="_blank">机构调研：玻璃基板+钙钛矿+OLED</a><br>📎 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260604145637b6226544" target="_blank">2200亿面板龙头，罕见一字涨停</a></blockquote>
 <hr>
 <h3>🔥🔥 宁德时代（300750.SZ）— 减持湖南裕能，构建多层次供应链</h3>
-<p><strong>新增信息</strong>：宁德时代计划在 15 个交易日后 3 个月内，减持湖南裕能不超过 3% 股份（约 2,530 万股）。按当前价 74 元测算，<strong>顶格减持金额约 18.85 亿元</strong>。</p>
-<p><strong>背景</strong>：</p>
+<p class="sub-label"><strong>新增信息</strong>：</p>
+<p>宁德时代计划在 15 个交易日后 3 个月内，减持湖南裕能不超过 3% 股份（约 2,530 万股）。按当前价 74 元测算，<strong>顶格减持金额约 18.85 亿元</strong>。</p>
+<p class="sub-label"><strong>背景</strong>：</p>
 <ul><li>宁德时代 2020 年以约 <strong>3.34 元/股</strong>入股湖南裕能，当前浮盈超 <strong>23 倍</strong>（今年 2 月刚解禁）。</li><li>湖南裕能今年一季度营收 149.65 亿（+121%），净利 13.56 亿（+1338%），但经营现金流持续为负（Q1 -10.45 亿），下游回款周期长导致资金被大量占用。</li><li>同日上海津晟也宣布减持 2.5%。</li></ul>
-<p><strong>核心逻辑</strong>：</p>
+<p class="sub-label"><strong>核心逻辑</strong>：</p>
 <ul><li>宁德时代正构建<strong>多层次磷酸铁锂供应体系</strong>，降低单一供应商依赖风险。</li><li>容百科技：2026-2031 年供应 305 万吨磷酸铁锂（总金额超 1,200 亿元）</li><li>富临精工：2026-2028 年供应不低于 300 万吨磷酸铁锂</li><li>湖南裕能与宁德时代/比亚迪 2021 年长协到期未续签，行业供需关系根本性转变，供应商稀缺性消失。</li></ul>
-<p><strong>今日大宗交易</strong>：成交价 408.20 元/股，成交 1.64 亿元（40.2 万股），买方机构专用 / 卖方机构专用。</p>
+<p class="sub-label"><strong>今日大宗交易</strong>：</p>
+<p>成交价 408.20 元/股，成交 1.64 亿元（40.2 万股），买方机构专用 / 卖方机构专用。</p>
 <blockquote>📎 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN202606041214549854ad84" target="_blank">湖南裕能股价跌9%，宁德时代减持引发市场关注</a><br>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN2026060417594098552abf" target="_blank">宁德时代大宗交易</a></blockquote>
 <hr>
 <h3>🔥🔥 工业富联（601138.SH）— 散户撑起的万亿市值，多空分歧白热化</h3>
-<p><strong>增量信息</strong>：昨日市值突破 1.68 万亿超越茅台后，今日钛媒体等多家机构发布深度分析文章，系统拆解工业富联估值悖论。</p>
-<p><strong>核心争议</strong>：</p>
-<p><strong>看多逻辑</strong>：</p>
+<p class="sub-label"><strong>增量信息</strong>：</p>
+<p>昨日市值突破 1.68 万亿超越茅台后，今日钛媒体等多家机构发布深度分析文章，系统拆解工业富联估值悖论。</p>
+<p class="sub-label"><strong>核心争议</strong>：</p>
+<p class="sub-label"><strong>看多逻辑</strong>：</p>
 <ul><li>AI 服务器机柜出货量同比 <strong>+3.8 倍</strong>，800G 交换机 <strong>+1.6 倍</strong>，Q1 净利 <strong>+103%</strong>。</li><li>云计算与网络业务占营收 <strong>42%</strong>，首次超越消费电子，收入结构已质变。</li><li><strong>富士康联手英特尔进军 AI 基建</strong>：共同研发芯片到系统级 AI 解决方案，涵盖至强处理器 + AI 加速器 + 液冷 + 高速互连。英伟达之外的第二增长曲线布局。</li><li>美国工厂 2026 年中达每周 2,000 个 AI 机架产能。</li></ul>
-<p><strong>看空逻辑</strong>：</p>
+<p class="sub-label"><strong>看空逻辑</strong>：</p>
 <ul><li><strong>毛利率仅 7%，净利率不足 5%</strong> — 代工本质未变。</li><li>PE-TTM <strong>39.57 倍</strong>，是 A 股电子制造行业平均 10 倍 PE 的近 <strong>4 倍</strong>。</li><li><strong>机构大幅出逃</strong>：基金持仓从 2025 年 9 月峰值 659 只锐减至 2026 年 Q1 的 318 只，持仓市值从 425.77 亿降至 123.47 亿（<strong>-71%</strong>）。</li><li><strong>72 万散户接盘</strong>：股东户数从 47.6 万激增至 72 万户（全 A 股第 15 位），筹码极度分散。</li><li>散户内部已出现分化：坚定持有 vs 浮盈焦虑 vs 落袋为安，一旦算力预期落空，<strong>戴维斯双杀风险不可忽视</strong>。</li></ul>
 <blockquote>📎 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260604111108985498f1" target="_blank">钛媒体：72万散户支撑万亿市值与低毛利悖论</a><br>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN20260604170004b6229a20" target="_blank">富士康联手英特尔强攻AI基建</a></blockquote>
 <hr>
 <h3>🔥 芯碁微装（688630.SH）— 再涨 11% 创历史新高</h3>
-<p><strong>增量信息</strong>：</p>
+<p class="sub-label"><strong>增量信息</strong>：</p>
 <ul><li>今日收盘 <strong>408.00 元</strong>，涨 <strong>+11.32%</strong>，再创历史新高。近一个月累计 <strong>12 个交易日</strong>刷新历史纪录。</li><li>近一年股价累计涨幅 <strong>+456.39%</strong>（同期沪深 300 仅 +26.78%）。</li><li>A 股总市值约 503 亿元。</li><li>两融余额 11.56 亿元（融资余额 11.43 亿），近 10 日减少 828 万元（-0.72%），融资盘温和减仓。</li></ul>
 <hr>
 <h3>🔥 容百科技（688005.SH）— 钠电迎来"磷酸铁锂时刻"</h3>
-<p><strong>增量信息</strong>：容百科技钠电事业部总经理王尊志在工信部主办的<strong>钠离子电池储能产业技术与应用研讨会</strong>上发表演讲：</p>
+<p class="sub-label"><strong>增量信息</strong>：</p>
+<p>容百科技钠电事业部总经理王尊志在工信部主办的<strong>钠离子电池储能产业技术与应用研讨会</strong>上发表演讲：</p>
 <ul><li><strong>"钠离子电池正复刻 2020 年磷酸铁锂之路，钠电产业正迎来属于自己的磷酸铁锂时刻"</strong>。</li><li><strong>产能规划</strong>：</li><li>2026 年：合计产能 <strong>2.8 万吨</strong>（新仁工厂 NFPP 1.2 万吨已量产、仙桃 6,000 吨中试线已量产、鄂州 1 万吨层氧改造线具备生产条件）。</li><li>2027 年：计划新建 <strong>30 万吨</strong>钠电专用一体化产线（基于中试线专用设备开发），已开展前期征地及可研。</li><li>参会企业包括：宁德时代、容百科技、海博思创、万华化学等钠电全产业链龙头。</li></ul>
 <blockquote>📎 <a href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN20260604170015a43f9c0a" target="_blank">容百科技：钠电产能2.8万吨，磷酸铁锂时刻</a></blockquote>
 <hr>
 <h3>信达生物（01801.HK）— 辉瑞合作持续发酵，西南证券维持买入</h3>
-<p><strong>增量信息</strong>：</p>
+<p class="sub-label"><strong>增量信息</strong>：</p>
 <ul><li><strong>西南证券</strong>发布研报维持「买入」，预计 2026-2028 年营收 178.5 / 211.8 / 251.7 亿元。</li><li>辉瑞 105 亿美元合作持续推进：4 个关键项目共同开发，美欧共同商业化共享利润。首付款 6.5 亿美元，最高 98.5 亿美元里程碑。</li><li>IBI363 3→1.5 mg/kg 组一线 NSCLC cORR 81.8%，DCR 100%，鳞癌/非鳞癌亚组均一致优异。</li><li>2026 年关键管线：IBI363 / IBI343 / IBI324 全球化开发 + IBI3003（GPRC5D）× IBI3032（口服 GLP-1）× IBI3002（TSLP/IL-4Rα）PoC 数据交付。</li><li><strong>风险提示</strong>：研发进展 / 商业化 / 海外合作 / 政策风险。</li></ul>
 <blockquote>📎 <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20260604145821b62265c1" target="_blank">西南证券：信达生物携手辉瑞，加速创新肿瘤药物开发</a></blockquote>
 <hr>

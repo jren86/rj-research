@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -434,130 +459,156 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>🔥 一、AI大模型</h2>
 <h3>1. MiniMax M3 正式发布：国产首个百万上下文+旗舰编程+原生多模态大模型</h3>
 <ul><li><strong>时间</strong>：2026年6月1日</li><li><strong>主体</strong>：稀宇科技（MiniMax）</li></ul>
-<p><strong>核心内容</strong>：MiniMax 发布新一代通用大模型 M3，搭载自研稀疏注意力架构 MSA（MiniMax Sparse Attention），将长文本计算成本降至传统模型的 1/20，支持 100万 token 上下文窗口。M3 是国内首款同时具备旗舰编程能力、百万级超长上下文和原生多模态支持的模型，且开源发布。</p>
-<p><strong>关键数据</strong>：</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>MiniMax 发布新一代通用大模型 M3，搭载自研稀疏注意力架构 MSA（MiniMax Sparse Attention），将长文本计算成本降至传统模型的 1/20，支持 100万 token 上下文窗口。M3 是国内首款同时具备旗舰编程能力、百万级超长上下文和原生多模态支持的模型，且开源发布。</p>
+<p class="sub-label"><strong>关键数据</strong>：</p>
 <ul><li>SWE-Bench Pro 编程基准得分超越 GPT-5.5 和 Gemini 3.1 Pro</li><li>SVG-Bench 图形生成测试绝对优于 Claude Opus 4.7</li><li>原生支持图片、视频输入及桌面操作</li><li>配套分层订阅：Plus ¥49/月 → Ultra ¥469/月</li></ul>
-<p><strong>关注原因</strong>：国产大模型首次在编程+长上下文+多模态三项核心能力上同时追平国际顶尖水平。自研 MSA 架构代表国产模型从"跟随架构"走向"独创架构"，对国内 AI 生态自主化具有标志性意义。</p>
-<p>🔗 <a href="https://www.163.com/tech/article/KUB2TTPV00098IEO.html" target="_blank">网易科技报道</a></p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>国产大模型首次在编程+长上下文+多模态三项核心能力上同时追平国际顶尖水平。自研 MSA 架构代表国产模型从"跟随架构"走向"独创架构"，对国内 AI 生态自主化具有标志性意义。<br>🔗 <a href="https://www.163.com/tech/article/KUB2TTPV00098IEO.html" target="_blank">网易科技报道</a></p>
 <hr>
 <h3>2. NVIDIA GTC 2026：Vera Rubin 全面量产，Agentic AI 时代正式宣告</h3>
 <ul><li><strong>时间</strong>：2026年6月1日（中国台北）</li><li><strong>主体</strong>：NVIDIA</li></ul>
-<p><strong>核心内容</strong>：黄仁勋在 GTC 2026 主题演讲中宣布 Vera Rubin AI 系统实现全面量产，推出 Vera 系列新品，系统阐述"有用的人工智能"已到来——核心标志是 Agentic AI（智能体 AI）的全面爆发。从芯片到基础设施到个人电脑，英伟达展示了全栈 AI 计算生态战略。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>黄仁勋在 GTC 2026 主题演讲中宣布 Vera Rubin AI 系统实现全面量产，推出 Vera 系列新品，系统阐述"有用的人工智能"已到来——核心标志是 Agentic AI（智能体 AI）的全面爆发。从芯片到基础设施到个人电脑，英伟达展示了全栈 AI 计算生态战略。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>Vera Rubin 是英伟达史上最具野心的 AI 系统，已实现全面量产</li><li>"两年前播下的生成式 AI 种子已结出硕果"</li><li>全栈战略：芯片 → 基础设施 → PC → 机器人全覆盖</li></ul>
-<p><strong>关注原因</strong>：GTC 是全球 AI 产业的风向标。Vera Rubin 量产意味着下一代 AI 训练/推理硬件的竞争正式开始，对全球算力格局将产生深远影响。英伟达从芯片商向"AI 工厂"转型的战略宣示，重新定义了其对自身的定位。</p>
-<p>🔗 <a href="https://www.esmchina.com/news/14219.html" target="_blank">国际电子商情</a> · <a href="https://finance.ifeng.com/c/8tbYEDGHX7e" target="_blank">凤凰财经</a></p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>GTC 是全球 AI 产业的风向标。Vera Rubin 量产意味着下一代 AI 训练/推理硬件的竞争正式开始，对全球算力格局将产生深远影响。英伟达从芯片商向"AI 工厂"转型的战略宣示，重新定义了其对自身的定位。<br>🔗 <a href="https://www.esmchina.com/news/14219.html" target="_blank">国际电子商情</a> · <a href="https://finance.ifeng.com/c/8tbYEDGHX7e" target="_blank">凤凰财经</a></p>
 <hr>
 <h3>3. Microsoft Build 2026：Windows 变身 Agent 平台，自研 Polaris 模型 8 月取代 GPT-4</h3>
 <ul><li><strong>时间</strong>：2026年5月底-6月初（Build 大会）</li><li><strong>主体</strong>：Microsoft</li></ul>
-<p><strong>核心内容</strong>：微软 Build 2026 发布了一系列重磅更新，核心包括：</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>微软 Build 2026 发布了一系列重磅更新，核心包括：</p>
 <table><thead><tr><th>发布</th><th>内容</th><th>意义</th></tr></thead><tbody><tr><td><strong>Project Polaris</strong></td><td>微软自研代码 MoE 模型，HumanEval/MBPP 超 GPT-4 Turbo</td><td>2026年8月起取代 GPT-4 成为 Copilot 默认引擎</td></tr><tr><td><strong>Windows Agent Framework</strong></td><td>MIT 开源，YAML 定义代理，跨本地/云/边缘运行</td><td>Windows 正式成为 Agent 开发底座</td></tr><tr><td><strong>Windows Agent Runtime</strong></td><td>OS 级原生代理 API，代理为一等公民</td><td>6月向 Insider 开放预览</td></tr><tr><td><strong>Agent Store</strong></td><td>代理分发市场，开发者分成 85%</td><td>代理生态商业化闭环</td></tr><tr><td><strong>Azure Agent Mesh</strong></td><td>跨环境代理调度控制平面</td><td>2026 Q4 GA</td></tr><tr><td><strong>DirectML 2.0</strong> + <strong>WSL 3</strong></td><td>本地 NPU 抽象 + 原生性能 Linux AI 开发</td><td>Windows 成为生产级 AI 开发环境</td></tr></tbody></table>
-<p><strong>关注原因</strong>：微软一举实现了从模型（Polaris）、推理基础设施（Maia芯片）、开发者体验到商业模式的<strong>全链路自主可控</strong>。Windows Agent Runtime + Store 的组合意味着微软正在构建一个全新的 AI 原生应用生态，其影响力可能不亚于当年 App Store 对移动互联网的意义。</p>
-<p>🔗 <a href="https://chatforest.com/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/" target="_blank">ChatForest详细解读</a></p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>微软一举实现了从模型（Polaris）、推理基础设施（Maia芯片）、开发者体验到商业模式的<strong>全链路自主可控</strong>。Windows Agent Runtime + Store 的组合意味着微软正在构建一个全新的 AI 原生应用生态，其影响力可能不亚于当年 App Store 对移动互联网的意义。<br>🔗 <a href="https://chatforest.com/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/" target="_blank">ChatForest详细解读</a></p>
 <hr>
 <h3>4. Google 全面进入 Agent 时代：Gemini Enterprise Platform + Gemma 4 开源</h3>
 <ul><li><strong>时间</strong>：2026年6月初</li><li><strong>主体</strong>：Google</li></ul>
-<p><strong>核心内容</strong>：Google 推出一系列 AI 更新，将 AI 从附加功能变为核心基础设施：</p>
-<ul><li><strong>Gemini Enterprise Agent Platform</strong>：企业级智能体平台，集成搜索、Workspace、Cloud</li><li><strong>Gemini 3.5 Flash</strong>：成为搜索 AI 模式的默认模型</li><li><strong>Gemma 4</strong>：开源模型家族发布</li><li>AI 深度嵌入 Gmail、Docs、Sheets、Google Cloud 等全线产品</li></ul>
-<p><strong>关注原因</strong>：Google 的差异化策略是将 AI "无感"融入用户已有的工作流。企业无需额外采购，就能在已付费的办公套件中使用高级 AI 能力。这一策略大幅降低了 AI 的企业采纳门槛，2026 年可能成为大量企业"无感知 AI 落地"的元年。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>Google 推出一系列 AI 更新，将 AI 从附加功能变为核心基础设施：</p>
+<ul><li><strong>Gemini 3.5 Flash</strong>：成为搜索 AI 模式的默认模型</li><li><strong>Gemma 4</strong>：开源模型家族发布</li><li>AI 深度嵌入 Gmail、Docs、Sheets、Google Cloud 等全线产品</li></ul>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>Google 的差异化策略是将 AI "无感"融入用户已有的工作流。企业无需额外采购，就能在已付费的办公套件中使用高级 AI 能力。这一策略大幅降低了 AI 的企业采纳门槛，2026 年可能成为大量企业"无感知 AI 落地"的元年。</p>
 <hr>
 <h3>5. Step-3.7-Flash 开源：阶跃星辰 198B MoE 模型，400 Tokens/s 极速生成</h3>
 <ul><li><strong>时间</strong>：2026年6月1日</li><li><strong>主体</strong>：阶跃星辰</li></ul>
-<p><strong>核心内容</strong>：阶跃星辰开源生产级 Agent 专用多模态大模型 Step-3.7-Flash，采用稀疏 MoE 架构，总参数 198B、激活参数仅 11B，最高生成速度达 400 Tokens/s，支持 256K 上下文与三级推理级别。</p>
-<p><strong>关注原因</strong>：198B 总参数 vs 11B 激活参数的极致效率设计，在保持高性能的同时大幅降低推理成本。对需要低成本、高吞吐的 Agent 应用场景（客户服务、API 调用、RAG 检索等）具有直接实用价值。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>阶跃星辰开源生产级 Agent 专用多模态大模型 Step-3.7-Flash，采用稀疏 MoE 架构，总参数 198B、激活参数仅 11B，最高生成速度达 400 Tokens/s，支持 256K 上下文与三级推理级别。</p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>198B 总参数 vs 11B 激活参数的极致效率设计，在保持高性能的同时大幅降低推理成本。对需要低成本、高吞吐的 Agent 应用场景（客户服务、API 调用、RAG 检索等）具有直接实用价值。</p>
 <hr>
 <h3>6. 商汤 SenseNova-U1-8B-MoT-Infographic 开源：信息图专项模型</h3>
 <ul><li><strong>时间</strong>：2026年6月1日</li><li><strong>主体</strong>：商汤科技</li></ul>
-<p><strong>核心内容</strong>：商汤日日新团队开源多模态信息图专项优化模型，基于 SenseNova-U1-8B-MoT 迭代，专门针对信息图（图表、数据可视化）场景优化。这是国内首个面向信息图理解与生成的专项开源模型。</p>
-<p><strong>关注原因</strong>：信息图理解是 AI 落地金融分析、商业智能等领域的关键能力。商汤这一专项模型的发布填补了国内在该细分赛道的开源空白。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>商汤日日新团队开源多模态信息图专项优化模型，基于 SenseNova-U1-8B-MoT 迭代，专门针对信息图（图表、数据可视化）场景优化。这是国内首个面向信息图理解与生成的专项开源模型。</p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>信息图理解是 AI 落地金融分析、商业智能等领域的关键能力。商汤这一专项模型的发布填补了国内在该细分赛道的开源空白。</p>
 <hr>
 <h2>💻 二、AI Coding</h2>
 <h3>1. Claude Code Dynamic Workflows：Anthropic 推出多智能体动态编排引擎</h3>
 <ul><li><strong>时间</strong>：2026年6月2日</li><li><strong>主体</strong>：Anthropic</li></ul>
-<p><strong>核心内容</strong>：Anthropic 在 Claude Code 中集成 Dynamic Workflows——企业级 AI 多智能体动态编排引擎。核心特性：</p>
-<ul><li><strong>运行时动态任务拆解</strong>：根据任务复杂度自动分解为子任务</li><li><strong>大规模并行子智能体调度</strong>：可同时调度多个子 Agent 并行工作</li><li><strong>断点续跑 + 对抗式验证</strong>：任务中断可恢复，子 Agent 输出需经过验证</li></ul>
-<p><strong>关注原因</strong>：这是 AI Coding 从"单人助手"向"多 Agent 开发团队"演进的关键一步。Dynamic Workflows 的对抗式验证机制尤其值得关注——它让 AI 自己检查 AI 的代码质量，形成质量闭环。对于大型项目的 AI 辅助开发，这可能是改变游戏规则的功能。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>Anthropic 在 Claude Code 中集成 Dynamic Workflows——企业级 AI 多智能体动态编排引擎。核心特性：</p>
+<ul><li><strong>大规模并行子智能体调度</strong>：可同时调度多个子 Agent 并行工作</li><li><strong>断点续跑 + 对抗式验证</strong>：任务中断可恢复，子 Agent 输出需经过验证</li></ul>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>这是 AI Coding 从"单人助手"向"多 Agent 开发团队"演进的关键一步。Dynamic Workflows 的对抗式验证机制尤其值得关注——它让 AI 自己检查 AI 的代码质量，形成质量闭环。对于大型项目的 AI 辅助开发，这可能是改变游戏规则的功能。</p>
 <hr>
 <h3>2. AgentMemory 开源：解决 AI 编程智能体跨会话"失忆"难题</h3>
 <ul><li><strong>时间</strong>：2026年6月2日</li><li><strong>主体</strong>：开源社区（基于 iii-engine）</li></ul>
-<p><strong>核心内容</strong>：AgentMemory 是专为 AI 编程智能体设计的持久记忆系统，支持 Claude Code、Cursor 等主流工具接入。具备：</p>
-<ul><li><strong>全自动捕获</strong>：自动记录开发上下文</li><li><strong>四层结构化存储</strong>：对话记忆 → 任务记忆 → 项目记忆 → 通用知识</li><li><strong>混合检索</strong>：语义搜索 + 关键词检索</li><li><strong>本地私有部署</strong>：代码和数据完全本地化</li></ul>
-<p><strong>关注原因</strong>：上下文丢失是 AI 编程工具的最大痛点之一——每次新会话 AI 都要重新理解项目。AgentMemory 的持久记忆机制直击这一痛点。本地私有部署的特性对企业数据安全尤为关键。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>AgentMemory 是专为 AI 编程智能体设计的持久记忆系统，支持 Claude Code、Cursor 等主流工具接入。具备：</p>
+<ul><li><strong>四层结构化存储</strong>：对话记忆 → 任务记忆 → 项目记忆 → 通用知识</li><li><strong>混合检索</strong>：语义搜索 + 关键词检索</li><li><strong>本地私有部署</strong>：代码和数据完全本地化</li></ul>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>上下文丢失是 AI 编程工具的最大痛点之一——每次新会话 AI 都要重新理解项目。AgentMemory 的持久记忆机制直击这一痛点。本地私有部署的特性对企业数据安全尤为关键。</p>
 <hr>
 <h3>3. Gartner 重磅预测：2027年 65% 工程团队将视传统 IDE 为"可选工具"</h3>
 <ul><li><strong>时间</strong>：2026年6月</li><li><strong>来源</strong>：Gartner 最新行业报告</li></ul>
-<p><strong>核心内容</strong>：</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
 <ul><li>软件开发已进入"对话式开发"阶段：从"AI 辅助写代码"升级为"自然语言生成完整应用"</li><li>2026年被多家研究机构视为"全民开发"爆发元年</li><li>行业竞争核心从"代码生成能力"升级为"AI 开发团队化"能力竞争</li><li>低代码/无代码与 AI Agent 深度融合，多智能体协作模式成为标配</li></ul>
-<p><strong>关注原因</strong>：Gartner 的这一预测意味着软件行业的组织结构和人才需求将在未来18个月发生根本性变化。传统 IDE（如 VS Code、IntelliJ）可能从"必选"降级为"可选"，AI Agent 将成为开发流程的默认入口。这对教育体系、招聘标准、团队组成都将产生深远影响。</p>
-<p>🔗 <a href="https://www.ithome.com/0/955/457.htm" target="_blank">IT之家</a></p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>Gartner 的这一预测意味着软件行业的组织结构和人才需求将在未来18个月发生根本性变化。传统 IDE（如 VS Code、IntelliJ）可能从"必选"降级为"可选"，AI Agent 将成为开发流程的默认入口。这对教育体系、招聘标准、团队组成都将产生深远影响。<br>🔗 <a href="https://www.ithome.com/0/955/457.htm" target="_blank">IT之家</a></p>
 <hr>
 <h3>4. Cursor $60B 收购期权：SpaceX 进军 AI 开发工具领域</h3>
 <ul><li><strong>时间</strong>：2026年6月</li><li><strong>主体</strong>：SpaceX × Cursor</li></ul>
-<p><strong>核心内容</strong>：SpaceX 与 AI 编程工具 Cursor 达成合作，获得以 $600 亿美元收购 Cursor 的期权（或支付 $100 亿美元购买联合开发成果）。此前 SpaceX 已与 Anthropic 签署 Colossus 1 超算合作协议。</p>
-<p><strong>关注原因</strong>：SpaceX 同时布局 AI 算力基础设施（Colossus 1）和 AI 开发工具（Cursor），形成"算力 + 工具"的垂直整合。Cursor 若被收购，可能获得前所未有的算力资源支撑，对当前 AI 编程工具竞争格局产生巨大冲击。$60B 的估值也直观反映了 AI 编程赛道的价值。</p>
-<p>🔗 <a href="https://kersai.com/june-2026-ai-news-anthropic-spacex-google-business-impact/" target="_blank">Kersai分析</a></p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>SpaceX 与 AI 编程工具 Cursor 达成合作，获得以 $600 亿美元收购 Cursor 的期权（或支付 $100 亿美元购买联合开发成果）。此前 SpaceX 已与 Anthropic 签署 Colossus 1 超算合作协议。</p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>SpaceX 同时布局 AI 算力基础设施（Colossus 1）和 AI 开发工具（Cursor），形成"算力 + 工具"的垂直整合。Cursor 若被收购，可能获得前所未有的算力资源支撑，对当前 AI 编程工具竞争格局产生巨大冲击。$60B 的估值也直观反映了 AI 编程赛道的价值。<br>🔗 <a href="https://kersai.com/june-2026-ai-news-anthropic-spacex-google-business-impact/" target="_blank">Kersai分析</a></p>
 <hr>
 <h3>5. 阿里云百炼 CLI 开源：一键接入 150+ 模型及全栈 AI 能力</h3>
 <ul><li><strong>时间</strong>：2026年6月1日</li><li><strong>主体</strong>：阿里云</li></ul>
-<p><strong>核心内容</strong>：阿里云推出开源命令行工具"百炼 CLI"，专为 AI Agent 设计，可一键接入百炼平台 150 多款模型，以及知识库、MCP 工具等全栈能力。支持全平台运行，原生兼容 Claude Code 等主流 AI 编程工具。</p>
-<p><strong>关注原因</strong>：百炼 CLI 降低了国内开发者调用多模型的门槛——无需为每个模型单独对接 API，一个命令行即可切换和调用。与 Claude Code 的兼容设计尤为实用，开发者可以混合使用国内外模型。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>阿里云推出开源命令行工具"百炼 CLI"，专为 AI Agent 设计，可一键接入百炼平台 150 多款模型，以及知识库、MCP 工具等全栈能力。支持全平台运行，原生兼容 Claude Code 等主流 AI 编程工具。</p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>百炼 CLI 降低了国内开发者调用多模型的门槛——无需为每个模型单独对接 API，一个命令行即可切换和调用。与 Claude Code 的兼容设计尤为实用，开发者可以混合使用国内外模型。</p>
 <hr>
 <h3>6. 腾讯 AI 游戏创作平台"Craft"：自然语言生成 2D/3D 游戏</h3>
 <ul><li><strong>时间</strong>：2026年6月1日</li><li><strong>主体</strong>：腾讯游戏</li></ul>
-<p><strong>核心内容</strong>：腾讯推出 AI 游戏创作平台"Craft"，基于自研游戏大模型与 AIGC 技术：</p>
-<ul><li>自然语言输入即可生成 2D/3D 游戏雏形</li><li>内置 20,000+ 免费预制美术资源</li><li>支持零基础可视化编辑</li></ul>
-<p><strong>关注原因</strong>：这是 AI 从"提效工具"走向"创造工具"的典型案例。Craft 标志着国内大厂开始在垂直领域（游戏）推动 AI 原生创作范式。对游戏行业和文创产业的 AI 化具有示范意义。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>腾讯推出 AI 游戏创作平台"Craft"，基于自研游戏大模型与 AIGC 技术：</p>
+<ul><li>内置 20,000+ 免费预制美术资源</li><li>支持零基础可视化编辑</li></ul>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>这是 AI 从"提效工具"走向"创造工具"的典型案例。Craft 标志着国内大厂开始在垂直领域（游戏）推动 AI 原生创作范式。对游戏行业和文创产业的 AI 化具有示范意义。</p>
 <hr>
 <h3>7. AI 编程工具的"效率假象"：METR 警告代码质量未必随速度提升</h3>
 <ul><li><strong>时间</strong>：2026年5月31日</li><li><strong>来源</strong>：METR 研究实验室</li></ul>
-<p><strong>核心内容</strong>：知名 AI 研究实验室 METR 在 2026年2月的研究中发现，尽管 AI 编程工具让开发者写代码速度大幅提升，但代码质量未必同步提高。长期来看，可能埋下维护隐患——AI 生成的代码可能存在安全隐患、架构不一致、过度工程化等问题。</p>
-<p><strong>关注原因</strong>：在 AI Coding 一片叫好声中，METR 的研究提供了冷静的视角。对企业而言，引入 AI 编程工具需要配套代码审查、安全测试和质量治理机制，而非简单地追求"更快"。这一研究也解释了 Anthropic 在 Claude Code 中加入"对抗式验证"的动因。</p>
-<p>🔗 <a href="https://news.qq.com/rain/a/20260531A04CE000" target="_blank">腾讯新闻</a></p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>知名 AI 研究实验室 METR 在 2026年2月的研究中发现，尽管 AI 编程工具让开发者写代码速度大幅提升，但代码质量未必同步提高。长期来看，可能埋下维护隐患——AI 生成的代码可能存在安全隐患、架构不一致、过度工程化等问题。</p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>在 AI Coding 一片叫好声中，METR 的研究提供了冷静的视角。对企业而言，引入 AI 编程工具需要配套代码审查、安全测试和质量治理机制，而非简单地追求"更快"。这一研究也解释了 Anthropic 在 Claude Code 中加入"对抗式验证"的动因。<br>🔗 <a href="https://news.qq.com/rain/a/20260531A04CE000" target="_blank">腾讯新闻</a></p>
 <hr>
 <h2>🏗️ 三、AI基础设施</h2>
 <h3>1. Anthropic 完成 $65B H 轮融资，估值 $965B 超越 OpenAI</h3>
 <ul><li><strong>时间</strong>：2026年5月28日（持续影响至6月）</li><li><strong>主体</strong>：Anthropic</li></ul>
-<p><strong>核心内容</strong>：Anthropic 完成 650 亿美元 H 轮融资，投后估值 9,650 亿美元，超越 OpenAI 成为全球估值最高的私人 AI 公司。单季度估值翻了近三倍（从约 3,800 亿到 9,650 亿美元）。年化营收达 470 亿美元。本轮投资方包括 AWS、Google、SpaceX 三方算力合作伙伴。</p>
-<p><strong>关注原因</strong>：AI 行业格局从 OpenAI 一家独大正式进入 Anthropic / OpenAI / Google 三强并立时代。$965B 估值意味着资本市场已不把 Anthropic 视为"小众工具公司"，而是未来十年 AI 基础设施的核心玩家。三方云厂商同时注资形成的"算力联盟"尤其值得关注——它打破了单一云厂商绑定的模式。</p>
-<p>🔗 <a href="https://www.claudeapi.com/zh/blog/news/anthropic-h-round-65b-funding-2026/" target="_blank">ClaudeAPI中文</a> · <a href="https://w.media/anthropic-valuation-touches-us-965-billion-surpassing-openai/" target="_blank">W.Media</a></p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>Anthropic 完成 650 亿美元 H 轮融资，投后估值 9,650 亿美元，超越 OpenAI 成为全球估值最高的私人 AI 公司。单季度估值翻了近三倍（从约 3,800 亿到 9,650 亿美元）。年化营收达 470 亿美元。本轮投资方包括 AWS、Google、SpaceX 三方算力合作伙伴。</p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>AI 行业格局从 OpenAI 一家独大正式进入 Anthropic / OpenAI / Google 三强并立时代。$965B 估值意味着资本市场已不把 Anthropic 视为"小众工具公司"，而是未来十年 AI 基础设施的核心玩家。三方云厂商同时注资形成的"算力联盟"尤其值得关注——它打破了单一云厂商绑定的模式。<br>🔗 <a href="https://www.claudeapi.com/zh/blog/news/anthropic-h-round-65b-funding-2026/" target="_blank">ClaudeAPI中文</a> · <a href="https://w.media/anthropic-valuation-touches-us-965-billion-surpassing-openai/" target="_blank">W.Media</a></p>
 <hr>
 <h3>2. SpaceX 成为 AI 基础设施新势力：Colossus 1 超算集群 + Cursor 收购期权</h3>
 <ul><li><strong>时间</strong>：2026年6月</li><li><strong>主体</strong>：SpaceX</li></ul>
-<p><strong>核心内容</strong>：</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
 <ul><li>SpaceX 与 Anthropic 签署合作协议，提供 Colossus 1 超算集群使用权</li><li>算力规模超 300 兆瓦，Anthropic 年付约 $150 亿，到 2029 年累计约 $600 亿</li><li>SpaceX 同时在探索<strong>轨道算力</strong>方案，解决地面算力的能源、散热瓶颈</li><li>获得 Cursor $600 亿收购期权</li></ul>
-<p><strong>关注原因</strong>：SpaceX 的入局改变了 AI 基础设施的竞争格局。传统上 AI 算力由 AWS/Google Cloud/Azure 三巨头垄断，SpaceX 凭借超大规模能源管理和工程能力切入，带来了全新的竞争变量。"轨道算力"虽然还处于探索阶段，但指向了一个全新的算力范式——太空数据中心。AI 竞争正从"模型之争"升级为"模型+算力基础设施"的综合竞争。</p>
-<p>🔗 <a href="https://kersai.com/june-2026-ai-news-anthropic-spacex-google-business-impact/" target="_blank">Kersai</a></p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>SpaceX 的入局改变了 AI 基础设施的竞争格局。传统上 AI 算力由 AWS/Google Cloud/Azure 三巨头垄断，SpaceX 凭借超大规模能源管理和工程能力切入，带来了全新的竞争变量。"轨道算力"虽然还处于探索阶段，但指向了一个全新的算力范式——太空数据中心。AI 竞争正从"模型之争"升级为"模型+算力基础设施"的综合竞争。<br>🔗 <a href="https://kersai.com/june-2026-ai-news-anthropic-spacex-google-business-impact/" target="_blank">Kersai</a></p>
 <hr>
 <h3>3. 《2026全球AI算力报告》发布：2030年全球算力中心容量将达 220GW</h3>
 <ul><li><strong>时间</strong>：2026年5月29日发布，6月初持续发酵</li><li><strong>主体</strong>：中国智能计算产业联盟等联合发布</li></ul>
-<p><strong>核心数据</strong>：</p>
+<p class="sub-label"><strong>核心数据</strong>：</p>
 <table><thead><tr><th>指标</th><th>2026年</th><th>2030年（预测）</th></tr></thead><tbody><tr><td>全球算力中心总容量</td><td>102 GW</td><td>220 GW</td></tr><tr><td>AI 负载容量</td><td>62 GW</td><td>156 GW（占比71%）</td></tr><tr><td>中国算力中心容量</td><td>—</td><td>接近 60 GW（AI占比48%）</td></tr><tr><td>美国算力中心耗电量</td><td>292 TWh</td><td>606 TWh（占全美电力11%）</td></tr><tr><td>全球算力中心电力消耗</td><td>约 415 TWh</td><td>约 945 TWh（年均+15%）</td></tr></tbody></table>
-<p><strong>关注原因</strong>：算力正成为国家战略级资源。2030年 AI 负载占算力中心容量的 71%，意味着数据中心本质上是"AI 工厂"。中国算力中心容量约 60 GW 的预测，为国产 AI 芯片、算力基础设施相关投资提供了明确的长期需求锚点。945 TWh 的全球耗电量也意味着能源供给将成为 AI 发展的关键瓶颈。</p>
-<p>🔗 <a href="https://www.csdn.net/article/2026-06-01/161584261" target="_blank">CSDN</a></p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>算力正成为国家战略级资源。2030年 AI 负载占算力中心容量的 71%，意味着数据中心本质上是"AI 工厂"。中国算力中心容量约 60 GW 的预测，为国产 AI 芯片、算力基础设施相关投资提供了明确的长期需求锚点。945 TWh 的全球耗电量也意味着能源供给将成为 AI 发展的关键瓶颈。<br>🔗 <a href="https://www.csdn.net/article/2026-06-01/161584261" target="_blank">CSDN</a></p>
 <hr>
 <h3>4. EU AI 法案将于 8月2日 正式生效：企业 AI 治理成为必选项</h3>
 <ul><li><strong>时间</strong>：2026年6月2日（执行倒计时提醒）</li><li><strong>主体</strong>：欧盟委员会</li></ul>
-<p><strong>核心内容</strong>：欧盟 AI 法案大部分规则将于 2026年8月2日正式生效并开始执行。关键要求：</p>
-<ul><li>AI 生成内容必须标识（C2PA/SynthID 等标准）</li><li>高风险 AI 系统需履行合规义务（风险评估、人工监督、透明度报告）</li><li>6月前后发布 AI 生成内容标识的最终实践准则</li><li><strong>适用范围不仅限于欧盟企业</strong>：只要服务欧洲用户、与欧洲客户合作即需合规</li></ul>
-<p><strong>关注原因</strong>：这是全球首部全面 AI 监管法律的正式落地。对中国企业而言，出海欧洲的 AI 产品需要提前完成合规准备。对企业内部，AI 治理将从"可选项"变为"必选项"——需建立 AI 使用场景清单、内容标识机制、风险分级管理等制度。这可能是 2026 年下半年企业 AI 治理最重要的外部驱动力。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>欧盟 AI 法案大部分规则将于 2026年8月2日正式生效并开始执行。关键要求：</p>
+<ul><li>高风险 AI 系统需履行合规义务（风险评估、人工监督、透明度报告）</li><li>6月前后发布 AI 生成内容标识的最终实践准则</li><li><strong>适用范围不仅限于欧盟企业</strong>：只要服务欧洲用户、与欧洲客户合作即需合规</li></ul>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>这是全球首部全面 AI 监管法律的正式落地。对中国企业而言，出海欧洲的 AI 产品需要提前完成合规准备。对企业内部，AI 治理将从"可选项"变为"必选项"——需建立 AI 使用场景清单、内容标识机制、风险分级管理等制度。这可能是 2026 年下半年企业 AI 治理最重要的外部驱动力。</p>
 <hr>
 <h3>5. 腾讯混元 Hy-Memory：AI 智能体长期记忆框架发布</h3>
 <ul><li><strong>时间</strong>：2026年6月1日</li><li><strong>主体</strong>：腾讯混元</li></ul>
-<p><strong>核心内容</strong>：腾讯混元推出专业级 AI 智能体长期记忆框架 Hy-Memory，专为 OpenClaw 等长期协作型 Agent 设计。核心架构：</p>
-<ul><li><strong>六层记忆金字塔</strong>：从短期缓存到永久核心知识</li><li><strong>System1 + System2 双路径加工</strong>：快速直觉响应 + 深度推理整合</li><li><strong>演化链机制</strong>：记忆随交互自动更新和优化</li></ul>
-<p><strong>关注原因</strong>：记忆是 Agent 从"工具"进化到"伙伴"的关键瓶颈。Hy-Memory 的六层记忆金字塔设计体现了腾讯对 Agent 长期记忆问题的系统性思考。与 AgentMemory（偏编程场景）不同，Hy-Memory 面向更广泛的协作型 Agent 场景。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>腾讯混元推出专业级 AI 智能体长期记忆框架 Hy-Memory，专为 OpenClaw 等长期协作型 Agent 设计。核心架构：</p>
+<ul><li><strong>System1 + System2 双路径加工</strong>：快速直觉响应 + 深度推理整合</li><li><strong>演化链机制</strong>：记忆随交互自动更新和优化</li></ul>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>记忆是 Agent 从"工具"进化到"伙伴"的关键瓶颈。Hy-Memory 的六层记忆金字塔设计体现了腾讯对 Agent 长期记忆问题的系统性思考。与 AgentMemory（偏编程场景）不同，Hy-Memory 面向更广泛的协作型 Agent 场景。</p>
 <hr>
 <h3>6. 阿里 Qwen-Image-Bench 开源：文生图评测基准填补行业空白</h3>
 <ul><li><strong>时间</strong>：2026年6月2日</li><li><strong>主体</strong>：阿里通义千问</li></ul>
-<p><strong>核心内容</strong>：阿里开源文生图专业评测基准 Qwen-Image-Bench，包含 1,000 条中英双语分层数据集与自研 Q-Judger 评估引擎。可对 AI 绘画模型进行 5 大核心能力、56 项指标的自动化量化评估。</p>
-<p><strong>关注原因</strong>：文生图领域长期缺乏标准化评测体系，"哪个模型画得好"缺乏客观依据。Qwen-Image-Bench 填补了这一空白，有助于推动文生图模型从"炫技"走向工程化评估，也为企业选型提供了量化参考。</p>
+<p class="sub-label"><strong>核心内容</strong>：</p>
+<p>阿里开源文生图专业评测基准 Qwen-Image-Bench，包含 1,000 条中英双语分层数据集与自研 Q-Judger 评估引擎。可对 AI 绘画模型进行 5 大核心能力、56 项指标的自动化量化评估。</p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>文生图领域长期缺乏标准化评测体系，"哪个模型画得好"缺乏客观依据。Qwen-Image-Bench 填补了这一空白，有助于推动文生图模型从"炫技"走向工程化评估，也为企业选型提供了量化参考。</p>
 <hr>
 <h3>7. 国产 AI 算力芯片投资窗口：算力自主化政策密集落地</h3>
 <ul><li><strong>时间</strong>：2026年5月底-6月初</li><li><strong>综合来源</strong>：工信部政策、行业分析</li></ul>
-<p><strong>核心要点</strong>：</p>
+<p class="sub-label"><strong>核心要点</strong>：</p>
 <ul><li>工信部等八部门联合发布《"人工智能+制造"专项行动实施意见》，将"突破高端训练芯片、端侧推理芯片"列为关键技术攻关方向</li><li>中星微技术 GP-XPU 多核异构处理器架构实现国产突破</li><li>"十五五"规划对算力基础设施自主化持续强调</li><li>各地智算中心/超算中心密集落地，国产 AI 芯片需求井喷</li></ul>
-<p><strong>关注原因</strong>：在 NVIDIA Vera Rubin 全面量产、国际算力竞争升级的背景下，国产 AI 芯片的战略紧迫性进一步凸显。从投资角度看，算力自主化政策 + 智算中心建设需求 + 端侧 AI 爆发，三重驱动下国产 AI 芯片产业链进入投资窗口期。</p>
-<p>🔗 <a href="https://www.ithome.com/0/953/529.htm" target="_blank">IT之家</a> · <a href="https://news.qq.com/rain/a/20260529A0AU3L00" target="_blank">腾讯新闻</a></p>
+<p class="sub-label"><strong>关注原因</strong>：</p>
+<p>在 NVIDIA Vera Rubin 全面量产、国际算力竞争升级的背景下，国产 AI 芯片的战略紧迫性进一步凸显。从投资角度看，算力自主化政策 + 智算中心建设需求 + 端侧 AI 爆发，三重驱动下国产 AI 芯片产业链进入投资窗口期。<br>🔗 <a href="https://www.ithome.com/0/953/529.htm" target="_blank">IT之家</a> · <a href="https://news.qq.com/rain/a/20260529A0AU3L00" target="_blank">腾讯新闻</a></p>
 <hr>
 <h2>🎯 关键洞察</h2>
 <ul><li><strong>国产大模型实现"三重能力"突破</strong>：MiniMax M3 在编程、长上下文、多模态三项核心能力上同时达到国际前沿水平，且自研 MSA 架构代表国产模型从"跟随"走向"原创"。Step-3.7-Flash 以 198B/11B 的极致效率设计，展示了国产模型在推理成本优化上的竞争力。</li></ul>
@@ -566,7 +617,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <ul><li><strong>Agent 成为行业最大公约数</strong>：NVIDIA GTC 的主题是 Agentic AI、Microsoft Build 的主题是 Agent Platform、Google 的发布是 Agent Enterprise Platform——三家最顶级科技公司不约而同将 Agent 作为核心战略方向。2026年下半年，Agent 将从概念验证大规模走向生产部署。</li></ul>
 <ul><li><strong>监管门槛即将到来</strong>：EU AI 法案 8月2日生效，意味着 AI 治理从可选项变为必选项。对有出海业务的中国 AI 企业而言，未来两个月是合规准备的关键窗口期。</li></ul>
 <hr>
-<p><strong>生成时间</strong>：2026-06-03 07:30 CST  <br><strong>下次推送</strong>：2026-06-04 07:30</p>
+<p class="sub-label"><strong>生成时间</strong>：</p>
+<p>2026-06-03 07:30 CST</p>
 
 <div class="report-footer">
   数据来源：Wind 金融数据 connector · My Research Central · via WB

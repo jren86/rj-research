@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -461,8 +486,9 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>📊 市场回顾（7月3日收盘）</h2>
 <h3>A股</h3>
 <ul><li><strong>沪指</strong> 4043.64（+0.37%）| <strong>深成指</strong> 15597.51（+0.64%）| <strong>创业板</strong> 4019.93（+0.07%）</li><li>两市成交额3.18万亿，缩量2681亿</li><li>全市场超3800只个股上涨</li></ul>
-<p><strong>领涨板块</strong>：汽车（+4.43%）、国防军工（+3.53%）、机械设备（+2.37%）<br><strong>领跌板块</strong>：基础化工（-1.87%）、传媒（-1.80%）、综合（-0.94%）</p>
-<p><strong>热点</strong>：</p>
+<p class="sub-label"><strong>领涨板块</strong>：</p>
+<p>汽车（+4.43%）、国防军工（+3.53%）、机械设备（+2.37%）</p>
+<p class="sub-label"><strong>热点</strong>：</p>
 <ul><li>🔴 机器人概念全线爆发，四十余只成分股涨停（埃斯顿4天3板）</li><li>🔴 黄金延续强势，招金黄金、赤峰黄金2连板</li><li>🟢 半导体材料震荡下挫，光刻胶、特种气体方向领跌（多氟多触及跌停）</li></ul>
 <h3>港股</h3>
 <ul><li><strong>恒指</strong> 23350.03（+1.28%）| <strong>恒生科技</strong> 4499.0（+1%）</li><li>化妆美容股领涨，卓悦控股+113%；黄金板块强势，灵宝黄金+16.21%</li></ul>

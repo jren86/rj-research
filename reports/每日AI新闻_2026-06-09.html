@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -433,67 +458,71 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>🔥 重大发布</h2>
 <h3>1. WWDC 2026：Apple 全面 AI 化 — Siri AI 正式发布，Apple Intelligence 基于 Gemini</h3>
-<p><strong>摘要</strong>：6月8日，苹果召开 WWDC 2026 主题演讲（库克卸任前最后一次），正式发布筹备两年的 Siri AI 和下一代 Apple Intelligence 平台，标志着苹果 AI 战略重新步入正轨。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>6月8日，苹果召开 WWDC 2026 主题演讲（库克卸任前最后一次），正式发布筹备两年的 Siri AI 和下一代 Apple Intelligence 平台，标志着苹果 AI 战略重新步入正轨。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li><strong>Siri AI</strong>：从语音控制助手升级为 AI 驱动个人智能助理，推出独立 Siri App，支持多轮对话、上下文理解和视觉识别（可识别图片内容并做出回应）</li><li><strong>Apple Intelligence 架构</strong>：同时基于苹果自研 Foundation 模型和 Google Gemini 模型，复杂查询通过谷歌云接入 Gemini，由 NVIDIA GPU 集群处理</li><li><strong>iOS 27</strong>：新增 AI 照片编辑工具（空间 Reframe 透视调整）、Shortcuts 支持自然语言生成工作流、App 启动速度提升 30%</li><li><strong>macOS Golden Gate</strong>：将 Siri AI 整合进 Spotlight 全局搜索，Xcode 中发现 Claude 和 Codex 模型适配痕迹</li><li><strong>开发者激励</strong>：月活用户少于 200 万的小型开发者免除云 API 费用</li><li><strong>Safari AI</strong>：用 AI 解决 Safari 扩展生态长期落后 Chrome 的问题</li><li><strong>区域限制</strong>：EU 地区 Siri AI 无限期推迟；中国用户也可能暂时无法使用完整功能</li></ul>
-<p><strong>影响</strong>：苹果 2.5 亿美元虚假广告和解后，WWDC 展示更加务实可信。与 Google Gemini 的深度绑定（每年约 10 亿美元授权费）标志着苹果承认自研模型短期内难以追赶，选择"借力"生态伙伴。</p>
-<p>📅 <strong>来源</strong>：TechCrunch / Wired / The Verge / Engadget / 新浪财经 / 腾讯新闻 | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://techcrunch.com/2026/06/08/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/" target="_blank">TechCrunch 汇总</a> | <a href="https://finance.sina.com.cn/stock/t/2026-06-09/doc-iniatxxi2136464.shtml" target="_blank">新浪财经</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>苹果 2.5 亿美元虚假广告和解后，WWDC 展示更加务实可信。与 Google Gemini 的深度绑定（每年约 10 亿美元授权费）标志着苹果承认自研模型短期内难以追赶，选择"借力"生态伙伴。<br>📅 <strong>来源</strong>：TechCrunch / Wired / The Verge / Engadget / 新浪财经 / 腾讯新闻 | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://techcrunch.com/2026/06/08/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/" target="_blank">TechCrunch 汇总</a> | <a href="https://finance.sina.com.cn/stock/t/2026-06-09/doc-iniatxxi2136464.shtml" target="_blank">新浪财经</a></p>
 <hr>
 <h3>2. OpenAI 秘密提交 IPO 申请 — AI 双雄上市竞速白热化</h3>
-<p><strong>摘要</strong>：OpenAI 于 6 月 8 日（周一）发表声明，确认已向 SEC 秘密提交 S-1 注册文件，正式启动 IPO 流程。距离竞争对手 Anthropic 提交申请仅一周。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>OpenAI 于 6 月 8 日（周一）发表声明，确认已向 SEC 秘密提交 S-1 注册文件，正式启动 IPO 流程。距离竞争对手 Anthropic 提交申请仅一周。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li>OpenAI 声明原文："我们预计它会泄露，因此直接予以公布。IPO 具体时间尚未确定；可能还需要一段时间，因为作为私营公司，有些事情做起来更容易。"</li><li>Anthropic 一周前（6/1）已提交 S-1，最新估值 9,650 亿美元（H 轮 650 亿美元融资后），超越 OpenAI</li><li>SpaceX 计划本周四（6/12）上市，估值约 1.75 万亿美元</li><li>三家超级 IPO 可能在数月内为美股增加约 4 万亿美元市值</li><li>ChatGPT 月活用户 6 月突破 6 亿（Similarweb 数据），为 IPO 提供用户基础支撑</li></ul>
-<p><strong>影响</strong>：AI 行业从"烧钱抢地盘"进入"上市抢跑道"阶段。投资者普遍不选边站——同时持有 OpenAI 和 Anthropic 股份，类比"同时持有百事和可口可乐"。</p>
-<p>📅 <strong>来源</strong>：Wired / TechCrunch / The Verge / Engadget / 格隆汇 | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://www.wired.com/story/openai-confidentially-files-for-ipo/" target="_blank">Wired</a> | <a href="https://baijiahao.baidu.com/s?id=1867470220915466729" target="_blank">格隆汇</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>AI 行业从"烧钱抢地盘"进入"上市抢跑道"阶段。投资者普遍不选边站——同时持有 OpenAI 和 Anthropic 股份，类比"同时持有百事和可口可乐"。<br>📅 <strong>来源</strong>：Wired / TechCrunch / The Verge / Engadget / 格隆汇 | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://www.wired.com/story/openai-confidentially-files-for-ipo/" target="_blank">Wired</a> | <a href="https://baijiahao.baidu.com/s?id=1867470220915466729" target="_blank">格隆汇</a></p>
 <hr>
 <h2>🔬 研究进展</h2>
 <h3>3. 开源搜索智能体 Harness-1 发布 — 200 亿参数小模型召回率超越 GPT-5.4</h3>
-<p><strong>摘要</strong>：伊利诺伊大学香槟分校（UIUC）、UC Berkeley 和 Chroma 联合发布开源 AI 搜索智能体 Harness-1，以 20B 参数在 8 个高复杂度搜索基准测试中超越 GPT-5.4。</p>
-<p><strong>关键信息</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>伊利诺伊大学香槟分校（UIUC）、UC Berkeley 和 Chroma 联合发布开源 AI 搜索智能体 Harness-1，以 20B 参数在 8 个高复杂度搜索基准测试中超越 GPT-5.4。</p>
+<p class="sub-label"><strong>关键信息</strong>：</p>
 <ul><li><strong>核心指标</strong>：平均相关信息召回率 73%，GPT-5.4 为 70.9%，领先 2.1 个百分点</li><li><strong>核心创新</strong>：将搜索过程的"状态管理"从模型内部工作内存转移到外部结构化环境（类似"办公桌+文件柜"），解决传统搜索代理的"搜索失忆"痛点</li><li><strong>训练效率惊人</strong>：仅用 4,400 条独特数据（899 条 SFT 轨迹 + 3,453 条 RL 查询），远低于同类模型（Context-1 用 17,200 条，Search-R1 用 221,300 条）</li><li><strong>开源许可</strong>：Apache 2.0，企业可自由修改商用</li><li><strong>社区反响</strong>：发布 3 天 X 平台获 25.6 万次浏览、3,700 次点赞</li></ul>
-<p><strong>影响</strong>：证明了 AI 自主能力的瓶颈不是模型大小，而是运行环境的状态管理效率。对行业过度追求"更大上下文窗口"路线形成有力反思。</p>
-<p>📅 <strong>来源</strong>：VentureBeat | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://venturebeat.com/orchestration/researchers-trained-an-open-source-ai-search-agent-harness-1-that-outperforms-gpt-5-4-on-recalling-relevant-information" target="_blank">VentureBeat</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>证明了 AI 自主能力的瓶颈不是模型大小，而是运行环境的状态管理效率。对行业过度追求"更大上下文窗口"路线形成有力反思。<br>📅 <strong>来源</strong>：VentureBeat | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://venturebeat.com/orchestration/researchers-trained-an-open-source-ai-search-agent-harness-1-that-outperforms-gpt-5-4-on-recalling-relevant-information" target="_blank">VentureBeat</a></p>
 <hr>
 <h3>4. 异步 AI 架构实现计算能耗数量级级降低</h3>
-<p><strong>摘要</strong>：最新研究显示，异步 AI 架构可以在持续学习的同时将计算能耗降低数个数量级，有望解决大模型训练和推理的能耗瓶颈。</p>
-<p>📅 <strong>来源</strong>：TechXplore | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://techxplore.com/news/2026-06-asynchronous-ai-energy-magnitude.html" target="_blank">TechXplore</a></p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>最新研究显示，异步 AI 架构可以在持续学习的同时将计算能耗降低数个数量级，有望解决大模型训练和推理的能耗瓶颈。<br>📅 <strong>来源</strong>：TechXplore | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://techxplore.com/news/2026-06-asynchronous-ai-energy-magnitude.html" target="_blank">TechXplore</a></p>
 <hr>
 <h3>5. 其他研究动态</h3>
 <ul><li><strong>AI 世界观趋同论受质疑</strong>：MIT 2024 年提出的"模型越强世界观越趋同"结论被最新研究质疑，高维数学计算会扭曲相似性评分 — <a href="https://techxplore.com/news/2026-06-ai-worldview-convergence-weakens-high.html" target="_blank">TechXplore</a></li><li><strong>Multinex 超轻量级暗光图像增强模型</strong>：曼彻斯特大学学生开发，可将暗光、噪点严重的影像修复为清晰画面 — <a href="https://techxplore.com/news/2026-06-multinex-ultra-lightweight-ai-advancing.html" target="_blank">TechXplore</a></li><li><strong>人机 AI 即兴演奏</strong>：通过群体智能算法实现 AI 实时配合音乐人演奏 — <a href="https://techxplore.com/news/2026-06-humanai-session-music-swarm-intelligence.html" target="_blank">TechXplore</a></li></ul>
 <hr>
 <h2>💰 产业动态</h2>
 <h3>6. Google 下调 AI Plus 订阅价并翻倍存储空间</h3>
-<p><strong>摘要</strong>：谷歌下调 AI Plus 订阅计划价格，同时将存储空间翻倍，调整后起售价降至 $5/月。此举或为在 AI 订阅竞争中争取价格敏感用户。</p>
-<p>📅 <strong>来源</strong>：Engadget | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://www.engadget.com/2190039/google-cuts-the-price-of-its-ai-plus-plan-and-doubles-the-storage/" target="_blank">Engadget</a></p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>谷歌下调 AI Plus 订阅计划价格，同时将存储空间翻倍，调整后起售价降至 $5/月。此举或为在 AI 订阅竞争中争取价格敏感用户。<br>📅 <strong>来源</strong>：Engadget | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://www.engadget.com/2190039/google-cuts-the-price-of-its-ai-plus-plan-and-doubles-the-storage/" target="_blank">Engadget</a></p>
 <hr>
 <h3>7. Anthropic 呼吁全球 AI 行业建立"暂停"协调机制</h3>
-<p><strong>摘要</strong>：Anthropic 于上周五（6/5）正式提议，全球头部 AI 公司应建立协同机制——若 AI 系统风险超出可控范围，可协调暂停最强级别 AI 模型的开发工作。</p>
-<p><strong>影响</strong>：与 2023 年马斯克等人签署的"暂停巨型 AI 实验"公开信一脉相承，但此次由行业领军企业主动提出，具备更强的实操可行性。</p>
-<p>📅 <strong>来源</strong>：TechXplore | 2026-06-05<br>🔗 <strong>链接</strong>：<a href="https://techxplore.com/news/2026-06-anthropic-urges-industry-ai.html" target="_blank">TechXplore</a></p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Anthropic 于上周五（6/5）正式提议，全球头部 AI 公司应建立协同机制——若 AI 系统风险超出可控范围，可协调暂停最强级别 AI 模型的开发工作。</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>与 2023 年马斯克等人签署的"暂停巨型 AI 实验"公开信一脉相承，但此次由行业领军企业主动提出，具备更强的实操可行性。<br>📅 <strong>来源</strong>：TechXplore | 2026-06-05<br>🔗 <strong>链接</strong>：<a href="https://techxplore.com/news/2026-06-anthropic-urges-industry-ai.html" target="_blank">TechXplore</a></p>
 <hr>
 <h3>8. 微软 AI CEO：超级智能即将到来，但不会取代人类工作</h3>
-<p><strong>摘要</strong>：微软 AI CEO Mustafa Suleyman 在 The Verge 播客中表示，超级智能已近在眼前，但更多是辅助人类提升效率，而非替代岗位。</p>
-<p>📅 <strong>来源</strong>：The Verge | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://www.theverge.com/podcast/944138/microsoft-ai-ceo-mustafa-suleyman-superintelligence-agi-openai-automation" target="_blank">The Verge</a></p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>微软 AI CEO Mustafa Suleyman 在 The Verge 播客中表示，超级智能已近在眼前，但更多是辅助人类提升效率，而非替代岗位。<br>📅 <strong>来源</strong>：The Verge | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://www.theverge.com/podcast/944138/microsoft-ai-ceo-mustafa-suleyman-superintelligence-agi-openai-automation" target="_blank">The Verge</a></p>
 <hr>
 <h3>9. 产业快讯</h3>
 <ul><li><strong>白宫 AI 顾问 Sriram Krishnan 离职</strong>：将创立新机构继续参与特朗普政府 AI 政策制定 — <a href="https://techcrunch.com/2026/06/06/sriram-krishnan-is-leaving-his-role-as-white-house-ai-advisor/" target="_blank">TechCrunch</a></li><li><strong>英国投资 10 亿美元建国家级 AI 超算</strong>：扶持本土芯片创业公司，减少对美国科技依赖 — <a href="https://www.wired.com/story/uk-supercomputer-investment-ai-homegrown-semiconductor/" target="_blank">Wired</a></li><li><strong>NVIDIA×LG 共建 AI 工厂</strong>：加速 LG 在机器人、移动出行、AI 基础设施等领域的 AI 驱动业务升级 — <a href="https://blogs.nvidia.com/blog/nvidia-and-lg-group-ai-factory/" target="_blank">NVIDIA Blog</a></li><li><strong>NVIDIA 助力英国主权 AI 战略落地</strong> — <a href="https://blogs.nvidia.com/blog/uk-sovereign-ai-advancements/" target="_blank">NVIDIA Blog</a></li><li><strong>Anthropic 加倍 Claude Cowork 付费用户使用限制</strong>（至 7 月 5 日）— X(@testingcatalog)</li><li><strong>Sam Altman 的眼球扫描公司 Tools for Humanity 裁员</strong>：OpenAI 冲刺 IPO 之际，Worldcoin 关联公司营收困难 — <a href="https://techcrunch.com/2026/06/08/as-openai-files-for-ipo-sam-altmans-eye-scanning-company-is-doing-layoffs-report-says/" target="_blank">TechCrunch</a></li></ul>
 <hr>
 <h2>🛠️ 工具与应用</h2>
 <h3>10. Kimi for Work 发布 — 支持原生智能体集群</h3>
-<p><strong>摘要</strong>：AI 公司推出面向企业的 Kimi for Work 智能体，支持原生智能体集群（agent swarm）、浏览器操控等功能，覆盖 macOS 和 Windows，用户可本地启动最多 300 个智能体。</p>
-<p>📅 <strong>来源</strong>：X(@testingcatalog) | 2026-06-08</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>AI 公司推出面向企业的 Kimi for Work 智能体，支持原生智能体集群（agent swarm）、浏览器操控等功能，覆盖 macOS 和 Windows，用户可本地启动最多 300 个智能体。<br>📅 <strong>来源</strong>：X(@testingcatalog) | 2026-06-08</p>
 <hr>
 <h3>11. Google NotebookLM 升级 — 新增智能体推理能力</h3>
-<p><strong>摘要</strong>：NotebookLM 为 Ultra 订阅用户新增智能体推理能力，同时支持 Excel、图片等多种输出格式。消息称即将适配 Gemini 3.5 Flash 和 Gemini Omni 模型。</p>
-<p>📅 <strong>来源</strong>：X(@testingcatalog) | 2026-06-08</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>NotebookLM 为 Ultra 订阅用户新增智能体推理能力，同时支持 Excel、图片等多种输出格式。消息称即将适配 Gemini 3.5 Flash 和 Gemini Omni 模型。<br>📅 <strong>来源</strong>：X(@testingcatalog) | 2026-06-08</p>
 <hr>
 <h3>12. 工具与应用快讯</h3>
 <ul><li><strong>ChatGPT 新增交互式图表功能</strong>：用户可直接生成可交互图表用于数据对比和可视化 — X(@testingcatalog)</li><li><strong>ChatGPT 整合 Gmail 数据</strong>：授权后读取邮件内容，提供更个性化回复 — X(@testingcatalog)</li><li><strong>OpenAI 推出 Lockdown Mode</strong>：防范提示注入攻击，保护用户敏感数据 — <a href="https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/" target="_blank">TechCrunch</a></li><li><strong>亚马逊推出 AI 生成定制商品</strong>：通过 Alexa 生成设计图案，直接印刷在 T 恤、水杯等商品上，按需定制 — <a href="https://www.theverge.com/news/945905/amazon-alexa-shopping-ai-generated-custom-merch-design-printing" target="_blank">The Verge</a></li><li><strong>Anthropic Claude Mythos 5 在开发者模式中被发现</strong>：Mythos 系列将成为独立模型线 — X(@testingcatalog)</li></ul>
 <hr>
 <h2>🌍 政策与伦理</h2>
 <h3>13. AI 成瘾：责任归属之争</h3>
-<p><strong>摘要</strong>：随着 AI 使用成瘾问题发酵，TechXplore 发文探讨责任归属——科技公司的产品设计问题 vs 用户自身使用习惯。该讨论与社交媒体成瘾的历史争议高度相似。</p>
-<p>📅 <strong>来源</strong>：TechXplore | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://techxplore.com/news/2026-06-ai-addictive-responsibility-big-tech.html" target="_blank">TechXplore</a></p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>随着 AI 使用成瘾问题发酵，TechXplore 发文探讨责任归属——科技公司的产品设计问题 vs 用户自身使用习惯。该讨论与社交媒体成瘾的历史争议高度相似。<br>📅 <strong>来源</strong>：TechXplore | 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://techxplore.com/news/2026-06-ai-addictive-responsibility-big-tech.html" target="_blank">TechXplore</a></p>
 <hr>
 <h3>14. 政策与伦理快讯</h3>
 <ul><li><strong>英国内政部将用 AI 面部年龄评估审核寻求庇护者</strong>：技术准确率与伦理争议并存 — <a href="https://techxplore.com/news/2026-06-uk-home-office-ai-age.html" target="_blank">TechXplore</a></li><li><strong>Meta 用 AI 生成标题党新闻内容</strong>：Facebook 长期充斥第三方 AI 垃圾内容，现在 Meta 亲自下场 — <a href="https://www.theverge.com/ai-artificial-intelligence/944235/meta-app-ai-clickbait-articles" target="_blank">The Verge</a></li><li><strong>AI 生成内容创作者越来越难以区分</strong>：内容生态真实性危机加剧 — <a href="https://www.theverge.com/ai-artificial-intelligence/943187/ai-content-creators" target="_blank">The Verge</a></li></ul>
@@ -503,7 +532,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <ul><li><strong>AI IPO 潮正式开启</strong>：OpenAI 继 Anthropic 后秘密提交 S-1，SpaceX 本周四上市。三家超级 IPO 合计估值超 3.5 万亿美元，考验资本市场承接能力。投资者普遍"两头下注"，不选边站。</li></ul>
 <ul><li><strong>小模型方法论持续验证</strong>：Harness-1 以 20B 参数超越 GPT-5.4 召回率，且仅用 4,400 条训练数据。行业共识正在从"堆参数、堆上下文"向"优化运行环境与状态管理"转变。</li></ul>
 <hr>
-<p><strong>生成时间</strong>：2026-06-09 07:30 CST<br><strong>下次更新</strong>：明天见</p>
+<p class="sub-label"><strong>生成时间</strong>：</p>
+<p>2026-06-09 07:30 CST</p>
 
 <div class="report-footer">
   数据来源：Wind 金融数据 connector · My Research Central · via WB

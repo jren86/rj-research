@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -434,8 +459,10 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>一、今日摘要</h2>
 <p>A股低开高走、分化加剧：沪指涨0.40%重回4100点，创业板指涨1.56%创历史收盘新高（4167.05点），科创综指涨3.21%亦创历史新高。<strong>资金极致聚焦硬科技</strong>——半导体设备/存储芯片/PCB/玻璃基板全线暴涨，盛美上海/香农芯创/普冉股份20cm涨停，深南电路股价创历史新高。但全市场<strong>超3700只个股下跌</strong>（≈68%），市场风格撕裂至极点。</p>
 <p>港股分化：恒指-0.74%（24312点），恒科+0.22%，A股半导体行情映射下澜起科技涨7.5%/华虹涨8%+。港股通芯片股强势。</p>
-<p><strong>核心事件</strong>：2026陆家嘴论坛开幕，证监会主席吴清发表重磅演讲——科创板第五套标准扩至AI大模型领域、上交所同日发布正式指引；支持沪深交易所推主动ETF/REITs试点/人民币外汇期货试点等14项政策。央行行长潘功胜表态推动中长期资金入市。<strong>同日国家金融监管总局发布8项举措支持上海国际金融中心建设。</strong></p>
-<p><strong>关注外盘</strong>：6/18凌晨2:00 FOMC决议+沃什首秀新闻发布会（99%概率按兵不动，焦点在点阵图与声明措辞）。日本央行已加息至1.0%（31年最高）。</p>
+<p class="sub-label"><strong>核心事件</strong>：</p>
+<p>2026陆家嘴论坛开幕，证监会主席吴清发表重磅演讲——科创板第五套标准扩至AI大模型领域、上交所同日发布正式指引；支持沪深交易所推主动ETF/REITs试点/人民币外汇期货试点等14项政策。央行行长潘功胜表态推动中长期资金入市。<strong>同日国家金融监管总局发布8项举措支持上海国际金融中心建设。</strong></p>
+<p class="sub-label"><strong>关注外盘</strong>：</p>
+<p>6/18凌晨2:00 FOMC决议+沃什首秀新闻发布会（99%概率按兵不动，焦点在点阵图与声明措辞）。日本央行已加息至1.0%（31年最高）。</p>
 <hr>
 <h2>二、催化剂日历</h2>
 <table><thead><tr><th>时间</th><th>事件</th><th>重要性</th></tr></thead><tbody><tr><td><strong>6/18 凌晨2:00</strong></td><td>🔴 <strong>FOMC决议+沃什首场新闻发布会</strong></td><td>🔴</td></tr><tr><td><strong>6/18</strong></td><td>🟠 陆家嘴论坛第二天</td><td>🔴</td></tr><tr><td><strong>6/19</strong></td><td>🔴 美伊协议正式签署仪式（瑞士）</td><td>🔴</td></tr><tr><td><strong>6/19-21</strong></td><td>🟡 端午假期休市</td><td>🟡</td></tr><tr><td><strong>6/24</strong></td><td>🟡 澜起科技年度股东会（H股激励计划待表决）</td><td>🟡</td></tr><tr><td>本周</td><td>🟡 47家公司限售股解禁</td><td>🟡</td></tr></tbody></table>
@@ -464,8 +491,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>🔴 A股：极致分化——硬科技狂欢 vs 全市场普跌</h3>
 <table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>上证指数</td><td>4,108.08</td><td><strong>+0.40%</strong></td><td>重回4100点，站上30日线</td></tr><tr><td>深证成指</td><td>15,880.95</td><td><strong>+1.31%</strong></td><td></td></tr><tr><td>创业板指</td><td>4,167.05</td><td><strong>+1.56%</strong></td><td>🏆 <strong>历史收盘新高</strong></td></tr><tr><td>科创综指</td><td>2,224.70</td><td><strong>+3.21%</strong></td><td>🏆 <strong>历史收盘新高</strong></td></tr><tr><td>北证50</td><td>1,280.25</td><td>+0.27%</td><td></td></tr></tbody></table>
 <ul><li><strong>全市场仅1723只上涨，3734只下跌</strong>（≈68%个股下跌）</li><li><strong>成交额3.09万亿</strong>（放量271亿），资金集中度罕见</li><li><strong>领涨板块</strong>：陶瓷基板+7.45%/电子布+6.16%/SRAM+5.88%/HBM+5.72%/国家大基金+5.60%</li><li><strong>领跌板块</strong>：影视院线/旅游/煤炭/小金属/黄金/白银/银行/保险/券商</li></ul>
-<p><strong>资金抱团科技特征极致</strong>：成交额前5%个股占全市场成交比超45%阈值（历史极值），赚钱难度在上升。</p>
-<p><div class="source-link">🔗 来源：NeoData/财联社</div></p>
+<p class="sub-label"><strong>资金抱团科技特征极致</strong>：</p>
+<p>成交额前5%个股占全市场成交比超45%阈值（历史极值），赚钱难度在上升。<br><div class="source-link">🔗 来源：NeoData/财联社</div></p>
 <h3>🟠 港股：恒科逆势收涨</h3>
 <table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead><tbody><tr><td>恒生指数</td><td>24,312.16</td><td><strong>-0.74%</strong></td></tr><tr><td>恒生科技指数</td><td>4,669.07</td><td><strong>+0.22%</strong></td></tr><tr><td>恒生中国企业指数</td><td>8,144.03</td><td>-1.17%</td></tr></tbody></table>
 <ul><li>芯片股多数上涨：澜起科技+6.5%/华虹宏力+5.52%/兆易创新+3.53%</li><li>科网股多数下跌：BOSS直聘-6.19%/理想汽车-3.75%/京东健康-3.28%</li><li>中国建材+24.95%（建材水泥活跃）</li><li>建银国际港股下半年展望：恒指24000-29000点，恒科4500-6000点，"先升后回"</li></ul>

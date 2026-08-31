@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -482,26 +507,30 @@ blockquote p:last-child { margin-bottom: 0; }
 <ul><li>台厂有望调涨芯片电阻，陆厂风华高科、厚声已通知涨价，中台厂商价差收敛</li></ul>
 <p>🔗 来源：水木调研纪要-2.0 + 调研纪要更新</p>
 <h3>5.2 思格新能调研更新 ⭐</h3>
-<p><strong>天风电新</strong>：思格新能（688XXX）现有产品已被低估，27年多项新品有望超预期</p>
-<ul><li>26年预计收入200亿+，净利润45-50亿</li><li>27年仅靠现有产品收入同增50%至300亿，净利润75亿，当前估值仅11倍</li><li>增量业务：户储NEO版本（便宜20%）、工商储柜式新品、地面电站逆变器20-30GW</li><li>AI能量管理Agent+光储协同，AIDC布局800V架构</li></ul>
+<p class="sub-label"><strong>天风电新</strong>：</p>
+<p>思格新能（688XXX）现有产品已被低估，27年多项新品有望超预期</p>
+<ul><li>27年仅靠现有产品收入同增50%至300亿，净利润75亿，当前估值仅11倍</li><li>增量业务：户储NEO版本（便宜20%）、工商储柜式新品、地面电站逆变器20-30GW</li><li>AI能量管理Agent+光储协同，AIDC布局800V架构</li></ul>
 <p>🔗 来源：水木调研纪要-2.0</p>
 <h3>5.3 锂电涨价线：VC/石墨化</h3>
-<p><strong>VC（碳酸亚乙烯酯）</strong>：</p>
+<p class="sub-label"><strong>VC（碳酸亚乙烯酯）</strong>：</p>
 <ul><li>新产能投放不及预期（新工艺良率问题），26H2存在供给硬缺口</li><li>VC报价6/16:14.5万/吨，6/17:14.75万/吨，持续上涨</li><li>重点推荐：<strong>华盛、孚日、海科、富祥</strong></li></ul>
-<p><strong>石墨化</strong>：</p>
+<p class="sub-label"><strong>石墨化</strong>：</p>
 <ul><li>全行业产能完全打满，Q3旺季涨价马上启动</li><li>重点推荐：<strong>滨海能源</strong>（绿电项目落地，单吨成本低2k，估值仅8X）</li></ul>
 <p>🔗 来源：水木调研纪要-2.0</p>
 <h3>5.4 皖维高新：去日化材料选择-PVA和PVB</h3>
-<p><strong>中信建投化工</strong>：皖维高新（600063）在偏光片级PVA和MLCC级PVB掌握国产替代能力</p>
-<ul><li>PVA光学膜：当前1/2号线1200万平供不应求，新增3/4号线2000万平H2投产</li><li>近期控股杉杉集团（杉金光电全球偏光片份额34%），产业协同加速</li><li>电子级PVB进入HW系供应链验证阶段</li><li>远期假设：PVA光学膜50%国产目标份额→30亿营收、近15亿净利润</li></ul>
+<p class="sub-label"><strong>中信建投化工</strong>：</p>
+<p>皖维高新（600063）在偏光片级PVA和MLCC级PVB掌握国产替代能力</p>
+<ul><li>近期控股杉杉集团（杉金光电全球偏光片份额34%），产业协同加速</li><li>电子级PVB进入HW系供应链验证阶段</li><li>远期假设：PVA光学膜50%国产目标份额→30亿营收、近15亿净利润</li></ul>
 <p>🔗 来源：水木调研纪要-2.0</p>
 <h3>5.5 远东股份：液冷持续推进</h3>
-<p><strong>东北计算机</strong>：远东股份与N联合开发液冷，独特结构优于北美供应商</p>
-<ul><li>与NV团队一起优化材料，630最新版本送北美</li><li>国产链H、HWJ已送样（冷板+材料），阿里联想预计7月明确进展</li><li>CDU产品下周与阿里技术沟通</li></ul>
+<p class="sub-label"><strong>东北计算机</strong>：</p>
+<p>远东股份与N联合开发液冷，独特结构优于北美供应商</p>
+<ul><li>国产链H、HWJ已送样（冷板+材料），阿里联想预计7月明确进展</li><li>CDU产品下周与阿里技术沟通</li></ul>
 <p>🔗 来源：调研纪要更新</p>
 <h3>5.6 智谱AI：摩根大通重申增持</h3>
-<p><strong>摩根大通</strong>：GLM-5.2证明前沿升级可支撑溢价，定价比GLM-5.1高出13%</p>
-<ul><li>重申<strong>增持</strong>评级，目标价从1400→<strong>1800港元</strong></li><li>智谱取消低价档位，所有调用均按高价计费</li><li>定位从"价格战参与者"转向"前沿能力溢价者"</li></ul>
+<p class="sub-label"><strong>摩根大通</strong>：</p>
+<p>GLM-5.2证明前沿升级可支撑溢价，定价比GLM-5.1高出13%</p>
+<ul><li>智谱取消低价档位，所有调用均按高价计费</li><li>定位从"价格战参与者"转向"前沿能力溢价者"</li></ul>
 <p>🔗 来源：调研纪要更新</p>
 <h3>5.7 日本东曹氧化锆粉体暂停供应</h3>
 <p>东曹正式暂停氧化锆粉体供货，国产替代加速，利好爱迪特、国瓷材料、三环集团等</p>
@@ -513,12 +542,14 @@ blockquote p:last-child { margin-bottom: 0; }
 <ul><li><strong>东鹏饮料</strong>：H1收入增速不低于15%，利润快于收入</li><li><strong>颐海国际</strong>：Q2增速或略放缓，毛利率延续上升趋势</li><li><strong>安琪酵母</strong>：Q2收入双位数增长，全年利润增速快于收入</li><li><strong>康师傅</strong>：H1收入低单增长/利润正增</li></ul>
 <p>🔗 来源：水木调研纪要-2.0</p>
 <h3>5.10 光模块5月海关数据</h3>
-<p><strong>国泰海通通信</strong>：5月光模块光纤缆海关出口数据出炉</p>
-<ul><li>江苏光模块出口18亿元（环比-11%），四川出口9亿元（环比+37%）</li><li>上海出口2.9亿元（环比+162%），光缆广东-美国出口5.7亿元（环比+39%）</li><li>光模块季度末前段因标准品降价有所调整，但高端产品（1.6T/3.2T）需求依旧强劲</li></ul>
+<p class="sub-label"><strong>国泰海通通信</strong>：</p>
+<p>5月光模块光纤缆海关出口数据出炉</p>
+<ul><li>上海出口2.9亿元（环比+162%），光缆广东-美国出口5.7亿元（环比+39%）</li><li>光模块季度末前段因标准品降价有所调整，但高端产品（1.6T/3.2T）需求依旧强劲</li></ul>
 <p>🔗 来源：水木调研纪要-2.0</p>
 <h3>5.11 化工港口库存周度跟踪</h3>
-<p><strong>开源化工</strong>：华东港口液体库存123.39万吨（环比-6.5%），固体145.47万吨（环比-3.8%）</p>
-<ul><li>当前库存已跌至历史低位区间，化工品进入被动去库尾声→主动补库前夜</li><li>补库周期有望加速落地：库存低位→刚需回暖→主动补库→价格抬升→盈利修复</li></ul>
+<p class="sub-label"><strong>开源化工</strong>：</p>
+<p>华东港口液体库存123.39万吨（环比-6.5%），固体145.47万吨（环比-3.8%）</p>
+<ul><li>补库周期有望加速落地：库存低位→刚需回暖→主动补库→价格抬升→盈利修复</li></ul>
 <p>🔗 来源：水木调研纪要-2.0</p>
 <h3>5.12 富国银行：NBIS算力容量预测</h3>
 <ul><li>NBIS活跃算力容量：2025年172MW→2030年7.5GW（43倍增长）</li><li>2026至2030年新增容量对应超5000亿美元基础设施投资</li><li>行业资本开支标准：每GW AI工厂投入700亿美元</li></ul>

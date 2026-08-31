@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -436,8 +461,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><strong>中国货币政策：央行5月延续呵护姿态</strong></p>
 <table><thead><tr><th>日期</th><th>操作</th><th>规模</th><th>净投放</th></tr></thead><tbody><tr><td>5月25日</td><td>7天逆回购 + MLF</td><td>2580亿 + 6000亿</td><td>+3570亿</td></tr><tr><td>5月27日</td><td>7天逆回购</td><td>1776亿</td><td>+1276亿</td></tr><tr><td>5月28日</td><td>7天逆回购</td><td>1013亿</td><td>+13亿</td></tr><tr><td>5月29日</td><td>7天逆回购</td><td>1230亿</td><td>-300亿（净回笼）</td></tr></tbody></table>
 <ul><li><strong>MLF</strong>：5月净投放1000亿元（到期5000亿，操作6000亿），超出市场预期，体现中长期流动性呵护</li><li><strong>DR007</strong>：5月29日收于1.3578%，低于政策利率（1.40%），资金面整体宽松</li><li><strong>Shibor</strong>：隔夜1.317%，7天1.362%，资金利率维持低位</li><li><strong>10年期国债收益率</strong>：5月29日收于1.709%，较月初下行约6BP，债券收益率整体下行</li></ul>
-<p><strong>核心判断</strong>：央行"收短放长"+ 逆回购跨月加码，显示对资金面的精细化呵护。5月MLF加量续作是重要信号，6月资金面预计维持合理充裕，但地方债发行提速（6月上旬计划发行近6500亿元）可能带来阶段性扰动。</p>
-<p><strong>海外宏观</strong></p>
+<p class="sub-label"><strong>核心判断</strong>：</p>
+<p>央行"收短放长"+ 逆回购跨月加码，显示对资金面的精细化呵护。5月MLF加量续作是重要信号，6月资金面预计维持合理充裕，但地方债发行提速（6月上旬计划发行近6500亿元）可能带来阶段性扰动。<br><strong>海外宏观</strong></p>
 <ul><li><strong>美联储</strong>：5月FOMC会议纪要显示官员对降息时机存在分歧，市场当前预期2026年Q3首次降息。美国5月ISM制造业PMI（今日22:00发布）为本周首个重要数据</li><li><strong>中美关系</strong>：美国贸易代表办公室（USTR）续期对华301关税豁免至2026年底，短期利好出口链</li><li><strong>地缘政治</strong>：伊美核协议谈判出现进展迹象，国际油价5月暴跌约17%</li></ul>
 <h3>今日宏观数据日历</h3>
 <table><thead><tr><th>时间</th><th>数据</th><th>市场预期</th><th>重要性</th></tr></thead><tbody><tr><td>今日21:45</td><td>美国5月SPGI制造业PMI终值</td><td>52.3</td><td>★★★</td></tr><tr><td>今日22:00</td><td>美国5月ISM制造业PMI</td><td>51.8</td><td>★★★</td></tr><tr><td>6月3日</td><td>美国5月ADP就业人数</td><td>—</td><td>★★★</td></tr><tr><td>6月4日</td><td>美国初请失业金人数</td><td>—</td><td>★★</td></tr><tr><td>6月6日</td><td>美国5月非农就业数据</td><td>新增约18万</td><td>★★★★</td></tr></tbody></table>
@@ -453,32 +478,38 @@ blockquote p:last-child { margin-bottom: 0; }
 <table><thead><tr><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>本周</th><th>5月</th></tr></thead><tbody><tr><td>道琼斯</td><td>51,032.46</td><td>+0.72%</td><td>+0.9%</td><td>+2.78%</td></tr><tr><td>标普500</td><td>7,580.06</td><td>+0.22%</td><td>+1.43%</td><td>+5.15%</td></tr><tr><td>纳斯达克</td><td>26,972.62</td><td>+0.20%</td><td>+2.39%</td><td>+8.36%</td></tr></tbody></table>
 <ul><li>道指<strong>首次站稳51,000点</strong>，三大股指再创历史新高</li><li>标普500连续九周上涨，5月涨幅5.15%</li><li><strong>AI服务器板块</strong>领涨：戴尔+33%（单日最大涨幅），慧与科技+13%</li><li><strong>SaaS板块</strong>延续强势：ServiceNow+14%，Salesforce上涨</li></ul>
 <h3>行业轮动与市场方向</h3>
-<p><strong>上一交易日领跌</strong>：科创50（-5.04%）、半导体设备（中微公司-4%+，北方华创-4%+），主要受"韬定律"发布后短期获利了结影响</p>
-<p><strong>上一交易日相对抗跌</strong>：港股恒生指数（+0.70%），信达生物（+11.36%，受辉瑞合作消息刺激）</p>
-<p><strong>今日关注方向</strong>：</p>
+<p class="sub-label"><strong>上一交易日领跌</strong>：</p>
+<p>科创50（-5.04%）、半导体设备（中微公司-4%+，北方华创-4%+），主要受"韬定律"发布后短期获利了结影响</p>
+<p class="sub-label"><strong>上一交易日相对抗跌</strong>：</p>
+<p>港股恒生指数（+0.70%），信达生物（+11.36%，受辉瑞合作消息刺激）</p>
+<p class="sub-label"><strong>今日关注方向</strong>：</p>
 <ul><li>科创板指数样本调整（6月1日起生效，深证成指调入25只，创业板指调入10只），被动资金流入</li><li>长鑫科技IPO过会，半导体设备/存储产业链受益于风险偏好提升</li><li>宁德时代钠电池量产官宣，钠电产业链催化</li><li>美股AI服务器板块大涨，今日A股AI算力链（工业富联等）可能高开</li></ul>
 <hr>
 <h2>三、持仓个股隔夜增量信息</h2>
 <h3>🔴 信达生物（01801.HK）— 重大增量</h3>
 <p><strong>【重磅】与辉瑞达成105亿美元全球战略合作（5月29日公告）</strong></p>
 <ul><li>合作覆盖<strong>12款肿瘤早期创新研发项目</strong>（8个信达管线 + 4个辉瑞提议新增项目）</li><li>信达可获得：<strong>6.5亿美元首付款 + 最高98.5亿美元里程碑付款</strong>，总金额<strong>105亿美元</strong></li><li>信达负责推进至I期临床，辉瑞主导后续开发</li><li>其中4个关键项目双方<strong>共同开发、共同商业化</strong>，在美国及欧洲共享利润</li><li>信达保留大中华区权利</li><li>每一款获批上市项目，信达可获得<strong>最高双位数比例销售分成</strong></li><li>5月29日股价反应：收盘83.35港元，单日<strong>+11.36%</strong>，成交额26.86亿港元</li></ul>
-<p><strong>研报观点</strong>：此次合作是国产创新药出海的里程碑式案例，验证信达早期管线的全球竞争力。共同商业化安排意味着信达将从"中国销售"升级为"全球利润分享"，估值逻辑重塑。</p>
+<p class="sub-label"><strong>研报观点</strong>：</p>
+<p>此次合作是国产创新药出海的里程碑式案例，验证信达早期管线的全球竞争力。共同商业化安排意味着信达将从"中国销售"升级为"全球利润分享"，估值逻辑重塑。</p>
 <hr>
 <h3>🟠 精智达（688627）— 增量</h3>
 <p><strong>定增方案修订（5月29日公告）</strong></p>
 <ul><li>募集资金总额上限从<strong>29.019亿元下调至28.5658亿元</strong>，减少约4532万元</li><li>调整原因："半导体存储测试设备研发及产业化智造项目"中产业化智造子项目拟使用募集资金从4.4亿调整为3.9468亿元</li><li>技术研发子项目 + 高端芯片测试设备项目 + 补流项目金额不变</li><li>方案已获股东大会授权，尚需上交所审核及证监会注册</li></ul>
-<p><strong>背景</strong>：精智达是长鑫科技、长江存储的核心测试设备供应商，定增募资用于扩产，直接受益于长鑫IPO后扩产加速。</p>
+<p class="sub-label"><strong>背景</strong>：</p>
+<p>精智达是长鑫科技、长江存储的核心测试设备供应商，定增募资用于扩产，直接受益于长鑫IPO后扩产加速。</p>
 <hr>
 <h3>🟠 宁德时代（300750）— 增量</h3>
 <p><strong>钠电池量产时间表进一步明确（5月30日）</strong></p>
 <ul><li>中国工程院院士、宁德时代首席科学家吴凯在"2026装备强国论坛"上表示：<strong>今年将有一系列钠离子电池产品实现规模化量产</strong></li><li>时间表较4月"超级科技日"公布的"2026年Q4进入规模化量产"<strong>进一步提前</strong></li><li>战略价值：钠电池成本低、资源丰富，规避锂资源供应链风险</li><li>东莞证券预计：2026年钠电池成本有望降至<strong>0.40元/Wh以下</strong>，未来或下探至0.3元/Wh</li><li>曾毓群预计：钠离子电池未来将替代<strong>30%-40%</strong>的现有电池市场份额</li></ul>
-<p><strong>产业链标的</strong>：宁德时代钠电池量产直接利好硬碳负极、层状氧化物正极、聚阴离子材料供应商。</p>
+<p class="sub-label"><strong>产业链标的</strong>：</p>
+<p>宁德时代钠电池量产直接利好硬碳负极、层状氧化物正极、聚阴离子材料供应商。</p>
 <hr>
 <h3>🟠 京东方A（000725）— 增量</h3>
 <p><strong>与康宁签署合作备忘录（5月29日前后）</strong></p>
 <ul><li>合作重点领域：<strong>玻璃基封装载板、可折叠玻璃、钙钛矿玻璃基板、光互连相关应用</strong></li><li>京东方具备显示技术、玻璃基加工能力和大规模集成智造能力</li><li>康宁在玻璃材料、半导体应用先进材料方面具备优势</li><li>这是京东方"三大核心优势复用"战略的具体落地：显示器件 → 玻璃基封装 + 钙钛矿 + MicroLED</li></ul>
-<p><strong>研报观点（2026-05-31）</strong>：国海证券发布京东方A首次覆盖报告，给予<strong>"买入"评级</strong></p>
-<ul><li>预测2026-2028年EPS分别为0.20/0.32/0.40元</li><li>当前股价对应PE：25/16/13倍</li><li>核心逻辑：面板价格高位企稳，供应侧产能偏紧，公司与康宁合作拓展新业务增长点</li></ul>
+<p class="sub-label"><strong>研报观点（2026-05-31）</strong>：</p>
+<p>国海证券发布京东方A首次覆盖报告，给予<strong>"买入"评级</strong></p>
+<ul><li>当前股价对应PE：25/16/13倍</li><li>核心逻辑：面板价格高位企稳，供应侧产能偏紧，公司与康宁合作拓展新业务增长点</li></ul>
 <hr>
 <h3>🟡 工业富联（601138）— 隔夜无重要增量，但美股AI服务器板块大涨构成间接催化</h3>
 <ul><li>美股戴尔（DELL）+33%、慧与科技（HPE）+13%，AI服务器制造板块整体走强</li><li>工业富联作为英伟达AI服务器核心代工厂，今日可能受情绪带动</li><li>5月29日收盘73.40元，区间（4月30日至今）涨幅约10.78%</li></ul>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -464,7 +489,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>七、数据溯源</h2>
 <table><thead><tr><th>数据项</th><th>来源</th><th>说明</th></tr></thead><tbody><tr><td>指数/个股行情（价格、涨跌幅、成交额）</td><td>Wind 万得金融终端（MCP 结构化 API）</td><td>8/27 收盘截面，含美股隔夜收盘</td></tr><tr><td>新闻/公告/研报文本</td><td>Wind 金融终端 financial_news</td><td>隔夜美股、A股收盘、券商策略、持仓公告</td></tr><tr><td>调研纪要</td><td>知识星球 zsxq（调研纪要更新 / 水木调研纪要-2.0）</td><td>8/28 凌晨 + 8/23 最新</td></tr><tr><td>大宗商品（黄金）</td><td>Wind 新闻结构化引用</td><td>Wind 不直接覆盖商品期货现货</td></tr></tbody></table>
-<p><strong>数据源纪律</strong>：全部数值型数据取自 Wind MCP 结构化 API 返回值，未加载 wb-finance-skill，未降级至搜索引擎或其他数据源。</p>
+<p class="sub-label"><strong>数据源纪律</strong>：</p>
+<p>全部数值型数据取自 Wind MCP 结构化 API 返回值，未加载 wb-finance-skill，未降级至搜索引擎或其他数据源。</p>
 <hr>
 <p>*本报告由 Cleo 🐾 自动生成 · My Research Central · 涨=红 跌=绿 · via WB*</p>
 

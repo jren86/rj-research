@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -442,7 +467,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>2.1 🔴 社保基金二季度调仓（截至 8/7）</h3>
 <p>截至 8 月 7 日，社保基金二季度已现身 <strong>12 只个股</strong>前十大流通股东，合计持股 1.38 亿股，期末市值 <strong>33.51 亿元</strong>。</p>
 <table><thead><tr><th>方向</th><th>标的</th><th>明细</th></tr></thead><tbody><tr><td>🟠 新进</td><td>道道全 (002852)</td><td>社保 1903 组合新进</td></tr><tr><td>🟠 新进</td><td>盛屯矿业 (600711)</td><td>社保基金新进 2,623.63 万股</td></tr><tr><td>🟠 新进</td><td>富春股份 (300299)</td><td>社保基金新进，上半年净利 +443.75%</td></tr><tr><td>🔴 增持</td><td>华峰化学 (002064)</td><td>社保基金增持至 3,069.10 万股，H1 净利 +101.64%</td></tr><tr><td>🔴 增持</td><td>乐鑫科技 (688018)</td><td>社保基金持股市值 7.45 亿居首，持股占比 2.49%</td></tr><tr><td>🟢 退出</td><td>悍高集团 (001221)</td><td>社保 411 组合 + 博时社保划转组合双双退出前十大</td></tr><tr><td>🟢 退出</td><td>拉卡拉 (300773)</td><td>社保 503 组合退出前十大</td></tr><tr><td>🟢 减持</td><td>金徽股份 (603132)</td><td>社保 418 组合减持</td></tr></tbody></table>
-<p><strong>行业分布</strong>：电子（3 只）、有色金属（2 只）、化工（1 只）、食品饮料（1 只）——锚定<strong>"新质生产力 + 资源品"</strong>双主线。</p>
+<p class="sub-label"><strong>行业分布</strong>：</p>
+<p>电子（3 只）、有色金属（2 只）、化工（1 只）、食品饮料（1 只）——锚定<strong>"新质生产力 + 资源品"</strong>双主线。</p>
 <blockquote>🔗 来源：Wind 万得 (financial_docs) | 证券时报数据宝</blockquote>
 <h3>2.2 🔴 长城资产获批增持建设银行至 5%</h3>
 <p>8 月 10 日，长城资产获监管批准增持建设银行（601939.SH），持股比例将由 3.01%（截至 3 月末）提升至最高 <strong>5%</strong>。这是 <strong>2026 年以来全国性 AMC 获批增持国有六大行股权的首单</strong>。</p>

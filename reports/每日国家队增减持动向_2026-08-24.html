@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -461,9 +486,10 @@ blockquote p:last-child { margin-bottom: 0; }
 <p>截至 8/21 已披露半年报（1210 家），社保基金共现身 <strong>161 只</strong>个股，调仓结构：<strong>新进 44 股、增持 44 股、减持 53 股、持股不变 20 股</strong>。</p>
 <p><strong>社保新进重仓（按持股量）：</strong></p>
 <table><thead><tr><th>个股</th><th>持股量</th><th>备注</th></tr></thead><tbody><tr><td>梅花生物</td><td>3,758.84 万股</td><td>新进最大持仓</td></tr><tr><td>中化国际</td><td>3,164.78 万股</td><td>2 家社保集中现身</td></tr><tr><td>盛屯矿业</td><td>2,623.63 万股</td><td>有色资源品</td></tr><tr><td>汇成股份</td><td>1,230.47 万股</td><td>科创板</td></tr><tr><td>浙江荣泰</td><td>720.60 万股</td><td>2 家社保集中现身</td></tr></tbody></table>
-<p><strong>新进股业绩亮点</strong>：34 家净利同比增长，三维通信（+1825.74%）、富春股份（+443.75%）、复旦微电（+338.58%）领跑。</p>
-<p><strong>科创板新进 7 只</strong>：汇成股份、萤石网络、乐鑫科技、有研硅、摩尔线程-U 等，锚定半导体电子。</p>
-<p>🔗 来源：<a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=E51A1CE343FE&amp;lan=cn&amp;gateway=news#/CEF9172453E63AAE0656726CB5518C63" target="_blank">社保基金持仓动向：二季度新进44股</a></p>
+<p class="sub-label"><strong>新进股业绩亮点</strong>：</p>
+<p>34 家净利同比增长，三维通信（+1825.74%）、富春股份（+443.75%）、复旦微电（+338.58%）领跑。</p>
+<p class="sub-label"><strong>科创板新进 7 只</strong>：</p>
+<p>汇成股份、萤石网络、乐鑫科技、有研硅、摩尔线程-U 等，锚定半导体电子。<br>🔗 来源：<a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=E51A1CE343FE&amp;lan=cn&amp;gateway=news#/CEF9172453E63AAE0656726CB5518C63" target="_blank">社保基金持仓动向：二季度新进44股</a></p>
 <h3>🔵 今日新增披露的前十大股东变动（8/24）</h3>
 <table><thead><tr><th>个股</th><th>社保/养老动作</th><th>外资动作</th></tr></thead><tbody><tr><td>万华化学</td><td>社保103 增持 240.02 万股；社保114 减持 200 万股</td><td>阿布达比投资局增持 610.19 万股</td></tr><tr><td>海大集团</td><td>社保109 增持 188.14 万股；社保118 新进 720.12 万股</td><td>阿布达比投资局新进 879.19 万股</td></tr><tr><td>贝泰妮</td><td>社保118 增持 67.32 万股</td><td>科威特政府投资局增持 314.96 万股</td></tr><tr><td>新洁能</td><td>社保413 减持 54.68 万股；社保422 新进 449.98 万股</td><td>—</td></tr><tr><td>常宝股份</td><td>社保116 增持 383.93 万股</td><td>—</td></tr><tr><td>恒铭达</td><td>社保103 增持 250 万股</td><td>—</td></tr><tr><td>黄山旅游</td><td>社保116 增持 6.48 万股；养老基金2106 新进 251.10 万股</td><td>—</td></tr><tr><td>百亚股份</td><td>社保504 增持 169.05 万股；社保411 减持 100.54 万股</td><td>—</td></tr></tbody></table>
 <p>💡 <strong>外资主权基金与社保同步加仓</strong>：阿布达比投资局（万华化学、海大集团）、科威特政府投资局（贝泰妮）二季度显著增持，方向与社保高度一致——化工龙头、消费医疗、电子半导体。</p>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -457,9 +482,9 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>A股（7/29收盘）— 午后深V反弹，大消费领涨</h3>
 <table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>上证综指</td><td>3,828.47</td><td><span class="red">+0.40%</span></td><td>午后拉升翻红</td></tr><tr><td>深证成指</td><td>13,658.44</td><td><span class="red">+1.10%</span></td><td></td></tr><tr><td>创业板指</td><td>3,378.70</td><td><span class="red">+1.55%</span></td><td>盘中一度-2%</td></tr><tr><td>科创50</td><td>1,678.74</td><td><span class="green">-0.87%</span></td><td>盘中一度-5%</td></tr></tbody></table>
 <ul><li><strong>成交额</strong>：2.31万亿（放量2,708亿）</li><li><strong>涨跌家数</strong>：4,253涨 / 1,215跌（涨跌中位数+1.58%）</li><li><strong>内资主力</strong>：净卖出119.5亿</li><li><strong>两融余额</strong>：2.66万亿（7/28）</li></ul>
-<p><strong>板块表现</strong>：</p>
+<p class="sub-label"><strong>板块表现</strong>：</p>
 <ul><li>🔴 领涨：食品饮料、零售、乳业、大金融、固态电池、MLCC</li><li>🟢 领跌：半导体、存储芯片、光刻机、CPO、高带宽内存</li></ul>
-<p><strong>关键个股</strong>：</p>
+<p class="sub-label"><strong>关键个股</strong>：</p>
 <ul><li>长鑫科技 <span class="red">+12.66%</span> 报52.95元，成交448亿，将纳入MSCI中国全股票指数</li><li>中际旭创 <span class="red">+4.74%</span> 报951元</li></ul>
 <p>🔴 <strong>ETF资金持续涌入</strong>：7/28股票型ETF单日净流入超270亿，7月累计净流入超4,100亿。</p>
 <p>🔗 来源：NeoData / 财联社 / 人民财讯</p>
@@ -499,12 +524,12 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>🔬 知识星球精选</h2>
 <h3>水木调研纪要-2.0（88888142214212）</h3>
 <table><thead><tr><th>日期</th><th>标题</th><th>关键词</th><th>状态</th></tr></thead><tbody><tr><td>7/26</td><td>MLCC资料更新：三环/风华/国瓷/洁美盈利预测+弹性测算</td><td>涨价、调研纪要</td><td>⚠️ 附件图片需手动查看</td></tr><tr><td>7/18</td><td>光模块液冷cage双雄奕东电子+鼎通科技持续重点推荐</td><td>重点推荐、买入</td><td>明年AI市场规模300-400亿，两家分享75-100亿利润</td></tr></tbody></table>
-<p><strong>光模块液冷cage核心逻辑</strong>：行业趋势明确，明年市场规模急速放大至300-400亿元，奕东电子+鼎通科技两家分享75-100亿元利润。当前两家市值合计约500亿元。AI行业回调带来买入机会。</p>
-<p>🔗 来源：zsxq 水木调研纪要-2.0</p>
+<p class="sub-label"><strong>光模块液冷cage核心逻辑</strong>：</p>
+<p>行业趋势明确，明年市场规模急速放大至300-400亿元，奕东电子+鼎通科技两家分享75-100亿元利润。当前两家市值合计约500亿元。AI行业回调带来买入机会。<br>🔗 来源：zsxq 水木调研纪要-2.0</p>
 <h3>调研纪要更新（48844242514558）</h3>
 <table><thead><tr><th>日期</th><th>标题</th><th>关键词</th><th>状态</th></tr></thead><tbody><tr><td>7/28</td><td>染料行业跟踪：中间体再度涨价，涨价行情有望延续</td><td>涨价、受益标的</td><td>浙江龙盛/闰土股份/吉华集团/安诺其</td></tr><tr><td>7/27</td><td>财通策略：韩国养老金7月首次净买入，SK海力士买入最多</td><td>外资动向</td><td>韩国KOSPI反弹+0.97%</td></tr></tbody></table>
-<p><strong>染料涨价核心逻辑</strong>：H酸出厂报价10万元/吨，活性黑较去年末+30.43%，分散黑+51.52%。核心原料还原物供给收紧+传统旺季+低库存共振。</p>
-<p>🔗 来源：zsxq 调研纪要更新</p>
+<p class="sub-label"><strong>染料涨价核心逻辑</strong>：</p>
+<p>H酸出厂报价10万元/吨，活性黑较去年末+30.43%，分散黑+51.52%。核心原料还原物供给收紧+传统旺季+低库存共振。<br>🔗 来源：zsxq 调研纪要更新</p>
 <hr>
 <h2>📋 数据溯源</h2>
 <table><thead><tr><th>数据板块</th><th>数据源</th><th>查询次数</th><th>状态</th></tr></thead><tbody><tr><td>宏观/市场概览</td><td>NeoData Financial Search</td><td>3</td><td>✅</td></tr><tr><td>策略观点</td><td>NeoData Financial Search</td><td>1</td><td>✅</td></tr><tr><td>美股隔夜</td><td>NeoData Financial Search + 财联社</td><td>1</td><td>✅</td></tr><tr><td>A股收盘</td><td>NeoData Financial Search + 财联社</td><td>1</td><td>✅</td></tr><tr><td>港股收盘</td><td>NeoData Financial Search</td><td>1</td><td>✅</td></tr><tr><td>持仓A股</td><td>NeoData Financial Search</td><td>1</td><td>✅</td></tr><tr><td>持仓港股</td><td>NeoData Financial Search</td><td>1</td><td>✅</td></tr><tr><td>知识星球</td><td>zsxq-cli（水木2.0+调研纪要更新）</td><td>4次搜索+4次详情</td><td>✅</td></tr><tr><td>Wind/万得</td><td>未安装CLI，本次未调用</td><td>—</td><td>⚠️</td></tr></tbody></table>

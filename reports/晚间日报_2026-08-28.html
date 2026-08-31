@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -450,7 +475,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>二、市场广度体检（market_breadth_health）</h2>
 <h3>一、30 秒结论</h3>
-<p><strong>广度健康但结构分化</strong>：A 股整体涨多跌少（55.1%），属健康扩散；但<strong>科创板严重背离</strong>——科创50 内 405 跌 / 203 涨，跌占比 66.6%，是拖累指数的主要来源。</p>
+<p class="sub-label"><strong>广度健康但结构分化</strong>：</p>
+<p>A 股整体涨多跌少（55.1%），属健康扩散；但<strong>科创板严重背离</strong>——科创50 内 405 跌 / 203 涨，跌占比 66.6%，是拖累指数的主要来源。</p>
 <h3>二、广度观察面板</h3>
 <table><thead><tr><th>市场/指数</th><th>上涨</th><th>下跌</th><th>涨占比</th><th>指数涨跌</th><th>广度评价</th></tr></thead><tbody><tr><td>上证</td><td>1285</td><td>1005</td><td>56.1%</td><td>-0.11%</td><td>✅ 健康</td></tr><tr><td>深证</td><td>1539</td><td>1301</td><td>54.2%</td><td>-0.68%</td><td>✅ 健康</td></tr><tr><td><strong>沪深合计</strong></td><td><strong>2824</strong></td><td><strong>2306</strong></td><td><strong>55.1%</strong></td><td>—</td><td>✅ <strong>健康扩散</strong></td></tr><tr><td>创业板</td><td>581</td><td>744</td><td>43.9%</td><td>-1.41%</td><td>⚠️ 偏弱</td></tr><tr><td><strong>科创50</strong></td><td><strong>203</strong></td><td><strong>405</strong></td><td><strong>33.4%</strong></td><td><strong>-1.85%</strong></td><td>❌ <strong>局部失血</strong></td></tr><tr><td>沪深300</td><td>138</td><td>148</td><td>48.3%</td><td>-0.46%</td><td>⚠️ 权重偏弱</td></tr></tbody></table>
 <h3>三、行情结构诊断</h3>
@@ -484,7 +510,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><strong>组合当日收益：-0.58%</strong> ｜ 权益部分（64%）收益：<strong>-0.91%</strong></p>
 <table><thead><tr><th>基准</th><th>当日</th><th>组合超额</th></tr></thead><tbody><tr><td>沪深300</td><td>-0.46%</td><td>-0.12 pct（基本持平）</td></tr><tr><td>创业板指</td><td>-1.41%</td><td><strong>+0.83 pct（显著跑赢）</strong></td></tr></tbody></table>
 <table><thead><tr><th>大类</th><th>权重</th><th>组内平均涨跌</th><th>贡献(pct)</th><th>占跌幅比</th><th>波动放大倍数</th></tr></thead><tbody><tr><td>AI应用（底仓）</td><td>20%</td><td>+0.13%</td><td>+0.03</td><td>—</td><td>—</td></tr><tr><td>消费</td><td>2%</td><td>+1.30%</td><td>+0.03</td><td>—</td><td>—</td></tr><tr><td>周期+反转</td><td>5%</td><td>+2.11%</td><td>+0.11</td><td>—</td><td>—</td></tr><tr><td>周期+反内卷（物流）</td><td>2%</td><td>+0.34%</td><td>+0.01</td><td>—</td><td>—</td></tr><tr><td>创新药相关</td><td>20%</td><td>-1.43%</td><td>-0.29</td><td>49.1%</td><td>2.46×</td></tr><tr><td><strong>AI及半导体（含人造钻石）</strong></td><td><strong>15%</strong></td><td><strong>-3.07%</strong></td><td><strong>-0.46</strong></td><td><strong>79.2%</strong></td><td><strong>5.28×</strong></td></tr><tr><td>现金</td><td>36%</td><td>0%</td><td>0</td><td>—</td><td>—</td></tr><tr><td><strong>合计</strong></td><td><strong>100%</strong></td><td>—</td><td><strong>-0.58</strong></td><td>—</td><td>—</td></tr></tbody></table>
-<p><div class="chart"><br><div class="chart-title">大类对组合当日收益的贡献（正=拉高，负=拉低）</div><br><div class="bar-row"><span class="bar-label">周期+反转</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 12.0%"></span></span><span class="bar-value">+0.11 pct</span></div><br><div class="bar-row"><span class="bar-label">AI应用</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 3.3%"></span></span><span class="bar-value">+0.03 pct</span></div><br><div class="bar-row"><span class="bar-label">消费</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 3.3%"></span></span><span class="bar-value">+0.03 pct</span></div><br><div class="bar-row"><span class="bar-label">周期+反内卷</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 1.1%"></span></span><span class="bar-value">+0.01 pct</span></div><br><div class="bar-row"><span class="bar-label">现金</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 0.0%"></span></span><span class="bar-value">0.00 pct</span></div><br><div class="bar-row"><span class="bar-label">创新药相关</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill neg" style="width: 31.5%"></span></span><span class="bar-value">-0.29 pct</span></div><br><div class="bar-row"><span class="bar-label">AI及半导体</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill neg" style="width: 50.0%"></span></span><span class="bar-value">-0.46 pct</span></div><br></div></p>
+<p><div class="chart"><br><div class="chart-title">大类对组合当日收益的贡献（正=拉高，负=拉低）</div><div class="bar-row"><span class="bar-label">周期+反转</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 12.0%"></span></span><span class="bar-value">+0.11 pct</span></div><div class="bar-row"><span class="bar-label">AI应用</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 3.3%"></span></span><span class="bar-value">+0.03 pct</span></div><div class="bar-row"><span class="bar-label">消费</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 3.3%"></span></span><span class="bar-value">+0.03 pct</span></div><div class="bar-row"><span class="bar-label">周期+反内卷</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 1.1%"></span></span><span class="bar-value">+0.01 pct</span></div><div class="bar-row"><span class="bar-label">现金</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill pos" style="width: 0.0%"></span></span><span class="bar-value">0.00 pct</span></div><div class="bar-row"><span class="bar-label">创新药相关</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill neg" style="width: 31.5%"></span></span><span class="bar-value">-0.29 pct</span></div><div class="bar-row"><span class="bar-label">AI及半导体</span><span class="bar-track"><span class="bar-zero"></span><span class="bar-fill neg" style="width: 50.0%"></span></span><span class="bar-value">-0.46 pct</span></div></div></p>
 <blockquote>💡 <strong>今日新增洞察——波动放大的来源被量化了</strong>：<br>AI及半导体组跌 <strong>-3.07%</strong>，而其所处板块（半导体 -2.12%、电子 -1.61%、通信 -1.43%，均值 <strong>-1.72%</strong>）只跌 1.72%。<br><strong>放大倍数 = 3.07 ÷ 1.72 = 1.78 倍</strong>。<br><br>也就是说，15% 的权重之所以能贡献 79% 的亏损，不是因为权重高，而是因为：<br><strong>持仓 AI 链个股的 beta 是板块的 1.78 倍</strong> × 板块本身跌幅大 = 双重放大。<br><br>这修正了昨日的判断——风险不在"押注过多"，而在"押注的是高 beta 品种"。</blockquote>
 <hr>
 <h2>五、自选股收盘复盘（after_close_watchlist_recap）</h2>

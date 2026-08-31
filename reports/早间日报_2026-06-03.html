@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -434,49 +459,49 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>🔔 重点关注：催化剂与事件日历</h2>
 <h3>宏观层面（全球与中国）</h3>
 <table><thead><tr><th>日期</th><th>事件</th><th>预期影响方向</th></tr></thead><tbody><tr><td><strong>6月2-5日</strong></td><td>COMPUTEX 2026 台北电脑展（黄仁勋6/1主题演讲）</td><td>🔴 AI算力/半导体产业链强催化</td></tr><tr><td><strong>6月3日</strong></td><td>中国5月财新服务业PMI发布</td><td>预期51.6，关注服务业景气变化</td></tr><tr><td><strong>6月4日</strong></td><td>瑞士5月CPI、欧元区建筑业PMI</td><td>影响全球利率预期</td></tr><tr><td><strong>6月9日</strong></td><td>Apple WWDC 2026 全球开发者大会</td><td>果链/AI应用催化</td></tr><tr><td><strong>6月10日</strong></td><td>第十届国际氢能与燃料电池汽车大会</td><td>氢能板块催化</td></tr><tr><td><strong>6月11日</strong></td><td>2026美加墨世界杯开幕</td><td>消费/体育板块</td></tr><tr><td><strong>6月12-15日</strong></td><td>A股核心指数半年调样生效（上证50/沪深300/科创50等）</td><td>🔴 千亿被动资金再平衡，硬科技调入</td></tr><tr><td><strong>6月16-17日</strong></td><td>美联储FOMC会议（6月决议+点阵图+经济预测）</td><td>🔴 利率预期重大窗口</td></tr><tr><td><strong>6月17日</strong></td><td>中国5月社零/工业增加值/固投</td><td>经济基本面核心数据</td></tr><tr><td><strong>6月19-21日</strong></td><td>端午节 A股休市</td><td>注意节前流动性变化</td></tr></tbody></table>
-<p><strong>美联储最新动态</strong>：</p>
+<p class="sub-label"><strong>美联储最新动态</strong>：</p>
 <ul><li>当前利率：4.25%-4.50%（2025年12月降息后维持）</li><li>CME FedWatch：6月维持不变概率 ~90%，7月维持不变概率 ~90.3%</li><li>6月FOMC为季度会议，将发布点阵图和经济预测摘要</li><li>近期官员讲话偏鹰，关注通胀粘性风险</li></ul>
 <p>🔗 <a href="https://zhuanlan.zhihu.com/p/1992783258740598337" target="_blank">2026年FOMC会议日程</a></p>
-<p><strong>美联储利率预期</strong>：</p>
+<p class="sub-label"><strong>美联储利率预期</strong>：</p>
 <ul><li>当前市场定价年内降息空间有限，6月FOMC点阵图将是最新政策路径指引</li><li>地缘风险（伊朗局势）+ 通胀韧性构成双重制约</li></ul>
-<p><strong>中国经济数据发布日历</strong>：</p>
+<p class="sub-label"><strong>中国经济数据发布日历</strong>：</p>
 <ul><li>5月财新制造业PMI：51.8（低于前值52.2，但仍处扩张区间）</li><li>5月财新服务业PMI：6月3日发布，预期51.6</li><li>5月CPI/PPI：6月10日左右</li><li>5月社融/信贷：6月10-15日</li><li>5月工业/社零/固投：6月17日</li></ul>
 <p>🔗 <a href="https://www.stats.gov.cn/xw/tjxw/tzgg/202512/t20251224_1962137.html" target="_blank">2026年国家统计局发布日程</a></p>
-<p><strong>地缘风险</strong>：</p>
+<p class="sub-label"><strong>地缘风险</strong>：</p>
 <ul><li>中东局势：伊朗暂停美谈判、威胁封锁霍尔木兹海峡 → 油价波动加剧</li><li>中美关系：贸易摩擦持续，关税阴影未散</li><li>美伊有望一周内达成协议（特朗普表态），油价回落压力</li></ul>
 <h3>中观层面（市场流动性与行业政策）</h3>
-<p><strong>A 股流动性</strong>：</p>
+<p class="sub-label"><strong>A 股流动性</strong>：</p>
 <ul><li>DR007：1.353%（6月2日，下行2.30BP）</li><li>Shibor隔夜：1.315%（下行0.20BP），资金面整体宽松</li><li>央行6月2日：2亿元7天逆回购，利率1.40%，净回笼2488亿元</li><li>北向资金6月2日成交3761.54亿元，占两市总成交额13.47%</li><li>南向资金6月2日净买入22.23亿港元</li></ul>
-<p><strong>近3日公开市场操作</strong>：</p>
+<p class="sub-label"><strong>近3日公开市场操作</strong>：</p>
 <table><thead><tr><th>日期</th><th>操作</th><th>投放</th><th>到期</th><th>净投放</th><th>利率</th></tr></thead><tbody><tr><td>6/2（二）</td><td>7天逆回购</td><td>2亿</td><td>2490亿</td><td>-2488亿</td><td>1.40%</td></tr><tr><td>6/1（一）</td><td>7天逆回购</td><td>—</td><td>—</td><td>—</td><td>1.40%</td></tr><tr><td>5/29（五）</td><td>7天逆回购</td><td>—</td><td>—</td><td>—</td><td>1.40%</td></tr></tbody></table>
-<p><strong>美股 AI 泡沫监测</strong>：</p>
+<p class="sub-label"><strong>美股 AI 泡沫监测</strong>：</p>
 <ul><li>COMPUTEX 2026 催化下，美股芯片/半导体板块持续走强</li><li>迈威尔科技（Marvell）获黄仁勋"下一个万亿美元公司"背书，6月2日暴涨32%+</li><li>英伟达宣布 Vera CPU 将成为新增长引擎（黄仁勋6月2日Computex媒体见面会）</li><li>费城半导体指数大涨4.2%，博通+4%，英伟达+2%+</li><li>标普500首次站上7600点，纳指/道指连续九个交易日创新高</li><li>⚠️ AI泡沫指标边际升高，但当前由实际业绩（Marvell AI芯片、英伟达数据中心高增）驱动，暂未进入"脱离基本面"阶段</li></ul>
 <p>🔗 <a href="https://finance.sina.com.cn/roll/2026-05-28/doc-inhznenk0051593.shtml" target="_blank">Computex 2026 前瞻</a></p>
-<p><strong>行业政策</strong>：</p>
+<p class="sub-label"><strong>行业政策</strong>：</p>
 <ul><li>🔴 <strong>人民日报6月1日头版刊文</strong>：聚焦资本市场高质量发展，信号意义重大——"钱、政策、人才、政府采购倾斜"向硬科技头部公司集中</li><li><a href="https://baijiahao.baidu.com/s?id=1866840775926574600" target="_blank">(来源：人民日报)</a></li><li>🔴 <strong>A 股核心指数大换血</strong>：6月12-15日生效，调入方向集中在半导体、AI算力、新能源、高端制造；调出传统消费、医药、周期</li><li><a href="https://xueqiu.com/7171171657/392452318" target="_blank">(来源：雪球)</a></li><li>🔴 <strong>2026年医保目录调整启动</strong>：国家医保局5月31日挂出调整工作方案，创新药纳入节奏受关注</li><li>🔴 <strong>《求是》杂志6月1日刊文</strong>：强化硬科技产业链自主可控</li></ul>
-<p><strong>市场情绪</strong>：</p>
+<p class="sub-label"><strong>市场情绪</strong>：</p>
 <ul><li>两融余额：维持高位（近期增量来自AI/半导体方向）</li><li>风格切换信号：6月1日芯片/半导体等前期强势板块领跌，AI应用等低位方向资金回流 → "高低切换"格局</li><li>6月2日结构逆转：元件、CPO、贵金属领涨，影视游戏领跌</li></ul>
-<p><strong>资金面</strong>：</p>
+<p class="sub-label"><strong>资金面</strong>：</p>
 <ul><li>指数调样将引发千亿级被动资金再平衡（6月12-15日窗口）</li><li>IPO节奏：正常，无异常加速</li><li>解禁高峰：需关注6月中下旬个股解禁</li></ul>
 <h3>微观层面（持仓个股关键催化剂）</h3>
 <table><thead><tr><th>标的</th><th>事件</th><th>时间窗口</th><th>预期影响</th></tr></thead><tbody><tr><td>信达生物</td><td>辉瑞105亿美元合作细节持续发酵 + ASCO 2026数据读出</td><td>5/29公告，持续催化</td><td>🔴 重大正面</td></tr><tr><td>宁德时代</td><td>钠电池6月重卡启驻电池量产，Q4乘用车动力电池量产</td><td>6月-12月</td><td>🟠 正面</td></tr><tr><td>芯碁微装</td><td>COMPUTEX 2026 → AI算力/先进封装产业链情绪带动</td><td>6/2-6/5</td><td>🟡 正面</td></tr><tr><td>工业富联</td><td>COMPUTEX &amp; NVIDIA产业链催化 + 年度股东会</td><td>6月</td><td>🟡 正面</td></tr><tr><td>京东方A</td><td>Apple WWDC 2026（6/9）果链催化</td><td>6/9</td><td>🟡 正面</td></tr><tr><td>紫金黄金国际</td><td>末期股息登记日6/5，派息日6/26（1.5港元/股）</td><td>6/5登记日</td><td>🟡 正面</td></tr><tr><td>长川科技</td><td>6/3股权登记日（分红）</td><td>今日</td><td>🟡 正面</td></tr><tr><td>泡泡玛特</td><td>FIFA世界杯联名（6/11开幕）+ Q1营收+75-80%</td><td>6/11</td><td>🟡 正面</td></tr><tr><td>万华化学</td><td>82万吨磷酸铁锂年内投产 + 尼龙12技改</td><td>年内</td><td>🟡 正面</td></tr><tr><td>赤峰黄金</td><td>国际金价高位震荡，央行购金支撑</td><td>持续</td><td>🟡 正面</td></tr><tr><td>容百科技</td><td>钠电池产业链核心正极供应商，宁德量产催化</td><td>6月-12月</td><td>🟡 正面</td></tr></tbody></table>
 <hr>
 <h2>一、宏观回顾及前瞻（隔夜 + 今日前瞻）</h2>
 <h3>中国宏观</h3>
-<p><strong>流动性</strong>：</p>
+<p class="sub-label"><strong>流动性</strong>：</p>
 <ul><li>央行6月2日开展2亿元7天逆回购（利率1.40%），2490亿到期，净回笼2488亿</li><li>资金面延续宽松：Shibor隔夜1.315%（-0.2BP），7天1.353%（-2.3BP）</li><li>10年国债收益率维持低位，银行间流动性充裕</li></ul>
 <p>🔗 <a href="https://finance.sina.cn/2026-06-02/detail-inhzzqck3061466.d.html" target="_blank">新华财经 6月2日</a></p>
-<p><strong>经济数据</strong>：</p>
+<p class="sub-label"><strong>经济数据</strong>：</p>
 <ul><li>5月财新制造业PMI：51.8（前值52.2，预期51.4），连续4个月处于扩张区间</li><li>5月官方PMI：50.0%（5月31日发布），制造业景气度维持临界点</li></ul>
 <p>🔗 <a href="https://cn.investing.com/economic-calendar/chinese-hsbc-manufacturing-pmi-753" target="_blank">Investing.com</a></p>
-<p><strong>政策信号</strong>：</p>
+<p class="sub-label"><strong>政策信号</strong>：</p>
 <ul><li>人民日报6月1日头版刊文：聚焦资本市场高质量发展</li><li>《求是》杂志刊文：强化硬科技产业链自主可控</li><li>2026年医保目录调整工作方案发布（5月31日）</li></ul>
 <h3>海外宏观</h3>
-<p><strong>美联储</strong>：</p>
+<p class="sub-label"><strong>美联储</strong>：</p>
 <ul><li>6月FOMC会议（6/16-17）预期维持利率不变</li><li>市场焦点转向点阵图——是否下修年内降息预期</li><li>美联储官员近期表态偏鹰，关注通胀粘性</li></ul>
-<p><strong>地缘政治</strong>：</p>
+<p class="sub-label"><strong>地缘政治</strong>：</p>
 <ul><li>伊朗暂停与美谈判，威胁封锁霍尔木兹海峡 → 油价短期波动</li><li>特朗普称美伊或一周内达成协议 → 油价回落预期</li><li>中东局势仍是黄金/原油双向波动的核心变量</li></ul>
-<p><strong>黄金</strong>：</p>
+<p class="sub-label"><strong>黄金</strong>：</p>
 <ul><li>6月2日国际金价未能守住4500美元关口，伦敦现货报4482.67美元</li><li>地缘避险+通胀预期推升买盘，但美联储鹰派压制上方空间</li><li>全球央行持续购金形成底部支撑</li></ul>
 <p>🔗 <a href="https://www.zhiguf.com/focusnews_detail/2309741" target="_blank">指股网</a></p>
 <h3>今日关注</h3>

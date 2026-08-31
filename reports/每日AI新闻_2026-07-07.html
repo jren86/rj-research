@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -440,31 +465,24 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260706A067TS00?scene=news-skill">来源：腾讯新闻早报</a></div></p>
 <h3>3. 联合国全球人工智能能力发展网络在日内瓦成立</h3>
 <p>由联合国推动筹建的全球人工智能能力发展网络于 7 月 5 日在日内瓦世界贸易组织大楼正式成立。该网络汇集非洲、亚洲、欧洲、拉丁美洲和加勒比地区的前沿人工智能中心，旨在加强 AI 能力建设国际合作、缩小全球 AI 鸿沟。中国科学院院士、复旦大学校长金力代表中方成员机构签约。</p>
-<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260707A01MPF00?scene=news-skill">来源：上观新闻 / 腾讯新闻</a></div></p>
-<p><div class="source-link">🔗 <a href="https://www.reuters.com/technology/un-chief-warns-ai-is-developing-faster-than-rules-can-keep-up-2026-07-06/">来源：Reuters</a></div></p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260707A01MPF00?scene=news-skill">来源：上观新闻 / 腾讯新闻</a></div><div class="source-link">🔗 <a href="https://www.reuters.com/technology/un-chief-warns-ai-is-developing-faster-than-rules-can-keep-up-2026-07-06/">来源：Reuters</a></div></p>
 <h3>4. Anthropic 签署 20 年、190 亿美元肯塔基州数据中心租约</h3>
 <p>Anthropic 与前加密矿企 TeraWulf 签署为期 20 年的数据中心租约，预计带来约 190 亿美元合同收入。该数据中心位于肯塔基州，计划 2027 年下半年上线，2028 年达到 401 兆瓦供电能力。TeraWulf 股价当日早盘涨超 10%。</p>
-<p><div class="source-link">🔗 <a href="https://www.reuters.com/business/terawulf-jumps-19-billion-data-center-lease-deal-anthropic-2026-07-06/">来源：Reuters</a></div></p>
-<p><div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/961722/anthropic-signs-20-year-lease-agreement-for-an-ai-data-center-in-kentucky">来源：The Verge</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.reuters.com/business/terawulf-jumps-19-billion-data-center-lease-deal-anthropic-2026-07-06/">来源：Reuters</a></div><div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/961722/anthropic-signs-20-year-lease-agreement-for-an-ai-data-center-in-kentucky">来源：The Verge</a></div></p>
 <h3>5. 微软裁员约 4,800 人，Xbox 业务大改组</h3>
 <p>微软 7 月 6 日宣布将在全球裁员约 4,800 人，约占员工总数 2.1%，涉及 Xbox 游戏业务和商业部门。公司将剥离最多五家工作室，Compulsion 与 Double Fine 将独立，Undead Labs 和 Ninja Theory 将被出售，并寻求出售或拆分 Arkane Studios。这是微软将投资重心转向 AI 基础设施背景下的最新一轮重组。</p>
-<p><div class="source-link">🔗 <a href="https://www.reuters.com/business/world-at-work/microsoft-joins-ai-driven-tech-layoff-wave-with-4800-job-cuts-2026-07-06/">来源：Reuters</a></div></p>
-<p><div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-07-06/microsoft-s-xbox-to-cut-3-200-jobs-divest-five-studios-in-major-overhaul">来源：Bloomberg</a></div></p>
-<p><div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/">来源：TechCrunch</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.reuters.com/business/world-at-work/microsoft-joins-ai-driven-tech-layoff-wave-with-4800-job-cuts-2026-07-06/">来源：Reuters</a></div><div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-07-06/microsoft-s-xbox-to-cut-3-200-jobs-divest-five-studios-in-major-overhaul">来源：Bloomberg</a></div><div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/">来源：TechCrunch</a></div></p>
 <hr>
 <h2>🔵 行业动态</h2>
 <h3>半导体：AI 内存需求推动三星利润爆表，SK 海力士启动 280 亿美元美国上市</h3>
 <p>三星电子预计第二季度营业利润同比增长约 19 倍，连续第三个季度创纪录，AI 驱动的存储芯片需求是核心驱动力。韩国 SK 海力士同日启动规模达 280 亿美元的美国上市推介，以抓住全球 AI 浪潮。摩根士丹利指出，近期半导体股疲软显示市场资金可能从芯片制造商转向 AI 超大规模云厂商（hyperscalers）及消费、交通、生物科技板块。</p>
-<p><div class="source-link">🔗 <a href="https://www.reuters.com/world/asia-pacific/samsung-estimates-19-fold-rise-q2-operating-profit-beating-expectations-2026-07-06/">来源：Reuters</a></div></p>
-<p><div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-07-06/memory-chipmaker-sk-hynix-starts-marketing-us-listing">来源：Bloomberg</a></div></p>
-<p><div class="source-link">🔗 <a href="https://www.reuters.com/business/ai-investors-may-pivot-hyperscalers-chipmakers-morgan-stanley-says-2026-07-06/">来源：Reuters - Morgan Stanley</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.reuters.com/world/asia-pacific/samsung-estimates-19-fold-rise-q2-operating-profit-beating-expectations-2026-07-06/">来源：Reuters</a></div><div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-07-06/memory-chipmaker-sk-hynix-starts-marketing-us-listing">来源：Bloomberg</a></div><div class="source-link">🔗 <a href="https://www.reuters.com/business/ai-investors-may-pivot-hyperscalers-chipmakers-morgan-stanley-says-2026-07-06/">来源：Reuters - Morgan Stanley</a></div></p>
 <h3>对冲基金连续四周抛售芯片股</h3>
 <p>对冲基金已连续第四周抛售芯片股，AI 相关股票遭遇资金流出。市场正在重新评估 AI 硬件资本开支与短期回报之间的匹配度。</p>
 <p><div class="source-link">🔗 <a href="https://www.reuters.com/business/finance/hedge-funds-dumped-chip-stocks-fourth-week-ai-shares-sold-off-2026-07-06/">来源：Reuters</a></div></p>
 <h3>大模型竞争烧至供应链：Anthropic 拟与三星合作定制 AI 芯片</h3>
 <p>继 OpenAI 与博通推出自研 Jalapeño 推理芯片后，Anthropic 也被曝出正与三星洽谈定制 AI 芯片，以降低对单一 GPU 供应链的依赖。大模型公司的竞争正从模型能力延伸至芯片供应链深处。</p>
-<p><div class="source-link">🔗 <a href="https://www.msn.cn/zh-cn/news/other/openai-%E4%B9%8B%E5%90%8E-anthropic-%E4%B9%9F%E7%9B%AF%E4%B8%8A%E8%87%AA%E7%A0%94%E8%8A%AF%E7%89%87-ai-%E6%88%98%E4%BA%89%E6%89%93%E5%88%B0%E4%BE%9B%E5%BA%94%E9%93%BE%E6%B7%B1%E5%A4%84/ar-AA278bt6?ocid=BingNewsSerp">来源：MSN 新闻</a></div></p>
-<p><div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/">来源：TechCrunch</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.msn.cn/zh-cn/news/other/openai-%E4%B9%8B%E5%90%8E-anthropic-%E4%B9%9F%E7%9B%AF%E4%B8%8A%E8%87%AA%E7%A0%94%E8%8A%AF%E7%89%87-ai-%E6%88%98%E4%BA%89%E6%89%93%E5%88%B0%E4%BE%9B%E5%BA%94%E9%93%BE%E6%B7%B1%E5%A4%84/ar-AA278bt6?ocid=BingNewsSerp">来源：MSN 新闻</a></div><div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/">来源：TechCrunch</a></div></p>
 <hr>
 <h2>📱 产品与公司</h2>
 <h3>xAI 正式更名为 SpaceXAI</h3>
@@ -472,9 +490,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/961896/xais-x-account-is-now-spacexai">来源：The Verge</a></div></p>
 <h3>Reddit 用 LLM 打击“AI 营销垃圾”</h3>
 <p>Reddit 表示其 AI 驱动的垃圾检测工具每天拦截约 2,300 万次垃圾信息浏览，捕获约 2.5 万条“垃圾帖子和评论”，并撤销近 200 万“虚假投票”。平台同时打击虚假行为模式和 AI 人工炒作。</p>
-<p><div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/961668/reddit-is-clamping-down-on-spammy-ai-posts">来源：The Verge</a></div></p>
-<p><div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-07-06/reddit-is-cracking-down-on-ai-marketing-slop-with-its-own-ai">来源：Bloomberg</a></div></p>
-<p><div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/06/reddit-is-using-llms-to-solve-a-problem-llms-largely-created/">来源：TechCrunch</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/961668/reddit-is-clamping-down-on-spammy-ai-posts">来源：The Verge</a></div><div class="source-link">🔗 <a href="https://www.bloomberg.com/news/articles/2026-07-06/reddit-is-cracking-down-on-ai-marketing-slop-with-its-own-ai">来源：Bloomberg</a></div><div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/06/reddit-is-using-llms-to-solve-a-problem-llms-largely-created/">来源：TechCrunch</a></div></p>
 <h3>Vercel CEO：模型与智能体应解耦</h3>
 <p>Vercel CEO Guillermo Rauch 在接受 TechCrunch 采访时表示，行业正在推动“模型与智能体分离”，以便让底层模型更灵活地服务于不同的代理应用，避免单一模型锁定。</p>
 <p><div class="source-link">🔗 <a href="https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/">来源：TechCrunch</a></div></p>
@@ -499,13 +515,10 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>📄 政策与监管</h2>
 <h3>联合国秘书长警告：AI 发展快于监管，需全球规则保护儿童</h3>
 <p>联合国秘书长古特雷斯 7 月 6 日警告，AI 发展速度已超越监管能力，呼吁国际社会加快制定共同标准和监管机制，特别要保护儿童、社会安全，并禁止 AI 驱动的自主杀人武器。</p>
-<p><div class="source-link">🔗 <a href="https://www.reuters.com/technology/un-chief-warns-ai-is-developing-faster-than-rules-can-keep-up-2026-07-06/">来源：Reuters</a></div></p>
-<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260706A0BBH600?scene=news-skill">来源：泰国中文社 / 腾讯新闻</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.reuters.com/technology/un-chief-warns-ai-is-developing-faster-than-rules-can-keep-up-2026-07-06/">来源：Reuters</a></div><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260706A0BBH600?scene=news-skill">来源：泰国中文社 / 腾讯新闻</a></div></p>
 <h3>英国 FCA 警告金融服务 AI“军备竞赛”</h3>
 <p>英国金融行为监管局（FCA）官员 7 月 6 日表示，由于数百万消费者使用 ChatGPT、Claude、Gemini 等大模型进行个人财务决策，监管机构需要更大权力来跟上 AI 应用步伐，并考虑对大型语言模型实施监管。</p>
-<p><div class="source-link">🔗 <a href="https://www.reuters.com/legal/litigation/britain-should-consider-regulating-ai-models-fca-official-says-2026-07-06/">来源：Reuters</a></div></p>
-<p><div class="source-link">🔗 <a href="https://www.ft.com/content/7f501320-9037-410f-b8e7-3111b9041311">来源：Financial Times</a></div></p>
-<p><div class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/07/uk-regulator-warns-of-arms-race-to-keep-up-with-ai-use-in-financial-services/">来源：Ars Technica</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.reuters.com/legal/litigation/britain-should-consider-regulating-ai-models-fca-official-says-2026-07-06/">来源：Reuters</a></div><div class="source-link">🔗 <a href="https://www.ft.com/content/7f501320-9037-410f-b8e7-3111b9041311">来源：Financial Times</a></div><div class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/07/uk-regulator-warns-of-arms-race-to-keep-up-with-ai-use-in-financial-services/">来源：Ars Technica</a></div></p>
 <h3>伊利诺伊州 AI 安全法案正式生效</h3>
 <p>伊利诺伊州州长 JB Pritzker 于 7 月 6 日签署 SB 315《人工智能安全措施法案》，要求 AI 公司接受独立第三方审计，以提高 AI 系统透明度与安全性。该法案类似纽约和加州的相关立法。</p>
 <p><div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/961781/illinoiss-ai-safety-bill-is-now-law">来源：The Verge</a></div></p>
@@ -525,7 +538,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer">数据来源：Bloomberg / Reuters / The Verge / TechCrunch / Ars Technica / Financial Times / 腾讯新闻 / Artificial Intelligence News / Developer Tech News · My Research Central · via WB</div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  数据来源：Bloomberg / Reuters / The Verge / TechCrunch / Ars Technica / Financial Times / 腾讯新闻 / Artificial Intelligence News / Developer Tech News · My Research Central · via WB
 </div>
 
 </body>

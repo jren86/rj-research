@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -461,19 +486,21 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>机构核心观点</h3>
 <p><strong>金融街证券</strong>（行业轮动ETF策略）：</p>
 <ul><li>8/3-8/7推荐：股份制银行、证券、白酒 + 电池ETF/有色ETF/黄金股ETF</li><li>当前处于行业轮动阶段，上述板块具备较强配置价值</li></ul>
-<p><strong>华西证券</strong>：</p>
+<p class="sub-label"><strong>华西证券</strong>：</p>
 <ul><li>7月唯一实现正收益的券商金股指数（7月大盘深度回调后）</li><li>8月行情核心逻辑：政策与业绩双重验证，弱势震荡上行</li></ul>
-<p><strong>中泰传媒</strong>：</p>
+<p class="sub-label"><strong>中泰传媒</strong>：</p>
 <ul><li>Token周调用量较年初增长953%，DeepSeek V4 Flash居榜首</li><li>Meta推出Muse Code入局AI Coding（商业化落地最快的AI应用方向之一）</li><li>DeepSeek预告API提价——利好国产模型生态商业化</li></ul>
 <p>🔗 来源：Wind Data Terminal, ZSXQ</p>
 <hr>
 <h2>📈 持仓个股监控</h2>
 <h3>A股持仓（14只）</h3>
 <table><thead><tr><th>标的</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>宁德时代(300750)</td><td>¥388.00</td><td><span class="green">-4.24%</span></td><td>新能源龙头回调</td></tr><tr><td>恒瑞医药(600276)</td><td>¥52.11</td><td><span class="green">-2.67%</span></td><td>创新药回落</td></tr><tr><td>新和成(002001)</td><td>¥30.45</td><td><span class="red">+2.18%</span></td><td>化工材料走强</td></tr><tr><td>京东方A(000725)</td><td>¥5.96</td><td><span class="green">-0.17%</span></td><td>弱势震荡</td></tr><tr><td>长川科技(300604)</td><td>¥278.53</td><td><span class="red">+2.40%</span></td><td>AI半导体修复</td></tr><tr><td>巨化股份(600160)</td><td>¥43.84</td><td><span class="red">+1.74%</span></td><td>氟化工走强</td></tr><tr><td>中恒电气(002364)</td><td>¥38.54</td><td><span class="green">-1.20%</span></td><td>小幅回调</td></tr><tr><td>亨通光电(600487)</td><td>¥56.15</td><td><span class="red">+3.20%</span></td><td>延续放量反弹</td></tr><tr><td>中国太保(601601)</td><td>¥31.67</td><td><span class="green">-1.09%</span></td><td>保险板块偏弱</td></tr><tr><td>惠泰医疗(688617)</td><td>¥209.71</td><td><span class="green">-2.45%</span></td><td>医药器械回调</td></tr><tr><td>中国人寿(601628)</td><td>¥38.15</td><td><span class="red">+0.26%</span></td><td>微涨</td></tr><tr><td>应流股份(603308)</td><td>¥48.07</td><td><span class="red">+0.80%</span></td><td>AI零部件修复</td></tr><tr><td>东方钽业(000962)</td><td>¥53.86</td><td><span class="red">+4.32%</span></td><td>🔴 领涨持仓，有色材料走强</td></tr><tr><td>N长鑫(688825)</td><td>¥51.96</td><td><span class="green">-4.31%</span></td><td>🟢 领跌，科创板调整</td></tr></tbody></table>
-<p><strong>A股小结</strong>：7涨7跌，资源/化工/半导体修复领涨，新能源/创新药/医疗器械拖后腿。</p>
+<p class="sub-label"><strong>A股小结</strong>：</p>
+<p>7涨7跌，资源/化工/半导体修复领涨，新能源/创新药/医疗器械拖后腿。</p>
 <h3>港股持仓（10只）</h3>
 <table><thead><tr><th>标的</th><th>收盘价(HKD)</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>腾讯控股(00700)</td><td>479.20</td><td><span class="green">-2.64%</span></td><td>跟随恒科回调</td></tr><tr><td>康方生物(09926)</td><td>96.05</td><td><span class="red">+0.58%</span></td><td>创新药韧性</td></tr><tr><td>泡泡玛特(09992)</td><td>157.30</td><td><span class="green">-2.54%</span></td><td>消费回撤</td></tr><tr><td>联想集团(00992)</td><td>25.94</td><td><span class="green">-1.29%</span></td><td>科技股普跌</td></tr><tr><td>紫金黄金国际(02259)</td><td>131.40</td><td><span class="red">+1.86%</span></td><td>🔴 金价+铜禁令双重催化</td></tr><tr><td>英矽智能(03696)</td><td>40.98</td><td><span class="green">-1.44%</span></td><td>AI制药回调</td></tr><tr><td>大族数控(03200)</td><td>102.50</td><td><span class="green">-5.62%</span></td><td>🟢 领跌，光通信/PCB概念降温</td></tr><tr><td>长飞光纤光缆(06869)</td><td>117.30</td><td><span class="green">-3.06%</span></td><td>光通信概念回调</td></tr><tr><td>万科企业(02202)</td><td>2.49</td><td><span class="green">-0.80%</span></td><td>地产延续低迷</td></tr><tr><td>兆威机电(02692)</td><td>45.88</td><td><span class="green">-1.63%</span></td><td>机器人概念回调</td></tr></tbody></table>
-<p><strong>港股小结</strong>：2涨8跌，恒科-2.28%拖累整体。紫金受金价+刚果禁令双重利好逆势涨。大族数控昨日大涨后获利回吐-5.62%。</p>
+<p class="sub-label"><strong>港股小结</strong>：</p>
+<p>2涨8跌，恒科-2.28%拖累整体。紫金受金价+刚果禁令双重利好逆势涨。大族数控昨日大涨后获利回吐-5.62%。</p>
 <h3>按主题分类</h3>
 <table><thead><tr><th>主题</th><th>今日表现</th><th>关注</th></tr></thead><tbody><tr><td>🔴 <strong>创新药械</strong></td><td>恒瑞-2.67%/惠泰-2.45%/英矽-1.44%，仅康方+0.58%</td><td>整体承压，Moderna流感疫苗获批（中信医药关注）</td></tr><tr><td>🟢 <strong>AI设备&amp;材料</strong></td><td>东方钽业+4.32%/亨通+3.20%/长川+2.40%领涨；大族数控-5.62%/N长鑫-4.31%/长飞-3.06%领跌</td><td>分化剧烈，PCB/材料端走强，光通信/设备端调整</td></tr><tr><td>🟢 <strong>AI应用</strong></td><td>腾讯-2.64%</td><td>恒科整体承压，DeepSeek提价+Token增长利好中长期</td></tr><tr><td>🟢 <strong>新能源/电动车</strong></td><td>宁德-4.24%/兆威-1.63%</td><td>新能源汽车回落</td></tr><tr><td>🟠 <strong>保险</strong></td><td>太保-1.09%/人寿+0.26%</td><td>窄幅震荡</td></tr><tr><td>🔴 <strong>化工/材料</strong></td><td>新和成+2.18%/巨化+1.74%</td><td>氟化工/维生素走强</td></tr><tr><td>🔴 <strong>能源/有色</strong></td><td>紫金黄金国际+1.86%</td><td>金价+刚果禁令双重催化</td></tr><tr><td>🟢 <strong>传媒/娱乐</strong></td><td>泡泡玛特-2.54%</td><td>消费回撤</td></tr><tr><td>🟢 <strong>地产/基建</strong></td><td>万科-0.80%</td><td>延续低迷</td></tr></tbody></table>
 <p>🔗 来源：Wind MCP stock_data API</p>
@@ -501,7 +528,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>📋 数据溯源</h2>
 <table><thead><tr><th>数据项</th><th>来源</th><th>工具</th></tr></thead><tbody><tr><td>A股指数行情（5个）</td><td>Wind MCP</td><td><code>stock_data.get_stock_price_indicators</code></td></tr><tr><td>恒生指数</td><td>Wind MCP</td><td><code>stock_data.get_stock_price_indicators</code></td></tr><tr><td>A股持仓行情（14只）</td><td>Wind MCP</td><td><code>stock_data.get_stock_price_indicators</code></td></tr><tr><td>港股持仓行情（10只）</td><td>Wind MCP</td><td><code>stock_data.get_stock_price_indicators</code></td></tr><tr><td>市场/行业/策略新闻</td><td>Wind MCP</td><td><code>financial_docs.get_financial_news</code></td></tr><tr><td>宏观政策/海外新闻</td><td>Wind MCP</td><td><code>financial_docs.get_financial_news</code></td></tr><tr><td>大宗商品（WTI/布伦特/黄金）</td><td>⚠️ NeoData Token过期，暂不可用</td><td>—</td></tr><tr><td>知识星球（水木+调研纪要更新）</td><td>ZSXQ CLI</td><td><code>topic +search</code> + <code>group +topics</code> + <code>topic +detail</code></td></tr></tbody></table>
-<p><strong>Wind MCP调用次数</strong>：指数5次 + 个股24次 + 新闻6次 = 35次<br><strong>数据校验</strong>：✅ 所有指数/股价数字来自Wind MCP结构化API返回值</p>
+<p class="sub-label"><strong>Wind MCP调用次数</strong>：</p>
+<p>指数5次 + 个股24次 + 新闻6次 = 35次</p>
 <hr>
 <p>*数据截至 2026-08-06 17:55 CST · My Research Central · via WB*</p>
 

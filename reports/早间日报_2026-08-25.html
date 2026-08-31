@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -446,14 +471,15 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>四、策略观点（十大券商）</h2>
 <ul><li><strong>中信证券</strong>：本轮"二次调整"本质是 AI 远期定价问题（商业化速率、算力定价权、模型差距），建议借 AI 涨价品种反弹向核心资产（燃气轮机、晶圆制造平台、半导体设备）调仓，重视"量的确定性"。</li><li><strong>中泰证券</strong>：回调如期启动，科技进入右侧配置窗口，9 月重新转强判断不变；中期增配科创50、国产半导体设备、有色和黄金。</li><li><strong>银河证券</strong>：外部不确定性未出清，行情将以结构性轮动修复为主，聚焦"六张网"新基建（半导体、通信设备、储能、人形机器人、商业航天）。</li><li><strong>光大证券</strong>：财报季或将是下半年最好配置窗口，全A非金融半年报盈利增速有望达 15% 左右。</li><li><strong>兴业证券</strong>：9 月是科技重要决胜窗口，美债长端利率有望见顶回落。</li><li><strong>浙商证券</strong>：中线反弹尚未结束，当前处"进二退一"的"退一"过程。</li><li><strong>国金/中银证券</strong>：实物资产储备功能受重视，有色金属（黄金/铜/铝）、能源、红利资产迎顺风。</li><li><strong>开源证券</strong>：继续重点推荐小微盘，行业再平衡关注有色、基础化工、新能源、医药。</li><li><strong>方正证券</strong>：静待新布局机会，关注国产算力半导体设备材料、AI应用、恒生科技。</li><li><strong>财信证券</strong>：逢低配置泛科技 + 涨价板块。</li></ul>
-<p><strong>共识信号</strong>：①科技内部"向核心资产/半导体设备调仓"；②有色+黄金+红利防御；③创新药逢低捡漏不追高。</p>
+<p class="sub-label"><strong>共识信号</strong>：</p>
+<p>①科技内部"向核心资产/半导体设备调仓"；②有色+黄金+红利防御；③创新药逢低捡漏不追高。</p>
 <hr>
 <h2>五、持仓个股监控（国泰海通组合，8/24 收盘）</h2>
 <h3>逆势上涨（4 只）</h3>
 <table><thead><tr><th>标的</th><th>收盘</th><th>涨跌幅</th><th>增量信息</th></tr></thead><tbody><tr><td>🔴 泡泡玛特(9992.HK)</td><td>155.00</td><td>+4.03%</td><td>拟推 20-50 亿港元股份回购（首次在业绩会公布），2026 定位"调整年"聚焦健康度</td></tr><tr><td>🔴 中国太保(601601)</td><td>31.03</td><td>+2.01%</td><td>红利防御资金流入；8/27 董事会审议中期业绩+史上首次中期分红</td></tr><tr><td>🔴 中国人寿(601628)</td><td>37.64</td><td>+1.65%</td><td>红利防御；8/28 中期业绩发布会</td></tr><tr><td>🔴 长飞光纤光缆(6869.HK)</td><td>140.80</td><td>+0.57%</td><td>光通信板块中唯一逆势微涨</td></tr></tbody></table>
 <h3>下跌（20 只，普跌）</h3>
 <table><thead><tr><th>标的</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>🟢 大族数控(3200.HK)</td><td>93.95</td><td><strong>-10.10%</strong></td><td>暴跌！8/20 中报净利 +263% 但经营现金流 -10.75 亿、不中期分红，市场担忧 AI PCB 需求放缓+花旗提示"大量科技"同业竞争，前期涨幅大</td></tr><tr><td>🟢 新和成(002001)</td><td>26.32</td><td>-5.39%</td><td>维生素价格高位回落+获利回吐</td></tr><tr><td>🟢 中恒电气(002364)</td><td>37.50</td><td>-4.31%</td><td>HVDC 电源，科技板块整体回调</td></tr><tr><td>🟢 京东方A(000725)</td><td>5.75</td><td>-4.17%</td><td>玻璃基板题材获利回吐</td></tr><tr><td>🟢 兆威机电(2692.HK)</td><td>41.10</td><td>-3.97%</td><td>机器人题材退潮</td></tr><tr><td>🟢 应流股份(603308)</td><td>42.60</td><td>-3.79%</td><td>商业航天/机器人主题兑现回落</td></tr><tr><td>🟢 腾讯控股(0700.HK)</td><td>440.00</td><td>-3.72%</td><td>阿里配股拖累港股科技</td></tr><tr><td>🟢 万科企业(2202.HK)</td><td>2.36</td><td>-3.28%</td><td>地产板块走弱</td></tr><tr><td>🟢 东方钽业(000962)</td><td>51.40</td><td>-3.04%</td><td>钽电容题材回落</td></tr><tr><td>🟢 长川科技(300604)</td><td>271.10</td><td>-2.98%</td><td>半导体设备回调</td></tr><tr><td>🟢 亨通光电(600487)</td><td>60.43</td><td>-2.81%</td><td>光通信板块整体回调</td></tr><tr><td>🟢 长鑫科技(688825)</td><td>56.60</td><td>-2.41%</td><td>存储板块回调</td></tr><tr><td>🟢 巨化股份(600160)</td><td>37.82</td><td>-2.27%</td><td>化工回调</td></tr><tr><td>🟢 康方生物(9926.HK)</td><td>88.35</td><td>-2.11%</td><td>创新药回调</td></tr><tr><td>🟢 恒瑞医药(600276)</td><td>46.76</td><td>-2.05%</td><td>创新药回调</td></tr><tr><td>🟢 惠泰医疗(688617)</td><td>258.57</td><td>-1.87%</td><td>创新药回调</td></tr><tr><td>🟢 宁德时代(300750)</td><td>387.89</td><td>-0.83%</td><td>相对抗跌</td></tr><tr><td>🟢 紫金黄金国际(2259.HK)</td><td>159.40</td><td>-0.56%</td><td>黄金股中相对抗跌</td></tr><tr><td>🟢 英矽智能(3696.HK)</td><td>40.40</td><td>-0.54%</td><td>创新药回调</td></tr><tr><td>🟢 联想集团(0992.HK)</td><td>29.64</td><td>-0.47%</td><td>相对抗跌</td></tr></tbody></table>
-<p><strong>持仓要点</strong>：</p>
+<p class="sub-label"><strong>持仓要点</strong>：</p>
 <ul><li>🔴 大族数控单日 -10.10% 领跌持仓，是 8/24 持仓最大回撤，核心压力来自前期涨幅大（7 月涨超 50%）+ 中报现金流隐忧 + AI PCB 需求预期分歧。</li><li>🔴 保险双雄逆势上涨，验证"红利防御"风格切换逻辑；泡泡玛特回购计划支撑独立行情。</li><li>🟠 长鑫科技系小米玄戒 O3 的 LPDDR6 内存核心合作伙伴（知识星球纪要），存储景气主线不变。</li></ul>
 <hr>
 <h2>六、知识星球（调研纪要更新）</h2>

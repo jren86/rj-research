@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -548,11 +573,14 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>🪐 知识星球（zsxq）增量</h2>
 <blockquote>搜索范围：水木调研纪要-2.0 + 调研纪要更新<br>关键词：强推/上调/重视/重点推荐/买入/增持</blockquote>
 <h3>🔴 长江汽车周观点0726：持续看好燃机、液冷，重视整车出海+超跌零部件（07/26）</h3>
-<p><strong>液冷已进入爆发期</strong>：Google财报资本开支再上调，谷歌V7芯片已量产，英伟达Rubin进入小批量，液冷驶入放量期。重点推荐<strong>飞龙股份、银轮股份</strong>。</p>
-<p><strong>燃机板块</strong>：GEV、瓦锡兰订单指引再上修，产能规划上调。重点推荐<strong>潍柴、天润</strong>，建议关注<strong>中原内配</strong>。</p>
-<p><strong>整车出海</strong>：比亚迪闪充产能释放有望带动内需企稳，吉利Q2有望超预期。重点推荐<strong>比亚迪、吉利汽车</strong>，弹性品种<strong>江淮汽车</strong>。</p>
-<p><strong>超跌零部件</strong>：敏实集团、伯特利、福耀玻璃、星宇股份已到历史估值低位。</p>
-<p>🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544224242185488&amp;group_id=88888142214212" target="_blank">水木调研纪要-2.0</a></p>
+<p class="sub-label"><strong>液冷已进入爆发期</strong>：</p>
+<p>Google财报资本开支再上调，谷歌V7芯片已量产，英伟达Rubin进入小批量，液冷驶入放量期。重点推荐<strong>飞龙股份、银轮股份</strong>。</p>
+<p class="sub-label"><strong>燃机板块</strong>：</p>
+<p>GEV、瓦锡兰订单指引再上修，产能规划上调。重点推荐<strong>潍柴、天润</strong>，建议关注<strong>中原内配</strong>。</p>
+<p class="sub-label"><strong>整车出海</strong>：</p>
+<p>比亚迪闪充产能释放有望带动内需企稳，吉利Q2有望超预期。重点推荐<strong>比亚迪、吉利汽车</strong>，弹性品种<strong>江淮汽车</strong>。</p>
+<p class="sub-label"><strong>超跌零部件</strong>：</p>
+<p>敏实集团、伯特利、福耀玻璃、星宇股份已到历史估值低位。<br>🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544224242185488&amp;group_id=88888142214212" target="_blank">水木调研纪要-2.0</a></p>
 <h3>🟠 Alphabet获多家机构上调目标价（07/23-24）</h3>
 <p>调研纪要更新连续两日汇总Alphabet机构评级调整：公民证券目标价上调至515美元、派珀桑德勒维持买入上调至475美元、罗斯资本上调评级至买入等。Google资本开支持续扩张利好液冷/AI基础设施链。</p>
 <p>🔗 <a href="https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=45544251211418158&amp;group_id=48844242514558" target="_blank">调研纪要更新</a></p>

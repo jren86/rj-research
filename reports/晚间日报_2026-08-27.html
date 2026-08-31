@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -435,12 +460,14 @@ blockquote p:last-child { margin-bottom: 0; }
 <table><thead><tr><th>日期</th><th>事件</th><th>状态</th></tr></thead><tbody><tr><td>8/26</td><td>英伟达 2027 财年 Q2 财报</td><td>✅ 已落地（营收 962 亿 +106%，盘后涨超 4%）</td></tr><tr><td>8/27</td><td>中国人寿中报</td><td>✅ 今晚落地（归母净利 1344.89 亿，+228.6%）</td></tr><tr><td>8/27–29</td><td>杰克逊霍尔央行年会（Jackson Hole）</td><td>🔜 进行中，8/28 沃什首讲</td></tr><tr><td>8/28</td><td>中国人寿中报发布会</td><td>🔜 明日</td></tr><tr><td>8/28</td><td>康方生物依沃西胆道癌 III 期数据发酵</td><td>🔜 关注后续催化</td></tr></tbody></table>
 <hr>
 <h2>二、宏观与大类资产</h2>
-<p><strong>隔夜美股（8/26 收盘）</strong>：三大指数窄幅整理，道指 -0.21%（53463.88）、标普 500 -0.02%（7675.70）、纳指 -0.08%（26130.20）。当日焦点是盘后英伟达财报。</p>
-<p><strong>英伟达 Q2 财报（超预期）</strong>：</p>
+<p class="sub-label"><strong>隔夜美股（8/26 收盘）</strong>：</p>
+<p>三大指数窄幅整理，道指 -0.21%（53463.88）、标普 500 -0.02%（7675.70）、纳指 -0.08%（26130.20）。当日焦点是盘后英伟达财报。</p>
+<p class="sub-label"><strong>英伟达 Q2 财报（超预期）</strong>：</p>
 <ul><li>营收 <strong>962 亿美元</strong>，同比 +106%，超预估 923.8 亿；数据中心收入 <strong>890 亿</strong>，同比 +117%</li><li>调整后 EPS 2.22 美元，同比 +120%；GAAP 净利 597 亿，同比 +126%</li><li>Q3 营收指引中值 <strong>1080 亿美元</strong>（区间 1058.4–1101.6 亿），同比近 +90%，首次单季破千亿</li><li>CFO 预告 <strong>2028 财年收入再增约 70%</strong>（远超市场 45% 预期）；AWS 本季起追加部署 200 万颗 GPU</li><li>股价盘后一度跌超 2%，随后反涨超 4%；带动存储（希捷/闪迪/美光 +3%）、光通信（AOI +4%、Lumentum/Coherent +3%）板块走强</li></ul>
-<p><strong>大宗商品（NeoData 结构化 API，8/27 盘中）</strong>：</p>
+<p class="sub-label"><strong>大宗商品（NeoData 结构化 API，8/27 盘中）</strong>：</p>
 <ul><li>WTI 原油 <strong>$82.07（-0.19%）</strong>，昨收 $82.23</li><li>COMEX 黄金 <strong>$4635.80（-0.38%）</strong>，昨收 $4653.30，高位回落但仍处 4600 上方</li><li>布伦特原油：⚠️ NeoData 结构化 API 未覆盖，暂不可用</li></ul>
-<p><strong>宏观线索</strong>：全球谷物供需缺口预警（汇丰报告：2026/27 年度或现 2006/07 以来最大供应短缺），全球食品通胀预期加速；韩国 DRAM 出口单价同比大涨 401%。</p>
+<p class="sub-label"><strong>宏观线索</strong>：</p>
+<p>全球谷物供需缺口预警（汇丰报告：2026/27 年度或现 2006/07 以来最大供应短缺），全球食品通胀预期加速；韩国 DRAM 出口单价同比大涨 401%。</p>
 <hr>
 <h2>三、市场概览</h2>
 <p><strong>A 股放量大涨，算力硬件全线爆发</strong>，科创 50 领涨：</p>
@@ -448,15 +475,16 @@ blockquote p:last-child { margin-bottom: 0; }
 <ul><li>两市成交约 <strong>2.14 万亿</strong>，较前日放量约 3191 亿；近 3400 只上涨、77 只涨停、跌停仅 4 家</li><li><strong>领涨</strong>：算力硬件（PCB/覆铜板 +7.92%）、存储芯片、CPO、电子化学品、贵金属/小金属</li><li><strong>领跌</strong>：光伏设备（阳光电源 -12.24%）、银行、水务、酿酒</li><li>触发主线：隔夜英伟达财报验证 AI 基础设施投资逻辑，资金从防御（银行/光伏）切换至进攻（半导体/算力）</li></ul>
 <hr>
 <h2>四、策略观点</h2>
-<p><strong>8 月券商金股/策略精选（Wind）</strong>：</p>
+<p class="sub-label"><strong>8 月券商金股/策略精选（Wind）</strong>：</p>
 <ul><li><strong>长江研究（8 月十大金股）</strong>：山金国际、万华化学、福能股份、新集能源、帝尔激光、南京银行、美的集团、益诺思、东山精密、中际旭创</li><li><strong>申万宏源（8 月十大金股）</strong>：首推"铁三角"小米集团-W、招商轮船、美的集团；其余含药明康德、中航沈飞、亿联网络、福斯特、比音勒芬、地平线机器人-W、阿里巴巴-W</li><li><strong>华西证券</strong>：推荐 ⭐ 长鑫科技（688825）为 8 月金股——DRAM 景气回升 + 国产替代共振，国内 DRAM 一体化龙头</li><li><strong>东吴证券</strong>：推荐杰华特（模拟芯片 Drmos 国产替代）、泽璟制药-U（ZG005/ZG006 肿瘤免疫）</li></ul>
-<p><strong>策略共识</strong>：8 月聚焦 AI 硬件主线（半导体/光通信/PCB）+ 低位景气修复（创新药/有色/港股互联网），配置上科技与红利均衡。</p>
+<p class="sub-label"><strong>策略共识</strong>：</p>
+<p>8 月聚焦 AI 硬件主线（半导体/光通信/PCB）+ 低位景气修复（创新药/有色/港股互联网），配置上科技与红利均衡。</p>
 <hr>
 <h2>五、持仓个股监控（国泰海通组合，24 只）</h2>
 <h3>5.1 行情总览</h3>
-<p><strong>A 股（14 只）</strong>：</p>
+<p class="sub-label"><strong>A 股（14 只）</strong>：</p>
 <table><thead><tr><th>标的</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>东方钽业</td><td>57.55</td><td>🔴 +10.00%</td><td>涨停，小金属+钽电容</td></tr><tr><td>亨通光电</td><td>71.30</td><td>🔴 +9.98%</td><td>涨停，光通信量价齐升</td></tr><tr><td>长鑫科技</td><td>59.12</td><td>🔴 +5.38%</td><td>存储芯片，DRAM 涨价</td></tr><tr><td>京东方 A</td><td>5.94</td><td>🔴 +3.85%</td><td>玻璃基/PCB 概念</td></tr><tr><td>巨化股份</td><td>39.54</td><td>🔴 +3.64%</td><td>制冷剂景气（H1 +29.23%）</td></tr><tr><td>长川科技</td><td>284.80</td><td>🔴 +3.11%</td><td>半导体测试设备</td></tr><tr><td>应流股份</td><td>45.05</td><td>🔴 +2.50%</td><td>高端制造</td></tr><tr><td>新和成</td><td>26.96</td><td>🔴 +1.89%</td><td>维生素</td></tr><tr><td>恒瑞医药</td><td>47.61</td><td>🔴 +1.86%</td><td>创新药</td></tr><tr><td>惠泰医疗</td><td>250.59</td><td>🔴 +1.04%</td><td>电生理/PFA</td></tr><tr><td>中恒电气</td><td>38.63</td><td>🔴 +0.60%</td><td>算力电力</td></tr><tr><td>中国人寿</td><td>38.61</td><td>🔴 +0.08%</td><td>中报落地 +228.6%</td></tr><tr><td>中国太保</td><td>32.00</td><td>🔴 +0.06%</td><td>保险</td></tr><tr><td>宁德时代</td><td>373.00</td><td>🟢 -1.58%</td><td>新能源回调</td></tr></tbody></table>
-<p><strong>港股（10 只）</strong>：</p>
+<p class="sub-label"><strong>港股（10 只）</strong>：</p>
 <table><thead><tr><th>标的</th><th>收盘</th><th>涨跌幅</th><th>备注</th></tr></thead><tbody><tr><td>长飞光纤光缆</td><td>179.80</td><td>🔴 +10.31%</td><td>光通信爆发</td></tr><tr><td>康方生物</td><td>101.20</td><td>🔴 +7.43%</td><td>依沃西胆道癌 III 期</td></tr><tr><td>大族数控</td><td>106.60</td><td>🔴 +6.07%</td><td>AI PCB</td></tr><tr><td>腾讯控股</td><td>447.80</td><td>🔴 +0.54%</td><td>企稳</td></tr><tr><td>联想集团</td><td>30.72</td><td>🔴 +0.52%</td><td>AI 服务器</td></tr><tr><td>兆威机电</td><td>41.10</td><td>🔴 +0.24%</td><td>机器人</td></tr><tr><td>英矽智能</td><td>47.02</td><td>🔴 +0.04%</td><td>AI 制药</td></tr><tr><td>泡泡玛特</td><td>154.00</td><td>🟢 -0.19%</td><td>传媒</td></tr><tr><td>万科企业</td><td>2.43</td><td>🟢 -0.61%</td><td>地产</td></tr><tr><td>紫金黄金国际</td><td>155.90</td><td>🟢 -0.76%</td><td>黄金高位回调</td></tr></tbody></table>
 <h3>5.2 增量信息（按主题）</h3>
 <p><strong>🔴 光通信 / AI 设备（今日最强主线）</strong></p>
@@ -475,14 +503,16 @@ blockquote p:last-child { margin-bottom: 0; }
 <ul><li><strong>巨化股份（+3.64%）</strong>：zsxq 26H1 点评——归母净利 26.5 亿 +29.23%，毛利率 34.03%（+5.31pcts）；制冷剂收入 71 亿 +16.7%、均价 45521 元/吨 +15.6%，三代制冷剂价格坚挺，万吨级 PFA 产线投产。[来源：知识星球]</li></ul>
 <hr>
 <h2>六、知识星球（zsxq）</h2>
-<p><strong>搜索范围</strong>：水木调研纪要-2.0（88888142214212）、调研纪要更新（48844242514558）</p>
-<p><strong>当日增量（调研纪要更新星球，8/27）</strong>：</p>
+<p class="sub-label"><strong>搜索范围</strong>：</p>
+<p>水木调研纪要-2.0（88888142214212）、调研纪要更新（48844242514558）</p>
+<p class="sub-label"><strong>当日增量（调研纪要更新星球，8/27）</strong>：</p>
 <ul><li><strong>巨化股份 26H1 业绩点评</strong> ⭐（持仓）：制冷剂景气周期延续，归母净利 +29.23%，毛利率 +5.31pcts，三代制冷剂价格坚挺。</li><li><strong>中国 CXMT 长鑫存储量产 High-k（HKMG）DRAM 材料</strong>：已基于 G4（16nm 级）工艺量产 DDR5/LPDDR5X，引入高介电常数金属栅极技术，猛追三星/SK。</li><li><strong>TrendForce：SEMCO 领涨 4Q26 MLCC 价格</strong>：对 OEM/ODM 客户 X5R 提价 25–30%，MLCC 行业进入上行周期。</li><li><strong>固态电池</strong>：上海推进固态电池等多元技术路线对比测试示范基地，布局万千瓦级独立储能示范电站。</li><li><strong>美国再提电网设备 69kV 禁令点评</strong>：限制中企向高压电网拓展（含逆变器/BESS/UPS），但用户侧（AIDC）+发电侧需求仍有敞口。</li><li><strong>南芯科技</strong>：#估值最低的模拟龙头（26E 5 倍 PS），光通信/三次电源/存储多线 AI 布局。</li></ul>
 <blockquote>⚠️ 水木调研纪要-2.0 星球最新主题仍停留在 8/23，今日无新增，未发现「强推/上调/重视/重点推荐/买入/增持」关键词新帖。</blockquote>
 <hr>
 <h2>七、数据溯源</h2>
 <table><thead><tr><th>数据项</th><th>来源</th><th>说明</th></tr></thead><tbody><tr><td>指数/个股行情（24 只持仓 + 8 指数）</td><td>Wind MCP <code>get_index_price_indicators</code> / <code>get_stock_price_indicators</code></td><td>结构化 API，8/27 收盘</td></tr><tr><td>新闻/公告/研报文本</td><td>Wind MCP <code>get_financial_news</code> × 13 批次</td><td>大盘/美股/策略/光通信/创新药/半导体/保险/有色/宁德/万科/小金属</td></tr><tr><td>大宗商品（WTI/黄金）</td><td>NeoData 结构化 API（<code>--data-type api</code>）</td><td>WTI $82.07、COMEX 黄金 $4635.80</td></tr><tr><td>布伦特原油</td><td>—</td><td>⚠️ NeoData 结构化 API 未覆盖，暂不可用</td></tr><tr><td>调研纪要</td><td>zsxq-cli <code>group +topics</code> + <code>topic +detail</code></td><td>调研纪要更新星球当日增量</td></tr></tbody></table>
-<p><strong>数据源纪律</strong>：本报告未加载 wb-finance-skill；所有数值型金融数据均来自 Wind MCP 或 NeoData 结构化 API，未使用搜索引擎降级。</p>
+<p class="sub-label"><strong>数据源纪律</strong>：</p>
+<p>本报告未加载 wb-finance-skill；所有数值型金融数据均来自 Wind MCP 或 NeoData 结构化 API，未使用搜索引擎降级。</p>
 <hr>
 <p>*数据来源：Wind 金融终端 · NeoData 结构化 API · 知识星球 · My Research Central · via WB*</p>
 

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -472,10 +497,14 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>主题视角</h3>
 <p><strong>🔴 AI设备&amp;材料</strong>（混合走势）：亨通光电+3.20%（光通信量价齐升，H1预增87-121%持续验证）、长川科技+2.40%（半导体设备反复活跃）、东方钽业+4.32%（AI材料）。但大族数控-5.62%（港股光纤双雄获利回吐）、N长鑫-4.31%（连涨后获利了结）、长飞光纤-3.06%。FCC光模块禁令传闻下板块高位震荡分化。</p>
 <p><strong>🟢 创新药械</strong>（承压）：恒瑞医药-2.67%、惠泰医疗-2.45%，但康方生物+0.58%港股微涨。药明康德昨天涨停（H1营收+38.93%）但非持仓标的，链式拉动效应待观察。</p>
-<p><strong>🟢 新能源/电动车</strong>：宁德时代-4.24%跌幅居前，可能与前期H1业绩利好兑现+资金获利了结有关。兆威机电-1.63%。</p>
-<p><strong>🔴 能源/有色</strong>：紫金黄金国际+1.86%，黄金飙涨4%形成共振。</p>
-<p><strong>🟠 保险/化工</strong>：保险板块表现平稳（中国人寿+0.26%、太保-1.09%）。新和成+2.18%、巨化股份+1.74%延续偏强。</p>
-<p><strong>🟢 传媒/腾讯</strong>：泡泡玛特-2.54%、腾讯-2.64%随恒生科技整体回调。</p>
+<p class="sub-label"><strong>🟢 新能源/电动车</strong>：</p>
+<p>宁德时代-4.24%跌幅居前，可能与前期H1业绩利好兑现+资金获利了结有关。兆威机电-1.63%。</p>
+<p class="sub-label"><strong>🔴 能源/有色</strong>：</p>
+<p>紫金黄金国际+1.86%，黄金飙涨4%形成共振。</p>
+<p class="sub-label"><strong>🟠 保险/化工</strong>：</p>
+<p>保险板块表现平稳（中国人寿+0.26%、太保-1.09%）。新和成+2.18%、巨化股份+1.74%延续偏强。</p>
+<p class="sub-label"><strong>🟢 传媒/腾讯</strong>：</p>
+<p>泡泡玛特-2.54%、腾讯-2.64%随恒生科技整体回调。</p>
 <h3>个股增量信息</h3>
 <p>🔴 <strong>FCC拟禁中国光模块</strong>：8/5消息持续发酵，美国电信监管机构FCC计划禁止进口中国制造的新型号高速光模块，磷化铟供应缺口超30%。光通信板块短期冲击，但国产替代逻辑强化。</p>
 <p>🔴 <strong>亨通光电逆势+3.20%</strong>：光通信业务H1预增87-121%持续验证，FCC禁令或加速国内替代，远期利好国产光纤龙头。</p>
@@ -504,7 +533,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer"><br>数据来源：Wind 万得金融终端 · 知识星球(zsxq) · Wind MCP · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>数据来源：Wind 万得金融终端 · 知识星球(zsxq) · Wind MCP · My Research Central · via WB<br>
 </div>
 
 </body>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -445,15 +470,15 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>三、市场概览</h2>
 <h3>主要指数（2026-08-21 收盘）</h3>
 <table><thead><tr><th>指数</th><th>最新点位</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>3905.20</td><td>🔴 +0.04%</td><td>8834 亿</td></tr><tr><td>深证成指</td><td>14094.17</td><td>🔴 +0.87%</td><td>9958 亿</td></tr><tr><td>创业板指</td><td>3545.58</td><td>🔴 +1.43%</td><td>4913 亿</td></tr><tr><td>科创50</td><td>1653.56</td><td>🔴 +0.04%</td><td>776 亿</td></tr><tr><td>沪深300</td><td>4618.90</td><td>🔴 +0.57%</td><td>5055 亿</td></tr><tr><td>恒生指数</td><td>26009.46</td><td>🔴 +1.21%</td><td>2573 亿港元</td></tr><tr><td>恒生科技</td><td>4766.16</td><td>🔴 +1.40%</td><td>752 亿港元</td></tr><tr><td>标普500</td><td>7674.37</td><td>🔴 +0.43%</td><td>—</td></tr><tr><td>纳斯达克</td><td>26180.45</td><td>🔴 +0.43%</td><td>—</td></tr></tbody></table>
-<p><strong>解读</strong>：A股 8/21 窄幅震荡，创业板指（+1.43%）领涨，成长风格占优；港股恒生科技（+1.40%）与恒指（+1.21%）同步走强，主要受黄金股（紫金黄金国际 +8.09%）与光通信（长飞 +5.50%）拉动。隔夜美股标普、纳指同步收涨 0.43%，8/22 A股开盘情绪偏暖。</p>
-<p><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 金融终端（指数行情结构化 API，2026-08-21）</a></div></p>
+<p class="sub-label"><strong>解读</strong>：</p>
+<p>A股 8/21 窄幅震荡，创业板指（+1.43%）领涨，成长风格占优；港股恒生科技（+1.40%）与恒指（+1.21%）同步走强，主要受黄金股（紫金黄金国际 +8.09%）与光通信（长飞 +5.50%）拉动。隔夜美股标普、纳指同步收涨 0.43%，8/22 A股开盘情绪偏暖。<br><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 金融终端（指数行情结构化 API，2026-08-21）</a></div></p>
 <hr>
 <h2>四、策略观点（8月金股）</h2>
 <p>据《证券日报》梳理（截至 8/3，22 家券商、181 只金股）：</p>
 <p><strong>个股推荐热度 TOP：</strong></p>
 <table><thead><tr><th>排名</th><th>标的</th><th>推荐家数</th><th>备注</th></tr></thead><tbody><tr><td>1</td><td>药明康德</td><td>8 家</td><td>CXO 龙头，多肽/小核酸新分子规模化</td></tr><tr><td>1</td><td>宁德时代</td><td>8 家</td><td>⭐ 持仓，固态电池技术领先</td></tr><tr><td>3</td><td>美的集团</td><td>5 家</td><td>出海 + 分红</td></tr><tr><td>3</td><td>中际旭创</td><td>5 家</td><td>港股 IPO 在即，光模块</td></tr><tr><td>5</td><td>紫金矿业</td><td>4 家</td><td>金铜锂三轮驱动</td></tr><tr><td>5</td><td>北方华创</td><td>4 家</td><td>半导体设备</td></tr><tr><td>5</td><td>中芯国际</td><td>4 家</td><td>晶圆代工</td></tr></tbody></table>
-<p><strong>行业配置变化</strong>：电子板块仍居首但占比较 7 月明显回落；<strong>医药生物（17 只）、有色金属（16 只）</strong> 配置占比显著提升。</p>
-<p><strong>核心策略判断：</strong></p>
+<p class="sub-label"><strong>行业配置变化</strong>：</p>
+<p>电子板块仍居首但占比较 7 月明显回落；<strong>医药生物（17 只）、有色金属（16 只）</strong> 配置占比显著提升。<br><strong>核心策略判断：</strong></p>
 <ul><li>中信证券（裘翔）：调整基本结束，8 月市场修复可期，核心标的定价失效已基本消除。</li><li>招商证券（李昊阳）：盈利驱动上行第三阶段，科技从叙事转向财报验证。</li><li>银河证券（杨超）：哑铃型策略——AI 从普涨转向业绩筛选 + 红利资产仍具配置价值。</li><li>光大证券：中报密集披露期，高景气方向为核心，关注出口链、资源品。</li></ul>
 <p><div class="source-link">🔗 <a href="https://t.wind.com.cn">来源：Wind 金融终端（券商8月金股专题，2026-08-04）</a></div></p>
 <hr>
@@ -486,12 +511,13 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>七、数据溯源</h2>
 <table><thead><tr><th>板块</th><th>数据源</th><th>说明</th></tr></thead><tbody><tr><td>指数/个股行情</td><td>Wind MCP 结构化 API</td><td><code>get_index_price_indicators</code> / <code>get_stock_price_indicators</code>，2026-08-21 收盘</td></tr><tr><td>新闻/公告/研报</td><td>Wind MCP <code>get_financial_news</code></td><td>黄金、美债、创新药、光通信、金股、保险等专题</td></tr><tr><td>调研纪要</td><td>zsxq-cli</td><td>水木调研纪要-2.0 + 调研纪要更新</td></tr><tr><td>大宗商品</td><td>Wind 结构化引用</td><td>COMEX 黄金 4622.70 / 伦敦金现 4565.61（Wind 新闻结构化数据）</td></tr></tbody></table>
-<p><strong>合规声明</strong>：本报告全部数值型金融数据均来自 Wind 万得金融终端结构化 API，未使用 WebSearch/NeoData/mx-finance-search 等非授权行情源；新闻文本仅供事件还原，价格以结构化返回值为准。</p>
+<p class="sub-label"><strong>合规声明</strong>：</p>
+<p>本报告全部数值型金融数据均来自 Wind 万得金融终端结构化 API，未使用 WebSearch/NeoData/mx-finance-search 等非授权行情源；新闻文本仅供事件还原，价格以结构化返回值为准。</p>
 <hr>
 <p><div class="report-footer"><br>数据来源：Wind 万得金融终端 · 知识星球 · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>数据来源：Wind 万得金融终端 · 知识星球 · My Research Central · via WB<br>
 </div>
 
 </body>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -495,14 +520,15 @@ blockquote p:last-child { margin-bottom: 0; }
 <table><thead><tr><th>跟踪维度</th><th>具体指标</th><th>为什么重要</th></tr></thead><tbody><tr><td><strong>技术进度</strong></td><td>18Gbps 样机时间点</td><td>决定能否切入 GDDR6/7 和 HBM 测试</td></tr><tr><td><strong>客户导入</strong></td><td>长鑫/长存等量产订单规模</td><td>验证产品成熟度和客户信任</td></tr><tr><td><strong>订单数据</strong></td><td>单笔订单金额（已知25Q3有&gt;3亿）</td><td>反映客户采购意愿</td></tr><tr><td><strong>研发投入</strong></td><td>2025年1.83亿（+66.94%），占收入16.23%</td><td>高强度研发是维持技术追赶的前提</td></tr><tr><td><strong>毛利率</strong></td><td>目标高端产品导入后提升至40%+</td><td>ASIC自研带来的定价权体现</td></tr><tr><td><strong>国际封锁</strong></td><td>美国设备出口管制政策变化</td><td>反向利好国产替代</td></tr></tbody></table>
 <hr>
 <h2>八、总结</h2>
-<p><strong>核心技术判断</strong>：</p>
+<p class="sub-label"><strong>核心技术判断</strong>：</p>
 <blockquote>9Gbps FT 测试机对于精智达来说，是 <strong>从「能做」到「能用」的关键一跃</strong>，使公司站上了 DDR5/LPDDR5 时代的国产替代起跑线。但它暂时还只是一个「追赶者」的阶段性优势，而非不可逾越的护城河。<strong>真正的胜负手在于 18Gbps 能否按期推出</strong>——那才是直接对标 Advantest 最新旗舰（T5801 NRZ 模式）的一战。</blockquote>
 <p>现在精智达所处的阶段，大致相当于 Advantest T5503HS2 在 2021 年的位置——技术上刚追上上一代旗舰，正在向下一代冲刺。差距约 3-4 年，但追赶速度在加快。</p>
 <hr>
 <h2>数据来源汇总</h2>
 <table><thead><tr><th>#</th><th>来源</th><th>URL/出处</th></tr></thead><tbody><tr><td>1</td><td>精智达官网 S9880 产品页</td><td><a href="https://seichitech.com/products/high-speed-final-tester/" target="_blank">seichitech.com</a></td></tr><tr><td>2</td><td>精智达公告：FT测试机研发进展 (2025-01-06)</td><td><a href="https://static.cninfo.com.cn/finalpage/2025-01-06/1222239228.PDF" target="_blank">巨潮资讯网 PDF</a></td></tr><tr><td>3</td><td>新浪财经：精智达公告全文</td><td><a href="https://finance.sina.com.cn/jjxw/2025-01-06/doc-inecyrui2834307.shtml" target="_blank">finance.sina.com.cn</a></td></tr><tr><td>4</td><td>精智达机构调研纪要 (2025-12-26/18家机构)</td><td><a href="https://stock.10jqka.com.cn/20251230/c673625530.shtml" target="_blank">同花顺</a></td></tr><tr><td>5</td><td>精智达高速FT测试机交付客户 (2025-09-26)</td><td><a href="https://seichitech.com/news/jingzhidagaosuftceshijijiaofukehuguochanbandaoticeshishebeimairuxinlicheng/" target="_blank">精智达官方新闻</a></td></tr><tr><td>6</td><td>精智达电话会议：提前完成目标 (2025-09-24)</td><td><a href="https://www.eeo.com.cn/2025/0924/754869.shtml" target="_blank">经济观察网</a></td></tr><tr><td>7</td><td>Advantest T5801 产品页</td><td><a href="https://www.advantest.com/cn/products/semiconductor-test-system/memory/t5801/" target="_blank">advantest.com</a></td></tr><tr><td>8</td><td>Advantest T5503HS2 报道 (8Gbps, 2021)</td><td><a href="https://zhuanlan.zhihu.com/p/406177880" target="_blank">知乎专栏</a></td></tr><tr><td>9</td><td>Teradyne Magnum EPIC 产品页</td><td><a href="https://www.teradyne.com/products/magnum-epic/" target="_blank">teradyne.com</a></td></tr><tr><td>10</td><td>Teradyne Magnum V 产品页</td><td><a href="https://teradyne.cn/products/magnum-v/" target="_blank">teradyne.cn</a></td></tr><tr><td>11</td><td>精智达2025年年报（研发投入1.83亿）</td><td><a href="https://www.msn.cn/zh-cn/money/通用/精智达2025年研发投入大增66-94-核心突破频现-构建多元产品矩阵/ar-AA23OZBs" target="_blank">MSN财经</a></td></tr><tr><td>12</td><td>精智达研报：DRAM高速FT测试机交付 (2025-11-25)</td><td><a href="https://data.eastmoney.com/report/info/AP202511251788133645.html" target="_blank">东方财富</a></td></tr><tr><td>13</td><td>精智达研报：单笔超3亿订单 (2025-11-25)</td><td><a href="https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/817406965355/index.phtml" target="_blank">新浪财经</a></td></tr><tr><td>14</td><td>精智达研究报告：技术突破引领国产替换 (2025-05)</td><td><a href="https://max.book118.com/html/2025/0506/5224132111012200.shtm" target="_blank">原创力文库</a></td></tr></tbody></table>
 <hr>
-<p><strong>免责声明</strong>：本报告基于公开信息整理，不构成投资建议。文中数据来自上述可溯源公开渠道，投资者应自行核实并独立决策。</p>
+<p class="sub-label"><strong>免责声明</strong>：</p>
+<p>本报告基于公开信息整理，不构成投资建议。文中数据来自上述可溯源公开渠道，投资者应自行核实并独立决策。</p>
 
 <div class="report-footer">
   数据来源：Wind 金融数据 connector · My Research Central · via WB

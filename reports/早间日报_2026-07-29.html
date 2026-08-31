@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -498,7 +523,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>📋 数据溯源</h2>
 <table><thead><tr><th>数据板块</th><th>数据源</th><th>查询次数</th><th>时效</th></tr></thead><tbody><tr><td>隔夜全球宏观</td><td>mx-finance-search（东方财富妙想）</td><td>1</td><td>2026-07-29 06:00-08:20</td></tr><tr><td>A股7/28收盘</td><td>mx-finance-search</td><td>1</td><td>2026-07-28 15:00-21:15</td></tr><tr><td>港股7/28收盘</td><td>mx-finance-search</td><td>2（含1次503重试成功）</td><td>2026-07-28 16:25-19:00</td></tr><tr><td>券商策略观点</td><td>mx-finance-search</td><td>2（含1次503重试成功）</td><td>2026-07-20~29</td></tr><tr><td>A股持仓个股增量</td><td>mx-finance-search</td><td>2（含1次503重试成功）</td><td>2026-07-02~29</td></tr><tr><td>港股持仓个股增量</td><td>mx-finance-search</td><td>2（含1次503重试成功）</td><td>2026-07-02~29</td></tr><tr><td>知识星球</td><td>zsxq-cli（水木调研纪要-2.0 + 调研纪要更新）</td><td>6（搜索+详情）</td><td>2026-07-09为主</td></tr><tr><td>彭博头条</td><td>bbgwire</td><td>1</td><td>未安装，无返回</td></tr></tbody></table>
-<p><strong>数据局限说明</strong>：</p>
+<p class="sub-label"><strong>数据局限说明</strong>：</p>
 <ul><li>mx-finance-search 初期因并发查询触发503限流（操作过于频繁），分批重试后全部成功</li><li>Bloomberg bbgwire 未安装，无返回</li><li>zsxq 搜索主要返回7月上旬内容，7月下旬含关键词帖子较少</li><li>部分持仓个股仅能获取行情/资金流向数据，需Wind获取更全面增量信息</li></ul>
 <hr>
 <p>*报告生成时间：2026-07-29 08:20 CST · My Research Central · via WB*</p>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -439,15 +464,15 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>国内宏观 — 🔴 陆家嘴论坛10大政策密集落地</h3>
 <p><strong>6/17陆家嘴论坛（潘功胜6项+吴清10项+丁向群加快修法）：</strong></p>
 <ul><li><strong>潘功胜（央行）6项政策</strong>：</li><li>完善短端利率调控机制——临时隔夜正/逆回购利率区间从70bp收窄至<strong>50bp</strong>；</li><li>创设境外央行类机构回购工具（FIMA RMB Repo），便利境外央行人民币流动性管理；</li><li>在上海自贸区开展<strong>离岸人民币外汇交易试点</strong>（6家银行参与）；</li><li>研究设立<strong>特定情景非银流动性支持宏观审慎工具</strong>——债券市场系统性压力时通过互换向非银提供紧急流动性；</li><li>联合出台加快上海国际再保险中心建设若干举措；</li><li>推动中长期资金对股市、债市的投资力度。</li><li><strong>吴清（证监会）10项政策</strong>：</li><li>扩大科创板第五套标准适用范围至<strong>人工智能大模型领域</strong>；</li><li>支持量子科技、生物制造、具身智能等"硬科技"企业在科创板上市；</li><li>适时发布<strong>规范发展资本市场人工智能的指导意见</strong>；</li><li>依法从严打击利用AI非法荐股、造谣传谣、违法交易等乱象；</li><li>支持符合条件的港股上市企业境内上市；</li><li>深化创业板改革，支持新型消费和现代服务业；</li><li>推出<strong>主动ETF</strong>，支持沪深交易所落地；</li><li>推出支持中小基金公司规范健康发展一揽子措施；</li><li>积极支持外资在华新设独资或合资证券基金期货机构；</li><li>加快研究推进<strong>人民币外汇期货</strong>试点；支持香港近期启动5年期人民币国债期货上市。</li><li><strong>丁向群（金管总局）</strong>：加快推动<strong>银监法、保险法修订出台</strong>；联合出台加快上海国际再保险中心建设若干举措。</li><li><strong>朱鹤新（外汇局）</strong>：近期将新增推出"一揽子"增量政策，全面改革FDI跨境政策，发放<strong>新一批QDII额度</strong>。</li></ul>
-<p><strong>核心数据</strong>：</p>
+<p class="sub-label"><strong>核心数据</strong>：</p>
 <ul><li>A股科技板块市值占比超<strong>3成</strong>（市值超千亿上市公司中科技企业占比已达45%）；</li><li>"两创板"上市公司数量合计超<strong>2000家</strong>、总市值超<strong>35万亿元</strong>；</li><li>外资扫货中国资产已超<strong>1万亿美元</strong>；</li><li>社保、保险等中长期资金净买入A股约<strong>1.3万亿元</strong>。</li></ul>
-<p><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/上海证券报/陆家嘴论坛组委会</a></div><br><div class="source-link">🔗 <a href="https://www.cs.com.cn">来源：中证报/上证报/中信证券《2026年陆家嘴论坛点评》</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/上海证券报/陆家嘴论坛组委会</a></div><div class="source-link">🔗 <a href="https://www.cs.com.cn">来源：中证报/上证报/中信证券《2026年陆家嘴论坛点评》</a></div></p>
 <h3>国际宏观 — 🔴 FOMC鹰派冲击+美伊协议6/19签署</h3>
 <ul><li><strong>FOMC决议（6/18凌晨2:00）</strong>：12:0全票维持联邦基金利率区间<strong>3.5%-3.75%</strong>不变，连续第四次暂停。</li><li><strong>点阵图鹰派超预期</strong>：18位参与者中<strong>9位预计2026年至少加息1次</strong>（3人1次、5人2次、1人3次），沃什本人未提交点阵图。</li><li><strong>沃什首秀核心动作</strong>：</li><li>取消"前瞻指引"——明确不再对未来政策路径提供承诺；</li><li>彻底删除"进一步调整利率的幅度和时点"等宽松措辞；</li><li>声明篇幅大幅缩短，取消公布委员具体投票情况；</li><li>设立<strong>5个改革工作组</strong>（沟通/资产负债表/数据源/生产力-AI/就业），年底前完成；</li><li>与白宫保持沟通——已与美财长贝森特共进早餐3次。</li><li><strong>市场反应</strong>：标普500跌约0.5%，2年期美债收益率上行9bp至<strong>4.14%</strong>，美元走强，10月加息概率突破70%、年底前加息概率升至<strong>约60%</strong>。</li><li><strong>中信证券点评</strong>：市场进入"信号缺失+信息冲突"状态，沃什本人不会在年内支持加息，"五五开"最终向主席立场收敛，维持年内维持政策利率不变判断。</li></ul>
 <ul><li><strong>美伊协议6/19签署</strong>：特朗普16日称霍尔木兹海峡将<strong>周五全面重开</strong>、美伊关系"正常化"、油价"进一步下跌"；美国解除对伊朗海上封锁；万斯将出席瑞士签署仪式，特朗普"有可能"参加。伊朗3艘油轮已驶向北印度洋。</li></ul>
 <ul><li><strong>油价继续下挫</strong>：</li><li>6/15-16 WTI从$80.75→$76.64、布油从$83.17→$79.99，<strong>首次跌破$80</strong>；</li><li>高盛下调2027年布油均价预测至<strong>$80/桶</strong>，维持2026 Q4预测$90/桶；</li><li>惠誉预测Q4布油或跌至<strong>$70/桶</strong>；</li><li>美战略石油储备已降至3.403亿桶（1983年以来最低），释储活动持续。</li></ul>
 <ul><li><strong>欧央行6/11已加息25bp</strong>；5月美CPI 4.2%，核心通胀仍可控；沃什面临白宫政治压力。</li></ul>
-<p><div class="source-link">🔗 <a href="https://www.bloomberg.com">来源：彭博社/Wind/中信证券</a></div><br><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/金十数据/FOMC声明</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.bloomberg.com">来源：彭博社/Wind/中信证券</a></div><div class="source-link">🔗 <a href="https://www.cls.cn">来源：财联社/金十数据/FOMC声明</a></div></p>
 <hr>
 <h2>📈 市场概览</h2>
 <h3>A股（6月17日收盘）</h3>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -452,22 +477,31 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>📊 市场概览</h2>
 <blockquote><strong>上一交易日（6月18日周三，节前最后交易日）回顾</strong></blockquote>
 <table><thead><tr><th>指数</th><th>收盘</th><th>变动</th><th>核心驱动</th></tr></thead><tbody><tr><td>上证综指</td><td>4090.48</td><td>-0.43%</td><td>保险/电力走弱拖累</td></tr><tr><td>深证成指</td><td>16030.70</td><td>+0.94%</td><td>科技成长支撑</td></tr><tr><td>科创50</td><td>—</td><td>+3.84%</td><td>半导体/消费电子领涨</td></tr><tr><td>创业板指</td><td>—</td><td>+2.05%</td><td>通信设备/机器人活跃</td></tr><tr><td>恒生指数</td><td>—</td><td>-0.74%</td><td>大金融受Fed鹰派冲击</td></tr><tr><td>恒生科技</td><td>—</td><td>+0.22%</td><td>半导体/电子硬件逆势</td></tr><tr><td>标普500</td><td>—</td><td>-1.21%</td><td>Fed鹰派+获利了结</td></tr><tr><td>纳指</td><td>—</td><td>-1.34%</td><td>科技股尾盘跳水</td></tr></tbody></table>
-<p><strong>隔夜全球（6/18美股收盘）</strong>：美联储鹰派决议后美股尾盘跳水。费城半导体指数逆势+1.38%（ARM+5%、博通+4%、西部数据+4%），但SpaceX上市以来首次收跌-4.95%。中概股金龙指数-1.14%，阿里-3.18%、拼多多-2.12%。</p>
-<p><strong>节后展望（6/22周一）</strong>：</p>
+<p class="sub-label"><strong>隔夜全球（6/18美股收盘）</strong>：</p>
+<p>美联储鹰派决议后美股尾盘跳水。费城半导体指数逆势+1.38%（ARM+5%、博通+4%、西部数据+4%），但SpaceX上市以来首次收跌-4.95%。中概股金龙指数-1.14%，阿里-3.18%、拼多多-2.12%。</p>
+<p class="sub-label"><strong>节后展望（6/22周一）</strong>：</p>
 <ul><li>三大事件窗口交汇：LPR + 伊美后续谈判 + 以黎华盛顿会谈</li><li>油价低位利好航空/化工/物流成本改善</li><li>Fed鹰派短期压制成长股估值，但AI景气度未改变</li><li>半导体设备+光模块算力链仍是主线方向</li><li>关注中报预告窗口开启</li></ul>
 <hr>
 <h2>💡 策略观点</h2>
 <h3>综合研判：AI主线不变，关注内部分化与均衡化</h3>
-<p><strong>中金公司</strong>：国际秩序重构与产业创新趋势共振是推动市场上行核心驱动力，两大条件未动摇。市场整体估值合理，但局部板块估值偏高，下半年需防范部分领域行情脆弱性与波动风险。</p>
-<p><strong>招商证券（张夏）</strong>：A股已进入盈利驱动的上行阶段，6月指数将呈震荡上行、高点抬升格局。AI兼具产业增长与波动放大双重属性，超额收益来源于业绩、供需与涨价链条，配置聚焦资源品、AI算力链及出口制造。</p>
-<p><strong>光大证券（张宇生）</strong>：短期扰动不改中长期走势。市场波动主要与风险偏好变化有关，中长期上涨逻辑未受影响。上市公司业绩逐步改善，国内基本面的确定性将成为下阶段支撑市场上行的核心力量。</p>
-<p><strong>中国银河（杨超）</strong>：科技成长仍是主线，但短期交易拥挤度已高，市场或进入"震荡整固+内部分化"阶段。有业绩支撑的龙头将继续受益，建议关注中报业绩前瞻。</p>
-<p><strong>华泰证券</strong>：9月前美联储将维持利率不变，年底12月加息概率接近50%。港股流动性与美元利率联动，高贴现率将持续压制高成长科技板块估值。</p>
-<p><strong>中银证券</strong>：短期震荡不改AI主线，关注成长内部高低切与均衡化。AI产业链仍是当下最为确定的景气上行方向。6月金股：宁德时代⭐、沪电股份、深南电路、雅克科技、卫星化学、中国国航等。</p>
-<p><strong>中原证券</strong>：沪指维持震荡整理，短线关注半导体、消费电子、通信设备及机器人。5月PMI回落至50%荣枯线，社融同比少增，但M1回升、进出口两位数增长仍是积极信号。</p>
-<p><strong>东吴证券</strong>：港股赔率优势明显，关注补涨窗口。美股AI正从硬件向软件应用扩散，港股有望共振。部分资金将轮动至消费、地产等板块。港股全年EPS有望增长5-6%。</p>
-<p><strong>国泰海通/中信证券</strong>：机构调研热度持续升温，半导体设备成核心关注。盛美上海本周接待129家机构调研居首。券商/基金密集调研高端制造与科技赛道。</p>
-<p><div class="source-link">🔗 <a href="#">数据来源：Wind 万得金融数据服务 / 券商策略报告</a></div></p>
+<p class="sub-label"><strong>中金公司</strong>：</p>
+<p>国际秩序重构与产业创新趋势共振是推动市场上行核心驱动力，两大条件未动摇。市场整体估值合理，但局部板块估值偏高，下半年需防范部分领域行情脆弱性与波动风险。</p>
+<p class="sub-label"><strong>招商证券（张夏）</strong>：</p>
+<p>A股已进入盈利驱动的上行阶段，6月指数将呈震荡上行、高点抬升格局。AI兼具产业增长与波动放大双重属性，超额收益来源于业绩、供需与涨价链条，配置聚焦资源品、AI算力链及出口制造。</p>
+<p class="sub-label"><strong>光大证券（张宇生）</strong>：</p>
+<p>短期扰动不改中长期走势。市场波动主要与风险偏好变化有关，中长期上涨逻辑未受影响。上市公司业绩逐步改善，国内基本面的确定性将成为下阶段支撑市场上行的核心力量。</p>
+<p class="sub-label"><strong>中国银河（杨超）</strong>：</p>
+<p>科技成长仍是主线，但短期交易拥挤度已高，市场或进入"震荡整固+内部分化"阶段。有业绩支撑的龙头将继续受益，建议关注中报业绩前瞻。</p>
+<p class="sub-label"><strong>华泰证券</strong>：</p>
+<p>9月前美联储将维持利率不变，年底12月加息概率接近50%。港股流动性与美元利率联动，高贴现率将持续压制高成长科技板块估值。</p>
+<p class="sub-label"><strong>中银证券</strong>：</p>
+<p>短期震荡不改AI主线，关注成长内部高低切与均衡化。AI产业链仍是当下最为确定的景气上行方向。6月金股：宁德时代⭐、沪电股份、深南电路、雅克科技、卫星化学、中国国航等。</p>
+<p class="sub-label"><strong>中原证券</strong>：</p>
+<p>沪指维持震荡整理，短线关注半导体、消费电子、通信设备及机器人。5月PMI回落至50%荣枯线，社融同比少增，但M1回升、进出口两位数增长仍是积极信号。</p>
+<p class="sub-label"><strong>东吴证券</strong>：</p>
+<p>港股赔率优势明显，关注补涨窗口。美股AI正从硬件向软件应用扩散，港股有望共振。部分资金将轮动至消费、地产等板块。港股全年EPS有望增长5-6%。</p>
+<p class="sub-label"><strong>国泰海通/中信证券</strong>：</p>
+<p>机构调研热度持续升温，半导体设备成核心关注。盛美上海本周接待129家机构调研居首。券商/基金密集调研高端制造与科技赛道。<br><div class="source-link">🔗 <a href="#">数据来源：Wind 万得金融数据服务 / 券商策略报告</a></div></p>
 <hr>
 <h2>🏢 持仓个股</h2>
 <h3>A股持仓（13只）</h3>
@@ -493,7 +527,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>📋 数据溯源</h2>
 <table><thead><tr><th>板块</th><th>数据源</th><th>状态</th></tr></thead><tbody><tr><td>宏观/市场</td><td>Wind financial_docs.get_financial_news</td><td>✅</td></tr><tr><td>策略观点</td><td>Wind financial_docs.get_financial_news + zsxq</td><td>✅</td></tr><tr><td>A股持仓</td><td>Wind financial_docs.get_company_announcements + get_financial_news</td><td>✅</td></tr><tr><td>港股持仓</td><td>Wind financial_docs.get_financial_news</td><td>✅</td></tr><tr><td>关注清单</td><td>Wind financial_docs.get_financial_news</td><td>✅</td></tr><tr><td>知识星球</td><td>zsxq topic +search / topic +detail</td><td>✅</td></tr><tr><td>彭博头条</td><td>❌ bbgwire CLI未安装</td><td>⚠️</td></tr><tr><td>MX财经搜索</td><td>❌ EM_API_KEY未配置</td><td>⚠️</td></tr></tbody></table>
-<p><strong>数据获取通道</strong>：Wind万得 x 7次查询 | 知识星球 x 4次搜索+3次详情 | 数据截止时间：2026-06-21 08:20 CST</p>
+<p class="sub-label"><strong>数据获取通道</strong>：</p>
+<p>Wind万得 x 7次查询 | 知识星球 x 4次搜索+3次详情 | 数据截止时间：2026-06-21 08:20 CST</p>
 <hr>
 <p><div style="text-align:center;color:#8b949e;font-size:0.75em;margin-top:24px;padding-top:12px;border-top:1px solid #30363d;"><br>数据来源：Wind 万得金融数据服务 · 知识星球（水木调研纪要-2.0 / 调研纪要更新） · My Research Central · via WB<br></div></p>
 

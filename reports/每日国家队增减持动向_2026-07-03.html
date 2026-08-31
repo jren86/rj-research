@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -444,10 +469,10 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>1.3 行业/主题ETF资金流向</h3>
 <p>7月2日A股三大指数集体大跌（沪指-2%、创业板指-5.71%、科创50-7.7%），但ETF资金逆势抄底，当日全市场股票ETF净流入超240亿元：</p>
 <table><thead><tr><th>方向</th><th>7/2单日净流入</th><th>本周累计（估算）</th></tr></thead><tbody><tr><td>半导体板块</td><td><strong>+52亿元</strong></td><td>科技板块合计约+330亿</td></tr><tr><td>证券板块</td><td><strong>+39.7亿元</strong></td><td>—</td></tr><tr><td>科创板50</td><td><strong>+44.4亿元</strong></td><td>—</td></tr><tr><td>中证500</td><td><strong>+32.7亿元</strong></td><td>+22.4亿</td></tr><tr><td>中证A500</td><td><strong>+24.8亿元</strong></td><td>+4.26亿</td></tr><tr><td>港股科技</td><td><strong>-17.5亿元</strong></td><td>净流出</td></tr></tbody></table>
-<p><div class="source-link">🔗 <a href="https://www.cls.cn/detail/2416383">来源：财联社 — 7月2日股票ETF资金净流入超240亿元</a></div><br><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 万得金融终端</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.cls.cn/detail/2416383">来源：财联社 — 7月2日股票ETF资金净流入超240亿元</a></div><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 万得金融终端</a></div></p>
 <h3>1.4 上半年累计数据</h3>
 <ul><li>上半年股票类ETF累计净赎回 <strong>1.69万亿元</strong>，其中四只沪深300ETF合计净赎回 <strong>9,396亿元</strong>（占55%+）</li><li>科技类ETF上半年净流入超 <strong>800亿元</strong>，半导体设备ETF合计净流入约 <strong>310.6亿元</strong></li><li>截至7月2日，全市场1,482只股票ETF总规模达 <strong>3.35万亿元</strong></li><li>宽基ETF规模已回落至年初增持前水平，沪深300自由流通市值中ETF占比从年初10.80%降至3.92%</li></ul>
-<p><div class="source-link">🔗 <a href="https://www.cnstock.com/commonDetail/737958">来源：上海证券报 — 上半年科技类ETF净流入超800亿元</a></div><br><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 万得金融终端</a></div></p>
+<p><div class="source-link">🔗 <a href="https://www.cnstock.com/commonDetail/737958">来源：上海证券报 — 上半年科技类ETF净流入超800亿元</a></div><div class="source-link">🔗 <a href="https://www.wind.com.cn">来源：Wind 万得金融终端</a></div></p>
 <h3>1.5 麦高证券ETF周报数据</h3>
 <p>据麦高证券统计，本周（样本期内）：</p>
 <table><thead><tr><th>板块</th><th>资金净流入</th></tr></thead><tbody><tr><td>债券ETF</td><td>+257.18亿元</td></tr><tr><td>宽基ETF</td><td>-966.35亿元</td></tr><tr><td>科技板块ETF</td><td>+330.80亿元</td></tr><tr><td>芯片半导体ETF</td><td>+241.57亿元</td></tr><tr><td>创业板相关ETF</td><td>+38.50亿元</td></tr><tr><td>沪深300ETF</td><td>-892.22亿元</td></tr><tr><td>周期板块ETF</td><td>-58.04亿元</td></tr></tbody></table>
@@ -497,7 +522,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer"><br>数据来源：Wind万得金融终端、东方财富mx-finance-search、财联社、证券时报、上海证券报、中泰证券研报 · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>数据来源：Wind万得金融终端、东方财富mx-finance-search、财联社、证券时报、上海证券报、中泰证券研报 · My Research Central · via WB<br>
 </div>
 
 </body>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -449,9 +474,12 @@ blockquote p:last-child { margin-bottom: 0; }
 <p>🔗 来源：Wind 金融终端、国务院新闻发布会</p>
 <hr>
 <h2>📈 市场概览</h2>
-<p><strong>隔夜外围</strong>：美股科技股集体重挫，AI算力/存储/半导体设备全线回调。纳指跌2.21%，费城半导体指数跌7.9%，中概金龙指数跌0.55%。<strong>美股科技股调整可能传导A股AI/半导体/光模块/PCB等高拥挤度板块，但国产替代/政策受益方向相对独立</strong>。</p>
-<p><strong>A股环境</strong>：6月23日三大指数集体低开（沪指-0.23%，深成指-0.29%，创业板-0.36%，科创-0.8%），结构性行情延续。机构对6月市场研判"震荡上行、高点抬升"，但需警惕"极致抱团"风险（前5%股票成交占比已超46%）。<strong>今日重点关注美股科技股调整对开盘的传导，但A股有自身政策催化（汽车消费/陆家嘴论坛一揽子）。</strong></p>
-<p><strong>港股环境</strong>：6/23恒指跌432点收23336点（跌1.82%），成交3344亿。腾讯/阿里/美团跌3-4%，阿里巴巴失守百元关口。AI大模型股智谱跌10%，MINIMAX跌16%。芯片股分化：中芯国际跌1%，华虹宏力/天数智芯涨1%。<strong>港股AI应用/平台估值修复尚未到位，但南向资金6/5/6/8多次净卖出腾讯美团，结构性压力较大。</strong></p>
+<p class="sub-label"><strong>隔夜外围</strong>：</p>
+<p>美股科技股集体重挫，AI算力/存储/半导体设备全线回调。纳指跌2.21%，费城半导体指数跌7.9%，中概金龙指数跌0.55%。<strong>美股科技股调整可能传导A股AI/半导体/光模块/PCB等高拥挤度板块，但国产替代/政策受益方向相对独立</strong>。</p>
+<p class="sub-label"><strong>A股环境</strong>：</p>
+<p>6月23日三大指数集体低开（沪指-0.23%，深成指-0.29%，创业板-0.36%，科创-0.8%），结构性行情延续。机构对6月市场研判"震荡上行、高点抬升"，但需警惕"极致抱团"风险（前5%股票成交占比已超46%）。<strong>今日重点关注美股科技股调整对开盘的传导，但A股有自身政策催化（汽车消费/陆家嘴论坛一揽子）。</strong></p>
+<p class="sub-label"><strong>港股环境</strong>：</p>
+<p>6/23恒指跌432点收23336点（跌1.82%），成交3344亿。腾讯/阿里/美团跌3-4%，阿里巴巴失守百元关口。AI大模型股智谱跌10%，MINIMAX跌16%。芯片股分化：中芯国际跌1%，华虹宏力/天数智芯涨1%。<strong>港股AI应用/平台估值修复尚未到位，但南向资金6/5/6/8多次净卖出腾讯美团，结构性压力较大。</strong></p>
 <hr>
 <h2>💡 策略观点</h2>
 <h3>🔴 6月券商金股共识（持续验证）</h3>
@@ -531,7 +559,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>📄 知识星球（zsxq）</h2>
 <p>⚠️ <strong>状态说明</strong>：今日通过<code>zsxq topic +search</code>/<code>api call search_topics</code>/<code>api call get_group_topics</code>均返回错误："<strong>该星球暂未开通 Skill 权限，如需使用，可联系星主申请开通</strong>"。</p>
 <p>水木调研纪要-2.0（group 88888）和调研纪要更新（group 48844）均无法访问搜索/列表接口。该问题自上次执行持续存在。</p>
-<p><strong>替代方案</strong>：已通过 Wind 研报模块 + 公开券商金股列表抓取核心关键词相关推荐（强推/上调/重视/重点推荐/买入/增持）：</p>
+<p class="sub-label"><strong>替代方案</strong>：</p>
+<p>已通过 Wind 研报模块 + 公开券商金股列表抓取核心关键词相关推荐（强推/上调/重视/重点推荐/买入/增持）：</p>
 <h3>关键词过滤（强推/上调/重视/推荐/买入/增持）</h3>
 <table><thead><tr><th>机构</th><th>标的/方向</th><th>关键词</th><th>日期</th></tr></thead><tbody><tr><td>⭐ 东吴证券</td><td>宁德时代</td><td>维持"<strong>买入</strong>"，目标价632元</td><td>6/2</td></tr><tr><td>⭐ 华鑫证券</td><td>宁德时代</td><td>"<strong>买入</strong>"评级，行业龙头地位稳固</td><td>5/31</td></tr><tr><td>⭐ 华安证券</td><td>阿里巴巴-W</td><td>6月金股<strong>推荐</strong>，AI ARR 360亿+平头哥10万卡PPU</td><td>6/2</td></tr><tr><td>⭐ 中原证券</td><td>芯碁微装</td><td>6月金股<strong>推荐</strong>，AIDC催化PCB设备</td><td>5/29</td></tr><tr><td>⭐ 中原证券</td><td>中芯国际</td><td>6月金股<strong>推荐</strong>，AI芯片国产化</td><td>5/29</td></tr><tr><td>⭐ 招商证券（张夏）</td><td>资源品/AI算力链/出口制造</td><td>"<strong>重点</strong>"配置聚焦</td><td>6/2</td></tr><tr><td>招商证券</td><td>广发证券</td><td>6月金股<strong>推荐</strong>（开源/国金/国联民生联合）</td><td>6/2</td></tr><tr><td>国金证券</td><td>工业富联</td><td>AI服务器龙头"<strong>买入</strong>"逻辑</td><td>6/1</td></tr><tr><td>中国银河</td><td>科技成长龙头</td><td>"<strong>重点</strong>关注"中报业绩前瞻</td><td>6/2</td></tr><tr><td>天风证券</td><td>中际旭创</td><td>6月金股<strong>推荐</strong>，全球800G/1.6T龙头</td><td>6/1</td></tr><tr><td>国联民生</td><td>煤炭（兖矿能源）</td><td>"<strong>重视</strong>"——旺季将至、煤价蓄势待发</td><td>6/1</td></tr><tr><td>海通证券</td><td>红利+一季报性价比品种</td><td>"<strong>建议</strong>"适度配置</td><td>6/15</td></tr><tr><td>中信建投</td><td>五大细分（光模块/PCB/电子布/先进封装/CPU/存储/液冷/算力租赁/云服务）</td><td>继续<strong>推荐</strong></td><td>5/29</td></tr><tr><td>国信证券</td><td>周期品种/红利/景气度改善</td><td>"<strong>逢低留意</strong>"</td><td>5/26</td></tr><tr><td>国泰海通</td><td>银行/券商</td><td>"<strong>看好</strong>"，Q4增配稳定类+高分红</td><td>6/5</td></tr></tbody></table>
 <p>🔗 来源：Wind 金融终端 + 各大券商研报</p>

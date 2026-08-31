@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -433,87 +458,99 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>🔥 重大发布</h2>
 <h3>1. 苹果 WWDC 2026：Siri AI 独立 App 发布，Apple Foundation Models 确认为自研</h3>
-<p><strong>摘要</strong>：库克卸任前最后一届 WWDC，苹果用一整场发布会宣告 AI 时代不再缺席。iOS 27、iPadOS 27、macOS 27、watchOS 27、visionOS 27 悉数亮相，核心围绕 Siri AI 独立 App 和 Apple Intelligence 全线升级。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>库克卸任前最后一届 WWDC，苹果用一整场发布会宣告 AI 时代不再缺席。iOS 27、iPadOS 27、macOS 27、watchOS 27、visionOS 27 悉数亮相，核心围绕 Siri AI 独立 App 和 Apple Intelligence 全线升级。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>Siri AI 独立 App 正式发布：从系统内置功能升级为独立产品，深度耦合 Google Gemini 的 Apple Intelligence 全面升级</li><li>Apple Foundation Models 确认自研：苹果澄清并非基于 Gemini 训练，而是完全自研的基础模型架构</li><li>Core AI 框架整合 CPU/GPU/神经网络引擎，支持设备端 AI 推理</li><li>下载量低于 200 万次的独立开发者可<strong>免费使用云端 AI 模型</strong></li><li>iOS 27 应用启动速度提升 30%，Siri 支持相机场景交互模式</li><li>欧盟地区因《数字市场法案》要求第三方助手访问用户数据，macOS/watchOS/visionOS 仅获部分更新</li></ul>
-<p><strong>影响</strong>：苹果正式加入 AI 全栈竞争，从「AI 功能补课」转向「AI 原生系统」思路，iOS 27 起 AI 成为操作系统核心组件而非附加功能。</p>
-<p>📅 <strong>来源</strong>：TechCrunch / The Verge / 新浪科技 • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/tech/roll/2026-06-09/doc-iniaukpc1993975.shtml" target="_blank">新浪财经</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>苹果正式加入 AI 全栈竞争，从「AI 功能补课」转向「AI 原生系统」思路，iOS 27 起 AI 成为操作系统核心组件而非附加功能。<br>📅 <strong>来源</strong>：TechCrunch / The Verge / 新浪科技 • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/tech/roll/2026-06-09/doc-iniaukpc1993975.shtml" target="_blank">新浪财经</a></p>
 <hr>
 <h3>2. 小米 MiMo-V2.5-Pro-UltraSpeed 刷新大模型推理速度记录：1000 TPS</h3>
-<p><strong>摘要</strong>：小米推出 MiMo-V2.5-Pro-UltraSpeed，将 1T 参数大模型的生成速度提升至<strong>每秒 1000 Token（1000 TPS）</strong>，是目前业界最高的推理速度纪录之一。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>小米推出 MiMo-V2.5-Pro-UltraSpeed，将 1T 参数大模型的生成速度提升至<strong>每秒 1000 Token（1000 TPS）</strong>，是目前业界最高的推理速度纪录之一。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>采用 MoE 架构 + 推测解码（Speculative Decoding）技术实现速度突破</li><li>2026 年国产开源模型包揽全球前三：小米 MiMo-V2-Pro、月之暗面 Kimi-K2.5-Thinking、阿里 Qwen3.5-397B-A17B-Thinking</li><li>国产 AI 大模型整体能力已进入全球第一梯队，仅在算力芯片、基础软件、顶尖人才三个领域仍存短板</li></ul>
-<p><strong>影响</strong>：国产大模型不仅在能力上追赶，在工程效率和推理成本上已形成差异化竞争力。</p>
-<p>📅 <strong>来源</strong>：Saiita 科技资讯 • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank">Saiita科技</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>国产大模型不仅在能力上追赶，在工程效率和推理成本上已形成差异化竞争力。<br>📅 <strong>来源</strong>：Saiita 科技资讯 • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank">Saiita科技</a></p>
 <hr>
 <h3>3. Cognition 发布 FrontierCode：首个 AI 编程「可合并性」评测基准</h3>
-<p><strong>摘要</strong>：Cognition 发布 FrontierCode，首个衡量 AI 生成代码实际可合并到生产项目能力的评测基准，不同于传统仅关注代码能否通过测试的评测方式。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Cognition 发布 FrontierCode，首个衡量 AI 生成代码实际可合并到生产项目能力的评测基准，不同于传统仅关注代码能否通过测试的评测方式。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>聚焦真实开发场景中的代码可合并性（mergeability），而非简单的正确率</li><li>评估维度包括：代码风格一致性、与现有架构的兼容性、性能影响、安全风险</li><li>标志 AI 编程评估体系从「实验室指标」走向「工程实践」</li></ul>
-<p><strong>影响</strong>：为 AI Coding 工具提供了一个更贴近生产环境的评估标准，推动行业从「跑通测试」进化到「可上线合并」。</p>
-<p>📅 <strong>来源</strong>：Saiita 科技资讯 • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank">Saiita科技</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>为 AI Coding 工具提供了一个更贴近生产环境的评估标准，推动行业从「跑通测试」进化到「可上线合并」。<br>📅 <strong>来源</strong>：Saiita 科技资讯 • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank">Saiita科技</a></p>
 <hr>
 <h2>💰 产业与投融资</h2>
 <h3>4. OpenAI 秘密提交 IPO 申请，估值 $8500 亿+，AI 双雄 + SpaceX 同日冲击华尔街</h3>
-<p><strong>摘要</strong>：全球生成式 AI 领军企业 OpenAI 正式向 SEC 秘密递交 IPO 申请，当前估值超 $8500 亿，计划最快 2026 年 Q4 完成上市。与此同时，SpaceX 定于本周五（6/12）登陆纳斯达克，发行价 $135/股，估值约 $1.8 万亿。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>全球生成式 AI 领军企业 OpenAI 正式向 SEC 秘密递交 IPO 申请，当前估值超 $8500 亿，计划最快 2026 年 Q4 完成上市。与此同时，SpaceX 定于本周五（6/12）登陆纳斯达克，发行价 $135/股，估值约 $1.8 万亿。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>OpenAI 估值 $8500 亿，仅次于 Anthropic 的 $9650 亿</li><li>SpaceX 上市融资 $750 亿，将成为史上最大 IPO</li><li>三家公司（OpenAI + Anthropic + SpaceX）合计估值超 <strong>$3.5 万亿</strong></li><li>全球资本进入 AI 超级 IPO 周期</li></ul>
-<p><strong>影响</strong>：AI 产业从「融资烧钱」正式进入「资本市场变现」阶段，三大 IPO 将重新定义全球科技估值天花板。</p>
-<p>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/jjxw/2026-06-10/doc-iniawief1495079.shtml" target="_blank">新浪财经</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>AI 产业从「融资烧钱」正式进入「资本市场变现」阶段，三大 IPO 将重新定义全球科技估值天花板。<br>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/jjxw/2026-06-10/doc-iniawief1495079.shtml" target="_blank">新浪财经</a></p>
 <hr>
 <h3>5. Google 向英特尔下达 300 万颗 TPU 代工订单，英特尔盘前暴涨 13%</h3>
-<p><strong>摘要</strong>：据市场消息，谷歌向英特尔下达总量 <strong>300 万颗 TPU</strong> 的张量处理单元代工订单。受此利好，英特尔股价盘前暴涨 13%，AI 算力供应链格局出现重大变化。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>据市场消息，谷歌向英特尔下达总量 <strong>300 万颗 TPU</strong> 的张量处理单元代工订单。受此利好，英特尔股价盘前暴涨 13%，AI 算力供应链格局出现重大变化。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>谷歌 TPU 此前主要依赖博通合作，此举标志供应链多元化</li><li>英特尔 18A 制程首次获得 AI 芯片代工大单</li><li>同期英伟达 CEO 黄仁勋结束五日访韩，与 SK 海力士、SK 电讯、现代汽车、LG、NAVER、三星电子密集签署 AI 合作协议</li></ul>
-<p><strong>影响</strong>：AI 算力芯片代工格局从「英伟达 + 台积电/博通」双寡头向多极化发展，英特尔重获入场券。</p>
-<p>📅 <strong>来源</strong>：CSDN AI 科技日报 • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://blog.csdn.net/haohaizi_liu/article/details/161831231" target="_blank">CSDN</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>AI 算力芯片代工格局从「英伟达 + 台积电/博通」双寡头向多极化发展，英特尔重获入场券。<br>📅 <strong>来源</strong>：CSDN AI 科技日报 • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://blog.csdn.net/haohaizi_liu/article/details/161831231" target="_blank">CSDN</a></p>
 <hr>
 <h3>6. 超微电脑计划 70 亿美元股权融资，采购 AI 服务器组件</h3>
-<p><strong>摘要</strong>：超微电脑（SMCI）宣布拟进行 70 亿美元的股权及股权挂钩融资，资金用于采购履行客户 AI 服务器订单所需的组件。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>超微电脑（SMCI）宣布拟进行 70 亿美元的股权及股权挂钩融资，资金用于采购履行客户 AI 服务器订单所需的组件。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>消息公布后股价盘后重挫逾 10%，市场担忧股权稀释</li><li>反映 AI 服务器需求极其旺盛，供应链仍存在产能瓶颈</li><li>5 月 AI/人形机器人等前沿领域资本投资金额同比增长约 <strong>5 倍</strong>，AI 基础设施项目中标金额同比增长 <strong>106.9%</strong></li></ul>
-<p><strong>影响</strong>：AI 算力需求驱动的产业链投资仍在加速，但高速扩张也引发市场对资金可持续性的担忧。</p>
-<p>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/world/2026-06-10/doc-iniawiea2821080.shtml" target="_blank">新浪财经</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>AI 算力需求驱动的产业链投资仍在加速，但高速扩张也引发市场对资金可持续性的担忧。<br>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/world/2026-06-10/doc-iniawiea2821080.shtml" target="_blank">新浪财经</a></p>
 <hr>
 <h3>7. SpaceX 计划 2027 年底启动太空 AI 算力技术演示</h3>
-<p><strong>摘要</strong>：据 SpaceX 上市前投资者推介会信息，SpaceX 计划在 2027 年底前启动太空人工智能计算基础设施的初步演示，比 IPO 文件中披露的「最早 2028 年」时间表有所提前。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>据 SpaceX 上市前投资者推介会信息，SpaceX 计划在 2027 年底前启动太空人工智能计算基础设施的初步演示，比 IPO 文件中披露的「最早 2028 年」时间表有所提前。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>太空 AI 算力利用轨道数据中心的高真空、低温、无大气干扰环境优势</li><li>可用于低温散热、全天候太阳能供电等场景</li><li>马斯克将 AI 算力竞争从地面延伸到太空</li></ul>
-<p><strong>影响</strong>：AI 基础设施竞争的维度从地面数据中心扩展到太空轨道，算力成为地缘战略资源。</p>
-<p>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-10/doc-iniawief1486992.shtml" target="_blank">新浪财经</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>AI 基础设施竞争的维度从地面数据中心扩展到太空轨道，算力成为地缘战略资源。<br>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-10/doc-iniawief1486992.shtml" target="_blank">新浪财经</a></p>
 <hr>
 <h2>🔬 研究前沿</h2>
 <h3>8. 腾讯混元联合人大高瓴开源 PlanningBench，填补 AI 规划能力评测空白</h3>
-<p><strong>摘要</strong>：腾讯混元团队联合中国人民大学高瓴人工智能学院开源 PlanningBench，面向 AI 规划能力的标准化评测基准。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>腾讯混元团队联合中国人民大学高瓴人工智能学院开源 PlanningBench，面向 AI 规划能力的标准化评测基准。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>支持对任务分解、多步推理、执行规划能力进行系统测试</li><li>在当前 AI Agent 能力从「聊天」向「执行」转变的背景下，规划能力评测成为关键标尺</li><li>中国 AI 大模型周调用量已连续六周位居全球第一，DeepSeek 用户调用量稳居榜首</li></ul>
-<p><strong>影响</strong>：Benchmark 层面的布局意味着国产 AI 从「追能力」转向「定标准」，在评测话语权上争取主动。</p>
-<p>📅 <strong>来源</strong>：Saiita 科技资讯 • 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank">Saiita科技</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>Benchmark 层面的布局意味着国产 AI 从「追能力」转向「定标准」，在评测话语权上争取主动。<br>📅 <strong>来源</strong>：Saiita 科技资讯 • 2026-06-08<br>🔗 <strong>链接</strong>：<a href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank">Saiita科技</a></p>
 <hr>
 <h3>9. Anthropic 即将发布网络安全模型 Mythos 公开版 Fable5</h3>
-<p><strong>摘要</strong>：Anthropic 将于近日发布网络安全模型 Mythos 的公开版本，命名为 Fable5。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Anthropic 将于近日发布网络安全模型 Mythos 的公开版本，命名为 Fable5。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>初期仅向审核合作伙伴开放，公开版限制网络权限防止滥用</li><li>在威胁检测、安全审计等长期多步骤任务上保持强性能</li><li>将推动 AI 安全标准从「自评」走向「独立审计」</li></ul>
-<p><strong>影响</strong>：AI 安全从「理念讨论」进入「产品化交付」阶段，专门的安全 AI 模型成为行业标配。</p>
-<p>📅 <strong>来源</strong>：xix.ai • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://xix.ai/live/5069" target="_blank">xix.ai</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>AI 安全从「理念讨论」进入「产品化交付」阶段，专门的安全 AI 模型成为行业标配。<br>📅 <strong>来源</strong>：xix.ai • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://xix.ai/live/5069" target="_blank">xix.ai</a></p>
 <hr>
 <h2>🛠️ 工具与应用</h2>
 <h3>10. 腾讯 × 京东合作开发 AI 代理，目标实现交易闭环</h3>
-<p><strong>摘要</strong>：腾讯和京东达成合作开发 AI 代理，目标从信息搜索能力升级到实际交易闭环，是 AI Agent 从「能聊」到「能买」的关键一步。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>腾讯和京东达成合作开发 AI 代理，目标从信息搜索能力升级到实际交易闭环，是 AI Agent 从「能聊」到「能买」的关键一步。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>腾讯提供用户入口、支付体系、微信小程序</li><li>京东提供商品池、供应链、零售履约能力</li><li>标志 AI 估值逻辑从「能力导向」转向「商业化落地导向」</li><li>有望成为下一代互联网的新交易入口</li></ul>
-<p><strong>影响</strong>：微信 13 亿月活生态叠加京东供应链，AI 代理交易模式可能重塑中国电商格局。</p>
-<p>📅 <strong>来源</strong>：xix.ai • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://xix.ai/live/5067" target="_blank">xix.ai</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>微信 13 亿月活生态叠加京东供应链，AI 代理交易模式可能重塑中国电商格局。<br>📅 <strong>来源</strong>：xix.ai • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://xix.ai/live/5067" target="_blank">xix.ai</a></p>
 <hr>
 <h3>11. Google 升级 NotebookLM 至 Gemini 3.5，新增安全云代码执行环境</h3>
-<p><strong>摘要</strong>：Google 将 NotebookLM 升级到 Gemini 3.5 版本，搭载 Antigravity 代理，新增安全云计算环境，支持代码执行、数据分析和实时图表生成。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>Google 将 NotebookLM 升级到 Gemini 3.5 版本，搭载 Antigravity 代理，新增安全云计算环境，支持代码执行、数据分析和实时图表生成。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>支持 Python 代码在安全沙箱中直接运行</li><li>实时生成交互式图表和数据可视化</li><li>支持多格式输出（文档/演示文稿/表格）</li><li>初期向 AI Ultra 订阅用户和企业 Workspace 客户开放</li><li>标志 NotebookLM 从免费工具向付费工作流平台转型</li></ul>
 <p>📅 <strong>来源</strong>：xix.ai • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://xix.ai/live/5070" target="_blank">xix.ai</a></p>
 <hr>
 <h3>12. 达摩院免费开放 100 件 AI 专利许可</h3>
-<p><strong>摘要</strong>：阿里达摩院（湖畔实验室）宣布向社会免费开放 100 件 AI 专利许可，覆盖图像技术、视频技术、3D 视觉等领域。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>阿里达摩院（湖畔实验室）宣布向社会免费开放 100 件 AI 专利许可，覆盖图像技术、视频技术、3D 视觉等领域。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>相关专利纳入全国首批专利公开实施清单</li><li>在浙江知识产权交易中心上架</li><li>降低中小企业 AI 技术应用门槛</li></ul>
 <p>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://k.sina.com.cn/article_7857141524_1d4527714019030evg.html" target="_blank">新浪财经</a></p>
 <hr>
@@ -522,34 +559,39 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>🌍 政策与监管</h2>
 <h3>14. 工信部联合国资委启动人形机器人与具身智能实景实训专项行动</h3>
-<p><strong>摘要</strong>：工信部联合国资委正式启动人形机器人与具身智能实景实训专项行动，目标到 2026 年底推动相关技术进入「作业模式」。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>工信部联合国资委正式启动人形机器人与具身智能实景实训专项行动，目标到 2026 年底推动相关技术进入「作业模式」。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>从「实验室演示」推进到「产线实际操作」</li><li>加速人形机器人与具身智能技术的产业化落地</li><li>同期「物理 AI」成为 2026 年全球 AI 全新热点</li></ul>
 <p>📅 <strong>来源</strong>：CSDN AI 科技日报 • 2026-06-09<br>🔗 <strong>链接</strong>：<a href="https://blog.csdn.net/haohaizi_liu/article/details/161831231" target="_blank">CSDN</a></p>
 <hr>
 <h3>15. 国家数据局《行业高质量数据集建设行动实施方案》正式印发</h3>
-<p><strong>摘要</strong>：国家数据局推出六大行动，目标形成数据从供给到价值释放的良性循环，AI 主题 ETF 全线走强。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>国家数据局推出六大行动，目标形成数据从供给到价值释放的良性循环，AI 主题 ETF 全线走强。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>六大行动覆盖数据采集、标注、治理、流通、应用、安全</li><li>强化数据对 AI 创新发展的支撑作用</li><li>6 月 9 日超 30 只 AI 相关公募基金净值上涨，华夏创业板 AI ETF 涨 4.56%</li></ul>
 <p>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/roll/2026-06-10/doc-iniawief1468266.shtml" target="_blank">新浪财经</a></p>
 <hr>
 <h3>16. 特朗普政府要求 AI 测试部门停止发布公开报告</h3>
-<p><strong>摘要</strong>：特朗普政府官员要求官方 AI 测试部门停止对外发布公开报告，相关 AI 监管信息披露将收紧。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>特朗普政府官员要求官方 AI 测试部门停止对外发布公开报告，相关 AI 监管信息披露将收紧。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>美国白宫 AI 政策核心顾问托马斯·林德确认即将离职</li><li>AI 监管信息披露从「透明化」转向「收紧管控」</li><li>此前特朗普签发的「缩水版」AI 行政令（30 天自愿安全测试窗口）已引发争议</li></ul>
-<p><strong>影响</strong>：美国 AI 监管政策走向不确定性加剧，业界对监管透明度的担忧升高。</p>
-<p>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://k.sina.com.cn/article_5953466437_162dab0450670ap98c.html" target="_blank">新浪财经</a></p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>美国 AI 监管政策走向不确定性加剧，业界对监管透明度的担忧升高。<br>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://k.sina.com.cn/article_5953466437_162dab0450670ap98c.html" target="_blank">新浪财经</a></p>
 <hr>
 <h3>17. 美国更新「涉军黑名单」：188 家中国实体上榜，覆盖 AI/半导体/机器人</h3>
-<p><strong>摘要</strong>：美国五角大楼更新所谓「涉军中国企业清单」，188 家中国实体上榜，覆盖人工智能、电商平台、电动车、半导体、机器人等多个领域。</p>
-<p><strong>关键要点</strong>：</p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>美国五角大楼更新所谓「涉军中国企业清单」，188 家中国实体上榜，覆盖人工智能、电商平台、电动车、半导体、机器人等多个领域。</p>
+<p class="sub-label"><strong>关键要点</strong>：</p>
 <ul><li>被指越来越像中国新质生产力的「光荣榜」</li><li>覆盖范围从传统军工拓展至 AI、电商等新兴领域</li><li>中美 AI 博弈继续升级，从「芯片断供」走向「全产业链打压」</li></ul>
 <p>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://mil.news.sina.com.cn/2026-06-10/doc-iniawpmw5976020.shtml" target="_blank">新浪财经</a></p>
 <hr>
 <h3>18. 全国首个人工智能产业保险共同体在深圳发布</h3>
-<p><strong>摘要</strong>：平安产险牵头成立全国首个人工智能产业保险共同体，采用「1 个总共同体 + 6 大专业分保体」架构，覆盖算法缺陷、模型崩溃、数据安全、基础设施运营等 AI 全产业风险。</p>
-<p><strong>影响</strong>：AI 产业风险管理体系初步建立，保险共同体的出现将降低企业 AI 部署的风险顾虑，加速 AI 商业化落地。</p>
-<p>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/jjxw/2026-06-10/doc-iniawicy6081391.shtml" target="_blank">新浪财经</a></p>
+<p class="sub-label"><strong>摘要</strong>：</p>
+<p>平安产险牵头成立全国首个人工智能产业保险共同体，采用「1 个总共同体 + 6 大专业分保体」架构，覆盖算法缺陷、模型崩溃、数据安全、基础设施运营等 AI 全产业风险。</p>
+<p class="sub-label"><strong>影响</strong>：</p>
+<p>AI 产业风险管理体系初步建立，保险共同体的出现将降低企业 AI 部署的风险顾虑，加速 AI 商业化落地。<br>📅 <strong>来源</strong>：新浪财经 • 2026-06-10<br>🔗 <strong>链接</strong>：<a href="https://finance.sina.com.cn/jjxw/2026-06-10/doc-iniawicy6081391.shtml" target="_blank">新浪财经</a></p>
 <hr>
 <h2>📌 其他值得关注</h2>
 <ul><li><strong>2026 国产 AI 全球领先</strong>：小米 MiMo-V2-Pro、Kimi-K2.5-Thinking、Qwen3.5-397B 包揽开源模型榜单前三，仅在算力芯片、基础软件、顶尖人才三个领域仍存短板</li><li><strong>AI 红绿灯多城落地</strong>：上海（数百个路口 AI 调控）、杭州（城市数据大脑 2.0 延误指数降 15.3%）、襄阳、雄安均已部署，AI 成为治理城市交通拥堵的有效工具</li><li><strong>字节/阿里入局汽车智能化</strong>：赛力斯旗下 AIVA 品牌提出「AI 定义汽车」，火山引擎提供感知/思考/共情智能化支持</li><li><strong>Veritone 会计丑闻</strong>：AI 软件公司 Veritone 承认收入会计处理不当，面临投资者集体诉讼</li><li><strong>小马智行创纪录 IPO</strong>：标志中国自动驾驶从技术验证进入规模化商业应用</li><li><strong>AI 治理「AI 污染」</strong>：AI 投毒黑产可通过批量制造虚假内容污染训练数据、植入后门指令，需技术 + 监管双管齐下</li></ul>
@@ -557,7 +599,8 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>🎯 关键 Takeaways</h2>
 <ul><li><strong>WWDC 2026 定调 Apple AI 方向</strong>：Siri 独立 App + 自研基础模型 + Core AI 框架，苹果正式加入 AI 全栈竞赛，iOS 27 标志 AI 成为操作系统核心组件</li><li><strong>AI 超级 IPO 周期开启</strong>：OpenAI（$8500亿）、SpaceX（$1.8万亿）加上 Anthropic（$9650亿），三大 AI 巨头合计估值超 $3.5 万亿，资本市场进入 AI 收获期</li><li><strong>国产大模型量化领跑</strong>：小米 1000 TPS 推理速度 + 开源榜单包揽前三 + 周调用量连续六周全球第一，中国 AI 从「追赶者」转为「领跑者」，但在算力芯片环节仍需突围</li></ul>
 <hr>
-<p><strong>生成时间</strong>：2026-06-10 07:25 CST<br><strong>下次更新</strong>：明天早上 7:30<br><strong>via WB</strong></p>
+<p class="sub-label"><strong>生成时间</strong>：</p>
+<p>2026-06-10 07:25 CST<br><strong>via WB</strong></p>
 
 <div class="report-footer">
   数据来源：Wind 金融数据 connector · My Research Central · via WB

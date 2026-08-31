@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -486,12 +511,13 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>📋 数据溯源</h2>
 <table><thead><tr><th>数据模块</th><th>数据源</th><th>查询次数</th><th>状态</th></tr></thead><tbody><tr><td>宏观/策略/市场新闻</td><td>Wind MCP <code>financial_docs</code></td><td>7次</td><td>✅ 全部成功</td></tr><tr><td>主要指数行情（8/1收盘）</td><td>Wind MCP <code>index_data</code></td><td>6次</td><td>✅ 5/6成功；NDX超时</td></tr><tr><td>A股持仓收盘价（14只）</td><td>Wind MCP <code>analytics_data</code></td><td>2次</td><td>✅ 价格获取成功；涨跌幅null</td></tr><tr><td>港股持仓收盘价（10只）</td><td>Wind MCP <code>analytics_data</code></td><td>2次</td><td>✅ 价格获取成功；涨跌幅null</td></tr><tr><td>知识星球</td><td>zsxq-cli <code>topic +search</code> + <code>topic +detail</code></td><td>4次</td><td>✅ 全部成功</td></tr><tr><td>大宗商品</td><td>—</td><td>0次</td><td>⚠️ NeoData认证令牌缺失，本期跳过</td></tr></tbody></table>
-<p><strong>数据完整性评估</strong>：指数数据（Wind index_data）可靠；个股收盘价（Wind analytics_data）可靠；涨跌幅数据缺失（analytics返回null），以指数表现+新闻描述替代。</p>
+<p class="sub-label"><strong>数据完整性评估</strong>：</p>
+<p>指数数据（Wind index_data）可靠；个股收盘价（Wind analytics_data）可靠；涨跌幅数据缺失（analytics返回null），以指数表现+新闻描述替代。</p>
 <hr>
 <p><div class="report-footer"><br>数据来源：Wind 万得金融终端 · zsxq 知识星球 · My Research Central · 2026年8月3日 08:30 · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>数据来源：Wind 万得金融终端 · zsxq 知识星球 · My Research Central · 2026年8月3日 08:30 · via WB<br>
 </div>
 
 </body>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -443,7 +468,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <ul><li><strong>芝商所（CME）数据</strong>：6/19 美联储7月加息25bp概率<strong>飙升至40.6%</strong>（前日接近于零）</li><li><strong>2Y美债+9bp至4.14%</strong>；美债期货周四成交<strong>50万份合约</strong>（创历史纪录，约为20日均值的4倍）</li><li><strong>OPEC秘书长海赛姆痛批</strong>IEA"2027年石油重大过剩"言论——双方口径冲突</li><li><strong>鲍曼（美联储副主席）</strong>出席美国银行私人晚宴但未评论货币政策（避免利益冲突）</li><li><strong>沃什改革推进</strong>：5个工作组（沟通/资负表/数据/AI/就业）年底前完成，发布19年来最短政策声明</li><li><strong>多机构观点分化</strong>：</li><li>摩根大通：市场不应对美联储降息抱有期待</li><li>丰业银行：美元本轮上涨动能已近枯竭，中长期下行风险累积</li><li>高盛：将2026年底黄金目标价从$5400下调至$4900，若加息成真金价或跌至$4440</li><li>国信期货：贵金属及有色金属短期谨慎</li></ul>
 <p><div class="source-link">🔗 <a href="https://www.bloomberg.com">来源：彭博社/Wind</a></div></p>
 <h3>🟠 5月经济数据K型分化——生产强+外需强+内需弱</h3>
-<p><strong>国家统计局6/16发布</strong>：</p>
+<p class="sub-label"><strong>国家统计局6/16发布</strong>：</p>
 <table><thead><tr><th>指标</th><th>5月值</th><th>解读</th></tr></thead><tbody><tr><td>工业增加值</td><td>+4.5%</td><td>超预期，AI/高端装备新动能拉动</td></tr><tr><td>高技术制造业</td><td>+15.1%</td><td>增长引擎</td></tr><tr><td>装备制造业</td><td>+9.5%</td><td>持续超预期</td></tr><tr><td><strong>社会消费品零售总额</strong></td><td><strong>-0.6%</strong></td><td>🔴 2022年末以来首次月度负增长</td></tr><tr><td>1-5月固投</td><td>-4.1%</td><td>降幅扩大2.5pct，地产持续拖累</td></tr><tr><td>CPI同比</td><td>+1.2%</td><td>持平（核心CPI +1.1%）</td></tr><tr><td>PPI同比</td><td><strong>+3.9%</strong></td><td>扩大1.1pct，输入性通胀传导</td></tr><tr><td>5月出口（美元计）</td><td><strong>+19.4%</strong></td><td>较4月14.1%回升5.3pct</td></tr><tr><td>5月进口（美元计）</td><td>+27.4%</td><td>维持高增</td></tr><tr><td>1-5月进出口</td><td>+15.3%</td><td>达20.68万亿元</td></tr></tbody></table>
 <ul><li><strong>居民贷款5月负增1412亿</strong>（同比少增1952亿）——内生需求疲软</li><li><strong>企业中长期贷款5月负增200亿</strong>（同比少增3500亿）——融资需求弱</li><li><strong>中信证券判断</strong>：经济K型分化在加速，外贸出口仍是今年经济增长主要抓手，外需强于内需格局年内或将维持</li><li><strong>关注政策窗口</strong>：年内新型政策性金融工具、育儿补贴、汽车家电以旧换新扩容、地产降首付调利率、城中村改造提速</li></ul>
 <p><div class="source-link">🔗 <a href="http://www.stats.gov.cn">来源：国家统计局/中信证券</a></div></p>
@@ -471,9 +496,9 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>国泰海通/国盛/中金/广发</h3>
 <table><thead><tr><th>机构</th><th>核心观点</th><th>来源</th></tr></thead><tbody><tr><td><strong>国泰海通</strong> ⭐</td><td>陆家嘴论坛"一揽子"政策——<strong>券商投融两端均显著受益</strong>：①融资端：科创板第五套标准扩AI、并购重组快速审核；②投资端：主动ETF+商业不动产REITs；③双向开放：人民币外汇期货+5年期国债期货+QFII参与境内国债期货</td><td>国泰海通《非银：陆家嘴论坛新政》6/18</td></tr><tr><td><strong>国盛非银</strong></td><td>陆家嘴论坛政策红利释放，<strong>重视券商/保险配置窗口</strong>——非银板块业绩与估值严重背离，券商PB仅1.17倍/上市险企PEV仅0.64倍，均处历史低位</td><td>国盛非银 6/18</td></tr><tr><td><strong>中金</strong></td><td>银行板块防风险和扩开放双线——整治金融无序竞争缓解存贷款价格战，<strong>保护银行息差和经营质量</strong></td><td>中金银行 6/18</td></tr><tr><td><strong>西部计算机</strong> ⭐</td><td>全球半导体进入扩产周期，国产设备率先受益——<strong>推荐组合</strong>：北方华创/中微公司/拓荆科技/华海清科/盛美上海/芯源微/长川科技/精测电子/中科飞测（持仓/关注标的覆盖度极高）</td><td>水木调研纪要-2.0 6/18</td></tr><tr><td><strong>中信电子</strong></td><td>AI需求驱动半导体硅片行业进入上行周期——<strong>量增逻辑已在2025年出现，涨价逻辑有望在2026年Q2出现</strong>；围绕华为"韬(τ)定律"国内半导体有望"换道加速"</td><td>中信证券 6/17</td></tr><tr><td><strong>中信策略</strong></td><td>"<strong>稳""严""优""新</strong>"特点突出的中国资本市场正持续为全球资金及居民财富提供优质资产配置标的——<strong>当前板块站在前路广阔、大有可为的征程起点</strong>；推荐两条主线：①头部低估（<strong>中信证券/广发证券/国泰海通</strong>）；②ROE改善（<strong>招商证券/华泰证券/东方证券/中国银河/兴业证券/东方财富</strong>）</td><td>中信证券《吴清主席主题演讲学习心得》6/18</td></tr><tr><td><strong>国信期货</strong></td><td>美联储沃什鹰派转向——<strong>美元强势逻辑得到强化</strong>，大宗商品下半年普遍承压；黄金维持看空（高盛目标$4900），但长期宽松伏笔仍存</td><td>期货日报"期货相对论"6/18</td></tr><tr><td><strong>弘业期货宏观</strong></td><td>陆家嘴论坛为高估值科技板块提供"<strong>以时间换空间</strong>"路径——并购重组快速审核助科技龙头消化估值，储架发行为优质科技企业提供更便捷融资</td><td>弘业期货黄思源 6/17</td></tr></tbody></table>
 <h3>FOMC+沃什深度解读</h3>
-<p><strong>沃什首秀核心动作</strong>：</p>
+<p class="sub-label"><strong>沃什首秀核心动作</strong>：</p>
 <ul><li>点阵图9/18人支持年内加息，2Y美债+16bp</li><li>取消前瞻指引，删除宽松措辞</li><li>设5个改革工作组（沟通/资负表/数据/AI/就业），年底前完成</li><li>货币政策框架从"前瞻指引"转向"实时数据决策"</li></ul>
-<p><strong>对市场影响</strong>：</p>
+<p class="sub-label"><strong>对市场影响</strong>：</p>
 <ul><li>短期：会议前后波动加大（美债期货周四成交50万份合约创历史纪录）</li><li>中期：取决于沃什"实时数据决策"框架能否建立</li><li>7月加息概率：40.6%（前日接近零）</li></ul>
 <p><div class="source-link">🔗 <a href="https://wx.zsxq.com">来源：知识星球-水木调研纪要-2.0 + Wind研报</a></div></p>
 <hr>
@@ -519,7 +544,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer"><br>  数据来源：Wind万得 · 彭博社 · 财联社 · 知识星球（水木调研纪要-2.0/调研纪要更新） · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>  数据来源：Wind万得 · 彭博社 · 财联社 · 知识星球（水木调研纪要-2.0/调研纪要更新） · My Research Central · via WB<br>
 </div>
 
 </body>

@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -434,7 +459,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <h2>📊 一、ETF 资金流数据</h2>
 <h3>7 月整体：股票型 ETF 净流入 4,778 亿元，刷新历史纪录</h3>
 <p>据 Wind 数据（转引自中国基金报、金融时报），7 月股票型 ETF 合计净流入 4,778.36 亿元，刷新 A 股 ETF 月度净流入历史纪录，较 2025 年 4 月 1,931.59 亿元的前期峰值翻倍。宽基 ETF 净流入 3,157 亿元（占 66%），行业主题 ETF 净流入 1,577 亿元。</p>
-<p><strong>单月净流入 TOP5 ETF</strong>：</p>
+<p class="sub-label"><strong>单月净流入 TOP5 ETF</strong>：</p>
 <table><thead><tr><th>排名</th><th>产品</th><th>净流入（亿元）</th><th>月末规模（亿元）</th></tr></thead><tbody><tr><td>1</td><td>科创50ETF 华夏</td><td>402.87</td><td>~900</td></tr><tr><td>2</td><td>沪深300ETF 华泰柏瑞</td><td>347.38</td><td>1,229.99</td></tr><tr><td>3</td><td>创业板ETF 易方达</td><td>338.41</td><td>~700</td></tr><tr><td>4</td><td>中证1000ETF 南方</td><td>~200+</td><td>—</td></tr><tr><td>5</td><td>科创半导体ETF 华夏</td><td>299.27</td><td>—</td></tr></tbody></table>
 <p><strong>主力宽基指数 7 月净流入排名</strong>（证券时报）：</p>
 <ul><li>科创50：677.80 亿</li><li>中证A500：458.67 亿</li><li>沪深300：454.10 亿</li><li>中证1000：451.81 亿</li><li>创业板指：432.31 亿</li></ul>
@@ -464,9 +489,9 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h2>🛒 三、知名交易</h2>
 <h3>近期增持回购密集公告</h3>
-<p><strong>8 月 3-4 日主要增持公告</strong>：</p>
+<p class="sub-label"><strong>8 月 3-4 日主要增持公告</strong>：</p>
 <ul><li>🟠 <strong>东吴证券</strong>：控股股东苏州国发集团拟增持 1-2 亿元（不设价格区间）</li><li>🟠 <strong>飞鹿股份</strong>：控股股东拟 5,000 万-1 亿元增持</li><li>🟠 <strong>东阳光</strong>：控股股东拟 3-6 亿元增持 + 3-6 亿元回购</li><li>🟠 <strong>海亮股份</strong>：控股股东获建行 8.6 亿增持贷款（利率 1.8%，三年期）</li></ul>
-<p><strong>8 月 3-4 日主要回购公告</strong>：</p>
+<p class="sub-label"><strong>8 月 3-4 日主要回购公告</strong>：</p>
 <ul><li>🟠 <strong>大秦铁路</strong>：4-5 亿回购注销</li><li>🟠 <strong>阳光电源</strong>：5-10 亿回购</li><li>🟠 <strong>三环集团</strong>：5-10 亿回购（获工行 9 亿专项贷款）</li><li>🟠 <strong>铂科新材</strong>：1-2 亿回购注销</li><li>🟠 <strong>山东高速</strong>：1-2 亿回购注销</li><li>🟠 <strong>网宿科技</strong>：3-6 亿回购注销</li><li>🟠 <strong>兆易创新</strong>：10-20 亿回购注销 + 董事长承诺 12 个月不减持</li></ul>
 <p>🔗 <a href="https://www.cs.com.cn" target="_blank">上市公司密集推出回购增持计划 — 中国证券报</a>  <br>🔗 <a href="https://www.chinafundnews.com" target="_blank">又一批A股公司宣布回购增持 — 中国基金报</a></p>
 <h3>央企增持回购潮（7 月下旬至今）</h3>

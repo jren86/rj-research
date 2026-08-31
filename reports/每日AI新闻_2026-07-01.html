@@ -120,8 +120,13 @@ td {
   vertical-align: top;
 }
 
-tr:hover {
-  background: rgba(58, 107, 150, 0.05);
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
 }
 
 /* ── Tags ── */
@@ -251,9 +256,15 @@ code {
 .source-link {
   display: block;
   font-size: 0.78em;
+  line-height: 1.7;
   color: var(--text2);
-  margin: 4px 0 8px 0;
+  margin: 7px 0 0;
   word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
 }
 
 .source-link a {
@@ -300,6 +311,20 @@ p:last-child { margin-bottom: 0; }
 
 h2 + p,
 h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
 
 blockquote p { margin-bottom: 8px; }
 blockquote p:last-child { margin-bottom: 0; }
@@ -435,7 +460,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <h3>1. Anthropic 三箭齐发：Claude Sonnet 5 发布 + Claude Science 科学工作台上线 + 加州政府半价采购</h3>
 <p>Anthropic 同日发布两款重磅产品：<strong>Claude Sonnet 5</strong> 定位为代理优化的中端模型，性能接近 Opus 4.8，定价极低（$2/$10 每百万输入/输出 tokens，促销至8月31日），能制定计划、使用浏览器和终端自主运行；<strong>Claude Science</strong> 则面向科研场景，整合60+科学数据库与专业分析工具，可生成3D蛋白质结构等可视化内容，当前聚焦生物学领域。</p>
 <p>此外，Anthropic 与加州州长 Newsom 达成协议，允许加州政府以<strong>半价使用 Claude</strong>，标志着AI公司在政府市场的深度渗透进入新阶段。</p>
-<p><div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/">来源：TechCrunch — Claude Sonnet 5</a></div><br><div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/959686/anthropics-claude-sonnet-5-is-here">来源：The Verge — Claude Sonnet 5</a></div><br><div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/">来源：TechCrunch — Claude Science</a></div><br><div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/">来源：TechCrunch — 加州政府协议</a></div></p>
+<p><div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/">来源：TechCrunch — Claude Sonnet 5</a></div><div class="source-link">🔗 <a href="https://www.theverge.com/ai-artificial-intelligence/959686/anthropics-claude-sonnet-5-is-here">来源：The Verge — Claude Sonnet 5</a></div><div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/">来源：TechCrunch — Claude Science</a></div><div class="source-link">🔗 <a href="https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/">来源：TechCrunch — 加州政府协议</a></div></p>
 <hr>
 <h3>2. Etched 估值$50亿、签下$10亿AI芯片订单，英伟达挑战者阵营加速壮大</h3>
 <p>AI推理芯片初创公司 <strong>Etched</strong> 估值达 $50亿，已签订 $10亿推理优化硬件订单，同时完成 $8亿融资（Jane Street 参投）。这是继 Cerebras、Groq 之后又一家在推理芯片赛道崭露头角的公司，AI芯片去英伟达化趋势明显加速。</p>
@@ -443,7 +468,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <hr>
 <h3>3. 韩国宣布$1万亿国家计划：内存芯片+人形机器人双线押注</h3>
 <p>韩国政府联合三星、SK海力士等科技巨头，宣布投入<strong>$1万亿</strong>用于扩大内存芯片生产和人形机器人研发，目标在2028年前实现商业级人形机器人，力争在"物理AI"领域取得领先地位。这与近期「RAMageddon」内存短缺议题形成呼应——受AI需求推动，RAM价格预计将飙升近50%。</p>
-<p><div class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/06/south-korea-to-spend-1t-on-more-memory-chip-production-and-humanoid-robots/">来源：Ars Technica</a></div><br><div class="source-link">🔗 <a href="https://mashable.com/tech/ram-prices-expected-to-rise-nearly-50-percent-ai-boom-report">来源：Mashable — RAM价格</a></div></p>
+<p><div class="source-link">🔗 <a href="https://arstechnica.com/ai/2026/06/south-korea-to-spend-1t-on-more-memory-chip-production-and-humanoid-robots/">来源：Ars Technica</a></div><div class="source-link">🔗 <a href="https://mashable.com/tech/ram-prices-expected-to-rise-nearly-50-percent-ai-boom-report">来源：Mashable — RAM价格</a></div></p>
 <hr>
 <h3>4. Amazon 成立$10亿FDE组织，效仿 OpenAI/Anthropic 深入企业客户</h3>
 <p>Amazon 宣布成立<strong>现场部署工程组织（FDE）</strong>，投入 $10亿将工程师直接派驻客户团队，加速企业 AI 代理集成。这一模式此前由 OpenAI 和 Anthropic 率先采用，Amazon 的跟进意味着科技巨头在企业AI市场进入贴身肉搏阶段。</p>
@@ -468,7 +493,7 @@ blockquote p:last-child { margin-bottom: 0; }
 <p><div class="report-footer"><br>数据来源：TechCrunch · The Verge · Ars Technica · Bloomberg · IT之家 · Fast Company · 36氪 · 中新网 · My Research Central · via WB<br></div></p>
 
 <div class="report-footer">
-  数据来源：Wind 金融数据 connector · My Research Central · via WB
+  <br>数据来源：TechCrunch · The Verge · Ars Technica · Bloomberg · IT之家 · Fast Company · 36氪 · 中新网 · My Research Central · via WB<br>
 </div>
 
 </body>
