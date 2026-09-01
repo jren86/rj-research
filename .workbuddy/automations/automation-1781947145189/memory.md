@@ -1,3 +1,15 @@
+## 2026-09-01 10:03
+- **结果**：无需更新
+- **关键词列表**：长川科技、精智达、芯碁微装（共3个）
+- **已有数据覆盖**：全部3个关键词已在 data.json 中存在，data.json 当前共 12 个关键词（每词 10 帖，updated 2026-06-20）
+- **新关键词数**：0
+- **API 状态**：`GET /api/keywords` 返回 HTTP 500 `{"error":"KV read failed","detail":"Cannot read properties of undefined (reading 'get')"}` —— 已连续第 4 天（08-30 / 08-31×2 / 09-01）同一故障。`env.KEYWORD_STORE` KV 绑定仍未修复，回退到本地文件成功。
+- **根因已定位（代码级）**：`functions/api/keywords.js:22` 直接调用 `env.KEYWORD_STORE.get()`，未做绑定存在性判断；项目无 wrangler.toml，KV namespace 只能在 Cloudflare Dashboard 侧绑定 → 未绑定即 `undefined`。**修复路径**：Cloudflare Dashboard → Workers & Pages → rj-research → Settings → Functions → KV namespace bindings，变量名必须严格为 `KEYWORD_STORE`。
+- **结构性影响（需人工决策）**：页面 `deep-track.html:461` 的 `addKeyword()` 走 POST `/api/keywords`，KV 未绑定同样失败 → **页面新增的关键词无法持久化，自动化永远看不到**。当前唯一生效的加词方式是手改 `deep-track-keywords.json`。已在本次汇报中向 RJ 提出「Function 内嵌默认词表兜底」的修复方案，待其确认后再动生产代码。
+- **ZSXQ 搜索**：未触发（无新关键词）；通道自检 `zsxq-cli 0.4.7` 可用，一旦有新关键词可立即执行
+- **数据一致性校验**：`deep-track.html` 内 EMBEDDED_DATA 与 `deep-track-data.json` 完全相等（12 关键词、逐字节一致）
+- **Git**：无数据变更；仅本 memory.md 有改动，已 commit + push 到 origin main
+
 ## 2026-08-31 10:03
 - **结果**：无需更新
 - **关键词列表**：长川科技、精智达、芯碁微装（共3个）
