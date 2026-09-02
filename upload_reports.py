@@ -43,6 +43,19 @@ def main():
                 print(f"  + {fname}")
     if count == 0:
         print("  (no new reports)")
+    # Sync Fed Watch subdirectory (HTML only, MD stays local)
+    fw_src = os.path.join(REPORTS_SRC, "fed-watch")
+    fw_dst = os.path.join(REPORTS_DST, "fed-watch")
+    if os.path.isdir(fw_src):
+        os.makedirs(fw_dst, exist_ok=True)
+        for fname in os.listdir(fw_src):
+            if fname.endswith('.html'):
+                src = os.path.join(fw_src, fname)
+                dst = os.path.join(fw_dst, fname)
+                if not os.path.exists(dst) or os.path.getmtime(src) > os.path.getmtime(dst):
+                    shutil.copy2(src, dst)
+                    count += 1
+                    print(f"  + fed-watch/{fname}")
     print(f"  Total: {count} new/changed reports synced")
     
     # Step 2: Regenerate manifest
@@ -54,7 +67,7 @@ def main():
     # Step 3: Git add & commit
     msg = sys.argv[1] if len(sys.argv) > 1 else f"Auto-update: {today}"
     print(f"\n[3/4] Git commit: {msg}")
-    run("git add reports/ manifest.json index.html")
+    run("git add reports/ manifest.json index.html fed-watch.html")
     run(f'git commit -m "{msg}"')
     print("  Done")
     

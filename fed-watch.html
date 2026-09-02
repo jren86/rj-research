@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fed Watch · 美联储政策仪表盘 | My Research Central</title>
+<style>
+:root{
+  --bg:#faf9f7; --card:#ffffff; --surface:#f4f2ef; --ink:#2c2a28; --ink2:#6b6760; --ink3:#9a958c;
+  --line:#e8e4de; --line2:#d8d3ca;
+  --accent:#3a6b96; --accent-d:#2d5f8a; --accent-bg:#eef3f7;
+  --terra:#b08968; --terra-bg:#f6f1e9;
+  --sage:#4a8a5c; --sage-bg:#eef4ef;
+  --amber:#b08a3e; --amber-bg:#f8f3e6;
+  --rose:#b8544a; --rose-bg:#f9efee;
+  --radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.85;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Georgia,"Songti SC","STSong","SimSun",serif;font-weight:600;letter-spacing:.02em}
+a{color:var(--accent-d);text-decoration:none}
+a:hover{color:var(--accent)}
+b,strong{color:var(--ink)}
+
+.topnav{background:var(--surface);border-bottom:1px solid var(--line);padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topnav .home{font-weight:600;font-size:14px}
+.topnav .links{display:flex;gap:8px}
+.topnav .links a{font-size:13px;color:var(--ink2);padding:6px 12px;border-radius:6px}
+.topnav .links a:hover,.topnav .links a.on{background:var(--accent-bg);color:var(--accent-d)}
+
+.hero{padding:44px 24px 30px;text-align:center;border-bottom:1px solid var(--line)}
+.hero .kicker{font-size:11px;letter-spacing:.35em;color:var(--ink3);margin-bottom:12px}
+.hero h1{font-size:27px;margin-bottom:10px}
+.hero .sub{color:var(--ink2);max-width:780px;margin:0 auto 16px;font-size:14.5px}
+.hero .meta{display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;font-size:12.5px;color:var(--ink3);border-top:1px solid var(--line);padding-top:12px}
+
+.lights{max-width:1180px;margin:22px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.light{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;display:flex;align-items:center;gap:10px}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.dot.g{background:var(--sage)} .dot.y{background:var(--amber)} .dot.r{background:var(--rose)} .dot.e{background:var(--terra)}
+.light .lt{font-size:12px;color:var(--ink3)}
+.light .lv{font-size:16px;font-weight:600;font-family:Georgia,serif}
+
+.layout{max-width:1180px;margin:0 auto;display:flex;gap:26px;padding:26px 24px 70px;align-items:flex-start}
+nav.toc{position:sticky;top:76px;flex:0 0 200px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 12px}
+.toc-title{font-size:12px;font-weight:600;letter-spacing:.15em;color:var(--ink3);margin-bottom:8px;padding-left:10px}
+.toc ol{list-style:none}
+.toc a{display:block;font-size:13.5px;color:var(--ink2);padding:7px 10px;border-left:3px solid transparent;border-radius:0 8px 8px 0;line-height:1.5;transition:all .18s}
+.toc a:hover{background:var(--surface);color:var(--ink)}
+.toc a.active{background:var(--accent-bg);border-left-color:var(--accent);color:var(--accent-d);font-weight:600}
+main{flex:1;min-width:0}
+
+section.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 34px;margin-bottom:24px}
+section.card>h2{font-size:21px;padding-bottom:12px;margin-bottom:18px;border-bottom:2px solid var(--accent-bg);display:flex;align-items:baseline;gap:12px}
+section.card>h2 .tag{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;font-weight:600;color:#fff;background:var(--accent);padding:3px 10px;border-radius:20px;letter-spacing:.08em;flex:none}
+h3{font-size:16px;margin:22px 0 8px}
+h3::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--terra);margin-right:8px;vertical-align:2px}
+p{margin:8px 0}
+ul,ol{margin:8px 0 8px 22px}
+li{margin:5px 0}
+li::marker{color:var(--terra)}
+
+.tbl-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.7}
+th{background:var(--surface);text-align:left;padding:9px 13px;font-weight:600;border-bottom:1px solid var(--line2);white-space:nowrap}
+td{padding:9px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fbfaf8}
+tbody tr:hover{background:var(--accent-bg)}
+
+.imp{border-radius:8px;padding:14px 18px;margin:18px 0 4px;font-size:14px;background:var(--accent-bg);border:1px solid #d7e2ea}
+.imp .imp-t{font-weight:600;font-size:12.5px;letter-spacing:.1em;color:var(--accent-d);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.imp .imp-t::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.imp p{margin:5px 0}
+
+.note{border-radius:8px;padding:12px 16px;margin:14px 0;font-size:13.5px;background:var(--terra-bg);border:1px solid #e8dcc9}
+.note b{color:var(--terra)}
+
+figure{margin:16px 0;padding:18px;background:#fbfaf8;border:1px solid var(--line);border-radius:8px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:10px}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px;margin:14px 0}
+.kpi{background:#fbfaf8;border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.kpi .k-l{font-size:12px;color:var(--ink3);margin-bottom:3px}
+.kpi .k-v{font-size:19px;font-weight:600;font-family:Georgia,serif;display:flex;align-items:center;gap:8px}
+.kpi .k-n{font-size:11.5px;color:var(--ink2);margin-top:2px}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 16px}
+.tab-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink2);border-radius:20px;padding:7px 16px;font-size:13px;cursor:pointer;transition:all .15s}
+.tab-btn:hover{border-color:var(--accent);color:var(--accent-d)}
+.tab-btn.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.tab-panel{display:none}
+.tab-panel.on{display:block}
+
+details.ind{border:1px solid var(--line);border-radius:8px;margin:8px 0;background:#fbfaf8;overflow:hidden}
+details.ind[open]{background:var(--card);border-color:var(--line2)}
+details.ind summary{list-style:none;cursor:pointer;padding:11px 14px;display:flex;align-items:baseline;gap:10px;user-select:none}
+details.ind summary::-webkit-details-marker{display:none}
+details.ind summary::after{content:"+";margin-left:auto;color:var(--ink3);font-weight:600;flex:none}
+details.ind[open] summary::after{content:"−"}
+details.ind summary .code{font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:4px;padding:2px 7px;flex:none}
+details.ind summary .code.core{background:var(--terra)}
+details.ind summary .name{font-weight:600;font-size:14px;flex:none}
+details.ind summary .one{font-size:12.5px;color:var(--ink3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ind-body{padding:2px 18px 14px 18px;border-top:1px dashed var(--line);font-size:14px}
+.ind-body p{margin:7px 0}
+.ind-body b{color:var(--accent-d)}
+
+footer.src{max-width:1180px;margin:0 auto;padding:0 24px 56px;color:var(--ink3);font-size:12.5px;line-height:1.8}
+footer.src .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 26px}
+
+#backTop{position:fixed;right:24px;bottom:24px;width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:0 3px 10px rgba(58,107,150,.35)}
+#backTop.show{opacity:1;pointer-events:auto}
+
+@media (max-width:960px){
+  .layout{flex-direction:column}
+  nav.toc{position:static;flex:none;width:100%}
+  .toc ol{display:flex;flex-wrap:wrap;gap:4px}
+  .toc a{border-left:none;border:1px solid var(--line);border-radius:16px;padding:5px 12px;font-size:12.5px}
+  section.card{padding:22px 18px}
+  .hero h1{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="home" href="index.html">My Research Central</a>
+  <div class="links">
+    <a href="index.html">报告库</a>
+    <a href="deep-track.html">深度追踪</a>
+    <a class="on" href="fed-watch.html">Fed Watch</a>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="kicker">FED WATCH · MONETARY POLICY DASHBOARD</div>
+  <h1>美联储政策仪表盘</h1>
+  <p class="sub">三核心指标 × 六维 33 项指标 × 信号灯体系——跟踪美联储政策传导链条的每一个关键节点。每日随早间投研日报自动更新（工作日 08:30，美东前一日数据）。</p>
+  <div class="meta">
+    <span>◆ 数据时点：美东 2026-09-01/02</span>
+    <span>◆ 政策利率：3.50%–3.75%</span>
+    <span>◆ 下次 FOMC：9 月 15–16 日（含 SEP）</span>
+    <span>◆ 数据源：Wind EDB</span>
+  </div>
+</header>
+
+<div class="lights">
+  <div class="light"><span class="dot g"></span><div><div class="lt">2s10s 期限利差</div><div class="lv">+40bp</div></div></div>
+  <div class="light"><span class="dot g"></span><div><div class="lt">10Y breakeven</div><div class="lv">2.35% ↑</div></div></div>
+  <div class="light"><span class="dot g"></span><div><div class="lt">SOFR−IORB</div><div class="lv">+1bp</div></div></div>
+  <div class="light"><span class="dot y"></span><div><div class="lt">12M SOFR 隐含路径</div><div class="lv">+51bp</div></div></div>
+  <div class="light"><span class="dot y"></span><div><div class="lt">银行准备金（周）</div><div class="lv">2.92 万亿</div></div></div>
+  <div class="light"><span class="dot e"></span><div><div class="lt">WTI 事件警示</div><div class="lv">+5.2%/日</div></div></div>
+</div>
+
+<div class="layout">
+
+<nav class="toc" id="toc">
+  <div class="toc-title">目 录</div>
+  <ol>
+    <li><a href="#s1" data-spy="s1">核心逻辑：三指标</a></li>
+    <li><a href="#s2" data-spy="s2">当前读数与边际变化</a></li>
+    <li><a href="#s3" data-spy="s3">指标注册表（33 项）</a></li>
+    <li><a href="#s4" data-spy="s4">信号灯规则</a></li>
+    <li><a href="#s5" data-spy="s5">运行机制与 SOP</a></li>
+    <li><a href="#s6" data-spy="s6">口径与局限</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- ============ S1 核心逻辑 ============ -->
+<section class="card" id="s1">
+  <h2><span class="tag">01</span>核心逻辑：为什么是这三个指标</h2>
+  <p>美联储政策的传导顺序是：<b>政策操作（利率地板/资产负债表）→ 货币市场定价 → 收益率曲线（期限结构）→ 金融条件 → 实体经济（就业/增长/通胀）→ 数据回传 → 下一次政策决策</b>。三个核心指标恰好钉在链条的三个关键节点，分别对应美联储的三重约束：<b>双重使命的就业/增长端、双重使命的物价端、操作框架的物理约束端</b>。三者合读构成"最小完备三角"——任何一个政策拐点，至少会在其中一个指标上提前留痕。</p>
+  <figure>
+    <svg viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="政策传导链条">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#9a958c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <g font-size="12.5">
+        <rect x="20" y="38" width="96" height="42" rx="8" fill="#eef3f7" stroke="#9fbcd4"/>
+        <text x="68" y="63" text-anchor="middle" fill="#2c2a28">政策操作</text>
+        <rect x="132" y="38" width="96" height="42" rx="8" fill="#eef3f7" stroke="#9fbcd4"/>
+        <text x="180" y="63" text-anchor="middle" fill="#2c2a28">货币市场</text>
+        <rect x="244" y="38" width="96" height="42" rx="8" fill="#eef3f7" stroke="#9fbcd4"/>
+        <text x="292" y="63" text-anchor="middle" fill="#2c2a28">收益率曲线</text>
+        <rect x="356" y="38" width="96" height="42" rx="8" fill="#eef3f7" stroke="#9fbcd4"/>
+        <text x="404" y="63" text-anchor="middle" fill="#2c2a28">金融条件</text>
+        <rect x="468" y="38" width="96" height="42" rx="8" fill="#eef3f7" stroke="#9fbcd4"/>
+        <text x="516" y="63" text-anchor="middle" fill="#2c2a28">实体经济</text>
+        <rect x="580" y="38" width="80" height="42" rx="8" fill="#f6f1e9" stroke="#d8c4a8"/>
+        <text x="620" y="63" text-anchor="middle" fill="#2c2a28">回传决策</text>
+        <line x1="116" y1="59" x2="130" y2="59" stroke="#9a958c" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="228" y1="59" x2="242" y2="59" stroke="#9a958c" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="340" y1="59" x2="354" y2="59" stroke="#9a958c" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="452" y1="59" x2="466" y2="59" stroke="#9a958c" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="564" y1="59" x2="578" y2="59" stroke="#9a958c" stroke-width="1.5" marker-end="url(#arr)"/>
+        <path d="M620 80 C620 118 68 118 68 82" fill="none" stroke="#9a958c" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+        <rect x="136" y="92" width="88" height="24" rx="12" fill="#f9efee" stroke="#dfa8a0"/>
+        <text x="180" y="108" text-anchor="middle" font-size="11.5" fill="#b8544a">SOFR−IORB</text>
+        <rect x="248" y="92" width="88" height="24" rx="12" fill="#f9efee" stroke="#dfa8a0"/>
+        <text x="292" y="108" text-anchor="middle" font-size="11.5" fill="#b8544a">2s10s</text>
+        <rect x="472" y="92" width="88" height="24" rx="12" fill="#f9efee" stroke="#dfa8a0"/>
+        <text x="516" y="108" text-anchor="middle" font-size="11.5" fill="#b8544a">breakeven</text>
+      </g>
+    </svg>
+    <figcaption>三核心指标在传导链条上的位置：SOFR−IORB 守货币市场、2s10s 守曲线、breakeven 守实体通胀预期</figcaption>
+  </figure>
+
+  <h3>2s10s 期限利差：增长预期 × 政策路径的交叉点</h3>
+  <p><b>传导环节：</b>收益率曲线段——把"市场认为 Fed 会怎么做"（2 年期）与"市场认为经济最终会怎么样"（10 年期）放在同一把尺上。<b>为什么是它：</b>2 年期收益率≈未来两年政策利率路径的纯净定价；10 年期＝路径预期＋通胀预期＋期限溢价。两者之差天然过滤掉共同成分，留下"政策与增长的相对张力"。<b>历史地位：</b>倒挂领先衰退 12–18 个月（1989/2000/2006 应验，2022–24 为著名例外）；形态变化（熊平/牛陡/熊陡/牛平）直接对应政策周期的四个阶段。<b>局限：</b>QT 时代期限溢价被人为扭曲，需与流动性指标交叉验证——这正是三角设计的意义。</p>
+
+  <h3>breakeven 通胀预期：双重使命的物价端温度计</h3>
+  <p><b>传导环节：</b>通胀预期段——名义收益率 − TIPS 实际收益率，是市场为未来平均通胀开出的"价格"。<b>为什么是它：</b>Fed 全部政策信誉都建立在"预期锚定"上。只要 breakeven 钉在 2%–2.5%，Fed 就有耐心等待供给冲击消退；一旦失锚上行，无论就业多弱，Fed 都被迫转鹰（1970 年代的教训）。它是唯一一个 Fed 自己无法直接控制、却又决定 Fed 行动自由的变量。<b>历史地位：</b>2021–22 年 breakeven 从 2.1% 冲上 3.0%，提前半年预告了史诗级加息周期；2023 年后回落并稳定在 2.2%–2.3%，给了 Fed 暂停的底气。<b>局限：</b>含流动性溢价与通胀风险溢价，不完全是"纯净预期"，需与 5y5y、调查类预期（密歇根）互验。</p>
+
+  <h3>SOFR−IORB 利差：政策操作框架的物理压力表</h3>
+  <p><b>传导环节：</b>货币市场段——SOFR 是机构真实隔夜融资成本，IORB 是 Fed 铺设的利率地板。利差衡量市场利率"顶穿地板"的压力。<b>为什么是它：</b>利率工具想怎么调都行，但资产负债表政策（QT/扩表）有一个硬约束——准备金不能跌破"充裕"下限，而这个下限无法事先计算，只能靠货币市场价格信号侦测。SOFR 持续高于 IORB，就是水位不足的最早可观测信号。<b>历史地位：</b>2019 年 9 月（SOFR 飙至 5%+，QT1 终结）与 2025 年 10 月（利差持续走阔 + RRP 归零，QT2 终结）两次灵验。它不预测 Fed"想什么"，直接告诉你系统"还能扛多久"。<b>局限：</b>月末/季末有技术性扰动（监管报表效应），需看趋势而非单日。</p>
+
+  <h3>三角合读规则</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>组合</th><th>含义</th><th>典型情景</th></tr></thead>
+    <tbody>
+      <tr><td>曲线牛陡 + breakeven 稳 + 利差平稳</td><td>健康宽松周期开启</td><td>降息初段</td></tr>
+      <tr><td>曲线熊平 + breakeven 升 + 利差平稳</td><td>紧缩中段，警惕过热</td><td>加息周期</td></tr>
+      <tr><td>曲线熊陡 + breakeven 稳 + 利差走阔</td><td>财政/QT 供给冲击，长端失血</td><td>缩表尾部</td></tr>
+      <tr><td>任意曲线 + breakeven 失锚 + 利差飙升</td><td>滞胀 + 流动性危机复合体</td><td>最危险组合，全面避险</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="imp">
+    <div class="imp-t">Implication · 这组数据怎么用</div>
+    <p>三个指标合起来回答一个日常问题：<b>美联储下一步会干什么，市场信不信它。</b>曲线告诉你市场认为经济扛不扛得住紧缩；breakeven 告诉你市场信不信通胀能回去；SOFR−IORB 告诉你资产负债表政策还有没有物理空间。</p>
+    <p>实操规则：<b>三者同绿</b>＝政策可预测期，资产按基本面定价，无需为政策变量调整仓位；<b>任一转黄</b>＝开始降低对"政策不变"假设的押注比例；<b>两个以上转黄或任一转红</b>＝政策拐点临近，先降杠杆、再等信号确认后重新建仓。</p>
+    <p>当前状态属于<b>"绿灯下的鹰派漂移"</b>：三核心全绿，但 breakeven 与隐含路径同向上行——仓位不必动，对利率敏感的资产（长久期债、高估值成长股）则应开始收紧止损纪律。</p>
+  </div>
+</section>
+
+<!-- ============ S2 当前读数 ============ -->
+<section class="card" id="s2">
+  <h2><span class="tag">02</span>当前读数与边际变化（2026-09-01/02）</h2>
+
+  <div class="kpis">
+    <div class="kpi"><div class="k-l">10Y 美债</div><div class="k-v">4.79%</div><div class="k-n">日 +4bp ｜ 5 日 +13bp</div></div>
+    <div class="kpi"><div class="k-l">2Y 美债</div><div class="k-v">4.39%</div><div class="k-n">日 +5bp ｜ 5 日 +15bp</div></div>
+    <div class="kpi"><div class="k-l">2s10s</div><div class="k-v">+40bp <span class="dot g"></span></div><div class="k-n">日 -1bp ｜ 正常化区间</div></div>
+    <div class="kpi"><div class="k-l">10Y TIPS 实际收益率</div><div class="k-v">2.44%</div><div class="k-n">5 日 +9bp ｜ 强限制性</div></div>
+    <div class="kpi"><div class="k-l">10Y breakeven</div><div class="k-v">2.35% <span class="dot g"></span></div><div class="k-n">日 +4bp ｜ 周 +9bp，上行加速</div></div>
+    <div class="kpi"><div class="k-l">SOFR−IORB</div><div class="k-v">+1bp <span class="dot g"></span></div><div class="k-n">日 -2bp ｜ 流动性平稳</div></div>
+    <div class="kpi"><div class="k-l">12M SOFR 隐含路径</div><div class="k-v">+51bp <span class="dot y"></span></div><div class="k-n">周 +13bp ｜ ≈定价 1 次加息</div></div>
+    <div class="kpi"><div class="k-l">银行准备金（8/26 周）</div><div class="k-v">2.92 万亿 <span class="dot y"></span></div><div class="k-n">周 -140 亿 ｜ RMP 暂停期回落</div></div>
+    <div class="kpi"><div class="k-l">逆回购（广义，8/26 周）</div><div class="k-v">3562 亿</div><div class="k-n">周 -4.7% ｜ 缓冲垫薄但平稳</div></div>
+    <div class="kpi"><div class="k-l">美元指数 DXY</div><div class="k-v">99.66</div><div class="k-n">日 +0.25% ｜ 5 日 +0.77%</div></div>
+    <div class="kpi"><div class="k-l">WTI 原油</div><div class="k-v">90.22 <span class="dot e"></span></div><div class="k-n">日 +5.2% ｜ 5 日 +9.5%</div></div>
+    <div class="kpi"><div class="k-l">道琼斯工业指数</div><div class="k-v">52,767</div><div class="k-n">日 -0.8% ｜ 油价冲击日 risk-off</div></div>
+  </div>
+
+  <h3>边际变化（与上期相比的显著变化）</h3>
+  <ol>
+    <li><b>WTI 单日 +5.2% 至 90.22 美元</b>（5 日 +9.5%）——能源冲击再燃，breakeven 同步加速（周 +9bp），"油价 → 通胀预期"传导正在运转，为当前最大边际变量。</li>
+    <li><b>12M SOFR 隐含路径 +51bp</b>（周 +13bp）——加息定价强化至约 1.0 次，与 6 月点阵图中位数（年底 3.8%）收敛；FOMC 前预期差空间收窄。</li>
+    <li><b>短端领涨、曲线熊平</b>：2Y 两周 +32bp 至 4.39%，10Y +24bp 至 4.79%——9/15–16 FOMC 前鹰派重定价持续。</li>
+    <li><b>准备金周 -140 亿至 2.92 万亿</b>——RMP 暂停（至 9 月中）期间的自然回落，仍在官方"充裕"区间；逆回购 3562 亿平稳，流动性维持绿灯。</li>
+    <li><b>本轮名义利率上行全部由实际利率驱动</b>：10Y TIPS 2.44%（周 +9bp），breakeven 升幅相对温和——性质是"鹰派重定价"，尚非"通胀失锚"。</li>
+  </ol>
+
+  <div class="imp">
+    <div class="imp-t">Implication · 当前组合怎么读</div>
+    <p>当前数据组合的含义是：<b>市场正在为"9 月 FOMC 可能加息"做定价，但远未到失控。</b>区分两组力量很关键——名义利率上行来自实际利率（紧缩预期），而非 breakeven（通胀恐慌），说明市场仍信任 Fed 能控制通胀，只是认为它需要做得更多。这是"鹰派"而不是"滞胀"的定价。</p>
+    <p>对资产配置：<b>短债与货基仍是 carry 最优解</b>（3.6%+ 的无风险收益）；长端在油价冲击明朗前难有趋势行情；<b>若 breakeven 升破 2.5%，黄金与 TIPS 将替代名义债成为更好的对冲工具</b>；美股内部，能源链直接受益于油价，利率敏感板块（地产、小盘成长）承压——9/4 非农若再度转负，则是唯一可能逆转鹰派叙事的路径。</p>
+  </div>
+</section>
+
+<!-- ============ S3 指标注册表 ============ -->
+<section class="card" id="s3">
+  <h2><span class="tag">03</span>指标注册表（六维 33 项）</h2>
+  <p>点击维度切换，点击指标卡片展开完整解读（代表什么 → 怎么读 → 日常关注 → 与 Fed 的关联 → 数据口径）。★ 为核心指标。</p>
+
+  <div class="tabs">
+    <button class="tab-btn on" data-tab="ta">A 政策立场与路径（5）</button>
+    <button class="tab-btn" data-tab="tb">B 流动性与准备金（7）</button>
+    <button class="tab-btn" data-tab="tc">C 通胀与预期（7）</button>
+    <button class="tab-btn" data-tab="td">D 就业与增长（6）</button>
+    <button class="tab-btn" data-tab="te">E 金融条件（5）</button>
+    <button class="tab-btn" data-tab="tf">F 前瞻与隐含预期（3）</button>
+  </div>
+
+  <div class="tab-panel on" id="ta">
+    <details class="ind"><summary><span class="code">A1</span><span class="name">联邦基金目标区间与 EFFR</span><span class="one">政策本体：预期差计算的基准</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>政策利率的官方设定（区间）与实际成交水平（EFFR）。</p>
+        <p><b>怎么读：</b>区间本身只在 FOMC 后变动；EFFR 应稳定贴于区间内（当前 3.63%，区间 3.50%–3.75%）。EFFR 若持续贴近区间上沿，是准备金趋紧的早期弱信号。</p>
+        <p><b>日常关注：</b>EFFR 在区间内的相对位置，而非绝对值。</p>
+        <p><b>与 Fed 关联：</b>政策本体，一切预期差计算的基准。</p>
+        <p><b>数据：</b>Wind EDB 搜"美国联邦基金目标利率""EFFR"；日频（区间变动为事件频）。FRED 对照：DFEDTARU/DFEDTARL、EFFR。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">A2</span><span class="name">2 年期美债收益率</span><span class="one">对 FOMC 最敏感的曲线点</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>对未来约两年政策利率路径的市场定价，全曲线中对 FOMC 最敏感的点。</p>
+        <p><b>怎么读：</b>2Y − EFFR ≈ 市场隐含的未来两年累计加降息幅度。当前 4.39% vs EFFR 3.63% → 隐含约 +75bp，与点阵图鹰派一致。单日 ±10bp 以上为显著重定价。</p>
+        <p><b>日常关注：</b>CPI/非农/FOMC 日的跳变方向。</p>
+        <p><b>与 Fed 关联：</b>Fed 讲话和数据的"第一落点"；路径预期差的直接度量。</p>
+        <p><b>数据：</b>EDB <code>G0000887</code>（日频，美国财政部）。FRED 对照：DGS2。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code core">A3 ★</span><span class="name">2s10s 期限利差</span><span class="one">曲线斜率的市场标准表达</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>10Y − 2Y，曲线斜率的市场标准表达（见 01 节）。</p>
+        <p><b>怎么读：</b>正常区间 +25~+100bp；0~+25bp 黄灯（趋平）；<b>&lt;0 倒挂红灯</b>（历史领先衰退 12–18 个月）；由倒挂快速回正（陡峭化）常是衰退临近而非远离的信号。2023 年最深 -108bp（1981 年以来之最），当前约 +40bp（已正常化）。</p>
+        <p><b>日常关注：</b>形态变化方向（牛陡/熊平/熊陡/牛平）比绝对值更重要；与 10Y 变动方向合读定形态。</p>
+        <p><b>与 Fed 关联：</b>倒挂深度影响 Fed 对"紧缩过度"的内部辩论；陡峭化速度影响降息节奏。</p>
+        <p><b>数据：</b>EDB <code>G0000891</code> − <code>G0000887</code> 差值自算（均日频）。FRED 对照：T10Y2Y。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">A4</span><span class="name">3M10Y 利差</span><span class="one">纽约联储衰退概率模型输入</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>10Y − 3 个月国库券收益率；短端锚定当期政策利率，比 2Y 更"钝"，因此倒挂更深更晚。</p>
+        <p><b>怎么读：</b>纽约联储据此发布未来 12 个月衰退概率；倒挂 &gt;50bp 且持续，模型概率通常升破 40%。作为 2s10s 的确认指标，而非领先指标。</p>
+        <p><b>日常关注：</b>与 2s10s 是否同向；两者背离时常是路径预期（2Y）与现实政策（3M）打架，以 3M10Y 为准判断当下紧缩强度。</p>
+        <p><b>与 Fed 关联：</b>Fed 内部研究更偏好此利差评估衰退风险。</p>
+        <p><b>数据：</b>EDB 搜"美国国债收益率 3个月"（日频）+ <code>G0000891</code>。FRED 对照：T10Y3M。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">A5</span><span class="name">10Y TIPS 实际收益率</span><span class="one">紧缩"真实强度"的度量</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>剔除通胀后的真实融资成本，紧缩"真实强度"的度量。</p>
+        <p><b>怎么读：</b>&gt;2% 为强限制性（2023–24 曾达 2.5%，2008 前罕见）；实际利率上行而 breakeven 平稳 = 纯紧缩冲击（利空估值）；实际利率下行 + breakeven 上行 = 滞胀组合（利空债、利黄金）。</p>
+        <p><b>日常关注：</b>名义 10Y 的变动来自实际利率还是通胀预期——两者对资产的含义完全相反。</p>
+        <p><b>与 Fed 关联：</b>Fed 评估"限制性是否足够"看实际利率而非名义利率。</p>
+        <p><b>数据：</b>EDB <code>G0005428</code>（日频，美国财政部）。FRED 对照：DFII10。</p>
+      </div>
+    </details>
+    <div class="imp">
+      <div class="imp-t">Implication · A 组告诉你什么</div>
+      <p>A 组回答"<b>市场认为 Fed 会怎么做</b>"。2Y 与 12M SOFR 隐含路径是每日最先动的两个数：它们上行=市场在加注紧缩，下行=在加注宽松。当前隐含 +51bp（约一次加息）意味着：<b>任何"不加息"的 FOMC 结果都会成为短债的利好、曲线的牛陡触发器；而"加息"已被大部分定价，落地时冲击有限。</b>交易预期差，本质是拿自己的判断与这两个数对表。</p>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tb">
+    <details class="ind"><summary><span class="code core">B1 ★</span><span class="name">SOFR−IORB 利差</span><span class="one">QT 终局的两次共同前兆</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>隔夜回购市场利率 − 准备金地板利率（见 01 节）。</p>
+        <p><b>怎么读：</b>常态 -5~0bp 绿灯；<b>+5~+15bp 黄灯</b>（水位趋紧）；<b>&gt;+15bp 或单日跳升红灯</b>。2019.9 曾达 +300bp 以上（危机）；2025 年秋持续 +10~20bp 后 QT2 终结。当前 +1bp，绿灯。</p>
+        <p><b>日常关注：</b>连续 5 日站上 +5bp 即记录；月末/季末扰动单独标注、不计入趋势。</p>
+        <p><b>与 Fed 关联：</b>决定 QT/RMP 节奏的物理约束信号，两次 QT 终结的共同前兆。</p>
+        <p><b>数据：</b>EDB <code>M0341926</code>（SOFR，日频）− <code>N9689792</code>（IORB，日频）。FRED 对照：SOFR、IORB。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">B2</span><span class="name">逆回购工具余额（ON RRP，广义口径）</span><span class="one">流动性"堰塞湖水位"</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>停泊在 Fed 的冗余现金，流动性的"堰塞湖水位"。</p>
+        <p><b>怎么读：</b>2022 年峰值约 2.4 万亿美元（超级冗余）；如今国内 ON RRP 近零、广义口径（含外国官方）约 3500 亿美元。<b>缓冲垫已耗尽</b>意味着 QT 抽取将直接作用于准备金。趋势比绝对值重要：单周骤降 &gt;30% 黄灯。</p>
+        <p><b>日常关注：</b>周频环比；准备金与 RRP 的相对变化（此消彼长为健康轮动，同降为净抽水）。</p>
+        <p><b>与 Fed 关联：</b>RRP 归零后，任何额外抽水都直打银行体系——2019/2025 两次 QT 终局的前置条件。</p>
+        <p><b>数据：</b>EDB <code>G1100077</code>（周频，百万美元；<b>口径注意</b>：含外国官方逆回购，建库时精搜纯国内 ON RRP 码）。FRED 对照：RRPONTSYD。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">B3</span><span class="name">银行准备金余额</span><span class="one">地板系统运转的"水位"本体</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>银行存在 Fed 的钱，地板系统运转的"水位"本体。</p>
+        <p><b>怎么读：</b>当前约 2.92 万亿美元（2026-08-26 周值），处于官方认定的充裕区间。市场估计充裕下限约 2.6–3.0 万亿：<b>≥3.0 万亿绿灯；2.7–3.0 黄灯；&lt;2.7 红灯</b>。2019 年旧地板约 1.4 万亿，但监管与支付需求已系统性抬升，不可机械套用。</p>
+        <p><b>日常关注：</b>周频环比与 4 周趋势；RMP 暂停期（如 2026.8–9）的自然回落速度。</p>
+        <p><b>与 Fed 关联：</b>Fed 明确以"充裕准备金"为操作目标，该值是 RMP 启停的直接依据。</p>
+        <p><b>数据：</b>EDB <code>G0005605</code>（周频，百万美元）。FRED 对照：WRESBAL。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">B4</span><span class="name">SRF 使用量与贴现窗口借款</span><span class="one">天花板开始承压的确认信号</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>机构向 Fed 紧急融资的两个天花板的实际动用量。</p>
+        <p><b>怎么读：</b>常态≈0 绿灯；<b>SRF 连续多日被动用 = 天花板开始承压</b>（2025 年秋曾出现，先于 QT 终结）；贴现窗口非季末突增 = 个别机构遇险信号。</p>
+        <p><b>日常关注：</b>只在 &gt;0 时出现于看板，否则折叠。</p>
+        <p><b>与 Fed 关联：</b>天花板工具启用是 Fed 判断"准备金不再充裕"的确认信号。</p>
+        <p><b>数据：</b>H.4.1 周报表内科目；EDB 搜"常备回购便利""贴现窗口"。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">B5</span><span class="name">美联储总资产与 RMP 节奏</span><span class="one">扩表≠宽松，缩表≠紧缩</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>资产负债表总水量 + 技术性补水速度。</p>
+        <p><b>怎么读：</b>当前约 6.75 万亿美元。RMP 购债节奏（400→250→100 亿/月→暂停）本身就是信息量最大的"准声明"：减速=水位达标，暂停=边际收水。</p>
+        <p><b>日常关注：</b>周度总资产的 4 周变动方向；RMP 公告（纽约联储操作声明）。</p>
+        <p><b>与 Fed 关联：</b>扩表≠宽松（RMP 是管道维护），缩表≠紧缩（MBS 自然到期）——必须结合结构解读。</p>
+        <p><b>数据：</b>EDB 搜"美联储总资产"（周频）。FRED 对照：WALCL。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">B6</span><span class="name">财政部一般账户（TGA）余额</span><span class="one">非 Fed 变量的准备金冲击源</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>财政部在 Fed 的存款账户；TGA 上升=从市场抽走准备金，下降=向市场注水。</p>
+        <p><b>怎么读：</b>债务上限解决后 TGA 重建（快速上升）会引发准备金骤降——2023 年 6 月、2025 年均上演；发债季前主动关注。</p>
+        <p><b>日常关注：</b>周频环比 ±1500 亿美元以上为显著扰动。</p>
+        <p><b>与 Fed 关联：</b>非 Fed 变量，但直接冲击其准备金目标，常迫使 RMP 对冲操作。</p>
+        <p><b>数据：</b>EDB 搜"美国财政部一般账户 TGA"（周频）。FRED 对照：WTREGEN。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">B7</span><span class="name">SOFR 期限利率结构（1M/3M/6M/12M）</span><span class="one">货币市场版的"收益率曲线"</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>隔夜 SOFR 的各期限远期定价，货币市场版的"收益率曲线"。</p>
+        <p><b>怎么读：</b>12M − 隔夜 ≈ 市场隐含的未来 12 个月政策路径。当前 4.17% − 3.66% ≈ <b>+51bp ≈ 定价一次加息</b>，与"10 月加息"的市场叙事吻合。各期限同步上移 = 鹰派重定价。</p>
+        <p><b>日常关注：</b>12M 档的周变动；期限曲线倒挂（短高长低）则转为降息定价。</p>
+        <p><b>与 Fed 关联：</b>无需等 FedWatch，用 Wind 数据即可自建路径预期（见 F2）。</p>
+        <p><b>数据：</b>EDB <code>X7677187</code>（1M）、<code>K8012859</code>（3M）、<code>Q9205366</code>（6M）、<code>O5632651</code>（12M），均日频。</p>
+      </div>
+    </details>
+    <div class="imp">
+      <div class="imp-t">Implication · B 组告诉你什么</div>
+      <p>B 组回答"<b>系统里还有多少水</b>"。它不预测 Fed 的意图，只测量数量政策的物理剩余空间。当前准备金 2.92 万亿仍在充裕区，但 RMP 暂停期间每周自然回落约 140 亿——<b>这个速度年内无忧，真正的观察窗在 9 月中 RMP 是否恢复</b>：恢复=技术性护盘继续，不恢复且准备金逼近 2.7 万亿=流动性主题将从"背景噪音"升级为"交易主线"。届时长久期资产与高杠杆策略需要先行撤退，参考 2019 与 2025 两次剧本。</p>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tc">
+    <details class="ind"><summary><span class="code core">C1 ★</span><span class="name">10Y breakeven 通胀预期</span><span class="one">Fed 行动自由的唯一决定变量</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>10Y 名义 − 10Y TIPS，未来 10 年平均通胀的市场定价（见 01 节）。</p>
+        <p><b>怎么读：</b>2.0%–2.5% 绿灯（锚定）；2.5%–2.75% 黄灯；<b>&gt;2.75% 红灯（失锚）</b>；&lt;1.75% 黄灯（通缩定价）。当前约 2.35%，区间内但趋势上行。</p>
+        <p><b>日常关注：</b>与油价的联动是否脱钩（脱钩上行更危险，说明是预期而非成本推动）。</p>
+        <p><b>与 Fed 关联：</b>失锚=剥夺 Fed 一切宽松自由；稳定=保留政策选择权。</p>
+        <p><b>数据：</b>EDB <code>U0929600</code>（日频），并用 <code>G0000891</code> − <code>G0005428</code> 交叉校验。FRED 对照：T10YIE。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">C2</span><span class="name">5Y breakeven</span><span class="one">近端通胀压力的灵敏计</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>未来 5 年平均通胀定价，对能源与近端周期更敏感。</p>
+        <p><b>怎么读：</b>通常高于 10Y（近端通胀风险）；5Y − 10Y 转正走阔 = 近端通胀压力积聚（2021–22 年最大差 +100bp）；当前约 2.24%，与 10Y 基本持平 = 压力均匀、无近端恐慌。</p>
+        <p><b>日常关注：</b>5Y/10Y 利差由负转正的拐点。</p>
+        <p><b>与 Fed 关联：</b>近端预期决定 Fed 能否"看穿"供给冲击（look through）。</p>
+        <p><b>数据：</b>同 C1 口径。FRED 对照：T5YIE。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">C3</span><span class="name">5y5y 远期通胀预期</span><span class="one">最纯的"锚"，Powell 引用最多</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>5 年后起算的 5 年期预期通胀，剔除一切近端噪音，最纯的"锚"。</p>
+        <p><b>怎么读：</b>Powell 时代 Fed 引用最多的预期指标；2.0%–2.5% 为锚定，2022 年通胀最凶时它也未破 2.6%——这是 Fed 敢激进加息又敢暂停的底气。<b>&gt;2.6% 即红灯。</b></p>
+        <p><b>日常关注：</b>月度级别即可；与 C1/C2 背离时以它为准。</p>
+        <p><b>与 Fed 关联：</b>Fed 自评"预期仍锚定"的官方口径之一。</p>
+        <p><b>数据：</b>FRED 对照 T5YIFR；Wind EDB 待建库时确认（若无直读序列，以 2×C1 − C2 近似）。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">C4</span><span class="name">核心 PCE 同比（月度）</span><span class="one">Fed 法定目标的最终成绩单</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>Fed 法定目标变量，通胀考核的最终成绩单。</p>
+        <p><b>怎么读：</b>目标 2%；当前 3.34% → 距离目标仍远，这是点阵图偏鹰的根本原因。看 3/6 个月年化趋势：年化 ≤2.5% 才谈得上"回归轨道"。</p>
+        <p><b>日常关注：</b>每月末公布日的环比（0.2% 以下为佳），及与 CPI 的口径差（房租权重低）。</p>
+        <p><b>与 Fed 关联：</b>直接决定"通胀使命"进度条，SEP 预测的核心输入。</p>
+        <p><b>数据：</b>EDB 搜"美国 核心PCE 同比"（月频）。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">C5</span><span class="name">核心 CPI 与超级核心 CPI（月度）</span><span class="one">PCE 的先行预览</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>核心＝剔食品能源；超级核心＝核心服务剔住房，即"工资-通胀"黏性部分。</p>
+        <p><b>怎么读：</b>核心 CPI 当前 2.5%（年内新低，向好）；超级核心黏性最强，是 2023 年以来 Fed 最警惕的部分。环比年化 &lt;3% 为改善。</p>
+        <p><b>日常关注：</b>每月中公布日；房租分项的领先性（领先指标已回落两年）。</p>
+        <p><b>与 Fed 关联：</b>比 PCE 早半个月，是 PCE 的先行预览。</p>
+        <p><b>数据：</b>EDB 搜"美国 核心CPI"（月频）；超级核心可用"CPI 服务剔除住房"搜索。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">C6</span><span class="name">密歇根大学通胀预期（月度）</span><span class="one">民众体感型通胀</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>居民端 1 年与 5 年通胀预期调查值。</p>
+        <p><b>怎么读：</b>1Y 当前 4.6%，与市场 breakeven（2.35%）裂口巨大——民众体感型通胀；5Y 若在 3% 以上持续，会真正引起 Fed 警觉（2022 年 6 月 75bp 转向的催化剂之一就是 5Y 初值上修）。</p>
+        <p><b>日常关注：</b>初值与终值的修正方向；5Y 是否破 3%。</p>
+        <p><b>与 Fed 关联：</b>调查型预期是 Fed 判断"预期是否脱锚"的第二类证据（与市场型互验）。</p>
+        <p><b>数据：</b>EDB 搜"密歇根大学 通胀预期"（月频）。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">C7</span><span class="name">WTI 原油价格（日频）</span><span class="one">headline CPI 的最快前瞻变量</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>输入型通胀的第一驱动，headline CPI 的最快前瞻变量。</p>
+        <p><b>怎么读：</b>经验法则：油价 ±10% → 两个月后 headline CPI 同比 ±0.2–0.3pp。当前中东冲突是供给侧主线，油价是唯一需要每日盯的"通胀外生变量"。</p>
+        <p><b>日常关注：</b>周变动 &gt;5% 时重估 CPI 前瞻；与 breakeven 联读（油升 + breakeven 不升 = 市场信任 Fed）。</p>
+        <p><b>与 Fed 关联：</b>供给冲击本身不改变 Fed 反应函数，但通过预期渠道间接改变。</p>
+        <p><b>数据：</b>EDB <code>M0000005</code>（日频，ICE）。FRED 对照：DCOILWTICO。</p>
+      </div>
+    </details>
+    <div class="imp">
+      <div class="imp-t">Implication · C 组告诉你什么</div>
+      <p>C 组回答"<b>通胀会不会回来</b>"。当前的主线是油价：单日 +5.2%、五日 +9.5% 的冲击若在 90 美元上方站稳，按经验法则将抬升两个月后 headline CPI 约 0.2–0.3pp，9 月通胀读数重新加速的概率显著上升。<b>判断这次冲击"可不可怕"的标准不是油价本身，而是 breakeven 是否同步脱钩上行</b>——目前 breakeven 周升 9bp 属"同步但未失控"（2.35% 仍在绿灯区）；一旦升破 2.5%，市场会从"信任 Fed"切换到"质疑 Fed"，那时通胀交易（黄金、TIPS、能源股）将全面跑赢利率交易。</p>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="td">
+    <details class="ind"><summary><span class="code">D1</span><span class="name">初请失业金人数（周频）</span><span class="one">就业市场最高频硬数据</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>每周新申请失业救济人数，就业市场最高频的硬数据。</p>
+        <p><b>怎么读：</b>4 周均值 &lt;23 万绿灯；23–26 万黄灯；<b>&gt;26 万红灯（实质性恶化）</b>；衰退期通常 &gt;30 万。当前 20.6–21.2 万，绿灯但已从低位缓升。</p>
+        <p><b>日常关注：</b>每周四（美东）公布；单月毛刺忽略，4 周均值拐点为王。</p>
+        <p><b>与 Fed 关联：</b>就业使命恶化是 Fed 转鸽的最快合法路径——2024 年 9 月 50bp 降息的扳机就是就业数据。</p>
+        <p><b>数据：</b>EDB 搜"美国 初请失业金"（周频）。FRED 对照：ICSA。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">D2</span><span class="name">续请失业金人数（周频）</span><span class="one">失业后再就业难度</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>持续领取救济人数，衡量失业后再就业难度。</p>
+        <p><b>怎么读：</b>初请低 + 续请升 = 招聘冻结型冷却（当前状态：180 万附近缓升）——企业不裁人但也不招人，比裁员型恶化温和但更持久。</p>
+        <p><b>日常关注：</b>与初请的组合形态（四类组合：双低健康/初升续平=裁员/初平续升=冻结/双升=衰退）。</p>
+        <p><b>与 Fed 关联：</b>决定"就业降温"的定性，影响 Fed 对风险平衡的措辞。</p>
+        <p><b>数据：</b>EDB 搜"美国 续请失业金"（周频）。FRED 对照：CCSA。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">D3</span><span class="name">非农就业与失业率（月度）</span><span class="one">就业端总开关</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>就业报告双核心：新增岗位与 U3 失业率。</p>
+        <p><b>怎么读：</b>当前 -2.3 万（首次转负）+ 失业率 4.1%；盈亏平衡新增就业（与劳动力增长匹配）现约 5–8 万，低于此即为净恶化。失业率 3 个月均值与 12 个月低点之差是 Sahm 输入（见 D4）。</p>
+        <p><b>日常关注：</b>每月第一个周五；前值修正幅度（连续下修=趋势比表观更弱）。</p>
+        <p><b>与 Fed 关联：</b>双使命的就业端总开关；转负月份的 FOMC 反应函数会立即切换权重。</p>
+        <p><b>数据：</b>EDB 搜"美国 非农就业""失业率"（月频）。FRED 对照：PAYEMS、UNRATE。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">D4</span><span class="name">Sahm 规则值（月度）</span><span class="one">"停止加息"的统计保证书</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>失业率 3 个月均值 − 过去 12 个月最低点；≥0.50pp 触发衰退信号。</p>
+        <p><b>怎么读：</b>历史上 1950 年代以来几乎无虚报（2024 年 8 月触及 0.53 但未衰退，为罕见例外）。<b>0.3–0.5 黄灯；≥0.5 红灯</b>。当前约 0.2–0.3，安全但方向向上。</p>
+        <p><b>日常关注：</b>就业报告后自动重算；失业率上行加速度。</p>
+        <p><b>与 Fed 关联：</b>触发后 Fed 历史上从未继续紧缩——它是"停止加息"的统计保证书。</p>
+        <p><b>数据：</b>由 D3 失业率自算；FRED 对照 SAHMREALTIME。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">D5</span><span class="name">ISM 制造业与服务业 PMI（月度）</span><span class="one">增长动能最快月度体温计</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>采购经理调查，增长动能的最快月度体温计。</p>
+        <p><b>怎么读：</b>50 为荣枯线；制造业 2026 年 6 月 53.8、服务业 54.6（扩张）；<b>制造业 &lt;48 且服务业逼近 50 = 增长警报</b>。新订单分项领先综合指数 1–2 个月。</p>
+        <p><b>日常关注：</b>每月 1 日/3 日；新订单 − 库存差（领先动能）。</p>
+        <p><b>与 Fed 关联：</b>强 PMI 给鹰派递弹药，弱 PMI 给鸽派递弹药，直接影响会前预期定价。</p>
+        <p><b>数据：</b>EDB 搜"美国 ISM PMI"（月频）。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">D6</span><span class="name">亚特兰大联储 GDPNow（准日频，外部源）</span><span class="one">当季 GDP 的滚动估计</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>随数据发布实时滚动的当季 GDP 增速估计。</p>
+        <p><b>怎么读：</b>当前 Q3 估计 5.8%（异常高，含一次性脉冲）；关注其<b>逐次修正方向</b>而非单点——连续下修 = 增长动能衰减。</p>
+        <p><b>日常关注：</b>重大数据（零售/库存/贸易）公布后的跳变。</p>
+        <p><b>与 Fed 关联：</b>强 GDPNow 会压制降息/支撑加息叙事；弱值反向。</p>
+        <p><b>数据：</b>亚特兰大联储官网（非 Wind EDB），自动化中由 agent 读取或人工录入。</p>
+      </div>
+    </details>
+    <div class="imp">
+      <div class="imp-t">Implication · D 组告诉你什么</div>
+      <p>D 组回答"<b>就业还能扛多久</b>"——这是当前鹰派叙事唯一的"解药"。<b>9/4（美东周五）的 8 月非农是本组下一个大事件</b>：7 月已转负（-2.3 万），若 8 月再度为负，Sahm 规则将逼近 0.5 触发线，"就业使命"会压倒"通胀使命"成为政策主线——加息定价（当前 +51bp）将快速瓦解，曲线走牛陡、黄金与长债受益。反之，非农回到 +10 万上方，则鹰派叙事获得"软着陆"加持，短端利率还有上行空间。当前组合（初请低位缓升 + 续请上行）指向的是"冻结型冷却"：慢变量恶化，尚不构成交易信号，但值得每周四固定检查。</p>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="te">
+    <details class="ind"><summary><span class="code">E1</span><span class="name">10Y 美债收益率</span><span class="one">全球资产定价之锚</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>全球资产定价之锚，金融条件的总基准。</p>
+        <p><b>怎么读：</b>当前 4.79%（9/1，两周上行 24bp）；&gt;5% 历史上触发 Fed 口头干预（2023.10）；变动归因（实际利率 vs breakeven）比水平更重要。</p>
+        <p><b>日常关注：</b>单日 ±10bp；与 2Y 合读定曲线形态。</p>
+        <p><b>与 Fed 关联：</b>长端利率自主上行等于"免费加息"，会降低 Fed 亲自加息的必要（2023 年 10 月逻辑）。</p>
+        <p><b>数据：</b>EDB <code>G0000891</code>（日频）。FRED 对照：DGS10。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">E2</span><span class="name">MOVE 指数（债市波动率）</span><span class="one">利率市场的 VIX</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>美债期权的隐含波动率，利率市场的 VIX。</p>
+        <p><b>怎么读：</b>&lt;100 绿灯；100–130 黄灯；<b>&gt;130 红灯</b>（2020.3 约 160、2023.3 SVB 约 180）。Warsh 减少前瞻指引的改革 → MOVE 中枢系统性抬升是基准假设。</p>
+        <p><b>日常关注：</b>FOMC/CPI 前的抬升幅度；&gt;130 时债市流动性溢价失真，其余指标打折扣读。</p>
+        <p><b>与 Fed 关联：</b>高波动=金融条件被动收紧，Fed 倾向观望。</p>
+        <p><b>数据：</b>Wind 终端可查（ICE BofA MOVE）；EDB 直读待建库验证，备选：用 E1 的 20 日实现波动率自算替代。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">E3</span><span class="name">美元指数（DXY，日频）</span><span class="one">全球金融条件"总阀门"</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>美元对一篮子货币强度，全球金融条件的"总阀门"。</p>
+        <p><b>怎么读：</b>方向与速度重于水平：20 日涨 &gt;2% 黄灯（全球紧缩外溢）；快速拉升常伴随新兴市场压力与美债抛售（负反馈）。</p>
+        <p><b>日常关注：</b>与 10Y 的联动（利率升+美元升=紧缩共振；利率升+美元跌=财政溢价警报）。</p>
+        <p><b>与 Fed 关联：</b>强美元收紧海外金融条件，间接降低 Fed 国内紧缩必要。</p>
+        <p><b>数据：</b>EDB <code>M0000271</code>（日频）。FRED 对照：DTWEXBGS（广义）。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">E4</span><span class="name">信用利差（IG 与 HY OAS，日频）</span><span class="one">风险定价的诚实体温计</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>企业债相对国债的利差，风险定价的诚实体温计。</p>
+        <p><b>怎么读：</b>HY OAS &lt;400bp 绿灯（当前低利差点位=风险偏好高）；400–550 黄灯；<b>&gt;550 红灯</b>；&gt;800 危机。IG OAS 常态 90–150bp。利差与股指背离（股新高+利差走阔）是经典顶部信号。</p>
+        <p><b>日常关注：</b>HY 周变动 &gt;50bp；投资级发行的认购倍数（风险偏好最前沿）。</p>
+        <p><b>与 Fed 关联：</b>信用条件是 Fed 评估"紧缩是否传导到位"的末端证据。</p>
+        <p><b>数据：</b>EDB 搜"美国 高收益债 OAS 利差""投资级 OAS"。FRED 对照：BAMLH0A0HYM2、BAMLC0A0CM。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">E5</span><span class="name">标普 500 与芝加哥联储 NFCI（日/周频）</span><span class="one">官方金融条件合成指数</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>股指（风险偏好）+ 105 项指标合成的官方金融条件指数。</p>
+        <p><b>怎么读：</b>NFCI 以 0 为均值：负=宽松、正=收紧；当前处于宽松区域。股指只看两点：与利率的背离（股涨利率涨=风险偏好极强）、信用联动。</p>
+        <p><b>日常关注：</b>NFCI 每周三更新；读数连续 4 周向零收敛 = 条件自发收紧。</p>
+        <p><b>与 Fed 关联：</b>金融条件过松（NFCI 深负）会促使 Fed 维持鹰派——这是 2024 年"市场替 Fed 降息→Fed 推迟降息"循环的机制。</p>
+        <p><b>数据：</b>EDB 搜"标普500"（日频）、"芝加哥联储 NFCI"（周频）。FRED 对照：NFCI。</p>
+      </div>
+    </details>
+    <div class="imp">
+      <div class="imp-t">Implication · E 组告诉你什么</div>
+      <p>E 组回答"<b>紧缩传导到哪一环了</b>"。油价冲击日道指跌 0.8%，说明风险资产已开始计入冲击；但只要信用利差不扩（HY OAS 守住 400bp 下方），市场的定性就是"可控事件"而非"系统性风险"。<b>E 组最重要的组合信号是"利率升 + 美元升 + 利差扩"三者齐现</b>——那是全球美元流动性收紧的共振形态，历史上对应新兴市场压力与风险资产趋势性回撤；当前只有前两项 mild 出现、第三项缺席，金融条件整体仍偏宽松，这本身也是 Fed 敢于维持鹰派的底气之一。</p>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tf">
+    <details class="ind"><summary><span class="code">F1</span><span class="name">CME FedWatch 会议隐含概率（日频，外部源）</span><span class="one">一切预期差交易的起点</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>联邦基金期货定价的各次 FOMC 加/降/不动概率。</p>
+        <p><b>怎么读：</b>当前 9 月会议按兵不动约 60%、年内至多一次加息。<b>预期差=你的判断 vs 它的定价</b>——所有交易的起点。单日移动 &gt;20pp 为重大重定价。</p>
+        <p><b>日常关注：</b>CPI/非农/FOMC 前后的跳变；最远一次有定价的会议（预期终点）。</p>
+        <p><b>与 Fed 关联：</b>Fed 在意市场定价是否偏离其沟通意图——偏离过大时会通过讲话"纠偏"。</p>
+        <p><b>数据：</b>CME 官网（非 Wind EDB）；自动化中由 agent 读取公开页或人工录入；近似替代见 F2。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">F2</span><span class="name">SOFR 期限利率隐含路径（日频，Wind 自建）</span><span class="one">FedWatch 的平价替代</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>用 B7 的 12M SOFR 与隔夜 SOFR 差值，自建 FedWatch 的平价替代。</p>
+        <p><b>怎么读：</b>当前 +51bp ≈ 一次加息定价；<b>±25bp 内=路径平稳；±25–75bp=温和重定价；&gt;±75bp=激进重定价</b>。与 F1 交叉验证，二者背离说明期货/掉期市场间存在套利或信息差。</p>
+        <p><b>日常关注：</b>差值的 5 日趋势。</p>
+        <p><b>与 Fed 关联：</b>纯 Wind 内生的路径预期指标，保证仪表盘在 FedWatch 取数失败时仍可运行。</p>
+        <p><b>数据：</b>EDB <code>O5632651</code> − <code>M0341926</code> 差值自算。</p>
+      </div>
+    </details>
+    <details class="ind"><summary><span class="code">F3</span><span class="name">FOMC 日历、点阵图与反对票（事件项）</span><span class="one">前瞻指引的本体</span></summary>
+      <div class="ind-body">
+        <p><b>是什么：</b>8 次/年会议日程、季度 SEP 点阵图中位数、投票分歧。</p>
+        <p><b>怎么读：</b>点阵图中位数 vs 期货定价的裂口是季度级最大预期差来源；反对票同向 ≥3 票（如 2026.7 的加息三反对票）是委员会分裂的强信号，历史上领先政策转向。</p>
+        <p><b>日常关注：</b>会前一周进入"噤声期观察"（无官员讲话=定价不被引导）；会后 48 小时内重读纪要分歧措辞。</p>
+        <p><b>与 Fed 关联：</b>前瞻指引的本体；Warsh 时代指引减少，反对票与纪要的相对权重上升。</p>
+        <p><b>数据：</b>Fed 官网日历；由 agent 在事件周自动补充至看板。</p>
+      </div>
+    </details>
+    <div class="imp">
+      <div class="imp-t">Implication · F 组告诉你什么</div>
+      <p>F 组回答"<b>何时行动、以及市场已经为此付了多少价格</b>"。当前 +51bp 的隐含路径意味着"加息一次"已被定价大半：如果你的判断是不加息，预期差站在你这边（短债、黄金有正赔率）；如果你的判断是加两次以上，你才需要为"超预期鹰派"做准备。<b>9/15–16 FOMC 含季度 SEP，点阵图中位数与市场定价的裂口是三季度最大的单次重定价风险</b>——会前一周应把短端利率头寸降到"无论结果如何都能接受"的水平。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S4 信号灯 ============ -->
+<section class="card" id="s4">
+  <h2><span class="tag">04</span>信号灯规则汇总</h2>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>指标</th><th><span class="dot g" style="display:inline-block;vertical-align:middle;margin-right:6px"></span>绿灯</th><th><span class="dot y" style="display:inline-block;vertical-align:middle;margin-right:6px"></span>黄灯</th><th><span class="dot r" style="display:inline-block;vertical-align:middle;margin-right:6px"></span>红灯</th></tr></thead>
+    <tbody>
+      <tr><td class="b">2s10s</td><td>&gt;+25bp</td><td>0~+25bp</td><td>&lt;0（倒挂）</td></tr>
+      <tr><td class="b">10Y breakeven</td><td>2.0%–2.5%</td><td>2.5%–2.75% 或 &lt;1.75%</td><td>&gt;2.75%</td></tr>
+      <tr><td class="b">SOFR−IORB</td><td>≤+5bp</td><td>+5~+15bp</td><td>&gt;+15bp 或单日飙升</td></tr>
+      <tr><td class="b">准备金</td><td>≥3.0 万亿</td><td>2.7–3.0 万亿</td><td>&lt;2.7 万亿</td></tr>
+      <tr><td class="b">广义逆回购</td><td>环比平稳</td><td>单周 -30%</td><td>连续两周 -30%</td></tr>
+      <tr><td class="b">12M SOFR 隐含路径</td><td>±25bp 内</td><td>±25–75bp</td><td>&gt;±75bp</td></tr>
+      <tr><td class="b">初请（4 周均值）</td><td>&lt;23 万</td><td>23–26 万</td><td>&gt;26 万</td></tr>
+      <tr><td class="b">HY OAS</td><td>&lt;400bp</td><td>400–550bp</td><td>&gt;550bp</td></tr>
+      <tr><td class="b">MOVE</td><td>&lt;100</td><td>100–130</td><td>&gt;130</td></tr>
+    </tbody>
+  </table></div>
+  <div class="imp">
+    <div class="imp-t">Implication · 灯号的正确用法</div>
+    <p>灯号设计的原则是让"是否需要行动"在 10 秒内可回答。<b>绿灯不意味着安全，只意味着"政策可预测"</b>——可以按基本面定价；<b>黄灯要求检查暴露度</b>——你的组合里什么资产对这个变量最敏感；<b>红灯要求先行动后分析</b>——历史上红灯时刻的犹豫成本远高于误杀成本。</p>
+    <p>比单日跳变更重要的是<b>连续两日同向变化</b>（如两个绿转黄）：单日是噪音，连续是趋势。当前黄灯两项（隐含路径、准备金）均为"慢变量黄"，属观察而非行动级别；真正需要立即反应的组合是"breakeven 转黄 + SOFR−IORB 转黄"同时出现——那代表通胀与流动性问题共振，2022 年以来从未出现，一旦出现应按最高级别处理。</p>
+  </div>
+</section>
+
+<!-- ============ S5 运行机制 ============ -->
+<section class="card" id="s5">
+  <h2><span class="tag">05</span>运行机制与每日 SOP</h2>
+
+  <h3>分层更新机制（token 最省设计）</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>层</th><th>指标</th><th>频率</th><th>更新时点（北京）</th></tr></thead>
+    <tbody>
+      <tr><td class="b">日频层</td><td>A1–A5、B1、B7、C1–C2、C7、E1–E4、F2</td><td>每交易日</td><td>随早间投研日报 08:30 自动运行（取美东前一日收盘），一次批量仅提数调用完成</td></tr>
+      <tr><td class="b">周频层</td><td>B2–B6（H.4.1）、D1–D2、E5</td><td>每周</td><td>周五 08:30（美东周四发布）</td></tr>
+      <tr><td class="b">月频层</td><td>C4–C6、D3–D5</td><td>每月</td><td>公布日次日（CPI 每月中、非农每月首周五、PCE 每月末）</td></tr>
+      <tr><td class="b">事件层</td><td>F1–F3、点阵图、纪要</td><td>8 次/年</td><td>FOMC 周自动追加专栏</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>已验证的 Wind EDB 代码（2026-09-02 实测）</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>指标</th><th>EDB 代码</th><th>频率</th><th>状态</th></tr></thead>
+    <tbody>
+      <tr><td>美债 10Y</td><td><code>G0000891</code></td><td>日</td><td>✅ 已验证</td></tr>
+      <tr><td>美债 2Y</td><td><code>G0000887</code></td><td>日</td><td>✅ 已验证</td></tr>
+      <tr><td>SOFR</td><td><code>M0341926</code></td><td>日</td><td>✅ 已验证</td></tr>
+      <tr><td>IORB</td><td><code>N9689792</code></td><td>日</td><td>✅ 已验证</td></tr>
+      <tr><td>SOFR 期限 1M/3M/6M/12M</td><td><code>X7677187</code> / <code>K8012859</code> / <code>Q9205366</code> / <code>O5632651</code></td><td>日</td><td>✅ 已验证</td></tr>
+      <tr><td>10Y breakeven</td><td><code>U0929600</code></td><td>日</td><td>✅ 已验证（与 10Y−TIPS 自算 0bp 偏差）</td></tr>
+      <tr><td>10Y TIPS 实际收益率</td><td><code>G0005428</code></td><td>日</td><td>✅ 已验证</td></tr>
+      <tr><td>美元指数</td><td><code>M0000271</code></td><td>日</td><td>✅ 已验证</td></tr>
+      <tr><td>WTI 原油</td><td><code>M0000005</code></td><td>日</td><td>✅ 已验证</td></tr>
+      <tr><td>准备金余额</td><td><code>G0005605</code></td><td>周</td><td>✅ 已验证</td></tr>
+      <tr><td>逆回购（广义）</td><td><code>G1100077</code></td><td>周</td><td>✅ 已验证（口径含外国官方）</td></tr>
+      <tr><td>HY OAS / 标普500 / MOVE 等</td><td>落码中</td><td>日</td><td>⏳ 下期补齐；MOVE 以 10Y 20 日实现波动率替代</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>产出与归档</h3>
+  <ul>
+    <li><b>早报顶部模块</b>（≤12 行）：三核心一行 + 边际变化 3–5 条 + 灯号汇总 + 今日关注，随早间投研日报推送飞书群并上传本站报告库。</li>
+    <li><b>完整归档</b>：每日 MD + HTML 写入 <code>reports/fed-watch/</code>（MD 仅本地留存，HTML 同步至本站 Fed Watch 区）。</li>
+    <li><b>本页</b>：作为 Fed Watch 固定入口，每交易日随归档自动刷新"当前读数"区。</li>
+  </ul>
+
+  <h3>每日人工 SOP（3 分钟）</h3>
+  <ol>
+    <li>看本页顶部灯色——有黄/红灯才继续往下看；</li>
+    <li>读"边际变化"三条（数据是否如期更新、有无跳变、有无口径提醒）；</li>
+    <li>扫 F 组路径定价与当日数据日历——确认今天是否需要盯盘（CPI/非农/FOMC 日）。</li>
+  </ol>
+
+  <div class="imp">
+    <div class="imp-t">Implication · 这套机制解决什么问题</div>
+    <p>这套机制的目标是<b>"花最少的注意力，保持对政策拐点的敏感"</b>。绝大多数交易日，货币政策是慢变量，你需要的只是确认"今天不用关心它"；少数拐点日，它会提前把信号推到你面前。设计上把 90% 的指标更新压缩进一次批量取数和三条边际变化，是为了让这个习惯可持续——任何需要超过 5 分钟的日报，最终都会被放弃。<b>真正的价值不在每天的读数，而在拐点出现前你已经在看。</b></p>
+  </div>
+</section>
+
+<!-- ============ S6 口径与局限 ============ -->
+<section class="card" id="s6">
+  <h2><span class="tag">06</span>口径与局限声明</h2>
+  <ul>
+    <li><b>breakeven 日频</b>：以 <code>U0929600</code> 直读为准，并用"10Y 名义 − 10Y TIPS 实际收益率"交叉校验（当前偏差 0bp）。</li>
+    <li><b>逆回购</b>：<code>G1100077</code> 为广义口径（含外国官方逆回购），与 FRED <code>RRPONTSYD</code>（纯国内 ON RRP）存在差值，趋势可用、绝对水位需谨慎。</li>
+    <li><b>MOVE / FedWatch / GDPNow</b> 非 Wind EDB 标准序列：由 agent 读公开页，失败时分别以"10Y 20 日实现波动率"/"12M SOFR 隐含路径"/跳过替代，看板自动标注替代口径。</li>
+    <li><b>所有阈值为经验框架而非精确科学</b>；连续 3 次误报应回溯校准（修订记录维护于手册）。</li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer class="src">
+  <div class="box">
+    <b>数据来源</b>：Wind EDB（美国财政部、纽约联储、美联储、ICE 官方序列）；宏观背景：美联储 2026 年 7 月《货币政策报告》、6 月 FOMC 声明与 SEP；市场定价随数据快速变化，请以最新读数为准。<br>
+    <b>更新机制</b>：工作日 08:30 随「早间投研日报」自动刷新（方案 A · 分层调度）；指标定义与阈值详见《美联储政策仪表盘：指标体系与运维手册》（本地）。<br>
+    <b>免责声明</b>：本页为研究工具，不构成投资建议。信号灯为经验框架，请结合自身判断使用。
+  </div>
+</footer>
+
+<button id="backTop" aria-label="返回顶部">↑</button>
+
+<script>
+(function(){
+  var links=document.querySelectorAll('.toc a[data-spy]');
+  var map={};
+  links.forEach(function(a){map[a.getAttribute('data-spy')]=a;});
+  var secs=document.querySelectorAll('main section.card');
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var id=e.target.id;
+      if(e.isIntersecting&&map[id]){
+        links.forEach(function(a){a.classList.remove('active');});
+        map[id].classList.add('active');
+      }
+    });
+  },{rootMargin:'-20% 0px -65% 0px',threshold:0});
+  secs.forEach(function(s){spy.observe(s);});
+
+  var btns=document.querySelectorAll('.tab-btn');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('on');});
+      document.getElementById(b.getAttribute('data-tab')).classList.add('on');
+    });
+  });
+
+  var backTop=document.getElementById('backTop');
+  window.addEventListener('scroll',function(){
+    backTop.classList.toggle('show',window.scrollY>600);
+  },{passive:true});
+  backTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>
