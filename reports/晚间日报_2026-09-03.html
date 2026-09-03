@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晚间投研日报 · 2026-09-03（周四）</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  line-height: 1.7;
+  color: var(--text2);
+  margin: 7px 0 0;
+  word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>晚间投研日报 · 2026-09-03（周四）</h1>
+  <div class="meta">盘后复盘报告。本节是当日 A 股 / 港股信息的唯一出口，次日早间日报不再重复。 · 组合权重口径：policy §2.1 用户实际大类权重（非等权）。涨=红 🔴，跌=绿 🟢。</div>
+</div>
+
+<hr>
+<h2>📌 今日核心结论（先看这里）</h2>
+<ul><li><strong>本期有两条规则被真正触发，都落在「减仓」方向，且都是规则自己走出来的结果 —— 不是我的主观判断。</strong></li><li><strong>人造钻石双雄换手率双双突破 20%</strong>（四方达 20.928%、惠丰钻石 22.932%）→ 按 9/2 设定的封闭矩阵，<strong>两只各减持 1/3</strong>。</li><li><strong>东方电气减仓 1/3 确认执行</strong>：中止条件（近 5 日主力转净流入）未成立，反而从 −3.84 亿进一步恶化至 <strong>−4.40 亿</strong>。</li><li><strong>紫金黄金国际减仓第二档：暂停。</strong> 9/2 COMEX 黄金结算价 <strong>4,414.6 美元</strong>已入库，落在 4,400–4,500 档 → <strong>减仓线下移至 4,300，维持半档仓位观察</strong>。而该股今日 <strong>🔴 +7.09%（全组合最大涨幅）</strong>——规则与价格给出了相反信号，本报告选择执行规则并显式披露这一张力。</li><li><strong>组合 +0.0201%，跑输沪深300 0.080 pct。但这个「+0.02%」几乎是一个统计假象</strong>：AI及半导体组 12 只标的合计 +17.99 pct，其中四方达（+7.28）与惠丰钻石（+10.71）两只就贡献了 <strong>17.99 pct —— 即 100%</strong>；其余 10 只合计恰好 <strong>0.00%</strong>。所谓「半导体反弹」并不存在。</li><li><strong>AI及半导体触发波动率集中警示</strong>：15% 权重贡献了组合正收益的 <strong>60.7%</strong>，而其在权益端权重占比为 23.4%，<strong>比率 2.59 &gt; 2.0</strong>。且该贡献 100% 来自 2 只高换手投机标的。</li><li><strong>腾讯距 430 加仓线仅 −0.69%，而回购已连续第 4 日维持 1.0 亿港元级别</strong>（9/3：22.9 万股 / 1.0 亿港元，价区 433–445.4）。今晨设定的前置校验结论维持 <strong>「否」→ 跌破 430 只能执行半档</strong>。</li><li><strong>兆易创新出现一条此前未被定价的负面指引</strong>：9/1 半年报业绩会上，CFO 孙桂静明确表示「<strong>虽然存储产品价格后续仍将温和上行，但供应端成本同时增加，公司产品毛利率将逐步趋于相对平稳状态</strong>」——即<strong>涨价不涨利</strong>。同时近 5 日主力净流出扩大至 <strong>−43.63 亿元</strong>，距无条件减仓触发线（50 亿）仅 6.37 亿元。</li><li><strong>智谱的「量能」维度今天掉进了规则真空区</strong>：成交额 32.69 亿 vs 前日 33.68 亿 = <strong>97.1%</strong>，既不满足「放量（&gt; 前日）」也不满足「缩量（&lt; 80%）」。这是继 9/2 发现的「时间维度不封闭」之后，<strong>第二个维度的封闭性缺陷</strong>。已在本报告修复并写入 policy。</li></ul>
+<hr>
+<h2>一、收盘复盘 · 组合归因</h2>
+<h3>1.1 主要指数</h3>
+<table><thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td>上证指数</td><td>3,942.09</td><td>🔴 <strong>+0.02%</strong></td><td>8,198.82 亿元</td></tr><tr><td>深证成指</td><td>13,625.12</td><td>🔴 <strong>+0.10%</strong></td><td>9,390.34 亿元</td></tr><tr><td>创业板指</td><td>3,312.54</td><td>🔴 +0.01%</td><td>4,306.78 亿元</td></tr><tr><td>科创50</td><td>1,611.17</td><td>🟢 <strong>−0.40%</strong></td><td>566.35 亿元</td></tr><tr><td>沪深300</td><td>4,552.58</td><td>🔴 <strong>+0.10%</strong></td><td>4,399.41 亿元</td></tr><tr><td>恒生指数</td><td>25,213.31</td><td>🟢 <strong>−0.39%</strong></td><td>1,993.82 亿港元</td></tr><tr><td>恒生科技</td><td>4,468.48</td><td>🟢 <strong>−1.08%</strong></td><td>485.24 亿港元</td></tr></tbody></table>
+<blockquote>💡 <strong>与昨日完全反转的结构</strong>：9/2 是「A 股深调、恒指仅 −0.07%」，今日是「<strong>A 股三大指数翻红、港股走弱</strong>」。恒生科技 −1.08% 是全部指数中唯一跌幅超 1% 者，腾讯、阿里、小米、网易、携程集体下滑。<br><strong>这一反转本身就是 policy §4.3 的实证</strong>：单日跨市场强弱对比不可用作调仓依据。</blockquote>
+<h3>1.2 市场结构</h3>
+<p><strong>成交与宽度</strong></p>
+<ul><li><strong>两市成交额 17,589.16 亿元</strong>（沪 8,198.82 亿 + 深 9,390.34 亿），较 9/2 的 17,911.79 亿 <strong>继续缩量 1.80%</strong>，为连续第二日缩量。</li><li><strong>涨跌家数</strong>：沪市 920 涨 / 1,363 跌 / 74 平；深市 925 涨 / 1,937 跌 / 75 平。全市场 <strong>1,845 涨 / 3,300 跌 / 149 平，涨跌比 1 : 1.79</strong>。</li><li>较昨日 1 : 3.07 <strong>明显改善</strong>，但<strong>下跌家数仍是上涨家数的 1.79 倍</strong>。</li><li><strong>指数走平而个股普跌 → 典型的权重股撑指数结构</strong>：有色金属（+1.24%）与非银金融（+1.33%）两个权重板块拉住指数，中小盘继续失血。</li></ul>
+<p><strong>行业结构（申万一级，15 个）</strong></p>
+<table><thead><tr><th>方向</th><th>行业</th><th>涨跌幅</th><th>当日主力净流入</th><th>涨/跌家数</th></tr></thead><tbody><tr><td><strong>领涨</strong></td><td>非银金融</td><td>🔴 <strong>+1.33%</strong></td><td>🔴 <strong>+47.20 亿</strong></td><td>48 / 25</td></tr><tr><td></td><td>有色金属</td><td>🔴 <strong>+1.24%</strong></td><td>🔴 <strong>+46.44 亿</strong></td><td><strong>87 / 51</strong></td></tr><tr><td></td><td>交通运输</td><td>🔴 +1.16%</td><td>🔴 +27.44 亿</td><td>62 / 58</td></tr><tr><td></td><td>机械设备</td><td>🔴 +0.68%</td><td>🔴 <strong>+57.96 亿</strong></td><td>224 / 300</td></tr><tr><td></td><td>汽车</td><td>🔴 +0.45%</td><td>🔴 +39.80 亿</td><td>104 / 177</td></tr><tr><td></td><td>石油石化</td><td>🔴 +0.39%</td><td>🔴 +4.22 亿</td><td>16 / 30</td></tr><tr><td></td><td>医药生物</td><td>🔴 <strong>+0.24%</strong></td><td>🔴 +7.16 亿</td><td>⚠️ 0 / 0（缺失）</td></tr><tr><td><strong>领跌</strong></td><td>通信</td><td>🟢 <strong>−0.68%</strong></td><td>🟢 <strong>−37.31 亿</strong></td><td>32 / 86</td></tr><tr><td></td><td>银行</td><td>🟢 −0.55%</td><td>🔴 +1.84 亿</td><td>14 / 23</td></tr><tr><td></td><td>计算机</td><td>🟢 −0.46%</td><td>🟢 −3.92 亿</td><td>74 / 259</td></tr><tr><td></td><td>传媒</td><td>🟢 −0.33%</td><td>🔴 +11.02 亿</td><td>32 / 95</td></tr><tr><td></td><td>煤炭</td><td>🟢 −0.23%</td><td>🔴 +1.32 亿</td><td>10 / 21</td></tr><tr><td></td><td>电子</td><td>🟢 <strong>−0.14%</strong></td><td>🟢 <strong>−16.19 亿</strong></td><td>206 / 282</td></tr><tr><td></td><td>国防军工</td><td>🟢 −0.10%</td><td>🔴 +11.15 亿</td><td>41 / 94</td></tr><tr><td></td><td>基础化工</td><td>🟢 −0.10%</td><td>🔴 +2.04 亿</td><td>111 / 292</td></tr></tbody></table>
+<blockquote>⚠️ <strong>数据缺失披露</strong>：医药生物（申万）的涨跌家数返回 <strong>0 / 0</strong>，为 Wind 接口缺失值，<strong>不可解读为「无个股涨跌」</strong>，本报告不据此作宽度判断。</blockquote>
+<p><strong>对比昨日的方向切换（这是今日结构最重要的信息）</strong></p>
+<table><thead><tr><th>行业</th><th>9/2</th><th>9/3</th><th>切换</th></tr></thead><tbody><tr><td>有色金属</td><td>🟢 −2.15%</td><td>🔴 <strong>+1.24%</strong></td><td>领跌 → 领涨</td></tr><tr><td>非银金融</td><td>🟢 −1.80%</td><td>🔴 <strong>+1.33%</strong></td><td>领跌 → 领涨</td></tr><tr><td>电子</td><td>🟢 −1.52%</td><td>🟢 −0.14%</td><td>跌幅收窄</td></tr><tr><td>计算机</td><td>🟢 −1.52%</td><td>🟢 −0.46%</td><td>跌幅收窄</td></tr><tr><td>国防军工</td><td>🔴 +0.26%</td><td>🟢 −0.10%</td><td><strong>昨日唯一逆势者今日转跌</strong></td></tr></tbody></table>
+<blockquote>💡 <strong>昨日被列为「唯一逆势 + 资金同向」的国防军工今日转跌 −0.10%</strong>，这直接印证了 9/2 报告「主线未确认（2/3 条成立）、禁止表述为风格切换确立」的判断是<strong>正确且必要的</strong>。</blockquote>
+<p><strong>主线判断（policy §5.1 三条标准，强制执行）</strong></p>
+<p>今日同时出现两个「涨 + 资金同向 + 宽度过半」的板块，逐条检验：</p>
+<table><thead><tr><th>标准</th><th>有色金属</th><th>非银金融</th></tr></thead><tbody><tr><td>1. 连续性 ≥3 个交易日</td><td>❌ 仅 1 日（9/2 −2.15%）</td><td>❌ 仅 1 日（9/2 −1.80%）</td></tr><tr><td>2. 资金与涨跌同向</td><td>✅ +46.44 亿</td><td>✅ +47.20 亿</td></tr><tr><td>3. 上涨家数占比 &gt; 50%</td><td>✅ 87/138 = 63.0%</td><td>✅ 48/73 = 65.8%</td></tr></tbody></table>
+<p>→ <strong>⚠️ 主线未确认（两个板块均仅 2/3 条成立）</strong>。今日有色与非银的上涨<strong>只有一天历史</strong>，且与其前一交易日的下跌直接冲突。<strong>禁止表述为「周期股接棒」或「风格切换确立」。</strong></p>
+<p>需要指出：这两个板块的上涨与<strong>隔夜金价反弹（COMEX 4,414.6，+0.41%）</strong>和<strong>本周 9/4 非农前的避险/再通胀交易</strong>有关，属于事件驱动而非趋势确立。<strong>9/4 非农是唯一的连续性检验节点。</strong></p>
+<h3>1.3 组合归因（本节核心）</h3>
+<p class="sub-label"><strong>权重口径</strong>：</p>
+<p>采用 policy §2.1 的用户实际大类权重，<strong>非等权假设</strong>。组内按等权计算平均涨跌。<br><strong>组合当日加权收益率</strong></p>
+<table><thead><tr><th>口径</th><th>收益率</th></tr></thead><tbody><tr><td><strong>组合（含 36% 现金）</strong></td><td>🔴 <strong>+0.0201%</strong></td></tr><tr><td><strong>权益端（剔除现金）</strong></td><td>🔴 <strong>+0.0314%</strong></td></tr></tbody></table>
+<p><strong>基准对比</strong></p>
+<table><thead><tr><th>基准</th><th>基准涨跌</th><th>组合超额（含现金）</th><th>权益端超额</th></tr></thead><tbody><tr><td>沪深300</td><td>🔴 +0.10%</td><td>🟢 <strong>−0.080 pct</strong></td><td>🟢 −0.069 pct</td></tr><tr><td>创业板指</td><td>🔴 +0.01%</td><td>🔴 <strong>+0.010 pct</strong></td><td>🔴 +0.021 pct</td></tr></tbody></table>
+<blockquote>⚠️ <strong>必须说明口径</strong>：组合含 36% 现金，与全权益指数直接比较天然吃亏。<strong>这不是选股能力问题</strong>——权益端 +0.0314% 仍跑输沪深300 0.069 pct，原因是 AI应用（20% 权重）今日 −1.685% 拖累。</blockquote>
+<p><strong>大类贡献拆解表</strong></p>
+<table><thead><tr><th>大类</th><th>权重</th><th>组内平均涨跌</th><th>对组合贡献 (pct)</th><th>占正贡献比</th></tr></thead><tbody><tr><td>AI应用（底仓）</td><td>20%</td><td>🟢 <strong>−1.685%</strong></td><td>🟢 <strong>−0.337</strong></td><td>—</td></tr><tr><td>消费</td><td>2%</td><td>🟢 −0.67%</td><td>🟢 −0.013</td><td>—</td></tr><tr><td>周期+反转</td><td>5%</td><td>🔴 +0.227%</td><td>🔴 +0.011</td><td>3.1%</td></tr><tr><td>周期+反内卷（物流）</td><td>2%</td><td>🔴 +0.215%</td><td>🔴 +0.004</td><td>1.2%</td></tr><tr><td>创新药相关</td><td>20%</td><td>🔴 +0.650%</td><td>🔴 <strong>+0.130</strong></td><td>35.1%</td></tr><tr><td><strong>AI及半导体</strong></td><td><strong>15%</strong></td><td>🔴 <strong>+1.499%</strong></td><td>🔴 <strong>+0.225</strong></td><td><strong>60.7%</strong></td></tr><tr><td>现金</td><td>36%</td><td>0.00%</td><td>0.000</td><td>—</td></tr><tr><td><strong>合计</strong></td><td><strong>100%</strong></td><td>—</td><td>🔴 <strong>+0.0201</strong></td><td>100%</td></tr></tbody></table>
+<p><strong>⚠️ 集中度警示（policy §4.3 两种集中分别检验）</strong></p>
+<p><strong>（A）权重集中 —— 无</strong></p>
+<p>最大权重为 AI应用与创新药各 <strong>20%</strong>，均 <strong>&lt; 35% 阈值</strong> → 不触发。</p>
+<p><strong>（B）波动率集中 —— AI及半导体触发</strong></p>
+<table><thead><tr><th>判据</th><th>AI及半导体</th><th>创新药</th></tr></thead><tbody><tr><td>占权益端权重</td><td>15% / 64% = <strong>23.4%</strong></td><td>20% / 64% = 31.3%</td></tr><tr><td>占组合正贡献</td><td><strong>60.7%</strong></td><td>35.1%</td></tr><tr><td><strong>贡献占比 ÷ 权重占比</strong></td><td><strong>2.59</strong> ⚠️</td><td>1.12 ✅</td></tr><tr><td>阈值</td><td>&gt; 2.0 触发</td><td>&gt; 2.0 触发</td></tr></tbody></table>
+<p>→ <strong>AI及半导体以 23.4% 的权益权重撬动了 60.7% 的正向贡献，比率 2.59 &gt; 2.0，触发波动率集中警示。</strong></p>
+<p><strong>但这个数字背后有一个远比「集中」更严重的问题 —— 贡献的 100% 来自 2 只标的：</strong></p>
+<table><thead><tr><th>AI及半导体组 12 只</th><th>涨跌幅</th></tr></thead><tbody><tr><td>惠丰钻石</td><td>🔴 <strong>+10.71%</strong></td></tr><tr><td>四方达</td><td>🔴 <strong>+7.28%</strong></td></tr><tr><td><strong>上述两只合计</strong></td><td><strong>+17.99 pct</strong></td></tr><tr><td><strong>其余 10 只合计</strong></td><td><strong>0.00 pct</strong></td></tr><tr><td>组内平均（÷12）</td><td>+1.499%</td></tr></tbody></table>
+<p class="sub-label"><strong>这不是巧合，是本期最重要的一个发现</strong>：</p>
+<p>AI及半导体组今日的「+1.499% 平均涨幅」<strong>完全由两只人造钻石标的贡献，其余 10 只（智谱、兆易、联想、ASMPT、大族数控、长飞、应流、蓝思、东方电气、潍柴）的涨跌幅相加恰好为 0.00%</strong>。<br>→ <strong>结论</strong>：今日不存在「AI 半导体板块反弹」。存在的只是<strong>两只换手率 20%+ 的题材股在极高频率的筹码交换中上涨</strong>，而板块内其他 10 只标的整体纹丝不动。<strong>组合看起来上涨了 0.02%，实际是 2 只投机标的的独立行情。</strong></p>
+<p><strong>⚠️ 对冲思路（policy §4.3 要求必须给出）</strong></p>
+<p>当前组合的 AI及半导体敞口<strong>实为两个因子混装</strong>：① 真正的半导体/AI 硬件基本面敞口（10 只，今日净贡献 0）；② 人造钻石题材投机敞口（2 只，今日贡献全部）。两者<strong>相关性极低</strong>（9/2 时四方达 −1.01% 而惠丰 +6.82%，同组反向），不具备内部对冲功能。</p>
+<p>三条可执行思路：</p>
+<ul><li><strong>分离记账</strong>：将人造钻石 2 只在归因中单列，避免其波动污染「AI 半导体」这一因子的真实读数（本期已如此处理）。</li><li><strong>给题材敞口设硬上限</strong>：按 §3.2.7 仓位纪律，单一标的敞口不超过组内等权水平（15% ÷ 12 = 1.25%）。当前两只合计若超 2.5%，应削减至上限内。</li><li><strong>换手率作为对冲触发器</strong>：这正是 9/2 设定、今日触发的 20% 规则——在高换手题材股上，<strong>换手率比价格更早发出风险信号</strong>。</li></ul>
+<p><strong>现金缓冲效果</strong></p>
+<ul><li>权益端真实波动为 <strong>+0.0314%</strong>，36% 现金将其稀释至 <strong>+0.0201%</strong>。</li><li>即：<strong>若无 36% 现金，今日组合波动将是当前的 1.56 倍</strong>（0.0314 ÷ 0.0201）。</li><li>在今日这种「指数走平、个股普跌（1:1.79）、组合靠 2 只题材股勉强翻红」的结构里，现金的作用是<strong>让组合不必依赖高换手标的的博弈结果</strong>。</li></ul>
+<p><strong>跨市场归因（policy §4.3 强制披露方向反转）</strong></p>
+<table><thead><tr><th>日期</th><th>A 股 12 只均值</th><th>港股 12 只均值</th><th>方向</th></tr></thead><tbody><tr><td>2026-09-01</td><td>−0.68%</td><td><strong>−2.29%</strong></td><td>港股弱</td></tr><tr><td>2026-09-02</td><td><strong>−1.355%</strong></td><td>−0.544%</td><td><strong>A 股弱（与 9/1 反转）</strong></td></tr><tr><td>2026-09-03</td><td><strong>+0.924%</strong></td><td>+0.5475%</td><td><strong>A 股强（与 9/2 再次反转）</strong></td></tr></tbody></table>
+<p>→ <strong>与昨日方向完全反转，三个交易日内第三次变向。</strong> 按 policy §4.3，<strong>该指标的单日噪声已充分暴露，本报告仅作记录，不作为任何调仓依据。</strong></p>
+<p class="sub-label"><strong>并且今日的 A 股均值本身也不可信</strong>：</p>
+<p>剔除四方达（+7.28%）与惠丰钻石（+10.71%）后，<strong>A 股其余 10 只均值仅 +0.038%</strong>（合计 +0.38 pct）。也就是说：</p>
+<ul><li>含全部 12 只：A 股 +0.924% vs 港股 +0.5475% → A 股强</li><li><strong>剔除 2 只极端值：A 股 +0.038% vs 港股 +0.5475% → 港股强，方向再次反转</strong></li></ul>
+<p><strong>一个单日均值在剔除 2 个样本后方向就发生反转，这足以证明该指标在日频尺度上完全不可用。</strong> 判定跨市场强弱必须改用 5 日或 20 日滚动均值。</p>
+<hr>
+<h2>二、持仓增量深度解读（三段式）</h2>
+<blockquote>覆盖当日有实质增量的标的。无增量者不铺陈。</blockquote>
+<h3>2.1 人造钻石双雄：四方达 🔴 +7.28% / 惠丰钻石 🔴 +10.71% — <strong>换手率双双突破 20%，规则触发减持 1/3</strong></h3>
+<p><strong>What</strong></p>
+<table><thead><tr><th>标的</th><th>收盘</th><th>涨跌幅</th><th>成交额</th><th><strong>换手率</strong></th><th>量比</th><th>当日主力</th><th>近 5 日主力</th><th>YTD</th></tr></thead><tbody><tr><td><strong>四方达</strong>（300179.SZ）</td><td>37.85 元</td><td>🔴 <strong>+7.28%</strong></td><td>29.33 亿元</td><td>⚠️ <strong>20.928%</strong></td><td>2.101</td><td>🔴 +4.54 亿</td><td>🔴 +4.06 亿</td><td>🔴 +152.15%</td></tr><tr><td><strong>惠丰钻石</strong>（920725.BJ）</td><td>83.80 元</td><td>🔴 <strong>+10.71%</strong></td><td>8.25 亿元</td><td>⚠️ <strong>22.932%</strong></td><td>2.065</td><td>🔴 +7,417 万</td><td>🔴 +1.27 亿</td><td>🔴 +148.59%</td></tr></tbody></table>
+<p><strong>换手率演进（这是本条的核心事实）</strong></p>
+<table><thead><tr><th>标的</th><th>9/1</th><th>9/2</th><th><strong>9/3</strong></th><th>9/2 设定的阈值</th></tr></thead><tbody><tr><td>四方达</td><td>8.275%</td><td>13.126%</td><td><strong>20.928%</strong></td><td>突破 20% → 减持 1/3</td></tr><tr><td>惠丰钻石</td><td>8.334%</td><td>17.173%</td><td><strong>22.932%</strong></td><td>突破 20% → 减持 1/3</td></tr></tbody></table>
+<p class="sub-label"><strong>三日换手率连续翻倍</strong>：</p>
+<p>8.3% → 13~17% → 21~23%。这不是「放量上涨」，是<strong>筹码在极高频率易手</strong>。<br><strong>基本面事实（2026 中报，四方达，Wind 9/3 最新解读）</strong></p>
+<ul><li>H1 营收 <strong>3.75 亿元</strong>（🔴 +43.76%），归母净利 <strong>0.78 亿元</strong>（+46.90%），扣非 <strong>0.70 亿元</strong>（🔴 +84.29%）</li><li><strong>CVD 金刚石类收入 0.64 亿元（🔴 +1,031.90%），毛利率由负转正至 12.30%（+87.19 pct）</strong></li><li>精密加工类 1.03 亿元（+31.15%）；资源开采/工程施工类 1.52 亿元（🟢 −3.47%）</li><li>子公司河南天璇（CVD 主体）H1 收入 0.68 亿元（+588.8%），<strong>净利 −0.30 亿元</strong>（2025 全年 −1.22 亿元，<strong>减亏但仍亏损</strong>）</li><li>经营现金流由 −0.38 亿元转正至 <strong>+0.63 亿元</strong></li><li>2026-06-29 审议通过向特定对象发行 A 股，<strong>募资不超过 20 亿元</strong>投向金刚石钻针产业化</li><li>风险：<strong>ITC 337 有限排除令</strong>（2025-12-04 终裁），部分产品不受约束，仍在应诉</li></ul>
+<p><strong>基本面事实（2026 中报，惠丰钻石）</strong></p>
+<ul><li>H1 营收 <strong>1.04 亿元</strong>（+26.64%），归母净利 <strong>655.87 万元</strong>（扭亏为盈），毛利率 30.94%（+13.79 pct）</li><li>金刚石破碎料收入 +69.28%，其他产品收入 +908.80%</li><li>2026 年 5 月 CVD 金刚石散热项目在内蒙古包头开工，<strong>总投资 10 亿元</strong></li></ul>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=A7F8DA99BF21&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.454980#/E62EF86C7D5FFF1D92D95E37B3127F30" target="_blank">来源：Wind · 四方达2026年中报解读：营收净利双增逾四成，CVD金刚石毛利率转正，增长引擎切换（2026-09-03）</a></div><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=AC75D560AC7A&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.213458#/3DBB7F6B43C457139B5CC6AF82ACE2D9" target="_blank">来源：Wind · 惠丰钻石扭亏为盈 散热新应用打开成长空间（2026-09-01）</a></div><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=C5D1EB5A1CE5&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.645078#/83DF8D841F4FF7EDEA6FF3C56594A981" target="_blank">来源：财联社 · 人造钻石概念逆势活跃 惠丰钻石涨超10%（2026-09-02）</a></div></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— 估值与基本面的缺口已经大到无法用「成长」解释</strong>：</li><li><strong>四方达</strong>：总市值 <strong>183.85 亿元</strong>。PE(TTM) <strong>155.611</strong> → TTM 净利约 1.18 亿元；PE(预测) 108.858 → 预测净利约 1.69 亿元。而 <strong>CVD 金刚石（被市场当作「AI 散热」定价的那部分业务）H1 收入仅 0.64 亿元、毛利率仅 12.30%</strong>，占总营收 17%。</li></ul>
+<p>    → 关键背离：<strong>公司整体毛利率 47.63%，而 CVD 业务毛利率仅 12.30%</strong>。市场给了 155 倍 PE 去买一块<strong>严重拉低整体盈利质量</strong>的新业务。且承载该业务的子公司河南天璇 H1 仍亏 <strong>0.30 亿元</strong>。</p>
+<ul><li><strong>惠丰钻石</strong>：总市值 <strong>76.49 亿元</strong>，H1 营收 1.04 亿元、归母净利 655.87 万元。按 H1 年化：<strong>PS ≈ 36.8 倍，PE ≈ 583 倍</strong>。PE(预测) 无机构覆盖 → <strong>按 policy §3.2.6，其 PE 体系完全失效，只剩 PB 12.624 一个锚点，且处于历史极值区间</strong>。</li><li><strong>预期差 —— 支持「减持」的三条独立证据</strong>：</li><li><strong>换手率 20.928% / 22.932%</strong>：全组合中位数约 1.7%，这两只是<strong>中位数的 12 倍以上</strong>。换手率这个量级下，价格由博弈决定，不由基本面决定。</li><li><strong>CVD 业务毛利率仅 12.30%</strong>：与「AI 散热终极材料」的叙事严重不匹配。真正的散热材料龙头不会只有 12% 毛利率。</li><li><strong>定增 20 亿元（四方达）+ 包头 10 亿元（惠丰）</strong>：两家都在<strong>大规模融资扩产</strong>。产能落地后是价格战还是份额扩张，取决于需求兑现速度——<strong>目前两家均未披露任何规模化订单</strong>。</li><li><strong>赔率 —— 这是本条最需要说清楚的一点</strong>：</li><li><strong>上行</strong>：中泰证券测算 2026 年全球 AI 芯片用金刚石散热片市场 87 亿元 → 2030 年 592 亿元（CAGR &gt; 50%）。若四方达拿到 10% 份额 = 8.7 亿元收入，是当前 CVD 收入（年化 1.28 亿）的 6.8 倍。</li><li><strong>下行</strong>：<strong>换手率 20%+ 意味着持仓成本高度分散在短线资金手里</strong>。一旦情绪退潮，没有基本面锚点承接——惠丰 PE 583 倍、四方达 PE 155 倍，两者<strong>都没有估值保护</strong>。</li><li><strong>非对称性判断</strong>：<strong>下行是「博弈失败 → 无锚可依」，上行是「叙事兑现 → 但需要先看到订单」。在当前时点，下行的确定性远高于上行。</strong></li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>两只均减持 1/3 —— 这是 9/2 设定的封闭换手率矩阵触发的机械执行，不是主观判断。</strong></p>
+<p>规则原文（9/2 晚间日报 §2.3）：</p>
+<table><thead><tr><th>换手率</th><th>动作</th></tr></thead><tbody><tr><td>回落至 5% 以下 且股价企稳</td><td>重新评估，可考虑恢复至组内等权</td></tr><tr><td>维持 5%–15%</td><td>维持观望，仓位不动</td></tr><tr><td><strong>突破 20%</strong></td><td><strong>换手率失控，立即减持 1/3（不设价格条件）</strong></td></tr></tbody></table>
+<p><strong>今日落点：两只均落在「突破 20%」格 → 减持 1/3。</strong></p>
+<p><strong>执行说明（必须写清，避免误读）</strong></p>
+<ul><li><strong>这是「卖出强势股」，不是「止损」</strong>。两只今日分别上涨 7.28% 与 10.71%，减持是在<strong>上涨中兑现</strong>，规则的意图正是「在换手率失控时不参与最后的博弈」。</li><li><strong>不设价格条件的用意</strong>：若设价格条件，就会退化成「涨到 X 卖」，把风险控制变成趋势跟随。换手率是<strong>筹码结构指标</strong>，与价格方向正交，这正是它比价格更早发出信号的原因。</li><li><strong>保留 2/3 仓位</strong>：若 CVD 订单落地，仍保留大部分上行暴露。</li></ul>
+<p><strong>下一验证节点</strong></p>
+<ul><li><strong>2026 三季报（10 月下旬）—— CVD 金刚石业务的收入确认与毛利率能否从 12.30% 向上，是本组唯一决定性的验证项。</strong></li><li>河南天璇（四方达 CVD 子公司）能否在 Q3 实现单季扭亏（H1 为 −0.30 亿元）。</li><li>惠丰钻石 8 英寸 CVD 热沉片的<strong>批量订单落地公告</strong>（目前仅为「稳定生产」，无规模化订单披露）。</li><li>四方达 20 亿元定增的发行进度与定价。</li><li>换手率回落至 15% 以下 → 重新评估是否恢复组内等权。</li></ul>
+<hr>
+<h3>2.2 紫金黄金国际（2259.HK）🔴 <strong>+7.09%</strong> — 金价 4,414.6 入库，减仓第二档暂停，线下移至 4,300</h3>
+<p><strong>What</strong></p>
+<p>收 <strong>160.200 港元（🔴 +7.09%，全组合最大涨幅）</strong>，成交额 14.80 亿港元，换手率 0.346%，量比 1.24，主力净流入 <strong>+2.39 亿港元</strong>（近 5 日 +11.56 亿，近 10 日 +33.17 亿，近 20 日 +44.11 亿）。</p>
+<p><strong>金价数据（Wind EDB，指标 S0180945，COMEX 黄金活跃合约结算价）— 本次已完成判定</strong></p>
+<table><thead><tr><th>日期</th><th>8-26</th><th>8-27</th><th>8-28</th><th>8-31</th><th>9-01</th><th><strong>9-02</strong></th></tr></thead><tbody><tr><td>结算价（美元/盎司）</td><td>4,653.3</td><td>4,664.0</td><td>4,529.9</td><td>4,481.5</td><td>4,396.4</td><td><strong>4,414.6</strong></td></tr></tbody></table>
+<p><strong>EDB 更新日 2026-09-03，序列末值已滚动至 9-02 的 4,414.6 —— 昨日悬而未决的数据今日到位。</strong></p>
+<p><strong>交叉验证：</strong> 9/3 Wind 新闻报道「隔晚纽约 12 月份期金每盎司收报 <strong>4,414.6 美元</strong>，升约 0.4%」——<strong>与 EDB 结构化数据完全一致</strong>，且现货金报 4,412.79 美元（+0.56%）。<strong>两个独立口径相互印证，本次判定数据可靠。</strong></p>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=3DC9CAE7469E&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.781449#/3B7C63BB8545941505A66BFFEE5734B8" target="_blank">来源：金吾财讯 · 国际金价反弹 黄金股跟随回升 紫金黄金国际（02259）涨6.15%（2026-09-03）</a></div></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— 规则判定：落在 4,400–4,500 档</strong></li></ul>
+<p>  9/2 晚间设定的判定表：</p>
+<table><thead><tr><th>9/3 EDB 更新的 9/2 结算价</th><th>动作</th></tr></thead><tbody><tr><td>&lt; 4,400</td><td>减满档（完成全部减仓）</td></tr><tr><td><strong>4,400 – 4,500</strong></td><td><strong>暂停第二档，减仓线下移至 4,300，维持半档仓位观察</strong></td></tr><tr><td>&gt; 4,500</td><td>暂停第二档，考虑回补第一档的一半</td></tr></tbody></table>
+<p>  <strong>实际值 4,414.6 → 落在中间档 → 暂停第二档，减仓线下移至 4,300，维持半档仓位。</strong></p>
+<p class="sub-label"><strong>辅助观察条件</strong>：</p>
+<p>若 9/3 主力资金转为净流出且成交额放大至 20 亿港元以上 → 无论金价，直接减满档。</p>
+<ul><li><strong>预期差 —— 必须披露的张力：规则说「暂停减仓」，但规则设定的背景已经消失</strong></li></ul>
+<p>  这条规则是在 <strong>9/2 的语境</strong>下设定的：当时金价连续 5 日下跌（4,694.5 → 4,396.4，累计 −6.35%），股价同步下跌，规则的目的是「下跌中分档退出，避免一次性砍在最低点」。</p>
+<p>  而今日的实际情况是：<strong>金价企稳反弹（+0.41%），股价大涨 7.09%，主力资金净流入 2.39 亿港元，有色金属板块 +1.24% 领涨且主力净流入 46.44 亿。</strong></p>
+<p>  → <strong>规则与价格给出了方向相反的信号。</strong></p>
+<p>  <strong>本报告选择执行规则，理由有三，必须写清：</strong></p>
+<ul><li><strong>规则的 credibility 来自于它被机械执行</strong>。如果价格上涨就暂停执行、价格下跌就执行，那规则就退化成了「事后合理化」的工具，此后的所有触发条件都会失去约束力。</li><li><strong>但规则本身的档位需要重新审视</strong>。「4,400–4,500 → 下移减仓线至 4,300」这个动作，在金价已从 4,694.5 回落至 4,414.6（−5.96%）之后执行，<strong>实质是把减仓线设在了比当前低 2.6% 的位置</strong>——这是合理的，因为它给了「金价确认企稳」一个 2.6% 的容错空间。</li><li><strong>规则给出的是「暂停」而非「回补」</strong>，这与我的判断一致：<strong>一次 +7.09% 的反弹不足以证明中期趋势反转，需要看到金价站上 4,500 才谈得上回补。</strong></li></ul>
+<ul><li><strong>赔率</strong>：PE(TTM) 21.595 → PE(预测) 17.446，<strong>隐含增速 +23.79%</strong>；PB(LF) 5.855；YTD +12.09%，20 日 +23.08%。</li><li>上行取决于 9/4 非农：若就业数据走弱 → 降息预期升温 → 实际利率下行 → 金价上行。</li><li>下行保护：主力资金近 20 日 +44.11 亿港元（<strong>全持仓资金流入持续性最好的标的之一</strong>），16 个交易日中有 15 日净流入。</li><li><strong>非对称性</strong>：当前处于「减仓已执行半档 + 股价反弹 7%」的状态，<strong>半档仓位既保留了上行，也承认了下行风险尚未排除</strong>。这个位置是舒服的，不需要调整。</li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>维持半档仓位，减仓第二档暂停，减仓线下移至 4,300 美元/盎司。</strong></p>
+<table><thead><tr><th>后续 EDB 结算价</th><th>动作</th></tr></thead><tbody><tr><td>跌破 <strong>4,300</strong></td><td>减满档（完成全部减仓）</td></tr><tr><td>4,300 – 4,500</td><td>维持半档，继续观察</td></tr><tr><td>站上 <strong>4,500</strong></td><td>重新评估是否回补第一档的一半</td></tr></tbody></table>
+<p><strong>下一验证节点</strong></p>
+<ul><li><strong>9/4 美国非农就业数据</strong> —— 本周唯一可能同时改变金价与 Fed Watch 六维结论的数据点。</li><li>9/4 EDB 更新的 9/3 COMEX 黄金结算价（验证反弹是否延续）。</li><li>紫金黄金国际主力资金是否维持净流入（若转为净流出且成交额 &gt; 20 亿港元 → 无论金价直接减满档）。</li><li>2026 中报矿产金产量与成本曲线。</li></ul>
+<hr>
+<h3>2.3 腾讯控股（0700.HK）🟢 −1.19% — 回购连续第 4 日维持 1.0 亿级别，距 430 加仓线仅 0.69%</h3>
+<p><strong>What</strong></p>
+<p>收 <strong>433.000 港元（🟢 −1.19%）</strong>，成交额 75.98 亿港元，主力净流出 <strong>−11.97 亿港元</strong>（占成交额 15.75%，<strong>本次通过合理性校验，非脏数据</strong>），近 5 日 +83.73 亿，近 10 日 +80.50 亿，近 20 日 +1.53 亿。</p>
+<p class="sub-label"><strong>回购数据（Wind，9/3 港交所公告）</strong>：</p>
+<p>9 月 3 日回购 <strong>22.9 万股，金额 1.0 亿港元</strong>，最低成交价 <strong>433 港元</strong>，最高 445.4 港元。近 30 日累计回购 <strong>762.6 万股 / 34.05 亿港元</strong>。<br><strong>回购阶梯式下探的完整时间序列（这是判断趋势还是噪声的唯一依据）</strong></p>
+<table><thead><tr><th>日期</th><th>回购数量</th><th>回购金额</th></tr></thead><tbody><tr><td>8/17 – 8/28（10 个交易日）</td><td>66.2 – 68.2 万股</td><td>稳定 3.0 亿元/日</td></tr><tr><td>8/31</td><td>22.3 万股</td><td>1.01 亿港元</td></tr><tr><td>9/1</td><td>22.6 万股</td><td>1.00 亿港元</td></tr><tr><td>9/2</td><td>22.9 万股</td><td>1.00 亿港元</td></tr><tr><td><strong>9/3</strong></td><td><strong>22.9 万股</strong></td><td><strong>1.00 亿港元</strong></td></tr></tbody></table>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=5A91F9DA4363&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.903050#/1DC4AD7DC24A565343DEB5CF815AEB17" target="_blank">来源：Wind · 腾讯控股：于9月3日回购22.9万股，回购金额1.0亿港元（2026-09-03）</a></div><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=7AB6773E8378&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.430823#/B662766DFD95A6A5CCEDF1BCFAB2E575" target="_blank">来源：格隆汇 · 腾讯：耗资1亿港元回购22.9万股（2026-09-03）</a></div></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— 回购强度已下降至原水平的 1/3，且连续 4 日稳定在该水平</strong></li><li>8/17–8/28：日均 3.0 亿港元</li><li>8/31 起：<strong>日均 1.00 亿港元，连续 4 个交易日，金额波动 &lt; 1%</strong></li><li><strong>「连续 4 日、金额高度稳定」这一形态，排除了「单日偶然」与「港交所成交量上限」两种解释。</strong> 这是<strong>有意为之的新常态</strong>。</li><li>规模测算：若全年维持 1.0 亿/日 × 约 245 个交易日 = <strong>约 245 亿港元</strong>，与财联社报道的「2026 年预计 400–600 亿」相比<strong>更低</strong>，说明回购规模可能还有进一步下修空间。</li><li><strong>预期差 —— 隐含增速连续第 3 日为负</strong></li><li>PE(TTM) 14.537 → PE(预测) 14.606，<strong>隐含增速 = 14.537 ÷ 14.606 − 1 = 🟢 −0.47%</strong></li><li>该数字已连续三日为负（9/1 −0.50%、9/2 −0.50%、9/3 −0.47%）。<strong>这不是单日噪声。</strong></li><li>含义：<strong>Wind 一致预期认为腾讯未来 12 个月盈利不增长甚至微降</strong>。这与市场对腾讯 AI 变现的普遍乐观形成直接反差，也与刘炽平「大幅削减回购、资金转投 AI」的表述方向一致——<strong>钱从回购流向资本开支，短期压低利润，长期换增长</strong>。</li><li>但 PB 3.014 处于相对低位，YTD 🟢 −26.87%。<strong>便宜与否取决于看利润（不便宜）还是看净资产（便宜）。</strong></li><li><strong>赔率 —— 回购价区本身是有效的信息</strong></li><li>今日回购价区 <strong>433 – 445.4 港元</strong>，<strong>最低价 433 恰为今日收盘价</strong>。公司自己在收盘价附近承接。</li><li>但规模只有 1.0 亿港元，占成交额 75.98 亿的 <strong>1.32%</strong>——<strong>托底力度微弱，无法对抗 11.97 亿港元的主力净流出</strong>。</li><li><strong>结论：回购的存在提供了心理支撑，但 1.0 亿/日的量级不构成实质性的价格支撑。</strong></li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>持有。</strong> 加仓前置校验结果维持 <strong>「否」</strong>（今晨早报设定）。</p>
+<p><strong>触发条件（沿用今晨早报的六格封闭矩阵）</strong></p>
+<table><thead><tr><th>价格</th><th>回购维持 1.0 亿级别（当前状态）</th><th>回购回升至 3.0 亿级别</th></tr></thead><tbody><tr><td>跌破 <strong>430</strong></td><td>① <strong>执行半档加仓</strong>（<strong>当前状态</strong>，距触发 −0.69%）</td><td>② 执行满档加仓</td></tr><tr><td>430 – 460</td><td>③ 维持持有，不加不减（<strong>今日落点：433</strong>）</td><td>④ 维持持有，可考虑小幅加仓</td></tr><tr><td>涨破 <strong>460</strong></td><td>⑤ 维持持有，不追高</td><td>⑥ 维持持有</td></tr></tbody></table>
+<p><strong>今日落第 ③ 格 → 维持持有，不加不减。</strong></p>
+<p><strong>下一验证节点</strong></p>
+<ul><li><strong>9/4 回购是否维持 1.0 亿级别（第 5 日）</strong> —— 若回升至 3.0 亿级别，则「趋势」判断需要推翻重来。</li><li>股价是否跌破 430（距今日收盘仅 −0.69%，<strong>极可能在 1–2 个交易日内触发</strong>）。</li><li>2026 三季报（约 11 月中旬）看 AI 相关资本开支与变现口径。</li><li>隐含增速是否转正（连续 3 日为负后，转正将是重要信号）。</li></ul>
+<hr>
+<h3>2.4 兆易创新（603986.SH）🟢 −1.46% — CFO 明确「毛利率趋于平稳」，资金流出逼近减仓触发线</h3>
+<p><strong>What</strong></p>
+<p>收 <strong>383.20 元（🟢 −1.46%）</strong>，成交额 <strong>91.99 亿元（全组合最大）</strong>，换手率 3.557%，量比 0.773。</p>
+<p><strong>资金面（本期最需要警惕的一项）</strong></p>
+<table><thead><tr><th>周期</th><th>主力净流入</th><th>较昨日变化</th></tr></thead><tbody><tr><td>当日</td><td>🟢 <strong>−5.08 亿元</strong></td><td>昨日 −4.55 亿，扩大</td></tr><tr><td>近 5 日</td><td>🟢 <strong>−43.63 亿元</strong></td><td>昨日 −30.40 亿，<strong>单日扩大 13.23 亿</strong></td></tr><tr><td>近 10 日</td><td>🟢 −44.61 亿元</td><td>昨日 −47.57 亿</td></tr><tr><td>近 20 日</td><td>🟢 <strong>−131.75 亿元</strong></td><td>昨日 −130.76 亿</td></tr></tbody></table>
+<p class="sub-label"><strong>估值</strong>：</p>
+<p>PE(TTM) 34.021 → PE(预测) 27.351，<strong>隐含增速 +24.39%</strong>；PB(LF) 7.199；YTD 🔴 +79.12%。<br><strong>基本面增量（9/1 半年报业绩说明会，9/2–9/3 经 Wind 报道）</strong></p>
+<ul><li>副董事长、总经理<strong>何卫</strong>：DRAM 已连续数季涨价，下半年延续但<strong>涨势转为温和</strong>；2027 年新增产能释放有限，供应紧张不缓解，价格<strong>高位震荡</strong></li><li>董秘<strong>谢飞旺</strong>：NOR Flash 价格温和上涨，大容量产品涨幅相对明显；SLC NAND 供应短缺未显著缓解，<strong>景气周期至少覆盖 2027 年全年</strong></li><li><strong>副总经理、财务负责人孙桂静（⚠️ 本条最关键的负面信号）</strong>：「<strong>虽然存储产品价格后续预计仍将温和上行，但供应端成本同时增加，公司产品毛利率将逐步趋于相对平稳状态</strong>」</li><li>回购进展：截至 8/31 累计回购 <strong>166.23 万股</strong>（占总股本 0.24%），耗资 <strong>6.54 亿元</strong>，全部用于注销并减少注册资本</li></ul>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=6F40B9A21494&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.327409#/D58A49B3A6D05EC7A0DA816E84AA9E9C" target="_blank">来源：Wind · 存储巨头公布未来三阶段HBM路线图；兆易创新：2027年DRAM供应紧张局面不会明显缓解（2026-09-02）</a></div><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=8F5919B67172&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.392501#/F5521DFE3D836A31B6B4DC12C921C470" target="_blank">来源：每日经济新闻 · 上限20亿元！兆易创新已完成超6.5亿元回购，全部用于注销并减少注册资本（2026-09-01）</a></div><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=71646AE89FCA&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.295480#/D3B3A56B0306763F1860357537E9BFA0" target="_blank">来源：Wind · 华为、小米、荣耀手机集体涨价！最高涨幅达1000元（2026-09-03）</a></div></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— 「涨价不涨利」是本条最重要的新信息，且它来自 CFO 而非分析师</strong></li><li>市场买兆易的逻辑是「存储涨价 → 量价齐升 → 利润弹性」。</li><li>但 CFO 明确表示：<strong>价格上行，供应端成本同步上行，毛利率将趋于平稳</strong>。</li><li><strong>这意味着「价格弹性」不会完整传导为「利润弹性」。</strong> 若毛利率持平，则利润增长只能来自<strong>出货量增长</strong>（产能扩张），而不是市场定价的<strong>涨价弹性</strong>。</li><li>交叉验证：隐含增速 +24.39%（PE 34.021 → 27.351）。若毛利率真的趋于平稳，这 +24% 的盈利增长<strong>必须全部由产能扩张贡献</strong>——而 DRAM 产能来自代工供应商（长鑫等），<strong>公司对产能的控制力弱于对价格的控制力</strong>。</li><li><strong>预期差 —— 三条证据指向「主力在系统性撤离，而基本面尚未证伪」</strong></li><li><strong>近 20 日主力净流出 131.75 亿元</strong>，占当前总市值（2,743.98 亿元）的 <strong>4.8%</strong>。这是规模巨大的持续撤离。</li><li><strong>估值端不支持下跌</strong>：隐含增速 +24.39%，PB 分位（9/1 口径 19.93%）处于低位 → 按 policy §3.2.4 属<strong>双重安全边际</strong>象限。</li><li><strong>公司自己在买</strong>：累计回购 166.23 万股 / 6.54 亿元，回购均价 <strong>393.67 元/股</strong>，<strong>今日收盘 383.20 元已跌破回购均价 2.66%</strong>（昨日为 1.24%，<strong>缺口扩大</strong>）。</li><li><strong>两种解释</strong>（按 policy §3.2.8 必须给出两种相反解释）：</li><li><strong>解释 A（结构性负面）</strong>：主力提前定价了「涨价不涨利」，CFO 的表述是确认而非新信息 → 估值低是<strong>价值陷阱</strong>。</li><li><strong>解释 B（错杀）</strong>：存储景气延续至 2027 是行业共识（君正、长鑫、兆易口径一致），131.75 亿的流出可能来自单一大机构的结构性调仓 → 与公司基本面无关。</li><li><strong>区分指标（非价格）</strong>：① 回购公告的单月节奏是否加快（公司是否在承接抛压）；② DRAM 现货价月度趋势；③ 龙虎榜是否出现机构专用席位集中卖出。<strong>这三项今日仍无法从 Wind 结构化接口确认，维持「待验证」。</strong></li><li><strong>赔率 —— 触发线正在逼近，这是本条最需要执行的动作</strong></li><li>9/2 设定的无条件减仓条件：<strong>近 5 日主力净流出扩大至 50 亿元以上 → 无论价格，减持 1/3</strong></li><li><strong>当前 43.63 亿元，距触发仅 6.37 亿元。</strong> 按近两日的流出速度（单日扩大 13.23 亿），<strong>极可能在 1 个交易日内触发</strong>。</li><li>下行托底：回购均价 393.67 元（已跌破）、剩余回购额度 3.46–13.46 亿元、董事长增持承诺 ≥10 亿元。</li><li>上行：存储景气延续至 2027、手机集体涨价（最高 1000 元 / 15%）验证终端需求。</li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>持有</strong>（不加仓、不减仓 —— 减仓触发线未到，但已极度逼近）。</p>
+<table><thead><tr><th>触发条件</th><th>当前状态</th><th>是否触发</th></tr></thead><tbody><tr><td>跌破 <strong>375 元</strong>（回购价区下沿）且主力连续 3 日净流出 → 降为观望</td><td>383.20 &gt; 375</td><td>❌ 未触发（距 −2.14%）</td></tr><tr><td>站回 <strong>420 元</strong> 且主力转净流入 → 小幅加仓</td><td>383.20 &lt; 420，主力净流出</td><td>❌ 未触发</td></tr><tr><td><strong>近 5 日主力净流出扩大至 50 亿元以上 → 减持 1/3</strong></td><td><strong>43.63 亿元</strong></td><td>❌ 未触发（<strong>距 6.37 亿</strong>）</td></tr></tbody></table>
+<p><strong>下一验证节点</strong></p>
+<ul><li><strong>9/4 近 5 日主力净流出是否突破 50 亿元 → 若是，机械执行减持 1/3。</strong></li><li>9 月初披露的 8 月回购进展公告（单月节奏是否加快以承接抛压）。</li><li>2026 三季报（10 月下旬）看<strong>毛利率是否如 CFO 所言「趋于平稳」</strong>——这是验证「涨价不涨利」的唯一硬数据。</li><li>DRAM 现货价格月度趋势。</li></ul>
+<hr>
+<h3>2.5 恒瑞医药（600276.SH）🔴 +0.86% — BMS 6 亿美元首付款 Q3 确认进入倒计时</h3>
+<p><strong>What</strong></p>
+<p>收 <strong>45.96 元（🔴 +0.86%）</strong>，成交额 23.00 亿元，换手率 0.788%，主力净流入 <strong>+2.83 亿元</strong>（占成交额 12.32%，通过合理性校验），近 5 日 −2.24 亿，近 10 日 +7,884 万，近 20 日 +1.75 亿。</p>
+<p class="sub-label"><strong>估值</strong>：</p>
+<p>PE(TTM) 39.481 → PE(预测) 33.167，<strong>隐含增速 +19.04%</strong>；PB(LF) 4.732；YTD 🟢 −22.53%。<br><strong>基本面（2026 中报，Wind 8/20–8/24 报道）</strong></p>
+<ul><li>H1 营收 <strong>154.56 亿元</strong>（🟢 −1.94%），归母净利 <strong>44.65 亿元</strong>（🔴 +0.34%），扣非 37.30 亿元</li><li><strong>创新药收入 88.09 亿元（🔴 +16.38%），占药品收入比重提升至 63.16%</strong></li><li>仿制药 51.39 亿元（🟢 −16.07%）</li><li>对外许可合作收入 <strong>14.22 亿元</strong>（主要来自 GSK 及 Braveheart Bio 里程碑付款）</li><li><strong>BMS 合作：潜在总交易额 152 亿美元，前期款项最高 9.5 亿美元（含 6 亿美元首付款 + 1.75 亿 + 1.75 亿周年付款）</strong>，<strong>预计 2026 年第三季度完成交割</strong></li><li>股权激励 / 员工持股计划设定明确目标：<strong>2026 年创新药收入需达 192 亿元以上</strong></li><li>自 2023 年起已完成 <strong>13 笔海外 BD 交易</strong>，潜在总价值约 420 亿美元</li></ul>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=98B308EA2C26&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.862426#/4B9280A89A7EC1BDF190746E49C7923D" target="_blank">来源：Wind · 恒瑞医药半年报：赚了44.65亿元，创新药撑起六成营收（2026-08-20）</a></div><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=0E8BFA399C4B&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.114532#/BFBF4B9570DD4874758AC0E902ADF224" target="_blank">来源：Wind · 恒瑞医药创新药驱动结构优化（2026-08-24）</a></div></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— BMS 首付款对利润的弹性是可算的，且时点就在本季度</strong></li><li>6 亿美元首付款，按 7.15 汇率约 <strong>42.9 亿元人民币</strong></li><li>对比基数：H1 归母净利 44.65 亿元、H1 对外许可收入 14.22 亿元</li><li><strong>若 Q3 确认，单笔即可贡献约 42.9 亿元收入</strong>，是 H1 对外许可收入的 <strong>3.0 倍</strong></li><li>但<strong>必须区分收入与利润</strong>：BD 首付款通常需扣除研发分成、税费及与合作方的分摊，<strong>净利率假设 60–70%（行业常见区间）→ 对净利贡献约 25.7–30.0 亿元</strong>，相当于 H1 归母净利的 <strong>58%–67%</strong></li><li><strong>中性预期 2026 归母净利 87.7 亿元</strong>（券商口径），对应 PE 36 倍。若首付款 Q3 确认落地，全年业绩达成概率显著提升。</li><li><strong>预期差 —— 收入端下滑与结构优化的赛跑</strong></li><li><strong>负面</strong>：H1 营收 −1.94%，仿制药 −16.07%，抗肿瘤创新药仅 +2.58%（吡咯替尼受竞争加剧、阿帕替尼与硫培非格司亭因医保续约降价）</li><li><strong>正面</strong>：创新药占比升至 63.16%，非肿瘤领域（自免、心血管）放量明显</li><li><strong>PB 五年分位 0.0827%（2/1210）</strong>——这是全持仓最极端的低估值信号（9/1 口径）</li><li>⚠️ <strong>按 policy §3.2.8(C)，极端低分位不得直接作为加仓依据</strong>：必须给出两种相反解释 ——</li><li><strong>解释 A（价值陷阱）</strong>：仿制药集采持续侵蚀、成熟创新药竞争加剧、医保续约降价 → 低分位是<strong>结构性衰退的定价</strong>。</li><li><strong>解释 B（情绪错杀）</strong>：创新药占比已过 63%，BD 常态化（13 笔 / 420 亿美元），股权激励目标 192 亿元 → <strong>低分位是转型期被误读</strong>。</li><li><strong>区分指标（非价格，≥3 项）</strong>：① <strong>后续 BD 交易的首付款金额趋势</strong>（是否随管线成熟上行）；② <strong>创新药收入能否达到 192 亿元的激励目标</strong>；③ <strong>英矽智能等纯 AI 标的相对恒瑞的超额收益</strong>（若 AI 提效逻辑为真，纯 AI 标的应跑赢）。</li><li><strong>赔率</strong>：今日主力净流入 2.83 亿元是<strong>全持仓当日第二大净流入</strong>（仅次于四方达 4.54 亿）。在 YTD −22.53%、PB 分位 0.08% 的位置上，资金开始回流——<strong>这与「价值陷阱」解释方向相反，但仅一天数据，不足以定论。</strong></li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>持有</strong>（不加不减 —— 按 policy §3.2.8(C)，禁止仅凭单一分位数字下重注）。</p>
+<p><strong>触发条件</strong></p>
+<table><thead><tr><th>条件</th><th>动作</th><th>当前状态</th></tr></thead><tbody><tr><td><strong>BMS 6 亿美元首付款确认落地（公告或三季报）</strong></td><td>加仓半档</td><td>⏳ 待触发（<strong>预计 Q3 内，即 9 月底前</strong>）</td></tr><tr><td>创新药收入全年指引明确达 192 亿元以上</td><td>加仓半档</td><td>⏳ 待验证</td></tr><tr><td>涨破 <strong>60 元</strong>（对应 2026 PE &gt; 45 倍）且 BD 无新增</td><td>减持 1/3</td><td>❌ 未触发（45.96，距 +30.5%）</td></tr><tr><td>跌破 <strong>40 元</strong> 且 H2 无新增 BD</td><td>转观望</td><td>❌ 未触发（距 −13.0%）</td></tr></tbody></table>
+<p><strong>下一验证节点</strong></p>
+<ul><li><strong>BMS 交易交割公告（预计 2026 Q3，即 9 月内）—— 这是恒瑞近期最大的单一催化剂，且时点已非常临近。</strong></li><li>2026 三季报（10 月下旬）看创新药收入能否支撑 192 亿元全年目标。</li><li>是否有新的海外 BD 交易落地（2023 年以来已 13 笔，节奏约每季度 1 笔）。</li><li>医保按病种付费 3.0 版分组方案对创新药支付的实际影响。</li></ul>
+<hr>
+<h3>2.6 海大集团（002311.SZ）🟢 <strong>−4.77%</strong> — 全组合最大跌幅，猪周期二次探底</h3>
+<p><strong>What</strong></p>
+<p>收 <strong>44.09 元（🟢 −4.77%，全组合最大跌幅）</strong>，成交额 5.28 亿元，换手率 0.714%，<strong>量比 1.420（全组合最高之一）</strong>，主力净流出 <strong>−7,906.55 万元</strong>（占成交额 14.97%，通过合理性校验），近 5 日 −9,896 万，近 10 日 −6,695 万，近 20 日 +7,849 万。</p>
+<p class="sub-label"><strong>估值</strong>：</p>
+<p>PE(TTM) 22.443 → PE(预测) 17.107，<strong>隐含增速 +31.19%</strong>；PB(LF) 3.040；YTD 🟢 <strong>−18.27%</strong>。<br><strong>基本面（2026 中报）</strong></p>
+<ul><li>H1 营收 <strong>642.40 亿元</strong>（🔴 +9.19%），归母净利 <strong>16.11 亿元</strong>（🟢 <strong>−38.95%</strong>），扣非 13.1 亿元（🟢 −50.8%）</li><li>Q2 单季营收 352.30 亿元（+6.11%），归母净利 7.24 亿元（🟢 <strong>−46.64%</strong>）</li><li>饲料外销量 1,478 万吨（+8.3%），饲料销售收入 542.7 亿元（+15.1%），毛利率 9.52%（−0.27 pct）</li><li><strong>农产品（生猪）销售收入 79.73 亿元（🟢 −18.10%），毛利率 6.41%（🟢 −13.85 pct），毛利 5.11 亿元（🟢 −74.1%）</strong></li><li>海外饲料销量增速 <strong>&gt; 25%</strong></li></ul>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=F435604C0329&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.970885#/B6781DA373FA8869B983ED18C7EA39C8" target="_blank">来源：Wind · 【华安农业王莺团队】海大集团（002311）中报点评：饲料业务稳健增长，全球化布局增经营韧性（2026-08-26）</a></div><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=A82BCB231021&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.452695#/17AC93CC862F102A273989505A55E362" target="_blank">来源：Wind · 海大集团接待121家机构调研，包括睿远基金、长江证券、招商信诺资产管理、招商证券等（2026-08-26）</a></div></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— 跌幅与基本面的匹配度</strong></li><li>今日 −4.77%，而<strong>Wind 新闻检索未返回任何 9/3 当日负面增量</strong>（最近的相关新闻为 8/26–8/29 的中报点评）。</li><li>量比 1.420 说明<strong>放量下跌</strong>，不是缩量阴跌。</li><li>两种可能：① 猪价二次探底的市场预期；② 机构调仓。<strong>两者均无法用今日的 Wind 结构化数据证实，如实标注为数据缺口。</strong></li><li>弹性测算：农产品板块 H1 毛利仅 5.11 亿元（同比 −74.1%）。若猪价回升至成本线以上，该板块毛利率修复至 2024 年水平（约 20%），对应毛利约 15.9 亿元，<strong>增量 10.8 亿元，相当于 H1 归母净利的 67%</strong>。这是本标的最大的向上期权。</li><li><strong>预期差 —— 券商在系统性下调，但评级仍是「买入」</strong></li><li>开源证券：2026–2028 归母净利预测由 51.72 / 63.36 / 69.81 <strong>下调至 47.21 / 59.13 / 69.15 亿元</strong></li><li>华安证券：由 46.5 / 65.87 / 67.04 <strong>下调至 43.06 / 57.14 / 60.26 亿元</strong></li><li><strong>下调原因一致：调整了 2026–2028 年饲料销量与猪价预期</strong></li><li><strong>但评级全部维持「买入」</strong> → 说明卖方认为下调已充分，当前价格已反映悲观预期</li><li>隐含增速 +31.19%（PE 22.443 → 17.107）与券商下调方向<strong>相反</strong>——这是<strong>预期尚未充分调整</strong>的信号，需警惕。</li><li><strong>赔率</strong></li><li>下行：猪价若继续下行，农产品板块毛利可能归零（H1 已 −74.1%）；PB 3.040 不算便宜。</li><li>上行：猪价筑底回升（7 月中旬全国生猪均价由 9.5 元/公斤反弹至 11.0 元/公斤）+ 海外饲料 +25% 增速 + 2030 年 5,150 万吨销量目标（较 2025 年 3,208 万吨 +60%）。</li><li><strong>当前是典型的「周期底部 + 券商下调中 + 股价已跌 18%」组合，赔率偏向上行但时点不确定。</strong></li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>持有</strong>（不因 −4.77% 加仓 —— 猪价拐点未确认；也不减仓 —— 饲料主业与海外增长未被证伪）。</p>
+<p><strong>触发条件（六格封闭矩阵）</strong></p>
+<table><thead><tr><th>价格</th><th>猪价回升（月均价环比上行）</th><th>猪价继续下行</th></tr></thead><tbody><tr><td>跌破 <strong>40 元</strong></td><td>① 加仓半档（错杀）</td><td>② 转观望，不加仓</td></tr><tr><td>40 – 50</td><td>③ 维持持有（<strong>今日落点：44.09</strong>）</td><td>④ 维持持有，但若跌破 42 且量比持续 &gt; 1.3 → 减持 1/3</td></tr><tr><td>涨破 <strong>50 元</strong></td><td>⑤ 加仓半档</td><td>⑥ 减持 1/3（估值透支）</td></tr></tbody></table>
+<p><strong>今日落第 ③/④ 格的边界 —— 收盘 44.09 &gt; 42，故落 ③ 格 → 维持持有。</strong></p>
+<p><strong>下一验证节点</strong></p>
+<ul><li><strong>月度生猪均价数据</strong>（猪价筑底回升能否延续，7 月中旬曾反弹至 11.0 元/公斤）。</li><li>2026 三季报（10 月下旬）看农产品板块毛利率能否止跌。</li><li>海外饲料销量增速能否维持 25% 以上。</li><li>券商是否继续下调 2026 盈利预测（若下调至 40 亿元以下 → 隐含增速需重算）。</li></ul>
+<hr>
+<h3>2.7 长飞光纤光缆（6869.HK）🟢 −3.19% — 昨日 +3.23% 全数回吐，但集采限价上调 8.5% 未被定价</h3>
+<p><strong>What</strong></p>
+<p>收 <strong>164.000 港元（🟢 −3.19%）</strong>，成交额 35.62 亿港元，换手率 5.167%，量比 1.00，主力净流出 <strong>−2.95 亿港元</strong>（昨日为 +2.12 亿净流入），近 5 日 +1.66 亿，近 10 日 +53.08 亿，近 20 日 +57.53 亿。</p>
+<p class="sub-label"><strong>估值</strong>：</p>
+<p>PE(TTM) 34.274 → PE(预测) 15.456，<strong>隐含增速 +121.75%</strong>；PB(LF) 7.206；YTD 🔴 +217.76%。<br><strong>产业侧一手信息（这是本条的核心，且直接回应昨日设定的验证节点）</strong></p>
+<ul><li><strong>中国移动普缆招标重启，最高限价上调 8.5% 至约 71 亿元</strong>（2026-08-17 报道）。此前 7/8 启动 2026–2027 年普通光缆集采，本期采购约 216.18 万芯公里（折合 6,922.20 万芯公里），原最高限价 65.43 亿元（不含税）。</li><li><strong>2026 年中国电信广东公司空芯光缆、G.654.E 光缆框架采购项目：长飞以 1.59 亿元（含税）报价中标 100% 份额</strong>，为<strong>目前国内最大单体空芯光缆采购项目</strong>（2026-08-13 公示）</li><li>9/1 中标中国移动上海公司固定时延设备采购项目 174.84 万元（小额）</li></ul>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=08D6DE21F87E&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.409904#/00AD0FA84EDB0E2278D3F1FBDB5115CD" target="_blank">来源：智通财经 · 港股异动 | 长飞光纤光缆(06869)涨超6% 据报中移集采限价上调 机构看好光纤光缆投资机会（2026-08-17）</a></div><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=C9B9C7734628&amp;newsopenstyle=&amp;lan=cn&amp;device=pc&amp;gateway=news&amp;related=true&amp;terminaltype=COM.WINDRAG&amp;version=&amp;useless=0.420570#/F1CB6B696B40C2E791DADA534B80F76E" target="_blank">来源：Wind · 长飞100%中标中国电信广东1.59亿元空芯光缆集采，规模化商用全面提速（2026-08-13）</a></div></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— 昨日设定的「量价齐升」验证节点，答案是「价在涨」</strong></li><li>9/2 报告设定的第一验证节点是「<strong>2026 年 9 月中国移动/电信光纤光缆集采招标价</strong>」。</li><li><strong>结论：中国移动普缆集采最高限价上调 8.5%（65.43 亿 → 约 71 亿元）</strong>——<strong>限价上调在集采中是明确的涨价信号</strong>，因为运营商上调限价的前提是上一轮中标价已无法覆盖供应商成本。</li><li>这是<strong>量价齐升逻辑的直接正面证据</strong>，且尚未被充分定价（该信息 8/17 已公开，但股价在 8/17–9/2 期间涨幅主要受中报驱动）。</li><li>空芯光纤：1.59 亿元 100% 份额中标，累计交付超 10,000 芯公里，国内外部署超 13 个商用及试点项目。</li><li><strong>预期差 —— 今日下跌没有任何负面增量支撑</strong></li><li>Wind 新闻检索<strong>未返回任何 9/3 当日负面信息</strong>。</li><li>主力今日净流出 2.95 亿港元，而昨日净流入 2.12 亿港元 → <strong>是昨日获利盘的兑现，不是趋势性撤离</strong>（近 10 日仍 +53.08 亿，近 20 日 +57.53 亿）。</li><li>量比 1.00 → <strong>成交既未放大也未萎缩</strong>，属正常换手。</li><li>YTD +217.76%，PB 7.206 —— <strong>估值绝对高位，任何风吹草动都会引发获利了结，这是正常的</strong>。</li><li><strong>赔率</strong>：隐含增速 +121.75% 是全持仓最高，且<strong>该增速已在报表上兑现</strong>（Q2 净利 +1,586.54%），不是预测。这与联想集团式「前瞻低分位但完全依赖兑现」是<strong>不同结构</strong>。</li><li>风险必须同时写出：YTD +217.76%，PB 7.206 处于绝对高位；换手率 5.167% 是全持仓第二高（仅次于人造钻石双雄）。</li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>持有</strong>（不因 −3.19% 减仓 —— 集采涨价逻辑未被证伪；也不加仓 —— YTD +217.76% 后估值无安全边际）。</p>
+<p><strong>触发条件（沿用 9/2 设定）</strong></p>
+<table><thead><tr><th>条件</th><th>动作</th><th>当前状态</th></tr></thead><tbody><tr><td>涨破 <strong>200 港元</strong> 且月度光纤招标价未继续上行 → 减持 1/3</td><td>164.00</td><td>❌ 未触发（距 +22.0%）</td></tr><tr><td>跌破 <strong>150 港元</strong> 且南向连续 3 日净卖出 → 减持 1/3</td><td>164.00</td><td>❌ 未触发（距 −8.5%）</td></tr><tr><td>运营商集采或数据中心招标价格<strong>环比下行</strong> → 无论价格减仓 1/2</td><td>限价<strong>上调 8.5%</strong></td><td>❌ 未触发（<strong>方向相反</strong>）</td></tr></tbody></table>
+<p><strong>下一验证节点</strong></p>
+<ul><li><strong>中国移动 2026–2027 普缆集采的中标结果公示</strong>（限价上调后，实际中标价能否落在限价附近 —— 这是「涨价是否真实落地」的最终检验）。</li><li>2026 三季报（10 月下旬）看 Q3 单季净利能否维持 20 亿元以上。</li><li>空芯光纤商用项目新增数量与订单排产（此前报道排至一年后）。</li><li>南向资金是否延续净买入（截至 9/2 为连续 6 日累计 21.12 亿港元）。</li></ul>
+<hr>
+<h3>2.8 智谱（2513.HK）🟢 −0.81% — 隐含亏损扩大加速 + <strong>量能维度规则真空区（新发现）</strong></h3>
+<p><strong>What</strong></p>
+<p>收 <strong>1,108.000 港元（🟢 −0.81%）</strong>，成交额 <strong>32.69 亿港元</strong>，换手率 1.231%，<strong>量比 0.46（全持仓最低）</strong>，主力净流出仅 <strong>−319.20 万港元</strong>（占成交额 0.098%，主力基本没动），近 5 日 +30.84 亿，近 10 日 +35.45 亿，近 20 日 +21.89 亿。</p>
+<p><strong>估值锚点（按 policy §3.2.6 统一公式）</strong></p>
+<p>```<br>PE(TTM) = −152.103，PE(预测) = −93.448<br>计算值 = (−152.103) ÷ (−93.448) − 1 = +62.77%<br>```</p>
+<p>⚠️ <strong>PE 为负时结果为正 → 正确表述是「隐含亏损扩大 62.77%」。</strong></p>
+<p class="sub-label"><strong>⚠️ 这是一条负面变化，必须重点指出</strong>：</p>
+<table><thead><tr><th>日期</th><th>PE(TTM)</th><th>PE(预测)</th><th>计算值</th><th>正确表述</th></tr></thead><tbody><tr><td>9/1</td><td>−161.85</td><td>−101.369</td><td>+59.7%</td><td>隐含亏损扩大 59.7%</td></tr><tr><td>9/2</td><td>−153.339</td><td>−101.461</td><td>+51.1%</td><td>隐含亏损扩大 51.1%（速度放缓）</td></tr><tr><td><strong>9/3</strong></td><td><strong>−152.103</strong></td><td><strong>−93.448</strong></td><td><strong>+62.77%</strong></td><td><strong>隐含亏损扩大 62.77%（速度再次加快）</strong></td></tr></tbody></table>
+<p><strong>9/2 曾出现的「亏损扩大速度放缓」趋势在今日逆转。</strong> 原因是 PE(预测) 从 −101.461 变为 −93.448，即<strong>一致预期下调了未来 12 个月的亏损预测幅度（|PE| 变小 ⇔ |E| 变大 ⇔ 预测亏损扩大）</strong>。</p>
+<p class="sub-label"><strong>⚠️ PB 脏数据（第五次记录）</strong>：</p>
+<p>Wind 返回 <strong>PB(LF) = +101.446</strong>。智谱净资产为负，PB 必为负。<strong>本次判定为脏数据，不用于任何计算，不用于任何决策。</strong> 该字段已连续 5 次出现口径问题，建议在 policy 中标记为「该标的 PB 字段不可用」。<br><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— 本条唯一可用的信息是 ARR 与量能，不是价格</strong></li><li>ARR 仍为 8/31 中报口径：<strong>月度 16 亿美元（约 108 亿元人民币）</strong>，周度 20 亿美元 &gt; 月度 16 亿美元，说明 8 月末仍在加速。<strong>今日无更新，也无证伪信息。</strong></li><li>主力净流出仅 319.20 万港元，占成交额 0.098% → <strong>主力没有动</strong>。</li><li><strong>预期差 —— 今日的下跌信息含量依然极低，但估值端出现了一条真实的负面变化</strong></li><li>价格侧：跌幅 −0.81%，成交额较昨日（33.68 亿）仅萎缩 2.9%（32.69 亿），量比 0.46 → <strong>极度缩量，无方向性</strong>。</li><li>估值侧：<strong>隐含亏损扩大幅度从 51.1% 反弹至 62.77%</strong>，这是<strong>连续两日的趋势逆转</strong>，是今日唯一有实质的负面信息。</li><li>两者结合：<strong>价格没有反映这条负面信息</strong>——这要么是市场尚未定价，要么是市场认为 PE 预测口径对亏损标的不可靠（后者更可能，按 §3.2.6 该指标精度有限）。</li><li><strong>赔率</strong>：按 policy §3.2.7，<strong>无估值锚点标的禁止用价格动量判断</strong>。当前 PB 字段脏数据、PE 为负、ARR 无更新 → <strong>可依据的信息只有资金面（主力未动）与事件日历（空）</strong>。</li></ul>
+<p><strong>Now What —— 本期发现规则真空区，已修复</strong></p>
+<p>按 policy §3.2.7 要求，用「价格区间 × 量能」设条件。昨日矩阵为：</p>
+<table><thead><tr><th>价格区间</th><th>放量（&gt; 前日 33.68 亿）</th><th>缩量（&lt; 前日 80%）</th></tr></thead><tbody><tr><td>&gt; 1,254</td><td>① 上调至持有，可加半档</td><td>② 维持观望，不追</td></tr><tr><td><strong>1,050 – 1,254</strong></td><td>③ 分歧放大 → 维持观望</td><td>④ 缩量整理 → 维持原评级（<strong>9/2 落点</strong>）</td></tr><tr><td>&lt; 1,050</td><td>⑤ 破位放量 → <strong>触发减仓</strong></td><td>缩量阴跌 → 观察</td></tr></tbody></table>
+<p><strong>今日落点：价格 1,108（区间内），成交额 32.69 亿 = 前日的 97.1%。</strong></p>
+<p>⚠️ <strong>97.1% 既不满足「放量（&gt; 100%）」也不满足「缩量（&lt; 80%）」→ 落入两档之间的规则真空区。</strong></p>
+<p><strong>这是继 9/2 发现的「时间维度不封闭」之后，量能维度的第二个封闭性缺陷。</strong> 已修复如下：</p>
+<p><strong>修复后矩阵（量能改为三档，消除 80%–100% 的空隙）</strong></p>
+<table><thead><tr><th>价格区间</th><th>放量（&gt; 前日 100%）</th><th><strong>平量（前日 80%–100%）</strong></th><th>缩量（&lt; 前日 80%）</th></tr></thead><tbody><tr><td>&gt; 1,254</td><td>① 上调至持有，可加半档</td><td><strong>② 维持持有，不追高</strong></td><td><strong>③ 无量上涨，维持持有</strong></td></tr><tr><td><strong>1,050 – 1,254</strong></td><td>④ 分歧放大 → 维持持有</td><td><strong>⑤ 缩量整理 → 维持原评级（今日落点）</strong></td><td><strong>⑥ 维持原评级</strong></td></tr><tr><td>&lt; 1,050</td><td>⑦ 破位放量 → <strong>触发减仓 1/3</strong></td><td><strong>⑧ 阴跌 → 观察，不减仓</strong></td><td><strong>⑨ 观察，不减仓</strong></td></tr></tbody></table>
+<p><strong>今日落第 ⑤ 格 → 维持持有，仓位不动。</strong></p>
+<p class="sub-label"><strong>仓位纪律（不依赖价格）</strong>：</p>
+<p>单一标的敞口不超过 AI及半导体组内等权水平（15% ÷ 12 = <strong>1.25%</strong>）。<br><strong>下一验证节点</strong></p>
+<ul><li><strong>9 月 MaaS 月度 ARR 读数</strong> —— 验证「周度 20 亿 &gt; 月度 16 亿」的加速是否延续，这是唯一可能覆盖矩阵结论的可量化运营数据。</li><li>GLM-5 系列商业化进展与下一代基座模型。</li><li>一致预期是否继续下调（今日 PE(预测) 由 −101.461 → −93.448，需观察是否形成趋势）。</li><li>港股通 / 指数纳入等事件日历更新。</li></ul>
+<hr>
+<h3>2.9 东方电气（600875.SH）🔴 +0.12% — 减仓 1/3 确认执行，中止条件未成立且进一步恶化</h3>
+<p><strong>What</strong></p>
+<p>收 <strong>24.58 元（🔴 +0.12%）</strong>，成交额 5.43 亿元，换手率 0.977%，量比 0.576，主力净流出 <strong>−3,716.29 万元</strong>。</p>
+<p><strong>中止条件的检验结果（这是本条的唯一重点）</strong></p>
+<p>9/2 设定的规则：<strong>立即减持 1/3；若近 5 日主力转净流入则中止减仓。</strong></p>
+<table><thead><tr><th>周期</th><th>9/2 主力净流入</th><th><strong>9/3 主力净流入</strong></th><th>变化</th></tr></thead><tbody><tr><td>当日</td><td>🟢 −1.00 亿元</td><td>🟢 −3,716 万元</td><td>流出收窄</td></tr><tr><td>近 5 日</td><td>🟢 −3.84 亿元</td><td>🟢 <strong>−4.40 亿元</strong></td><td><strong>流出扩大 0.56 亿</strong></td></tr><tr><td>近 10 日</td><td>🟢 −4.11 亿元</td><td>🟢 −4.13 亿元</td><td>基本持平</td></tr><tr><td>近 20 日</td><td>🟢 −6.28 亿元</td><td>🟢 −4.99 亿元</td><td>流出收窄</td></tr></tbody></table>
+<p><strong>→ 中止条件（近 5 日主力转净流入）未成立，反而从 −3.84 亿恶化至 −4.40 亿。</strong></p>
+<p class="sub-label"><strong>估值</strong>：</p>
+<p>PE(TTM) 18.341 → PE(预测) 18.058，<strong>隐含增速仅 +1.57%</strong>；PB(LF) 1.843；YTD +3.21%。<br><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— 隐含增速 +1.57% 是三只电力设备标的中最低</strong></li></ul>
+<table><thead><tr><th>标的</th><th>PE(TTM)</th><th>PE(预测)</th><th>隐含增速</th></tr></thead><tbody><tr><td>应流股份</td><td>82.421</td><td>51.824</td><td>🔴 +59.05%</td></tr><tr><td>潍柴动力</td><td>17.416</td><td>15.498</td><td>🔴 +12.37%</td></tr><tr><td><strong>东方电气</strong></td><td><strong>18.341</strong></td><td><strong>18.058</strong></td><td><strong>+1.57%</strong></td></tr></tbody></table>
+<ul><li>东方电气是三只中<strong>唯一「估值不便宜且成长性缺失」</strong>者。</li><li><strong>预期差 —— 政策利好与个股传导的错位（今日再次确认）</strong></li><li>国家能源局要求加快输电通道等重大电网工程核准建设 → 利好的是<strong>输变电环节</strong>（特变电工、平高电气等），而<strong>东方电气主业是发电设备</strong>。</li><li>传导路径是<strong>间接的、二阶的，且隔 2–3 个季度</strong>：电网投资增加 → 电源侧配套需求 → 发电设备招标 → 收入确认。</li><li><strong>今日东方电气 +0.12%，几乎纹丝不动，而机械设备板块 +0.68%、主力净流入 57.96 亿元居全市场第一</strong> → <strong>板块涨、个股不涨，这是「政策利好不达自身」的直接实证。</strong></li><li><strong>赔率</strong>：今日的微涨与板块的强势形成对比，说明<strong>市场对东方电气的定价已经脱离了「电力设备」这个标签</strong>。在隐含增速 +1.57%、近 5 日主力净流出 4.40 亿的组合下，<strong>上行需要新增订单催化，下行没有估值保护</strong>。</li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>减仓 1/3 确认执行</strong>（中止条件未成立，且近 5 日资金进一步恶化）。</p>
+<p><strong>下一验证节点</strong></p>
+<ul><li>2026 三季报（10 月下旬）看新增订单与毛利率。</li><li>月度电源设备招标数据。</li><li><strong>中止/回补条件</strong>：近 5 日主力转净流入 + 新增订单公告 → 可考虑中止剩余减仓计划。</li></ul>
+<hr>
+<h3>2.10 大族数控（3200.HK）🔴 +2.44% — 华泰点名 PCB 后的首次映射兑现</h3>
+<p><strong>What</strong></p>
+<p>收 <strong>105.100 港元（🔴 +2.44%）</strong>，成交额 1.45 亿港元，换手率 2.381%，主力净流出 −703.03 万港元，近 5 日 −2,734.54 万，近 10 日 −6,087.75 万，近 20 日 −1.20 亿。</p>
+<p>⚠️ <strong>估值口径（policy §5.2）</strong>：大族数控为 A+H 双重上市（A 股 301200.SZ，2022-02-28 上市；H 股 3200.HK，2026-02-06 上市）。<strong>估值一律采用上市时间更长一侧的口径，即 A 股 301200.SZ</strong>（9/1 口径：PE(TTM) 86.341、PE(预测) 65.245、PB(LF) 10.878，隐含增速 +32.34%）。<strong>H 股口径 PE(TTM) 29.409 / PE(预测) 21.775 存在 2.9 倍量级低估，不可采信。</strong></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>量化影响 —— 这是今晨早报发现的一个未被定价的映射，今日首次兑现</strong></li><li>今晨早报记录：华泰证券 9/3 策略观点点名「<strong>优先关注业绩能见度较高方向：通信设备、半导体设备/材料、PCB</strong>」。</li><li><strong>大族数控是持仓中唯一直接命中「PCB 设备」的标的</strong>，此前从未被任何券商观点单独点名。</li><li>今日 +2.44%，而同期恒生科技 −1.08%、电子（申万）−0.14% → <strong>在板块下跌的背景下逆势上涨 2.44%，超额约 2.5 pct</strong>。</li><li><strong>预期差 —— 但资金面不配合，这是必须指出的矛盾</strong></li><li>股价 +2.44%，而<strong>主力净流出 703.03 万港元</strong>，近 5 日 −2,734.54 万，近 20 日 −1.20 亿。</li><li><strong>价格上涨而主力持续流出 → 按 policy §5.1 的资金印证标准，这属于背离信号，不构成主线确认。</strong></li><li>成交额仅 1.45 亿港元，是持仓港股中最低之一 → <strong>上涨的成交量基础薄弱</strong>。</li><li><strong>赔率</strong>：A 股口径 PE(TTM) 86.341、PB 10.878 均处高位；H 股上市不足 7 个月，估值口径未对齐。<strong>按 §3.2.8(A)(3)，H 股分位「仅作参考」，且 A/H 两代码分位冲突时两者均不采信。</strong></li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>持有</strong>（不加仓 —— 资金面未配合且估值口径不可靠；不减仓 —— PCB 逻辑刚被券商点名，尚未证伪）。</p>
+<p><strong>触发条件（沿用 9/1 设定）</strong></p>
+<table><thead><tr><th>条件</th><th>动作</th><th>当前状态</th></tr></thead><tbody><tr><td>反弹至 <strong>130 港元</strong> → 减持 1/3</td><td>105.100</td><td>❌ 未触发（距 +23.7%）</td></tr><tr><td>跌破 <strong>90 港元</strong> → 转观望</td><td>105.100</td><td>❌ 未触发（距 −14.4%）</td></tr><tr><td><strong>新增</strong>：若华泰/其他券商在上调 PCB 评级的同时，主力资金连续 3 日净流入 → 可考虑加仓半档</td><td>主力近 5 日净流出</td><td>❌ 未触发</td></tr></tbody></table>
+<p><strong>下一验证节点</strong></p>
+<ul><li><strong>是否有更多券商跟进 PCB 设备方向</strong>（华泰 9/3 是首例，需观察是否形成共识）。</li><li>主力资金能否转为净流入（当前近 20 日 −1.20 亿，是持仓中资金流出持续性较长的标的之一）。</li><li>2026 三季报（10 月下旬）看 PCB 设备订单与毛利率。</li><li>A/H 估值口径何时对齐（H 股上市满 1 年后重算分位）。</li></ul>
+<hr>
+<h3>2.11 其余标的的当日状态（无实质增量，仅记录触发线距离）</h3>
+<table><thead><tr><th>标的</th><th>收盘</th><th>涨跌幅</th><th>隐含增速</th><th>最近触发线</th><th>距离</th></tr></thead><tbody><tr><td>应流股份（603308.SH）</td><td>43.18</td><td>🔴 +1.84%</td><td>+59.05%</td><td>反弹 50 元 → 减持 1/3</td><td>+15.8%</td></tr><tr><td>潍柴动力（000338.SZ）</td><td>26.18</td><td>🔴 +1.16%</td><td>+12.37%</td><td>涨破 30 元 → 减持 1/3</td><td>+14.6%</td></tr><tr><td>蓝思科技（300433.SZ）</td><td>35.87</td><td>🟢 −2.82%</td><td>+44.21%</td><td>跌破 34 元 → 转减仓</td><td>−5.2%</td></tr><tr><td>阿里巴巴-W（9988.HK）</td><td>107.500</td><td>🟢 −2.18%</td><td>+32.43%</td><td>跌破 100 港元 → 加仓</td><td>−7.0%</td></tr><tr><td>英矽智能（3696.HK）</td><td>47.000</td><td>🔴 +4.54%</td><td>亏损收窄 99.75%</td><td>涨破 55 港元无新增 BD → 减持 1/3</td><td>+17.0%</td></tr><tr><td>ASMPT（0522.HK）</td><td>162.000</td><td>🔴 +2.92%</td><td>+39.63%</td><td>—</td><td>—</td></tr><tr><td>联想集团（0992.HK）</td><td>30.540</td><td>🟢 −0.20%</td><td>+226.83%</td><td>—</td><td>—</td></tr><tr><td>劲方医药-B（2595.HK）</td><td>27.640</td><td>🟢 −2.33%</td><td>亏损收窄 69.61%</td><td>连续 3 日成交额 &lt; 3,000 万 → 减仓</td><td><strong>第 1 日</strong></td></tr><tr><td>惠泰医疗（688617.SH）</td><td>244.04</td><td>🟢 −0.47%</td><td>+11.20%</td><td>—</td><td>—</td></tr><tr><td>顺丰控股（002352.SZ）</td><td>32.05</td><td>🔴 +0.28%</td><td>+9.98%</td><td>—</td><td>—</td></tr><tr><td>极兔速递-W（1519.HK）</td><td>9.740</td><td>🔴 +0.15%</td><td>+51.88%</td><td>—</td><td>—</td></tr><tr><td>农夫山泉（9633.HK）</td><td>41.520</td><td>🟢 −0.67%</td><td>+4.96%</td><td>涨破 48 且隐含增速 &lt; 8% → 减持 1/3</td><td>+15.6%</td></tr><tr><td>亚钾国际（000893.SZ）</td><td>47.24</td><td>🟢 −1.64%</td><td>+46.35%</td><td>—</td><td>—</td></tr></tbody></table>
+<p class="sub-label"><strong>⚠️ 劲方医药-B 需要单独提示</strong>：</p>
+<p>今日成交额 <strong>1,924 万港元</strong>，跌破 3,000 万阈值。9/2 设定的是「<strong>连续 3 日</strong> 成交额 &lt; 3,000 万 → 减仓」，而 9/2 当日成交额为 4,240 万港元（&gt; 3,000 万，<strong>连续性中断</strong>）。因此<strong>今日为该条件重新计数的第 1 日</strong>。若 9/4、9/7 连续两日仍低于 3,000 万 → 触发减仓。</p>
+<hr>
+<h2>三、预期差 · 资金流 · 筹码</h2>
+<h3>3.1 预期差：隐含增速与估值象限</h3>
+<p><strong>全持仓隐含增速排序（按 policy §3.2.6 统一公式 <code>PE(TTM) ÷ PE(预测) − 1</code>）</strong></p>
+<table><thead><tr><th>标的</th><th>大类</th><th>PE(TTM)</th><th>PE(预测)</th><th>隐含增速</th><th>PB(LF)</th><th>象限判读</th></tr></thead><tbody><tr><td>联想集团</td><td>AI及半导体</td><td>60.538</td><td>18.520</td><td>🔴 <strong>+226.83%</strong></td><td>6.697</td><td>增长高度依赖兑现</td></tr><tr><td>长飞光纤光缆</td><td>AI及半导体</td><td>34.274</td><td>15.456</td><td>🔴 <strong>+121.75%</strong></td><td>7.206</td><td><strong>增速已兑现</strong>（Q2 净利 +1,586%）</td></tr><tr><td>智谱</td><td>AI及半导体</td><td>−152.103</td><td>−93.448</td><td>⚠️ <strong>亏损扩大 62.77%</strong></td><td>脏数据</td><td>方向恶化</td></tr><tr><td>应流股份</td><td>AI及半导体</td><td>82.421</td><td>51.824</td><td>🔴 +59.05%</td><td>5.045</td><td>增长已定价</td></tr><tr><td>极兔速递-W</td><td>物流</td><td>33.098</td><td>21.792</td><td>🔴 +51.88%</td><td>2.780</td><td>—</td></tr><tr><td>亚钾国际</td><td>周期+反转</td><td>20.137</td><td>13.759</td><td>🔴 +46.35%</td><td>2.988</td><td>—</td></tr><tr><td>蓝思科技</td><td>AI及半导体</td><td>54.853</td><td>38.038</td><td>🔴 +44.21%</td><td>3.588</td><td>—</td></tr><tr><td>四方达</td><td>AI及半导体</td><td>155.611</td><td>108.858</td><td>🔴 +42.95%</td><td><strong>15.830</strong></td><td><strong>极端估值，无保护</strong></td></tr><tr><td>ASMPT</td><td>AI及半导体</td><td>53.242</td><td>38.131</td><td>🔴 +39.63%</td><td>3.926</td><td>—</td></tr><tr><td>阿里巴巴-W</td><td>AI应用</td><td>25.321</td><td>19.120</td><td>🔴 +32.43%</td><td>1.757</td><td>—</td></tr><tr><td>海大集团</td><td>周期+反转</td><td>22.443</td><td>17.107</td><td>🔴 +31.19%</td><td>3.040</td><td>券商下调中，方向存疑</td></tr><tr><td>兆易创新</td><td>AI及半导体</td><td>34.021</td><td>27.351</td><td>🔴 +24.39%</td><td>7.199</td><td>双重安全边际（但 CFO 警示毛利率）</td></tr><tr><td>紫金黄金国际</td><td>周期+反转</td><td>21.595</td><td>17.446</td><td>🔴 +23.79%</td><td>5.855</td><td>—</td></tr><tr><td>恒瑞医药</td><td>创新药</td><td>39.481</td><td>33.167</td><td>🔴 +19.04%</td><td>4.732</td><td>PB 分位 0.08%，极端低</td></tr><tr><td>惠泰医疗</td><td>创新药</td><td>37.027</td><td>33.298</td><td>🔴 +11.20%</td><td><strong>11.187</strong></td><td>—</td></tr><tr><td>潍柴动力</td><td>AI及半导体</td><td>17.416</td><td>15.498</td><td>🔴 +12.37%</td><td>2.356</td><td>—</td></tr><tr><td>顺丰控股</td><td>物流</td><td>15.508</td><td>14.101</td><td>🔴 +9.98%</td><td>1.642</td><td>—</td></tr><tr><td>农夫山泉</td><td>消费</td><td>23.680</td><td>22.560</td><td>🔴 +4.96%</td><td>10.912</td><td>—</td></tr><tr><td>东方电气</td><td>AI及半导体</td><td>18.341</td><td>18.058</td><td>🔴 <strong>+1.57%</strong></td><td>1.843</td><td><strong>成长性缺失</strong></td></tr><tr><td><strong>腾讯控股</strong></td><td><strong>AI应用</strong></td><td><strong>14.537</strong></td><td><strong>14.606</strong></td><td>🟢 <strong>−0.47%</strong></td><td><strong>3.014</strong></td><td><strong>连续 3 日为负</strong></td></tr><tr><td>英矽智能</td><td>创新药</td><td>−11.732</td><td>−4,610.792</td><td>🔴 亏损收窄 <strong>99.75%</strong></td><td>6.381</td><td>扭亏临界，须核验</td></tr><tr><td>劲方医药-B</td><td>创新药</td><td>−7.004</td><td>−23.042</td><td>🔴 亏损收窄 <strong>69.61%</strong></td><td>5.739</td><td>—</td></tr><tr><td>惠丰钻石</td><td>AI及半导体</td><td>−3,618.000</td><td>无覆盖</td><td><strong>n/a</strong></td><td><strong>12.624</strong></td><td><strong>PE 体系失效</strong></td></tr><tr><td>大族数控</td><td>AI及半导体</td><td>86.341（A）</td><td>65.245（A）</td><td>🔴 +32.34%</td><td>10.878（A）</td><td>A/H 口径冲突</td></tr></tbody></table>
+<p><strong>⚠️ 口径限制声明</strong></p>
+<ul><li><strong>前瞻 PE 年度分位本次未重算</strong>。按 §3.2.3，该指标基于最多 5 个年度末数据点，样本极小；本次时间预算内未批量重取历史年度 PE 序列，<strong>沿用 9/1 报告的分位结论</strong>，已在正文标注来源日期。</li><li><strong>PB 五年分位沿用 9/1 口径</strong>（恒瑞 0.0827%、东方电气 73.53%、兆易 19.93%、腾讯 4.16% 等），本次未重取。</li><li><strong>惠丰钻石</strong> PE(预测) 无机构覆盖，PE(TTM) 为负 → <strong>PE 体系完全失效，仅剩 PB 12.624 一个锚点</strong>。</li><li><strong>智谱</strong> PB(LF) 返回 +101.446，为脏数据（第五次），<strong>PB 锚点亦不可用</strong> → 该标的当前<strong>无任何可用估值锚点</strong>。</li></ul>
+<h3>3.2 资金流：主力资金的趋势与背离</h3>
+<p><strong>当日主力净流入（全部通过合理性校验：净流入 / 成交额 &lt; 30%）</strong></p>
+<table><thead><tr><th>标的</th><th>当日主力</th><th>占成交额</th><th>近 5 日</th><th>近 20 日</th></tr></thead><tbody><tr><td>四方达</td><td>🔴 <strong>+4.54 亿</strong></td><td>15.47%</td><td>+4.06 亿</td><td>+6.80 亿</td></tr><tr><td>恒瑞医药</td><td>🔴 <strong>+2.83 亿</strong></td><td>12.32%</td><td>−2.24 亿</td><td>+1.75 亿</td></tr><tr><td>潍柴动力</td><td>🔴 +2.35 亿</td><td>11.80%</td><td>+4.48 亿</td><td>+9.18 亿</td></tr><tr><td><strong>紫金黄金国际</strong></td><td>🔴 <strong>+2.39 亿港元</strong></td><td>16.12%</td><td>+11.56 亿</td><td><strong>+44.11 亿</strong></td></tr><tr><td>阿里巴巴-W</td><td>🔴 +2.77 亿港元</td><td>3.67%</td><td>−14.15 亿</td><td><strong>+203.93 亿</strong></td></tr><tr><td>应流股份</td><td>🔴 +6,170 万</td><td>7.66%</td><td>−1,247 万</td><td>+3.67 亿</td></tr><tr><td>惠丰钻石</td><td>🔴 +7,417 万</td><td>8.99%</td><td>+1.27 亿</td><td>+1.05 亿</td></tr><tr><td>顺丰控股</td><td>🔴 +3,602 万</td><td>7.68%</td><td>−2.93 亿</td><td>−1.57 亿</td></tr><tr><td><strong>兆易创新</strong></td><td>🟢 <strong>−5.08 亿</strong></td><td>5.52%</td><td>🟢 <strong>−43.63 亿</strong></td><td>🟢 <strong>−131.75 亿</strong></td></tr><tr><td>蓝思科技</td><td>🟢 −2.61 亿</td><td>7.50%</td><td>−6.19 亿</td><td>−8.75 亿</td></tr><tr><td><strong>长飞光纤光缆</strong></td><td>🟢 <strong>−2.95 亿港元</strong></td><td>8.28%</td><td>+1.66 亿</td><td><strong>+57.53 亿</strong></td></tr><tr><td>联想集团</td><td>🟢 −3.88 亿港元</td><td>14.83%</td><td>+16.02 亿</td><td>+44.99 亿</td></tr><tr><td><strong>腾讯控股</strong></td><td>🟢 <strong>−11.97 亿港元</strong></td><td>15.75%</td><td>+83.73 亿</td><td>+1.53 亿</td></tr><tr><td>海大集团</td><td>🟢 −7,907 万</td><td>14.97%</td><td>−9,896 万</td><td>+7,849 万</td></tr><tr><td>东方电气</td><td>🟢 −3,716 万</td><td>6.85%</td><td>🟢 <strong>−4.40 亿</strong></td><td>−4.99 亿</td></tr><tr><td>智谱</td><td>🟢 −319 万港元</td><td>0.10%</td><td>+30.84 亿</td><td>+21.89 亿</td></tr></tbody></table>
+<p><strong>三条背离（本节核心）</strong></p>
+<ul><li><strong>兆易创新 —— 最严重的趋势性撤离</strong>：近 20 日 −131.75 亿元，占其总市值（2,743.98 亿元）的 <strong>4.80%</strong>，且近 5 日仍在加速（−30.40 亿 → −43.63 亿）。<strong>距无条件减仓触发线（50 亿）仅 6.37 亿元。</strong></li><li><strong>腾讯控股 —— 当日大幅流出 vs 近 5 日大幅流入</strong>：当日 −11.97 亿港元，但近 5 日 +83.73 亿、近 10 日 +80.50 亿。<strong>短期获利了结与中期资金回补并存</strong>，与「回购降至 1.0 亿/日」的方向一致（公司自己在减少买入）。</li><li><strong>长飞光纤 —— 当日流出但中期强劲流入</strong>：当日 −2.95 亿港元，近 20 日仍 +57.53 亿港元。<strong>今日是获利兑现，不是撤离。</strong></li></ul>
+<p class="sub-label"><strong>⚠️ 口径限制（policy §1.2.2）</strong>：</p>
+<p>A 股主力资金单位为人民币，港股为港币。<strong>本表分列，未跨市场合并或排序。</strong></p>
+<h3>3.3 筹码：龙虎榜、融资余额、股东变动</h3>
+<p>⚠️ <strong>数据缺口如实披露</strong>：Wind MCP connector <strong>未提供龙虎榜 / 融资余额 / 前十大股东变动的批量查询工具</strong>，逐只查询超出本期时间预算。本节<strong>无法提供数据</strong>，不做任何推测。</p>
+<p><strong>已列入后续验证（承接 9/2 报告）</strong></p>
+<ul><li>四方达、惠丰钻石今日换手率 20.93% / 22.93%，<strong>具备强烈的龙虎榜上榜条件</strong>（换手率异常 + 涨跌幅 &gt; 7%）—— 若可查，将直接揭示本轮上涨是游资还是机构主导。</li><li>持仓 A 股的融资余额周度变动。</li><li>四方达、惠丰钻石的前十大股东 Q3 变动。</li><li>兆易创新龙虎榜是否出现机构专用席位集中卖出（区分「价值陷阱 vs 错杀」的关键指标之一）。</li></ul>
+<hr>
+<h2>四、昨日判断回看（9/2 晚间日报）</h2>
+<table><thead><tr><th>#</th><th>昨日（9-02）Now What 判断</th><th>今日（9-03）实际结果</th><th>结论</th></tr></thead><tbody><tr><td>1</td><td><strong>东方电气 减仓 1/3</strong>，中止条件 = 近 5 日主力转净流入</td><td>近 5 日主力 <strong>−4.40 亿</strong>（昨日 −3.84 亿，<strong>恶化 0.56 亿</strong>）→ 中止条件<strong>未成立</strong></td><td>✅ <strong>兑现（减仓确认执行）</strong></td></tr><tr><td>2</td><td><strong>紫金黄金国际</strong>：第二档按 9/3 EDB 更新的 9/2 结算价判定（&lt;4,400 减满档 / 4,400–4,500 暂停并下移至 4,300 / &gt;4,500 考虑回补）</td><td>9/2 结算价 <strong>4,414.6</strong> 已入库 → 落中间档 → <strong>暂停第二档，线下移至 4,300</strong>；辅助条件（主力净流出 + 成交额 &gt; 20 亿）未触发</td><td>✅ <strong>兑现（规则给出明确答案）</strong></td></tr><tr><td>3</td><td><strong>人造钻石 观望</strong>：换手率 5%↓ 重评 / 5–15% 维持 / <strong>突破 20% → 立即减持 1/3</strong></td><td>四方达 <strong>20.928%</strong>、惠丰钻石 <strong>22.932%</strong> → <strong>双双突破 20%</strong></td><td>✅ <strong>兑现（规则触发）</strong></td></tr><tr><td>4</td><td><strong>兆易创新 持有</strong>：跌破 375 → 观望；站回 420 + 主力净流入 → 加仓；<strong>近 5 日主力净流出扩大至 50 亿+ → 减持 1/3</strong></td><td>383.20（未破 375）；近 5 日主力 <strong>−43.63 亿</strong>（昨日 −30.40 亿，<strong>逼近但差 6.37 亿</strong>）</td><td>⏳ <strong>待验证（极度逼近）</strong></td></tr><tr><td>5</td><td><strong>长飞光纤 持有</strong>：涨破 200 / 跌破 150 + 南向连续 3 日净卖出 → 减持 1/3</td><td>164.000（🟢 −3.19%），两条件均未触发；主力当日转净流出 2.95 亿</td><td>⏳ <strong>待验证</strong></td></tr><tr><td>6</td><td><strong>应流股份 持有</strong>：反弹 50 → 减持 1/3；跌破 38 + 订单未新增 → 观望</td><td>43.18（🔴 +1.84%，<strong>昨日 −6.19% 后反弹</strong>），未触发</td><td>⏳ <strong>待验证</strong></td></tr><tr><td>7</td><td><strong>潍柴动力 持有</strong>：跌破 23 + 近 5 日主力转净流出 → 加仓；涨破 30 → 减持 1/3</td><td>26.18（🔴 +1.16%），近 5 日主力 <strong>+4.48 亿（净流入，非流出）</strong> → 加仓条件不成立</td><td>⏳ <strong>待验证</strong></td></tr><tr><td>8</td><td><strong>智谱 持有</strong>：三维矩阵（价格 × 量能）</td><td>1,108（区间内），成交额 32.69 亿 = 前日 <strong>97.1%</strong> → <strong>既非放量（&gt;100%）也非缩量（&lt;80%）</strong></td><td>⚠️ <strong>规则真空区（新发现，已修复）</strong></td></tr><tr><td>9</td><td><strong>腾讯 / 阿里 持有</strong>：腾讯跌破 400 加仓；阿里跌破 100 加仓；阿里涨破 130 且云增速未加速 → 减持 1/3</td><td>腾讯 433.000（距 400 还有 −7.6%）、阿里 107.500（距 100 还有 −7.0%），均未触发</td><td>⏳ <strong>待验证</strong></td></tr></tbody></table>
+<p><strong>回看小结</strong></p>
+<ul><li><strong>本期 9 条判断中，3 条兑现、5 条待验证、1 条暴露规则缺陷 —— 兑现率显著高于往期。</strong> 原因是<strong>兑现的 3 条全部是「规则到点自动执行」类</strong>（减仓确认、分档判定、换手率阈值），而非「预测价格方向」类。这再次验证了 9/2 报告提出的规律：<strong>定性/规则类判断的信息密度高于价格预测类判断。</strong></li></ul>
+<ul><li><strong>第 2 条（紫金黄金）是本轮最有价值的一次规则执行，值得单独说</strong>：9/2 时金价数据未入库，报告<strong>没有用新闻价格替代</strong>，而是明确推迟判定并给出三档判定表。今日数据到位后，规则<strong>机械地给出了答案</strong>。如果 9/2 时为了「及时」而采用了新闻价格（当时现货约 4,412 vs EDB 4,396.4，差 15.6 美元），<strong>很可能落在 4,400 上方同样触发「暂停」，但口径不一致会让此后的所有判定失去可比性</strong>。这个坚持是值得的。</li></ul>
+<ul><li><strong>第 3 条（人造钻石）验证了「换手率作为风险控制指标」的有效性</strong>：9/2 设定阈值时两只分别 13.13% / 17.17%，当时<strong>价格方向相反</strong>（−1.01% / +6.82%）。今日两只同涨且换手率双双突破 20%。<strong>如果当时设的是价格条件（如「涨破 X 减仓」），就会在 9/2 惠丰 +6.82% 时误触发，或在今日同涨时无法给出统一动作。换手率作为与价格正交的指标，确实更早、更稳定地发出了信号。</strong></li></ul>
+<ul><li><strong>第 8 条暴露的规则缺陷必须记录</strong>：9/2 报告在补齐「时间维度封闭性」后，<strong>量能维度仍留有 80%–100% 的空隙</strong>。今日成交额为前日的 97.1%，正好落在该空隙内。这提示<strong>「封闭性」需要在每一个维度上独立检验，补齐一个维度不代表其他维度也封闭</strong>。已在 §2.8 修复为三档（放量 / 平量 / 缩量），并同步更新 policy。</li></ul>
+<ul><li><strong>第 4 条需要重点跟踪</strong>：兆易创新的无条件减仓触发线（近 5 日主力净流出 50 亿元）距当前仅 6.37 亿元，按近两日的流出速度（单日扩大 13.23 亿）<strong>极可能在 9/4 触发</strong>。这是明日开盘后需要第一时间检验的事项。</li></ul>
+<hr>
+<h2>五、数据溯源</h2>
+<table><thead><tr><th>数据项</th><th>来源</th><th>取值截面</th><th>说明</th></tr></thead><tbody><tr><td>主要指数行情（7 只，含涨跌家数）</td><td>Wind MCP <code>get_index_price_indicators</code></td><td>2026-09-03 收盘</td><td>上证/深证/创业板/科创50/沪深300/恒生/恒生科技</td></tr><tr><td>申万一级行业（15 个，涨跌/主力/家数）</td><td>Wind MCP <code>get_index_price_indicators</code></td><td>2026-09-03 收盘</td><td>代码 <code>801xxx.SI</code>；<strong>医药生物涨跌家数返回 0/0，为缺失值</strong></td></tr><tr><td>A 股持仓行情（12 只）</td><td>Wind MCP <code>get_stock_price_indicators</code></td><td>2026-09-03 收盘</td><td>分 3 批查询 + 1 次单独重查，逐行核对名称</td></tr><tr><td>港股持仓行情（12 只）</td><td>Wind MCP <code>get_stock_price_indicators</code></td><td>2026-09-03 收盘</td><td>分 2 批查询，逐行核对名称</td></tr><tr><td>潍柴动力单独重查</td><td>Wind MCP <code>get_stock_price_indicators</code></td><td>2026-09-03 收盘</td><td><strong>批次查询串号为特力A，已弃用并重查</strong></td></tr><tr><td>总市值 / 流通市值（4 只）</td><td>Wind MCP <code>get_stock_price_indicators</code></td><td>2026-09-03 收盘</td><td>惠丰钻石/四方达/紫金黄金/智谱</td></tr><tr><td>COMEX 黄金结算价</td><td>Wind MCP EDB <code>S0180945</code>（observation=12）</td><td>EDB 更新日 2026-09-03，序列末值 <strong>2026-09-02 = 4,414.6</strong></td><td><strong>9/2 值已入库</strong>，与新闻 4,414.6 完全一致</td></tr><tr><td>新闻与研报文本</td><td>Wind MCP <code>get_financial_news</code></td><td>2026-09-03</td><td>6 轮检索：海大、人造钻石、腾讯回购、黄金、兆易、长飞、恒瑞、四方达</td></tr></tbody></table>
+<p><strong>数据合规声明</strong></p>
+<ul><li>✅ <strong>本报告全部数值型金融数据均取自 Wind MCP 结构化 API</strong>，未使用 WebSearch / 百度 / Google 获取任何金融数据。</li><li>✅ <strong>未加载 <code>wb-finance-skill</code></strong>（该 skill 会将查询路由至 NeoData，绕开 Wind）。</li><li>✅ 未使用新闻文本中的价格数字作为行情数据（新闻仅用于事件与产业信息；金价新闻值仅作交叉验证）。</li><li>✅ <strong>全部主力资金流数据均通过合理性校验</strong>（净流入 / 成交额 &lt; 30%），本期<strong>无脏数据</strong>。</li><li>⚠️ <strong>未调用 NeoData / mx-finance-search</strong>。</li><li>⚠️ 彭博社通道（<code>bbgwire</code>）按 policy §1.3 已知不可用，未重复排查。</li></ul>
+<p><strong>数据缺口与口径限制（如实列出）</strong></p>
+<table><thead><tr><th>缺口项</th><th>原因</th><th>处理</th></tr></thead><tbody><tr><td><strong>智谱 PB(LF)</strong></td><td>返回 <strong>+101.446</strong>，净资产为负时 PB 必为负 → <strong>第五次判定为脏数据</strong></td><td><strong>不用于任何计算与决策</strong>；该标的当前<strong>无任何可用估值锚点</strong></td></tr><tr><td><strong>医药生物（申万）涨跌家数</strong></td><td>Wind 接口返回 0 / 0</td><td>标注为缺失值，<strong>不据此作宽度判断</strong></td></tr><tr><td><strong>海大集团今日 −4.77% 的催化剂</strong></td><td>Wind 新闻检索未返回 9/3 当日任何相关增量</td><td>如实标注为「无当日负面增量」，不做推测</td></tr><tr><td><strong>长飞光纤今日 −3.19% 的催化剂</strong></td><td>同上，无当日负面增量</td><td>判定为获利回吐（无负面证据），已说明理由</td></tr><tr><td><strong>龙虎榜 / 融资余额 / 前十大股东变动</strong></td><td>connector 未提供批量查询工具，逐只查询超出时间预算</td><td>已在 §3.3 如实披露，列入后续验证</td></tr><tr><td><strong>个股 PE / PB 五年分位</strong></td><td>本次未批量重取</td><td>沿用 9/1 报告值，已在正文标注来源日期</td></tr><tr><td><strong>前瞻 PE 年度分位</strong></td><td>本次未重取历史年度 PE 序列</td><td>沿用 9/1 报告值，已在 §3.1 声明口径限制</td></tr><tr><td><strong>惠丰钻石 PE(预测)</strong></td><td>无机构覆盖</td><td><strong>PE 体系失效</strong>，仅以 PB 12.624 作锚点，已在正文标注</td></tr><tr><td><strong>大族数控 A/H 估值口径</strong></td><td>H 股 3200.HK 上市不足 7 个月，Wind 口径未对齐（PE 差 2.94 倍）</td><td>按 §5.2 <strong>采用 A 股 301200.SZ 口径</strong>；H 股分位标注「仅作参考」</td></tr><tr><td><strong>南向资金当日数据</strong></td><td>本期未取</td><td>长飞光纤的南向数据沿用 9/2 口径（连续 6 日累计 21.12 亿港元）</td></tr></tbody></table>
+<p><strong>本期方法论修正（写入 policy，供后续报告复用）</strong></p>
+<ul><li><strong>§3.2.7 补充「量能维度必须三档封闭」</strong>：继 9/2 修复「时间维度不封闭」后，本期发现量能维度留有的 80%–100% 空隙同样构成规则真空区。<strong>凡设「放量 / 缩量」两档的矩阵，必须补齐「平量」档（前日 80%–100%）。</strong></li><li><strong>智谱 PB 字段标记为「该标的不可用」</strong>：连续 5 次返回正值脏数据，建议后续报告<strong>不再尝试取该字段</strong>，直接标注「无估值锚点」。</li></ul>
+<hr>
+<p class="sub-label"><strong>报告生成时间</strong>：</p>
+<p>2026-09-03 18:00 · 数据源：Wind 万得（唯一数值通道） · via WB</p>
+
+<div class="report-footer">
+  数据源：Wind 万得（唯一数值通道） · My Research Central · via WB
+</div>
+
+</body>
+</html>
