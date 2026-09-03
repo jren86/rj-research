@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fed Watch · 美联储政策仪表盘 2026-09-03</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  line-height: 1.7;
+  color: var(--text2);
+  margin: 7px 0 0;
+  word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>Fed Watch · 美联储政策仪表盘 2026-09-03</h1>
+  <div class="meta">数据截面：日频层 <strong>美东 2026-09-02</strong>（10Y/2Y/TIPS/breakeven/12M SOFR/DXY/WTI），SOFR 末值为 9/1（T+1 发布） · 周频层：沿用 <strong>2026-08-26 周值</strong>（每周五刷新，本轮为周四，机制内跳过） · 月频层：非公布日次日，本轮跳过 ｜ 事件层：非 FOMC 会议周（下次 9/15–16），本轮跳过 · 数据源：Wind EDB（<code>natural_language_get_edb_data</code>）一次批量取数，9 个代码，未逐个搜索</div>
+</div>
+
+<hr>
+<h2>三核心</h2>
+<table><thead><tr><th>指标</th><th>读数</th><th>日变动</th><th>灯号</th></tr></thead><tbody><tr><td><strong>2s10s</strong></td><td><strong>+40bp</strong></td><td>0bp</td><td>🟢 绿</td></tr><tr><td><strong>10Y breakeven</strong></td><td><strong>2.34%</strong></td><td>−1bp</td><td>🟢 绿</td></tr><tr><td><strong>SOFR−IORB</strong></td><td><strong>+1bp</strong></td><td>0bp</td><td>🟢 绿</td></tr></tbody></table>
+<p><strong>Implication · 三核心怎么看</strong></p>
+<p>三个指标凑在一起回答一个问题：<strong>美联储下一步会干什么，市场信不信它。</strong> 曲线（2s10s）回答"经济扛不扛得住紧缩"，breakeven 回答"市场信不信通胀能回到 2%"，SOFR−IORB 回答"银行体系的准备金还有没有物理空间"。三者全绿意味着：政策路径可预测、流动性没有物理约束、通胀预期仍锚定在目标附近。</p>
+<p>对配置的实际含义：<strong>全绿 = 不需要为政策变量调整仓位</strong>，资产回到基本面定价。但要注意"绿灯下的鹰派漂移"——三核心全绿的同时，12M SOFR 隐含路径挂在 +51bp（黄），说明市场仍在为 9 月 FOMC 加息定价。<strong>仓位不必动，但对利率敏感的资产（长久期债、高估值成长股、高 PB 分位标的）应收紧止损纪律。</strong> 下一步观察：三核心中任一项转黄即触发降杠杆讨论；两项以上转黄或任一转红则视为政策拐点临近。</p>
+<hr>
+<h2>边际变化（与上期归档相比）</h2>
+<ul><li><strong>油价冲击降温，事件警示解除</strong>：WTI 9/2 <strong>+0.88% 至 91.01 美元</strong>（上期 +5.2%），单日涨幅回落至 ±4% 阈值以内。但两日累计 <strong>+6.1%</strong>、5 日 <strong>+10.7%</strong>，绝对价位仍处高位，布伦特同步升至 95.63 美元。</li><li><strong>通胀预期掉头回落（本期最重要的边际变化）</strong>：10Y breakeven <strong>2.35% → 2.34%（日 −1bp）</strong>，结束此前连续上行（上期为日 +4bp / 周 +9bp）。<strong>「油价 → 通胀预期」的传导链条在 9/2 中断。</strong></li><li><strong>名义利率全线持平，实际利率仍在升</strong>：10Y <strong>4.79%（0bp）</strong>、2Y <strong>4.39%（0bp）</strong>双双走平（上期分别 +4bp / +5bp），而 10Y TIPS <strong>2.44% → 2.45%（+1bp）</strong>。名义端企稳、实际端继续收紧。</li><li><strong>12M SOFR 隐含路径 +51bp</strong>（日 +2bp，5 日 +16bp）：加息定价稳定在约 <strong>1.0 次</strong>，未进一步强化，与上期持平。</li><li><strong>DXY 回落 0.10% 至 99.56</strong>，结束此前连涨；SOFR−IORB 维持 <strong>+1bp</strong>，货币市场无压力。</li></ul>
+<p><strong>Implication · 边际变化怎么用</strong></p>
+<p>本期最关键的一条不是"哪个指标变了"，而是<strong>两个指标的方向背离</strong>：油价仍在高位上涨（+0.88%），但通胀预期却掉头回落（breakeven −1bp）。这说明市场<strong>没有把当前的油价水平外推成持续性通胀</strong>——可能是判断地缘冲击是脉冲式的，也可能是认为需求端足够弱以至于成本推不动终端价格。两种解释对资产的含义完全相反：前者意味着油价回落即可解除警报；后者意味着滞胀风险（成本上来了但传导不出去，挤压中下游利润）。</p>
+<p>对配置的实际含义：<strong>这一条直接决定要不要为"通胀"买保险。</strong> 在 breakeven 重新加速上行（连续 2 日 +3bp 以上）之前，不急于把名义债换成 TIPS 或加黄金对冲；但油价绝对价位已在高位，成本暴露型持仓（物流、农业、化工）的利润率压力是真实的、与通胀预期无关的。<strong>下一步观察：breakeven 能否在 2.30–2.35% 稳住。若重回 2.5% 上方，灯号转黄，届时黄金与 TIPS 将替代名义债成为更好的对冲工具。</strong></p>
+<hr>
+<h2>A 货币政策立场与利率路径</h2>
+<table><thead><tr><th>指标</th><th>最新（9/2）</th><th>日变动</th><th>5 日变动</th><th>信号</th></tr></thead><tbody><tr><td>10Y 美债 <code>G0000891</code></td><td>4.79%</td><td>0bp</td><td>+13bp</td><td>高位企稳</td></tr><tr><td>2Y 美债 <code>G0000887</code></td><td>4.39%</td><td>0bp</td><td>+20bp</td><td>短端领涨后走平</td></tr><tr><td><strong>2s10s</strong></td><td><strong>+40bp</strong></td><td>0bp</td><td>−7bp</td><td>🟢 正常化区间</td></tr><tr><td>10Y TIPS <code>G0005428</code></td><td>2.45%</td><td>+1bp</td><td>+11bp</td><td>强限制性</td></tr><tr><td>12M SOFR <code>O5632651</code></td><td>4.17408%</td><td>+2.18bp</td><td>+15.8bp</td><td>🟠</td></tr><tr><td><strong>12M SOFR 隐含路径</strong></td><td><strong>+51.4bp</strong></td><td>+2bp</td><td>+16bp</td><td>🟠 ≈ 定价 1.0 次加息</td></tr></tbody></table>
+<p><strong>Implication · A 组告诉你什么</strong></p>
+<p>A 组回答"市场认为利率会停在多久、多高"。两个读数需要分开看：<strong>水平上</strong>，10Y 4.79% 是 2025 年初以来的高位，2Y 4.39% 说明短端已被 9 月 FOMC 的加息预期充分定价；<strong>斜率上</strong>，2s10s +40bp 的陡峭化是健康的——曲线倒挂（负值）才是衰退信号，正值且走陡说明市场认为紧缩是暂时的、长期经济仍扛得住。</p>
+<p>容易误读的是 10Y TIPS 2.45%：这是<strong>剔除通胀后的真实资金成本</strong>。历史上 2% 以上的实际利率就属于强限制性区间，2.45% 意味着即便美联储不再加息，当前的利率水平本身就在持续压制估值。<strong>这一条对所有高 PB 分位、依赖远期现金流折现的标的是直接的估值天花板。</strong></p>
+<p>对配置的实际含义：<strong>短债与货基仍是 carry 最优解</strong>（3.6%+ 的无风险收益，且无久期风险）；长端在 9/4 非农与 9/15–16 FOMC 明朗前难有趋势行情。对权益端，<strong>"实际利率 2.45%"是比"名义利率 4.79%"更该盯的数字</strong>——它决定了高估值成长股的贴现率上限。<strong>下一步观察：9/4 非农。就业数据转弱是唯一可能逆转当前鹰派叙事的路径；若非农强劲，12M 隐含路径将突破 +75bp 转红，届时先降杠杆再等信号确认。</strong></p>
+<hr>
+<h2>B 流动性与准备金（周频层，8/26 周值）</h2>
+<table><thead><tr><th>指标</th><th>最新</th><th>周环比</th><th>信号</th></tr></thead><tbody><tr><td>银行准备金 <code>G0005605</code></td><td>2.92 万亿</td><td>−140 亿</td><td>🟠（2.7–3.0 万亿区间）</td></tr><tr><td>逆回购（广义）<code>G1100077</code></td><td>3562 亿</td><td>−175 亿（−4.7%）</td><td>🟢</td></tr><tr><td>SOFR−IORB（日频）</td><td>+1bp</td><td>0bp</td><td>🟢</td></tr><tr><td>SRF / 总资产 / TGA</td><td>9/4 周五随 H.4.1 刷新</td><td>—</td><td>—</td></tr></tbody></table>
+<blockquote>本轮为周四，周频层按机制跳过，未重复取数。准备金与逆回购沿用 8/26 周值。</blockquote>
+<p><strong>Implication · B 组告诉你什么</strong></p>
+<p>B 组回答一个看似技术但极其关键的问题：<strong>金融体系的"管道"里还有没有足够的水。</strong> 准备金是银行体系的核心缓冲垫——低于 2.7 万亿时，银行开始为流动性争抢，SOFR 会突然跳升（2019 年 9 月回购危机就是这么发生的）；高于 3.0 万亿则属充裕。逆回购是缓冲垫之外的第二层余量，它的消耗速度决定了准备金能撑多久。SOFR−IORB 是最灵敏的实时探针：正常情况下 SOFR 略低于或贴近 IORB（银行可以把钱无风险存到 Fed），<strong>这个价差一旦走阔，说明体系内某些机构已经借不到钱了。</strong></p>
+<p>当前 +1bp 属于教科书式的平稳：准备金 2.92 万亿虽在黄灯区间、且 RMP 暂停期间自然回落 140 亿，但逆回购仍有 3562 亿的余量可供缓冲，SOFR 完全贴合政策利率。</p>
+<p>对配置的实际含义：<strong>流动性不是当前的风险源，不必为此调整仓位。</strong> 黄灯的含义是"开始看"，不是"开始动"。真正的警报信号是 <strong>SOFR−IORB 跳升至 +15bp 以上</strong>——那才是需要立即降杠杆的时刻，而它现在的读数是 +1bp。<strong>下一步观察：9/4 周五 H.4.1 数据。准备金若跌破 2.7 万亿且逆回购同步加速消耗（单周降幅 &gt;30%），两条黄灯合并为实质性流动性预警。</strong></p>
+<hr>
+<h2>C 通胀与通胀预期</h2>
+<table><thead><tr><th>指标</th><th>最新（9/2）</th><th>日变动</th><th>5 日变动</th><th>信号</th></tr></thead><tbody><tr><td><strong>10Y breakeven <code>U0929600</code></strong></td><td><strong>2.34%</strong></td><td><strong>−1bp</strong></td><td>+2bp</td><td>🟢 区间内，趋势掉头</td></tr><tr><td>交叉校验：10Y 名义 − 10Y TIPS</td><td>4.79% − 2.45% = <strong>2.34%</strong></td><td>−1bp</td><td>—</td><td>✅ 偏差 <strong>0bp</strong></td></tr><tr><td>30Y breakeven（月频，8 月）</td><td>2.25%</td><td>—</td><td>—</td><td>🟢</td></tr><tr><td>WTI 原油 <code>M0000005</code></td><td><strong>91.01 美元</strong></td><td><strong>+0.88%</strong></td><td><strong>+10.68%</strong></td><td>高位，但单日未触发 ±4% 警示</td></tr><tr><td>布伦特原油 <code>S0031525</code></td><td><strong>95.63 美元</strong></td><td>+1.04%</td><td>—</td><td>高位</td></tr><tr><td>COMEX 黄金 <code>S0180945</code></td><td>4,414.6 美元/盎司</td><td>+0.41%</td><td>—</td><td>昨日暴跌后小幅修复</td></tr></tbody></table>
+<p><strong>Implication · C 组告诉你什么</strong></p>
+<p>C 组回答"市场信不信 Fed 能把通胀压回 2%"。breakeven 是名义债与通胀保值债（TIPS）的收益差，<strong>它就是市场愿意为未来 10 年平均通胀支付的"保险费"</strong>。2.0–2.5% 区间意味着市场相信 Fed 大致能达成目标；升破 2.75% 则是"通胀失锚"的定价——市场开始怀疑 Fed 的控制力，这才是真正危险的状态。</p>
+<p>本期 C 组出现了<strong>本期最重要的一个背离</strong>：油价仍在高位上涨（WTI 91.01，5 日 +10.68%），但 breakeven 反而回落 1bp。<strong>两种解释，对资产的含义完全相反：</strong></p>
+<ul><li><strong>解释甲（脉冲论）</strong>：市场判断地缘冲击是一次性的，油价会回落 → 通胀预期稳定是"理性外推" → 无需为通胀买保险</li><li><strong>解释乙（传导失效论）</strong>：需求端太弱，成本推不动终端价格 → 这不是好消息，而是<strong>滞胀的前半段</strong>：成本上来了、利润被挤在中间</li></ul>
+<p>两者的区分指标不是 breakeven 本身，而是<strong>中下游企业的毛利率与定价能力</strong>。对一个持有物流、农业、化工资产的投资者，这个区分尤其重要——<strong>因为无论甲乙，成本冲击都是真实的，区别只在于能不能转嫁出去。</strong></p>
+<p>对配置的实际含义：<strong>在 breakeven 重回 2.5% 上方之前，黄金与 TIPS 只是"保险"而非"进攻"</strong>——黄金 4,414.6 美元在昨日急跌后仅小幅修复，正说明市场在"通胀避险"与"实际利率上行压制"之间摇摆。<strong>下一步观察：① breakeven 能否在 2.30–2.35% 稳住；② 9/11 公布的 8 月 CPI（9/14 周一早报月频层纳入）。若 CPI 超预期且 breakeven 同步跳升，则解释甲被证伪，需立即切换到通胀对冲配置。</strong></p>
+<hr>
+<h2>D 就业与增长</h2>
+<ul><li>初请/续请（周频）：9/4 周五刷新；前值 20.6–21.2 万区间（绿灯）。</li><li><strong>非农/失业率（月频）：9/4 美东公布 8 月非农 → 9/7（周一）早报月频层自动纳入。</strong> 7 月值为 <strong>−2.3 万</strong>，若再度转负，Sahm 规则值将逼近黄灯。</li><li>美联储褐皮书（9/2 发布）：<strong>经济活动温和增长</strong>。</li></ul>
+<p><strong>Implication · D 组告诉你什么</strong></p>
+<p>D 组是整个仪表盘的"裁判"——它决定 A 组（利率路径）与 C 组（通胀）哪一个才是当前的主要矛盾。<strong>美联储是双重 mandate：物价稳定 + 充分就业。</strong> 当前通胀预期稳定（C 组绿灯）而利率路径偏鹰（A 组隐含 1 次加息），这个组合只有在"就业不弱"的前提下才成立——<strong>一旦就业数据转差，鹰派叙事会瞬间崩塌，因为 Fed 没有理由在劳动力市场走弱时继续紧缩。</strong></p>
+<p>7 月非农已经是 −2.3 万（负值）。这是本期整个仪表盘最脆弱的一环：<strong>市场正在为"9 月加息"定价，而最新的就业读数不支持这个定价。</strong> 褐皮书"温和增长"的定性描述也无法对冲掉一个负数的非农。</p>
+<p>对配置的实际含义：<strong>9/4 非农是一个不对称事件。</strong> 数据强劲 → 加息定价强化至 1.5 次以上，长久期资产与高估值成长股承压，持仓中 PB 分位 70%+ 的标的（东方电气 73.53%、兆易创新 69.56%）首当其冲；数据转弱 → 鹰派叙事逆转，利率敏感资产与黄金同时受益，且这是<strong>当前唯一能逆转 12M 隐含路径黄灯的路径</strong>。<strong>下一步观察：9/4 美东 8 月非农，重点看 ① 新增就业是否连续第二个月转负 ② 失业率是否突破触发 Sahm 规则的阈值。这是本周唯一的、可能改变全部六维结论的单一数据点。</strong></p>
+<hr>
+<h2>E 金融条件</h2>
+<table><thead><tr><th>指标</th><th>最新（9/2）</th><th>日变动</th><th>信号</th></tr></thead><tbody><tr><td>美元指数 DXY <code>M0000271</code></td><td>99.56</td><td>−0.10%</td><td>🟢</td></tr><tr><td>道琼斯工业指数</td><td>53,061.95</td><td>🔴 +0.56%</td><td>油价冲击后修复</td></tr><tr><td>标普500</td><td>7,666.60</td><td>🔴 +0.46%</td><td>—</td></tr><tr><td>纳斯达克</td><td>26,217.83</td><td>🔴 +0.45%</td><td>—</td></tr><tr><td>费城半导体指数</td><td>11,339.25</td><td>🔴 +0.45%</td><td>前日 −2.14% 后反转</td></tr><tr><td>欧洲 STOXX / 日经 / 韩国</td><td>—</td><td>🟢 普跌（日经 −2.85%、韩综 −3.99%）</td><td>亚太 AI 链承压</td></tr><tr><td>HY OAS / MOVE</td><td>代码落码中，下期补齐</td><td>—</td><td>—</td></tr></tbody></table>
+<p><strong>Implication · E 组告诉你什么</strong></p>
+<p>E 组回答"上述所有宏观变量，最终有没有传导到风险资产的定价上"。它是前四组的<strong>结果检验</strong>——如果 A/C/D 都在恶化而 E 组毫无反应，说明市场尚未定价，风险是"未兑现的未来"而非"已发生的损失"。</p>
+<p>本期 E 组呈现一个<strong>跨区域分化</strong>：美股三大指数与费半同步小幅反弹（+0.45% ~ +0.56%），而亚太与欧洲普跌（日经 −2.85%、韩综 −3.99%、德国 DAX −0.5%）。<strong>值得注意的是方向反转：9/1 是美股跌、9/2 是美股涨、费半从 −2.14% 转为 +0.45%。</strong> 这是八个交易日内的第四次方向切换。</p>
+<p>对配置的实际含义：<strong>单日的跨市场涨跌不构成可交易的信号</strong>——这与 policy §4.3 的结论一致，跨市场强弱必须用 5 日或 20 日滚动均值判定，单日读数只作记录。真正值得记录的是结构性信息：<strong>英伟达 +3.21%、美光 +2.43% 领涨，而 AI 应用软件股下挫（MongoDB −13%、Datadog −6%）</strong>——<strong>市场在 AI 链内部做"硬件 vs 软件"的再平衡，而不是简单地买入或卖出 AI。</strong> 对持仓的含义：AI 硬件/半导体（兆易、ASMPT、大族数控、长飞）与 AI 应用（腾讯、阿里）的短期走势可能出现分化，不宜用同一套逻辑对待。<strong>下一步观察：费半与纳指的背离能否持续 3 个交易日以上（policy §5.1 主线确认标准：连续性 + 资金印证 + 宽度，三条同时满足才算主线）。</strong></p>
+<hr>
+<h2>F 前瞻指引与市场隐含预期</h2>
+<ul><li><strong>12M SOFR 隐含路径 +51.4bp</strong>（O5632651 4.17408% − SOFR 3.66%）≈ 定价 <strong>1.0 次加息</strong>（🟠，日 +2bp，5 日 +16bp）。</li><li>FedWatch 外部读取：本轮跳过（非 FOMC 会议周），按机制以 12M SOFR 隐含路径替代，口径已注明。</li><li>褐皮书（9/2）：经济活动温和增长，9 月加息前景备受关注。</li><li>倒计时：<strong>9/4 非农 → 9/11 8 月 CPI（9/14 周一早报纳入）→ 9/15–16 FOMC（含季度 SEP 点阵图），距今 12 天。</strong></li></ul>
+<p><strong>Implication · F 组告诉你什么</strong></p>
+<p>F 组回答"市场与美联储，谁的话更值得信"。12M SOFR 隐含路径是市场用真金白银押注的未来 12 个月政策利率变化，+51bp 意味着市场认为一年后政策利率会比现在<strong>高约 51bp</strong>（约 2 次 25bp 加息中的 1 次多一点）。<strong>这个数字与美联储官方点阵图之间的差距，就是"预期差"——也是波动的来源。</strong></p>
+<p>当前 +51bp 挂在黄灯（±25~75bp），含义是"市场与 Fed 的分歧处于中等水平"。<strong>它转红（超过 ±75bp）的含义不是"加息更多"，而是"市场与 Fed 的沟通失效了"</strong>——要么是市场认为 Fed 落后于曲线，要么是 Fed 认为市场过度反应。历史经验是：当这个价差扩大到极端时，往往以 Fed 的沟通升级（官员密集讲话、临时声明）或市场的大幅重定价收场，两者都伴随高波动。</p>
+<p>对配置的实际含义：<strong>12M 隐含路径是"波动率预警器"而非"方向指示器"。</strong> +51bp 不需要调整仓位，但需要<strong>为 9/15–16 FOMC 前后的波动预留空间</strong>——在季度 SEP（含点阵图）的会议周，隐含路径单日移动 20–30bp 是常态。<strong>下一步观察：① 9/4 非农后隐含路径的移动幅度（若单日变动 &gt;20bp，说明就业数据打破了当前平衡）；② 9/15–16 FOMC 前一周启用事件层，读取 CME FedWatch 概率并与点阵图中位数交叉验证。</strong></p>
+<hr>
+<h2>灯号汇总</h2>
+<table><thead><tr><th>灯</th><th>数量</th><th>项目</th></tr></thead><tbody><tr><td>🟢 绿</td><td><strong>5</strong></td><td>2s10s、10Y breakeven、SOFR−IORB、逆回购、DXY</td></tr><tr><td>🟠 黄</td><td><strong>2</strong></td><td>12M SOFR 隐含路径（+51.4bp）、银行准备金（2.92 万亿）</td></tr><tr><td>🔴 红</td><td><strong>0</strong></td><td>—</td></tr><tr><td>⚠️ 事件警示</td><td><strong>0</strong></td><td>上期为 1（WTI 单日 +5.2%），本期 <strong>已解除</strong>（单日 +0.88%，未达 ±4% 阈值）</td></tr></tbody></table>
+<blockquote>灯号口径：2s10s（&lt;0 红 / 0~+25bp 黄 / 其余绿）；breakeven（&gt;2.75% 红 / 2.5~2.75% 或 &lt;1.75% 黄 / 2.0~2.5% 绿）；<br>SOFR−IORB（&gt;+15bp 红 / +5~+15bp 黄 / ≤+5bp 绿）；12M 隐含路径（&gt;±75bp 红 / ±25~75bp 黄 / 其余绿）；<br>准备金（&lt;2.7 万亿红 / 2.7~3.0 黄 / ≥3.0 绿）；逆回购（单周降幅 &gt;30% 黄）；WTI（单日 ±4% 以上为事件警示）。</blockquote>
+<p><strong>Implication · 灯号汇总怎么用</strong></p>
+<p>灯号系统的价值不在"数绿黄红的数量"，而在于<strong>把六个维度的判断压缩成一个可执行的动作指令</strong>，避免在信息过载时凭直觉决策。规则极其简单：</p>
+<ul><li><strong>全绿或绿多黄少（当前状态）</strong> = 政策可预测期。资产按基本面定价，<strong>不需要为宏观变量调整仓位</strong>，但要把止损纪律收紧——因为绿灯不等于低波动，只等于"波动的来源不是政策"。</li><li><strong>两个以上转黄</strong> = 开始降低对"政策不变"这一假设的押注比例。具体做法是减少依赖远期现金流折现的资产（高 PE / 高 PB 分位、长久期债），增加短久期与现金流确定性高的资产。</li><li><strong>任一转红</strong> = 政策拐点临近。<strong>先降杠杆，再等信号确认后重新建仓</strong>——注意顺序，不要在信号未确认时试图抄底。</li></ul>
+<p>对当前配置的实际含义：<strong>5 绿 2 黄 0 红，事件警示从上期的 1 个降为 0 个，整体环境边际改善。</strong> 但两个黄灯都指向"紧缩预期"而非"流动性"——这说明<strong>风险集中在估值端而非资金端</strong>。对一个持有很多高 PB 分位标的的组合，当前的正确动作<strong>不是减仓，而是把加仓的门槛提高</strong>：在 12M 隐含路径回落至 +25bp 以内之前，不在高估值标的上建新仓。<strong>下一步观察：两个黄灯中任意一个转向——准备金跌破 2.7 万亿（黄转红）或 12M 隐含路径突破 +75bp（黄转红），任一发生即触发降杠杆讨论。</strong></p>
+<hr>
+<h2>今日关注</h2>
+<ul><li><strong>9/4（美东周五）8 月非农就业</strong> —— 7 月为 −2.3 万，若连续第二个月转负，Sahm 规则值逼近黄灯。<strong>这是本周唯一可能改变全部六维结论的单一数据点</strong>（9/7 周一早报月频层自动纳入）。</li><li><strong>9/4（周五）周频层刷新</strong> —— 准备金与逆回购更新至 8/26 之后的最新周值，检验准备金黄灯是否延续。</li><li><strong>油价 → 通胀预期传导能否重启</strong> —— breakeven 2.34%，距转黄（2.5%）还有 <strong>16bp</strong>；WTI 91.01 / 布伦特 95.63 仍在高位。</li><li><strong>9/15–16 FOMC 倒计时 12 天</strong> —— 含季度 SEP 点阵图；留意噤声期前的官员讲话。</li><li><strong>风险点</strong> —— 特朗普称准备再次打击伊朗、美国完全控制霍尔木兹海峡；油价的地缘溢价随时可能重新定价。</li></ul>
+<hr>
+<h2>数据溯源与合规声明</h2>
+<table><thead><tr><th>数据项</th><th>来源</th><th>取值截面</th><th>说明</th></tr></thead><tbody><tr><td>10Y / 2Y 美债、10Y TIPS</td><td>Wind EDB <code>G0000891</code> / <code>G0000887</code> / <code>G0005428</code>（美国财政部）</td><td>2026-09-02</td><td>updateDate 20260903</td></tr><tr><td>10Y breakeven</td><td>Wind EDB <code>U0929600</code></td><td>2026-09-02</td><td>与「10Y 名义 − 10Y TIPS」交叉校验，<strong>偏差 0bp</strong></td></tr><tr><td>SOFR / IORB / 12M SOFR</td><td>Wind EDB <code>M0341926</code>（纽约联储）/ <code>N9689792</code>（美联储）/ <code>O5632651</code></td><td>SOFR 末值 2026-09-01（T+1 发布）；IORB、12M SOFR 为 9/2</td><td>⚠️ SOFR 与 12M SOFR <strong>存在 1 日截面差</strong>，隐含路径计算已在文中注明口径</td></tr><tr><td>DXY / WTI</td><td>Wind EDB <code>M0000271</code> / <code>M0000005</code></td><td>2026-09-02</td><td>—</td></tr><tr><td>布伦特 / COMEX 黄金</td><td>Wind EDB <code>S0031525</code> / <code>S0180945</code></td><td>2026-09-02</td><td>黄金为活跃合约结算价，与现货/新闻报价口径不同</td></tr><tr><td>准备金 / 逆回购</td><td>Wind EDB <code>G0005605</code> / <code>G1100077</code></td><td>2026-08-26 周值</td><td>周频层本轮为周四，按机制沿用上期，未重复取数</td></tr><tr><td>美股指数</td><td>Wind <code>get_index_price_indicators</code></td><td>2026-09-02 收盘</td><td>DJI / SPX / IXIC / SOX</td></tr></tbody></table>
+<p><strong>合规声明</strong></p>
+<ul><li>✅ 全部数值型数据来自 Wind 结构化 API（EDB / 行情指标），<strong>未使用 WebSearch 或新闻文本中的价格数字</strong></li><li>✅ <strong>未加载 <code>wb-finance-skill</code></strong></li><li>✅ 日频层 <strong>9 个代码一次批量取数</strong>完成（executionMode=仅提数，observation=10），未逐个指标搜索</li><li>⚠️ <strong>数据缺口</strong>：HY OAS、MOVE 两个 E 组指标代码仍落码中（上期查询返回噪音序列已排除），下期补齐；MOVE 将采用「10Y 20 日实现波动率」替代口径</li><li>⚠️ <strong>口径限制</strong>：SOFR 为 T+1 发布，9/2 值尚未入库，12M 隐含路径用 SOFR 9/1 值（3.66%）计算，与 12M SOFR 9/2 值存在 1 日截面差</li><li>⚠️ <strong>周频层沿用上期</strong>：本轮为周四，按分层机制跳过；准备金与逆回购均为 8/26 周值</li><li>模型：hy4-preview，无降级</li></ul>
+<p><div class="source-link">🔗 <a href="https://www.wind.com.cn" target="_blank">数据来源：Wind 金融数据终端（EDB 宏观数据库）</a></div><div class="source-link">🔗 <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank">下次 FOMC 日程</a></div></p>
+
+<div class="report-footer">
+  数据来源：Wind EDB · My Research Central · via WB
+</div>
+
+</body>
+</html>
