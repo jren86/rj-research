@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日国家队增减持动向 · 2026-09-04</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  line-height: 1.7;
+  color: var(--text2);
+  margin: 7px 0 0;
+  word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日国家队增减持动向 · 2026-09-04</h1>
+  <div class="meta"><strong>⚠️ 本期为 21:00 缺口补跑版</strong> ·  · 本应在 19:30 生成的国家队日报，因宿主机当日未运行<strong>未落盘</strong>（reports 目录下 9-04 当日四份报告全部缺失）。 · 本报告由 21:00 缺口检查与补跑任务生成。 ·  · <strong>本期核心口径约束：9/4 的 ETF 申赎数据尚未发布（T+1 滞后）。</strong> · 因此第一章的申赎口径最新可得截面<strong>为 9/3</strong>（该数据于 9/4 日间发布，是本期的新增信息）； · 9/4 的增量改用两个替代口径补齐：① <strong>场内量价</strong>（收盘价 / 涨跌幅 / 成交额 / 换手率） · ② <strong>二级市场主力资金流</strong>（当日 / 近5日 / 近20日）。 · 凡涉及申赎的数字，均已标注截面日期为 <strong>9/3</strong>，不得与 9/4 的场内数据混用。</div>
+</div>
+
+<hr>
+<h2>📌 本期核心结论（五条）</h2>
+<ul><li><strong>🔴 9/3 申赎数据是本期唯一的新增信息，且方向发生重大反转：宽基指数 ETF 由净流出转为 +58.26 亿元净流入，跃居各大类榜首。</strong> 对比 9/1 的 −80.40 亿元净流出，<strong>两个交易日内摆动 138.66 亿元</strong>。这直接推翻了 9/2 报告「放量下跌式赎回 = 真实赎回压力」的定性判断。</li><li><strong>⭐ 但 9/4 场内价格全线杀跌，与 9/3 的申赎流入形成尖锐背离。</strong> 半导体设备ETF国泰（159516）9/4 收 <strong>0.657 元（🟢 −3.10%）</strong>，科创50ETF华夏（588000）收 1.668 元（🟢 −2.06%）。而 9/3 申赎中，科创板与半导体方向 7 只 ETF 合计净流入约 <strong>32.12 亿元</strong>。<strong>申赎在买、场内价格却在跌——这是「ETF 正在从配置工具变成交易工具」的又一直接证据。</strong></li><li><strong>⚠️ 159516 已于 9/3 首次跌破 0.68 元减仓线（收 0.678），9/4 继续跌至 0.657，观察期已满。</strong> 按 9/2 设定的六格矩阵，判定口径是「主力资金是否延续流入」——<strong>近 5 日 +6.95 亿元、近 20 日 +33.08 亿元，仍为净流入 → 落第 ⑤ 格（观察 1 日，不立即减仓）</strong>。但当日主力已转为净流出 0.06 亿元，<strong>这是连续性的第一个裂缝</strong>。</li><li><strong>🔴 持仓关联最强的一条：腾讯控股在哔哩哔哩-W 的 7 亿美元可转债交易中同时扮演认购方、配售方与被回购方三重角色，净效果是股权敞口下降 6 亿美元、债权敞口上升 2 亿美元。</strong> 财务影响可忽略（约 31 亿港元，占市值 0.077%），但<strong>这是腾讯主动将参股关系转为纯财务安排的信号</strong>。</li><li><strong>⚠️ 顺丰控股以 59.99 亿元位居年内 A 股已完成回购金额首位（全市场第一）。</strong> 这是持仓中唯一的「回购金额全市场第一」标的，但今日股价仅 +0.53%，<strong>属中期安全垫而非短期催化剂</strong>。</li></ul>
+<hr>
+<h2>一、ETF 资金流数据</h2>
+<h3>1.1 ⭐ 核心数据：9/3 申赎（最新可得）+ 9/4 场内量价双口径</h3>
+<p><strong>What</strong></p>
+<table><thead><tr><th>口径</th><th>最新可得截面</th><th>状态</th></tr></thead><tbody><tr><td>ETF 申赎净流入（大类 / 个基）</td><td><strong>2026-09-03</strong></td><td>⚠️ T+1 滞后，9/4 数据未发布</td></tr><tr><td>ETF 场内量价（价 / 量 / 换手）</td><td><strong>2026-09-04 收盘</strong></td><td>✅ 已取</td></tr><tr><td>ETF 二级市场主力资金流</td><td><strong>2026-09-04 收盘</strong></td><td>✅ 已取</td></tr><tr><td>申万一级行业主力资金流</td><td><strong>2026-09-04 收盘</strong></td><td>✅ 已取</td></tr><tr><td>两融余额</td><td>—</td><td>❌ <strong>当日数据未发布；Wind 新闻口径最新为 8/7 周度数据，与今日相隔近 4 周，不具参考价值，本期不引用</strong></td></tr></tbody></table>
+<p><strong>9/3 大类申赎净流入（截面日期：2026-09-03，数据于 9/4 日间发布）</strong></p>
+<table><thead><tr><th>大类</th><th>9/3 净流入/流出</th><th>9/1 对照</th><th>变化</th></tr></thead><tbody><tr><td><strong>宽基指数 ETF</strong></td><td>🔴 <strong>+58.26 亿</strong></td><td>🟢 −80.40 亿</td><td>🔴 <strong>方向反转，摆动 138.66 亿</strong></td></tr><tr><td>货币 ETF</td><td>🔴 +31.60 亿</td><td>🟢 −2.45 亿</td><td>🔴 由流出转流入</td></tr><tr><td>行业主题 ETF</td><td>🔴 +13.26 亿</td><td>🔴 +24.73 亿</td><td>流入规模收窄</td></tr><tr><td>可转债指数 ETF</td><td>🔴 +12.37 亿</td><td>🟢 −1.09 亿</td><td>🔴 由流出转流入（前期 9.64 亿，进一步扩大）</td></tr><tr><td>利率债指数 ETF</td><td>🔴 +10.22 亿</td><td>🔴 +7.11 亿</td><td>扩大</td></tr><tr><td>信用债指数 ETF</td><td>🔴 +7.1x 亿</td><td>🔴 +16.14 亿</td><td>收窄</td></tr><tr><td>商品 ETF</td><td>🔴 净流入</td><td>🔴 +7.09 亿</td><td>—</td></tr><tr><td><strong>跨境 ETF</strong></td><td>🟢 <strong>净流出</strong></td><td>🟢 −2.08 亿</td><td><strong>由净流入转为净流出</strong></td></tr><tr><td><strong>策略风格 ETF</strong></td><td>🟢 <strong>净流出（规模进一步扩大）</strong></td><td>🟢 −22.53 亿</td><td>恶化</td></tr></tbody></table>
+<p><strong>九大类整体净流入约 118.34 亿元</strong>，较前一交易日的 44.79 亿元明显上升，为近三个交易日最高；当日七类品种录得净流入、仅两类净流出。</p>
+<p><strong>9/3 个基申赎净流入 TOP 榜（截面日期：2026-09-03）</strong></p>
+<table><thead><tr><th>ETF</th><th>代码</th><th>9/3 申赎净流入</th><th>最新规模</th></tr></thead><tbody><tr><td>华宝添益ETF</td><td>511990</td><td>🔴 <strong>+24.86 亿</strong></td><td>1,049.67 亿</td></tr><tr><td>科创50ETF华夏</td><td>588000</td><td>🔴 <strong>+14.28 亿</strong></td><td>889.20 亿</td></tr><tr><td>创业板ETF易方达</td><td>159915</td><td>🔴 +11.62 亿</td><td>660.41 亿</td></tr><tr><td>银华日利ETF</td><td>511880</td><td>🔴 +8.17 亿</td><td>1,148.40 亿</td></tr><tr><td>沪深300ETF华泰柏瑞</td><td>510300</td><td>🔴 +7.58 亿</td><td>1,067.89 亿</td></tr><tr><td>科创芯片ETF嘉实</td><td>588200</td><td>🔴 +4.71 亿</td><td>487.77 亿</td></tr><tr><td>科创半导体ETF华夏</td><td>588170</td><td>🔴 +2.99 亿</td><td>419.48 亿</td></tr><tr><td>科创50ETF易方达</td><td>588080</td><td>🔴 +2.93 亿</td><td>416.15 亿</td></tr><tr><td>半导体ETF国联安</td><td>512480</td><td>🔴 +2.66 亿</td><td>198.55 亿</td></tr><tr><td>上证50ETF华夏</td><td>510050</td><td>🔴 +2.68 亿</td><td>198.78 亿</td></tr><tr><td>科创芯片ETF富国</td><td>588810</td><td>🔴 +2.35 亿</td><td>21.91 亿</td></tr><tr><td><strong>半导体设备ETF国泰</strong></td><td><strong>159516</strong></td><td>🔴 <strong>+2.20 亿</strong></td><td>421.73 亿</td></tr><tr><td>中证1000ETF华夏</td><td>159845</td><td>🔴 +2.18 亿</td><td>62.22 亿</td></tr></tbody></table>
+<p class="sub-label"><strong>关键结构</strong>：</p>
+<p>宽基核心四只（沪深300ETF华泰柏瑞 + 上证50ETF华夏 + 创业板ETF易方达 + 中证1000ETF华夏）合计净流入约 <strong>24.06 亿元</strong>；科创板与半导体方向七只合计净流入约 <strong>32.12 亿元</strong>。</p>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=0A33D34DD7A3" target="_blank">来源：ETF资金流｜宽基指数ETF当日净流入58.26亿元，跃居各大类净流入榜首（2026-09-04，Wind 金融终端新闻）</a></div><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=0A33D34DD7A3" target="_blank">来源：9月3日科创板及半导体方向配置热度明显回升，七只ETF合计净流入约32.12亿元（2026-09-04，Wind 金融终端新闻）</a></div></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>口径切换本身是本期最重要的信息。</strong> 9/2 报告建立在「放量下跌 = 真实赎回压力」之上，而 9/3 的申赎数据显示宽基不但没有继续流出，反而大幅流入 58.26 亿元。<strong>若沿用 9/2 结论而不重做申赎，会得到方向性错误的推论。</strong> 这是自 9/1 以来第三次证明：<strong>ETF 申赎的方向指示价值在下降。</strong></li><li><strong>「宽基 +58.26 亿 vs 科创半导体 +32.12 亿」合计 90.38 亿元，占九大类整体净流入 118.34 亿元的 76.4%。</strong> 这说明 9/3 的流入<strong>高度集中在权益方向</strong>，而非此前的「防御为主」。结合 9/4 场内全线杀跌，<strong>这批资金在买入后的第一个交易日即遭遇浮亏</strong>。</li><li><strong>「净流入」与「上涨」不能画等号，本期提供了反向案例。</strong> 9/2 报告举的是「8 月中证1000 ETF 净流出 299.74 亿但净值涨约 10%」；本期则是「9/3 科创半导体方向申赎净流入 32.12 亿，9/4 场内即跌 2%–3%」。<strong>两个方向都证伪了「ETF 资金流 = 价格领先指标」这一简化叙事。</strong></li><li><strong>结构含义（承接 9/2 判断）：个人持有 ETF 比例已升至 43%，持有期显著短于机构。</strong> ETF 正在从配置工具变成交易工具——申赎数据的「方向指示」价值下降，「量能变化」的价值上升。<strong>本期申赎流入与场内下跌的背离，正是这一结构变化的高频表现。</strong></li></ul>
+<p><strong>Now What</strong></p>
+<ul><li><strong>动作：观察，不动作。</strong> 申赎的方向反转尚未传导至持仓个股的基本面或估值锚点。</li><li><strong>触发条件</strong>：沪深300ETF华泰柏瑞规模若跌破 <strong>1,000 亿元</strong>（9/3 为 1,067.89 亿元，需再降 6.4%），视为宽基资金面实质性恶化 —— <strong>该条件在 9/4 申赎数据发布前无法验证</strong>。</li><li><strong>下一验证节点</strong>：<strong>9/5 发布的 9/4 ETF 申赎数据</strong>，重点看① 宽基是否延续流入；② 科创半导体方向的 32.12 亿是否逆转。</li></ul>
+<hr>
+<h3>1.2 ⭐ 本期最锋利的背离：9/3 申赎大幅流入 vs 9/4 场内全线杀跌</h3>
+<p><strong>What</strong></p>
+<p><strong>9/4 场内量价（收盘截面）</strong></p>
+<table><thead><tr><th>ETF</th><th>代码</th><th>收盘</th><th>涨跌幅</th><th>成交额</th><th>换手率</th><th>当日主力</th><th>近5日主力</th><th>近20日主力</th></tr></thead><tbody><tr><td>沪深300ETF华泰柏瑞</td><td>510300</td><td>4.616</td><td>🟢 −0.11%</td><td>39.06 亿</td><td>3.64%</td><td>🟢 −1.86 亿</td><td>🔴 +1.36 亿</td><td>🔴 +16.28 亿</td></tr><tr><td>沪深300ETF易方达</td><td>510310</td><td>4.485</td><td>🟢 −0.09%</td><td>6.16 亿</td><td>1.21%</td><td>🟢 −1.01 亿</td><td>🟢 −4.94 亿</td><td>🟢 −7.46 亿</td></tr><tr><td>沪深300ETF嘉实</td><td>159919</td><td>4.820</td><td>🟢 −0.08%</td><td>6.17 亿</td><td>2.04%</td><td>🟢 −0.40 亿</td><td>🟢 −1.14 亿</td><td>🟢 −4.52 亿</td></tr><tr><td>上证50ETF华夏</td><td>510050</td><td>3.037</td><td>🔴 +0.20%</td><td>16.67 亿</td><td>8.34%</td><td>🟢 −0.72 亿</td><td>🔴 +0.19 亿</td><td>🟢 −1.31 亿</td></tr><tr><td>中证500ETF南方</td><td>510500</td><td>7.673</td><td>🟢 −1.39%</td><td>40.95 亿</td><td>10.39%</td><td>🟢 −3.01 亿</td><td>🔴 +0.03 亿</td><td>🔴 +5.72 亿</td></tr><tr><td>中证1000ETF南方</td><td>512100</td><td>3.044</td><td>🟢 −1.36%</td><td>35.94 亿</td><td>19.01%</td><td>🟢 −0.51 亿</td><td>🟢 −4.00 亿</td><td>🟢 −24.75 亿</td></tr><tr><td><strong>半导体设备ETF国泰</strong></td><td><strong>159516</strong></td><td><strong>0.657</strong></td><td>🟢 <strong>−3.10%</strong></td><td>34.64 亿</td><td>8.37%</td><td>🟢 −0.06 亿</td><td>🔴 <strong>+6.95 亿</strong></td><td>🔴 <strong>+33.08 亿</strong></td></tr><tr><td><strong>科创50ETF华夏</strong></td><td><strong>588000</strong></td><td><strong>1.668</strong></td><td>🟢 <strong>−2.06%</strong></td><td>74.10 亿</td><td>8.40%</td><td>🔴 <strong>+8.72 亿</strong></td><td>🔴 +16.61 亿</td><td>🔴 +20.12 亿</td></tr><tr><td>证券ETF国泰</td><td>512880</td><td>1.105</td><td>🔴 +0.64%</td><td>24.87 亿</td><td>3.99%</td><td>🔴 +2.99 亿</td><td>🔴 +5.02 亿</td><td>🔴 +11.03 亿</td></tr><tr><td>创业板ETF易方达</td><td>159915</td><td>3.305</td><td>🟢 −0.75%</td><td>62.27 亿</td><td>9.40%</td><td>🔴 +0.25 亿</td><td>🔴 +4.58 亿</td><td>🟢 −13.42 亿</td></tr></tbody></table>
+<p><strong>当日全市场 ETF 合计成交额 4,960.4 亿元</strong>，较上一交易日大幅放量 756.8 亿元；<strong>全市场仅约 700 只 ETF 收涨</strong>。</p>
+<p>⚠️ <strong>规模字段口径提示（policy §1.2.5）</strong>：Wind <code>基金规模</code> / <code>流通份额</code> / <code>最新净值</code> 三个字段的 T/T-1 对齐关系不一致（本期 510300 返回 948.72 亿元，而 9/3 申赎新闻口径为 1,067.89 亿元，差 119.17 亿元）。<strong>本报告未用这些字段推导申赎净流入</strong>，申赎一律取自 Wind 新闻口径。</p>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=23F67B681EE3" target="_blank">来源：ETF市场周报（2026-09-04，Wind 金融终端新闻）</a></div></p>
+<p><strong>So What</strong></p>
+<ul><li><strong>背离的量化刻画</strong>：9/3 科创板与半导体方向七只 ETF 申赎净流入 <strong>32.12 亿元</strong>；9/4 该方向场内价格 159516 🟢 −3.10%、588000 🟢 −2.06%。<strong>申赎在买、场内价格却在跌，方向完全相反。</strong> 这不是数据错误，而是申赎（场外、主要由机构与长期资金驱动）与场内交易（主要由个人与短线资金驱动）的<strong>参与者结构差异</strong>。</li><li><strong>但资金内部也出现了分歧，不是铁板一块</strong>：9/4 科创50ETF华夏（588000）<strong>当日主力净流入 8.72 亿元</strong>，而 159516 当日主力<strong>净流出 0.06 亿元</strong>（虽金额极小）。<strong>同为科创半导体方向，588000 主力在买、159516 主力在卖。</strong></li><li><strong>近 5 日 / 近 20 日口径下，159516 的资金证据仍在增强</strong>：近 5 日 +6.95 亿元、近 20 日 +33.08 亿元。但必须注意：<strong>近 5 日流入规模已从 9/2 的 +9.37 亿元降至 +6.95 亿元，近 20 日从 +43.13 亿元降至 +33.08 亿元 —— 两个口径同时收窄。</strong></li></ul>
+<p><strong>Now What</strong></p>
+<ul><li><strong>动作：观察，不动作。</strong> 背离本身不构成交易信号，需等到 9/5 的申赎数据才能判断 9/3 的流入是一次性还是趋势起点。</li><li><strong>下一验证节点</strong>：9/5 发布的 9/4 ETF 申赎数据，重点核对 588000 与 159516 是否延续净流入。</li></ul>
+<hr>
+<h3>1.3 ⚠️ 持仓关联：159516 已跌破 0.68 元减仓线，观察期已满，本期不触发减仓</h3>
+<p><strong>What</strong></p>
+<p><strong>半导体设备ETF国泰（159516）价格轨迹</strong></p>
+<table><thead><tr><th>日期</th><th>收盘</th><th>涨跌幅</th><th>距 0.68 减仓线</th></tr></thead><tbody><tr><td>2026-09-01</td><td>—</td><td>—</td><td>2.30%</td></tr><tr><td>2026-09-02</td><td>0.684</td><td>🟢 −1.72%</td><td><strong>0.58%</strong></td></tr><tr><td><strong>2026-09-03</strong></td><td><strong>0.678</strong></td><td>🟢 −0.88%</td><td>🔴 <strong>首次跌破</strong></td></tr><tr><td><strong>2026-09-04</strong></td><td><strong>0.657</strong></td><td>🟢 <strong>−3.10%</strong></td><td>🔴 <strong>跌破幅度扩大至 −3.38%</strong></td></tr></tbody></table>
+<p><strong>资金证据（三个口径同时列出，因为结论依赖口径选择）</strong></p>
+<table><thead><tr><th>口径</th><th>9/2</th><th>9/4</th><th>变化</th></tr></thead><tbody><tr><td>当日主力净流入</td><td>🔴 +2.78 亿</td><td>🟢 <strong>−0.06 亿</strong></td><td>🔴 <strong>由流入转为流出（金额极小，占成交额 0.16%）</strong></td></tr><tr><td>近 5 日主力净流入</td><td>🔴 +9.37 亿（5/5 天全部流入）</td><td>🔴 <strong>+6.95 亿</strong></td><td>🟢 收窄 2.42 亿</td></tr><tr><td>近 20 日主力净流入</td><td>🔴 +43.13 亿</td><td>🔴 <strong>+33.08 亿</strong></td><td>🟢 收窄 10.05 亿</td></tr></tbody></table>
+<p><strong>9/2 设定的六格减仓矩阵（原文）</strong></p>
+<table><thead><tr><th>159516 价格区间</th><th>主力资金延续流入</th><th>主力资金转为流出</th></tr></thead><tbody><tr><td>站上 0.76 元 + 资金延续</td><td>① 加半档</td><td>② 维持持有</td></tr><tr><td>0.68 – 0.76 元 区间内</td><td>③ 维持持有（9/2 落点）</td><td>④ 维持持有，等待方向</td></tr><tr><td><strong>跌破 0.68 元</strong></td><td>⑤ <strong>观察 1 日，不立即减仓</strong></td><td>⑥ <strong>触发减仓（唯一减仓触发格）</strong></td></tr></tbody></table>
+<p><strong>So What</strong></p>
+<ul><li><strong>判定过程必须写清楚，因为结论对口径敏感。</strong> 价格已明确跌破 0.68（9/3 首次、9/4 扩大），落在矩阵的<strong>第 ⑤ 或第 ⑥ 格</strong>。区分点在「主力资金是否转为流出」：</li><li>按<strong>当日</strong>口径：9/4 主力净流出 0.06 亿元 → 属「转为流出」→ 第 ⑥ 格 → <strong>触发减仓</strong></li><li>按<strong>近 5 日</strong>口径：+6.95 亿元仍为流入 → 属「延续流入」→ 第 ⑤ 格 → <strong>观察 1 日，不立即减仓</strong></li><li>按<strong>近 20 日</strong>口径：+33.08 亿元仍为流入 → 第 ⑤ 格</li><li><strong>本期采用近 5 日口径，理由有三</strong>：① 9/2 设定矩阵时引用的就是近 5 日（+9.37 亿、5/5 天全部流入），<strong>换口径等于换了尺子</strong>；② 当日 −0.06 亿元仅占成交额 0.16%，<strong>在统计上不构成「转为流出」的证据</strong>；③ policy §5.1 明确要求用连续性而非单日读数判定。</li><li><strong>但必须如实披露：这是资金连续性的第一个裂缝。</strong> 9/2 时近 5 日为「5/5 天全部净流入」，<strong>今日已无法做出该陈述</strong>；且近 5 日与近 20 日两个口径同时收窄（−2.42 亿 / −10.05 亿）。<strong>趋势方向是恶化的，只是恶化速度尚未达到触发标准。</strong></li></ul>
+<p><strong>Now What</strong></p>
+<p><strong>⚠️ 判定：不触发减仓，但观察期已满，进入「每交易日必检」状态。</strong></p>
+<table><thead><tr><th>9/5 的三种情形</th><th>动作</th></tr></thead><tbody><tr><td>159516 站回 0.68 以上</td><td>回到第 ③ 格，维持持有</td></tr><tr><td>继续跌破 0.68 且<strong>近 5 日仍为净流入</strong></td><td>维持第 ⑤ 格，继续观察（但<strong>不得无限期观察</strong> —— 累计观察 3 个交易日后强制减仓）</td></tr><tr><td>继续跌破 0.68 且<strong>近 5 日转为净流出</strong></td><td>🔴 <strong>落第 ⑥ 格 → 触发减仓（兆易创新、大族数控各减 1/3）</strong></td></tr></tbody></table>
+<p class="sub-label"><strong>⚠️ 本期新增规则（消除「无限期观察」的规则真空）</strong>：</p>
+<p>9/2 矩阵的第 ⑤ 格「观察 1 日」未规定观察期上限，若资金持续处于「近 5 日流入、当日流出」的模糊状态，将形成时间维度上的规则真空区（与 9/2 发现的时间不封闭属同类缺陷）。<strong>本期补上：累计观察上限 3 个交易日，超限即强制减仓。</strong></p>
+<p class="sub-label"><strong>下一验证节点</strong>：</p>
+<p><strong>9/5 的 159516 收盘价 + 近 5 日主力资金方向</strong> —— 这是持仓中唯一的减仓触发候选。</p>
+<hr>
+<h2>二、大股东持股变动</h2>
+<h3>2.1 ⭐ 腾讯控股与哔哩哔哩-W：7 亿美元可转债交易中的三重角色（🔴 强持仓关联）</h3>
+<p><strong>What</strong></p>
+<p>哔哩哔哩-W（9626.HK）2026 年 9 月 4 日公告四项同步交易：</p>
+<ul><li><strong>发售</strong>本金总额 <strong>7 亿美元</strong>于 2031 年到期的可换股优先票据，其中<strong>腾讯通过子公司按同等条款认购 2 亿美元</strong></li><li><strong>同步二级配售</strong> Z 类普通股，包括<strong>腾讯持有的约 4 亿美元现有股份</strong></li><li><strong>同步股份回购</strong>：公司回购约 <strong>1 亿美元</strong>借入股份以减轻潜在摊薄</li><li><strong>回购腾讯持有的 2 亿美元现有 Z 类普通股</strong>，回购价格均为同步股权配售的参考价格</li></ul>
+<p>其中第 4 项属场外股份回购，需在特别股东大会获无利害关系股东以所投票数至少 3/4 批准，公司预计 <strong>2026 年 9 月 25 日或之前</strong>寄发通函，<strong>腾讯相关方将放弃投票，创始人股东已承诺投赞成票</strong>。</p>
+<p>所得款项用途：用于对冲回购及腾讯同步回购的资金，剩余部分用于 <strong>AI 驱动的业务增长</strong>及一般企业用途。</p>
+<p><div class="source-link">🔗 <a href="https://t.wind.com.cn/mobwftweb/M/news.html?share=wechat&amp;show=wft&amp;code=5AA14D6EF6AE" target="_blank">来源：香港万得通讯社 · 哔哩哔哩-W 公告（2026-09-04，Wind 金融终端新闻）</a></div></p>
+<p><strong>关注重点 + 解读（Implications）</strong></p>
+<ul><li><strong>净效果测算（必须逐笔拆解，否则会误读为「腾讯加仓 B 站」）</strong></li><li>认购票据：<strong>−2 亿美元现金</strong>（债权）</li><li>配售腾讯持有的 4 亿美元股份：<strong>+4 亿美元现金</strong>（股权减少）</li><li>公司回购腾讯持有的 2 亿美元股份：<strong>+2 亿美元现金</strong>（股权再减少）</li><li><strong>净现金：+4 亿美元（约 31 亿港元）；净股权敞口：−6 亿美元；净债权敞口：+2 亿美元</strong></li><li><strong>方向判断：这是腾讯在 B 站的股权敞口实质性下降。</strong> 6 亿美元的股权减持 vs 2 亿美元的债权认购，<strong>股退债进</strong>的特征非常清晰。合理的解释是腾讯在主动把自己从「联营/参股」地位转向「纯财务安排」——<strong>可能是在为持股比例的会计处理（是否仍具重大影响、能否继续按权益法核算）或资本配置腾挪空间。</strong></li><li><strong>为什么这个动作值得关注而非忽略？</strong> 因为腾讯近年对 B 站、快手等联营公司的处理一直是「保持战略持股」，本次是少见的方向性调整。但<strong>必须克制解读</strong>：31 亿港元对 4.03 万亿港元的腾讯而言仅 0.077%，<strong>不构成基本面变化，只是一个值得跟踪的资本配置信号</strong>。</li></ul>
+<p><strong>持仓关联：🔴 命中「AI应用（底仓）」— 腾讯控股（0700.HK，权重 20% 大类内 2 只之一）</strong></p>
+<ul><li><strong>动作：持有</strong>（不构成评级调整理由）</li><li><strong>触发条件</strong>：若腾讯在 Q3 财报中披露对联营公司持股的整体处置计划，或该模式在 B 站之外复现（如快手、拼多多等），需重新评估其「投资收益稳定性」这一估值分项</li><li><strong>下一验证节点</strong>：<strong>B 站特别股东大会通函（9/25 前）</strong> —— 看场外回购的独立意见与定价细节，判断是否为主动资本配置</li></ul>
+<hr>
+<h3>2.2 顺丰控股：年内回购 59.99 亿元，位居 A 股已完成回购金额首位（🔴 持仓关联）</h3>
+<p><strong>What</strong></p>
+<p>Wind 数据显示，截至 2026 年 9 月 4 日，年内已有 <strong>1,070 个回购方案实施完毕</strong>，涉及 <strong>838 家公司</strong>，其中 <strong>222 家公司已完成回购金额超亿元</strong>。<strong>顺丰控股（002352.SZ）以 59.99 亿元位居已完成回购金额首位</strong>，京东方A（57.03 亿元）、宁德时代（43.86 亿元）分列二三位。</p>
+<p>当日 9/4 全市场动态：18 家公司共发布 19 个股票回购相关进展——3 家回购方案获股东大会通过，8 家披露实施进展，7 家已实施完毕。当日已完成回购金额前三：东阳光（6.0 亿元）、韵达股份（9,989.52 万元）、苑东生物（6,075.35 万元）。<strong>均不涉及持仓。</strong></p>
+<p>顺丰控股 9/4 收 <strong>32.22 元（🔴 +0.53%）</strong>，成交额 4.77 亿元，换手率仅 0.308%，当日主力净流入 0.81 亿元。</p>
+<p><div class="source-link">🔗 来源：香港万得通讯社 · 9月4日股票回购统计（2026-09-04，Wind 金融终端新闻）</div></p>
+<p><strong>关注重点 + 解读（Implications）</strong></p>
+<ul><li><strong>59.99 亿元的回购规模对应的托底能力需要量化。</strong> 顺丰控股总市值 1,673.85 亿元，59.99 亿元占比 <strong>3.58%</strong>；日均成交额约 4.77 亿元（9/4），<strong>59.99 亿元相当于 12.6 个交易日的全部成交额</strong>。<strong>这是实质性的托底力量，不是象征性回购。</strong></li><li><strong>但必须指出：回购金额大 ≠ 股价表现好。</strong> 顺丰控股今日仅 +0.53%，换手率 0.308%（持仓中最低之一），主力近 5 日 <strong>−2.18 亿元</strong>、近 20 日 <strong>−0.38 亿元</strong>。<strong>回购在执行、资金却在流出——这与本期 159516 的背离是同一类现象。</strong></li><li><strong>结构含义</strong>：在「物流反内卷」逻辑下，顺丰作为行业龙头用回购替代价格战，是资本配置从「抢份额」转向「股东回报」的信号。<strong>这对整个物流板块的定价逻辑是有利的</strong>，但需要看到极兔速递-W（1519.HK）等同业的跟进才能形成板块级结论。</li></ul>
+<p><strong>持仓关联：🔴 命中「周期+反内卷（物流）」— 顺丰控股（002352.SZ）</strong></p>
+<ul><li><strong>动作：持有</strong>（回购不构成上调评级理由，因为资金面未配合）</li><li><strong>触发条件</strong>：主力近 5 日由 −2.18 亿元转为净流入 + 单日成交额回升至 8 亿元以上 → 可考虑加半档；跌破 28 元 → 转观望</li><li><strong>下一验证节点</strong>：<strong>9 月回购进展公告</strong>（单月节奏是否维持）；三季报（10 月下旬）看单票成本与市占率</li></ul>
+<hr>
+<h3>2.3 其余增减持事件（均不涉及持仓，仅作市场环境记录）</h3>
+<table><thead><tr><th>主体</th><th>事件</th><th>规模</th><th>持仓关联</th></tr></thead><tbody><tr><td>新威凌（920634.BJ）</td><td>5% 以上股东长沙新威凌企管减持 1.5994% 股份（5,500,000 → 4,478,000 股，持股比例 8.6060% → 7.0080%），减持金额 1,795.67 万元，<strong>提前终止减持计划</strong></td><td>1,795.67 万元</td><td>不涉及持仓</td></tr><tr><td>牧原股份（002714.SZ）</td><td>9/4 回购 4.48 万股 H 股，价格区间 35.66–37.68 港元，金额 165.64 万港元</td><td>165.64 万港元</td><td>不涉及持仓（但 9/4 港股猪肉股中粮家佳康涨超 9%、A股猪肉概念涨停潮，可作为农业板块情绪参考）</td></tr><tr><td>保诚（2378.HK）</td><td>伦敦交易所回购 671,954 股，注销 387,822 股，均价 10.0502 英镑</td><td>—</td><td>不涉及持仓</td></tr><tr><td>怡和控股</td><td>9/4 完成 5 万股回购并注销，价格 58.4782 美元</td><td>—</td><td>不涉及持仓</td></tr></tbody></table>
+<p class="sub-label"><strong>解读</strong>：</p>
+<p>本期增减持事件<strong>无一涉及持仓标的的减持</strong>，仅有腾讯（B 站，净减持 6 亿美元）与顺丰（回购 59.99 亿元）两条持仓关联。<strong>整体环境偏中性，无系统性减持压力。</strong></p>
+<hr>
+<h2>三、知名交易</h2>
+<h3>3.1 英伟达 129.3 亿美元收购 Hugging Face（🔵 产业级，非持仓）</h3>
+<p><strong>What</strong></p>
+<p>英伟达宣布以 <strong>129.303 亿美元</strong>总对价收购开源 AI 平台 Hugging Face，其中约 119 亿美元支付给股东、最高约 10 亿美元股权激励留任员工；交易预计 <strong>2027 年上半年完成</strong>，尚待监管批准。Hugging Face 现有超 <strong>1,800 万开发者、300 万模型、50 万数据集、100 万应用</strong>，超 20 万家企业使用。黄仁勋承诺平台将独立运营、不强制绑定英伟达算力。<strong>收购溢价超其年收入 86 倍。</strong></p>
+<p><div class="source-link">🔗 <a href="https://3w.huanqiu.com/a/c36dc8/4T4QNTA25qy?agt=23" target="_blank">来源：环球网转述路透社及双方官方新闻稿（2026-09-03）</a></div></p>
+<p><strong>关注重点 + 解读</strong></p>
+<ul><li><strong>86 倍年收入的溢价意味着这不是按现金流定价，而是按「AI 开发者入口」定价。</strong> 1,800 万开发者是训练数据的来源、模型分发的渠道、也是推理需求的入口。<strong>英伟达买的是软件栈对硬件的锁定能力。</strong></li><li><strong>对 A 股/港股半导体链的影响路径</strong>：短期无直接影响；中期需观察<strong>开源生态是否被英伟达绑定</strong>——若 Hugging Face 的推理优化开始默认优先 CUDA，国产推理卡的软件适配成本将上升。<strong>这对持仓中的半导体标的（兆易创新、ASMPT、大族数控）是潜在的中期负面变量，但 2027 年上半年才完成交易，当前不构成定价因子。</strong></li><li><strong>「平台将独立运营」的承诺需打折看待</strong>：收购方承诺独立运营在科技并购史上兑现率不高。</li></ul>
+<p><strong>持仓关联：⚠️ 间接关联「AI及半导体」（15% 权重大类）— 不构成当期动作理由，列入中期观察清单</strong></p>
+<hr>
+<h3>3.2 字节跳动 296 亿美元银团贷款，2026 年资本开支或达 700 亿美元（🔵 产业级）</h3>
+<p><strong>What</strong></p>
+<p>字节跳动推进一笔 <strong>296 亿美元</strong>（约合人民币 2,000 亿元）银团贷款，因认购踊跃由原计划 200 亿美元扩容，定价 <strong>SOFR+68 个基点</strong>，<strong>创中国科技企业境外贷款利差最低纪录</strong>（2024 年同类为 85bp）；花旗与摩根大通任协调行，三年期可展期至五年。完成后将成为 <strong>2026 年亚洲第二大美元银团贷款</strong>（仅次于软银 3 月 400 亿美元）。字节正考虑将 2026 年资本开支提升至最高 <strong>700 亿美元</strong>，约 2025 年两倍；TrendForce 预计 2026 年中国四家主要 CSP 资本开支同比增长超 <strong>80%</strong>。</p>
+<p><div class="source-link">🔗 <a href="https://c.m.163.com/news/a/L5TSTKJP0519DDOA.html" target="_blank">来源：《财经》/第一财经援引彭博报道（2026-09-03）</a></div></p>
+<p><strong>关注重点 + 解读</strong></p>
+<ul><li><strong>利差从 85bp 压缩至 68bp，是本期最被低估的数据点。</strong> 这不是字节一家的融资成本下降，而是<strong>国际银团对中国 AI 资本开支主体的风险定价在系统性下修</strong>。对国内 AI 算力链是实质性利好。</li><li><strong>中国四家主要 CSP 2026 年资本开支同比 +80%，这个数字的兑现节奏是关键。</strong> 若按季度均匀投放，Q3 应看到服务器、光模块、液冷、IDC 的订单加速。<strong>持仓中的长飞光纤光缆（光纤）、东方电气 / 潍柴动力（电源设备）、联想集团（AI 服务器）均在这条链上。</strong></li><li><strong>但需注意：这是「钱已借到、尚未花出」的阶段。</strong> 从贷款落地到设备招标通常有 1–2 个季度时滞。</li></ul>
+<p><strong>持仓关联：🔵 间接关联「AI及半导体」大类（联想集团、长飞光纤光缆、东方电气、潍柴动力）— 属背景利好，构成「不减仓」的支撑，不构成加仓理由</strong></p>
+<hr>
+<h3>3.3 Crusoe 与 Jane Street 约 130 亿美元五年期 AI 云协议（🔵 海外算力）</h3>
+<p><strong>What</strong></p>
+<p>据彭博援引知情人士，数据中心厂商 Crusoe 与量化交易公司 Jane Street 签署为期五年、约 <strong>130 亿美元</strong>的云计算协议，通过 Crusoe 云平台提供先进 AI 芯片集群及训推基础设施，<strong>为 Crusoe 云业务迄今最大客户</strong>。Jane Street 此前已与 CoreWeave 签 60 亿美元云协议并投资 10 亿美元，<strong>两家供应商累计承诺算力支出约 190 亿美元</strong>。同期 Crusoe 正以约 300 亿美元估值募集约 30 亿美元。</p>
+<p><div class="source-link">🔗 <a href="https://www.datacenterdynamics.com/en/news/crusoe-signs-13bn-deal-with-jane-street-report/" target="_blank">来源：DataCenterDynamics 转述彭博社（2026-09-04）</a></div></p>
+<p><strong>关注重点 + 解读</strong></p>
+<ul><li><strong>买方是量化交易公司而非云厂商，这是本期最值得注意的结构变化。</strong> 金融机构的算力采购从「自建」转向「长约外购」，且单笔规模已达 130 亿美元量级 —— <strong>AI 算力的需求端正从科技行业扩散到传统金融</strong>。</li><li><strong>对 A 股算力链的传导是间接的</strong>：Crusoe 的芯片采购仍以英伟达为主，<strong>不直接利好国产链</strong>。真正的意义在于验证「AI 算力需求的付费方在多元化」，降低了算力需求集中于少数 hyperscaler 的尾部风险。</li><li><strong>⚠️ 消息源为匿名知情人士，双方均未置评，机房位置未披露 —— 该交易的确定性与细节均待证实，本期仅作记录，不作为任何判断依据。</strong></li></ul>
+<p><strong>持仓关联：不涉及持仓（仅作 AI 算力需求结构的背景跟踪）</strong></p>
+<hr>
+<h3>3.4 大宗交易与龙虎榜（9/4）</h3>
+<table><thead><tr><th>项目</th><th>明细</th><th>持仓关联</th></tr></thead><tbody><tr><td>宝武镁业（300748.SZ）</td><td>大宗交易 230.00 万股 / 2,826.70 万元，成交价 12.29 元（<strong>相对收盘价溢价 2.42%</strong>），买方机构专用、卖方国泰海通上海黄陂南路</td><td>不涉及持仓</td></tr><tr><td>兴业银锡（000426.SZ）</td><td>大宗交易 5.68 万股 / 218.44 万元，买卖双方<strong>均为机构专用席位</strong></td><td>不涉及持仓</td></tr><tr><td>龙虎榜（9/4 沪深）</td><td>共 <strong>47 只</strong>个股上榜（古越龙山、亚盛集团、郑州煤电、深中华A、我爱我家、平潭发展等），<strong>持仓 24 只标的均未上榜</strong></td><td>已核实</td></tr><tr><td>易点天下 / 天娱数科</td><td>换手率 31.80% / 38.09% 上榜，机构与深股通分歧明显</td><td>不涉及持仓</td></tr></tbody></table>
+<p class="sub-label"><strong>解读</strong>：</p>
+<p>本期大宗交易与龙虎榜<strong>均无持仓标的</strong>。9/3 报告遗留的「四方达、惠丰钻石是否上榜（换手率 &gt; 20%）」验证项——<strong>今日两只换手率已回落至 17.857% / 16.858%，均低于上榜阈值，未上榜，验证项关闭。</strong></p>
+<hr>
+<h2>四、汇总统计</h2>
+<h3>4.1 全景数据面板（2026-09-04）</h3>
+<table><thead><tr><th>维度</th><th>数值</th><th>截面</th></tr></thead><tbody><tr><td>九大类 ETF 整体申赎净流入</td><td>🔴 <strong>+118.34 亿元</strong></td><td>2026-09-03</td></tr><tr><td>宽基指数 ETF 申赎</td><td>🔴 <strong>+58.26 亿元</strong>（由 −80.40 亿反转）</td><td>2026-09-03</td></tr><tr><td>科创板 + 半导体方向申赎（7 只）</td><td>🔴 <strong>+32.12 亿元</strong></td><td>2026-09-03</td></tr><tr><td>全市场 ETF 场内成交额</td><td><strong>4,960.4 亿元</strong>（放量 756.8 亿）</td><td>2026-09-04</td></tr><tr><td>全市场 ETF 收涨数量</td><td>约 700 只（占比低）</td><td>2026-09-04</td></tr><tr><td>沪深两市成交额</td><td>20,306.68 亿元（放量 15.45%）</td><td>2026-09-04</td></tr><tr><td>A 股主力资金</td><td>沪市 🟢 −151.28 亿、深市 🟢 −135.19 亿</td><td>2026-09-04</td></tr><tr><td>两融余额</td><td>❌ <strong>数据不可用</strong>（当日 T+1；新闻口径最新为 8/7 周度）</td><td>—</td></tr></tbody></table>
+<h3>4.2 持仓映射与动作汇总</h3>
+<table><thead><tr><th>标的</th><th>大类</th><th>本期状态</th><th>触发条件</th><th>下一验证节点</th></tr></thead><tbody><tr><td><strong>兆易创新</strong>（603986.SH）</td><td>AI及半导体</td><td><strong>持有</strong>（⚠️ 减仓线已跌破，观察期已满，本期不触发）</td><td><strong>159516 跌破 0.68 + 近5日主力转流出 → 减仓 1/3</strong>；继续跌破且近5日仍流入 → 观察（累计上限 3 日）</td><td><strong>9/5 的 159516 收盘价 + 近5日资金方向</strong></td></tr><tr><td><strong>大族数控</strong>（3200.HK）</td><td>AI及半导体</td><td><strong>持有</strong>（共用 159516 触发线）</td><td>同兆易创新</td><td>同上</td></tr><tr><td><strong>腾讯控股</strong>（0700.HK）</td><td>AI应用（底仓）</td><td><strong>持有</strong></td><td>跌破 430 → 加半档（距 −2.89%）；B 站模式在其他联营公司复现 → 重估投资收益分项</td><td><strong>B 站通函（9/25 前）</strong>；9/5 回购是否维持 1.0 亿级别（第 6 日）</td></tr><tr><td><strong>顺丰控股</strong>（002352.SZ）</td><td>周期+反内卷（物流）</td><td><strong>持有</strong></td><td>近 5 日主力转净流入 + 成交额回升至 8 亿以上 → 加半档；跌破 28 元 → 转观望</td><td><strong>9 月回购进展公告</strong>；三季报单票成本</td></tr><tr><td><strong>紫金黄金国际</strong>（2259.HK）</td><td>周期+反转</td><td><strong>维持半档，进入回补评估</strong></td><td>9/4 EDB 若维持 &gt; 4,500 → 评估回补第一档的一半</td><td><strong>9/5 EDB 更新的 9/4 COMEX 金结算价</strong></td></tr><tr><td><strong>联想集团</strong>（0992.HK）</td><td>AI及半导体</td><td><strong>持有</strong></td><td>站上 36.16 且主力转流入 → 加半档；跌破 28 且近 5 日转流出 → 减 1/3</td><td>9/5 能否守住 32 港元；主力是否连续 2 日净流出</td></tr><tr><td>其余 17 只标的</td><td>—</td><td><strong>持有 / 维持</strong></td><td>见当日晚间日报 §2.9</td><td>—</td></tr></tbody></table>
+<h3>4.3 本期三条规则执行结论</h3>
+<table><thead><tr><th>#</th><th>规则</th><th>输入</th><th>输出</th></tr></thead><tbody><tr><td>1</td><td>159516 六格减仓矩阵（9/2 设定）</td><td>价格 0.657（跌破 0.68）；近 5 日主力 +6.95 亿（流入）</td><td><strong>第 ⑤ 格 → 观察，不减仓</strong>（但新增「累计观察上限 3 日」规则）</td></tr><tr><td>2</td><td>COMEX 金三档规则（9/3 设定）</td><td>EDB 9/3 = 4,539.9（&gt; 4,500）</td><td><strong>第三档 → 进入回补评估</strong></td></tr><tr><td>3</td><td>换手率四档矩阵（9/4 修复）</td><td>四方达 17.857%、惠丰钻石 16.858%</td><td><strong>落「15%–20%」新增档 → 维持观望</strong>（同时填补了 9/3 遗留的规则空隙）</td></tr></tbody></table>
+<hr>
+<h2>五、数据溯源</h2>
+<table><thead><tr><th>数据项</th><th>来源</th><th>取值截面</th><th>说明</th></tr></thead><tbody><tr><td>ETF 申赎净流入（9 大类 + 个基 TOP）</td><td>Wind CLI <code>financial_docs/get_financial_news</code>（格隆汇/Wind 新闻口径）</td><td><strong>2026-09-03</strong>（9/4 日间发布）</td><td>⚠️ 9/4 申赎未发布（T+1）</td></tr><tr><td>ETF 场内量价（10 只）</td><td>Wind CLI <code>fund_data/get_fund_price_indicators</code></td><td>2026-09-04 收盘</td><td>含收盘价/涨跌幅/成交额/换手率/主力资金三口径</td></tr><tr><td>全市场 ETF 成交额与收涨数</td><td>Wind 新闻（ETF市场周报 / 收市点评）</td><td>2026-09-04</td><td>4,960.4 亿元，放量 756.8 亿</td></tr><tr><td>两市成交额与主力资金</td><td>Wind CLI <code>index_data/get_index_kline</code> + Wind 新闻</td><td>2026-09-04</td><td>沪市 −151.28 亿 / 深市 −135.19 亿</td></tr><tr><td>COMEX 黄金结算价</td><td>Wind CLI <code>economic_data</code>（EDB <code>S0180945</code>）</td><td>EDB 更新日 20260904，末值 2026-09-03 = <strong>4,539.9</strong></td><td>9/4 未入库，未用新闻价格替代</td></tr><tr><td>增减持 / 回购 / 大宗交易 / 龙虎榜</td><td>Wind CLI <code>financial_docs/get_financial_news</code></td><td>2026-09-04</td><td>4 轮检索</td></tr><tr><td>海外知名交易（英伟达/字节/Crusoe）</td><td>WebSearch（非金融数据，仅事件与金额）</td><td>2026-09-03 ~ 09-04</td><td>⚠️ 已标注非 Wind 来源</td></tr></tbody></table>
+<p><strong>数据合规声明</strong></p>
+<ul><li>✅ <strong>本期全部 ETF 场内量价、申赎金额、增减持与回购金额均取自 Wind 结构化 API / Wind 新闻口径</strong>，未用 WebSearch 获取任何数值型金融数据。</li><li>✅ <strong>未加载 <code>wb-finance-skill</code></strong>。</li><li>⚠️ <strong>第三节「知名交易」中的英伟达、字节跳动、Crusoe 三条为海外事件</strong>，Wind 新闻检索未覆盖，按报告完整性需要采用 WebSearch，且<strong>这三条均为事件与金额描述，不含任何 A 股/港股行情数据</strong>，未违反数据源铁律。其中 Crusoe 交易的消息源为匿名知情人士，已标注确定性存疑。</li><li>⚠️ <code>wind-finance</code> MCP connector 本次处于 <strong>disconnected</strong> 状态，全程走备用 CLI（<code>wind-mcp-skill</code>）。</li></ul>
+<p>⚠️ <strong>本报告由 21:00 缺口补跑任务生成（原 19:30 任务未落盘）。</strong> 数据截面为 2026-09-04 收盘 + 9/3 申赎，与 19:30 正式版一致；差异仅在于生成时点。</p>
+<p><strong>数据缺口与口径限制（如实列出）</strong></p>
+<table><thead><tr><th>缺口项</th><th>原因</th><th>处理</th></tr></thead><tbody><tr><td><strong>9/4 ETF 申赎数据</strong></td><td>T+1 滞后，未发布</td><td>最新可用截面标注为 <strong>9/3</strong>，9/4 增量改用量价 + 主力资金双口径替代，并在全文标注截面</td></tr><tr><td><strong>两融余额</strong></td><td>当日数据 T+1 未发布；新闻口径最新为 8/7 周度</td><td><strong>不引用</strong>（相隔近 4 周，无参考价值），如实标注</td></tr><tr><td><strong>ETF <code>基金规模</code> 字段</strong></td><td>Wind 返回 510300 = 948.72 亿，与申赎新闻口径的 1,067.89 亿差 119.17 亿</td><td>按 §1.2.5 <strong>不用于推导申赎</strong>，仅作参考并披露差异</td></tr><tr><td><strong>前十大股东 Q3 变动</strong></td><td>无批量查询工具，逐只查询超预算</td><td>列入后续验证（承接 9/3 报告）</td></tr><tr><td><strong>跨境 ETF / 策略风格 ETF 的具体净流出金额</strong></td><td>9/3 新闻仅给出方向（净流出），未给出具体数值</td><td>如实标注为「方向已知、数值未披露」</td></tr><tr><td><strong>Crusoe × Jane Street 交易细节</strong></td><td>消息源为匿名知情人士，双方未置评</td><td>标注「确定性存疑，仅作记录，不作判断依据」</td></tr></tbody></table>
+<p><strong>本期方法论修正（写入 policy，供后续报告复用）</strong></p>
+<ul><li><strong>「观察 N 日」类规则必须设定观察期上限（本期新增）</strong>：9/2 设定的 159516 矩阵第 ⑤ 格「观察 1 日，不立即减仓」未规定上限，若资金长期处于「近 5 日流入、当日流出」的模糊状态，将形成<strong>时间维度上的规则真空区</strong>（与 9/2 发现的时间不封闭属同类缺陷）。<strong>本期补上：累计观察上限 3 个交易日，超限即强制减仓。</strong></li><li><strong>口径一致性优先于灵敏度</strong>：本期 159516 的判定中，当日口径（−0.06 亿，流出）与近 5 日口径（+6.95 亿，流入）给出相反答案。<strong>采用近 5 日口径的理由是「与设定矩阵时引用的口径一致」</strong>——换口径等于换尺子，会让历史判定失去可比性。这与紫金黄金坚持 EDB 口径是同一条原则。</li><li><strong>申赎数据的定位应继续下调</strong>：继 9/2 举出「净流出 299.74 亿但净值涨 10%」的正反案例后，本期又出现「科创半导体申赎 +32.12 亿、次日场内跌 2%–3%」的反向案例。<strong>申赎已连续两期不能预测次日场内价格，报告中不应再将其作为方向性指标使用，只作为资金结构的记录。</strong></li></ul>
+<hr>
+<p>*数据来源：Wind 万得金融终端 · My Research Central · via WB*</p>
+
+<div class="report-footer">
+  数据来源：Wind 万得金融终端 · My Research Central · via WB
+</div>
+
+</body>
+</html>
