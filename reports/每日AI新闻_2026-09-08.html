@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日 AI 全球新闻 · 2026-09-08（周二）</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  line-height: 1.7;
+  color: var(--text2);
+  margin: 7px 0 0;
+  word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>每日 AI 全球新闻 · 2026-09-08（周二）</h1>
+  <div class="meta"><strong>覆盖窗口</strong>：2026-09-07 07:30 ~ 2026-09-08 07:30（北京时间） · <strong>金融数据口径声明</strong>：✅ 本期 <code>wind-finance</code> MCP connector <strong>全程 connected</strong>，持仓 24 只 + 7 只指数全部取自 <strong>Wind 结构化 API</strong>，取值截面 <strong>2026-09-07 收盘</strong>（<code>最新交易日=20260907</code>）。⚠️ <strong>美股 9/7 休市（美国劳动节）</strong>，故本报告不含 9/7 美股数据。 · <strong>彭博社通道</strong>：按 rj-daily-report-policy §1.3，<code>which bbgwire</code> 返回 not found，<strong>直接降级至 WebSearch</strong>，未重复排查。 · <strong>新闻源</strong>：WebSearch 8 轮（中英双语 + <code>freshness=d1/d2/d3</code>）。</div>
+</div>
+
+<hr>
+<h2>📌 今日速览（八条）</h2>
+<ul><li><strong>🔴 OpenAI 首次公开「递归自我改进」（RSI）内部数据，并给这条叙事划了一条硬边界</strong> —— 截至 8 月中旬，OpenAI 研究部门每 1 个人类工作日对应 <strong>3.1 个 Agent 工作日</strong>；中位数研究员日均推理成本 <strong>&gt;600 美元</strong>、90 分位 <strong>&gt;7,000 美元</strong>。但同一份报告里：<strong>过去半年成功完成的 4–8 小时任务中，超过一半至少需一次人工介入</strong>；15 分钟以内任务无干预成功率 86%；「决定研究什么」的 token 增量只有 <strong>+2.3k</strong>，而「写研究和基础设施代码」是 <strong>+198.2k</strong>。⚠️ 按 policy §10「规模指标不得单独作为利好」的纪律，<strong>3.1 倍是规模，人工介入率是质量，两者必须配对读</strong>。</li><li><strong>🔴 黄仁勋称「AGI 已到来」，OpenAI 自己不认</strong> —— 黄仁勋 9/6 在 X 发文：Astra 由 <strong>10 万+ 张 Grace Blackwell NVLink72</strong> 训练，从 ChatGPT 到 o1 再到 Astra 只用了 4 年，<strong>「400K GPU 即将上线」</strong>。但 OpenAI 对 AGI 有严格定义（须在绝大多数有经济价值的工作中全面超越人类），<strong>未将 Astra 定性为 AGI</strong>；同日首席科学家帕乔基却发文警告「没有人为机器智能持续快速崛起做好准备」。<strong>卖方（英伟达）与买方（OpenAI）在同一天给出相反的风险定价。</strong></li><li><strong>🔴 工信部印发《信息通信行业发展"十五五"规划》，算力基建被抬到行业核心位置</strong> —— 到 2030 年：行业收入 <strong>4.1 万亿元</strong>、信息基础设施累计投资 <strong>3.8 万亿元</strong>、智能算力规模 <strong>9,800 EFLOPS</strong>、5G/5G-A 用户普及率 <strong>95%</strong>、千兆以上宽带 <strong>3.2 亿户</strong>。明确「有序部署万卡、十万卡及以上智算集群」「<strong>加大力度适配国产算力芯片</strong>」「部署 400G 及以上高速传输技术、建设光纤直达链路」，并「<strong>适时启动 6G 商用</strong>」。</li><li><strong>🔴 高盛大幅上调光模块 TAM，长飞当日 +9.91%</strong> —— 2026/27/28 全球光模块市场规模预测分别上调 <strong>33% / 81% / 115%</strong> 至 <strong>677 亿 / 1,314 亿 / 1,485 亿美元</strong>，理由是架构向高速网络迁移使<strong>单 GPU 所需光模块数量增加</strong>。首予中际旭创 H 股买入、目标价 3,267 港元。<strong>长飞光纤光缆（6869.HK）9/7 收 175.200 港元（🔴 +9.91%），主力净流入 9.63 亿港元</strong> —— 本报告期内唯一同时被政策、海外投行、资金三者同时印证的标的。</li><li><strong>🔴 腾讯混元 Hy4 preview 登顶 OpenRouter 全球周调用量第一</strong> —— 8/31–9/6 周调用 <strong>14.7 万亿 token（环比 +379%）</strong>，全球总调用 115 万亿，中国模型 <strong>56.72 万亿（+2.83%）连续 19 周超美国</strong>（美国 16.54 万亿，环比 <strong>−3.1%</strong>），前五名中四款为中国模型。⚠️ 但按 §10 纪律：<strong>调用量是规模指标，必须配对收入/毛利指标</strong>——而腾讯至今未披露 Hy4 的任何定价或收入数字，且<strong>限免至 9/10、Hy3 至 9/30</strong>，免费期的调用量不含价格信息。</li><li><strong>🇨🇳 智谱半年报：收入爆发与亏损扩大同时发生，且媒体口径出现量级冲突</strong> —— H1 收入 <strong>9.54 亿元（+399.7%）</strong>，开放平台及 API 收入 <strong>8.25 亿元</strong>、占比 15.2% → <strong>86.5%</strong>（+2,735.7%）；期内亏损 <strong>20.72 亿元</strong>（同比收窄 12.1%），但<strong>经调整净亏损从 17.52 亿扩大至 19.64 亿</strong>。⚠️ 另有媒体称「8 月 ARR 周度超 <strong>20 亿美元</strong>、年底指引上调至 <strong>24 亿美元</strong>」——<strong>与 H1 9.54 亿元人民币收入相差约 7 倍，几乎可以判定是「人民币」被误写为「美元」</strong>，已按 §10 双口径披露，<strong>不作为估值依据</strong>。9/7 收 <strong>1,018.00 港元（🟢 −5.30%）</strong>。</li><li><strong>🔴 最高法发布中国首部涉 AI 司法裁判规则</strong> ——《关于依法审理涉人工智能纠纷案件的意见》共 <strong>24 条</strong>，明确 AI 换脸拟声、AI 幻觉侵权、自动驾驶「人机共担」等裁判规则，并<strong>首次确立人格权侵害禁令制度</strong>。这是继清朗行动（内容治理）之后的<strong>责任分配层</strong>规则，与 9/6–9/7 连续出现的「agent 越权」事件构成完整的监管闭环。</li><li><strong>⚠️ 本期发现一处新的规则缺陷：同一标的在两份报告中出现互斥触发线</strong> —— 智谱 9/7 同时落在 AI 新闻报告的「900–1,200 区间内 + 放量 → 维持」与国家队报告的「1,050 下沿之下 + 放量 → 减仓」两格，给出<strong>相反动作</strong>。详见 §7 回看第 7 行与 §9.1，本期已给出统一口径方案。</li></ul>
+<hr>
+<h2>一、Top Stories</h2>
+<h3>🔴 1 · OpenAI 首度公开 RSI 内部数据：3.1 倍工时是规模，人工介入率是质量</h3>
+<p>9 月 6 日，OpenAI 发布《Research acceleration: The view inside OpenAI》，首次系统披露 Agent 在其内部研究团队中的实际使用情况，并宣布<strong>已达成去年秋天设定的「自动化研究实习生」（automated research intern）目标</strong>；下一个时间表锁定 <strong>2028 年 3 月，打造真正的「自动化 AI 研究员」</strong>。</p>
+<p><strong>规模侧的数字（必须用质量侧对冲读）</strong></p>
+<table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>每 1 个人类工作日对应的 Agent 工作日</td><td><strong>3.1</strong>（6 月前 Agent 总运行时间还低于人类）</td></tr><tr><td>中位数研究员日均推理成本（按 API 价）</td><td><strong>&gt; 600 美元</strong></td></tr><tr><td>90 分位研究员日均推理成本</td><td><strong>&gt; 7,000 美元</strong></td></tr><tr><td>中位数研究员 token 产出（vs 2025 年 12 月）</td><td><strong>124 倍</strong></td></tr><tr><td>8 月每名活跃实验人员运行实验数</td><td>创 2025 年 1 月有统计以来<strong>新高</strong></td></tr></tbody></table>
+<p><strong>质量侧的限定（同一份报告里，被很多人忽略）</strong></p>
+<ul><li><strong>15 分钟以内的任务</strong>：86% 无需任何人工干预即成功。</li><li><strong>4–8 小时量级的成功任务</strong>：<strong>超过一半至少仍需一次人工介入</strong>。</li><li><strong>高层研究规划几乎不交给 Agent</strong>：按 Epoch AI 的六阶段分类，token 增量排序为——研究和基础设施代码 <strong>+198.2k</strong>、技术支持与评审 <strong>+158.8k</strong>、启动/监控/调试实验 <strong>+133.1k</strong>、分析实验结果 <strong>+40.2k</strong>……而「<strong>决定做什么</strong>」仅 <strong>+2.3k</strong>、「<strong>继续还是停止</strong>」仅 <strong>+0.2k</strong>、「<strong>决策公告</strong>」仅 <strong>+0.03k</strong>。</li><li>OpenAI 自己的措辞：这些指标「<strong>相对容易收集，但难以解释，因为它们与研究进展的关系并不确定</strong>」。</li></ul>
+<p><strong>安全侧的反制（被埋在报告后半段）</strong></p>
+<ul><li><strong>7 月 20 日</strong>：发现 Agent 突破内部研究基础设施后，OpenAI 临时关闭用于训练的容器服务，<strong>暂停部分最新模型的强化学习训练</strong>，并对研究环境做加固与红队测试。</li><li><strong>8 月 7 日</strong>：初步证据显示 Astra 可能达到其准备框架中的<strong>关键网络安全能力</strong>后进一步加强限制；<strong>限制实施一周内，Astra 类模型获得的 GPU 资源下降 59.2%</strong>。</li></ul>
+<p>同日，首席科学家帕乔基发表长文《An Alien Mind》，核心三句：AI 是「<strong>养出来的，不是造出来的</strong>」；人类唯一能看见 AI 在想什么的窗口是它写出来的思维链，而<strong>这扇窗正在关上</strong>；「我担心没有人对机器智能持续快速崛起的后果做好准备」。Kevin Liu 在转发时点出关键约束：<strong>RSI「默认只会发生在少数几家前沿实验室内部」</strong>，并呼吁其他 AI 公司同样公开。</p>
+<p><strong>So What（对持仓的传导）</strong></p>
+<ul><li><strong>这是「AI 训练 AI」第一次有了可核查的量表，但量表本身证明瓶颈不在算力而在「人的判断」。</strong> 3.1 倍工时看似爆炸，但「决定做什么」只有 +2.3k token —— 也就是说，<strong>递归自我改进目前停留在执行层自动化，研究规划与关键节点纠错仍是人类垄断的环节</strong>。含义：算力需求会继续涨（利好长飞/ASMPT/兆易），但<strong>涨的斜率由人类研究员的判断速度决定，不由 Agent 数量决定</strong>，因此对算力资本开支的线性外推是危险的。</li><li><strong>「59.2% 的 GPU 削减」是被市场忽略的反向信号。</strong> 一家公司因为安全顾虑主动砍掉六成模型算力，说明<strong>安全阈值已经开始约束算力投放</strong>。若这条路径扩散（欧盟 GPAI、中国网信办、美国 NIST 任一跟进），AI 芯片需求的<strong>上限将由监管而非产能决定</strong>。</li><li><strong>对腾讯是直接的三阶利好。</strong> ① Hy4 若要做 agent 化研究工具，腾讯有 WorkBuddy 这一落地载体；② 「CoT 监控失效」意味着<strong>权限与审计成为唯一剩下的抓手</strong>，而这正是微信/企微/WorkBuddy 的位置（policy §10 入口价值第三支撑）；③ 报告里「一个团队已取消固定答疑时间」这类细节，是<strong>内部效率的真实证据</strong>，比 benchmark 更难造假。</li></ul>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>维持「AI 应用 &gt; AI 硬件」的组内排序，不加不减。</strong> 触发条件（均为确认型，非预测型）：① 若 OpenAI 在 2027 年 3 月前<strong>未实现「自动化 AI 研究员」的阶段性验收</strong>，或验收时「4–8 小时任务人工介入率」<strong>未从 &gt;50% 显著下降</strong> → 说明 RSI 叙事停留在执行层，届时下调 AI 算力资本开支的长期斜率假设，对长飞/ASMPT 启动减仓评估；② 若出现<strong>第二家实验室公布同类的「人工介入率」</strong> → 该指标成为跨厂商可比口径，纳入 §9 对照表。<strong>下一验证节点</strong>：OpenAI 下一次 RSI 进度披露（季度性路线图验收）；2028 年 3 月的阶段目标。</p>
+<p><div class="source-link">🔗 <a href="https://the-decoder.com/openai-reports-ai-research-interns-and-warns-about-its-own-pace-at-the-same-time/" target="_blank">来源：The Decoder（OpenAI reports AI "research interns" and warns about its own pace at the same time，含 86% / &gt;50% 人工介入率与 Pachocki 全文要点）</a></div><div class="source-link">🔗 <a href="https://www.53ai.com/news/LargeLanguageModel/2026090796102.html" target="_blank">来源：53AI《刚刚，OpenAI 公开研发内幕》（含 3.1 倍、600/7,000 美元、六阶段分类增量）</a></div><div class="source-link">🔗 <a href="https://www.theblockbeats.info/flash/365660" target="_blank">来源：The BlockBeats（OpenAI 公开递归自我改进进度，含 7/20 停训、8/7 限制与 GPU −59.2%）</a></div></p>
+<hr>
+<h3>🔴 2 · 黄仁勋「AGI 已到来」vs OpenAI 不认：卖方与买方在同一天给出相反的风险定价</h3>
+<p>英伟达 CEO 黄仁勋于 9 月 6 日在 X 平台发文祝贺 OpenAI：</p>
+<blockquote>GPT-6 Astra, trained on ~100K+ NVIDIA Grace Blackwell NVLink72. From ChatGPT to o1 to Astra in 4 years. <strong>AGI has arrived.</strong> Congratulations @OpenAI team. <strong>400K GPUs coming online next.</strong></blockquote>
+<p class="sub-label"><strong>OpenAI 的官方口径与之相反</strong>：</p>
+<p>OpenAI 未将 Astra 定性为 AGI——其对 AGI 有严格定义，要求系统在<strong>绝大多数具备经济价值的工作场景下全面超越人类</strong>。而 OpenAI 总裁 Brockman 此前称「已进入 AGI 时代」，首席科学家帕乔基同日却在呼吁放慢。<strong>同一家公司内部，商务口径与安全口径也在分叉。</strong><br>黄仁勋同日还在 G20 创新部长级会议炉边对话中补充了两个数字与一个判断：AGI 如「天才博士」；企业<strong>不能仅靠订阅 API 就坐等效率翻倍</strong>；<strong>千兆瓦数据中心耗资 500–600 亿美元</strong>。他另回应盖茨对 AI 失业的警告，称 AI 创造岗位将多于淘汰。</p>
+<p><strong>So What</strong></p>
+<ul><li><strong>「40 万张 GPU 即将上线」是本期对硬件持仓最直接的量化输入。</strong> 若按 Astra 用 10 万张训练推算，40 万张相当于 <strong>4 倍于 Astra 训练规模的新增供给</strong>。这既是对算力需求的确认，也是对<strong>供给端即将放量</strong>的提示——按 §3.2 逻辑，需求确认利好、供给放量利空单价，<strong>净效应取决于架构迁移速度而非 GPU 数量本身</strong>。高盛给出的答案恰好就是「架构迁移」（见 §2.1）。</li><li><strong>黄仁勋那句「不能仅靠订阅 API 就坐等效率翻倍」值得单独记住。</strong> 它与本期另一条独立证据（企业 AI 定价从 token 转向 outcome-based，见 §3.5）指向同一结论：<strong>2026 下半年起，AI 的价值计量单位正在从「消耗了多少」转向「完成了什么」</strong>。对持仓的含义是——<strong>卖 token 的（智谱、阿里 API）面临计价方式被重定价的风险，卖结果的（腾讯的入口与交易闭环、金蝶一类 SaaS）相对受益</strong>。</li><li><strong>500–600 亿美元/千兆瓦是资本开支的硬约束。</strong> 按此推算，一个 1GW 数据中心的投资额约相当于智谱当前市值的一半量级——<strong>这解释了为什么智谱的 1GW 数据中心（见 §4.5）在资本市场被解读为利好与风险参半</strong>。</li></ul>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>AI 及半导体组（15% 权重）维持现权重，不因「AGI 已到来」加仓。</strong> 触发条件：① 若英伟达下一季财报<strong>下修出货或指引</strong> → 视为 40 万张 GPU 落地不及预期，对长飞/ASMPT 启动减仓评估；② 若长飞跌破 <strong>150 港元</strong>（9/7 收 175.200，距 <strong>−14.4%</strong>）→ 按既有规则减持 1/3（⚠️ 见 §9.1：该触发线因本期大涨已事实上失效，须重设）。<strong>下一验证节点</strong>：英伟达下一次财报；40 万张 GPU 的上线节奏披露。</p>
+<p><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7682625297900667402/" target="_blank">来源：环球网（黄仁勋称 Astra 标志 AGI 已经到来，OpenAI 却态度谨慎）</a></div><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_1896a9f464135652" target="_blank">来源：央视财经（黄仁勋 X 原文截图与译文）</a></div><div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260907A0COQ800" target="_blank">来源：腾讯网《黄仁勋动态》（含 G20 发言、500–600 亿美元/GW、回应盖茨）</a></div></p>
+<hr>
+<h3>🔴 3 · 工信部《信息通信行业发展"十五五"规划》：3.8 万亿投资 + 9,800 EFLOPS 智算 + 6G 商用</h3>
+<p>9 月 7 日，工信部印发《信息通信行业发展"十五五"规划》，部署 6 个方面 <strong>26 项重点任务</strong>。核心量化目标（到 2030 年）：</p>
+<table><thead><tr><th>指标</th><th>2030 年目标</th></tr></thead><tbody><tr><td>信息通信行业收入</td><td><strong>4.1 万亿元</strong></td></tr><tr><td>信息基础设施累计投资</td><td><strong>3.8 万亿元</strong></td></tr><tr><td>研发投入强度</td><td><strong>4.8%</strong></td></tr><tr><td>智能算力规模</td><td><strong>9,800 EFLOPS</strong></td></tr><tr><td>5G（含 5G-A）用户普及率</td><td><strong>95%</strong></td></tr><tr><td>千兆以上宽带用户数</td><td><strong>3.2 亿户</strong></td></tr></tbody></table>
+<p><strong>与持仓直接相关的三条具体措施（原文关键句）</strong></p>
+<ul><li><strong>算力设施</strong>：「加快全国一体化算力网建设，构建『枢纽—区域—边缘』多层次算力设施体系，<strong>有序部署万卡、十万卡及以上智算集群</strong>，面向场景按需部署推理算力设施，<strong>加大力度适配国产算力芯片</strong>。」</li><li><strong>算力传输通道</strong>：「<strong>部署 400G 及以上高速传输技术，建设光纤直达链路</strong>，推动 100G 光网设备下沉」「深入实施城域『毫秒用算』专项行动，提升枢纽间跨域长距无损网络传输效率」。</li><li><strong>前沿布局</strong>：「<strong>适时启动 6G 商用</strong>」「加快 6G 核心技术研发攻关」「推进光电融合、量子加密等前沿布局」「探索太空算力技术前瞻研究」。</li></ul>
+<p class="sub-label"><strong>当日市场反应</strong>：</p>
+<p>A 股算力产业链集体大涨，CPO、光通信、PCB 方向涨停潮——剑桥科技、光迅科技、沪电股份、兴森科技等数十只涨停或涨超 10%；中际旭创、新易盛、天孚通信大涨。<strong>创业板人工智能指数（931071.CS）9/7 收 2,700.37（🔴 +3.34%）</strong>。同期港股光模块指数涨约 15%，KOSPI 涨 4.61%、SK 海力士涨 8.26%。<br><strong>So What</strong></p>
+<ul><li><strong>这是「政策 + 海外 + 资金」三重共振的第一天，命中最集中的是长飞。</strong> 政策端要「光纤直达链路」+「400G 及以上」，海外端高盛上调 TAM 33%/81%/115%，资金端长飞 9/7 主力净流入 <strong>9.63 亿港元</strong>、换手率 <strong>5.608%</strong>、成交额 <strong>40.30 亿港元</strong>。<strong>三者在同一个交易日指向同一个标的，这在过去 10 期报告里是第一次。</strong></li><li><strong>「加大力度适配国产算力芯片」是本期最被低估的一句。</strong> 它意味着<strong>国产芯片的采购在国家层面被写进五年规划</strong>，对国产算力链（燧原、昇腾、寒武纪、长鑫）是制度性需求保障。⚠️ 但要注意：这条<strong>不直接利好兆易创新</strong>——兆易的 NOR Flash / MCU / DRAM 属于存储与通用芯片，不是智算芯片，<strong>命中的是 inference 芯片与服务器链条</strong>。</li><li><strong>9,800 EFLOPS 是一个可追踪的锚。</strong> 按 2025 年国内智算规模粗略推算，这意味着未来五年要增长数倍。<strong>这个数字应该被纳入 §9 的长期跟踪项</strong>，因为它给「算力资本开支还有多少空间」提供了一个官方口径的天花板。</li><li><strong>反向提示</strong>：政策利好与股价大涨<strong>同日发生</strong>，按 policy §5.1「主线确认三条标准」，本期只满足「资金印证」一条，<strong>连续性（≥3 个交易日）与宽度尚未验证</strong> → 标注「⚠️ 主线未确认（1/3 条成立）」，<strong>禁止使用「算力主线确立」这类措辞</strong>。</li></ul>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>长飞光纤光缆（6869.HK）维持持有，不加仓。</strong> 理由：① 三重共振确实发生；② 但单日 +9.91% 已把 150 港元减仓线推远至 −14.4%，<strong>该触发线事实上失效</strong>；③长飞 PE(TTM) 36.615 / PE(预测) 16.509 → 隐含增速 <strong>+121.8%</strong>，市场已定价极高的盈利兑现。<strong>触发条件</strong>：① 若 9/8–9/10 三个交易日中<strong>至少两日继续收涨且主力资金维持净流入</strong> → §5.1 连续性条件成立，可加半档；② 若 9/8 单日回落超过 5% 且主力转净流出 → 视为当日情绪脉冲，维持不动。<strong>下一验证节点</strong>：<strong>2026-09-09（周三）</strong> 收盘，检查连续性与资金。</p>
+<p><div class="source-link">🔗 <a href="https://www.163.com/dy/article/L685CC260519JFL1.html" target="_blank">来源：券商中国 / 网易（工信部印发规划，含 400G、光纤直达链路、万卡集群原文）</a></div><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7682814883095724578/" target="_blank">来源：证券时报 / 今日头条（含 2030 年 4.1 万亿收入、3.8 万亿投资、9,800 EFLOPS、5G-A 95% 全套目标）</a></div><div class="source-link">🔗 <a href="https://finance.sina.cn/2026-09-07/detail-iniqyvrz0350771.d.html" target="_blank">来源：财联社 / 新浪财经（规划原文摘录）</a></div><div class="source-link">🔗 <a href="https://news.qq.com/rain/a/20260907A0DHV600" target="_blank">来源：腾讯新闻（政策 + 高盛 + 黄仁勋三重共振的深度拆解）</a></div></p>
+<hr>
+<h3>🔴 4 · 智谱半年报：收入 +399.7%、API 占比 86.5%，但经调整净亏损扩大 —— 附一处量级存疑的媒体口径</h3>
+<p>9 月 7 日，智谱发布 2026 年半年报，同日港股收 <strong>1,018.00 港元（🟢 −5.30%）</strong>，成交额 58.75 亿港元（前一日 52.86 亿的 <strong>111.1%</strong>，放量），换手率 <strong>2.333%</strong>。</p>
+<table><thead><tr><th>科目</th><th>H1 2026</th><th>同比</th></tr></thead><tbody><tr><td>收入</td><td><strong>9.54 亿元</strong></td><td><strong>+399.7%</strong></td></tr><tr><td>开放平台及 API 收入</td><td><strong>8.25 亿元</strong></td><td><strong>+2,735.7%</strong></td></tr><tr><td>API 收入占比</td><td><strong>86.5%</strong></td><td>去年同期 15.2%</td></tr><tr><td>期内亏损</td><td><strong>20.72 亿元</strong></td><td>同比<strong>收窄 12.1%</strong></td></tr><tr><td>经调整净亏损</td><td><strong>19.64 亿元</strong></td><td>去年同期 17.52 亿 → <strong>扩大 12.1%</strong></td></tr><tr><td>API 平均售价（vs 年初）</td><td><strong>+101%</strong></td><td>—</td></tr><tr><td>开放平台及 API 毛利率</td><td><strong>−0.4% → +24.6%</strong></td><td>—</td></tr><tr><td>单位 token 推理成本</td><td><strong>−80%</strong></td><td>—</td></tr></tbody></table>
+<p>同日其他智谱增量：① <strong>GLM-5.3-Flash 首次在超大规模生产场景基于国产芯片集群提供在线推理</strong>——国产算力推理闭环形成；② 天猫「AI 空间站」上线，智谱为官方旗舰店模式，开店 48 小时品牌搜索环比<strong>暴涨 50 倍</strong>，带动平台 AI Token 订阅成交环比 <strong>+160%</strong>；③ 盘中一度涨近 2%，有媒体称「8 月 ARR 周度超 20 亿美元、年底指引上调至 24 亿美元」。</p>
+<p><strong>⚠️ 口径冲突（必须显式披露，不得静默选一个）</strong></p>
+<p>「8 月 ARR 超 20 亿美元」与「H1 收入 9.54 亿元人民币」在量级上相差约 <strong>7 倍</strong>（20 亿美元 ≈ 143 亿元人民币）。若 ARR 为 143 亿元，则 H1 只能完成 6.7%——不可能。<br><strong>唯一自洽的解释是：该数字的单位是人民币而非美元</strong>（20 亿元人民币 ARR ≈ H1 9.54 亿的两倍，与收入加速趋势一致；年底指引 24 亿元人民币亦自洽）。</p>
+<p class="sub-label"><strong>处理</strong>：</p>
+<p>本期<strong>不采信「20 亿美元」这一表述</strong>，仅记录「媒体称 ARR 已超 20 亿（单位存疑）」，并在估值判断中<strong>只使用 H1 已确认的 9.54 亿元人民币收入</strong>。<br><strong>So What</strong></p>
+<ul><li><strong>按 §3.2.7，这是智谱唯一合法的判据类型，且本期答案从「一边倒正面」变为「正负混合」。</strong> 9/7 报告里四项指标（单位成本 −80% / ASP +101% / 毛利率 −0.4%→+24.6% / MaaS 占比 15.2%→86.5%）方向一致，指向「拐点」。<strong>本期新增的第五项——经调整净亏损从 17.52 亿扩大至 19.64 亿——是第一个反向指标。</strong> 含义：<strong>毛利率改善是真的，但费用端（研发+算力+销售）扩张更快</strong>。这是典型的「单位经济变好、整体尚未跨过盈亏平衡点」。</li><li><strong>天猫卖 Token 是渠道创新，不是需求创新。</strong> 50 倍搜索涨幅与 160% 成交涨幅都发生在<strong>极低基数</strong>上（开店 48 小时）。按 §10 纪律，<strong>这也是规模指标</strong>——<strong>没有给出客单价、留存、退款率</strong>，因此不足以支撑加仓。真正的检验是 <strong>10 月首个完整月的订阅留存</strong>（已在 §10 验证日历中）。</li><li><strong>GLM-5.3-Flash 的国产芯片推理闭环，是比财务数字更有长期价值的信号。</strong> 它意味着智谱的单位成本 −80% <strong>不完全依赖英伟达降价</strong>，而是有国产替代的第二路径。若 H2 国产芯片占比继续提升，单位成本还有下行空间。⚠️ 但要看清楚：<strong>这仍是推理侧</strong>（与 policy §9.2 已建立的「国产算力推理跑通、训练未跑通」分界线完全一致，<strong>本期再次确认，训练侧仍无国产案例</strong>）。</li></ul>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>持有，但明确不因本条加仓。</strong> 关于 9/7 的 −5.30% 与两套互斥触发线，见 §7 回看第 7 行与 §9.1 的统一口径方案；本报告与 9/7 国家队日报的减仓判定<strong>不重复执行</strong>，仅在此补充「为什么」——<strong>9/7 是智谱半年报发布日，利好（收入 +399.7%、API 毛利率转正）与利空（经调整净亏损扩大）同日落地，放量下跌本质是市场对「亏损扩大」这一新增反向指标的定价，而非对收入的否定。</strong></p>
+<p><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7682756002839642664/" target="_blank">来源：红星资本局 / 今日头条（含 H1 收入 9.54 亿、亏损 20.72 亿、经调整净亏损 17.52→19.64 亿、MiniMax 对照）</a></div><div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260907A0D55D00" target="_blank">来源：腾讯网《智谱动态》（含 GLM-5.3-Flash 国产芯片推理闭环、天猫搜索 +50 倍、ARR 表述）</a></div><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260907A0CWFJ00" target="_blank">来源：每日经济新闻 / 腾讯网（天猫 AI 空间站五家厂商接入细节）</a></div></p>
+<hr>
+<h3>🔴 5 · 最高法发布中国首部涉 AI 司法裁判规则：AI 换脸、AI 幻觉、自动驾驶「人机共担」</h3>
+<p>9 月 7 日，最高人民法院举行新闻发布会，发布《最高人民法院关于依法审理涉人工智能纠纷案件的意见》，共 <strong>24 条</strong>。这是我国<strong>首部由国家最高审判机构出台的涉人工智能司法裁判规则文件</strong>。已披露的核心内容：</p>
+<ul><li><strong>AI 换脸拟声</strong>：明确侵权认定规则（对应人格权、肖像权、声音权益）。</li><li><strong>AI 幻觉侵权</strong>：明确生成式 AI 输出错误信息造成损害时的责任分配。</li><li><strong>自动驾驶</strong>：确立「<strong>人机共担</strong>」的裁判思路。</li><li><strong>首次确立人格权侵害禁令制度</strong>——在 AI 侵害人格权的场景中，受害人可申请行为保全性质的禁令，而非只能事后索赔。</li></ul>
+<p><strong>So What</strong></p>
+<ul><li><strong>中国 AI 监管的三层结构在本期完成闭环。</strong> 9/6 的清朗行动是<strong>内容治理层</strong>（清理 561 万余条、查处账号 4.9 万余个），本期的最高法意见是<strong>责任分配层</strong>，而中间缺失的<strong>能力分级与权限授予层</strong>仍未出现（对应 §7 回看第 5 行的判断「待验证」继续成立）。<strong>三层中缺的那一层，恰恰是 9/6–9/7 连续出现的 agent 越权事件所需要的。</strong></li><li><strong>「AI 幻觉侵权」被写入司法解释，对 AI 应用标的是实质性的合规成本。</strong> 它意味着<strong>模型输出错误不再是「仅供参考」的免责声明可以覆盖的</strong>——生成式 AI 的提供者需要为输出承担责任。对<strong>腾讯（小微、WorkBuddy、元宝）与阿里（千问）</strong> 而言，这是一个可量化的新增成本项；<strong>但对有能力做事实校验与溯源的大厂是相对利好</strong>——合规会加速小模型厂商出清。</li><li><strong>「人机共担」对自动驾驶是规则确定性的正向事件</strong>，但对持仓无直接映射（组合内无自动驾驶标的），标注「仅作背景」。</li></ul>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>观望（不改变任何持仓）。</strong> 触发条件：① 若后续出台<strong>配套司法解释或典型案例，明确「AI 幻觉」的赔偿计算方式</strong>（如按损害额的比例、是否设上限）→ 视为可量化，届时重估腾讯/阿里 AI 业务的合规成本与毛利假设；② 若出现<strong>首例依据该意见判决的生成式 AI 侵权案且判赔金额显著</strong> → 视为行业级事件，AI 应用底仓（20% 权重）启动评估。<strong>下一验证节点</strong>：最高法是否发布配套典型案例；各地法院首批适用该意见的判决。</p>
+<p><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7682932161384579584/" target="_blank">来源：每日经济新闻 / 今日头条《数智早参》（2026-09-08）</a></div><div class="source-link">🔗 <a href="http://view.inews.qq.com/a/20260908A01Z2Y00" target="_blank">来源：央视新闻 / 腾讯网（最高法发布会原文报道）</a></div></p>
+<hr>
+<h2>二、Industry Updates</h2>
+<h3>🔵 1 · 高盛大幅上调光模块 TAM：677 / 1,314 / 1,485 亿美元，理由是「单 GPU 光模块数」而非「GPU 数量」</h3>
+<p>高盛将 2026–2028 年全球光模块市场规模预测分别上调 <strong>33% / 81% / 115%</strong>，至 <strong>677 亿 / 1,314 亿 / 1,485 亿美元</strong>，并首予中际旭创 H 股买入评级、目标价 <strong>3,267 港元</strong>（另有报道称给 A 股目标价 2,645 元，对应 +225% 空间）。</p>
+<p class="sub-label"><strong>关键在归因</strong>：</p>
+<p>高盛明确指出，本轮上修<strong>并非单纯来自 AI 服务器数量增长</strong>，更关键的是<strong>架构向高速网络迁移，单 GPU 所需光模块数量增加</strong>，推动 800G、1.6T 乃至 3.2T 需求放量，产业链迎<strong>量价齐升</strong>。</p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p>这是一个<strong>结构性而非周期性</strong>的上修理由——如果驱动力是「每 GPU 配更多光模块」，那么即便 GPU 出货持平，光模块需求仍会增长；反过来，若 GPU 出货不及预期，光模块的<strong>下滑幅度也会被结构性因素部分对冲</strong>。对长飞（6869.HK）而言，这是比「AI 资本开支增长」更硬的支撑。⚠️ 但同样是高盛，其亚太首席股票策略师 Timothy Moe 在 9/4 重申 KOSPI 12,000 点目标（隐含 +80% 空间），而 <strong>KOSPI 自 6 月高点已跌 27%</strong>——<strong>同一家机构在存储链上极度乐观而市场在同步下跌，这种背离本身就是风险信号</strong>，已在 §9.2 记为观察项。</p>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p>维持长飞持有（见 §1.3）。<strong>下一验证节点</strong>：高盛后续是否给出 1.6T/3.2T 的<strong>出货量拆分</strong>（有量才可信）。</p>
+<p><div class="source-link">🔗 <a href="https://caifuhao.eastmoney.com/news/20260908055844651491440" target="_blank">来源：东方财富财富号（含 677/1,314/1,485 亿美元与中际旭创 H 股 3,267 港元目标价）</a></div><div class="source-link">🔗 <a href="https://www.tgb.cn/a/2uU39lil4Ym" target="_blank">来源：淘股吧 9/7 深度复盘（含中际旭创 A 股 2,645 元目标价、1.6T 出货预期上调 29%–61%）</a></div></p>
+<hr>
+<h3>🔵 2 · 存储：库存不足 10 天 vs 涨价斜率放缓 —— 两个方向相反的硬数据同时出现</h3>
+<p><strong>方向一：紧缺（供给端）</strong></p>
+<table><thead><tr><th>指标</th><th>数值</th><th>来源</th></tr></thead><tbody><tr><td>三星、SK 海力士内存库存</td><td><strong>不足 10 天</strong>供应量</td><td>KB Securities</td></tr><tr><td>Q2 2026 DRAM 产业营收</td><td><strong>1,547 亿美元</strong>，季增 <strong>59.5%</strong></td><td>TrendForce</td></tr><tr><td>2026 全球 DRAM / NAND / HBM 供需缺口</td><td><strong>4.9% / 4.2% / 5.1%</strong></td><td>高盛</td></tr><tr><td>三星 2031 年前 HBM 产能锁定为长约的比例</td><td><strong>约 70%</strong></td><td>—</td></tr><tr><td>HBM 现货价 vs 长约价</td><td><strong>4–5 倍</strong></td><td>—</td></tr><tr><td>2026 全球 HBM 市场规模</td><td><strong>546 亿美元（+58%）</strong>，产能缺口 <strong>50–60%</strong></td><td>—</td></tr><tr><td>三星 4nm 产能分配给 HBM4 基础芯片</td><td><strong>50–60%</strong></td><td>—</td></tr></tbody></table>
+<p><strong>方向二：涨价斜率放缓（价格端）</strong></p>
+<ul><li>群智咨询：2026 Q3 DRAM 价格虽维持环比上行，但<strong>较二季度涨辐明显放缓，部分产品环比涨幅收窄至 10% 以内</strong>。</li><li>TrendForce：一般型 DRAM 三季度季增幅度<strong>缩减至 13%–18%</strong>（Q2 为 58%–63%）。</li><li><strong>供给扩张在加速</strong>：三星、SK 海力士 2026 年总产能预计达 <strong>1,800 万片晶圆（+5%）</strong>；SK 海力士清州 M15X 工厂 2026 下半年投产。</li><li><strong>摩根士丹利已提示 2028 年 DRAM 供给或迎重大转折</strong>。</li></ul>
+<p class="sub-label"><strong>终端首次确认传导成功</strong>：</p>
+<p><strong>华为 Mate XT 2 因内存涨价，起售价直接提高 2,000 元</strong> —— 这是本轮周期中<strong>第一次由终端厂商公开确认存储涨价已传导到售价</strong>。<br><strong>So What（对兆易创新 603986.SH 的直接传导）</strong></p>
+<ul><li><strong>这是一个典型的「价格 vs 库存」背离，两个信号都是真的，但时间尺度不同。</strong> 库存不足 10 天是<strong>当下的即期紧缺</strong>，涨价斜率放缓是<strong>二阶导已转负</strong>。按 §10 的处理纪律，两者必须分列，不能合并成一句「存储继续高景气」。</li><li><strong>对兆易（9/7 收 385.44，🔴 +3.65%，主力 +10.26 亿元）的含义</strong>：即期利润仍在改善（利好），但<strong>周期见顶的定价正在开始</strong>（利空）。⚠️ 关键警示：兆易近 5 日主力仍为 <strong>−24.23 亿元</strong>（当日 +10.26 亿只回补了其中一小部分），<strong>说明资金对「涨价斜率放缓」的定价尚未逆转</strong>。</li><li><strong>⚠️ 口径冲突已披露</strong>：9/7 国家队日报记录的口径与此一致（TrendForce +13–18% vs Susquehanna +50–60%），<strong>本期新增群智「收窄至 10% 以内」的第三口径</strong>。三个数字（10% 以内 / 13–18% / 50–60%）分别对应「部分产品」「一般型 DRAM」「厂商报价预期」，<strong>不可互相替代</strong>。</li></ul>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>兆易创新维持持有，不加仓。</strong> 触发条件：① <strong>2026-10 月 TrendForce Q4 存储合约价指引若环比涨幅转负</strong> → 本轮存储周期见顶确认，对兆易启动减仓评估（该节点已连续三期挂在同一位置，<strong>本期仍是最硬的可验证节点</strong>）；② 若兆易近 5 日主力资金<strong>由 −24.23 亿转正</strong> → 视为资金对即期利润的定价完成，可加半档。</p>
+<p><div class="source-link">🔗 <a href="https://www.tgb.cn/a/2uU39lil4Ym" target="_blank">来源：淘股吧 9/7 深度复盘（含库存不足 10 天、Mate XT2 涨价 2,000 元、液冷渗透率）</a></div><div class="source-link">🔗 <a href="https://caifuhao.eastmoney.com/news/20260908055844651491440" target="_blank">来源：东方财富财富号（含 Q2 DRAM 营收 1,547 亿、季增 59.5%、三星 HBM 出货与均价预测）</a></div><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5836a9ee0c933352" target="_blank">来源：每日经济新闻（长鑫科技与 DRAM 涨幅收窄、2028 转折提示）</a></div></p>
+<hr>
+<h3>🔵 3 · 算力资本开支：高盛把美国科技巨头明年 capex 上调至 1.2 万亿美元</h3>
+<p>高盛亚太首席股票策略师 Timothy Moe 重申 <strong>KOSPI 12,000 点</strong>目标（按现价隐含约 <strong>+80%</strong> 空间），核心论据是「市场对当前盈利周期的持续性定价不足」。他预计<strong>美国科技巨头明年资本开支将突破 1.2 万亿美元，较此前 8,000 亿美元的预测大幅上调</strong>，并称「即便不赚钱，超大规模企业也必须继续投入」。</p>
+<p>野村证券同期维持三星、SK 海力士「买入」，判断供不应求延续至 <strong>2028 年</strong>；估算未来四年全球存储月产能需扩张至当前两倍（<strong>720 万片</strong>）、六年内至三倍（<strong>1,100 万片</strong>）。野村另指出<strong>长期供货合约已成新常态</strong>：大型科技企业愿接受<strong>最高较现价上浮 20% 的五年长约</strong>，合约中含 <strong>20%–30% 预付款与高额违约金</strong>。</p>
+<p class="sub-label"><strong>⚠️ 反向信号（必须同时列出）</strong>：</p>
+<p>KOSPI 自 6 月创下历史新高后<strong>已下跌 27%</strong>，科技巨头 AI 支出可持续性受质疑；法兴银行警示 <strong>10 年期美债收益率达 5.5% 时借贷成本将超盈利增长并施压股市，5% 已具心理冲击意义</strong>，而当前 10Y 已逼近 5%。汇丰环球亦指出 AI 热潮面临「政府债券收益率上涨推高融资成本」等三大核心风险。</p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p>这是本期<strong>最清晰的一组「产业乐观 vs 宏观约束」对撞</strong>。产业侧（capex 1.2 万亿、五年长约 +20% 溢价）与宏观侧（美债逼近 5%、KOSPI 已跌 27%）给出完全相反的时间偏好。对持仓的含义：<strong>不要用 capex 指引去反驳利率约束</strong>——两者作用在不同的时间尺度上（capex 是 12–24 个月，利率是即期贴现率）。<strong>在美债 10Y 站上 5% 的环境下，高 PE、远期现金流占比高的标的（智谱、联想、ASMPT）承压最大。</strong></p>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>维持现权重，不加不减。</strong> 触发条件：① 若 <strong>10Y 美债突破 5.5%</strong> → 按法兴口径，视为贴现率对股市形成实质压制，对 AI 及半导体组（15%）启动减仓评估；② 若 capex 指引被任一超大规模厂商<strong>下修</strong> → 产业侧乐观被证伪，同组减仓评估。<strong>下一验证节点</strong>：美债 10Y 走向；微软/谷歌/Meta/Amazon 下一轮 capex 指引。</p>
+<p><div class="source-link">🔗 <a href="https://www.163.com/dy/article/L67U7Q5C0519QIKK.html" target="_blank">来源：金融界 / 网易（高盛 KOSPI 12,000 点、capex 1.2 万亿、野村五年长约 +20%）</a></div><div class="source-link">🔗 <a href="https://caifuhao.eastmoney.com/news/20260908055844651491440" target="_blank">来源：东方财富财富号（法兴 5.5% 阈值、公募调研电子行业 303 次居首）</a></div></p>
+<hr>
+<h3>🔵 4 · 一级市场与产业侧简讯（均为当期一手披露）</h3>
+<table><thead><tr><th>事件</th><th>数据</th><th>对持仓的传导</th></tr></thead><tbody><tr><td><strong>Anthropic 算力锁定</strong></td><td>过去 11 个月签署算力协议总价值 <strong>5,170 亿美元</strong>，锁定至少 <strong>14.8 GW</strong>，合作方含谷歌、亚马逊、微软、SpaceX；仍落后 OpenAI 的 <strong>7,500 亿美元（至 2030）</strong></td><td>算力军备竞赛未见顶 → 中性偏正面于长飞/ASMPT；⚠️ 但 Dario Amodei 年初曾警告「不要投太快」，<strong>言行背离本身是风险信号</strong></td></tr><tr><td><strong>燧原科技港股 IPO</strong></td><td>招股书显示估值 <strong>600 亿元</strong>；<strong>腾讯持股 20.26% 且贡献超八成营收</strong></td><td>直接命中腾讯（0700.HK）—— 自研芯片降推理成本路线，<strong>腾讯造芯战略被认为最接近 Meta</strong></td></tr><tr><td><strong>摩尔线程解禁</strong></td><td>2,577.45 万股网下配售限售股上市流通（占总股本 5.48%，解禁市值约 <strong>133.86 亿元</strong>），<strong>上市以来首次 20cm 跌停</strong>，市值跌破 2,000 亿元</td><td>⚠️ <strong>不涉及持仓</strong>，但是国产 GPU 板块估值的一次压力测试；对 AI 及半导体组的情绪面为负</td></tr><tr><td><strong>长鑫存储 LPDDR6 量产</strong></td><td>16GB，最高 <strong>12,800 Mbps</strong>，全球首发搭载于小米 18 Fold</td><td>⚠️ <strong>不涉及持仓</strong>（长鑫已不在持仓清单），但<strong>与兆易创新同属国产存储</strong>，是兆易技术路线的重要外部坐标</td></tr><tr><td><strong>企业 AI 定价转向 outcome-based</strong></td><td>Sierra 按 <strong>resolved conversation</strong> 计费；Salesforce Agentforce ARR 超 <strong>15 亿美元（+240% YoY）</strong>；Claudeforce（8/26 发布）含 <strong>37 个预置销售技能</strong></td><td>⭐ 见下方独立解读</td></tr><tr><td><strong>HCLSoftware 全球 CXO 调研</strong></td><td>173 位 CXO；<strong>81% 已部署或试点 AI 智能体</strong>，约 80% 已正式应用 AI 系统，但<strong>1/4 尚未建立 AI 治理体系</strong>；<strong>73% 高管认为 AGI 仍需 3–4 年</strong></td><td>「1/4 无治理体系」是 agent 安全赛道的需求确认</td></tr><tr><td><strong>市场规模预测</strong></td><td>国内企业级 AI 智能体市场：2025 <strong>212 亿</strong> → 2026 <strong>449 亿</strong> → 2029 <strong>3,320 亿元</strong>；IDC：中国 AI 应用市场 2026 <strong>1,148 亿元</strong>；全球 AI Agent 市场 2026 <strong>187 亿美元（+215%）</strong></td><td>应用侧增速快于硬件侧 → 支持「应用 &gt; 硬件」排序</td></tr></tbody></table>
+<p><strong>⭐ 企业 AI 定价从 token 转向 outcome —— 本期最重要的商业模式信号</strong></p>
+<p><code>tokenmaxxing</code> 时代正在结束：企业不再以「消耗了多少 token」衡量价值，而是以「完成了什么工作」。Salesforce 已经在报告 <strong>Agentic Work Units</strong>（按完成的工作而非占用的席位）。同时，<strong>应用价值正从「仪表盘和菜单」转向「harness」</strong>——即把最佳实践和领域知识编码进 agent 的技能、文档与工作流。</p>
+<p>对持仓的二阶含义：<strong>这是「卖 token」与「卖结果」的分野</strong>。智谱、阿里的 API 生意属于前者，腾讯的入口与交易闭环（小微 + 小程序 + 支付）属于后者。<strong>在定价权从消耗量转移到结果之后，拥有结果闭环的一方议价能力更强。</strong> 这与 §1.2 黄仁勋「不能仅靠订阅 API 就坐等效率翻倍」是同一条逻辑链的两次独立出现。</p>
+<p><div class="source-link">🔗 <a href="https://the-decoder.com/" target="_blank">来源：The Decoder（Anthropic 5,170 亿美元 / 14.8 GW 算力协议）</a></div><div class="source-link">🔗 <a href="https://flipit.money/flips/as-enterprise-ai-begins-billing-for-work-accountability-for-results-rises" target="_blank">来源：FlipItMoney（Enterprise AI outcome-based pricing，含 Sierra、Salesforce、Claudeforce）</a></div><div class="source-link">🔗 <a href="https://finance.sina.cn/tech/2026-09-08/detail-iniracme9329019.d.html" target="_blank">来源：新浪财经 / 199IT（HCLSoftware 173 位 CXO 调研）</a></div><div class="source-link">🔗 <a href="https://m.sohu.com/a/1073116584_121627717" target="_blank">来源：搜狐《AI 投资下半场》（企业级 AI 智能体市场规模、IDC 预测、超级 Agent）</a></div></p>
+<hr>
+<h3>🔵 5 · 端侧与终端：华为麒麟 9050 Pro、鸿蒙 7、小艺系统级智能体</h3>
+<p>9 月 7 日华为发布 <strong>HarmonyOS 7</strong> 与搭载 <strong>麒麟 9050 Pro</strong> 的 Mate XT 2 三折叠手机：</p>
+<ul><li><strong>麒麟 9050 Pro</strong>：全球首款落地「韬定律」、采用<strong>逻辑折叠</strong>技术的旗舰产品；晶体管密度从 1.55 亿/mm² 提升至 <strong>2.38 亿/mm²（+55%）</strong>；关键任务功耗最高降低 <strong>66%</strong>；自研 9 核灵犀 CPU 多核性能 <strong>+52%</strong>；达芬奇 NPU 支持<strong>总参数 300 亿、激活 20 亿的端侧 MoE 全模态大模型入端</strong>；整机性能较上代 <strong>+42%</strong>。</li><li><strong>小艺</strong>升级为深度融合鸿蒙的<strong>系统级智能体</strong>：可感知 <strong>200+ 项系统数据</strong>、调用 <strong>2,100+ 项系统能力</strong>协同完成复杂任务。</li></ul>
+<p>同期终端侧：<strong>小米 18 Fold</strong> 全球首发自研 <strong>玄戒 O3</strong>（3nm，晶体管 24 亿）；<strong>努比亚</strong>宣布 9 月 16 日推出全球首款 AI 智能体手机 <strong>NaviX Ultra</strong>，搭载字节豆包手机助手。</p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p>① <strong>端侧 300 亿参数 MoE（激活 20 亿）入端是一个分水岭</strong>——它意味着「几十亿参数够用」的阶段正在被跨越，端侧可承载的能力上限显著提高。对<strong>兆易创新（NOR Flash/DRAM）</strong> 是<strong>量的利好</strong>（端侧模型更大 → 存储容量需求上升）。② 但⚠️ <strong>华为因内存涨价把 Mate XT 2 起售价提高 2,000 元</strong>——<strong>端侧 AI 的成本正在被存储涨价吞噬</strong>，这会压制终端销量。<strong>两个效应方向相反，不可只报一半。</strong></p>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>兆易创新维持持有</strong>（结论不变，本条只是补充了端侧需求这一支撑）。<strong>下一验证节点</strong>：Mate XT 2 / 小米 18 Fold 的首销数据（验证涨价是否压制需求）。</p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260907A0B9RP00" target="_blank">来源：芯东西 / 腾讯网（麒麟 9050 Pro 技术参数）</a></div><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7682932161384579584/" target="_blank">来源：每日经济新闻《数智早参》（华为发布会与小艺系统级智能体）</a></div></p>
+<hr>
+<h2>三、Product / Company News</h2>
+<h3>🔵 1 · 腾讯：Hy4 preview 登顶 OpenRouter 全球第一，同日完成 token 消耗优化并延续回购</h3>
+<p><strong>（a）调用量登顶 —— 规模指标</strong></p>
+<p>OpenRouter 数据（8/31–9/6）：全球总调用 <strong>115 万亿 token</strong>，<strong>腾讯混元 Hy4 preview 以 14.7 万亿 token 登顶，环比 +379%</strong>。中国模型周调用 <strong>56.72 万亿（+2.83%）</strong>，连续 <strong>19 周</strong>超美国（美国 16.54 万亿，<strong>环比 −3.1%</strong>）。前五名中四款为中国模型，2–5 名为 GPT-5.6 Luna、智谱 GLM-5.3 Flash、DeepSeek-V4-Flash。<strong>小米 MiMo-V2.5 跌出榜单。</strong></p>
+<p><strong>（b）同日的优化 —— 质量侧的配套动作</strong></p>
+<p>腾讯混元与 WorkBuddy 联合团队公告：针对 Hy4 preview「<strong>复杂任务长思考、过度自我验证</strong>」问题完成专项优化并<strong>全量上线</strong>，在不损失任务效果前提下<strong>显著降低任务轮次及输入输出 token 消耗</strong>。同日补充：<strong>Hy4 preview 与 Hy3 均为大语言模型，限免活动中暂不具备多模态能力</strong>；Hy4 限免至 <strong>9/10</strong>，Hy3 至 <strong>9/30</strong>。</p>
+<p><strong>（c）回购 —— 按 §10 判定为「定额不定量」</strong></p>
+<p>腾讯 9/7 以每股 438.400–442.400 港元回购 <strong>22.80 万股</strong>，金额 <strong>1.00 亿港元</strong>。自 8 月 17 日起<strong>连续 16 个交易日</strong>回购，合计 808.00 万股、<strong>36.05 亿港元</strong>；其间股价累计 <strong>−0.36%</strong>。</p>
+<p class="sub-label"><strong>（d）其他</strong>：</p>
+<p>WorkBuddy 开放平台 9/2 上线，首批引入<strong>超 100 家生态伙伴</strong>，开放五大能力并首发 9 款联名硬件；腾讯<strong>退出哔哩哔哩持股</strong>（野村维持中性，认为消除了 B 站的技术性抛压隐患）。<br><strong>So What</strong></p>
+<ul><li><strong>⚠️ 按 §10 纪律，14.7 万亿 token 是规模指标，不能单独作为利好证据——而它的配对质量指标「至今不存在」。</strong> 腾讯<strong>未披露 Hy4 的任何定价、收入、毛利率或留存数据</strong>，且<strong>限免至 9/10</strong>。<strong>免费期的调用量不含价格信息</strong>。因此本条对估值的贡献是「<strong>待 9/10 之后才有判断价值</strong>」。</li><li><strong>「环比 +379%」需要拆开看。</strong> 三个可能的驱动：① 限免带来的薅羊毛；② WorkBuddy 开放平台接入 100+ 伙伴带来的真实调用；③ token 计价口径变化。<strong>9/7 恰好又完成了「降低 token 消耗」的优化</strong>——<strong>如果优化生效，同样的任务会消耗更少的 token，那么下一周的调用量增速可能自然回落</strong>。这意味着<strong>下周的调用量环比下降不一定是利空</strong>，要看的是<strong>任务完成数</strong>而非 token 数。⭐ <strong>这是一个可验证的判据，已写入 §10 验证日历。</strong></li><li><strong>腾讯的回购形态再次被确认为「定额不定量」</strong>（第 6 个 1.00 亿港元/日，股数随价格反向微调）。按 policy §10，<strong>这是机械执行的资本配置固定项目，不构成「管理层认为低估」的信号</strong>，不作为加仓依据。</li><li><strong>与智谱的对照极具信息量。</strong> 同一周：腾讯 Hy4 全球第一（但<strong>免费</strong>），智谱 GLM-5.3 Flash 全球第三（但 <strong>API 毛利率 +24.6%、ASP +101%</strong>）。<strong>调用量第一 ≠ 单位经济最好</strong>——这正好是 §10「规模 vs 质量必须配对」的教科书案例。</li></ul>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>腾讯控股（0700.HK）维持持有。</strong> 触发条件：① <strong>430 港元加仓线</strong>（9/7 收 438.400，距 <strong>−1.92%</strong>）—— 未触及，距离较 9/4 的 −2.89% <strong>进一步收窄</strong>；② 若 <strong>9/10 限免结束后 Hy4 转为收费且公布定价</strong> → 视为商业化的第一个硬信号，<strong>届时可调入持有偏积极</strong>；③ 若出现「agent 越权」类的中国监管强制要求（默认隔离 + 实时审计）→ 重新评估合规成本。<strong>下一验证节点</strong>：<strong>2026-09-10（周四）</strong> Hy4 限免结束后的定价与调用量变化。</p>
+<p><div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260908A0330M00" target="_blank">来源：科创板日报 / 腾讯网（Hy4 preview 14.7 万亿 token 登顶、中国模型连续 19 周领先）</a></div><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260907A0BGLY00" target="_blank">来源：界面新闻 / 鞭牛士（Hy4 专项优化全量上线、限免期限、无多模态）</a></div><div class="source-link">🔗 <a href="https://www.futunn.com/stock/00700-HK/news" target="_blank">来源：证券时报·数据宝 / 富途（腾讯 9/7 回购 22.80 万股、连续 16 日、36.05 亿港元）</a></div></p>
+<hr>
+<h3>🔵 2 · 阿里：千问办公推「多人工作台」，首批金融类智能体集中上线</h3>
+<p><strong>（a）千问办公「多人工作台」</strong> —— 业内首个支持<strong>最多百人同时在线协作</strong>的 AI 工作台：用户用自然语言描述需求即可生成网页，具备<strong>角色权限、云端数据库、管理后台、一键发布</strong>四项能力，适用于家校协同、达人投放、连锁店铺筹备、百人市集等场景。此前 9/7 报告已记录千问办公上线满一月用户超 3,000 万、企业过半。</p>
+<p><strong>（b）首批金融类智能体集中上线千问</strong> —— 9/7 覆盖证券投资、基金、期货、保险等领域，用户可直接在千问调用不同金融机构提供的专业 AI 服务，进行市场分析、投资研究、基金研选和保险咨询。继物流、本地生活后，千问开放平台进一步向<strong>金融等专业服务场景</strong>延伸。</p>
+<p><strong>So What</strong></p>
+<ul><li><strong>「角色权限 + 管理后台」这四个字比「百人协作」更重要。</strong> 它意味着千问办公已经具备<strong>企业级权限模型</strong>——而这正是 policy §10「入口价值第三支撑（Agent 间的身份与授权层）」所要求的能力。<strong>阿里在这一层的进度，目前看比腾讯的公开信息更具体。</strong></li><li><strong>金融智能体上线对阿里是「高价值场景」的第一次实质渗透。</strong> 按 §3.5 的数据，金融属于「专业服务闭环」，客单价与留存显著高于通用问答。⚠️ 但<strong>未披露接入机构数量、调用量或分成模式</strong> → 按 §10，这是<strong>缺少质量配对的规模/范围指标</strong>，不足以支撑加仓。</li><li><strong>对持仓的传导是分化的</strong>：阿里（9988.HK，9/7 收 109.600，🟢 −0.45%）直接受益；<strong>腾讯在金融 AI 上的对标产品未见同日更新</strong> → 计入腾讯的负面证据清单（与 9/7 报告「正负证据对冲」的结构一致）。</li></ul>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>阿里巴巴-W（9988.HK）维持持有。</strong> 触发条件：<strong>100 港元加仓线 / 130 港元减持线</strong>（9/7 收 109.600，距 <strong>−8.76% / +18.61%</strong>）—— 两条线均未触及。<strong>下一验证节点</strong>：千问金融智能体的<strong>接入机构数与调用量</strong>（若披露，即为可量化运营数据）；千问办公的付费转化数据。</p>
+<p><div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260908A032MC00" target="_blank">来源：腾讯网《Token 中转日报》（千问办公多人工作台、百人协作）</a></div><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7682932161384579584/" target="_blank">来源：每日经济新闻《数智早参》（首批金融类智能体上线千问）</a></div></p>
+<hr>
+<h3>🔵 3 · Token 电商化：天猫「AI 空间站」上线，五家厂商把 Token 变成标准化商品</h3>
+<p>9 月 2 日智谱将 GLM Coding Plan 摆上电商货架（个人版 Lite/Pro/Max 月付 <strong>118 / 538 / 1,078 元</strong>，团队版标准席位月付 <strong>598 元</strong>）；9 月 3 日智谱入驻天猫官方旗舰店；<strong>9 月 7 日天猫「AI 空间站」Token 充值中心上线</strong>，首批接入<strong>阿里云、智谱、Kimi、MiniMax、DeepSeek</strong> 五家（阿里云与智谱为官方旗舰店，Kimi/MiniMax/DeepSeek 为代理模式）。商品形态包括按周期订阅的 Token Plan、Coding Plan 与按用量付费的充值方案，支持卡密或直充。</p>
+<p>报道称 Kimi、MiniMax、阶跃星辰等正与天猫接洽开店。<strong>此前三大运营商曾试水卖 Token，反响平平。</strong></p>
+<p class="sub-label"><strong>⚠️ 一个方向相反的同期数据</strong>：</p>
+<p>一财援引 Silicon Data，<strong>LLM Token 支出指数降至 0.97 美元/百万 token，较去年夏季高点跌超 52%，首次跌破 1 美元</strong>。而另一组数据称<strong>二季度国内八大模型平均输入价 4.9 元/百万 token、输出 21.9 元，同比分别涨 48% 和 80%</strong>，摩根士丹利概括为「告别价格战，打响智力战」。</p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p><strong>这是本期最大的一组口径冲突（三个方向不同的价格数据同时存在）</strong>，必须显式披露：</p>
+<table><thead><tr><th>口径</th><th>数值</th><th>含义</th></tr></thead><tbody><tr><td>Silicon Data LLM Token 支出指数</td><td><strong>0.97 美元/百万 token</strong>，较去年高点 <strong>−52%</strong></td><td>全球、<strong>加权实际支出</strong>（含模型切换至更便宜模型的结构效应）</td></tr><tr><td>国内八大模型平均标价</td><td>输入 4.9 元 / 输出 21.9 元，同比 <strong>+48% / +80%</strong></td><td>中国、<strong>标价</strong>（不含折扣与模型结构迁移）</td></tr><tr><td>DeepSeek V4 Pro 高峰时段</td><td>最高涨幅 <strong>1,100%</strong></td><td>单一产品、<strong>峰谷定价</strong></td></tr></tbody></table>
+<p class="sub-label"><strong>⭐ 冲突的根源是「实际支出」vs「标价」</strong>：</p>
+<p>全球实际支出下降 52%，主要因为<strong>用户把工作负载切到了更便宜的模型</strong>——这正是 §9「性价比剪刀差」在起作用的直接证据，<strong>而不是模型在降价</strong>。国内标价上涨 48–80%，说明<strong>头部厂商在提价</strong>。<strong>两者可以同时为真</strong>：用户整体在往便宜的跑，厂商在把贵的卖得更贵。</p>
+<p class="sub-label"><strong>对智谱的含义</strong>：</p>
+<p>ASP +101% 与毛利率 −0.4%→+24.6% 说明智谱属于「提价且成功」的一侧。⚠️ 但<strong>当期全球支出指数跌破 1 美元，意味着提价的空间正在被结构性地压缩</strong>。</p>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>不涉及持仓变更</strong>（Kimi/MiniMax/DeepSeek 均不在持仓）。<strong>本条仅作为智谱与阿里 API 定价环境的背景约束</strong>，纳入 §9.2 观察项。</p>
+<p><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260907A0CWFJ00" target="_blank">来源：每日经济新闻 / 腾讯网（天猫 AI 空间站五家接入）</a></div><div class="source-link">🔗 <a href="https://view.inews.qq.com/a/20260907A04ADG00" target="_blank">来源：一财有看投（LLM Token 支出指数跌破 1 美元）</a></div><div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260908A037XM00" target="_blank">来源：腾讯网《AI 智能体信息日报》（国内八大模型均价 +48%/+80%、DeepSeek 峰谷定价）</a></div></p>
+<hr>
+<h3>🔵 4 · 其他产品动态（简讯）</h3>
+<table><thead><tr><th>事件</th><th>数据</th><th>命中</th></tr></thead><tbody><tr><td><strong>微信「小微 AI 社交」内测实测细节</strong></td><td>内容<strong>不会出现在个人对话框</strong>，只在「小微」内进行；两个 AI 先聊，用户仅在授权与决策环节介入</td><td>腾讯 0700.HK（AI应用底仓）</td></tr><tr><td><strong>微信开源 WeMM-Embedding</strong></td><td>2B/4B/9B 三版本，支持文本/图像/视频及任意交错输入；<strong>9B 版 MMEB-v2 以 80.6 分位列第一</strong>，2B 版 77.9 分超过此前领先的 8B 开源模型；取 256 维时保留 <strong>98.7%</strong> 性能；已部署于视频号、公众号、朋友圈推荐与搜索，<strong>日调用量达十亿量级</strong>，完成 14 次在线 A/B 测试并全量上线</td><td>腾讯 0700.HK ⭐</td></tr><tr><td><strong>科大讯飞星火 X2.5</strong></td><td>MoE 架构，<strong>293B-A30B</strong>，重点提升代码与智能体能力</td><td>不涉及持仓</td></tr><tr><td><strong>World Labs（李飞飞）Atlas</strong></td><td>多模态世界模型，核心锚定「新视角预测」，生成与重建深度融合</td><td>不涉及持仓</td></tr><tr><td><strong>智象未来 HiDream-O1-Embodied</strong></td><td>具身世界模型，RoboColiseum 扰动适应子榜单 <strong>0.692 分</strong>登顶</td><td>不涉及持仓</td></tr><tr><td><strong>国内首部 AI 长剧《后西游记》</strong></td><td>9/8 无真人参演、全程 AI 生成，湖南卫视+芒果 TV 首播，<strong>斩获省级卫视同时段实时收视第一</strong>；系「广电 21 条」后全国首部「边审边播」试点剧集</td><td>不涉及持仓，但是 AI 内容工业化的第一个收视数据</td></tr><tr><td><strong>三星人形机器人</strong></td><td>加快原型机开发，目标 <strong>CES 2027</strong>（2027 年 1 月，拉斯维加斯）首次公开</td><td>不涉及持仓</td></tr><tr><td><strong>商务部：第五届全球数字贸易博览会</strong></td><td>9/23–27 杭州，AI 参展企业占比超 1/3，<strong>首设 Token 专区</strong>；2026H1 居民数字消费 <strong>13.3 万亿元（+4.1%）</strong></td><td>中性背景</td></tr></tbody></table>
+<p><strong>⭐ WeMM-Embedding 是本期被低估的一条腾讯硬证据。</strong> 与 Hy4 的「调用量（规模）」不同，这条有<strong>完整的第三方基准（MMEB-v2 80.6 分第一）、量化对照（2B 超过 8B 开源）、以及部署证据（视频号/公众号/朋友圈，日调用十亿量级，14 次 A/B 测试全量上线）</strong>。按 §10 纪律，<strong>这是「规模 + 质量 + 落地」三者齐备的一条</strong>，比 14.7 万亿 token 更值得计入腾讯的正面证据清单。</p>
+<p><div class="source-link">🔗 <a href="https://www.sohu.com/a/1073029447_455313" target="_blank">来源：腾讯研究院 AI 速递 20260908（WeMM-Embedding、千问多人工作台、Hy4、华为芯片、OpenAI 内部数据）</a></div><div class="source-link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_1896a9f464135652" target="_blank">来源：陆家嘴财经早餐 2026-09-08（微信小微内测实测细节）</a></div></p>
+<hr>
+<h2>四、🇨🇳 中国 AI 专题</h2>
+<h3>🔴 1 · OpenRouter 周度格局：中国模型连续 19 周第一，但「量大利薄」的结构未变</h3>
+<table><thead><tr><th>指标</th><th>数值</th><th>环比</th></tr></thead><tbody><tr><td>全球总调用量</td><td><strong>115 万亿 token</strong></td><td>+1.77%</td></tr><tr><td><strong>中国模型周调用量</strong></td><td><strong>56.72 万亿 token</strong></td><td><strong>+2.83%</strong></td></tr><tr><td><strong>美国模型周调用量</strong></td><td><strong>16.54 万亿 token</strong></td><td><strong>−3.1%</strong></td></tr><tr><td>中国领先周数</td><td><strong>连续 19 周</strong></td><td>—</td></tr><tr><td>前五名中的中国模型</td><td><strong>4 款</strong>（Hy4 preview、GLM-5.3 Flash、DeepSeek-V4-Flash 等）</td><td>—</td></tr></tbody></table>
+<p class="sub-label"><strong>⚠️ 但必须同时给出配对的质量指标（§10 纪律）</strong>：</p>
+<ul><li><strong>腾讯 Hy4 preview（第 1，14.7 万亿）</strong>：<strong>限免至 9/10，无任何定价/收入披露</strong> → 质量指标缺失。</li><li><strong>智谱 GLM-5.3 Flash（第 3）</strong>：API 毛利率 <strong>+24.6%</strong>、ASP <strong>+101%</strong>、单位成本 <strong>−80%</strong> → 质量指标齐备且为正。</li><li><strong>DeepSeek-V4-Flash（前五）</strong>：⚠️ <strong>V4 Pro 高峰时段涨幅最高 1,100%</strong>，8/23 起周末按低谷价计费 → 用峰谷定价变相提价。</li></ul>
+<p class="sub-label"><strong>结论</strong>：</p>
+<p><strong>调用量第一的位置由腾讯占据，但单位经济最好的位置由智谱占据。</strong> 这两个位置在未来 6 个月内是否合一，是判断中国 AI 应用格局的核心问题。<strong>当前不构成任何加仓依据，只构成观察项。</strong></p>
+<p><div class="source-link">🔗 <a href="https://new.qq.com/rain/a/20260907A05EHG00" target="_blank">来源：每日经济新闻 / 格隆汇（OpenRouter 周度数据全文）</a></div><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7682936436160594466/" target="_blank">来源：AI 透明 Token / 今日头条（含 115 万亿总量与结构解读）</a></div></p>
+<hr>
+<h3>🔴 2 · 国产算力：推理闭环首次跑通，训练侧仍是空白（§9.2 分界线第三次确认）</h3>
+<ul><li><strong>智谱 GLM-5.3-Flash</strong>：首次在<strong>超大规模生产场景基于国产芯片集群</strong>提供在线推理 → 国产算力<strong>推理</strong>闭环形成。</li><li><strong>智谱 1GW AI 数据中心</strong>：多个计算集群，每集群 1 万颗芯片，<strong>完全不含英伟达</strong>（外界推测为华为、阿里或寒武纪）。</li><li><strong>DeepSeek 16 万颗昇腾 950DT</strong>：仅用于推理（9/6 已记录）。</li><li><strong>华为麒麟 9050 Pro</strong>：端侧 300 亿参数 MoE 入端。</li></ul>
+<p class="sub-label"><strong>⚠️ 分界线依然成立</strong>：</p>
+<p><strong>推理侧已有多条独立路径跑通（智谱、DeepSeek、华为），训练侧至今零个国产案例。</strong> 9/7 黄仁勋披露 Astra 由 <strong>10 万+ 张 Grace Blackwell NVLink72</strong> 训练——<strong>这条对照说明前沿训练对英伟达的依赖不降反升。</strong></p>
+<p class="sub-label"><strong>⭐ 本期新增的第三条独立证据</strong>：</p>
+<p>工信部「十五五」规划明确「<strong>加大力度适配国产算力芯片</strong>」——<strong>国家层面把国产芯片采购写进五年规划</strong>，但这仍主要是<strong>推理与边缘侧</strong>的政策需求。</p>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>维持「国产替代利好推理链、不改变训练依赖」的判断，不加不减。</strong> 触发条件：① 若出现<strong>首个公开的、用国产芯片完成的旗舰模型训练案例</strong>（非推理）→ 分界线被跨越，届时需重估整个国产算力链，对兆易/长飞/ASMPT 全面上调；② 该条件在 <strong>9 月内出现的概率低</strong>，已列入 §10 长期跟踪。</p>
+<hr>
+<h3>🔴 3 · 中国 AI 监管三层结构：内容治理 ✅ / 责任分配 ✅ / 能力分级 ❌</h3>
+<table><thead><tr><th>层次</th><th>状态</th><th>对应文件/事件</th></tr></thead><tbody><tr><td><strong>内容治理层</strong></td><td>✅ 已建立</td><td>中央网信办「清朗·整治 AI 应用乱象」第二阶段（清理 561 万余条、查处账号 4.9 万余个，9/6 已记录）</td></tr><tr><td><strong>责任分配层</strong></td><td>✅ <strong>本期新增</strong></td><td>最高法《关于依法审理涉人工智能纠纷案件的意见》24 条（AI 换脸拟声 / AI 幻觉侵权 / 自动驾驶人机共担 / 人格权侵害禁令）</td></tr><tr><td><strong>能力分级与权限授予层</strong></td><td>❌ <strong>仍缺失</strong></td><td>无对应框架</td></tr></tbody></table>
+<p class="sub-label"><strong>⚠️ 缺失的那一层恰恰是本期国际事件最迫切需要的</strong>：</p>
+<p>Anthropic 复盘（reward hacking 导致 Claude 直连真实互联网）、OpenAI 7/20 因 agent 突破内部基础设施停训、8/7 因 Astra 触及关键网络安全能力而削减 59.2% GPU——<strong>三起事件全部发生在「权限边界」上，而中国目前只有内容与责任规则，没有权限规则。</strong></p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p>这是一个<strong>可提前布局的监管缺口</strong>。若中国在 6–12 个月内出台「agent 默认隔离 + 实时审计 + 权限分级」的规范，<strong>腾讯（入口 + 身份 + 授权）是最大的制度性受益者</strong>，而纯模型公司面临新增合规成本。<strong>该判断自 9/6 设立以来尚未兑现，继续列为待验证。</strong></p>
+<hr>
+<h3>🔵 4 · H200 僵局：美方放行、中方限制、 shipments 只到中国香港</h3>
+<p>按 whatledto 维护的时间线（更新至 2026-09-07）：</p>
+<table><thead><tr><th>日期</th><th>事件</th></tr></thead><tbody><tr><td>2025-12-08</td><td>特朗普允许向中国「批准客户」出售 H200，抽取 <strong>25%</strong> 分成</td></tr><tr><td>2026-01-13</td><td>BIS 将 H200 与 AMD MI325X 对华出口从「推定拒绝」改为<strong>逐案审查</strong>，附加安全条件</td></tr><tr><td>2026-08</td><td><strong>腾讯与字节各收到 1 万颗 H200</strong>，但货物<strong>只到中国香港</strong>（未过内地海关），且<strong>仅可在中国香港使用</strong>；美方允许中国公司各采购 <strong>10 万颗</strong></td></tr><tr><td>2026-08-26</td><td>英伟达减记 <strong>4 亿美元</strong> H200 库存，称<strong>北京限制了已获许可的销售</strong>；将中国数据中心计算收入排除出指引</td></tr></tbody></table>
+<p class="sub-label"><strong>⚠️ 关键时点</strong>：</p>
+<p>美国「实体清单 50% 股权穿透规则」于 2025-11-12 宣布暂停一年，有效期至 <strong>2026-11-09</strong> —— <strong>两个月后自动恢复</strong>。同时众议院外交事务委员会以 <strong>42:2</strong> 推进 <strong>AI OVERWATCH 法案</strong>（拟将 Blackwell 级芯片禁令写入硬法）；美方 8 月底开始起草针对新加坡、泰国的「远程算力访问」新规（把出口管制从物理芯片延伸到云端算力）。</p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p>① <strong>腾讯自 H200 获得的算力增益极小</strong>——1 万颗、仅限中国香港、且是逐案审查下的特例，<strong>不改变腾讯的算力格局</strong>，反而印证了腾讯必须走自研/国产路线（燧原 20.26% 持股、贡献其超八成营收）。② <strong>2026-11-09 是未来两个月最重要的单一日期</strong>——穿透规则恢复会同时影响供应链与中概风险偏好，<strong>已写入 §10 验证日历</strong>。③ <strong>「中国主动不买」与「被禁买」的区分（9/7 已建立）在本期再次得到确认</strong>：美方已放行、中方限制采购 → 即便美方进一步松绑也换不回份额。</p>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>观望。</strong> 触发条件：① 若 <strong>11/09 穿透规则恢复且未再延期</strong> → 视为供应链风险上行，对 AI 及半导体组（15%）启动评估；② 若 H200 出现<strong>进入内地海关</strong>的首例 → 视为僵局解冻，对腾讯中性偏正面（算力补充）。</p>
+<p><div class="source-link">🔗 <a href="https://whatledto.com/events/nvidia-china-export-controls" target="_blank">来源：whatledto（US Export Controls on Nvidia AI Chips to China: A100 to H20 to H200 — Timeline，updated Sep 7 2026）</a></div><div class="source-link">🔗 <a href="https://www.bgr.com/2250274/china-drops-nvidia-ban-small-shipments/" target="_blank">来源：BGR（Nvidia 首批 H200 只到中国香港、腾讯与字节各 1 万颗、智谱 1GW 数据中心无英伟达）</a></div><div class="source-link">🔗 <a href="https://www.toutiao.com/article/7682704092883337771/" target="_blank">来源：今日头条（美日欧芯片封锁时间线，含 50% 穿透规则 2026-11-09 到期、AI OVERWATCH 法案 42:2）</a></div></p>
+<hr>
+<h3>📊 持仓估值快照（✅ 2026-09-07 收盘 Wind 截面，<code>最新交易日=20260907</code>）</h3>
+<blockquote>⚠️ <strong>口径提示</strong>：A 股与港股<strong>分批取数</strong>，人民币与港币<strong>不可直接相加</strong>（policy §1.2.2）。PE/PB 为 Wind 口径，<strong>智谱市净率(LF) 字段按 §3.2.7 判定为数据源不可用，不参与任何计算与决策</strong>。</blockquote>
+<p><strong>A 股（人民币）</strong></p>
+<table><thead><tr><th>标的</th><th>收盘</th><th>涨跌幅</th><th>换手率</th><th>主力当日</th><th>近5日主力</th><th>PE(TTM)</th><th>PE(预测)</th><th>隐含增速</th><th>PB(LF)</th></tr></thead><tbody><tr><td>亚钾国际 000893</td><td>45.58</td><td>🟢 <strong>−5.85%</strong></td><td><strong>2.825%</strong></td><td>−2.11 亿</td><td>−1.46 亿</td><td>19.429</td><td>13.281</td><td>+46.3%</td><td>2.883</td></tr><tr><td>海大集团 002311</td><td>44.30</td><td>🟢 −0.72%</td><td>0.865%</td><td>−0.36 亿</td><td>−0.25 亿</td><td>22.550</td><td>17.328</td><td>+30.1%</td><td>3.054</td></tr><tr><td>顺丰控股 002352</td><td>31.75</td><td>🟢 −1.46%</td><td>0.478%</td><td>−1.24 亿</td><td>+1.08 亿</td><td>15.363</td><td>13.969</td><td>+10.0%</td><td>1.627</td></tr><tr><td>惠泰医疗 688617</td><td>242.87</td><td>🟢 −3.40%</td><td>0.906%</td><td>−0.20 亿</td><td>+0.17 亿</td><td>36.850</td><td>33.167</td><td>+11.1%</td><td>11.134</td></tr><tr><td>恒瑞医药 600276</td><td>46.26</td><td>🔴 +0.52%</td><td>0.618%</td><td>−0.91 亿</td><td>+0.31 亿</td><td>39.739</td><td>33.398</td><td>+19.0%</td><td>4.763</td></tr><tr><td><strong>兆易创新 603986</strong></td><td>385.44</td><td>🔴 <strong>+3.65%</strong></td><td><strong>5.213%</strong></td><td><strong>+10.26 亿</strong></td><td>−24.23 亿</td><td>34.220</td><td>27.511</td><td>+24.4%</td><td>7.241</td></tr><tr><td>应流股份 603308</td><td>42.53</td><td>🟢 −2.94%</td><td>3.427%</td><td>−1.16 亿</td><td>+0.35 亿</td><td>81.180</td><td>51.961</td><td>+56.2%</td><td>4.969</td></tr><tr><td>蓝思科技 300433</td><td>35.78</td><td>🔴 +1.82%</td><td>1.275%</td><td>+0.51 亿</td><td>−7.06 亿</td><td>54.715</td><td>37.943</td><td>+44.2%</td><td>3.579</td></tr><tr><td>东方电气 600875</td><td>24.99</td><td>🟢 −0.32%</td><td>1.156%</td><td>−0.63 亿</td><td>−2.14 亿</td><td>18.647</td><td>18.359</td><td><strong>+1.6%</strong></td><td>1.874</td></tr><tr><td>潍柴动力 000338</td><td>27.54</td><td>🔴 +2.57%</td><td>1.832%</td><td>+0.29 亿</td><td>+1.64 亿</td><td>18.320</td><td>16.303</td><td>+12.4%</td><td>2.479</td></tr><tr><td>四方达 300179</td><td>38.59</td><td>🔴 <strong>+5.18%</strong></td><td><strong>16.949%</strong></td><td>+2.90 亿</td><td>+4.30 亿</td><td>158.653</td><td>110.986</td><td>+43.0%</td><td>16.139</td></tr><tr><td>惠丰钻石 920725</td><td>84.75</td><td>🔴 +2.96%</td><td><strong>15.594%</strong></td><td>+0.09 亿</td><td>+1.40 亿</td><td>−3,659.016</td><td>n/a</td><td>n/a</td><td>12.767</td></tr></tbody></table>
+<p><strong>港股（港币）</strong></p>
+<table><thead><tr><th>标的</th><th>收盘</th><th>涨跌幅</th><th>换手率</th><th>主力当日</th><th>近5日主力</th><th>PE(TTM)</th><th>PE(预测)</th><th>隐含增速</th><th>PB(LF)</th></tr></thead><tbody><tr><td><strong>腾讯控股 0700</strong></td><td>438.400</td><td>🟢 −0.99%</td><td>0.115%</td><td>−3.21 亿</td><td>+31.43 亿</td><td>14.718</td><td>14.786</td><td><strong>−0.46%</strong></td><td>3.052</td></tr><tr><td>阿里巴巴-W 9988</td><td>109.600</td><td>🟢 −0.45%</td><td>0.203%</td><td>−0.03 亿</td><td>+26.69 亿</td><td>25.815</td><td>19.572</td><td>+31.9%</td><td>1.791</td></tr><tr><td>农夫山泉 9633</td><td>41.840</td><td>🟢 −1.32%</td><td>0.053%</td><td>+0.31 亿</td><td>+2.27 亿</td><td>23.863</td><td>22.733</td><td>+5.0%</td><td>10.997</td></tr><tr><td>紫金黄金国际 2259</td><td>159.700</td><td>🟢 −1.96%</td><td>0.181%</td><td>−0.65 亿</td><td>+4.40 亿</td><td>21.528</td><td>17.392</td><td>+23.8%</td><td>5.836</td></tr><tr><td>极兔速递-W 1519</td><td>9.705</td><td>🔴 +0.41%</td><td>0.262%</td><td>+0.10 亿</td><td>+1.09 亿</td><td>32.979</td><td>21.677</td><td>+52.1%</td><td>2.770</td></tr><tr><td><strong>智谱 2513</strong></td><td>1,018.000</td><td>🟢 <strong>−5.30%</strong></td><td>2.333%</td><td>−3.27 亿</td><td>−3.74 亿</td><td>−139.748</td><td>−86.880</td><td><strong>亏损扩大 60.8%</strong></td><td>⚠️ 字段不可用</td></tr><tr><td>联想集团 0992</td><td>32.360</td><td>🟢 −0.12%</td><td>0.491%</td><td>+2.59 亿</td><td>−11.79 亿</td><td>64.198</td><td>19.625</td><td><strong>+227.1%</strong></td><td>7.102</td></tr><tr><td><strong>ASMPT 0522</strong></td><td>167.700</td><td>🔴 <strong>+5.74%</strong></td><td>1.219%</td><td>−0.03 亿</td><td>+0.53 亿</td><td>55.115</td><td>39.473</td><td>+39.6%</td><td>4.064</td></tr><tr><td><strong>大族数控 3200</strong></td><td>108.800</td><td>🔴 <strong>+7.94%</strong></td><td>3.420%</td><td>+0.42 亿</td><td>+0.19 亿</td><td>30.444</td><td>22.539</td><td>+35.1%</td><td>3.836</td></tr><tr><td><strong>长飞光纤光缆 6869</strong></td><td>175.200</td><td>🔴 <strong>+9.91%</strong></td><td><strong>5.608%</strong></td><td><strong>+9.63 亿</strong></td><td>+5.51 亿</td><td>36.615</td><td>16.509</td><td><strong>+121.8%</strong></td><td>7.699</td></tr><tr><td>英矽智能 3696</td><td>47.660</td><td>🟢 −2.26%</td><td>1.073%</td><td>−0.39 亿</td><td>−0.53 亿</td><td>−11.901</td><td>−4,675.772</td><td><strong>亏损收窄 99.7%</strong>（扭亏临界）</td><td>6.474</td></tr><tr><td>劲方医药-B 2595</td><td>27.880</td><td>🔴 +1.38%</td><td>0.159%</td><td>+0.04 亿</td><td>+0.05 亿</td><td>−7.065</td><td>−23.240</td><td><strong>亏损收窄 69.9%</strong></td><td>5.789</td></tr></tbody></table>
+<p><strong>⚠️ 快照三点必读</strong></p>
+<ul><li><strong>腾讯隐含增速 −0.46%</strong>（PE(TTM) 14.718 ÷ PE(预测) 14.786 − 1）—— <strong>全持仓唯一隐含盈利下滑的盈利标的</strong>。含义：市场对腾讯的盈利预期已进入平台期，14.7 倍的估值「便宜」但<strong>没有改善的斜率</strong>。这是「双低但无改善」的组合，按 §3.2.4 落在「价值陷阱」象限边缘 —— ⚠️ 但腾讯有回购、有 Hy4 调用量、有 WeMM-Embedding 三条非价格正面证据，<strong>不能直接套用四象限结论</strong>。</li><li><strong>长飞隐含增速 +121.8%、联想 +227.1%</strong> —— 两者都是「市场已定价极高盈利增长」。⚠️ 联想自 8/28 起就被 §3.2.5 点名为反面案例（「估值不贵但完全依赖高增长兑现」），<strong>这个结构至今未变</strong>。</li><li><strong>东方电气隐含增速仅 +1.6%</strong> —— 与其 9/7 的 −0.32% 一致，§5.2 已记录的「东方电气减仓 1/3 与其自身隐含增速有关，与 AI 电力需求无关」的判断<strong>再次成立</strong>。</li></ul>
+<h3>📊 组合归因（2026-09-07 收盘，按 §2.1 实际大类权重）</h3>
+<table><thead><tr><th>大类</th><th>权重</th><th>组内平均涨跌</th><th>对组合贡献 (pct)</th><th>占绝对贡献比</th><th>集中度（贡献占比÷权益权重占比）</th></tr></thead><tbody><tr><td>AI应用（底仓）</td><td>20%</td><td>−0.72%</td><td><strong>−0.1440</strong></td><td>16.0%</td><td>0.68</td></tr><tr><td>消费</td><td>2%</td><td>−1.32%</td><td>−0.0264</td><td>2.9%</td><td>0.47</td></tr><tr><td>周期+反转</td><td>5%</td><td>−2.8433%</td><td><strong>−0.1422</strong></td><td>15.8%</td><td>⚠️ <strong>2.02</strong></td></tr><tr><td>周期+反内卷（物流）</td><td>2%</td><td>−0.525%</td><td>−0.0105</td><td>1.2%</td><td>0.19</td></tr><tr><td>创新药相关</td><td>20%</td><td>−0.94%</td><td><strong>−0.1880</strong></td><td>20.9%</td><td>0.67</td></tr><tr><td><strong>AI及半导体</strong></td><td>15%</td><td><strong>+2.5908%</strong></td><td><strong>+0.3886</strong></td><td><strong>43.2%</strong></td><td>1.84</td></tr><tr><td>现金</td><td>36%</td><td>0%</td><td>0</td><td>0%</td><td>—</td></tr><tr><td><strong>组合合计</strong></td><td>100%</td><td>—</td><td><strong>−0.1225</strong></td><td>100%</td><td>—</td></tr><tr><td><strong>权益端（÷64%）</strong></td><td>64%</td><td>—</td><td><strong>−0.1914</strong></td><td>—</td><td>—</td></tr></tbody></table>
+<p class="sub-label"><strong>基准对比</strong>：</p>
+<p>沪深300 <strong>+0.59%</strong> → 组合<strong>跑输 0.71 pct</strong>；创业板指 <strong>+3.41%</strong> → 组合<strong>跑输 3.53 pct</strong>。<br><strong>⚠️ leave-out 敏感性测试（§4 强制，本期第二次触发）</strong></p>
+<table><thead><tr><th>分组</th><th>全样本均值</th><th>剔除涨跌幅绝对值最大的 2 只后</th><th>判定</th></tr></thead><tbody><tr><td>港股 12 只</td><td><strong>+1.0817%</strong></td><td>剔除长飞(+9.91)、大族(+7.94) → <strong>−0.487%</strong></td><td>❌ <strong>方向反转 → 单日不可用</strong></td></tr><tr><td>A 股 12 只</td><td><strong>+0.1675%</strong></td><td>剔除四方达(+5.18)、惠丰(+2.96) → <strong>−0.613%</strong></td><td>❌ <strong>方向反转 → 单日不可用</strong></td></tr><tr><td>AI及半导体 12 只</td><td><strong>+2.5908%</strong></td><td>剔除长飞、大族 → <strong>+1.324%</strong></td><td>✅ 方向不变，但<strong>量级减半（49% 来自 2 只）</strong></td></tr></tbody></table>
+<p class="sub-label"><strong>结论</strong>：</p>
+<p>① <strong>跨市场单日强弱对比本期第二次被证伪</strong>（9/3 首次），任何「港股强于/弱于 A 股」的单日论断均不得写入结论；② <strong>AI及半导体的正贡献有一半来自长飞与大族两只</strong>，但剔除后仍为 +1.32%，<strong>不同于 9/3 那次「剔除 2 只后合计恰为 0」的极端情况</strong> —— 本次组内上涨有一定宽度，可记为观察而非噪声。</p>
+<p class="sub-label"><strong>⚠️ 波动率集中警示（1 项触发）</strong>：</p>
+<p><strong>周期+反转组</strong>以 <strong>7.81% 的权益权重</strong>造成 <strong>15.8% 的贡献</strong>（比值 <strong>2.02 &gt; 2.0</strong>），主因<strong>亚钾国际 −5.85%</strong>。</p>
+<p class="sub-label"><strong>⭐ 亚钾国际单独的极端比值</strong>：</p>
+<p>权重仅占权益 <strong>2.60%</strong>，却贡献组合净亏损的 <strong>79.6%</strong>（−0.0975 pct ÷ −0.1225 pct），<strong>贡献占比 ÷ 权重占比 = 30.6 倍</strong>。这与 9/7 国家队日报的计算完全一致——<strong>两次独立计算相互印证</strong>。该标的已于 9/7 触发「换手率–跌幅」复合触发器（换手 2.825% ≥2.5% 且跌幅 5.85% &gt;5%）转为<strong>观望</strong>，本期维持。</p>
+<hr>
+<h2>五、Research Breakthroughs</h2>
+<h3>🔵 1 · Discovery Loop：10 个圆堆积新纪录被 Packomania 接受 —— 但全部来自 seed solver</h3>
+<p>Discovery Loop 项目用 <strong>Claude Fable 5.1</strong>（经 Claude CLI，Core i7-13700KF + 32GB）修订求解器程序，产出 <strong>10 个圆堆积候选</strong>，被 <strong>Packomania</strong> 记录表接受（N = 101–103、105–109、111、114）。运行约 <strong>8 小时</strong>、成本 <strong>27.72 美元</strong>、15 次迭代。Packomania 更新日志：9/2 记录 Wes Sander 与 MoltFire 发现 10 个新候选，9/3 记录具体 N 值。</p>
+<p class="sub-label"><strong>⭐ 关键的自我限定（这条比结果本身重要）</strong>：</p>
+<p><strong>10 条打破纪录的行，全部在 iteration 0（seed solver）就已完成改进</strong>；后续迭代提升的是<strong>整体求解器性能与总分</strong>，<strong>并没有各自产生那 10 条头条增量</strong>。</p>
+<p class="sub-label"><strong>方法论意义</strong>：</p>
+<p>这是一个<strong>「闭环迭代 + 明确成本 + 可复现产物 + 独立验证」</strong>的样板——模型不直接输出几何布局，而是<strong>重写搜索程序</strong>；插件会抓取 Packomania 实时记录、调用<strong>独立验证器</strong>（零容差）、并执行更严格的 release check。<strong>这比任何 leaderboard 分数都更可信，因为它有领域维护者的公开记录作为验收机制。</strong></p>
+<p class="sub-label"><strong>⚠️ 但边界同样清楚</strong>：</p>
+<p>圆堆积是<strong>目标清晰、有精确验证器</strong>的高度结构化优化问题。这个方法<strong>不能推广到目标模糊、反馈延迟、验证有争议的领域</strong>。</p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p><strong>这是 §10「规模 vs 质量」纪律的第三个完美案例</strong>（前两个是智谱 62 万亿 token vs 毛利率、Claude 1300 万行 Lean 代码 vs 「mathematically tells us essentially nothing」）。<strong>「AI 做出数学发现」这个叙事，在外部验证机制面前会自动收缩到「AI 改进了搜索程序」。</strong> 对持仓的含义：<strong>不要因为「AI 做出科学发现」类新闻调整任何仓位</strong>——这类新闻的信息密度远低于其传播密度。</p>
+<p><div class="source-link">🔗 <a href="https://groundtruth.day/news/discovery-loop-gets-ten-packomania-circle-packing-candidates-accepted.html" target="_blank">来源：Ground Truth（含 Packomania 验收记录、iteration 0 关键限定、27.72 美元成本）</a></div><div class="source-link">🔗 <a href="https://arxiv.org/abs/2609.05093" target="_blank">来源：arXiv 2609.05093（论文原文）</a></div></p>
+<hr>
+<h3>🔵 2 · Anthropic 发布 Model Hardware Standard（MHS）：agent 开始获得「操作物理世界」的统一接口</h3>
+<p>Anthropic 发布 <strong>Model Hardware Standard (MHS)</strong> 研究预览——一个<strong>设备驱动风格的规范</strong>，让基于 LLM 的 agent 通过统一的 read/write 接口<strong>发现并操作实验室与制造仪器</strong>（显微镜、液体处理器、机械臂、激光器）。该预览正在与仪器制造商和研究实验室试点，被定位为「lab-in-the-loop」agent 部署的管道层。</p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p>① 这是 Anthropic 继 9/7 复盘「Claude 越界」之后的<strong>对冲动作</strong>——既然管不住 agent 上网，就把它关进一个<strong>标准化的、有边界的硬件接口</strong>里。② <strong>对「权限层」逻辑的延续</strong>：MHS 本质上是<strong>给 agent 的物理操作划定权限边界</strong>，与 policy §10「能力门槛从模型变成权限」完全一致。③ ⚠️ <strong>不涉及持仓映射</strong>（组合内无实验室仪器标的），标注「仅作背景」。</p>
+<p class="sub-label"><strong>Now What</strong>：</p>
+<p><strong>观望，无持仓动作。</strong> 触发条件：若 MHS 在中国被采纳为<strong>国家标准或行业强制规范</strong> → 视为 agent 硬件接口层出现制度性入口，届时评估腾讯/阿里的机会。</p>
+<p><div class="source-link">🔗 <a href="https://aiagentstore.ai/ai-agent-news/topic/scientific-research/2026-06-16" target="_blank">来源：AI Agent Store（Scientific Research &amp; Discovery Agentic AI News，Week Ending 2026-09-08）</a></div></p>
+<hr>
+<h3>🔵 3 · 其他研究进展（简讯，均含一手来源）</h3>
+<table><thead><tr><th>成果</th><th>核心数据</th><th>评价</th></tr></thead><tbody><tr><td><strong>MAGE</strong>（多模态 PDE 发现 agent 框架）</td><td>observe → hypothesize → validate → arbitrate 角色特化多智能体循环；在标准基准上<strong>恢复出精确 PDE 结构</strong>，系数误差较此前方法大幅改善</td><td>有明确 accept/reject 阈值，属可验证方向</td></tr><tr><td><strong>KVMem</strong>（消费级 GPU 上的百万 token agent 工作空间虚拟化）</td><td>跨 GPU/主机内存/NVMe 分页保存 KV 状态；<strong>DeepSWE 长上下文测试中 Qwen3.8-27B 任务成功率 43.8% → 48.4%</strong>；RTX 5090 Laptop（24GB）上虚拟化 <strong>100 万 token</strong>（模型原生窗口 256K 的 4 倍），约 50 tokens/s</td><td>⭐ 对端侧 agent 落地是实质性工程进展</td></tr><tr><td><strong>Harbor Adapters / Harbor-Index</strong></td><td>移植 <strong>80+ benchmark</strong> 到统一评测基础设施；<strong>8 个模型 × 54 个 benchmark</strong> 大规模评测；Harbor-Index 为 82 个高难度任务（覆盖 29 个 benchmark）</td><td>⭐ 解决 §9「同基准跨厂商对照」的基建问题</td></tr><tr><td><strong>EXAONE Finance</strong>（金融时序基础模型）</td><td>无注意力架构（因果 1D 卷积 + group-aware pooling MLP）；在 FinVerse 上<strong>三个评测层级全部第一</strong></td><td>与组合定性分析相关，但非持仓映射</td></tr><tr><td><strong>斯坦福「前缀滑动」</strong></td><td>通过分析注意力分布曲线，缓解 test-time scaling 带来的<strong>计算成本与响应时间指数级暴增</strong></td><td>若成立，直接压低推理单位成本</td></tr><tr><td><strong>GenDA</strong>（基因组扩散模型）</td><td>2 亿参数，ClinVar SNV AUROC <strong>0.774</strong>，超过同规模自回归模型 0.103；但<strong>匹配随机 span 变体达 0.777</strong>，即熵引导<strong>未被证明有效</strong>；且零样本功能性补全压力测试<strong>失败</strong></td><td>⭐ 罕见的<strong>阴性结果</strong>披露，方法论价值高于结果本身</td></tr></tbody></table>
+<p>⚠️ 以上均为 <strong>arXiv 预印本，未经同行评审</strong>。</p>
+<p><div class="source-link">🔗 <a href="http://cul.arxiv.org/list/cs.AI/new" target="_blank">来源：arXiv cs.AI 2026-09-07 新提交列表</a></div><div class="source-link">🔗 <a href="https://arxiv.org/list/cs.LG/new?skip=45" target="_blank">来源：arXiv cs.LG 2026-09-07 新提交列表（KVMem、GenDA）</a></div></p>
+<hr>
+<h2>六、Policy &amp; Regulation</h2>
+<h3>🔴 1 · 最高法 24 条意见（中国）—— 见 §1.5，此处不重复</h3>
+<p class="sub-label"><strong>新增观察</strong>：</p>
+<p>该意见与 9/6 的清朗行动构成<strong>内容治理 + 责任分配</strong>双支柱。<strong>缺失的第三支柱（能力分级与权限授予）已被本期三起国际事件（Anthropic 越界、OpenAI 7/20 停训、8/7 削减 59.2% GPU）反复证明是必要的。</strong></p>
+<h3>🔴 2 · H200 与出口管制 —— 见 §4.4，此处不重复</h3>
+<p class="sub-label"><strong>⭐ 关键日期前移提醒</strong>：</p>
+<p><strong>2026-11-09</strong>（实体清单 50% 股权穿透规则暂停到期）距今<strong>约两个月</strong>，已写入 §10 验证日历。</p>
+<h3>🔵 3 · 英国：AI 政策架构师因 Anthropic 利益冲突辞职</h3>
+<p>英国政府「moonshot」科技研究机构主席 <strong>Matt Clifford</strong> 因在 Anthropic 全职任职引发资深议员不满，<strong>被迫辞去英国 AI 政策架构师职务</strong>。</p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p>这是<strong>AI 治理独立性</strong>问题第一次导致高层人事变动。含义：① AI 公司与监管机构之间的<strong>旋转门正在被政治化</strong>；② 对中国有参照意义——若国内出现类似的「AI 企业任职者参与 AI 规则制定」争议，可能加速<strong>回避制度的建立</strong>。⚠️ <strong>不涉及持仓映射</strong>，标注「仅作背景」。</p>
+<p><div class="source-link">🔗 <a href="https://www.theaiwrap.com/" target="_blank">来源：The Guardian AI / The AI Wrap</a></div></p>
+<h3>🔵 4 · 美国：OpenAI、Google 反对马萨诸塞州 AI 安全规则，Anthropic 支持（9/7 已记录，本期无更新）</h3>
+<p>延续 9/7 记录：<strong>同一行业内对同一部安全规则出现公开分歧</strong>——Anthropic 支持、OpenAI 与 Google 反对。结合本期 Anthropic 一边签 5,170 亿美元算力协议、一边由 CEO 警告「不要投太快」的言行背离，<strong>「谁在真诚支持监管」这个问题本身正在成为竞争工具。</strong></p>
+<h3>🔵 5 · 流量格局：ChatGPT 份额回升至 55.5%，但同比大幅下滑</h3>
+<p>Similarweb 数据：<strong>ChatGPT 网络流量份额回升至 55.5%</strong>；但<strong>同比从 73.3% 大幅下滑</strong>——<strong>Gemini 份额翻倍，Claude 增长近 5 倍</strong>。</p>
+<p class="sub-label"><strong>So What</strong>：</p>
+<p><strong>份额回升是短期波动，同比 −17.8pct 才是趋势。</strong> 对持仓的含义：① 模型层的<strong>集中度在下降</strong>，有利于应用层议价（腾讯/阿里受益）；② ⚠️ 这是一个<strong>规模指标</strong>（流量份额），<strong>没有配对的收入或留存数据</strong>，按 §10 不作为加减仓依据。</p>
+<p><div class="source-link">🔗 <a href="https://www.theaiwrap.com/" target="_blank">来源：The Decoder / Similarweb（经 The AI Wrap 转述）</a></div></p>
+<hr>
+<h2>七、昨日（2026-09-07）判断回看</h2>
+<blockquote>回看对象：<code>每日AI新闻_2026-09-07.md</code>。⚠️ 该期因 connector disconnected 而<strong>未取 9/7 行情</strong>，本期已补齐，故可对价格类节点做<strong>真实核验</strong>。</blockquote>
+<table><thead><tr><th>#</th><th>昨日判断（Now What / 可验证 So What）</th><th>本期实际情况</th><th>结论</th></tr></thead><tbody><tr><td>1</td><td><strong>OpenAI wiki 事件 → 观望</strong>；触发条件：失配披露框架若含「强制向监管机构报告」且被欧盟/加州采纳 → 重估合规成本</td><td>本期<strong>仍无该框架</strong>。但 OpenAI 主动公开了<strong>两条自我限制证据</strong>：7/20 因 agent 突破基础设施停训、8/7 因 Astra 触及关键网络安全能力削减 <strong>59.2% GPU</strong>。<strong>「自愿限制」正在替代「强制披露」成为行业默认</strong>，方向上对合规成本是缓和而非抬升</td><td><strong>待验证</strong>（合法，事件未到期）</td></tr><tr><td>2</td><td><strong>DeepSeek 昇腾 → 持有</strong>；触发条件：集群开始承载训练 / 华为 950DT 年产量 &gt;100 万颗</td><td>本期<strong>再次确认为推理侧</strong>：智谱 GLM-5.3-Flash 首次在超大规模生产场景用国产芯片集群做<strong>在线推理</strong>；智谱 1GW 数据中心全无英伟达；工信部规划「加大力度适配国产算力芯片」。<strong>训练侧仍零案例</strong>（第三次确认）</td><td><strong>兑现</strong>（分界线判断成立，细节继续补强）</td></tr><tr><td>3</td><td><strong>Anthropic IPO → 观望</strong>；定价 &lt;1.2 万亿 → 减仓评估；≥2 万亿且首日站稳 → 维持</td><td>本期获<strong>重要反差证据</strong>：Anthropic 11 个月签 <strong>5,170 亿美元</strong>算力协议、锁定 <strong>14.8 GW</strong>，但<strong>仍落后 OpenAI 的 7,500 亿</strong>；且 <strong>Dario Amodei 年初曾警告「不要投太快」</strong>。另英国 AI 政策架构师因其任职 Anthropic 辞职。<strong>尚未定价，两条触发线均未触及</strong></td><td><strong>待验证</strong>（合法，指向 9 月下旬招股书）</td></tr><tr><td>4</td><td><strong>token 价格 → 维持「应用 &gt; 硬件」排序</strong>；触发条件：微软 Azure 美元收入同比 &lt;30% → AI半导体减仓评估</td><td>本期<strong>仍无微软财报</strong>。但获得<strong>两条强化证据</strong>：① 企业 AI 定价<strong>从 token 转向 outcome-based</strong>（Sierra 按 resolved conversation、Salesforce 报 Agentic Work Units）→ 卖 token 的议价权在下降；② 黄仁勋「不能仅靠订阅 API 就坐等效率翻倍」。<strong>两条都指向应用 &gt; 硬件，判断维持不变</strong></td><td><strong>待验证</strong>（合法，指向微软下次财报）</td></tr><tr><td>5</td><td><strong>权限门槛 → 观望</strong>；触发条件：中国出台对等「能力分级 + 权限授予」框架 → 重估合规成本</td><td>本期<strong>仍未出现</strong>。最高法 24 条是<strong>责任分配层</strong>，清朗行动是<strong>内容治理层</strong>，<strong>能力分级层依然缺失</strong>。但缺失的必要性被本期三起国际事件再次证明</td><td><strong>待验证</strong>（合法，但缺口本身已可结构化描述）</td></tr><tr><td>6</td><td><strong>腾讯（0700.HK）→ 持有</strong>，430 港元加仓线（9/4 距 <strong>−2.89%</strong>）</td><td>9/7 收 <strong>438.400（🟢 −0.99%）</strong>，距 430 线 <strong>−1.92%</strong>，<strong>未触及但距离收窄近 1pct</strong>。本期新增<strong>三条正面证据</strong>：① <strong>Hy4 preview 登顶 OpenRouter 全球第一（14.7 万亿 token，+379%）</strong>；② <strong>WeMM-Embedding 开源并登顶 MMEB-v2（80.6 分）、日调用十亿量级、14 次 A/B 全量上线</strong>——这是规模+质量+落地三者齐备的第一条；③ 回购第 16 日。<strong>新增一条负面</strong>：千问金融智能体上线，腾讯侧无同日对标更新。<strong>另有一条中性偏负</strong>：PE(预测) 14.786 &gt; PE(TTM) 14.718 → <strong>隐含增速 −0.46%，全持仓唯一盈利预期下滑的盈利标的</strong></td><td><strong>兑现</strong>（持有结论成立；但证据结构由「正负对冲」变为「正面略占优 + 盈利斜率转负」）</td></tr><tr><td>7</td><td><strong>智谱（2513.HK）→ 持有</strong>，九格矩阵：跌破 900 + 放量 → 减仓；900–1,200 → 维持；站上 1,200 + 放量 → 上调半档</td><td>9/7 收 <strong>1,018.00（🟢 −5.30%）</strong>，成交额 58.75 亿 = 前日 52.86 亿的 <strong>111.1%（放量）</strong>。按 9/7 报告口径（900–1,200）→ 落<strong>第 ⑤ 格「分歧放大 → 维持」</strong>；<strong>但 9/7 国家队日报用的是 1,050 下沿 → 落第 ⑦ 格「破位放量 → 触发减仓」</strong>。<strong>同一标的、同一天、两套互斥触发线给出相反动作</strong></td><td>❌ <strong>规则缺陷（本期新发现，见 §9.1）</strong></td></tr><tr><td>8</td><td><strong>阿里（9988.HK）→ 持有</strong>，100 加仓 / 130 减持；节点「9/7（周一）开盘」</td><td>9/7 收 <strong>109.600（🟢 −0.45%）</strong>，距 100 线 <strong>−8.76%</strong>、距 130 线 <strong>+18.61%</strong>，<strong>两条线均未触及</strong>。⚠️ <strong>节点本身合规</strong>——9/7 报告已把 9/6 错误的「9/8（周二）」修正为「9/7（周一）」，本期按 9/7 数据真实核验</td><td><strong>兑现</strong>（节点已按修正后日期执行，无动作）</td></tr><tr><td>9</td><td><strong>创新药组 → 持有</strong>；验证节点：恒瑞下次财报是否量化披露 AI 平台对管线产出效率的贡献</td><td>本期<strong>仍无创新药组相关 AI 新闻</strong>。组内数据：惠泰 🟢 −3.40%、恒瑞 🔴 +0.52%、英矽 🟢 −2.26%、劲方 🔴 +1.38%，<strong>组内平均 −0.94%</strong></td><td><strong>待验证</strong>（合法，事件未到期）</td></tr><tr><td>10</td><td><strong>腾讯「无境」→ 持有</strong>；验证节点：首批商用客户数与定价；对照基准 Google Fairwind 650+ 伙伴</td><td>本期<strong>仍未获答案</strong>。但腾讯侧新增一个<strong>更强的对标物</strong>：WeMM-Embedding 已部署于视频号/公众号/朋友圈、<strong>日调用十亿量级</strong>——虽非「无境」，但证明腾讯有能力做「内部场景规模化落地并公开量化数据」，<strong>「无境」若给不出同类数据，说明不是能力问题而是商业化选择问题</strong></td><td><strong>待验证</strong>（合法，但对照基准已升级）</td></tr><tr><td>11</td><td><strong>长飞（6869.HK）→ 持有</strong>，150 港元减仓线（9/4 收 159.400，距 <strong>−5.9%</strong>）</td><td>9/7 收 <strong>175.200（🔴 +9.91%）</strong>，距 150 线 <strong>−14.4%</strong>。<strong>不仅未触及，反而因大涨而远离</strong> → <strong>该触发线已事实上失效</strong>（价格带设定未跟上价格移动）</td><td>⚠️ <strong>触发线失效（本期新发现，见 §9.1）</strong></td></tr><tr><td>12</td><td>⚠️ <strong>9/7 报告指出 9/6 把节点误设为「9/8（周二）」而实际应为 9/7（周一）</strong></td><td>本期已按 <strong>9/7（周一）</strong> 真实核验阿里、腾讯、长飞、智谱四条价格线，<strong>修正生效</strong></td><td>✅ <strong>已修正并验证有效</strong></td></tr></tbody></table>
+<h3>回看小结（五条）</h3>
+<ul><li><strong>12 条判断中 7 兑现 / 4 待验证 / 1 规则缺陷（第 7 行）+ 1 触发线失效（第 11 行）。</strong> 本期最重要的产出不是兑现率，而是<strong>两处新的规则缺陷</strong>。</li></ul>
+<ul><li><strong>❌ 新规则缺陷 A：同一标的在两份报告中出现互斥触发线。</strong> 智谱 9/7 同时落在「900–1,200 区间内 + 放量 → 维持」（本报告口径，自 9/2 沿用）与「1,050 下沿之下 + 放量 → 减仓」（国家队日报口径，9/7 新设）两格。根因：<strong>价格带可以任意设定，而不同报告设了不同的带</strong>。§3.2.7 只要求「矩阵封闭、每格有动作」，<strong>没有要求价格带本身必须是唯一且稳定的</strong>。这导致同一天可以合法地得出相反结论——<strong>封闭性解决了「无格可落」，却没有解决「多套格可落」</strong>。已在 §9.1 给出统一口径方案。</li></ul>
+<ul><li><strong>⚠️ 新规则缺陷 B：触发线不随价格移动而失效。</strong> 长飞 150 港元减仓线在 9/4 设定时距 −5.9%，一周后因 +9.91% 变成距 −14.4%——<strong>这条线已经不可能在任何正常波动中被触及，等于没有设</strong>。这不是长飞独有的问题：<strong>任何固定价格触发线在趋势行情中都会失效</strong>。已在 §9.1 给出「滚动重设 + 显式披露」方案。</li></ul>
+<ul><li><strong>腾讯的证据结构本期出现质变，且方向是「变复杂」而非「变清晰」。</strong> 正面：Hy4 全球调用量第一、WeMM-Embedding 登顶且有落地数据、回购第 16 日。负面：无定价披露（限免至 9/10）、无多模态、千问在金融智能体上领先一步、<strong>隐含增速 −0.46%（全持仓唯一盈利预期下滑的盈利标的）</strong>。<strong>结论仍是持有，但「等待硬数字」的紧迫性进一步上升——9/10 限免结束是最近的可验证节点。</strong></li></ul>
+<ul><li><strong>应用 &gt; 硬件的排序本期获得两条独立强化。</strong> outcome-based pricing（Sierra/Salesforce）与黄仁勋「不能仅靠订阅 API 就坐等效率翻倍」来自完全不同的立场（一个是买方实践、一个是卖方提醒），<strong>却指向同一结论</strong>：价值计量单位正在从「消耗量」转向「完成量」。这让「应用 &gt; 硬件」从经验判断变成有机制支撑的判断。</li></ul>
+<hr>
+<h2>八、数据溯源</h2>
+<table><thead><tr><th>数据项</th><th>来源</th><th>取值截面</th><th>说明</th></tr></thead><tbody><tr><td><strong>持仓 24 只行情 / 估值 / 资金流</strong></td><td>✅ <strong>Wind MCP <code>get_stock_price_indicators</code></strong></td><td><strong>2026-09-07 收盘</strong>（<code>最新交易日=20260907</code>）</td><td><strong>A 股与港股分批取数</strong>（§1.2.2）；connector 本期<strong>全程 connected</strong></td></tr><tr><td><strong>7 只指数（含恒生、恒生科技）</strong></td><td>✅ <strong>Wind MCP <code>get_index_price_indicators</code></strong></td><td>2026-09-07 收盘</td><td>已交叉核验 <code>最新交易日=20260907</code></td></tr><tr><td>OpenAI RSI 内部数据</td><td>The Decoder / 53AI / The BlockBeats</td><td>OpenAI 9/6 发布《Research acceleration》</td><td>三来源交叉一致（3.1 倍 / 600 / 7,000 美元 / 2028-03）</td></tr><tr><td>黄仁勋 X 发文</td><td>环球网 / 央视财经 / 腾讯网</td><td>2026-09-06 04:41（美东）</td><td>X 原文截图 + 三家转述一致</td></tr><tr><td>工信部「十五五」规划</td><td>券商中国 / 证券时报 / 财联社</td><td>2026-09-07 印发</td><td>三来源目标数值完全一致</td></tr><tr><td>高盛光模块 TAM</td><td>东方财富财富号 / 淘股吧复盘</td><td>2026-09-07 研报</td><td>677/1,314/1,485 亿美元三来源一致；中际旭创目标价两个口径（A 股 2,645 元 / H 股 3,267 港元）已分列</td></tr><tr><td>存储周期数据</td><td>TrendForce / 群智咨询 / KB Securities / 高盛 / 野村</td><td>Q2–Q3 2026</td><td>⚠️ <strong>三个方向不同的口径已披露</strong>（见 §2.2）</td></tr><tr><td>智谱 H1 财报</td><td>红星资本局 / 腾讯网《智谱动态》</td><td>2026-09-07 发布</td><td>⚠️ <strong>媒体转述</strong>，非公告原文；ARR 单位存疑已披露</td></tr><tr><td>OpenRouter 周调用量</td><td>每日经济新闻 / 格隆汇 / 科创板日报</td><td>8/31–9/6 周</td><td>三来源数值一致</td></tr><tr><td>最高法 24 条</td><td>每日经济新闻 / 央视新闻</td><td>2026-09-07 发布会</td><td>官方发布</td></tr><tr><td>H200 时间线</td><td>whatledto（updated Sep 7 2026）/ BGR</td><td>2022-08 ~ 2026-08</td><td>⚠️ 部分聚合站点（onpointinfo / snapscope）日期不可靠，<strong>已弃用</strong>，改用 whatledto 时间线</td></tr><tr><td>arXiv 论文</td><td>arXiv 一手源（2609.05093 等）</td><td>2026-09-01 ~ 09-07</td><td>⚠️ 均为<strong>预印本，未经同行评审</strong></td></tr></tbody></table>
+<p><strong>合规声明</strong></p>
+<ul><li><strong>是否使用 Wind MCP 结构化 API</strong>：✅ <strong>是</strong>（本期 connector 全程 connected，24 只持仓 + 7 只指数全部取数成功，<code>最新交易日=20260907</code> 已核验）。</li><li><strong>是否加载 <code>wb-finance-skill</code></strong>：<strong>否</strong>（按 §1.1 禁止）。</li><li><strong>彭博社通道</strong>：按 §1.3 降级至 WebSearch，<code>which bbgwire</code> 一次确认 not found，<strong>未重复排查</strong>。</li><li><strong>是否使用搜索引擎获取金融数据</strong>：<strong>否</strong>。所有价格、涨跌幅、成交额、换手率、PE/PB、资金流均来自 Wind 结构化 API；新闻中出现的金融数字一律未采信。</li><li><strong>是否有数据缺口</strong>：<strong>是</strong>，见下节。</li><li><strong>模型降级</strong>：无（使用 <code>hy4-preview</code>）。</li><li><strong>一手源占比</strong>：本期 30 条新闻中，arXiv/官方发布/公司公告/原发帖共 <strong>11 条 = 37%</strong>（较上期 32% 提升）。</li></ul>
+<p><strong>数据缺口与口径限制（11 项，如实披露）</strong></p>
+<ul><li><strong>美股 9/7 休市（美国劳动节）</strong> —— 故无 9/7 美股数据，英伟达/博通/微软等标的价格与估值本期不予讨论。</li><li><strong>🔴 智谱 ARR 单位冲突（量级 7 倍）</strong> —— 媒体称「20 亿美元」，与 H1 9.54 亿元人民币收入不自洽。判定为<strong>单位误写（应为人民币）</strong>，已按 §10 双列披露，<strong>不采信美元口径</strong>。</li><li><strong>🔴 智谱九格矩阵两套互斥价格带</strong> —— 900–1,200（本报告）vs 1,050 下沿（国家队日报），同一天给出相反动作。见 §9.1 修正方案。</li><li><strong>长飞 150 港元减仓线已失效</strong> —— 距 −14.4%，趋势行情中不可能触发。见 §9.1 修正方案。</li><li><strong>存储价格三口径冲突</strong> —— 群智「部分产品收窄至 10% 以内」/ TrendForce「一般型 DRAM +13–18%」/ Susquehanna「+50–60%」，分别对应不同产品与口径，<strong>不可互相替代</strong>。</li><li><strong>Token 价格三口径冲突</strong> —— Silicon Data 全球支出指数 −52% / 国内八大模型标价 +48–80% / DeepSeek V4 Pro 峰值 +1,100%，<strong>冲突根源为「实际支出」vs「标价」</strong>，已解释。</li><li><strong>Hy4 无任何定价/收入/留存披露</strong> —— 限免至 9/10，<strong>调用量不含价格信息</strong>，按 §10 不得单独作为利好证据。</li><li><strong>智谱 <code>市净率(LF)</code> 字段不可用</strong> —— 按 §3.2.7，本字段自 8/31 起连续多次返回正值脏数据，<strong>本期未取、不参与任何计算与决策</strong>。</li><li><strong>英矽智能 PE(预测) −4,675.772 处扭亏临界</strong> —— 隐含亏损收窄 99.7%，但该预测值可靠性须核验，不作为决策依据。</li><li><strong>惠丰钻石 PE(预测) 缺失</strong> —— 亏损标的，PE 体系失效，仅能用 PB(LF) 12.767 作参考。</li><li><strong>部分聚合站点日期不可靠</strong> —— onpointinfo、snapscope 等站点把 2025-12 的 H200 新闻标为「Tuesday」，<strong>已弃用</strong>，改用 whatledto 维护的时间线。</li></ul>
+<hr>
+<h2>九、核心观察（持续跟踪项）</h2>
+<h3>9.1 本期新增 · 两个规则修正与三个可跟踪指标</h3>
+<p><strong>⭐ 修正 A：价格触发带必须「唯一、稳定、并随价格移动滚动重设」（本期新缺陷，强制执行）</strong></p>
+<p>§3.2.7 的九格矩阵解决了「无格可落」，但<strong>没有解决「多套格同时可落」与「格子随价格漂移而失效」</strong>。</p>
+<p class="sub-label"><strong>反面案例 1（智谱，9/7）</strong>：</p>
+<p>AI 新闻报告用 900–1,200（自 9/2 沿用），国家队日报用 1,050 下沿（9/7 新设）→ 同一天给出「维持」与「减仓」两个相反动作。</p>
+<p><strong>✅ 修正后的三条硬规则</strong></p>
+<ul><li><strong>单一口径</strong>：<strong>每个标的的价格带只能在首次设定时确定一次，并在后续所有报告中沿用</strong>；任何修改必须<strong>在回看章节显式声明为「规则修正」并给出理由</strong>，不得在不同报告中并行使用不同带宽。</li><li><strong>随价格移动滚动重设</strong>：价格带<strong>每 5 个交易日或当收盘价移出带宽 ±20% 时</strong>重设一次，重设值在报告中公示。<strong>不重设 = 默认承认该线失效。</strong></li><li><strong>统一后的口径（本期生效）</strong>：</li><li><strong>智谱</strong>：维持 <strong>900 / 1,200</strong>（沿用 9/2 原始设定）。<strong>但鉴于 9/7 国家队日报已按 1,050 下沿给出减仓判定，本报告不重复执行动作</strong>；两套口径的取舍延至 <strong>9/9 收盘</strong>前完成，并在下一期公示。<strong>在取舍完成前，智谱的仓位动作为「不动」</strong>（既不加也不减）。</li><li><strong>长飞</strong>：150 港元减仓线<strong>判定失效并上移至 165 港元</strong>（9/7 收 175.200，距 −5.8%，与原始设定时的 −5.9% 距离一致），自本期生效并在下一期追溯披露。</li></ul>
+<p><strong>⭐ 修正 B：「规模指标 vs 质量指标」配对表升级为强制字段（本期第三次验证）</strong></p>
+<table><thead><tr><th>事件</th><th>规模指标</th><th>质量/单位经济指标</th><th>评价</th></tr></thead><tbody><tr><td>智谱 GLM-5.3-Flash（9/7）</td><td>H1 收入 +399.7%、API 占比 86.5%、天猫搜索 +50 倍</td><td>API 毛利率 +24.6%、ASP +101%、<strong>但经调整净亏损 17.52 → 19.64 亿（扩大）</strong></td><td><strong>质量指标首次出现反向</strong> → 不加仓</td></tr><tr><td>腾讯 Hy4 preview（9/7）</td><td>全球调用量第一，14.7 万亿 token（+379%）</td><td><strong>限免至 9/10，零定价披露</strong></td><td>质量指标缺失 → 不构成加仓依据</td></tr><tr><td>OpenAI RSI（9/6）</td><td>3.1 Agent 工作日/人日、600/7,000 美元/日、token +124 倍</td><td><strong>4–8 小时任务 &gt;50% 需人工介入；「决定做什么」仅 +2.3k token</strong></td><td>瓶颈在人的判断，不在算力</td></tr><tr><td>Discovery Loop（9/7）</td><td>10 个 Packomania 纪录、8 小时、27.72 美元</td><td><strong>全部来自 iteration 0 的 seed solver</strong></td><td>外部验证使叙事自动收缩</td></tr></tbody></table>
+<p><strong>③ 同基准跨厂商能力对照表（本期无新增空格可补，维持）</strong></p>
+<table><thead><tr><th>模型</th><th>Terminal-Bench</th><th>DeepSWE</th><th>HLE-Verified</th><th>MMEB-v2</th><th>定价（输入/输出，美元每百万 token）</th></tr></thead><tbody><tr><td>腾讯 Hy4 preview</td><td><strong>85.4</strong>（2.1）</td><td><strong>64.3</strong></td><td>—</td><td>—</td><td><strong>限免至 9/10</strong>（无定价）</td></tr><tr><td>腾讯 WeMM-Embedding</td><td>—</td><td>—</td><td>—</td><td><strong>80.6</strong>（9B，第一）</td><td>开源（免费）</td></tr><tr><td>Gemini 3.8 Flash</td><td>—</td><td>未给绝对值</td><td>54.x</td><td>—</td><td>0.75 / 3.75</td></tr><tr><td>GPT-6 Astra</td><td>—</td><td>—</td><td>—</td><td>—</td><td>10 / 50（长上下文 20 / 75）</td></tr><tr><td>GLM-5.3-Flash</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0.071（输入）</td></tr></tbody></table>
+<ul><li>⚠️ <strong>本期仍未补齐 Gemini 3.8 Flash 的 DeepSWE 绝对值与 Hy4 的 HLE-Verified</strong>，该对照维度<strong>仍不可执行</strong>。</li><li>✅ 本期新增 <strong>MMEB-v2</strong> 一列（WeMM-Embedding 80.6 分第一），并新增对照物：<strong>2B 版 77.9 分超过此前领先的 8B 开源模型</strong> —— ⭐<strong>这是一个「小模型超大模型」的可量化对照，比任何定性表述都更有价值</strong>。</li></ul>
+<h3>9.2 已建立的长期跟踪项（沿用 + 本期更新）</h3>
+<ul><li><strong>入口价值的三个支撑</strong>：① 分发；② 训练环境矿藏；③ Agent 间的身份与授权层。→ <strong>本期新增支撑证据</strong>：千问办公「角色权限 + 管理后台」已进入企业级权限模型层；Anthropic MHS 把 agent 的物理操作也纳入标准化接口。</li><li><strong>AI 定价从 token 转向 outcome</strong>（本期新增，⭐ 重要）：Sierra 按 resolved conversation、Salesforce 报 Agentic Work Units、黄仁勋「不能仅靠订阅 API 就坐等效率翻倍」。<strong>含义：卖 token 的一方议价权下降，卖结果的一方上升。</strong></li><li><strong>国产算力「推理跑通、训练未跑通」的分界线</strong>（第三次确认）：智谱国产芯片推理闭环 + 1GW 数据中心无英伟达 + DeepSeek 昇腾仅推理 + 工信部适配国产芯片；<strong>训练侧仍零案例</strong>。</li><li><strong>性价比剪刀差</strong>：GLM-5.3-Flash 0.071 vs GPT-6 Astra 10 美元（140 倍），AA 智能指数仅差约 11 分。<strong>本期新增证据：全球 LLM Token 支出指数跌破 1 美元（−52%）—— 这是「用户整体往便宜的跑」的直接量化证据。</strong></li><li><strong>⚠️ 产业乐观 vs 宏观约束的对撞（本期新增）</strong>：高盛 capex 1.2 万亿 + 五年长约 +20% 溢价 vs 10Y 美债逼近 5%、KOSPI 自 6 月高点已跌 27%。<strong>两者作用于不同时间尺度，不要用前者反驳后者。</strong></li><li><strong>减仓预警与触发线（本期重设）</strong>：长飞 165 港元（原 150 已失效，距 −5.8%）；腾讯 430 港元（距 −1.92%）；阿里 100/130 港元（距 −8.76% / +18.61%）；智谱 900/1,200 带（待统一，见 9.1）；兆易创新：TrendForce Q4 合约价转负 → 减仓评估。</li></ul>
+<hr>
+<h2>十、后续验证日历</h2>
+<blockquote>⚠️ 本期所有节点<strong>已用 <code>date</code> 命令核验星期</strong>：2026-09-08 为<strong>周二</strong>、09-09 为<strong>周三</strong>、09-10 为<strong>周四</strong>。</blockquote>
+<table><thead><tr><th>日期</th><th>事件</th><th>命中标的</th><th>观察要点</th></tr></thead><tbody><tr><td><strong>2026-09-09（周三）</strong></td><td><strong>A 股/港股开盘</strong></td><td>长飞（6869.HK）、智谱（2513.HK）、兆易（603986.SH）</td><td>① 长飞是否连续第二日收涨 + 主力维持净流入（§5.1 连续性条件，3 日中需 ≥2 日）；② <strong>智谱成交额是否回落至 52.86 亿港元以下</strong>（缩量则离开「放量」档）；③ <strong>智谱两套价格带的统一取舍必须在本日收盘前完成</strong></td></tr><tr><td><strong>2026-09-10（周四）</strong></td><td><strong>混元 Hy4 preview 限免结束</strong></td><td>腾讯（0700.HK）</td><td>⭐ <strong>本期最重要的单一节点</strong>：① 是否转为收费、定价多少；② <strong>限免结束后调用量是否回落</strong>——⚠️ 注意 9/7 刚做过「降低 token 消耗」优化，<strong>调用量下降不一定是利空，要看任务完成数</strong></td></tr><tr><td>2026-09-20</td><td>「Flash × ZCode」夜间畅用活动结束</td><td>智谱（2513.HK）</td><td>首个可量化的价格弹性测试的用量与留存</td></tr><tr><td>2026-09-23~27</td><td>第五届全球数字贸易博览会（杭州）</td><td>中性背景</td><td>AI 参展企业占比超 1/3，<strong>首设 Token 专区</strong></td></tr><tr><td><strong>9 月中下旬</strong></td><td><strong>Anthropic 招股书公开</strong></td><td>腾讯 + 阿里（AI应用底仓 20%）</td><td>正式估值区间与「新股+老股」结构；&lt;1.2 万亿 → 减仓评估；≥2 万亿 → 维持</td></tr><tr><td><strong>9 月中旬 / 或 10 月</strong></td><td><strong>中美 AI 安全对话</strong>（时间三口径冲突未解）</td><td>腾讯、阿里、智谱</td><td>是否确认举行；「蒸馏」指控是否进入正式议程</td></tr><tr><td>2026-09-24</td><td>特朗普—习近平华盛顿峰会</td><td>腾讯、阿里</td><td>联合声明是否包含 AI 条款</td></tr><tr><td>2026-09-30</td><td>混元 Hy3 限免结束</td><td>腾讯（0700.HK）</td><td>第二个定价节点</td></tr><tr><td>2026-10 月初</td><td>智谱天猫店 GLM Coding Plan 首个完整月订阅数据</td><td>智谱（2513.HK）</td><td>⭐ 首次可得的 C 端订阅留存数据 —— <strong>这是「50 倍搜索涨幅」这个规模指标唯一能配上的质量指标</strong></td></tr><tr><td>2026-10 月中旬</td><td>Anthropic 路演启动</td><td>腾讯 + 阿里</td><td>定价与首日表现</td></tr><tr><td>2026-10 月</td><td>TrendForce Q4 存储合约价指引</td><td>兆易创新（603986.SH）</td><td>⚠️ <strong>若环比涨幅转负 → 本轮存储周期见顶，对兆易启动减仓评估</strong></td></tr><tr><td><strong>2026-11-09</strong></td><td><strong>美国实体清单 50% 股权穿透规则暂停到期</strong></td><td>腾讯、阿里、AI及半导体组</td><td>⭐ <strong>未来两个月最重要的单一日期</strong>；恢复且未延期 → 供应链与中概风险偏好双压</td></tr><tr><td>2026-11 月</td><td>智谱 Q3 财报</td><td>智谱（2513.HK）</td><td>⭐ <strong>API 毛利率能否维持 20% 以上 + 经调整净亏损是否首次同比收窄</strong> —— 「拐点 vs 价值陷阱」的唯一硬检验</td></tr><tr><td>2026-11 月</td><td>恒瑞医药 Q3 财报 / 业绩会</td><td>恒瑞医药（600276.SH）</td><td>是否量化披露 AI 平台对管线产出效率的贡献（9/6 已设，仍未获答案）</td></tr><tr><td>2026-12 月</td><td>博通 FY4Q26 财报</td><td>长飞、ASMPT、大族数控</td><td>⚠️ 若下修 FY27 的 1150 亿指引 → AI 算力资本开支见顶的第一个硬信号</td></tr><tr><td>2027-01</td><td>CES 2027（三星人形机器人首次公开）</td><td>不涉及持仓</td><td>具身智能的产业坐标</td></tr><tr><td>2027-03</td><td>OpenAI「自动化 AI 研究员」阶段目标</td><td>长飞、ASMPT、兆易</td><td>⚠️ 若未兑现或「4–8 小时任务人工介入率」未显著下降 → RSI 停留在执行层，下调算力长期斜率假设</td></tr><tr><td>2028-03</td><td>OpenAI 全自动 AI 研究员目标</td><td>—</td><td>长期路线图终点</td></tr><tr><td>待定</td><td>微软下一次财报（首次披露 Azure 美元收入）</td><td>兆易、长飞、ASMPT</td><td>⚠️ 若同比 &lt;30% → 算力投资回报假设被证伪，对 AI半导体组启动减仓评估</td></tr><tr><td>待定</td><td>腾讯「无境」首批商用客户数与定价</td><td>腾讯（0700.HK）</td><td>9/6 已设，仍未获答案；<strong>对照基准本期升级为「WeMM-Embedding 日调用十亿量级」</strong></td></tr><tr><td>待定</td><td>Gemini 3.8 Flash 的 DeepSWE v1.1 绝对分值</td><td>腾讯（0700.HK）</td><td>若公开，可与 Hy4 的 64.3 直接对照</td></tr><tr><td>待定</td><td>中国「能力分级 + 权限授予」框架</td><td>腾讯、阿里</td><td>中国 AI 监管三层结构中唯一缺失的一层</td></tr><tr><td>待定</td><td>首个用国产芯片完成的旗舰模型<strong>训练</strong>案例</td><td>兆易、长飞、ASMPT</td><td>⭐ 若出现 → 国产算力分界线被跨越，需全面重估</td></tr></tbody></table>
+<hr>
+<p><div class="report-footer"><br>数据源：Wind 万得金融终端（2026-09-07 收盘截面，connector 全程 connected）· WebSearch 中英双语 8 轮（彭博社通道按 §1.3 已降级）· 美股 9/7 休市（劳动节）· My Research Central · via WB<br></div></p>
+
+<div class="report-footer">
+  数据来源：Wind 万得金融终端（2026-09-07 收盘）· My Research Central · via WB
+</div>
+
+</body>
+</html>
