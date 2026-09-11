@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fed Watch · 2026-09-11</title>
+  <style>
+/* ============================================
+   Unified Report Template — My Research Central
+   All periodic reports must use these styles.
+   Theme: Light · Morandi low-saturation · 涨=红 跌=绿
+   ============================================ */
+
+:root {
+  --bg: #faf9f7;
+  --card: #f4f2ef;
+  --card-alt: #ffffff;
+  --border: #e2ded8;
+  --border-strong: #cfc9c1;
+  --text: #2c2a28;
+  --text2: #6b6760;
+  --red: #b8544a;
+  --green: #4a8a5c;
+  --orange: #a8813c;
+  --blue: #3a6b96;
+  --purple: #7d6b8f;
+  --yellow: #9a8447;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+  padding: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* ── Links ── */
+a {
+  color: #2d5f8a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 95, 138, 0.35);
+  word-break: break-all;
+}
+
+a:hover {
+  color: #1d4569;
+  border-bottom-color: #1d4569;
+  background: rgba(45, 95, 138, 0.06);
+}
+
+/* ── Header ── */
+.report-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.report-header .meta {
+  font-size: 0.82em;
+  color: var(--text2);
+}
+
+/* ── Section headers ── */
+h2 {
+  font-size: 1.15em;
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--blue);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-alt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.88em;
+  background: var(--card-alt);
+}
+
+th {
+  background: var(--card);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text2);
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+/* 斑马纹：密集数据表的横向定位 */
+tbody tr:nth-child(even) {
+  background: rgba(244, 242, 239, 0.55);
+}
+
+tbody tr:hover {
+  background: rgba(58, 107, 150, 0.09);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78em;
+  margin-right: 4px;
+}
+
+.tag-red {
+  background: rgba(184, 84, 74, 0.12);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(74, 138, 92, 0.12);
+  color: var(--green);
+}
+
+.tag-orange {
+  background: rgba(168, 129, 60, 0.14);
+  color: var(--orange);
+}
+
+.tag-blue {
+  background: rgba(58, 107, 150, 0.12);
+  color: var(--blue);
+}
+
+.tag-purple {
+  background: rgba(125, 107, 143, 0.14);
+  color: var(--purple);
+}
+
+.tag-yellow {
+  background: rgba(154, 132, 71, 0.14);
+  color: var(--yellow);
+}
+
+/* ── Highlights ── */
+.highlight {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  background: var(--card-alt);
+}
+
+.highlight-red {
+  background: rgba(184, 84, 74, 0.06);
+  border-left: 3px solid var(--red);
+}
+
+.highlight-orange {
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+}
+
+.highlight-blue {
+  background: rgba(58, 107, 150, 0.06);
+  border-left: 3px solid var(--blue);
+}
+
+.highlight-green {
+  background: rgba(74, 138, 92, 0.06);
+  border-left: 3px solid var(--green);
+}
+
+/* ── Bullet lists ── */
+ul.bullet {
+  margin: 10px 0 14px 22px;
+  font-size: 0.92em;
+}
+
+ul.bullet li {
+  margin: 9px 0;
+  line-height: 1.8;
+}
+
+ul {
+  margin: 6px 0 6px 20px;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.65;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(168, 129, 60, 0.07);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* ── Code ── */
+code {
+  background: var(--card);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  color: #8a5a44;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ── Colors ── */
+.red { color: var(--red); }
+.green { color: var(--green); }
+.orange { color: var(--orange); }
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.yellow { color: var(--yellow); }
+
+/* ── Source links ── */
+.source-link {
+  display: block;
+  font-size: 0.78em;
+  line-height: 1.7;
+  color: var(--text2);
+  margin: 7px 0 0;
+  word-break: break-all;
+}
+
+/* 连续多条来源链接紧凑排列，中间不留空行 */
+.source-link + .source-link {
+  margin-top: 2px;
+}
+
+.source-link a {
+  color: #2d5f8a;
+  text-decoration: none;
+}
+
+.source-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 0.75em;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  h1 { font-size: 1.2em; }
+  h2 { font-size: 1.05em; }
+  table { font-size: 0.8em; }
+}
+
+/* ── 段落间距（* { margin:0 } 会清零，必须显式恢复） ── */
+p {
+  margin: 0 0 14px;
+  line-height: 1.85;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 + p,
+h3 + p { margin-top: 4px; }
+
+/* ── 小节标签（**关注重点：** / **持仓关联：** …）── */
+p.sub-label {
+  margin: 22px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+/* 标签紧跟其正文，间距收紧；标签上方留白即"小节之间的空行" */
+p.sub-label + p { margin-top: 0; }
+
+h2 + p.sub-label,
+h3 + p.sub-label { margin-top: 8px; }
+
+blockquote p { margin-bottom: 8px; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── 轻量图表（纯 CSS，无 JS 依赖） ── */
+.chart {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.chart-title {
+  font-size: 0.86em;
+  color: var(--text2);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 双向条形图：中轴为 0，正值向右（红/涨），负值向左（绿/跌） */
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.bar-label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--card);
+  border-radius: 3px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-zero {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.bar-fill.pos {
+  left: 50%;
+  background: #c2685c;   /* 正贡献/涨 — 低饱和红 */
+}
+
+.bar-fill.neg {
+  right: 50%;
+  background: #6a9c7a;   /* 负贡献/跌 — 低饱和绿 */
+}
+
+.bar-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+/* 单向进度条：用于百分比/分位（0-100%） */
+.meter-row {
+  display: flex;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 0.84em;
+}
+
+.meter-label {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.meter-track {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border-radius: 7px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 7px;
+  background: #7d93a8;   /* 中性 Morandi 蓝灰 */
+}
+
+.meter-fill.low  { background: #6a9c7a; }   /* 分位低 = 便宜 */
+.meter-fill.high { background: #c2685c; }   /* 分位高 = 贵   */
+
+.meter-value {
+  width: 74px;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text2);
+}
+
+@media (max-width: 640px) {
+  .bar-label, .meter-label { width: 84px; font-size: 0.95em; }
+  .bar-value, .meter-value { width: 58px; }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>Fed Watch · 2026-09-11</h1>
+  <div class="meta">截面日期：<strong>2026-09-10</strong>（美债/利率/汇率/商品结算价）｜准备金与逆回购：<strong>2026-09-09</strong>（周频） · 数据源：Wind 万得 EDB（<code>query_economic_indicator_data</code>），备用 CLI 通道 · 分层执行：日频 ✅ ｜ <strong>周频 ✅（周五）</strong> ｜ 月频 ⏭（美国 8 月 CPI 于 9/11 20:30 公布，次日 9/12 为周六 → 顺延至 9/14）｜ 事件层 ⏭（9/16–17 FOMC 属下周） · 涨跌配色：🔴 涨 / 🟢 跌</div>
+</div>
+
+<hr>
+<h2>一、三核心</h2>
+<table><thead><tr><th>指标</th><th>读数</th><th>日变动</th><th>灯</th></tr></thead><tbody><tr><td><strong>2s10s</strong>（10Y − 2Y）</td><td><strong>+39bp</strong></td><td>−1bp</td><td>🟢</td></tr><tr><td><strong>10Y breakeven</strong></td><td><strong>2.40%</strong></td><td>+3bp</td><td>🟢</td></tr><tr><td><strong>SOFR − IORB</strong></td><td><strong>−1bp</strong></td><td>0bp</td><td>🟢</td></tr></tbody></table>
+<p>交叉校验：10Y（4.95%）− TIPS（2.55%）= <strong>2.40%</strong>，与 <code>U0929600</code> 的 2.40% <strong>偏差 0bp</strong> ✅</p>
+<h3>Implication</h3>
+<p>三核心全绿，但<strong>这个「绿」值得警惕</strong>：2s10s 从 +40bp 微降至 +39bp，SOFR−IORB 维持在 −1bp（银行间流动性无压力），breakeven 2.40% 仍在 2.0–2.5% 的舒适区间。</p>
+<p><strong>换句话说：美联储的「政策仪表盘」本身没有报警，报警的是市场定价的利率水平。</strong> 10Y 单日 +12bp、2Y +13bp，是本期最大的变动，但它不体现在三核心里 —— <strong>三核心衡量的是「曲线形态」与「流动性压力」，不衡量「利率绝对水平」</strong>。</p>
+<p class="sub-label"><strong>对配置的实际含义</strong>：</p>
+<ul><li><strong>债券</strong>：曲线没有倒挂、没有流动性挤压，但长端在快速重定价 → <strong>久期风险是本期唯一真实的债券风险</strong>，不是信用风险。</li><li><strong>股票</strong>：三核心友好意味着<strong>不是流动性危机</strong>；但利率绝对水平上行意味着<strong>估值分母在扩大</strong>，高 PB / 长周期成长股承压。</li><li><strong>汇率</strong>：美元指数 +0.30% 至 99.0839，与利差扩大方向一致 → 新兴市场资金面边际承压。</li><li><strong>黄金</strong>：breakeven 上行（+3bp）看似利多黄金，但<strong>实际利率上行更多（+9bp）</strong>，净效应为负 → <strong>黄金下跌</strong>（本期实证）。</li></ul>
+<p class="sub-label"><strong>下一步观察</strong>：</p>
+<p>今晚（9/11 20:30）美国 8 月 CPI。核心环比 &lt;0.20% → 加息预期降温、实际利率回落；≥0.20% → 本期趋势延续。</p>
+<hr>
+<h2>二、边际变化</h2>
+<ul><li><strong>🔴 10Y +12bp 至 4.95%（一年新高），拆分后实际利率占 75%</strong> —— TIPS 2.46% → <strong>2.55%（+9bp）</strong>、breakeven 2.37% → 2.40%（+3bp）。</li><li><strong>🔴 WTI 结算 +6.69% 至 102.48，触发 ±4% 事件警示</strong> —— 胡塞武装攻占红海穆哈港；5 日累计 +10.19%。</li><li><strong>⚠️ 黄金与油价反向</strong> —— COMEX 黄金 4,407.3（🟢 −1.20%）、现货白银 −5.49%。</li><li><strong>🔴 美国 8 月 PPI 同比 +5.4% 超预期、核心 PPI +4.6%</strong>；欧央行同日加息 25bp；美联储 9 月加息概率推升至约 <strong>70%</strong>；12M SOFR 隐含路径 +51.96bp → <strong>+54.57bp（+2.61bp）</strong>。</li></ul>
+<h3>Implication</h3>
+<p><strong>本期最关键的一句话：名义利率的上涨，75% 来自实际利率，25% 来自通胀预期。</strong></p>
+<p>这个拆分决定了所有资产的相对表现：</p>
+<ul><li>如果上涨主要来自<strong>通胀预期</strong>（如 9/9 那期），则<strong>黄金、商品、周期股受益</strong>，成长股受到的伤害有限；</li><li>如果上涨主要来自<strong>实际利率</strong>（本期），则<strong>黄金、长债、高 PB 成长股同时受伤，没有避风港</strong>。</li></ul>
+<p>本期的实证完全符合后者：油价 +6.69%，黄金却 −1.20%。<strong>这是「实际利率主导」最直观的证据。</strong></p>
+<p>⚠️ <strong>方法论提醒（§22-C）</strong>：市场上最常见的错误推理是「油价涨 → 通胀预期涨 → 黄金涨」。本期的真实链条是「<strong>地缘冲击 → 通胀预期小幅上行 → 但央行转向更鹰 → 实际利率大幅上行 → 黄金下跌</strong>」。<strong>中间多了一步央行的反应，这一步在 2026 年的高利率环境下是决定性的。</strong></p>
+<p class="sub-label"><strong>下一步观察</strong>：</p>
+<p>① 12M SOFR 隐含路径是否突破 +75bp（红灯线）；② 10Y TIPS 是否突破 2.60%；③ 9/16–17 FOMC 的点阵图与反对票。</p>
+<hr>
+<h2>三、A · 利率曲线维度</h2>
+<table><thead><tr><th>期限</th><th>9/9</th><th>9/10</th><th>变动</th></tr></thead><tbody><tr><td>10Y</td><td>4.83%</td><td><strong>4.95%</strong></td><td><strong>+12bp</strong></td></tr><tr><td>2Y</td><td>4.43%</td><td>4.56%</td><td>+13bp</td></tr><tr><td><strong>2s10s</strong></td><td>+40bp</td><td><strong>+39bp</strong></td><td>−1bp</td></tr></tbody></table>
+<h3>Implication</h3>
+<p>曲线小幅走平（−1bp），但<strong>是「熊平」而非「牛平」</strong>：短端上行 13bp &gt; 长端上行 12bp，说明<strong>市场在为「近期加息」定价，而不是为「长期增长」定价</strong>。</p>
+<p>熊平是最不利于风险资产的一种曲线形态：它同时抬高了贴现率（短端）和压缩了久期溢价（长端）。</p>
+<p class="sub-label"><strong>对债券</strong>：</p>
+<p>短端上行更快 → 曲线前端最脆弱，久期应缩短而非拉长。</p>
+<p class="sub-label"><strong>下一步观察</strong>：</p>
+<p>2s10s 若跌破 0（倒挂）→ 红灯；本期距倒挂仍有 39bp。</p>
+<hr>
+<h2>四、B · 通胀预期维度</h2>
+<table><thead><tr><th>指标</th><th>9/9</th><th>9/10</th><th>变动</th></tr></thead><tbody><tr><td>10Y breakeven（U0929600）</td><td>2.37%</td><td><strong>2.40%</strong></td><td>+3bp</td></tr><tr><td>交叉校验（10Y − TIPS）</td><td>2.37%</td><td><strong>2.40%</strong></td><td>+3bp</td></tr><tr><td>偏差</td><td>0bp</td><td><strong>0bp</strong></td><td>—</td></tr></tbody></table>
+<h3>Implication</h3>
+<p>通胀预期小幅上行至 2.40%，<strong>仍显著低于 2.75% 的红灯线</strong>。这说明市场<strong>并不认为这轮油价冲击会演变为持续的通胀失控</strong> —— 这是本期数据中少有的「稳定锚」。</p>
+<p>⚠️ 但要注意：<strong>美国的通胀预期稳定，不等于全球稳定</strong>。欧央行同日加息 25bp，说明欧洲对通胀的判断比美国更鹰。<strong>跨央行的分歧本身就是汇率与跨境资金的波动源。</strong></p>
+<p class="sub-label"><strong>对配置</strong>：</p>
+<p>通胀预期未失控 → <strong>不必为滞胀做极端防御</strong>；但也未回落 → <strong>不支持「美联储即将转向宽松」的叙事</strong>。</p>
+<hr>
+<h2>五、C · 银行间流动性维度</h2>
+<table><thead><tr><th>指标</th><th>9/9</th><th>9/10</th><th>灯</th></tr></thead><tbody><tr><td>SOFR（M0341926）</td><td>3.64%</td><td><strong>3.64%</strong></td><td>—</td></tr><tr><td>IORB（N9689792）</td><td>3.65%</td><td>3.65%</td><td>—</td></tr><tr><td><strong>SOFR − IORB</strong></td><td>−1bp</td><td><strong>−1bp</strong></td><td>🟢</td></tr></tbody></table>
+<h3>Implication</h3>
+<p>SOFR 持续低于 IORB 1bp，是<strong>准备金充裕的典型特征</strong>（银行宁愿以低于 IORB 的利率出借隔夜资金，说明体系内资金过剩）。</p>
+<p>这与本周准备金回升至 3.0365 万亿（见 F 维度）<strong>完全一致</strong>：<strong>体系内钱多是事实</strong>。</p>
+<p>⭐ <strong>但这里有一个必须指出的反直觉结论</strong>：<strong>流动性充裕 + 利率上行，两者同时成立。</strong> 因为准备金充裕意味着美联储的<strong>缩表/量化紧缩</strong>已接近尾声，而利率上行是<strong>政策利率与期限溢价</strong>的定价结果 —— 两者由不同机制决定。</p>
+<p class="sub-label"><strong>对配置</strong>：</p>
+<p>流动性无压力 → <strong>不应对流动性危机定价</strong>；但也不应把「钱多」解读为「风险资产会涨」—— 钱多但价格贵（利率高）时，资金会停在货币市场而非进入风险资产。</p>
+<hr>
+<h2>六、D · 政策路径维度</h2>
+<table><thead><tr><th>指标</th><th>9/9</th><th>9/10</th><th>变动</th><th>灯</th></tr></thead><tbody><tr><td>12M SOFR 期限利率（O5632651）</td><td>4.15958%</td><td><strong>4.18566%</strong></td><td>+2.61bp</td><td>—</td></tr><tr><td><strong>隐含路径</strong>（O5632651 − SOFR）</td><td>+51.96bp</td><td><strong>+54.57bp</strong></td><td><strong>+2.61bp</strong></td><td>🟡</td></tr></tbody></table>
+<h3>Implication</h3>
+<p>市场定价的 12 个月 SOFR 路径为 <strong>+54.57bp</strong>（约两次 25bp 加息），较上一期<strong>走阔 2.61bp</strong>。</p>
+<p>⚠️ <strong>但市场对「9 月是否加息」的即时概率已升至约 70%</strong>（据 9/10 卖方解读），<strong>高于 12 个月隐含路径所隐含的平均节奏</strong> —— 这说明<strong>市场认为加息会更早发生、但之后可能回撤</strong>。这是一个「前鹰后鸽」的期限结构。</p>
+<p class="sub-label"><strong>对债券</strong>：</p>
+<p>前端风险大于后端 → 曲线可能继续熊平。</p>
+<p class="sub-label"><strong>下一步观察</strong>：</p>
+<p>① 隐含路径是否突破 +75bp（红灯）；② 9/16–17 FOMC 的 SEP 点阵图与反对票数。</p>
+<hr>
+<h2>七、E · 外部冲击维度</h2>
+<table><thead><tr><th>指标</th><th>9/9</th><th>9/10</th><th>变动</th><th>灯</th></tr></thead><tbody><tr><td><strong>WTI 原油</strong>（S0180938 / M0000005）</td><td>96.05</td><td><strong>102.48</strong></td><td>🔴 <strong>+6.69%</strong></td><td>🔴 事件警示</td></tr><tr><td>布伦特原油（S0031525）</td><td>101.21</td><td><strong>107.63</strong></td><td>🔴 +6.34%</td><td>🔴</td></tr><tr><td><strong>COMEX 黄金</strong>（S0180945）</td><td>4,460.7</td><td><strong>4,407.3</strong></td><td>🟢 <strong>−1.20%</strong></td><td>🟡</td></tr><tr><td>美元指数（M0000271）</td><td>98.7911</td><td><strong>99.0839</strong></td><td>🔴 +0.30%</td><td>🟡</td></tr></tbody></table>
+<h3>Implication</h3>
+<p>⭐ <strong>本期最需要记住的一条：油价 +6.69%，黄金 −1.20%。</strong></p>
+<p>直觉链条「油价 ↑ → 通胀预期 ↑ → 黄金 ↑」在本期<strong>完全不成立</strong>。原因已在第二节说明：<strong>实际利率的上行压过了通胀预期的上行。</strong></p>
+<p class="sub-label"><strong>对配置的实际含义</strong>：</p>
+<ul><li><strong>黄金</strong>：在利率（尤其实际利率）转为下行之前，<strong>不应基于商品/地缘逻辑加仓黄金</strong>。组合中紫金黄金国际的触发线必须锚定「<strong>实际利率下行</strong>」，而非「油价上行」。</li><li><strong>能源/周期</strong>：油价上行为正，但<strong>被利率上行部分抵消</strong> → 净效应弱于直觉。</li><li><strong>汇率</strong>：美元 +0.30%，与利差扩大一致 → 港股（联系汇率）承受的流动性压力边际上升。</li><li><strong>⚠️ 单一事件警示</strong>：WTI 单日涨幅 6.69% 已超 ±4% 阈值，<strong>属事件级而非趋势级</strong>；按 §18，不得以单日极值推断趋势延续。</li></ul>
+<hr>
+<h2>八、F · 美联储资产负债表维度（周频 · 周五执行）</h2>
+<table><thead><tr><th>指标</th><th>9/2</th><th>9/9</th><th>周环比</th><th>灯</th></tr></thead><tbody><tr><td>准备金余额（G0005605）</td><td>2.9293 万亿</td><td><strong>3.0365 万亿</strong></td><td><strong>+1,072.23 亿（+3.66%）</strong></td><td>🟢（≥3.0 万亿）</td></tr><tr><td>逆回购（G1100077）</td><td>3,577.42 亿</td><td><strong>3,496.63 亿</strong></td><td>−80.79 亿（<strong>−2.26%</strong>）</td><td>🟢（降幅 &lt;30%）</td></tr></tbody></table>
+<h3>Implication</h3>
+<p>⭐ <strong>准备金单周回补逾 1,072 亿美元，并重回 3 万亿之上</strong> —— 这是本轮缩表以来少见的<strong>正向流动性边际</strong>。逆回购小幅下降 2.26%，通常意味着<strong>资金从美联储的隔夜工具回流到银行体系</strong>（也正是准备金增加的原因之一）。</p>
+<p>⚠️ <strong>但这里有一个方向性背离必须指出</strong>：<strong>资产负债表在扩张（流动性变松），而利率在快速上行（价格变贵）。</strong></p>
+<p>这两件事同时发生，说明<strong>当前的利率上行不是「钱少了」，而是「政策与通胀预期驱动的价格重估」</strong>。</p>
+<p class="sub-label"><strong>对配置</strong>：</p>
+<ul><li><strong>不应对流动性危机定价</strong>（准备金 3.04 万亿远超 2.7 万亿红灯线）；</li><li><strong>也不应把准备金回升解读为宽松信号</strong> —— 它不改变利率上行的方向；</li><li><strong>真正的观察点</strong>：准备金能否<strong>连续 3 周维持在 3 万亿之上</strong>。若只是单周波动，按 §18 属极值噪声。</li></ul>
+<p class="sub-label"><strong>下一步观察</strong>：</p>
+<p>9/16 公布的下一期准备金（FOMC 周）。若 FOMC 加息的同时准备金继续回升 → <strong>「加息 + 放水」的组合，对风险资产中性偏正</strong>。</p>
+<hr>
+<h2>九、灯号汇总</h2>
+<table><thead><tr><th>维度</th><th>读数</th><th>灯</th></tr></thead><tbody><tr><td>2s10s</td><td>+39bp</td><td>🟢</td></tr><tr><td>10Y breakeven</td><td>2.40%</td><td>🟢</td></tr><tr><td>SOFR − IORB</td><td>−1bp</td><td>🟢</td></tr><tr><td>12M SOFR 隐含路径</td><td><strong>+54.57bp</strong></td><td>🟡</td></tr><tr><td>10Y TIPS（实际利率）</td><td><strong>2.55%（一年新高）</strong></td><td>🟡</td></tr><tr><td>WTI 单日</td><td><strong>+6.69%</strong></td><td>🔴 事件警示</td></tr><tr><td>准备金</td><td>3.0365 万亿</td><td>🟢</td></tr><tr><td>逆回购</td><td>−2.26%</td><td>🟢</td></tr><tr><td>美元指数</td><td>99.0839（+0.30%）</td><td>🟡</td></tr><tr><td>COMEX 黄金</td><td>4,407.3（−1.20%）</td><td>🟡</td></tr></tbody></table>
+<p><strong>三核心全绿；黄灯 4 项；红灯 1 项（WTI 事件警示，属单日极值而非趋势）。</strong></p>
+<h3>Implication</h3>
+<p><strong>灯号结构可以概括为：流动性层面安全，价格层面承压。</strong></p>
+<ul><li>三个绿灯（2s10s / breakeven / SOFR−IORB）都在说同一件事：<strong>体系没有压力</strong>；</li><li>四个黄灯（隐含路径 / TIPS / 美元 / 黄金）都在说另一件事：<strong>价格在重估</strong>；</li><li>一个红灯（WTI）是<strong>事件级冲击</strong>，按 §18 不作趋势推断。</li></ul>
+<p>✅ <strong>结论</strong>：当前不是「风险时刻」，而是「<strong>估值重定价时刻</strong>」。对应到组合层面 —— <strong>这不是减仓的信号，是不追高的信号</strong>。组合 36% 的现金在实际利率上行情景下是有效缓冲，应保留而非急于配置。</p>
+<hr>
+<h2>十、今日关注</h2>
+<ul><li><strong>20:30（北京时间）美国 8 月 CPI</strong> —— 预期整体 <strong>+0.4% MoM</strong>、核心 <strong>+0.2% MoM</strong>。</li></ul>
+<p>  ⭐ <strong>核心环比能否低于 0.20% 是美联储 9 月是否加息的关键。</strong><br>  ⚠️ 按 §3.2.7：公布日为 9/11，<strong>次日 9/12 为周六 → 月频层顺延至 9/14（周一）执行</strong>，本期不归档。</p>
+<ul><li><strong>9/16–17 FOMC</strong> —— 今日（9/11）属 9/7–9/11 周，<strong>非 FOMC 周</strong>，事件层跳过；<strong>9/14（周一）起进入 FOMC 周</strong>，启动 CME FedWatch 概率读取与 SEP 点阵图解读。</li><li><strong>风险点</strong>：实际利率上行情景下，<strong>成长股 / 高 PB / 长债 / 黄金一律承压且无避风港</strong>。</li></ul>
+<hr>
+<p>*Fed Watch 归档 · via WB · 数据来源：Wind 万得 EDB（备用 CLI 通道） · My Research Central*</p>
+
+<div class="report-footer">
+  数据来源：Wind 万得 EDB · My Research Central · via WB
+</div>
+
+</body>
+</html>
